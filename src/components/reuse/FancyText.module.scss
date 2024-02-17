@@ -1,0 +1,54 @@
+@import "../../css/mixins.scss";
+
+@mixin vars() {
+  --heading-font-size: 42px;
+  --paragraph-font-size: 30px;
+  --top-span: 3px;
+  @media (min-width: $tablet) {
+    --heading-font-size: 64px;
+    --top-span: 5px;
+  }
+
+  @media (min-width: $laptop) {
+    --paragraph-font-size: 32px;
+  }
+
+  @media (min-width: $desktop) {
+    --paragraph-font-size: 40px;
+    --top-span: 8px;
+    --heading-font-size: 90px;
+  }
+}
+
+.cursive {
+  @include fontHeaderCaveat;
+
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 28px;
+  color: var(--yellow);
+}
+
+.fancyParagraph {
+  @include vars;
+  flex-wrap: wrap;
+  .cursive {
+    font-size: var(--paragraph-font-size);
+    line-height: var(--paragraph-font-size);
+  }
+}
+
+.fancyHeading {
+  @include vars;
+  white-space: wrap;
+  flex-wrap: wrap;
+  row-gap: var(--pad-1) !important;
+  position: relative;
+  .cursive {
+    position: relative;
+    font-size: var(--heading-font-size);
+    line-height: var(--heading-font-size);
+    text-transform: uppercase;
+    top: var(--top-span);
+  }
+}

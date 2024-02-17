@@ -1,30 +1,28 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.scss";
 import TabButton from "./TabButton";
-import { Icon } from "../reuse/Icon";
 import { useWindowResize } from "../../helpers/useWindowResize";
 import { IconButton } from "../reuse/IconButton";
-import { Line } from "../reuse/Line";
 import { Form } from "../pages/contact page/Form";
 import { FollowUs } from "../footer/FollowUs";
 import cn from "classnames";
 import { Link } from "../reuse/Link";
 import { onClickNavigate } from "../../helpers/useNavigation";
-import { Image } from "../reuse/Image";
-const logo = require("../../assets/photos/Logo_simple.png");
+import { FlexDiv } from "../reuse/FlexDiv";
+import { ReactComponent as Logo } from "../../assets/illu/LogoSmall.svg";
+import { Button } from "../reuse/Button";
+import { ICta, INavBar, INavLink } from "../../data";
 
-export const tabTexts: string[] = [
-  "collections",
-  "products",
-  "about",
-  "contact",
-];
-
-export const Navbar = () => {
-  const { isMobile } = useWindowResize();
+export const Navbar: React.FC<INavBar> = ({ links }) => {
+  const { isMobile, isMobileOrTablet } = useWindowResize();
   const [sidebar, setSidebar] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+
+  console.log(links);
+  const isCta = (link: INavLink | ICta): link is ICta => {
+    return (link as ICta).link !== undefined;
+  };
 
   useEffect(() => {
     const handleScroll = (e: Event) => {
@@ -45,67 +43,79 @@ export const Navbar = () => {
       href={"/"}
       className={styles.logo}
     >
-      <Image src={logo} alt="logo" />
+      <Logo />
     </Link>
   );
 
-  const tab = (text: string, isMobile: boolean = false) => {
+  const tab = (cta: ICta) => {
     return (
       <>
-        <div className={styles.tabWrapper}>
-          <TabButton className={styles.tab} path={`/${text}`}>
-            {text}
-          </TabButton>
-          {isMobile && <Icon icon="arrow" size="extra-small" color="white" />}
-        </div>
-        {isMobile && <Line color="black" />}
+        <TabButton className={styles.tab} path={cta.link!}>
+          {cta.text}
+        </TabButton>
+        {/* {isMobile && <Icon icon="arrow" size="extra-small" color="white" />}
+
+        {isMobile && <Line color="black" />} */}
       </>
     );
   };
 
+  const dropDown = (navLink: INavLink) => {
+    return (
+      <TabButton className={styles.tab} path="" dropdown={navLink.ctaArray}>
+        {navLink.title}
+      </TabButton>
+    );
+  };
+
   return (
-    <div className={styles.menu}>
+    <>
       <div
-        className={cn(styles.navbar, { [styles.scrolled]: scrolled })}
+        className={cn(styles.navbarWrapper, { [styles.scrolled]: scrolled })}
         ref={navRef}
       >
-        {isMobile ? (
-          <>
-            <div className={styles.burger}>
-              <IconButton
-                onClick={() => setSidebar(true)}
-                iconProps={{ icon: "burger", color: "gold", size: "small" }}
-              />
-            </div>
-            <div className={styles.middle}>{logoComp}</div>
-          </>
-        ) : (
-          <div className={styles.middle}>
-            <div className={styles.left}>
-              {tab(tabTexts[0], false)}
-              {tab(tabTexts[1], false)}
-            </div>
-            {logoComp}
-            <div className={styles.right}>
-              {tab(tabTexts[2], false)}
-              {tab(tabTexts[3], false)}
-            </div>
-          </div>
-        )}
+        <FlexDiv
+          className={styles.navbar}
+          flex={{ x: "space-between", y: "center" }}
+          height100
+        >
+          {logoComp}
+
+          <FlexDiv
+            flex={{ x: "space-between", y: "center" }}
+            gapArray={[3, 5, 6, 7]}
+            className={styles.right}
+          >
+            {!isMobileOrTablet && (
+              <FlexDiv gapArray={[5, 4, 5, 6]} className={styles.right}>
+                {links.map((link: INavLink | ICta) => {
+                  return isCta(link) ? tab(link) : dropDown(link);
+                })}
+              </FlexDiv>
+            )}
+            <Button variant="fancy" small={isMobile}>
+              Work
+            </Button>
+            <IconButton
+              onClick={() => setSidebar(true)}
+              iconProps={{ icon: "burger", size: "regular" }}
+            />
+          </FlexDiv>
+        </FlexDiv>
       </div>
       {isMobile && (
         <div className={cn(styles.sidebar, { [styles.isOpen]: sidebar })}>
           <div className={styles.tab}>
             <IconButton
               onClick={() => setSidebar(false)}
-              iconProps={{ icon: "close", color: "gold", size: "small" }}
+              iconProps={{ icon: "close", size: "small" }}
             />
           </div>
 
           <div className={styles.tabs}>
             <>
-              {tabTexts.map((text: string) => {
-                return tab(text, isMobile);
+              {links.map((link: INavLink | ICta) => {
+                return isCta(link) ? tab(link) : dropDown(link);
               })}
               <div className={styles.emailList}>
                 <Form />
@@ -117,6 +127,6 @@ export const Navbar = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };

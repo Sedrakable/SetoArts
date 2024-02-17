@@ -3,12 +3,15 @@
 @mixin vars() {
   --top-gap: var(--pad-6);
   --container-gap: var(--pad-5);
+  --logo-width: 80%;
   @media (min-width: $tablet) {
     --top-gap: var(--pad-6);
+    --logo-width: 300px;
   }
 
   @media (min-width: $laptop) {
     --top-gap: var(--pad-7);
+    --logo-width: 384px;
   }
 
   @media (min-width: $desktop) {
@@ -17,80 +20,51 @@
   }
 }
 
+.line {
+  flex: 1;
+  background-color: var(--grey);
+  opacity: 0.5;
+  max-width: 2px;
+  min-height: 100%;
+  width: 100%;
+}
+
 .footer {
   @include flex;
   @include vars;
 
   width: 100%;
   background: var(--black);
-  padding: var(--pad-5) 0;
-  .container {
-    @include flexColumn;
 
+  .container {
     width: var(--screen-width-large);
     gap: var(--container-gap);
     padding-bottom: var(--container-gap);
     margin: 0 auto;
-    .top {
-      @include flexColumn(center, center);
-
-      flex-wrap: wrap;
+    position: relative;
+    .legal {
+      flex: 1;
+      p {
+        text-decoration: underline;
+      }
+    }
+    .logo {
       position: relative;
-      height: 100%;
-      min-height: 100%;
-      width: 100%;
-      gap: var(--top-gap);
+      width: var(--logo-width);
+      // border: 2px solid var(--grey);
+      // border-top: none;
+      // border-bottom: none;
 
-      .emailList {
-        flex: 1;
-        width: 100%;
-        min-width: 100%;
-      }
+      // padding-bottom: 40px !important;
+      // p {
+      //   position: absolute;
+      //   bottom: -60px;
+      // }
+    }
 
-      .links {
-        @include flexColumn(center, space-between);
-
-        flex-direction: row;
-        gap: var(--pad-2);
-        column-gap: var(--pad-4);
-      }
-
-      .contact {
-        @include flexColumn;
-
-        // align-self: cent;
-        gap: var(--pad-2);
-
-        .icons {
-          @include flex;
-
-          gap: var(--pad-4);
-        }
-      }
-
-      @media (min-width: $tablet) {
-        justify-content: center;
-        flex-direction: row;
-
-        .emailList {
-          min-width: 100%;
-        }
-
-        .contact {
-          align-self: flex-start;
-        }
-      }
-
-      @media (min-width: $laptop) {
-        align-items: flex-start;
-        .emailList {
-          min-width: unset;
-        }
-
-        .links {
-          flex-direction: column;
-        }
-      }
+    .links {
+      flex: 1;
+      row-gap: var(--pad-2) !important;
     }
   }
 }

@@ -1,0 +1,12 @@
+@import "../../../../css/mixins.scss";
+
+.values {
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 50%), 1fr));
+}
+
+.title {
+  word-break: break-all;
+}
+.description {
+  padding-left: var(--pad-2);
+}

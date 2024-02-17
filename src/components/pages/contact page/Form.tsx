@@ -35,15 +35,15 @@ export const Form: React.FC<{ withMessage?: boolean }> = ({ withMessage }) => {
   const mailingList = (
     <div className={styles.wrapper}>
       <div className={styles.content}>
-        <Heading level="2" as="h2" color="gold-grad" textAlign="center">
+        <Heading font="Cursive" level="2" as="h2" textAlign="center">
           Join our Mailing List
         </Heading>
-        <Paragraph level="1" color="white" weight="regular">
+        <Paragraph level="big" color="white" weight="regular">
           Get notified about exclusive deals!
         </Paragraph>
         <form ref={form} className={styles.form} onSubmit={sendEmail}>
           <input type="email" name="user_email" placeholder="Email" />
-          <Button variant="primary">SEND</Button>
+          <Button variant="fancy">SEND</Button>
         </form>
       </div>
     </div>
@@ -51,7 +51,7 @@ export const Form: React.FC<{ withMessage?: boolean }> = ({ withMessage }) => {
   const contact = (
     <div className={styles.wrapper}>
       <div className={styles.content}>
-        <Heading level="2" as="h2" color="gold-grad" textAlign="center">
+        <Heading font="Seto" level="2" as="h2" textAlign="center">
           Email Us
         </Heading>
         <form
@@ -70,7 +70,7 @@ export const Form: React.FC<{ withMessage?: boolean }> = ({ withMessage }) => {
             placeholder="Message"
           />
 
-          <Button variant="primary">SEND</Button>
+          <Button variant="fancy">SEND</Button>
         </form>
       </div>
     </div>

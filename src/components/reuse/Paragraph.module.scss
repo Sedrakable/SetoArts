@@ -1,8 +1,8 @@
 @import "../../css/mixins.scss";
 
-@mixin sizing($size) {
-  font-size: var(--paragraph-p#{$size});
-  line-height: var(--paragraph-line-p#{$size});
+@mixin sizing($level) {
+  font-size: var(--paragraph-p#{$level});
+  line-height: var(--paragraph-line-p#{$level});
 }
 
 @mixin level($desk, $lap, $tab, $mob) {
@@ -21,12 +21,29 @@
   }
 }
 
-.level1 {
-  @include level(1, 1, 1, 2);
+.small {
+  // @include level(1, 1, 1, 2);
+  font-size: var(--paragraph-small);
+  line-height: var(--paragraph-small-line);
 }
 
-.level2 {
-  @include level(2, 2, 2, 2);
+.regular {
+  font-size: var(--paragraph-small);
+  line-height: var(--paragraph-small-line);
+  @media (min-width: $desktop) {
+    font-size: var(--paragraph-regular);
+    line-height: var(--paragraph-regular-line);
+  }
+}
+
+.big {
+  font-size: var(--paragraph-regular);
+  line-height: var(--paragraph-regular-line);
+
+  @media (min-width: $desktop) {
+    font-size: var(--paragraph-big);
+    line-height: var(--paragraph-big-line);
+  }
 }
 
 .paragraph {

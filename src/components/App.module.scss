@@ -1,14 +1,15 @@
 @import "../css/mixins.scss";
 
-.wholePage {
+.app {
   @include flexColumn(flex-start, flex-start);
 
   overflow-x: hidden;
   position: relative;
-  .homePage {
+
+  .page {
     @include flexColumn(flex-start, flex-start);
 
+    padding-top: var(--navbar-height);
     width: 100%;
-    gap: var(--pad-6);
   }
 }

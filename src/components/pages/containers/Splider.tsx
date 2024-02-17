@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Options,
   Splide,
@@ -9,51 +9,98 @@ import styles from "./Splider.module.scss";
 import "@splidejs/react-splide/css/skyblue";
 
 import { SideContainer, SideContainerProps } from "./SideContainer";
-import { Image, ImageProps } from "../../reuse/Image";
 import cn from "classnames";
+import { FlexDiv } from "../../reuse/FlexDiv";
+import { Icon } from "../../reuse/Icon";
+import {
+  SanityImage,
+  SanityImageProps,
+} from "../../reuse/SanityImage/SanityImage";
+import { IWorkSlide } from "../../../data";
+import { useWindowResize } from "../../../helpers/useWindowResize";
 
 export interface SpliderProps {
-  image: ImageProps;
+  customImage: SanityImageProps;
   content?: SideContainerProps;
 }
 
 export interface SpliderContainerProps {
   slides: SpliderProps[];
-  small?: boolean;
+  arrows?: boolean;
+  splideProgress?: number;
+  setSplideProgress?: (progress: number) => void;
 }
 
 export const Splider: React.FC<SpliderContainerProps> = ({
   slides,
-  small = false,
+  arrows = false,
+  splideProgress,
+  setSplideProgress,
 }) => {
+  const { isMobileOrTablet } = useWindowResize();
   const mainRef = useRef<Splide>(null);
-  const thumbsRef = useRef<Splide>(null);
-  const [splideProgress, setSplideProgress] = useState(0);
-
-  useEffect(() => {
-    if (mainRef.current && thumbsRef.current && thumbsRef.current.splide) {
-      mainRef.current.sync(thumbsRef.current.splide);
-    }
-  }, []);
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  const prevArrowRef = useRef<HTMLDivElement>(null);
+  const nextArrowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (mainRef.current) {
       const splideInstance = mainRef.current.splide;
 
       if (splideInstance) {
-        splideInstance.on("autoplay:playing", (progress) => {
-          // console.log("Autoplay Progress:", progress);
-          setSplideProgress(progress);
+        splideInstance.on("move", (index) => {
+          if (setSplideProgress) {
+            setSplideProgress(index);
+          }
+
+          const progressBarWidth = `${(index / slides.length) * 100}%`;
+          progressBarRef.current!.style.width = progressBarWidth;
         });
       }
     }
-  }, []);
+  }, [setSplideProgress, slides, progressBarRef]);
+
+  useEffect(() => {
+    if (mainRef.current && splideProgress !== undefined) {
+      const splideInstance = mainRef.current.splide;
+
+      if (splideInstance) {
+        splideInstance.go(splideProgress);
+      }
+    }
+  }, [splideProgress]);
+
+  // Adding event listeners outside of useEffect
+  useEffect(() => {
+    const splideInstance = mainRef.current?.splide;
+    prevArrowRef.current?.addEventListener("click", () => {
+      if (setSplideProgress) {
+        setSplideProgress(splideInstance?.index! - 1);
+        return;
+      }
+      splideInstance?.go("-1");
+    });
+    nextArrowRef.current?.addEventListener("click", () => {
+      if (setSplideProgress) {
+        setSplideProgress(splideInstance?.index! + 1);
+        return;
+      }
+      splideInstance?.go("+1");
+    });
+  }, [mainRef, setSplideProgress]);
 
   const renderSlides = (text: boolean) => {
-    return slides.map((splider: SpliderProps, key) => {
+    return slides?.map((splider: SpliderProps, key) => {
       return (
-        <SplideSlide key={key}>
-          <Image {...splider.image} fit={text && splider.image.fit} />
+        <SplideSlide
+          key={key}
+          className={cn({ [styles.content]: splider?.content })}
+        >
+          <SanityImage
+            image={splider.customImage.image}
+            alt={splider.customImage.alt}
+            fit={text && splider.customImage.fit}
+          />
           {text && splider?.content && (
             //NEEDS TO BE REPLACED BY ALTUAL CONTENT
             <SideContainer {...splider.content} />
@@ -65,54 +112,39 @@ export const Splider: React.FC<SpliderContainerProps> = ({
 
   const mainOptions: Options = {
     type: "loop",
-    autoplay: !small,
-    pagination: small,
+    autoplay: true,
+    pagination: false,
     pauseOnHover: true,
     resetProgress: false,
     interval: 5000,
-    arrows: slides.length > 1,
-  };
-
-  const thumbsOptions: Options = {
-    type: "slide",
-    rewind: true,
-    gap: "1rem",
-    pagination: false,
-    cover: true,
-    focus: "center",
-    isNavigation: true,
     arrows: false,
   };
 
   return (
-    <div className={cn(styles.wrapper, { [styles.small]: small })}>
+    <div className={cn(styles.wrapper)}>
       <Splide
         className={styles.container}
         options={mainOptions}
         hasTrack={false}
         ref={mainRef}
       >
-        <SplideTrack>{renderSlides(true)}</SplideTrack>
+        <SplideTrack className={styles.track}>{renderSlides(true)}</SplideTrack>
       </Splide>
-
-      {!small && (
-        <>
-          <div className={styles.progressBar}>
-            <div
-              className={styles.progress}
-              style={{ width: `${splideProgress * 100}%` }}
-            />
+      <div className={styles.ui}>
+        <FlexDiv flex={{ x: "flex-start" }} className={styles.progressBar}>
+          <div className={styles.progress} ref={progressBarRef} />
+        </FlexDiv>
+        {arrows && !isMobileOrTablet && (
+          <div className={styles.customArrows}>
+            <div ref={prevArrowRef} className={styles.prevArrow}>
+              <Icon icon="arrow" rotate={180} size="big" />
+            </div>
+            <div ref={nextArrowRef} className={styles.nextArrow}>
+              <Icon icon="arrow" size="big" />
+            </div>
           </div>
-
-          <Splide
-            className={styles.thumbs}
-            options={thumbsOptions}
-            ref={thumbsRef}
-          >
-            {renderSlides(false)}
-          </Splide>
-        </>
-      )}
+        )}
+      </div>
     </div>
   );
 };

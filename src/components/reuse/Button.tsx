@@ -1,19 +1,29 @@
-import React, { PropsWithChildren, ButtonHTMLAttributes, FC } from "react";
+import React, {
+  PropsWithChildren,
+  ButtonHTMLAttributes,
+  FC,
+  AnchorHTMLAttributes,
+} from "react";
 import styles from "./Button.module.scss";
 import cn from "classnames";
 import { Heading } from "./Heading";
 import { onClickNavigate } from "../../helpers/useNavigation";
+import { ReactComponent as ButtonStroke } from "../../assets/illu/ButtonStroke.svg";
 
 export interface ButtonProps {
-  children: string;
-  variant: "primary" | "secondary";
+  variant: "fancy" | "primary" | "secondary";
+  small?: boolean;
+  fit?: "grow" | "shrink";
   onClick?: () => void;
   path?: string;
   disabled?: boolean;
+  className?: string;
 }
 export const Button: FC<PropsWithChildren<
-  ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
->> = ({ children, variant, path, disabled, ...props }) => {
+  ButtonProps &
+    ButtonHTMLAttributes<HTMLButtonElement> &
+    AnchorHTMLAttributes<HTMLAnchorElement>
+>> = ({ children, variant, path, disabled, small, fit, ...props }) => {
   const onClick = (e: React.MouseEvent) => {
     if (path) {
       return onClickNavigate(e, path);
@@ -23,20 +33,27 @@ export const Button: FC<PropsWithChildren<
       props.onClick();
     }
   };
-  return (
-    <button
-      className={cn(styles.button, styles[variant])}
-      {...props}
-      onClick={onClick}
-      disabled={disabled}
-    >
+
+  const as = props.href ? "a" : "button";
+  return React.createElement(
+    as,
+    {
+      className: cn(styles.button, styles[variant], { [styles.small]: small }),
+      style: { width: fit === "grow" && "100%" },
+      ...props,
+      onClick,
+      disabled,
+    },
+    <>
+      {variant === "fancy" && <ButtonStroke className={styles.stroke} />}
       <Heading
-        level="4"
-        as="h4"
-        color={variant === "primary" ? "white" : "gold-grad"}
+        font="Seto"
+        level={small ? "5" : "5"}
+        as="h5"
+        color={variant === "secondary" ? "yellow" : "white"}
       >
-        {children}
+        {children as string}
       </Heading>
-    </button>
+    </>
   );
 };

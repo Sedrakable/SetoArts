@@ -7,23 +7,16 @@
   --desktop: 1680px;
 
   --white: #ffffff;
-  --black: #0a0b12;
-  --grey: rgb(46, 46, 51);
-  --silver: #aaaab3;
-  --black-rgb: 10, 11, 18;
-  --gold-dark: #e5b552;
-  --gold: #f5c86c;
-  --gold-light: #ffe3aa;
-  --gold-light-rgb: 255, 227, 170;
+  --black: #0f0f0f;
+  --grey: #bcbcbc;
+  --yellow: #fec301;
   --gold-grad: linear-gradient(
-    100deg,
-    var(--gold-dark) 0%,
-    var(--gold) 15%,
-    var(--gold-light) 20%,
-    var(--gold) 25%,
-    var(--gold-dark) 40%,
-    var(--gold) 100%
+    90deg,
+    var(--yellow) 0%,
+    #febb01 50%,
+    var(--yellow) 100%
   );
+  --pad-0: 0px;
   --pad-1: 5px;
   --pad-2: 10px;
   --pad-3: 15px;
@@ -36,45 +29,58 @@
   --pad-10: 180px;
   --pad-11: 240px;
 
-  --heading-h1: 72px;
-  --heading-h2: 64px;
-  --heading-h3: 48px;
-  --heading-h4: 32px;
-  --heading-h5: 24px;
-  --heading-h6: 16px;
+  --heading-seto-h1: 80px;
+  --heading-seto-h2: 64px;
+  --heading-seto-h3: 48px;
+  --heading-seto-h4: 32px;
+  --heading-seto-h5: 20px;
 
-  --paragraph-p1: 22px;
-  --paragraph-p2: 16px;
-  --paragraph-line-p1: 26px;
-  --paragraph-line-p2: 20px;
+  --heading-seto-h1-line: 128px;
+  --heading-seto-h2-line: 80px;
+  --heading-seto-h3-line: 64px;
+  --heading-seto-h4-line: 48px;
+  --heading-seto-h5-line: 24px;
 
-  --navbar-height-small: 50px;
-  --navbar-height-big: 60px;
+  --heading-caveat-h1: 128px;
+  --heading-caveat-h2: 80px;
+  --heading-caveat-h3: 64px;
+  --heading-caveat-h4: 48px;
+  --heading-caveat-h5: 32px;
+
+  --heading-caveat-h1-line: 128px;
+  --heading-caveat-h2-line: 80px;
+  --heading-caveat-h3-line: 64px;
+  --heading-caveat-h4-line: 48px;
+  --heading-caveat-h5-line: 32px;
+
+  --paragraph-big: 32px;
+  --paragraph-regular: 24px;
+  --paragraph-small: 20px;
+  --paragraph-big-line: 40px;
+  --paragraph-regular-line: 28px;
+  --paragraph-small-line: 22px;
 
   --screen-width-small: 600px;
 
-  --button-height: 50px;
-  --button-width: 100%;
-  --button-padding: var(--pad-6);
-
+  --navbar-height: 64px;
   --screen-width-large: calc(100vw - var(--pad-6));
   --screen-width-small: calc(100vw - var(--pad-8));
 
   @media (min-width: $tablet) {
-    --button-width: fit-content;
-    --screen-width-large: calc(100vw - var(--pad-8));
-    --screen-width-small: calc(100vw - var(--pad-11));
+    --navbar-height: 80px;
+    --screen-width-small: calc(100vw - var(--pad-9));
+    --screen-width-large: calc(100vw - var(--pad-7));
   }
 
   @media (min-width: $laptop) {
-    --screen-width-large: calc(var(--laptop) - var(--pad-11));
-    --screen-width-small: var(--screen-width-large);
+    --screen-width-small: calc(100vw - (var(--pad-10) * 2));
+    --screen-width-large: calc(100vw - var(--pad-10));
   }
 
   @media (min-width: $desktop) {
-    --button-height: 70px;
-    --button-padding: var(--pad-7);
-    --screen-width-large: calc(var(--desktop) - var(--pad-11));
+    --navbar-height: 96px;
+    --screen-width-small: calc(var(--desktop) - (var(--pad-9) * 2));
+    --screen-width-large: calc(var(--desktop) - var(--pad-6));
   }
 }
 
@@ -84,22 +90,22 @@ body,
   height: 100%;
 }
 
-.splide__track {
-  height: 100%;
-  width: 100%;
+// .splide__track {
+//   height: 100%;
+//   width: 100%;
 
-  .splide__list {
-    height: 100%;
-    li {
-      width: 100%;
-      img {
-        position: absolute;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-  }
-}
+//   .splide__list {
+//     height: 100%;
+//     li {
+//       width: 100%;
+//       img {
+//         position: absolute;
+//         object-fit: cover;
+//         width: 100%;
+//         height: 100%;
+//         top: 50%;
+//         transform: translateY(-50%);
+//       }
+//     }
+//   }
+// }

@@ -11,9 +11,7 @@ $icon-sizes: (
 $colors: (
   white: var(--white),
   black: var(--black),
-  gold: var(--gold),
-  gold-grad: var(--gold-grad),
-  gold-light: var(--gold-light),
+  yellow: var(--yellow),
 );
 
 @each $rotation in $rotations {

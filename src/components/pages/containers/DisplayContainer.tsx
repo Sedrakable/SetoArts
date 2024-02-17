@@ -30,14 +30,14 @@ export const DisplayContainer: React.FC<DisplayContainerProps> = ({
       </Parallax>
       {content && (
         <div className={styles.text}>
-          <Heading as="h1" level="1" color="gold-grad" textAlign="center">
+          <Heading font="Seto" as="h1" level="1" textAlign="center">
             {content.title}
           </Heading>
           {content.subtitle && (
             <Paragraph
-              level="1"
+              level="big"
               color="white"
-              weight="regular"
+              weight="weak"
               textAlign="center"
             >
               {content.subtitle}

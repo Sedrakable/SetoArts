@@ -22,7 +22,7 @@ const iconsLinks: IconLinkProps[] = [
 export const FollowUs: React.FC = () => {
   return (
     <div className={styles.contact}>
-      <Heading as="h3" level="3" color="white">
+      <Heading font="Cursive" as="h3" level="3" color="white">
         Follow US!
       </Heading>
       <div className={styles.icons}>
@@ -33,7 +33,6 @@ export const FollowUs: React.FC = () => {
                 iconProps={{
                   icon: iconsLink.icon,
                   size: "regular",
-                  color: "gold",
                 }}
               />
             </Link>

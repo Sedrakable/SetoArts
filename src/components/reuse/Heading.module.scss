@@ -1,42 +1,28 @@
 @import "../../css/mixins.scss";
 
-@mixin sizing($size) {
-  font-size: var(--heading-h#{$size});
-  line-height: var(--heading-h#{$size});
+@mixin sizing($font, $size) {
+  font-size: var(--heading#{$font}-h#{$size});
+  line-height: var(--heading#{$font}-h#{$size}-line);
 }
 
-@mixin level($desk, $lap, $tab, $mob) {
-  @include sizing($mob);
+@mixin level($font, $desk, $lap, $tab, $mob) {
+  @include sizing($font, $mob);
 
   @media (min-width: $tablet) {
-    @include sizing($tab);
+    @include sizing($font, $tab);
   }
 
   @media (min-width: $laptop) {
-    @include sizing($lap);
+    @include sizing($font, $lap);
   }
 
   @media (min-width: $desktop) {
-    @include sizing($desk);
-  }
-}
-
-@for $i from 1 through 6 {
-  .level#{$i} {
-    @include level($i, $i + 1, $i + 1, $i + 1);
-  }
-
-  .level1 {
-    @include level(1, 2, 2, 3);
-  }
-  .level2 {
-    @include level(2, 3, 3, 4);
+    @include sizing($font, $desk);
   }
 }
 
 .heading {
-  @include fontHeader;
-
+  text-decoration: none !important;
   &.clickable {
     &:hover {
       background: var(--gold-grad);
@@ -46,6 +32,39 @@
       animation: moveGradient 3s linear infinite;
       text-shadow: 0 0 10px rgba(var(--gold-light-rgb), 0.5);
     }
+  }
+}
+
+.seto {
+  @include fontHeaderSeto;
+
+  @for $i from 1 through 3 {
+    &.level#{$i} {
+      @include level(-seto, $i, $i + 1, $i + 1, $i + 2);
+    }
+  }
+  &.level4 {
+    @include level(-seto, 4, 4, 4, 5);
+  }
+  &.level5 {
+    @include level(-seto, 5, 5, 5, 5);
+  }
+}
+
+.cursive {
+  @include fontHeaderCaveat;
+
+  font-weight: 600;
+  @for $i from 1 through 3 {
+    &.level#{$i} {
+      @include level(-caveat, $i, $i + 1, $i + 1, $i + 2);
+    }
+  }
+  &.level4 {
+    @include level(-caveat, 4, 4, 4, 5);
+  }
+  &.level5 {
+    @include level(-caveat, 5, 5, 5, 5);
   }
 }
 

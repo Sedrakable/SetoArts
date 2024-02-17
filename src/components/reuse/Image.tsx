@@ -4,10 +4,12 @@ import cn from "classnames";
 import { useWindowResize } from "../../helpers/useWindowResize";
 
 export interface ImageProps {
-  src: string;
-  alt: string;
   fit?: boolean;
   mobileFit?: boolean;
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
 }
 export const Image: React.FC<PropsWithChildren<
   ImageProps & ImgHTMLAttributes<HTMLImageElement>

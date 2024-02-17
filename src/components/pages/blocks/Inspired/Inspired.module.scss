@@ -1,0 +1,45 @@
+@import "../../../../css/mixins.scss";
+
+@mixin vars() {
+  --stroke-width: 300px;
+  --border-width: 4px;
+  @media (min-width: $tablet) {
+    --stroke-width: 350px;
+  }
+
+  @media (min-width: $laptop) {
+    --stroke-width: 450px;
+  }
+
+  @media (min-width: $desktop) {
+    --stroke-width: 600px;
+  }
+}
+
+.block {
+  @include vars;
+  background: var(--yellow);
+  position: relative;
+  overflow: hidden;
+  border-top: var(--border-width) solid var(--yellow);
+  border-bottom: var(--border-width) solid var(--yellow);
+  .wrapper {
+    width: var(--screen-width-large);
+    .title {
+      position: relative;
+      z-index: 2;
+      .question {
+        position: absolute;
+        right: -10%;
+      }
+    }
+    img {
+      position: absolute;
+      filter: grayscale(100%) brightness(0%);
+      width: var(--stroke-width);
+      height: 10000px;
+      object-fit: scale-down !important;
+      transform: rotate(60deg);
+    }
+  }
+}

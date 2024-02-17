@@ -1,0 +1,48 @@
+@import "../../css/mixins.scss";
+
+@mixin vars() {
+  --quote-height: 60px;
+  --left-width: 50%;
+  --right-width: 50%;
+  --logo-height: 32px;
+  @media (min-width: $tablet) {
+    --quote-height: 60px;
+
+    --logo-height: 32px;
+  }
+
+  @media (min-width: $laptop) {
+    --right-width: auto;
+    --left-width: calc(100vw / 3);
+  }
+
+  @media (min-width: $desktop) {
+    --quote-height: 90px;
+    --logo-height: 40px;
+  }
+}
+
+.quote {
+  @include vars;
+  height: var(--quote-height);
+
+  .left {
+    background: var(--black);
+    width: var(--left-width);
+    box-sizing: border-box;
+    position: relative;
+    .x {
+      position: absolute;
+      right: 0;
+      transform: translateX(50%);
+      height: var(--logo-height);
+      path {
+        fill: var(--yellow);
+      }
+    }
+  }
+  .right {
+    background: var(--white);
+    width: var(--right-width);
+  }
+}

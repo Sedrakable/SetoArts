@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./Paragraph.module.scss";
 import cn from "classnames";
 import { capitalizeString } from "./Heading";
+import {
+  SpacingArrayType,
+  useSpacingGenerator,
+} from "../../helpers/SpacingGenerator";
 
 type textAlign =
   | "start"
@@ -13,10 +17,11 @@ type textAlign =
   | "match-parent";
 
 export interface ParagraphProps {
-  children: string;
-  level: "1" | "2";
+  children: string | JSX.Element;
+  level: "small" | "regular" | "big";
   textAlign?: textAlign;
-  color?: "white" | "black";
+  paddingBottomArray?: SpacingArrayType;
+  color?: "white" | "black" | "grey" | "yellow";
   weight?: "weak" | "regular";
   capitalise?: boolean;
   clickable?: boolean;
@@ -24,27 +29,29 @@ export interface ParagraphProps {
 }
 
 const fontWeights = {
-  weak: 200,
+  weak: 300,
   regular: 400,
 };
 
 export const Paragraph: React.FC<ParagraphProps> = ({
   children,
-  level,
+  level = "regular",
   textAlign,
   weight = "weak",
+  paddingBottomArray,
   color = "white",
   capitalise,
   clickable,
   className,
 }) => {
+  const { spacingNum } = useSpacingGenerator(paddingBottomArray);
+
   return (
     <p
       className={cn(
         styles.paragraph,
-        styles[`level${level}`],
+        styles[level],
         {
-          [styles.gradient]: color.includes("grad"),
           [styles.clickable]: clickable,
         },
         className
@@ -53,9 +60,11 @@ export const Paragraph: React.FC<ParagraphProps> = ({
         color: `var(--${color})`,
         textAlign,
         fontWeight: fontWeights[weight],
+        paddingBottom: spacingNum && `var(--pad-${spacingNum})`,
       }}
     >
-      {capitalise ? capitalizeString(children) : children}
+      {children}
+      {/* {capitalise ? capitalizeString(children) : children} */}
     </p>
   );
 };

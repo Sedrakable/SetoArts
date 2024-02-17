@@ -1,18 +1,14 @@
 import React from "react";
 import styles from "./Heading.module.scss";
 import cn from "classnames";
+import {
+  SpacingArrayType,
+  useSpacingGenerator,
+} from "../../helpers/SpacingGenerator";
 
-export type ColorType =
-  | "white"
-  | "black"
-  | "gold"
-  | "gold-grad"
-  | "gold-light"
-  | "grey"
-  | "silver-grad"
-  | "silver";
+export type ColorType = "white" | "black" | "yellow" | "grey";
 
-export const HeadingLevelArray = ["1", "2", "3", "4", "5", "6"] as const;
+export const HeadingLevelArray = ["1", "2", "3", "4", "5"] as const;
 
 type HeadingLevelType = typeof HeadingLevelArray[number];
 
@@ -38,14 +34,17 @@ type textAlign =
   | "match-parent";
 
 export interface HeadingProps {
-  children: string;
+  font: "Seto" | "Cursive";
+  children: string | JSX.Element;
   level: HeadingLevelType;
   as: HeadingAsType;
   textAlign?: textAlign;
+  paddingBottomArray?: SpacingArrayType;
   color?: ColorType;
   upperCase?: boolean;
   capitalise?: boolean;
   clickable?: boolean;
+  className?: string;
 }
 
 export const capitalizeString = (str: string): string => {
@@ -53,30 +52,47 @@ export const capitalizeString = (str: string): string => {
 };
 
 export const Heading: React.FC<HeadingProps> = ({
+  font = "Seto",
   children,
   level,
   as,
   textAlign,
+  paddingBottomArray,
   color = "white",
   upperCase = true,
   capitalise,
   clickable,
+  className,
 }) => {
+  const { spacingNum } = useSpacingGenerator(paddingBottomArray);
+
   const CustomHeading = as as keyof JSX.IntrinsicElements;
 
-  const finalString = upperCase
-    ? children?.toUpperCase()
-    : capitalise
-    ? capitalizeString(children)
-    : children;
+  const finalString =
+    typeof children === "string" && upperCase
+      ? children?.toUpperCase()
+      : capitalise
+      ? capitalizeString(children as string)
+      : children;
 
   return (
     <CustomHeading
-      className={cn(styles.heading, styles[`level${level}`], {
-        [styles.gradient]: color.includes("grad"),
-        [styles.clickable]: clickable,
-      })}
-      style={{ color: `var(--${color})`, textAlign }}
+      className={cn(
+        styles.heading,
+        styles[`level${level}`],
+        {
+          [styles.gradient]: color.includes("grad"),
+          [styles.clickable]: clickable,
+          [styles.seto]: font === "Seto",
+          [styles.cursive]: font === "Cursive",
+        },
+        className
+      )}
+      style={{
+        color: `var(--${color})`,
+        textAlign,
+        paddingBottom: spacingNum && `var(--pad-${spacingNum})`,
+      }}
     >
       {finalString}
     </CustomHeading>

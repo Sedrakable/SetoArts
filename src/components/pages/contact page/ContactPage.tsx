@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../reuse/Header";
+import { Hero } from "../../reuse/Hero";
 import styles from "./ContactPage.module.scss";
 import { Form } from "./Form";
 
@@ -13,11 +13,11 @@ const header = {
 const ContactPage = () => {
   return (
     <div>
-      <Header
+      {/* <Hero
         title={header.title}
         description={header.desc}
         image={{ src: socials, alt: "socials" }}
-      />
+      /> */}
       <div className={styles.content}>
         <Form withMessage />
       </div>

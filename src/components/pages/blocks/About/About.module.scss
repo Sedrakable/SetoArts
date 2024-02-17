@@ -1,0 +1,41 @@
+@import "../../../../css/mixins.scss";
+
+@mixin vars() {
+  --image-width: 100%;
+  --img-pad-top: 0;
+  @media (min-width: $tablet) {
+    --image-width: 240px;
+    --img-pad-top: 10px;
+  }
+
+  @media (min-width: $laptop) {
+    --image-width: 400px;
+    --img-pad-top: 12px;
+  }
+
+  @media (min-width: $desktop) {
+    --img-pad-top: 14px;
+  }
+}
+
+.secondText {
+  @media (min-width: $laptop) {
+    align-items: flex-start !important;
+  }
+}
+.container {
+  @include vars;
+
+  @media (min-width: $tablet) {
+    flex-direction: row !important;
+  }
+
+  img {
+    width: var(--image-width);
+    min-width: var(--image-width);
+    height: auto !important;
+    max-height: var(--image-width);
+    aspect-ratio: 1;
+    padding-top: var(--img-pad-top);
+  }
+}

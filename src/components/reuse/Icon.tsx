@@ -3,11 +3,14 @@ import styles from "./Icon.module.scss";
 import cn from "classnames";
 import { ColorType } from "./Heading";
 
-import { ReactComponent as LogoSimple } from "../../assets/illu/LogoSimple.svg";
 import { ReactComponent as Burger } from "../../assets/illu/Burger.svg";
 import { ReactComponent as Close } from "../../assets/illu/Close.svg";
 import { ReactComponent as Diamond } from "../../assets/illu/Diamond.svg";
-import { ReactComponent as Arrow } from "../../assets/illu/LittleArrow.svg";
+import { ReactComponent as Arrow } from "../../assets/illu/Arrow.svg";
+import { ReactComponent as Bulb } from "../../assets/illu/Bulb.svg";
+import { ReactComponent as Layout } from "../../assets/illu/Layout.svg";
+import { ReactComponent as Palette } from "../../assets/illu/ColorPalette.svg";
+import { ReactComponent as Package } from "../../assets/illu/Package.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
@@ -24,10 +27,13 @@ const icons = {
   tiktok: faTiktok,
   facebook: faFacebookSquare,
   burger: <Burger />,
-  logo: <LogoSimple />,
   diamond: <Diamond />,
   close: <Close />,
   arrow: <Arrow />,
+  bulb: <Bulb />,
+  layout: <Layout />,
+  palette: <Palette />,
+  package: <Package />,
 };
 
 export const IconTypeArray = Object.keys(icons) as Array<keyof typeof icons>;
@@ -57,7 +63,7 @@ const isIconDefinition = (
 export const Icon: React.FC<IconProps> = ({
   icon,
   rotate,
-  color = "gold",
+  color = "yellow",
   size = "regular",
   className,
 }) => {

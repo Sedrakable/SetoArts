@@ -9,14 +9,14 @@ import { Paragraph } from "./Paragraph";
 import { IconButton } from "./IconButton";
 import { Button } from "./Button";
 import { Link } from "./Link";
-import { CTAsType } from "../pages/content/data.types";
+import { ICta } from "../../data";
 
 export interface ModalProps {
   handleClose: () => void;
   spliderData: SpliderProps[];
   title: string;
   description: string;
-  ctas?: CTAsType;
+  ctas?: ICta[];
 }
 
 export const modalData = atom<ModalProps | null>(null);
@@ -45,10 +45,10 @@ const dropIn: Variants = {
 const linkedButton = (title: string, link: string) => {
   return link ? (
     <Link href={link} target="_blank">
-      <Button variant="primary">{title}</Button>
+      <Button variant="fancy">{title}</Button>
     </Link>
   ) : (
-    <Button variant="primary" disabled>
+    <Button variant="fancy" disabled>
       {title}
     </Button>
   );
@@ -71,28 +71,28 @@ export const Modal: React.FC<ModalProps> = ({
         exit="exit"
       >
         <div className={styles.left}>
-          <Splider slides={spliderData} small />
+          <Splider slides={spliderData} />
         </div>
         <div className={styles.right}>
           <div className={styles.text}>
-            <Heading level="2" as="h2" color="gold-grad" textAlign="left">
+            <Heading font="Cursive" level="2" as="h2" textAlign="left">
               {title}
             </Heading>
-            <Paragraph level="2">{description}</Paragraph>
+            <Paragraph level="small">{description}</Paragraph>
           </div>
           <div className={styles.ctas}>
-            <Paragraph level="2" textAlign="center" weight="regular">
+            <Paragraph level="small" textAlign="center" weight="regular">
               Coming soon to:
             </Paragraph>
-            <div className={styles.buttons}>
+            {/* <div className={styles.buttons}>
               {linkedButton("Amazon", ctas?.amazon!)}
               {linkedButton("Etsy", ctas?.etsy!)}
-            </div>
+            </div> */}
           </div>
           <div className={styles.close}>
             <IconButton
               onClick={handleClose}
-              iconProps={{ icon: "close", color: "gold", size: "small" }}
+              iconProps={{ icon: "close", size: "small" }}
             />
           </div>
         </div>

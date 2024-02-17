@@ -5,60 +5,57 @@ import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../../reuse/Paragraph";
 import { Button } from "../../reuse/Button";
 import { Link } from "../../reuse/Link";
+import { FlexDiv } from "../../reuse/FlexDiv";
+import { ICta } from "../../../data";
 
 export interface SideContainerProps {
   title: string;
-  subtitle?: string;
-  description?: string;
-  ctas?: {
-    text: string;
-    path: string;
-    link?: boolean;
-  };
-  side?: "left" | "right";
+  desc: string;
+  cta?: ICta;
 }
 
 export const SideContainer: React.FC<SideContainerProps> = ({
   title,
-  subtitle,
-  description,
-  ctas,
-  side = "left",
+  desc,
+  cta,
 }) => {
   return (
-    <div className={cn(styles.wrapper, { [styles.right]: side === "right" })}>
-      <div className={styles.container}>
-        <div className={styles.text}>
-          <Heading
-            as="h2"
-            level="2"
-            color="gold-grad"
-            textAlign={side === "right" ? "right" : "left"}
-          >
+    <div className={cn(styles.wrapper)}>
+      <FlexDiv
+        className={styles.container}
+        flex={{ direction: "column", x: "flex-start" }}
+        width100
+        gapArray={[4]}
+        padding={{ top: [6, 7], bottom: [7, 8] }}
+      >
+        <FlexDiv
+          flex={{ direction: "column", x: "flex-start" }}
+          className={styles.text}
+          gapArray={[2, 3]}
+        >
+          <Heading font="Seto" as="h2" level="2">
             {title}
           </Heading>
-          {subtitle && (
-            <Paragraph level="1" color="white" weight="regular">
-              {subtitle}
-            </Paragraph>
-          )}
-          {description && (
-            <Paragraph level="2" color="white" className={styles.description}>
-              {description}
-            </Paragraph>
-          )}
-        </div>
-        {ctas &&
-          (ctas?.link ? (
-            <Link href={ctas?.path} target="_blank">
-              <Button variant="primary">{ctas?.text!}</Button>
+
+          <Paragraph
+            level="regular"
+            color="white"
+            className={styles.description}
+          >
+            {desc}
+          </Paragraph>
+        </FlexDiv>
+        {cta &&
+          (cta?.link ? (
+            <Link href={cta?.link} target="_blank">
+              <Button variant="fancy">{cta?.text!}</Button>
             </Link>
           ) : (
-            <Button variant="primary" path={ctas?.path}>
-              {ctas?.text!}
+            <Button variant="fancy" path={cta?.link}>
+              {cta?.text!}
             </Button>
           ))}
-      </div>
+      </FlexDiv>
     </div>
   );
 };
