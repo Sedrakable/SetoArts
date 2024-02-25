@@ -1,0 +1,72 @@
+@import "../../../../css/mixins.scss";
+
+@mixin vars() {
+  --ratio: 4/3;
+  --transition: 200ms;
+  --container-min-width: 100%;
+  @media (min-width: $tablet) {
+  }
+
+  @media (min-width: $laptop) {
+    --container-min-width: 400px;
+  }
+
+  @media (min-width: $desktop) {
+  }
+}
+
+.workBlock {
+  align-items: stretch !important;
+  row-gap: var(--pad-5) !important;
+}
+
+.container {
+  @include vars;
+  aspect-ratio: var(--ratio);
+  position: relative;
+  overflow: hidden;
+  min-width: var(--container-min-width);
+  max-width: 100%;
+  flex: 1;
+  cursor: pointer;
+
+  .imgWrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    img {
+      transition: var(--transition);
+    }
+  }
+  .content {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    flex: 1;
+  }
+
+  &:hover {
+    .imgWrapper {
+      img {
+        transition: var(--transition);
+        transform: scale(1.1);
+      }
+    }
+    .content {
+      transition: var(--transition);
+      background-color: rgba(0, 0, 0, 0.1);
+      .title {
+        transition: var(--transition);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.grid {
+  .content {
+    background-color: var(--black);
+    > * {
+      color: var(--white) !important;
+    }
+  }
+}

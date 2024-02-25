@@ -1,16 +1,19 @@
 import React, { PropsWithChildren } from "react";
 import styles from "./Inspired.module.scss";
 import { Heading } from "../../../reuse/Heading";
-import { FlexDiv } from "../../../reuse/FlexDiv";
+import FlexDiv from "../../../reuse/FlexDiv";
 import { IInspired } from "../../../../data";
 import { Button } from "../../../reuse/Button";
 import { Image } from "../../../reuse/Image";
+import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
+import { useAtom } from "jotai";
 const stroke = require("../../../../assets/photos/BigStroke.png");
 
 export const Inspired: React.FC<PropsWithChildren<IInspired>> = ({
   title,
   cta,
 }) => {
+  const [lang] = useAtom(langData);
   return (
     <FlexDiv
       className={styles.block}
@@ -37,7 +40,9 @@ export const Inspired: React.FC<PropsWithChildren<IInspired>> = ({
             ?
           </Heading>
         </FlexDiv>
-        <Button variant="fancy">{cta?.text}</Button>
+        <Button variant="fancy" path={`/${lang}/contact`}>
+          {cta?.text}
+        </Button>
       </FlexDiv>
     </FlexDiv>
   );

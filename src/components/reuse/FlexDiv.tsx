@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { HTMLAttributes, PropsWithChildren } from "react";
 import {
   useSpacingGenerator,
   SpacingArrayType,
@@ -25,6 +25,7 @@ export interface FlexDivProps {
   height100?: boolean;
   width100?: boolean;
   customStyle?: React.CSSProperties;
+  wrap?: boolean;
 }
 
 interface PaddingProps {
@@ -44,25 +45,32 @@ const useGenerateSpacing = (
   return num;
 };
 
-export const FlexDiv: React.FC<PropsWithChildren<
-  FlexDivProps & React.HTMLAttributes<HTMLDivElement>
->> = ({
-  children,
-  gapArray,
-  padding = {},
-  flex,
-  height100,
-  width100,
-  customStyle,
-  ...props
-}) => {
+const FlexDiv: React.ForwardRefRenderFunction<
+  HTMLDivElement,
+  PropsWithChildren<FlexDivProps & HTMLAttributes<HTMLDivElement>>
+> = (
+  {
+    children,
+    gapArray,
+    padding = {},
+    flex,
+    height100,
+    width100,
+    wrap,
+    customStyle,
+    ...props
+  },
+  ref
+) => {
   // Calculate paddings outside of the object
   const paddingTop =
     padding.top || padding.vertical || padding.all || undefined;
   const paddingBottom =
     padding.bottom || padding.vertical || padding.all || undefined;
-  const paddingLeft = padding.left || padding.horizontal || undefined;
-  const paddingRight = padding.right || padding.horizontal || undefined;
+  const paddingLeft =
+    padding.left || padding.horizontal || padding.all || undefined;
+  const paddingRight =
+    padding.right || padding.horizontal || padding.all || undefined;
 
   //The order is super important here
   const paddings = {
@@ -85,6 +93,7 @@ export const FlexDiv: React.FC<PropsWithChildren<
 
   return (
     <div
+      ref={ref}
       style={{
         gap: gapNum && `var(--pad-${gapNum})`,
         display: "flex",
@@ -95,6 +104,7 @@ export const FlexDiv: React.FC<PropsWithChildren<
         height: height100 ? "100%" : undefined,
         width: width100 ? "100%" : undefined,
         boxSizing: "border-box",
+        flexWrap: wrap ? "wrap" : "nowrap",
         ...customStyle,
       }}
       {...props}
@@ -103,3 +113,5 @@ export const FlexDiv: React.FC<PropsWithChildren<
     </div>
   );
 };
+
+export default React.forwardRef(FlexDiv);

@@ -50,7 +50,7 @@ export const SanityImage: React.FC<PropsWithChildren<
 
   useEffect(() => {
     if (imgRef.current) {
-      console.log(imgRef.current.offsetWidth);
+      // console.log(imgRef.current.offsetWidth);
       setImgWidth(imgRef.current.offsetWidth);
     }
   }, [imgRef, isVisible]);
@@ -69,6 +69,7 @@ export const SanityImage: React.FC<PropsWithChildren<
   };
 
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);

@@ -1,0 +1,47 @@
+@import "../../../../css/mixins.scss";
+
+@mixin vars() {
+  --ratio: 4/3;
+  @media (min-width: $tablet) {
+  }
+
+  @media (min-width: $laptop) {
+  }
+
+  @media (min-width: $desktop) {
+  }
+}
+
+.features {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: stretch !important;
+  row-gap: var(--pad-5) !important;
+}
+
+.container {
+  @include flexColumn(flex-start, flex-start);
+  @include vars;
+  overflow: hidden;
+
+  .imgWrapper {
+    aspect-ratio: var(--ratio);
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  .content {
+    background: var(--white);
+
+    flex: 1;
+  }
+}
+
+.grid {
+  .content {
+    background-color: var(--black);
+    > * {
+      color: var(--white) !important;
+    }
+  }
+}

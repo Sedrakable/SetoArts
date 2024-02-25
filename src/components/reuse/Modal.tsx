@@ -1,22 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Variants, motion } from "framer-motion";
 import { Backdrop } from "./Backdrop";
 import styles from "./Modal.module.scss";
 import { Heading } from "./Heading";
 import { atom } from "jotai";
-import { Splider, SpliderProps } from "../pages/containers/Splider";
 import { Paragraph } from "./Paragraph";
 import { IconButton } from "./IconButton";
 import { Button } from "./Button";
 import { Link } from "./Link";
-import { ICta } from "../../data";
+import { ICta, IWork } from "../../data";
+import FlexDiv from "./FlexDiv";
+import { Title } from "./Title/Title";
+import { SanityImage } from "./SanityImage/SanityImage";
 
-export interface ModalProps {
+export interface ModalProps extends IWork {
   handleClose: () => void;
-  spliderData: SpliderProps[];
-  title: string;
-  description: string;
-  ctas?: ICta[];
 }
 
 export const modalData = atom<ModalProps | null>(null);
@@ -30,7 +28,7 @@ const dropIn: Variants = {
     y: "0",
     opacity: 1,
     transition: {
-      duration: 0.1,
+      duration: 0.01,
       type: "spring",
       damping: 100,
       stiffness: 500,
@@ -42,60 +40,102 @@ const dropIn: Variants = {
   },
 };
 
-const linkedButton = (title: string, link: string) => {
-  return link ? (
-    <Link href={link} target="_blank">
-      <Button variant="fancy">{title}</Button>
-    </Link>
-  ) : (
-    <Button variant="fancy" disabled>
-      {title}
-    </Button>
-  );
-};
 export const Modal: React.FC<ModalProps> = ({
   handleClose,
-  spliderData,
   title,
-  description,
-  ctas,
+  desc,
+  customImages,
+  primaryLink,
+  secondaryLinks,
+  behanceProjectId,
+  kickstarterProjectlink,
 }) => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  // useEffect(() => {
+  //   containerRef.current!.addEventListener("scroll", (event) => {
+  //     event.preventDefault();
+  //   });
+  // }, [containerRef]);
+
   return (
     <Backdrop onClick={handleClose}>
       <motion.div
-        onClick={(e) => e.stopPropagation()}
+        // onClick={(e) => e.stopPropagation()}
         className={styles.modal}
         variants={dropIn}
         initial="hidden"
         animate="visible"
         exit="exit"
+        ref={containerRef}
       >
-        <div className={styles.left}>
-          <Splider slides={spliderData} />
-        </div>
-        <div className={styles.right}>
-          <div className={styles.text}>
-            <Heading font="Cursive" level="2" as="h2" textAlign="left">
-              {title}
-            </Heading>
-            <Paragraph level="small">{description}</Paragraph>
-          </div>
-          <div className={styles.ctas}>
-            <Paragraph level="small" textAlign="center" weight="regular">
-              Coming soon to:
+        <FlexDiv
+          className={styles.container}
+          padding={{ vertical: [6, 7, 7, 8], horizontal: [6, 7, 7, 8] }}
+        >
+          <FlexDiv className={styles.text}>
+            <Title title={title} />
+            <Paragraph level="small" color="black">
+              {desc}
             </Paragraph>
-            {/* <div className={styles.buttons}>
-              {linkedButton("Amazon", ctas?.amazon!)}
-              {linkedButton("Etsy", ctas?.etsy!)}
-            </div> */}
-          </div>
-          <div className={styles.close}>
+          </FlexDiv>
+          <FlexDiv
+            className={styles.ctas}
+            gapArray={[4]}
+            padding={{ bottom: [1, 2, 2, 3] }}
+          >
+            <Button variant="primary" disabled href={primaryLink?.link}>
+              {primaryLink?.text}
+            </Button>
+            {secondaryLinks?.map((cta: ICta, key: number) => {
+              return (
+                <Button variant="secondary" disabled href={cta?.link} key={key}>
+                  {cta?.text}
+                </Button>
+              );
+            })}
+          </FlexDiv>
+          <FlexDiv
+            className={styles.embeded}
+            gapArray={[4]}
+            width100
+            wrap
+            padding={{ bottom: [2, 3, 3, 4] }}
+          >
+            {kickstarterProjectlink && (
+              <iframe
+                title={title}
+                src={`${kickstarterProjectlink}/widget/video.html`}
+              />
+            )}
+
+            <iframe
+              title={title}
+              src={`https://www.behance.net/embed/project/${behanceProjectId}?ilo0=1`}
+              allowFullScreen
+              loading="lazy"
+              allow="clipboard-write"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </FlexDiv>
+          <FlexDiv
+            className={styles.imagesWrapper}
+            gapArray={[2]}
+            width100
+            padding={{ all: [2] }}
+            wrap
+          >
+            {customImages.map((image, key) => {
+              return <SanityImage {...image} key={key} />;
+            })}
+          </FlexDiv>
+          <FlexDiv className={styles.close} padding={{ all: [2, 3, 3, 4] }}>
             <IconButton
               onClick={handleClose}
-              iconProps={{ icon: "close", size: "small" }}
+              iconProps={{ icon: "close", size: "regular" }}
             />
-          </div>
-        </div>
+          </FlexDiv>
+        </FlexDiv>
       </motion.div>
     </Backdrop>
   );

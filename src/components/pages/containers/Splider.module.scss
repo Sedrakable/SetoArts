@@ -67,6 +67,7 @@
 
       > * {
         cursor: pointer;
+        pointer-events: all;
       }
 
       .prevArrow {
@@ -103,7 +104,6 @@
   @media (min-width: $laptop) {
     .ui {
       height: 100%;
-      pointer-events: all;
     }
     .content {
       flex-direction: row !important;

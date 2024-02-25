@@ -25,12 +25,7 @@
   text-decoration: none !important;
   &.clickable {
     &:hover {
-      background: var(--gold-grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 200%;
-      animation: moveGradient 3s linear infinite;
-      text-shadow: 0 0 10px rgba(var(--gold-light-rgb), 0.5);
+      color: var(--yellow) !important;
     }
   }
 }

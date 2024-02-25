@@ -4,6 +4,7 @@
   --top-gap: var(--pad-6);
   --container-gap: var(--pad-5);
   --logo-width: 80%;
+  --border-width: 4px;
   @media (min-width: $tablet) {
     --top-gap: var(--pad-6);
     --logo-width: 300px;
@@ -21,20 +22,21 @@
 }
 
 .line {
-  flex: 1;
   background-color: var(--grey);
   opacity: 0.5;
   max-width: 2px;
   min-height: 100%;
   width: 100%;
+  align-self: stretch;
 }
 
 .footer {
   @include flex;
   @include vars;
 
-  width: 100%;
+  width: 100vw;
   background: var(--black);
+  border-top: var(--border-width) solid var(--yellow);
 
   .container {
     width: var(--screen-width-large);
@@ -43,7 +45,9 @@
     margin: 0 auto;
     position: relative;
     .legal {
-      flex: 1;
+      @media (min-width: $laptop) {
+        flex: 1;
+      }
       p {
         text-decoration: underline;
       }
@@ -65,6 +69,9 @@
     .links {
       flex: 1;
       row-gap: var(--pad-2) !important;
+      @media (min-width: $laptop) {
+        justify-content: flex-end !important;
+      }
     }
   }
 }

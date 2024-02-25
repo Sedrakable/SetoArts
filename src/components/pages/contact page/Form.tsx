@@ -1,24 +1,31 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Heading } from "../../reuse/Heading";
 import styles from "./Form.module.scss";
 import cn from "classnames";
 import { Button } from "../../reuse/Button";
-import { Paragraph } from "../../reuse/Paragraph";
+import { FancyText } from "../../reuse/FancyText";
+import FlexDiv from "../../reuse/FlexDiv";
+import { useWindowResize } from "../../../helpers/useWindowResize";
+import { IForm } from "../../../data";
 
-export const Form: React.FC<{ withMessage?: boolean }> = ({ withMessage }) => {
+export const Form: React.FC<IForm> = ({ desc, cta, formFields }) => {
   const form = useRef<HTMLFormElement>(null);
+  const { isMobileOrTablet, isLaptop } = useWindowResize();
+  const [budget, setBudget] = useState<string>("");
+
+  const handleBudgetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const numericValue = value.replace(/[^0-9.]/g, "");
+    console.log(numericValue);
+    // Ensure that only numeric characters are entered
+    setBudget(`CAD ${numericValue}`);
+  };
 
   const sendEmail = (e: any) => {
     e.preventDefault();
     console.log(form.current);
     emailjs
-      .sendForm(
-        "gmail",
-        withMessage ? "contact" : "emailList",
-        form.current!,
-        "bVxK7PZwLIutCAifw"
-      )
+      .sendForm("gmail", "contact-seto", form.current!, "bVxK7PZwLIutCAifw")
       .then(
         (result) => {
           console.log("sent");
@@ -32,48 +39,54 @@ export const Form: React.FC<{ withMessage?: boolean }> = ({ withMessage }) => {
     e.target.style.height = "inherit";
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
-  const mailingList = (
-    <div className={styles.wrapper}>
-      <div className={styles.content}>
-        <Heading font="Cursive" level="2" as="h2" textAlign="center">
-          Join our Mailing List
-        </Heading>
-        <Paragraph level="big" color="white" weight="regular">
-          Get notified about exclusive deals!
-        </Paragraph>
-        <form ref={form} className={styles.form} onSubmit={sendEmail}>
-          <input type="email" name="user_email" placeholder="Email" />
-          <Button variant="fancy">SEND</Button>
-        </form>
-      </div>
-    </div>
-  );
+
   const contact = (
-    <div className={styles.wrapper}>
-      <div className={styles.content}>
-        <Heading font="Seto" level="2" as="h2" textAlign="center">
-          Email Us
-        </Heading>
-        <form
-          ref={form}
-          className={cn(styles.form, styles.contactForm)}
-          onSubmit={sendEmail}
-        >
-          <div className={styles.info}>
-            <input type="email" name="user_email" placeholder="Email" />
-            <input type="text" name="user_name" placeholder="Name" />
-          </div>
-
-          <textarea
-            onKeyDown={handleKeyDown}
-            name="message"
-            placeholder="Message"
+    <FlexDiv
+      width100
+      flex={{
+        direction: isMobileOrTablet || isLaptop ? "column" : "row",
+        y: "flex-start",
+      }}
+      gapArray={[4]}
+    >
+      <FancyText {...desc} paragraph textAlign="center" />
+      <form
+        ref={form}
+        className={cn(styles.form, styles.contactForm)}
+        onSubmit={sendEmail}
+      >
+        <div className={styles.info}>
+          <input type="text" name="user_name" placeholder={formFields.name} />
+          <input
+            type="email"
+            name="user_email"
+            placeholder={formFields.email}
           />
+        </div>
+        <div className={styles.info}>
+          <input
+            type="text"
+            name="company_name"
+            placeholder={formFields.companyName}
+          />
+          <input
+            type="text"
+            name="budget"
+            placeholder={formFields.budget}
+            onChange={handleBudgetChange}
+            value={budget}
+          />
+        </div>
 
-          <Button variant="fancy">SEND</Button>
-        </form>
-      </div>
-    </div>
+        <textarea
+          onKeyDown={handleKeyDown}
+          name="message"
+          placeholder={formFields.message}
+        />
+
+        <Button variant="fancy">{cta.text}</Button>
+      </form>
+    </FlexDiv>
   );
-  return withMessage ? contact : mailingList;
+  return contact;
 };

@@ -1,8 +1,13 @@
 @import "../../css/mixins.scss";
 
 .tabButton {
-  @include flexColumn;
+  @include flexColumn(flex-start);
   position: relative;
+  cursor: pointer;
+  // width: 100%;
+  // @media (min-width: $laptop) {
+  //   width: auto;
+  // }
   .line {
     position: absolute;
     bottom: 0;
@@ -13,10 +18,17 @@
     }
   }
   .dropdown {
-    background: var(--white);
+    background: var(--yellow);
     width: 100%;
     position: absolute;
     bottom: 0;
-    transform: translateY(100%);
+    transform: translateY(110%);
+    box-sizing: content-box !important;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1),
+      inset 0 2px 6px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 5px 5px;
+    button:hover > * {
+      color: var(--black) !important;
+    }
   }
 }

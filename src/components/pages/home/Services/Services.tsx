@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Services.module.scss";
-import { FlexDiv } from "../../../reuse/FlexDiv";
+import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
 import { IService, IServices } from "../../../../data";
@@ -76,7 +76,11 @@ const Service: React.FC<ServiceProps> = ({
         >
           {features?.map((feature, key) => {
             return (
-              <Tag chosen={tagIndex === key} onClick={() => setTagIndex(key)}>
+              <Tag
+                chosen={tagIndex === key}
+                key={key}
+                onClick={() => setTagIndex(key)}
+              >
                 {feature.title}
               </Tag>
             );

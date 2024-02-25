@@ -1,27 +1,17 @@
 @import "../../../css/mixins.scss";
 
-.wrapper {
-  @include flex;
-
-  width: 100%;
-
-  .content {
-    @include flexColumn(flex-start);
-
-    width: 100%;
-    gap: var(--pad-1);
-  }
-}
-
 .form {
-  @include flexColumn(flex-start);
+  @include flexColumn;
 
   gap: var(--pad-3);
-  padding-top: var(--pad-4);
   width: 100%;
 
   @media (min-width: $tablet) {
     flex-direction: row;
+  }
+
+  @media (min-width: $desktop) {
+    justify-content: flex-start;
   }
 
   .info {
@@ -45,22 +35,19 @@ input,
 textarea {
   @include fontParagraph();
 
-  font-size: var(--paragraph-p2);
-  line-height: var(--paragraph-line-p2);
+  font-size: var(--paragraph-small);
+  line-height: var(--paragraph-small-line);
   box-sizing: border-box;
   width: 100%;
   border: none;
-  border-bottom: 2px solid var(--gold);
-  padding: var(--pad-3);
+  border-bottom: 2px solid var(--yellow);
+  padding: var(--pad-4) var(--pad-3) var(--pad-3) var(--pad-3);
   margin: 0;
 
   &:focus-visible {
     outline: none;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--yellow);
   }
-}
-input {
-  height: var(--button-height);
 }
 
 textarea {
@@ -74,8 +61,8 @@ textarea {
   background: none;
   width: 0;
   height: 0;
-  border-bottom: $size solid var(--gold);
-  border-right: $size solid var(--gold);
+  border-bottom: $size solid var(--yellow);
+  border-right: $size solid var(--yellow);
   border-left: $size solid transparent;
   border-top: $size solid transparent;
 }

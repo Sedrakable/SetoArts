@@ -2,6 +2,7 @@
 
 @mixin vars() {
   --quote-height: 60px;
+  --quote-width: 100vw;
   --left-width: 50%;
   --right-width: 50%;
   --logo-height: 32px;
@@ -12,6 +13,7 @@
   }
 
   @media (min-width: $laptop) {
+    --quote-width: auto;
     --right-width: auto;
     --left-width: calc(100vw / 3);
   }
@@ -25,7 +27,16 @@
 .quote {
   @include vars;
   height: var(--quote-height);
-
+  width: var(--quote-width);
+  &.v2 {
+    width: 100%;
+    .left {
+      width: 50% !important;
+    }
+    .right {
+      width: 50% !important;
+    }
+  }
   .left {
     background: var(--black);
     width: var(--left-width);

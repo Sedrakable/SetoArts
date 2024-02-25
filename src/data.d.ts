@@ -15,6 +15,10 @@ export interface IImage {
   _type: string;
 }
 
+export interface ISlug {
+  current: string;
+  _type: string;
+}
 export interface IFancyText {
   part1: string;
   part2: string;
@@ -100,15 +104,22 @@ export interface IAbout {
   content: IAboutContent;
 }
 
-export interface IWork {
-  works: IWorkSlide[];
+export interface IWorkBlock {
+  title?: string;
+  works: IWork[];
 }
 
-export interface IWorkSlide {
-  customImage: ICustomImage;
+export interface IWork {
+  _id: string;
+  slug: ISlug;
+  thumbnailImage: ICustomImage;
+  customImages: ICustomImage[];
   title: string;
   desc: string;
-  cta?: ICta;
+  primaryLink: ICta;
+  secondaryLinks?: ICta[];
+  behanceProjectId?: string;
+  kickstarterProjectlink?: string;
 }
 
 export interface IInspired {
@@ -125,7 +136,21 @@ export interface INavBar {
   links: (INavLink | ICta)[];
 }
 
-export interface IFooter extends INavLinks {
-  terms: string;
-  privacy: string;
+export interface IFooter {
+  privacyTerms: ICta[];
+  trademark: string;
+}
+
+export interface IForm {
+  desc: IFancyText;
+  formFields: IFieldPlaceholders;
+  cta: ICta;
+}
+
+export interface IFieldPlaceholders {
+  name: string;
+  email: string;
+  companyName: string;
+  budget: string;
+  message: string;
 }

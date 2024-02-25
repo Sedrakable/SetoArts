@@ -2,6 +2,7 @@
 
 @mixin vars() {
   --logo-size: 40px;
+  --sidebar-width: 100%;
 
   @media (min-width: $tablet) {
     --logo-size: 48px;
@@ -13,6 +14,20 @@
 
   @media (min-width: $desktop) {
     --logo-size: 64px;
+  }
+}
+
+.logo {
+  height: var(--logo-size);
+
+  transition: 200ms;
+  cursor: pointer;
+  svg {
+    height: 100%;
+    width: auto;
+  }
+  &:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -30,19 +45,7 @@
 
   .navbar {
     width: var(--screen-width-large);
-    .logo {
-      height: var(--logo-size);
-
-      transition: 200ms;
-      cursor: pointer;
-      svg {
-        height: 100%;
-        width: auto;
-      }
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
+    position: relative;
   }
 }
 
@@ -58,70 +61,77 @@
 }
 
 .sidebar {
+  @include vars;
   @include flexColumn(flex-start, flex-start);
 
   position: fixed;
-  width: 100%;
+  width: var(--sidebar-width);
   height: 100%;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   top: 0;
+  right: 0;
   bottom: 0;
-  background: var(--black);
-  z-index: 3;
+  z-index: 12;
   transition: transform 200ms ease;
 
   &.isOpen {
     transform: translateX(0);
   }
 
-  .tabs {
-    @include flexColumn(flex-start, flex-start);
-
-    background-color: var(--grey);
-    width: 100%;
-    height: 100%;
-    flex: 1;
-
-    .tabWrapper {
-      gap: var(--pad-3);
-
-      transition: 500ms;
-      box-sizing: border-box;
-      width: 100%;
-      &:hover {
-        gap: var(--pad-4);
-      }
-      .tab {
-        height: 50px;
-        padding: 0;
-      }
-    }
-
-    .emailList,
-    .followUs {
-      @include flexColumn(center, flex-start);
-
-      width: 100%;
-      padding: var(--pad-4);
-      padding-bottom: var(--pad-5);
-      box-sizing: border-box;
-      background-color: var(--black);
-    }
-
-    .followUs {
-      background-color: var(--grey);
-    }
-
-    &:after {
-      content: "";
-      width: 100%;
-      flex: 1;
-      background-color: var(--black);
+  .closeTab {
+    height: var(--navbar-height);
+    background-color: var(--black);
+    path:global(.x) {
+      fill: var(--white);
     }
   }
-  .tab {
-    @include flex;
-    padding: 0 var(--pad-3);
-    height: var(--navbar-height-big);
+
+  .tabs {
+    flex: 1;
+    .tabWrapper {
+      background-color: var(--white);
+      width: 100%;
+      min-height: var(--navbar-height);
+      height: fit-content;
+      border-bottom: 1px solid var(--grey);
+      &:last-child {
+        background-color: transparent;
+        padding: var(--pad-3) var(--pad-4) !important;
+        height: fit-content !important;
+        border-bottom: none;
+        @media (min-width: $tablet) {
+          display: none !important;
+        }
+      }
+      &:nth-last-child(2) {
+        border-bottom-color: var(--white);
+      }
+    }
+
+    // .emailList,
+    // .followUs {
+    //   @include flexColumn(center, flex-start);
+
+    //   width: 100%;
+    //   padding: var(--pad-4);
+    //   padding-bottom: var(--pad-5);
+    //   box-sizing: border-box;
+    //   background-color: var(--black);
+    // }
+
+    // .followUs {
+    //   background-color: var(--grey);
+    // }
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+
+      background-color: var(--black);
+      opacity: 0.95;
+      height: 100vh;
+      z-index: -1;
+    }
   }
 }

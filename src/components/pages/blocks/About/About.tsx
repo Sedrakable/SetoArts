@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./About.module.scss";
 import { Block } from "../../containers/Block";
-import { FlexDiv } from "../../../reuse/FlexDiv";
+import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { FancyText } from "../../../reuse/FancyText";
 import { Button } from "../../../reuse/Button";

@@ -31,7 +31,6 @@
 
 .fancyParagraph {
   @include vars;
-  flex-wrap: wrap;
   .cursive {
     font-size: var(--paragraph-font-size);
     line-height: var(--paragraph-font-size);
@@ -41,7 +40,6 @@
 .fancyHeading {
   @include vars;
   white-space: wrap;
-  flex-wrap: wrap;
   row-gap: var(--pad-1) !important;
   position: relative;
   .cursive {

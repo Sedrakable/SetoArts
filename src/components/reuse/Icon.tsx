@@ -4,13 +4,14 @@ import cn from "classnames";
 import { ColorType } from "./Heading";
 
 import { ReactComponent as Burger } from "../../assets/illu/Burger.svg";
-import { ReactComponent as Close } from "../../assets/illu/Close.svg";
+import { ReactComponent as Close } from "../../assets/illu/X.svg";
 import { ReactComponent as Diamond } from "../../assets/illu/Diamond.svg";
 import { ReactComponent as Arrow } from "../../assets/illu/Arrow.svg";
 import { ReactComponent as Bulb } from "../../assets/illu/Bulb.svg";
 import { ReactComponent as Layout } from "../../assets/illu/Layout.svg";
 import { ReactComponent as Palette } from "../../assets/illu/ColorPalette.svg";
 import { ReactComponent as Package } from "../../assets/illu/Package.svg";
+import { ReactComponent as Internet } from "../../assets/illu/Internet.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
@@ -34,6 +35,7 @@ const icons = {
   layout: <Layout />,
   palette: <Palette />,
   package: <Package />,
+  internet: <Internet />,
 };
 
 export const IconTypeArray = Object.keys(icons) as Array<keyof typeof icons>;

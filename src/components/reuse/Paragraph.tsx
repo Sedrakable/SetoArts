@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import styles from "./Paragraph.module.scss";
 import cn from "classnames";
 import { capitalizeString } from "./Heading";
@@ -7,19 +7,10 @@ import {
   useSpacingGenerator,
 } from "../../helpers/SpacingGenerator";
 
-type textAlign =
-  | "start"
-  | "end"
-  | "left"
-  | "right"
-  | "center"
-  | "justify"
-  | "match-parent";
-
 export interface ParagraphProps {
   children: string | JSX.Element;
   level: "small" | "regular" | "big";
-  textAlign?: textAlign;
+  textAlign?: CSSProperties["textAlign"];
   paddingBottomArray?: SpacingArrayType;
   color?: "white" | "black" | "grey" | "yellow";
   weight?: "weak" | "regular";

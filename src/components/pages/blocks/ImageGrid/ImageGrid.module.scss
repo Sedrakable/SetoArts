@@ -1,0 +1,10 @@
+@import "../../../../css/mixins.scss";
+
+.wrapper {
+  background-color: var(--black);
+  img {
+    flex: 1;
+    height: 400px !important;
+    width: auto !important;
+  }
+}

@@ -34,6 +34,10 @@ export const useFetchPage = (query: string) => {
 
     fetchData();
   }, [query]);
-
+  if (!page) {
+    console.error("Error fetch page data: ", query, page);
+  } else {
+    console.log("Fetched Page data: ", page);
+  }
   return page;
 };

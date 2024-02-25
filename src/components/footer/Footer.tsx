@@ -1,58 +1,80 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import { Form } from "../pages/contact page/Form";
 import { Paragraph } from "../reuse/Paragraph";
 
 import { Link } from "../reuse/Link";
-import { FollowUs } from "./FollowUs";
-import { FlexDiv } from "../reuse/FlexDiv";
+import FlexDiv from "../reuse/FlexDiv";
 import { ReactComponent as LogoHori } from "../../assets/illu/LogoHorizontal.svg";
 import { useWindowResize } from "../../helpers/useWindowResize";
+import { ICta, IFooter, INavBar } from "../../data";
+import { isCta } from "../navbar/Navbar";
 
 const Line: React.FC = () => {
   return <div className={styles.line} />;
 };
-const Nav: React.FC = () => {
+const Nav: React.FC<INavBar> = ({ links }) => {
   return (
-    <FlexDiv className={styles.links} gapArray={[5]} flex={{ x: "flex-end" }}>
-      {/* {tabTexts.map((tabText, key) => {
-        return (
-          <Link href={`/${tabText}`} key={key}>
-            <Paragraph level="regular" weight="regular" capitalise clickable>
-              {tabText}
-            </Paragraph>
-          </Link>
-        );
-      })} */}
+    <FlexDiv
+      className={styles.links}
+      gapArray={[5]}
+      flex={{ x: "center" }}
+      wrap
+    >
+      {links.map((link, key) => {
+        if (isCta(link)) {
+          return (
+            <Link href={link?.link!} key={key}>
+              <Paragraph level="regular" weight="regular" capitalise clickable>
+                {link?.text}
+              </Paragraph>
+            </Link>
+          );
+        } else {
+          const subLinks = link.ctaArray.map((link, key) => {
+            return (
+              <Link href={link?.link!} key={key}>
+                <Paragraph
+                  level="regular"
+                  weight="regular"
+                  capitalise
+                  clickable
+                >
+                  {link?.text}
+                </Paragraph>
+              </Link>
+            );
+          });
+          return subLinks;
+        }
+      })}
     </FlexDiv>
   );
 };
 
-const Logo: React.FC = () => {
+const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
   return (
     <FlexDiv
       className={styles.logo}
       flex={{ direction: "column" }}
       gapArray={[5]}
-      padding={{ bottom: [2] }}
+      padding={{ bottom: [0, 0, 2] }}
     >
       <LogoHori />
       <Paragraph level="small" weight="weak" color="grey" textAlign="center">
-        2024 Seto x Arts. All rights reserved.
+        {trademark}
       </Paragraph>
     </FlexDiv>
   );
 };
 
-const legalTexts = ["Terms & Conditions", "Privacy Policy"];
-const Legal: React.FC = () => {
+const Legal: React.FC<{ privacyTerms: ICta[] }> = ({ privacyTerms }) => {
   return (
     <FlexDiv className={styles.legal} gapArray={[5]} flex={{ x: "flex-start" }}>
-      {legalTexts.map((text, key) => {
+      {privacyTerms.map((cta, key) => {
         return (
-          <Link href={`/`} key={key}>
+          <Link href={cta?.link!} key={key}>
             <Paragraph level="small" weight="weak" color="grey" clickable>
-              {text}
+              {cta?.text}
             </Paragraph>
           </Link>
         );
@@ -61,40 +83,51 @@ const Legal: React.FC = () => {
   );
 };
 
-const DesktopFooter: React.FC = () => {
+const DesktopFooter: React.FC<FooterProps> = ({
+  links,
+  privacyTerms,
+  trademark,
+}) => {
   return (
     <FlexDiv
       className={styles.container}
       flex={{ y: "stretch" }}
-      padding={{ top: [7], bottom: [8] }}
+      padding={{ vertical: [7] }}
     >
-      <Nav />
+      <Nav links={links} />
       <Line />
-      <Logo />
+      <Logo trademark={trademark} />
       <Line />
-      <Legal />
+      <Legal privacyTerms={privacyTerms} />
     </FlexDiv>
   );
 };
 
-const TabletFooter: React.FC = () => {
+const TabletFooter: React.FC<FooterProps> = ({
+  links,
+  privacyTerms,
+  trademark,
+}) => {
   return (
     <FlexDiv
       className={styles.container}
       flex={{ y: "stretch" }}
       padding={{ top: [7], bottom: [7] }}
-      customStyle={{ flexWrap: "wrap" }}
     >
-      <Logo />
+      <Logo trademark={trademark} />
       <Line />
       <FlexDiv flex={{ direction: "column" }}>
-        <Nav />
-        <Legal />
+        <Nav links={links} />
+        <Legal privacyTerms={privacyTerms} />
       </FlexDiv>
     </FlexDiv>
   );
 };
-const MobileFooter: React.FC = () => {
+const MobileFooter: React.FC<FooterProps> = ({
+  links,
+  privacyTerms,
+  trademark,
+}) => {
   return (
     <FlexDiv
       className={styles.container}
@@ -102,27 +135,26 @@ const MobileFooter: React.FC = () => {
       padding={{ top: [6], bottom: [7] }}
       gapArray={[6]}
     >
-      <Nav />
-      <Logo />
-      <Legal />
+      <Nav links={links} />
+      <Logo trademark={trademark} />
+      <Legal privacyTerms={privacyTerms} />
     </FlexDiv>
   );
 };
 
-const Footer: React.FC = () => {
+type FooterProps = IFooter & INavBar;
+export const Footer: React.FC<FooterProps> = (props) => {
   const { isMobile, isTablet } = useWindowResize();
 
   return (
     <footer className={styles.footer}>
       {isMobile ? (
-        <MobileFooter />
+        <MobileFooter {...props} />
       ) : isTablet ? (
-        <TabletFooter />
+        <TabletFooter {...props} />
       ) : (
-        <DesktopFooter />
+        <DesktopFooter {...props} />
       )}
     </footer>
   );
 };
-
-export default Footer;

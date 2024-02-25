@@ -1,21 +1,25 @@
 import React, { PropsWithChildren } from "react";
 import styles from "./Block.module.scss";
 
-import { FlexDiv } from "../../reuse/FlexDiv";
-import { Heading } from "../../reuse/Heading";
+import FlexDiv from "../../reuse/FlexDiv";
 import { Image } from "../../reuse/Image";
 import cn from "classnames";
-const stroke = require("../../../assets/photos/TitleStroke.png");
+import { Title } from "../../reuse/Title/Title";
+const bigStroke = require("../../../assets/photos/BigStroke.png");
 
-export const tabTexts: string[] = ["home", "services", "about + work"];
+export type BlockVariant = "grid" | "dark" | "fabric";
 
 interface BlockProps {
   title: string;
-  variant: "grid" | "dark" | "fabric";
+  variant: BlockVariant;
+  strokes?: boolean;
+  shadow?: boolean;
 }
 export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
   title,
   variant = "dark",
+  shadow = true,
+  strokes,
   children,
 }) => {
   const textures: { [key: string]: React.CSSProperties } = {
@@ -34,23 +38,21 @@ export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
     <FlexDiv
       customStyle={textures[variant]}
       flex={{ direction: "column" }}
-      className={cn(styles.block, { [styles.light]: variant !== "dark" })}
+      className={cn(styles.block, {
+        [styles.light]: variant !== "dark" && shadow,
+      })}
       gapArray={[5, 6, 6, 7]}
       padding={{ top: [6, 7, 7, 8], bottom: [8, 8, 8, 9] }}
       width100
     >
-      <FlexDiv className={styles.title} padding={{ horizontal: [5, 6, 6, 7] }}>
-        <Heading
-          font="Seto"
-          as="h2"
-          level="2"
-          color={variant === "dark" ? "white" : "black"}
-          className={styles.heading}
-        >
-          {title}
-        </Heading>
-        <Image src={stroke} alt="stroke" />
-      </FlexDiv>
+      <Title title={title} color={variant === "dark" ? "white" : "black"} />
+      {strokes && variant === "dark" && (
+        <div className={styles.strokes}>
+          <Image src={bigStroke} alt="stroke" />
+          <Image src={bigStroke} alt="stroke" />
+          <Image src={bigStroke} alt="stroke" />
+        </div>
+      )}
       <FlexDiv className={styles.content} width100>
         {children}
       </FlexDiv>

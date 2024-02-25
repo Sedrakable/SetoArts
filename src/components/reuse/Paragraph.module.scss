@@ -48,6 +48,7 @@
 
 .paragraph {
   @include fontParagraph;
+  width: 100%;
 }
 
 .clickable {

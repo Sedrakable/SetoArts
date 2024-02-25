@@ -3,6 +3,7 @@
 .app {
   @include flexColumn(flex-start, flex-start);
 
+  min-height: 100%;
   overflow-x: hidden;
   position: relative;
 
@@ -11,5 +12,6 @@
 
     padding-top: var(--navbar-height);
     width: 100%;
+    flex: 1;
   }
 }

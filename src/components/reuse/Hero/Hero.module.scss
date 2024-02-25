@@ -1,4 +1,4 @@
-@import "../../css/mixins.scss";
+@import "../../../css/mixins.scss";
 
 @mixin vars() {
   --left-height: 100vw;
@@ -37,7 +37,8 @@
   height: auto;
   border-bottom: 2px solid var(--gold);
   .quote {
-    width: 100%;
+    @include flex(flex-start);
+    width: 100% !important;
   }
   .left {
     @include flexColumn;
@@ -54,7 +55,7 @@
       left: 0;
       width: 100%;
       height: 100%; /* Adjust as needed */
-      background-image: url("../../assets/photos/Textures/FabricTexture.png");
+      background-image: url("../../../assets/photos/Textures/FabricTexture.png");
       background-size: var(--bg-size); /* Adjust as needed */
       background-position: bottom;
       background-repeat: repeat-x;

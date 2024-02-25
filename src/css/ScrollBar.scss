@@ -1,16 +1,17 @@
 @import "./mixins.scss";
 
 @mixin vars() {
-  --scrollbar-width: 5px;
+  --scrollbar-width: 6px;
   @media (min-width: $tablet) {
-    --scrollbar-width: 10px;
+    --scrollbar-width: 8px;
   }
 
   @media (min-width: $laptop) {
+    --scrollbar-width: 10px;
   }
 
   @media (min-width: $desktop) {
-    --scrollbar-width: 15px;
+    --scrollbar-width: 10px;
   }
 }
 

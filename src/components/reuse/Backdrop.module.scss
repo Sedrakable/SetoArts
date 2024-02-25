@@ -2,9 +2,16 @@
 
 .backdrop {
   @include absoluteFill;
-  @include flex;
-  @include blurEffect(2px);
+  @include flex(center, flex-start);
 
+  opacity: 1;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
+  width: 100%;
+  height: 100vh;
   z-index: 10;
+  overflow-y: scroll;
+  padding: var(--pad-9) 0;
+  box-sizing: border-box;
 }

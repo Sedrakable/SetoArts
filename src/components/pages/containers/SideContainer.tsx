@@ -5,19 +5,21 @@ import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../../reuse/Paragraph";
 import { Button } from "../../reuse/Button";
 import { Link } from "../../reuse/Link";
-import { FlexDiv } from "../../reuse/FlexDiv";
+import FlexDiv from "../../reuse/FlexDiv";
 import { ICta } from "../../../data";
 
 export interface SideContainerProps {
   title: string;
   desc: string;
-  cta?: ICta;
+  primaryCta?: ICta;
+  seconadryCta?: ICta;
 }
 
 export const SideContainer: React.FC<SideContainerProps> = ({
   title,
   desc,
-  cta,
+  primaryCta,
+  seconadryCta,
 }) => {
   return (
     <div className={cn(styles.wrapper)}>
@@ -45,16 +47,22 @@ export const SideContainer: React.FC<SideContainerProps> = ({
             {desc}
           </Paragraph>
         </FlexDiv>
-        {cta &&
-          (cta?.link ? (
-            <Link href={cta?.link} target="_blank">
-              <Button variant="fancy">{cta?.text!}</Button>
-            </Link>
-          ) : (
-            <Button variant="fancy" path={cta?.link}>
-              {cta?.text!}
+        <FlexDiv gapArray={[4]}>
+          {primaryCta && (
+            <Button variant="primary" path={primaryCta?.link}>
+              {primaryCta?.text!}
             </Button>
-          ))}
+          )}
+          {seconadryCta && (
+            <Button
+              variant="secondary"
+              href={seconadryCta?.link!}
+              target="_blank"
+            >
+              {seconadryCta?.text!}
+            </Button>
+          )}
+        </FlexDiv>
       </FlexDiv>
     </div>
   );

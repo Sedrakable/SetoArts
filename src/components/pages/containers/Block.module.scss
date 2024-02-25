@@ -2,22 +2,54 @@
 
 @mixin vars() {
   --stroke-height: 32px;
+  --big-stoke-width: 160px;
   @media (min-width: $tablet) {
     --stroke-height: 48px;
+    --big-stoke-width: 200px;
   }
 
   @media (min-width: $laptop) {
+    --big-stoke-width: 240px;
   }
 
   @media (min-width: $desktop) {
     --stroke-height: 64px;
+    --big-stoke-width: 400px;
   }
 }
 
 .block {
   @include vars;
   background: var(--white);
+  position: relative;
+  overflow: hidden;
+  flex: 1;
 
+  .strokes {
+    @include absoluteFill;
+
+    img {
+      position: absolute;
+
+      width: var(--big-stoke-width);
+
+      object-fit: scale-down !important;
+      transform: rotate(240deg);
+      &:nth-child(1) {
+        top: -48%;
+        left: 25%;
+      }
+      &:nth-child(2) {
+        top: -35%;
+        right: 10%;
+      }
+      &:nth-child(3) {
+        bottom: -40%;
+        right: 50%;
+        transform: rotate(60deg);
+      }
+    }
+  }
   &.light {
     box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15) inset;
   }
@@ -40,5 +72,6 @@
   }
   .content {
     max-width: var(--screen-width-small);
+    z-index: 1;
   }
 }

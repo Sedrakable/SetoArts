@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Values.module.scss";
-import { FlexDiv } from "../../../reuse/FlexDiv";
+import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
 import { Paragraph } from "../../../reuse/Paragraph";

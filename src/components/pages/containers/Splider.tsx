@@ -10,13 +10,12 @@ import "@splidejs/react-splide/css/skyblue";
 
 import { SideContainer, SideContainerProps } from "./SideContainer";
 import cn from "classnames";
-import { FlexDiv } from "../../reuse/FlexDiv";
+import FlexDiv from "../../reuse/FlexDiv";
 import { Icon } from "../../reuse/Icon";
 import {
   SanityImage,
   SanityImageProps,
 } from "../../reuse/SanityImage/SanityImage";
-import { IWorkSlide } from "../../../data";
 import { useWindowResize } from "../../../helpers/useWindowResize";
 
 export interface SpliderProps {
