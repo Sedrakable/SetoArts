@@ -1,7 +1,7 @@
 {
   "name": "setoxarts",
   "version": "0.1.0",
-  "homepage": "https://sedrakable.github.io/SetoArts",
+  "homepage": "https://Sedrakable.github.io/SetoArts",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
