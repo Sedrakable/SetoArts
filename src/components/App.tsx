@@ -17,6 +17,8 @@ import { Footer } from "./footer/Footer";
 import { AboutPage } from "./pages/AboutPage";
 import { langData } from "./navbar/LangSwitcher/LangSwitcher";
 import { ContactPage } from "./pages/ContactPage";
+import { NotFound } from "./pages/NotFound";
+import { LegalPage } from "./pages/LegalPage";
 
 const App = () => {
   const ref = useRef<any>(null);
@@ -27,9 +29,31 @@ const App = () => {
   const navQuery = `*[_type == 'navbar' && lang == '${lang}'][0]`;
   const navbarData: INavBar = useFetchPage(navQuery)!;
 
-  const footerQuery = `*[_type == 'footer' && lang == '${lang}'][0]`;
+  const footerQuery = `*[_type == 'footer' && lang == '${lang}'][0]{
+    ...,
+    legals[]->{
+      title,
+      path,
+    },
+    socials->{
+      ...,
+      links[],
+    },
+  }`;
   const footerData: IFooter = useFetchPage(footerQuery)!;
+  console.log("footer", footerData);
 
+  const servicesQuery = `*[_type == 'servicePage' && lang == '${lang}']{
+   path
+  }`;
+  const serviceData: { path: string }[] = useFetchPage(servicesQuery)!;
+
+  const legalQuery = `*[_type == 'legalPage' && lang == '${lang}']{
+    path
+  }`;
+
+  const legalPageData: { path: string }[] = useFetchPage(legalQuery)!;
+  // console.log("legal", legalPageData);
   useEffect(() => {
     modalOpen
       ? (document.body.style.overflow = "hidden")
@@ -55,28 +79,34 @@ const App = () => {
             <Route path="/" element={<Navigate to={`/${lang}/home`} />} />
             <Route path={`/${lang}/home`} element={<HomePage />} />
             <Route path={`/${lang}/home`} element={<HomePage />} />
-            <Route
-              path={`/${lang}/service/landing`}
-              element={<ServicePage path="landing" />}
-            />
-            <Route
-              path={`/${lang}/service/branding`}
-              element={<ServicePage path="branding" />}
-            />
-            <Route
-              path={`/${lang}/service/custom`}
-              element={<ServicePage path="custom" />}
-            />
+            {serviceData?.map((service) => {
+              return (
+                <Route
+                  path={`/${lang}/service/${service.path}`}
+                  element={<ServicePage path={service.path} />}
+                />
+              );
+            })}
             <Route path={`/${lang}/about`} element={<AboutPage />} />
             <Route path={`/${lang}/contact`} element={<ContactPage />} />
+            {legalPageData?.map((page) => {
+              return (
+                <Route
+                  path={`/${lang}/${page.path}`}
+                  element={<LegalPage path={page.path} />}
+                />
+              );
+            })}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
 
         {footerData && (
           <Footer
-            privacyTerms={footerData?.privacyTerms}
+            legals={footerData?.legals}
             trademark={footerData?.trademark}
             links={navbarData?.links}
+            socials={{ links: footerData?.socials?.links }}
           />
         )}
       </div>

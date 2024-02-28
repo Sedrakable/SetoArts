@@ -136,9 +136,25 @@ export interface INavBar {
   links: (INavLink | ICta)[];
 }
 
+export interface ISocials {
+  title?: string;
+  links: ICta[];
+}
+
+export interface IBlock {
+  _key: string;
+  _type: string;
+  children: { _key: string; _type: string; marks: string[]; text: string }[];
+}
+
+export interface ILegalPage {
+  title: string;
+  data: IBlock[];
+}
 export interface IFooter {
-  privacyTerms: ICta[];
+  legals: { title: string; path: string }[];
   trademark: string;
+  socials: ISocials;
 }
 
 export interface IForm {
@@ -153,4 +169,10 @@ export interface IFieldPlaceholders {
   companyName: string;
   budget: string;
   message: string;
+}
+
+export interface INotFound {
+  title: string;
+  desc: string;
+  cta: ICta;
 }

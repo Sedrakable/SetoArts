@@ -47,7 +47,7 @@ export const SideContainer: React.FC<SideContainerProps> = ({
             {desc}
           </Paragraph>
         </FlexDiv>
-        <FlexDiv gapArray={[4]}>
+        <FlexDiv gapArray={[4]} wrap width100 flex={{ x: "flex-start" }}>
           {primaryCta && (
             <Button variant="primary" path={primaryCta?.link}>
               {primaryCta?.text!}

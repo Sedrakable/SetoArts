@@ -45,25 +45,16 @@
     margin: 0 auto;
     position: relative;
     .legal {
-      @media (min-width: $laptop) {
-        flex: 1;
-      }
       p {
         text-decoration: underline;
+        // &:hover {
+        //   color: var(--yellow);
+        // }
       }
     }
     .logo {
       position: relative;
       width: var(--logo-width);
-      // border: 2px solid var(--grey);
-      // border-top: none;
-      // border-bottom: none;
-
-      // padding-bottom: 40px !important;
-      // p {
-      //   position: absolute;
-      //   bottom: -60px;
-      // }
     }
 
     .links {

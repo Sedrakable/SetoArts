@@ -8,6 +8,7 @@ import { ReactComponent as LogoHori } from "../../assets/illu/LogoHorizontal.svg
 import { useWindowResize } from "../../helpers/useWindowResize";
 import { ICta, IFooter, INavBar } from "../../data";
 import { isCta } from "../navbar/Navbar";
+import { Socials } from "./Socials";
 
 const Line: React.FC = () => {
   return <div className={styles.line} />;
@@ -67,14 +68,21 @@ const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
   );
 };
 
-const Legal: React.FC<{ privacyTerms: ICta[] }> = ({ privacyTerms }) => {
+const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
+  legals,
+}) => {
   return (
-    <FlexDiv className={styles.legal} gapArray={[5]} flex={{ x: "flex-start" }}>
-      {privacyTerms.map((cta, key) => {
+    <FlexDiv
+      className={styles.legal}
+      gapArray={[5]}
+      wrap
+      flex={{ x: "flex-start" }}
+    >
+      {legals.map((cta, key) => {
         return (
-          <Link href={cta?.link!} key={key}>
+          <Link href={cta?.path!} key={key}>
             <Paragraph level="small" weight="weak" color="grey" clickable>
-              {cta?.text}
+              {cta?.title}
             </Paragraph>
           </Link>
         );
@@ -85,8 +93,9 @@ const Legal: React.FC<{ privacyTerms: ICta[] }> = ({ privacyTerms }) => {
 
 const DesktopFooter: React.FC<FooterProps> = ({
   links,
-  privacyTerms,
+  legals,
   trademark,
+  socials,
 }) => {
   return (
     <FlexDiv
@@ -98,15 +107,24 @@ const DesktopFooter: React.FC<FooterProps> = ({
       <Line />
       <Logo trademark={trademark} />
       <Line />
-      <Legal privacyTerms={privacyTerms} />
+      <FlexDiv
+        flex={{ direction: "column", y: "space-between", x: "flex-start" }}
+        customStyle={{ flex: 1, minHeight: "100%" }}
+        padding={{ vertical: [4] }}
+        gapArray={[4]}
+      >
+        <Legal legals={legals} />
+        <Socials {...socials} />
+      </FlexDiv>
     </FlexDiv>
   );
 };
 
 const TabletFooter: React.FC<FooterProps> = ({
   links,
-  privacyTerms,
+  legals,
   trademark,
+  socials,
 }) => {
   return (
     <FlexDiv
@@ -116,17 +134,21 @@ const TabletFooter: React.FC<FooterProps> = ({
     >
       <Logo trademark={trademark} />
       <Line />
-      <FlexDiv flex={{ direction: "column" }}>
+      <FlexDiv flex={{ direction: "column" }} gapArray={[4]}>
         <Nav links={links} />
-        <Legal privacyTerms={privacyTerms} />
+        <FlexDiv flex={{ x: "center" }} gapArray={[4]} wrap width100>
+          <Legal legals={legals} />
+          <Socials {...socials} />
+        </FlexDiv>
       </FlexDiv>
     </FlexDiv>
   );
 };
 const MobileFooter: React.FC<FooterProps> = ({
   links,
-  privacyTerms,
+  legals,
   trademark,
+  socials,
 }) => {
   return (
     <FlexDiv
@@ -135,9 +157,10 @@ const MobileFooter: React.FC<FooterProps> = ({
       padding={{ top: [6], bottom: [7] }}
       gapArray={[6]}
     >
+      <Socials {...socials} />
       <Nav links={links} />
       <Logo trademark={trademark} />
-      <Legal privacyTerms={privacyTerms} />
+      <Legal legals={legals} />
     </FlexDiv>
   );
 };

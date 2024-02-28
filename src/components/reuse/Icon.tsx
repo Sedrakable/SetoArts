@@ -16,17 +16,21 @@ import { ReactComponent as Internet } from "../../assets/illu/Internet.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
-  faInstagramSquare,
+  faInstagram,
   faKickstarter,
   faTiktok,
-  faFacebookSquare,
+  faFacebook,
+  faBehance,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 const icons = {
   kickstarter: faKickstarter,
-  instagram: faInstagramSquare,
+  instagram: faInstagram,
   tiktok: faTiktok,
-  facebook: faFacebookSquare,
+  facebook: faFacebook,
+  behance: faBehance,
+  linkedin: faLinkedin,
   burger: <Burger />,
   diamond: <Diamond />,
   close: <Close />,
@@ -41,6 +45,8 @@ const icons = {
 export const IconTypeArray = Object.keys(icons) as Array<keyof typeof icons>;
 
 export type IconType = typeof IconTypeArray[number];
+
+export const isIcon = (x: any): x is IconType => IconTypeArray.includes(x);
 
 export const Rotations = [90, 180, 270] as const;
 
@@ -69,6 +75,10 @@ export const Icon: React.FC<IconProps> = ({
   size = "regular",
   className,
 }) => {
+  if (!isIcon(icon)) {
+    console.error(`Icon ${icon} not found`);
+    return null;
+  }
   const IconComponent = isIconDefinition(icons[icon]) ? (
     <FontAwesomeIcon icon={icons[icon] as IconDefinition} />
   ) : (

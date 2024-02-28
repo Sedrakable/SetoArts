@@ -35,25 +35,36 @@ export const Button: FC<PropsWithChildren<
   };
 
   const as = props.href ? "a" : "button";
-  return React.createElement(
-    as,
-    {
-      className: cn(styles.button, styles[variant], { [styles.small]: small }),
-      style: { width: fit === "grow" && "100%" },
-      ...props,
-      onClick,
-      disabled,
-    },
-    <>
+
+  const ButtonHeading: React.FC<{ className?: string }> = ({ className }) => (
+    <Heading
+      font="Seto"
+      level={small ? "5" : "5"}
+      as="h5"
+      color={variant === "secondary" ? "yellow" : "white"}
+      className={className}
+    >
+      {children as string}
+    </Heading>
+  );
+
+  return (
+    <div className={styles.container}>
       {variant === "fancy" && <ButtonStroke className={styles.stroke} />}
-      <Heading
-        font="Seto"
-        level={small ? "5" : "5"}
-        as="h5"
-        color={variant === "secondary" ? "yellow" : "white"}
-      >
-        {children as string}
-      </Heading>
-    </>
+      {React.createElement(
+        as,
+        {
+          className: cn(styles.button, styles[variant], {
+            [styles.small]: small,
+          }),
+          style: { width: fit === "grow" && "100%" },
+          ...props,
+          onClick,
+          disabled,
+        },
+        <ButtonHeading />
+      )}
+      {variant === "fancy" && <ButtonHeading className={styles.hoverText} />}
+    </div>
   );
 };

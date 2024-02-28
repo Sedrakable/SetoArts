@@ -8,6 +8,8 @@ import { Icon, IconType } from "../../../reuse/Icon";
 import { Tag } from "../../../reuse/Tag";
 import { Button } from "../../../reuse/Button";
 import { Splider, SpliderProps } from "../../containers/Splider";
+import { useAtom } from "jotai";
+import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 
 const icons: IconType[] = ["bulb", "layout", "package", "palette"];
 
@@ -21,6 +23,7 @@ const Service: React.FC<ServiceProps> = ({
   ctas,
   price,
 }) => {
+  const [lang] = useAtom(langData);
   const [tagIndex, setTagIndex] = React.useState(0);
 
   const updateChildState = (newState: number) => {
@@ -93,21 +96,28 @@ const Service: React.FC<ServiceProps> = ({
           className={styles.botton}
         >
           {price && (
-            <FlexDiv gapArray={[2]}>
-              <Heading font="Cursive" level="5" as="h3" color="yellow">
-                $
-              </Heading>
+            <FlexDiv gapArray={[1]}>
               <Heading font="Seto" level="5" as="h5" color="black">
                 {price.toString()}
               </Heading>
+              <Heading font="Cursive" level="5" as="h3" color="yellow">
+                CAD
+              </Heading>
             </FlexDiv>
           )}
-          {/* {FIX: needs link} */}
-          <Button variant="primary" fit="grow">
+          <Button
+            variant="primary"
+            fit="grow"
+            path={`/${lang}${ctas?.cta1.link}`}
+          >
             {ctas?.cta1.text}
           </Button>
           {ctas?.cta2 && (
-            <Button variant="secondary" fit="grow">
+            <Button
+              variant="secondary"
+              fit="grow"
+              path={`/${lang}${ctas?.cta2.link}`}
+            >
               {ctas.cta2.text}
             </Button>
           )}

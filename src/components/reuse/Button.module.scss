@@ -7,6 +7,7 @@
   --button-width: 100%;
   --button-padding: var(--pad-6);
   --button-padding-small: var(--pad-5);
+  --transition-time: 0.7s;
 
   @media (min-width: $tablet) {
     --button-width: 160px;
@@ -34,6 +35,16 @@
   }
 }
 
+@mixin button($bcolor, $url, $x1, $y1, $bor, $col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
+}
+
 .button {
   @include vars;
   @include flex;
@@ -44,44 +55,6 @@
   width: fit-content;
   text-decoration: none;
   box-sizing: border-box;
-  &.fancy {
-    overflow: visible;
-    transition: 100ms;
-    height: var(--button-height-fancy);
-    .stroke {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-    h5 {
-      text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
-    }
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: -100%;
-    //   width: 300%;
-    //   height: 100%;
-    //   background: var(--yellow);
-    //   background-clip: content-box;
-    //   animation: moveGradient 3s linear infinite;
-    // }
-    // &:hover {
-    //   &::before {
-    //     background: linear-gradient(
-    //       100deg,
-    //       var(--gold-dark) 0%,
-    //       var(--gold-dark) 42.5%,
-    //       var(--gold) 47.5%,
-    //       var(--gold-light) 50%,
-    //       var(--gold) 52.5%,
-    //       var(--gold-dark) 57.5%,
-    //       var(--gold-dark) 100%
-    //     );
-    //   }
-    // }
-  }
 
   &.secondary {
     min-height: var(--button-height);
@@ -109,20 +82,6 @@
   }
 }
 
-@keyframes moveGradient {
-  0% {
-    transform: translateX(-30%);
-  }
-  100% {
-    transform: translateX(30%);
-  }
-}
-
-.fancy > * {
-  position: relative;
-  z-index: 1;
-}
-
 button {
   background: transparent;
   border: 0;
@@ -141,5 +100,113 @@ button {
       background: var(--grey);
     }
     box-shadow: none;
+  }
+}
+
+.container:has(.fancy) {
+  @include vars;
+  -webkit-mask: url("../../assets/illu/ButtonStroke.svg");
+  mask: url("../../assets/illu/ButtonStroke.svg");
+  position: relative;
+  .fancy {
+    @include button(
+      var(--yellow),
+      "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+      3000%,
+      100%,
+      none,
+      none
+    );
+    overflow: visible;
+    transition: 100ms;
+    height: var(--button-height-fancy);
+
+    h5 {
+      visibility: hidden;
+      cursor: pointer;
+    }
+
+    -webkit-animation: ani2 var(--transition-time) steps(29) forwards;
+    animation: ani2 var(--transition-time) steps(29) forwards;
+  }
+  .stroke,
+  .hoverText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .stroke {
+    height: 101%;
+    width: 101%;
+
+    path {
+      fill: var(--grey);
+    }
+  }
+  .hoverText {
+    text-wrap: nowrap;
+    opacity: 1;
+    z-index: 2;
+    cursor: pointer;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-time);
+  }
+  &:hover {
+    .hoverText {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    .fancy {
+      -webkit-animation: ani var(--transition-time) steps(29) forwards;
+      animation: ani var(--transition-time) steps(29) forwards;
+    }
+  }
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
   }
 }

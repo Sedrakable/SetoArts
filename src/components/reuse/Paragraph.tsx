@@ -1,7 +1,6 @@
 import React, { CSSProperties } from "react";
 import styles from "./Paragraph.module.scss";
 import cn from "classnames";
-import { capitalizeString } from "./Heading";
 import {
   SpacingArrayType,
   useSpacingGenerator,
@@ -24,6 +23,19 @@ const fontWeights = {
   regular: 400,
 };
 
+const processChildren = (children: string | JSX.Element) => {
+  if (typeof children === "string") {
+    // Replace newline characters with <br /> elements
+    return children.split("\n").map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
+  }
+  return children;
+};
+
 export const Paragraph: React.FC<ParagraphProps> = ({
   children,
   level = "regular",
@@ -31,7 +43,6 @@ export const Paragraph: React.FC<ParagraphProps> = ({
   weight = "weak",
   paddingBottomArray,
   color = "white",
-  capitalise,
   clickable,
   className,
 }) => {
@@ -54,8 +65,7 @@ export const Paragraph: React.FC<ParagraphProps> = ({
         paddingBottom: spacingNum && `var(--pad-${spacingNum})`,
       }}
     >
-      {children}
-      {/* {capitalise ? capitalizeString(children) : children} */}
+      {processChildren(children)}
     </p>
   );
 };
