@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SetoArts/static/css/main.30a4a186.css",
-    "main.js": "/SetoArts/static/js/main.8c46d297.js",
+    "main.css": "/SetoArts/static/css/main.ce15cebf.css",
+    "main.js": "/SetoArts/static/js/main.b894ab7f.js",
     "static/js/178.288f3809.chunk.js": "/SetoArts/static/js/178.288f3809.chunk.js",
     "static/js/726.9bcb607b.chunk.js": "/SetoArts/static/js/726.9bcb607b.chunk.js",
     "static/media/BigStroke.png": "/SetoArts/static/media/BigStroke.76eadcc71b199e03991e.png",
@@ -17,7 +17,7 @@
     "static/media/ColorPalette.svg": "/SetoArts/static/media/ColorPalette.b6a2a1cfb40f743b55d6f4d3da102b13.svg",
     "static/media/Burger.svg": "/SetoArts/static/media/Burger.2cfa7d093663d8dee92ceea5227570e1.svg",
     "static/media/LogoSmall.svg": "/SetoArts/static/media/LogoSmall.4f9fa5e2446b9380f8ed7ae2593fbbb6.svg",
-    "static/media/ButtonStroke.svg": "/SetoArts/static/media/ButtonStroke.daa770bdafd03510f36594192e68c53e.svg",
+    "static/media/ButtonStroke.svg": "/SetoArts/static/media/ButtonStroke.da08504ced63078d9f2c986548454028.svg",
     "static/media/Internet.svg": "/SetoArts/static/media/Internet.725ca2cff975dd56b9cf664601d39aec.svg",
     "static/media/Bulb.svg": "/SetoArts/static/media/Bulb.b09db1ed8455c531818173b18f8f2064.svg",
     "static/media/Package.svg": "/SetoArts/static/media/Package.15f058fab40f9ed64d2fee77307af6ff.svg",
@@ -27,13 +27,13 @@
     "static/media/Line.svg": "/SetoArts/static/media/Line.4f4f77e71978ae89c698bca00c78d30f.svg",
     "static/media/Layout.svg": "/SetoArts/static/media/Layout.b82dbd3d998bad593919c870824bd2cd.svg",
     "static/media/Diamond.svg": "/SetoArts/static/media/Diamond.3674e786a84ac64b5733f5ded38578cb.svg",
-    "main.30a4a186.css.map": "/SetoArts/static/css/main.30a4a186.css.map",
-    "main.8c46d297.js.map": "/SetoArts/static/js/main.8c46d297.js.map",
+    "main.ce15cebf.css.map": "/SetoArts/static/css/main.ce15cebf.css.map",
+    "main.b894ab7f.js.map": "/SetoArts/static/js/main.b894ab7f.js.map",
     "178.288f3809.chunk.js.map": "/SetoArts/static/js/178.288f3809.chunk.js.map",
     "726.9bcb607b.chunk.js.map": "/SetoArts/static/js/726.9bcb607b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.30a4a186.css",
-    "static/js/main.8c46d297.js"
+    "static/css/main.ce15cebf.css",
+    "static/js/main.b894ab7f.js"
   ]
 }
