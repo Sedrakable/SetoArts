@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SetoArts/static/css/main.ce15cebf.css",
-    "main.js": "/SetoArts/static/js/main.b894ab7f.js",
+    "main.css": "/SetoArts/static/css/main.97342a0c.css",
+    "main.js": "/SetoArts/static/js/main.f3a4533d.js",
     "static/js/178.288f3809.chunk.js": "/SetoArts/static/js/178.288f3809.chunk.js",
     "static/js/726.9bcb607b.chunk.js": "/SetoArts/static/js/726.9bcb607b.chunk.js",
     "static/media/BigStroke.png": "/SetoArts/static/media/BigStroke.76eadcc71b199e03991e.png",
@@ -27,13 +27,13 @@
     "static/media/Line.svg": "/SetoArts/static/media/Line.4f4f77e71978ae89c698bca00c78d30f.svg",
     "static/media/Layout.svg": "/SetoArts/static/media/Layout.b82dbd3d998bad593919c870824bd2cd.svg",
     "static/media/Diamond.svg": "/SetoArts/static/media/Diamond.3674e786a84ac64b5733f5ded38578cb.svg",
-    "main.ce15cebf.css.map": "/SetoArts/static/css/main.ce15cebf.css.map",
-    "main.b894ab7f.js.map": "/SetoArts/static/js/main.b894ab7f.js.map",
+    "main.97342a0c.css.map": "/SetoArts/static/css/main.97342a0c.css.map",
+    "main.f3a4533d.js.map": "/SetoArts/static/js/main.f3a4533d.js.map",
     "178.288f3809.chunk.js.map": "/SetoArts/static/js/178.288f3809.chunk.js.map",
     "726.9bcb607b.chunk.js.map": "/SetoArts/static/js/726.9bcb607b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce15cebf.css",
-    "static/js/main.b894ab7f.js"
+    "static/css/main.97342a0c.css",
+    "static/js/main.f3a4533d.js"
   ]
 }
