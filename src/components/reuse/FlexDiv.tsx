@@ -88,7 +88,7 @@ const FlexDiv: React.ForwardRefRenderFunction<
   } as FlexProps;
 
   const paddingString = Object.entries(paddings)
-    .map(([_key, value]) => (value ? `var(--pad-${value})` : 0))
+    ?.map(([_key, value]) => (value ? `var(--pad-${value})` : 0))
     .join(" ");
 
   return (

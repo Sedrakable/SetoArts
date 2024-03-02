@@ -3,12 +3,16 @@ import styles from "./Work.module.scss";
 
 import { Splider, SpliderProps } from "../../containers/Splider";
 import FlexDiv from "../../../reuse/FlexDiv";
-import { IWork, IWorkBlock } from "../../../../data";
-
-export const tabTexts: string[] = ["home", "services", "about + work"];
+import { IWork, IWorkBlock, LocalPaths } from "../../../../data.d";
+import { useAtom } from "jotai";
+import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
+import { getTranslations } from "../../../../helpers/langUtils";
 
 export const Work: React.FC<PropsWithChildren<IWorkBlock>> = ({ works }) => {
-  const slides: SpliderProps[] = works!.map(
+  const [lang] = useAtom(langData);
+  const translations = getTranslations(lang);
+
+  const slides: SpliderProps[] = works!?.map(
     (work: IWork): SpliderProps => {
       return {
         customImage: {
@@ -19,8 +23,8 @@ export const Work: React.FC<PropsWithChildren<IWorkBlock>> = ({ works }) => {
           title: work.title,
           desc: work.desc,
           primaryCta: {
-            text: "View",
-            link: `/work/${work.slug.current}`,
+            text: translations.buttons.view,
+            link: `${LocalPaths.WORK}/${work.slug.current}`,
           },
           seconadryCta: work.primaryLink,
         },

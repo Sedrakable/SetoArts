@@ -1,12 +1,20 @@
 @import "../../../../css/mixins.scss";
 
 .values {
-  grid-template-columns: repeat(auto-fill, minmax(min(300px, 50%), 1fr));
-}
+  // @include flex(space-between, flex-start);
 
-.title {
-  word-break: break-all;
-}
-.description {
-  padding-left: var(--pad-2);
+  .value {
+    flex: 1;
+    .head {
+      min-width: fit-content !important;
+
+      .title {
+        word-break: keep-all;
+      }
+    }
+    .desc {
+      min-width: 300px;
+      max-width: 400px;
+    }
+  }
 }

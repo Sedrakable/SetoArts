@@ -19,6 +19,7 @@ export interface ButtonProps {
   disabled?: boolean;
   className?: string;
 }
+
 export const Button: FC<PropsWithChildren<
   ButtonProps &
     ButtonHTMLAttributes<HTMLButtonElement> &

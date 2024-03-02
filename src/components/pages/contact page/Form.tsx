@@ -7,23 +7,32 @@ import { FancyText } from "../../reuse/FancyText";
 import FlexDiv from "../../reuse/FlexDiv";
 import { useWindowResize } from "../../../helpers/useWindowResize";
 import { IForm } from "../../../data";
+import { useAtom } from "jotai";
+import { langData } from "../../navbar/LangSwitcher/LangSwitcher";
+import { getTranslations } from "../../../helpers/langUtils";
 
-export const Form: React.FC<IForm> = ({ desc, cta, formFields }) => {
+export const Form: React.FC<IForm> = ({ desc }) => {
   const form = useRef<HTMLFormElement>(null);
   const { isMobileOrTablet, isLaptop } = useWindowResize();
   const [budget, setBudget] = useState<string>("");
+  const [lang] = useAtom(langData);
+  const translations = getTranslations(lang);
+  const [formValid, setFormValid] = useState<boolean>(false);
 
   const handleBudgetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const numericValue = value.replace(/[^0-9.]/g, "");
-    console.log(numericValue);
     // Ensure that only numeric characters are entered
     setBudget(`CAD ${numericValue}`);
   };
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-    console.log(form.current);
+    if (!formValid) {
+      // If form is not valid, display error message
+      alert("Please fill out all required fields.");
+      return;
+    }
     emailjs
       .sendForm("gmail", "contact-seto", form.current!, "bVxK7PZwLIutCAifw")
       .then(
@@ -31,13 +40,32 @@ export const Form: React.FC<IForm> = ({ desc, cta, formFields }) => {
           console.log("sent");
         },
         (error) => {
-          console.log("didint work", error);
+          console.error("didint work", error);
         }
       );
   };
   const handleKeyDown = (e: any) => {
     e.target.style.height = "inherit";
     e.target.style.height = `${e.target.scrollHeight}px`;
+  };
+
+  const handleInputChange = () => {
+    // Check if all required fields are filled
+    const requiredInputs = form.current?.querySelectorAll<HTMLInputElement>(
+      "input[required]"
+    );
+    const requiredTextareas = form.current?.querySelectorAll<
+      HTMLTextAreaElement
+    >("textarea[required]");
+    const allRequiredFieldsFilled =
+      Array.from(requiredInputs || []).every(
+        (input: HTMLInputElement) => input.value.trim() !== ""
+      ) &&
+      Array.from(requiredTextareas || []).every(
+        (textarea: HTMLTextAreaElement) => textarea.value.trim() !== ""
+      );
+    setFormValid(allRequiredFieldsFilled);
+    console.log(allRequiredFieldsFilled);
   };
 
   const contact = (
@@ -56,23 +84,32 @@ export const Form: React.FC<IForm> = ({ desc, cta, formFields }) => {
         onSubmit={sendEmail}
       >
         <div className={styles.info}>
-          <input type="text" name="user_name" placeholder={formFields.name} />
+          <input
+            type="text"
+            name="user_name"
+            required
+            placeholder={translations.form.name}
+            onChange={handleInputChange}
+          />
           <input
             type="email"
             name="user_email"
-            placeholder={formFields.email}
+            required
+            placeholder={translations.form.email}
+            onChange={handleInputChange}
           />
         </div>
         <div className={styles.info}>
           <input
             type="text"
             name="company_name"
-            placeholder={formFields.companyName}
+            placeholder={translations.form.companyName}
+            onChange={handleInputChange}
           />
           <input
             type="text"
             name="budget"
-            placeholder={formFields.budget}
+            placeholder={translations.form.budget}
             onChange={handleBudgetChange}
             value={budget}
           />
@@ -80,11 +117,15 @@ export const Form: React.FC<IForm> = ({ desc, cta, formFields }) => {
 
         <textarea
           onKeyDown={handleKeyDown}
+          onChange={handleInputChange}
           name="message"
-          placeholder={formFields.message}
+          placeholder={translations.form.message}
+          required
         />
 
-        <Button variant="fancy">{cta.text}</Button>
+        <Button variant="fancy" disabled={!formValid}>
+          {translations.buttons.send}
+        </Button>
       </form>
     </FlexDiv>
   );

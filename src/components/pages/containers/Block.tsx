@@ -7,11 +7,13 @@ import cn from "classnames";
 import { Title } from "../../reuse/Title/Title";
 const bigStroke = require("../../../assets/photos/BigStroke.png");
 
-export type BlockVariant = "grid" | "dark" | "fabric";
+export const BlockVariants = ["grid", "dark", "fabric", "fabric-hori"] as const;
+
+export type BlockVariantType = typeof BlockVariants[number];
 
 interface BlockProps {
   title: string;
-  variant: BlockVariant;
+  variant: BlockVariantType;
   strokes?: boolean;
   shadow?: boolean;
 }
@@ -22,23 +24,10 @@ export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
   strokes,
   children,
 }) => {
-  const textures: { [key: string]: React.CSSProperties } = {
-    grid: {
-      backgroundImage: `url(${require("../../../assets/photos/Textures/GridTexture.png")})`,
-    },
-    dark: { background: "var(--black)" },
-    fabric: {
-      backgroundPosition: "bottom",
-      backgroundRepeat: "repeat-x",
-      backgroundImage: `url(${require("../../../assets/photos/Textures/FabricTexture.png")})`,
-    },
-  };
-
   return (
     <FlexDiv
-      customStyle={textures[variant]}
       flex={{ direction: "column" }}
-      className={cn(styles.block, {
+      className={cn(styles.block, styles[variant], {
         [styles.light]: variant !== "dark" && shadow,
       })}
       gapArray={[5, 6, 6, 7]}
@@ -53,7 +42,11 @@ export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
           <Image src={bigStroke} alt="stroke" />
         </div>
       )}
-      <FlexDiv className={styles.content} width100>
+      <FlexDiv
+        className={styles.content}
+        width100
+        flex={{ direction: "column" }}
+      >
         {children}
       </FlexDiv>
     </FlexDiv>

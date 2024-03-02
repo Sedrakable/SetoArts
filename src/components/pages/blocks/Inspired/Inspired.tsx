@@ -1,19 +1,19 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import styles from "./Inspired.module.scss";
 import { Heading } from "../../../reuse/Heading";
 import FlexDiv from "../../../reuse/FlexDiv";
-import { IInspired } from "../../../../data";
+import { LocalPaths } from "../../../../data.d";
 import { Button } from "../../../reuse/Button";
 import { Image } from "../../../reuse/Image";
 import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 import { useAtom } from "jotai";
+import { getTranslations } from "../../../../helpers/langUtils";
 const stroke = require("../../../../assets/photos/BigStroke.png");
 
-export const Inspired: React.FC<PropsWithChildren<IInspired>> = ({
-  title,
-  cta,
-}) => {
+export const Inspired: React.FC = () => {
   const [lang] = useAtom(langData);
+  const translations = getTranslations(lang);
+
   return (
     <FlexDiv
       className={styles.block}
@@ -28,7 +28,7 @@ export const Inspired: React.FC<PropsWithChildren<IInspired>> = ({
         <Image src={stroke} alt="stroke" />
         <FlexDiv className={styles.title}>
           <Heading font="Seto" as="h1" level="1">
-            {title}
+            {translations.blockTitles.inspired}
           </Heading>
           <Heading
             font="Cursive"
@@ -40,8 +40,8 @@ export const Inspired: React.FC<PropsWithChildren<IInspired>> = ({
             ?
           </Heading>
         </FlexDiv>
-        <Button variant="fancy" path={`/${lang}/contact`}>
-          {cta?.text}
+        <Button variant="fancy" path={`/${lang}${LocalPaths.CONTACT}`}>
+          {translations.buttons.workWithMe}
         </Button>
       </FlexDiv>
     </FlexDiv>

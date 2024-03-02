@@ -5,85 +5,77 @@ import React, {
   useRef,
   useState,
 } from "react";
-import styles from "./SanityImage.module.scss";
-import cn from "classnames";
-import { useWindowResize } from "../../../helpers/useWindowResize";
 import { ICustomImage } from "../../../data";
 import { urlFor } from "../../../api/useFetchPage";
+import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
 
-export interface SanityImageProps extends ICustomImage {
-  fit?: boolean;
-  mobileFit?: boolean;
-}
 export const SanityImage: React.FC<PropsWithChildren<
-  SanityImageProps & ImgHTMLAttributes<HTMLImageElement>
->> = ({ image, alt, fit, mobileFit, ...props }) => {
-  const { isMobileOrTablet } = useWindowResize();
+  ICustomImage & ImgHTMLAttributes<HTMLImageElement>
+>> = ({ image, alt, ...props }) => {
   const [loaded, setLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [imgWidth, setImgWidth] = useState<number | null>(null);
   const imgRef = useRef<HTMLImageElement>(null);
+  const minimumWidth = 600;
 
   useEffect(() => {
-    if (imgRef.current) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setIsVisible(true);
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { rootMargin: "200px" } // Adjust root margin as per your requirement
-      );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "200px" } // Adjust root margin as per your requirement
+    );
 
+    if (imgRef.current) {
       observer.observe(imgRef.current);
-
-      return () => {
-        if (observer && imgRef.current) {
-          observer.unobserve(imgRef.current);
-        }
-      };
     }
+
+    return () => {
+      if (observer && imgRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(imgRef.current);
+      }
+    };
   }, [imgRef]);
-
-  useEffect(() => {
-    if (imgRef.current) {
-      // console.log(imgRef.current.offsetWidth);
-      setImgWidth(imgRef.current.offsetWidth);
-    }
-  }, [imgRef, isVisible]);
 
   const src =
     image && isVisible
-      ? urlFor(image)
-          .width(imgWidth || 600)
+      ? (urlFor(image) as ImageUrlBuilder)
+          .width(imgWidth || minimumWidth)
+          .auto("format")
           .url()
       : "";
 
-  const handleResize = () => {
-    if (imgRef.current) {
-      setImgWidth(imgRef.current.offsetWidth);
-    }
-  };
-
   useEffect(() => {
+    const handleResize = () => {
+      if (imgRef.current?.clientWidth && isVisible && loaded) {
+        const newWidth = imgRef.current.clientWidth;
+        setImgWidth(newWidth < minimumWidth ? minimumWidth : newWidth);
+      }
+    };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [imgRef, isVisible, loaded]);
 
   return (
-    <img
-      ref={imgRef}
-      src={src}
-      alt={alt}
-      onLoad={() => setLoaded(true)}
-      style={{ objectFit: "cover" }}
-      {...props}
-    />
+    <>
+      {/* {!loaded && <div className={styles.placeholder}>Loading...</div>} */}
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        onLoad={() => setLoaded(true)}
+        style={{ objectFit: "cover" }}
+        {...props}
+      />
+    </>
   );
 };

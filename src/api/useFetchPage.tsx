@@ -16,11 +16,12 @@ const builder = imageUrlBuilder(client);
 // builder an image and returns the builder for you to specify additional
 // parameters:
 export const urlFor = (source: any) => {
-  return builder.image(source);
+  return builder.image(source).auto("format");
 };
 
 export const useFetchPage = (query: string) => {
   const [page, setPage] = useState(null);
+  const [loading, setLoading] = useState(true); // Track loading state
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,15 +30,21 @@ export const useFetchPage = (query: string) => {
         setPage(data);
       } catch (error) {
         console.error("Error:", error);
+      } finally {
+        setLoading(false); // Update loading state when fetching is done
       }
     };
 
     fetchData();
   }, [query]);
-  if (!page) {
-    console.error("Error fetch page data: ", query, page);
-  } else {
-    console.log("Fetched Page data: ", page);
-  }
+  useEffect(() => {
+    if (!loading) {
+      if (!page) {
+        console.error("Error fetch page data: ", query, page);
+      } else {
+        console.log("Fetched Page data: ", page);
+      }
+    }
+  }, [loading, page, query]);
   return page;
 };

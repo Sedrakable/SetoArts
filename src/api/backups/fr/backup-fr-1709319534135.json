@@ -1,0 +1,305 @@
+[
+  {
+    "features": {
+      "_ref": "5d3973e5-b47e-4eb7-9778-bcd294249eb7",
+      "_type": "reference"
+    },
+    "path": "custom",
+    "work": {
+      "_ref": "54022238-784d-4eb7-a60c-c18af52e2e72",
+      "_type": "reference"
+    },
+    "_type": "servicePage",
+    "inspired": {
+      "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+      "_type": "reference"
+    },
+    "_createdAt": "2024-02-23T16:46:03Z",
+    "_id": "45be4891-387d-41a7-8dff-7bc54e1d5b79",
+    "lang": "fr",
+    "_updatedAt": "2024-02-23T16:54:12Z",
+    "slug": {
+      "current": "custom",
+      "_type": "slug"
+    },
+    "_rev": "9mLWnJtMvL1OgKPLcVNaB4",
+    "hero": {
+      "_type": "hero",
+      "customImage": {
+        "alt": "working",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-902898d553013b9114bb74924105fed446c60949-3072x3005-jpg",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage"
+      },
+      "title": {
+        "part1": "Custom Work:",
+        "part2": "From Logos to Videos",
+        "_type": "fancyText"
+      },
+      "ctas": {
+        "cta1": {
+          "link": "/contac",
+          "text": "Contact Me",
+          "_type": "cta"
+        }
+      },
+      "desc": "Request unique and personalized designs tailored to your preferences.",
+      "quote": {
+        "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+        "_type": "reference"
+      }
+    },
+    "title": "Custom Work"
+  },
+  {
+    "work": {
+      "_type": "reference",
+      "_ref": "54022238-784d-4eb7-a60c-c18af52e2e72"
+    },
+    "_createdAt": "2024-02-23T16:29:11Z",
+    "_rev": "9mLWnJtMvL1OgKPLcVKZEf",
+    "_id": "5f361e93-c855-4ea4-8cfb-9b6f57a7b205",
+    "lang": "fr",
+    "title": "About Me & Work",
+    "_type": "aboutPage",
+    "about": {
+      "_ref": "f09e55c7-e0e4-49d2-b0d4-40526e7d84b3",
+      "_type": "reference"
+    },
+    "inspired": {
+      "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+      "_type": "reference"
+    },
+    "_updatedAt": "2024-02-23T16:29:20Z",
+    "slug": {
+      "current": "about-me-and-work",
+      "_type": "slug"
+    }
+  },
+  {
+    "title": "HomeFrancais",
+    "navbar": {
+      "_ref": "1bd2295b-5204-4f9a-b2ab-b934a03c3102",
+      "_type": "reference"
+    },
+    "footer": {
+      "_ref": "6153f403-d1ee-43a4-b054-e625df817442",
+      "_type": "reference"
+    },
+    "_createdAt": "2024-02-23T03:30:50Z",
+    "_id": "7cf3d4b3-f22d-449a-bb8a-c899914b2db3",
+    "lang": "fr",
+    "_updatedAt": "2024-02-23T03:35:27Z",
+    "work": {
+      "_ref": "54022238-784d-4eb7-a60c-c18af52e2e72",
+      "_type": "reference"
+    },
+    "_rev": "rGZ2nN6K5mjOGJOoWWUzsW",
+    "_type": "homePage",
+    "inspired": {
+      "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+      "_type": "reference"
+    },
+    "slug": {
+      "current": "homefrancais",
+      "_type": "slug"
+    },
+    "values": {
+      "values": [
+        {
+          "_type": "value",
+          "_key": "2691c7272a6f",
+          "title": "Creativity",
+          "desc": "I infuse originality and imagination into every branding project, ensuring unique and captivating brand identities that stand out on the market."
+        },
+        {
+          "desc": "My approach integrates cutting-edge techniques and fresh ideas to deliver branding that resonates with audiences.",
+          "_type": "value",
+          "_key": "27b8893545c2",
+          "title": "Innovation"
+        },
+        {
+          "_type": "value",
+          "_key": "974d15741cb2",
+          "title": "Collaboration",
+          "desc": "I prioritize open communication and teamwork, partnering closely with clients to bring their vision to life through collaborative and transparent processes."
+        },
+        {
+          "_type": "value",
+          "_key": "b850cd143b00",
+          "title": "Quality",
+          "desc": "My commitment to excellence drives me to deliver high-quality branding services that elevate brands and leave a lasting impact on their audience."
+        }
+      ],
+      "_type": "valuesBlock",
+      "title": "Values"
+    },
+    "about": {
+      "_ref": "1fefb9ac-5e0c-483a-83e2-785f84b9425d",
+      "_type": "reference"
+    },
+    "hero": {
+      "subTitle": {
+        "part3": "Nadzharyan - Graphic Designere Oui",
+        "part1": "Sedrak",
+        "part2": "(SETO)",
+        "_type": "fancyText"
+      },
+      "_type": "hero",
+      "customImage": {
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-844c43198e22e2d2c7f2f02bb085d5906939da80-640x479-webp"
+          }
+        },
+        "_type": "customImage",
+        "alt": "Someone Designing"
+      },
+      "title": {
+        "part1": "Revolutionize Ton",
+        "part2": "Brand",
+        "_type": "fancyText"
+      },
+      "ctas": {
+        "cta2": {
+          "_type": "cta",
+          "link": "/",
+          "text": "Button 2"
+        },
+        "cta1": {
+          "link": "/",
+          "text": "Button 1",
+          "_type": "cta"
+        }
+      },
+      "desc": "Join me on a journey of modern and organized design, uniquely tailored for your brand's success.",
+      "quote": {
+        "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+        "_type": "reference"
+      }
+    },
+    "services": {
+      "_type": "servicesBlock",
+      "services": [
+        {
+          "_ref": "0eab613f-673f-451f-8e0e-ce4ad5019070",
+          "_type": "reference",
+          "_key": "3178992998ec"
+        },
+        {
+          "_ref": "0a884405-3756-4a75-a8cd-4c18edfcc640",
+          "_type": "reference",
+          "_key": "97eb219aed87"
+        }
+      ],
+      "title": "Services"
+    }
+  },
+  {
+    "path": "branding",
+    "_createdAt": "2024-02-23T16:48:32Z",
+    "lang": "fr",
+    "_updatedAt": "2024-02-23T16:54:26Z",
+    "_type": "servicePage",
+    "features": {
+      "_ref": "bf8a301b-698e-4f32-bc44-ba73a2b6c9db",
+      "_type": "reference"
+    },
+    "hero": {
+      "customImage": {
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-b0d0cd3569ab8c58bb075c3e4d238a7c386f10fc-3440x1935-png",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage",
+        "alt": "Logos, Colors, Typography, Brand Collateral"
+      },
+      "title": {
+        "part1": "Branding:",
+        "part2": "Be Distinguishable",
+        "_type": "fancyText"
+      },
+      "desc": "Establish a unique and recognizable identity for a company or product with distinct logos, color schemes, typography, etc.",
+      "quote": {
+        "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+        "_type": "reference"
+      },
+      "_type": "hero"
+    },
+    "inspired": {
+      "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+      "_type": "reference"
+    },
+    "title": "Branding Services",
+    "_id": "a200d636-7187-4d45-ab61-1653d7f582de",
+    "slug": {
+      "current": "branding",
+      "_type": "slug"
+    },
+    "processes": {
+      "_ref": "afdd4d06-339e-4e6d-9ae7-0a205988891a",
+      "_type": "reference"
+    },
+    "_rev": "9mLWnJtMvL1OgKPLcVNbVo"
+  },
+  {
+    "_type": "servicePage",
+    "path": "landing",
+    "slug": {
+      "current": "landing-page",
+      "_type": "slug"
+    },
+    "_id": "e252a0e0-3dc4-4806-90c8-a3cf7d01a3f4",
+    "processes": {
+      "_ref": "3d5f56be-e18a-4849-b8c7-6689a0c5ccef",
+      "_type": "reference"
+    },
+    "_rev": "9mLWnJtMvL1OgKPLcVNeMB",
+    "hero": {
+      "quote": {
+        "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+        "_type": "reference"
+      },
+      "_type": "hero",
+      "customImage": {
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-b0d0cd3569ab8c58bb075c3e4d238a7c386f10fc-3440x1935-png",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage",
+        "alt": "Website landing page"
+      },
+      "title": {
+        "part2": "Captivate & Convert",
+        "_type": "fancyText",
+        "part1": "Landing Page:"
+      },
+      "desc": "Have an impactful page to engage and convert visitors swiftly."
+    },
+    "inspired": {
+      "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+      "_type": "reference"
+    },
+    "title": "Landing Page",
+    "features": {
+      "_ref": "0dd04c98-937d-4eb0-957e-9face68b56dc",
+      "_type": "reference"
+    },
+    "_createdAt": "2024-02-23T16:29:35Z",
+    "lang": "fr",
+    "_updatedAt": "2024-02-23T16:54:42Z"
+  }
+]

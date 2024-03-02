@@ -59,18 +59,31 @@
   &.secondary {
     min-height: var(--button-height);
     height: var(--button-height);
-    transition: 100ms;
+    transition: 300ms;
     background: var(--white);
     border-radius: calc(var(--button-height) / 2);
     border: 2px solid var(--yellow);
+    &:hover {
+      background: var(--yellow);
+      > * {
+        color: var(--white) !important;
+      }
+    }
   }
 
   &.primary {
     min-height: var(--button-height);
     height: var(--button-height);
-    transition: 100ms;
+    transition: 300ms;
     background: var(--yellow);
     border-radius: calc(var(--button-height) / 2);
+    border: 2px solid var(--yellow);
+    &:hover {
+      background: var(--white);
+      > * {
+        color: var(--yellow) !important;
+      }
+    }
   }
 
   &.small {
@@ -91,16 +104,7 @@ button {
 
 :disabled {
   cursor: not-allowed;
-  &::before {
-    background: var(--grey);
-    animation: none;
-  }
-  &:hover {
-    &::before {
-      background: var(--grey);
-    }
-    box-shadow: none;
-  }
+  background: var(--grey) !important;
 }
 
 .container:has(.fancy) {
@@ -151,6 +155,7 @@ button {
     cursor: pointer;
     text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
     transition: var(--transition-time);
+    pointer-events: none;
   }
   &:hover {
     .hoverText {

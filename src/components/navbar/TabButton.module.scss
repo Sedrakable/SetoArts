@@ -4,10 +4,15 @@
   @include flexColumn(flex-start);
   position: relative;
   cursor: pointer;
-  // width: 100%;
-  // @media (min-width: $laptop) {
-  //   width: auto;
-  // }
+
+  &:hover {
+    .textWrapper {
+      h5 {
+        transition: 100ms;
+        color: var(--yellow) !important;
+      }
+    }
+  }
   .line {
     position: absolute;
     bottom: 0;

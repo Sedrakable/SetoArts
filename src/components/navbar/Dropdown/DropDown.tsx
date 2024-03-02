@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from "react";
 import styles from "./DropDown.module.scss";
 import FlexDiv from "../../reuse/FlexDiv";
 import { ICta } from "../../../data";
-import TabButton from "../TabButton";
+import { Link } from "../../reuse/Link";
+import { Paragraph } from "../../reuse/Paragraph";
 
 export interface DropDownProps {
   parentPath: string;
@@ -25,8 +26,6 @@ export const DropDown: React.FC<DropDownProps> = ({
           dropdownRef.current &&
           !dropdownRef.current.contains(event.target as Node)
         ) {
-          console.log("click outside");
-
           onClose();
         }
       }, 50);
@@ -47,17 +46,17 @@ export const DropDown: React.FC<DropDownProps> = ({
     isOpen && (
       <FlexDiv
         flex={{ direction: "column", x: "flex-start" }}
-        gapArray={[1]}
+        gapArray={[2]}
         padding={{ vertical: [3], horizontal: [3] }}
         className={styles.dropdown}
         ref={dropdownRef}
       >
-        {dropdown.map((cta, index) => {
+        {dropdown?.map((cta, index) => {
           return (
             <FlexDiv key={index} flex={{ x: "space-between" }} width100>
-              <TabButton path={`${parentPath}${cta.link!}`}>
-                {cta.text}
-              </TabButton>
+              <Link href={`${parentPath}${cta.link!}`}>
+                <Paragraph level="regular">{cta.text}</Paragraph>
+              </Link>
             </FlexDiv>
           );
         })}

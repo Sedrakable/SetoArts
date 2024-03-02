@@ -12,14 +12,12 @@ import { SideContainer, SideContainerProps } from "./SideContainer";
 import cn from "classnames";
 import FlexDiv from "../../reuse/FlexDiv";
 import { Icon } from "../../reuse/Icon";
-import {
-  SanityImage,
-  SanityImageProps,
-} from "../../reuse/SanityImage/SanityImage";
+import { SanityImage } from "../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../helpers/useWindowResize";
+import { ICustomImage } from "../../../data";
 
 export interface SpliderProps {
-  customImage: SanityImageProps;
+  customImage: ICustomImage;
   content?: SideContainerProps;
 }
 
@@ -98,7 +96,6 @@ export const Splider: React.FC<SpliderContainerProps> = ({
           <SanityImage
             image={splider.customImage.image}
             alt={splider.customImage.alt}
-            fit={text && splider.customImage.fit}
           />
           {text && splider?.content && (
             //NEEDS TO BE REPLACED BY ALTUAL CONTENT

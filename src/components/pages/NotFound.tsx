@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Button } from "../reuse/Button";
 import { useAtom } from "jotai";
 import { langData } from "../navbar/LangSwitcher/LangSwitcher";
@@ -6,17 +6,15 @@ import { Block } from "./containers/Block";
 import { Heading } from "../reuse/Heading";
 import { Paragraph } from "../reuse/Paragraph";
 import FlexDiv from "../reuse/FlexDiv";
-import { INotFound } from "../../data";
-import { useFetchPage } from "../../api/useFetchPage";
-export const NotFound: React.FC = () => {
+import { INotFound, LocalPaths } from "../../data.d";
+import { getTranslations } from "../../helpers/langUtils";
+
+export const NotFound: FC<INotFound> = (props) => {
   const [lang] = useAtom(langData);
-
-  const notFoundQuery = `*[_type == 'notFoundPage' && lang == '${lang}'][0]`;
-
-  const notFoundPageData: INotFound = useFetchPage(notFoundQuery)!;
+  const translations = getTranslations(lang);
 
   return (
-    notFoundPageData && (
+    props && (
       <Block title="404" variant="grid">
         <FlexDiv flex={{ direction: "column" }} gapArray={[3, 4, 4, 5]}>
           <Heading
@@ -26,7 +24,7 @@ export const NotFound: React.FC = () => {
             color="black"
             textAlign="center"
           >
-            {notFoundPageData.title}
+            {props.title}
           </Heading>
           <Paragraph
             level="big"
@@ -34,10 +32,10 @@ export const NotFound: React.FC = () => {
             textAlign="center"
             paddingBottomArray={[4]}
           >
-            {notFoundPageData.desc}
+            {props.desc}
           </Paragraph>
-          <Button variant="primary" path={`/${lang}/home`}>
-            {notFoundPageData.cta.text}
+          <Button variant="primary" path={`/${lang}${LocalPaths.HOME}`}>
+            {translations.nav.home}
           </Button>
         </FlexDiv>
       </Block>

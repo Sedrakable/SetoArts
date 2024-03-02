@@ -18,7 +18,7 @@ export const ImageGrid: React.FC<ImageGridProps> = ({ customImages }) => {
       gapArray={[1]}
       wrap
     >
-      {customImages.map((image, key) => {
+      {customImages?.map((image, key) => {
         return (
           <SanityImage
             {...image}

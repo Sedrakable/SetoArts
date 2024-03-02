@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from "./WorkBlock.module.scss";
 import cn from "classnames";
 import FlexDiv from "../../../reuse/FlexDiv";
@@ -8,13 +8,11 @@ import { IWork, IWorkBlock } from "../../../../data";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import { useAtom } from "jotai";
 import { modalData } from "../../../reuse/Modal";
-import { useFetchPage } from "../../../../api/useFetchPage";
+import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
+import { getTranslations } from "../../../../helpers/langUtils";
 
-const Work: React.FC<IWork> = ({ thumbnailImage, title, _id }) => {
+const Work: FC<IWork> = (props) => {
   const [, setModalOpen] = useAtom(modalData);
-  const workQuery = `*[_type == 'work' && _id == '${_id}'][0]`;
-
-  const workData: IWork = useFetchPage(workQuery)!;
 
   return (
     <FlexDiv
@@ -23,12 +21,12 @@ const Work: React.FC<IWork> = ({ thumbnailImage, title, _id }) => {
       onClick={() =>
         setModalOpen({
           handleClose: () => setModalOpen(null),
-          ...workData,
+          ...props,
         })
       }
     >
       <div className={styles.imgWrapper}>
-        <SanityImage {...thumbnailImage} />
+        <SanityImage {...props.thumbnailImage} />
       </div>
       <FlexDiv
         width100
@@ -44,16 +42,19 @@ const Work: React.FC<IWork> = ({ thumbnailImage, title, _id }) => {
           color="white"
           className={styles.title}
         >
-          {title}
+          {props.title}
         </Heading>
       </FlexDiv>
     </FlexDiv>
   );
 };
 
-export const WorkBlock: React.FC<IWorkBlock> = ({ title, works }) => {
+export const WorkBlock: React.FC<IWorkBlock> = ({ works }) => {
+  const [lang] = useAtom(langData);
+  const translations = getTranslations(lang);
+
   return (
-    <Block title={title!} variant="grid" shadow={false}>
+    <Block title={translations.blockTitles.work} variant="grid" shadow={false}>
       <FlexDiv
         gapArray={[4]}
         flex={{ y: "flex-start" }}

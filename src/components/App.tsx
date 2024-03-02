@@ -7,11 +7,8 @@ import "../css/Main.css";
 import "../css/ScrollBar.scss";
 
 import { ScrollToTop } from "../helpers/ScrollToTop";
-// import { WordPressPosts } from "./WordPressCMS";
-import { IFooter, INavBar } from "../data";
 import { HomePage } from "./pages/HomePage";
 import { ServicePage } from "./pages/ServicePage";
-import { useFetchPage } from "../api/useFetchPage";
 import { Navbar } from "./navbar/Navbar";
 import { Footer } from "./footer/Footer";
 import { AboutPage } from "./pages/AboutPage";
@@ -19,41 +16,25 @@ import { langData } from "./navbar/LangSwitcher/LangSwitcher";
 import { ContactPage } from "./pages/ContactPage";
 import { NotFound } from "./pages/NotFound";
 import { LegalPage } from "./pages/LegalPage";
+import { LocalPaths } from "../data.d";
+import { useDataQuery } from "../helpers/useDataQuery";
 
 const App = () => {
   const ref = useRef<any>(null);
   const [modalOpen] = useAtom(modalData);
   const [lang] = useAtom(langData);
   const navigate = useNavigate();
+  const {
+    footerData,
+    navbarData,
+    homePageData,
+    legalPageData,
+    servicePageData,
+    aboutPageData,
+    contactPageData,
+    notFoundPageData,
+  } = useDataQuery();
 
-  const navQuery = `*[_type == 'navbar' && lang == '${lang}'][0]`;
-  const navbarData: INavBar = useFetchPage(navQuery)!;
-
-  const footerQuery = `*[_type == 'footer' && lang == '${lang}'][0]{
-    ...,
-    legals[]->{
-      title,
-      path,
-    },
-    socials->{
-      ...,
-      links[],
-    },
-  }`;
-  const footerData: IFooter = useFetchPage(footerQuery)!;
-  console.log("footer", footerData);
-
-  const servicesQuery = `*[_type == 'servicePage' && lang == '${lang}']{
-   path
-  }`;
-  const serviceData: { path: string }[] = useFetchPage(servicesQuery)!;
-
-  const legalQuery = `*[_type == 'legalPage' && lang == '${lang}']{
-    path
-  }`;
-
-  const legalPageData: { path: string }[] = useFetchPage(legalQuery)!;
-  // console.log("legal", legalPageData);
   useEffect(() => {
     modalOpen
       ? (document.body.style.overflow = "hidden")
@@ -75,29 +56,50 @@ const App = () => {
         <ScrollToTop />
         <div className={styles.page}>
           <Routes>
-            {/* Super important to keep the same order as in navbar*/}
-            <Route path="/" element={<Navigate to={`/${lang}/home`} />} />
-            <Route path={`/${lang}/home`} element={<HomePage />} />
-            <Route path={`/${lang}/home`} element={<HomePage />} />
-            {serviceData?.map((service) => {
+            <Route
+              path="/"
+              element={<Navigate to={`/${lang}${LocalPaths.HOME}`} />}
+            />
+            <Route
+              path={`/${lang}${LocalPaths.HOME}`}
+              element={<HomePage {...homePageData} />}
+            />
+            {servicePageData?.map((service) => {
               return (
                 <Route
-                  path={`/${lang}/service/${service.path}`}
-                  element={<ServicePage path={service.path} />}
+                  key={service.path}
+                  path={`/${lang}${LocalPaths.SERVICE}${service.path}`}
+                  element={<ServicePage {...service} />}
                 />
               );
             })}
-            <Route path={`/${lang}/about`} element={<AboutPage />} />
-            <Route path={`/${lang}/contact`} element={<ContactPage />} />
+            <Route
+              path={`/${lang}${LocalPaths.ABOUT}`}
+              element={<AboutPage {...aboutPageData} />}
+            />
+            <Route
+              path={`/${lang}${LocalPaths.CONTACT}`}
+              element={<ContactPage {...contactPageData} />}
+            />
             {legalPageData?.map((page) => {
               return (
                 <Route
-                  path={`/${lang}/${page.path}`}
-                  element={<LegalPage path={page.path} />}
+                  key={page.path}
+                  path={`/${lang}${page.path}`}
+                  element={<LegalPage {...page} />}
                 />
               );
             })}
-            <Route path="*" element={<NotFound />} />
+            {/* {workData?.map((work) => {
+              return (
+                <Route
+                  key={work._id}
+                  path={`/${lang}${LocalPaths.WORK}${work.slug}`}
+                  element={<Work {...page} />}
+                />
+              );
+            })} */}
+            <Route path="*" element={<NotFound {...notFoundPageData} />} />
           </Routes>
         </div>
 

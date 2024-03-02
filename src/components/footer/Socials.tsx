@@ -14,7 +14,7 @@ export const Socials: React.FC<ISocials> = ({ title, links }) => {
         </Heading>
       )}
       <FlexDiv gapArray={[3]} wrap flex={{ x: "flex-start" }}>
-        {links.map((link: ICta, key) => {
+        {links?.map((link: ICta, key) => {
           return (
             true && (
               <IconButton

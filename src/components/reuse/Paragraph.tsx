@@ -26,7 +26,7 @@ const fontWeights = {
 const processChildren = (children: string | JSX.Element) => {
   if (typeof children === "string") {
     // Replace newline characters with <br /> elements
-    return children.split("\n").map((line, index) => (
+    return children.split("\n")?.map((line, index) => (
       <React.Fragment key={index}>
         {line}
         <br />

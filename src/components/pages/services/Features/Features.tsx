@@ -3,10 +3,13 @@ import styles from "./Features.module.scss";
 import cn from "classnames";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
-import { Block, BlockVariant } from "../../containers/Block";
+import { Block, BlockVariantType } from "../../containers/Block";
 import { IFeature, IFeatures } from "../../../../data";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import { Paragraph } from "../../../reuse/Paragraph";
+import { useAtom } from "jotai";
+import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
+import { getTranslations } from "../../../../helpers/langUtils";
 
 const Feature: React.FC<IFeature> = ({ title, customImage, desc }) => {
   return (
@@ -37,16 +40,18 @@ const Feature: React.FC<IFeature> = ({ title, customImage, desc }) => {
 };
 
 export interface FeaturesProps extends IFeatures {
-  variant: BlockVariant;
+  variant: BlockVariantType;
 }
 
 export const Features: React.FC<FeaturesProps> = ({
-  title,
   features,
   variant = "dark",
 }) => {
+  const [lang] = useAtom(langData);
+  const translations = getTranslations(lang);
+
   return (
-    <Block title={title} variant={variant} strokes>
+    <Block title={translations.blockTitles.features} variant={variant} strokes>
       <FlexDiv
         gapArray={[4]}
         flex={{ y: "flex-start" }}

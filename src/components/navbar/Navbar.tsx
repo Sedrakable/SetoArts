@@ -9,7 +9,7 @@ import { onClickNavigate } from "../../helpers/useNavigation";
 import FlexDiv from "../reuse/FlexDiv";
 import { ReactComponent as Logo } from "../../assets/illu/LogoSmall.svg";
 import { Button } from "../reuse/Button";
-import { ICta, INavBar, INavLink } from "../../data";
+import { ICta, INavBar, INavLink, LocalPaths } from "../../data.d";
 import { LangSwitcher, langData } from "./LangSwitcher/LangSwitcher";
 import { useAtom } from "jotai";
 
@@ -47,19 +47,20 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
     </Link>
   );
 
-  const tab = (cta: ICta) => {
+  const tab = (cta: ICta, key?: number) => {
     return (
-      <TabButton className={styles.tab} path={`/${lang}${cta.link!}`}>
+      <TabButton key={key} className={styles.tab} path={`/${lang}${cta.link!}`}>
         {cta.text}
       </TabButton>
     );
   };
 
-  const dropDown = (navLink: INavLink) => {
+  const dropDown = (navLink: INavLink, key?: number) => {
     return (
       <TabButton
+        key={key}
         className={styles.tab}
-        path={`/${lang}/service`}
+        path={`/${lang}${LocalPaths.SERVICE}`}
         dropdown={navLink.ctaArray}
       >
         {navLink.title}
@@ -67,9 +68,14 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
     );
   };
 
-  const tabWrapper = (child: React.JSX.Element, dropDown: boolean = false) => {
+  const tabWrapper = (
+    child: React.JSX.Element,
+    dropDown: boolean = false,
+    key?: number
+  ) => {
     return (
       <FlexDiv
+        key={key}
         className={styles.tabWrapper}
         flex={{ x: "flex-start" }}
         padding={{ horizontal: [4, 6, 0, 0], vertical: [3, 4, 0, 0] }}
@@ -82,6 +88,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
 
   const lastLink =
     isCta(links[links.length - 1]) && (links[links.length - 1] as ICta);
+
   const sidebarComp = (
     <div className={cn(styles.sidebar, { [styles.isOpen]: sidebar })}>
       <FlexDiv
@@ -102,11 +109,11 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
         flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
         width100
       >
-        {links.map((link: INavLink | ICta, key) => {
+        {links?.map((link: INavLink | ICta, key) => {
           if (key !== links.length - 1) {
             return isCta(link)
-              ? tabWrapper(tab(link))
-              : tabWrapper(dropDown(link), true);
+              ? tabWrapper(tab(link), false, key)
+              : tabWrapper(dropDown(link), true, key);
           }
           return null;
         })}
@@ -140,7 +147,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
           >
             {!isMobile && (
               <FlexDiv gapArray={[5, 4, 5, 6]}>
-                {links.map((link: INavLink | ICta, key) => {
+                {links?.map((link: INavLink | ICta, key) => {
                   if (key === links.length - 1 && isCta(link)) {
                     return (
                       <Button
@@ -155,7 +162,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
                   }
                   return (
                     !isMobileOrTablet &&
-                    (isCta(link) ? tab(link) : dropDown(link))
+                    (isCta(link) ? tab(link, key) : dropDown(link, key))
                   );
                 })}
               </FlexDiv>
@@ -165,6 +172,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
               <IconButton
                 onClick={() => setSidebar(true)}
                 iconProps={{ icon: "burger", size: "regular" }}
+                background="white"
               />
             )}
           </FlexDiv>

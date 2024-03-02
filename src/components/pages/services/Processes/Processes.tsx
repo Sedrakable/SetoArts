@@ -10,6 +10,9 @@ import { ReactComponent as Analysis } from "../../../../assets/illu/Analysis.svg
 import { ReactComponent as Developer } from "../../../../assets/illu/Developer.svg";
 import { ReactComponent as Draw } from "../../../../assets/illu/Draw.svg";
 import { useWindowResize } from "../../../../helpers/useWindowResize";
+import { useAtom } from "jotai";
+import { getTranslations } from "../../../../helpers/langUtils";
+import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 
 interface IProcessProps extends IProcess {
   number: number;
@@ -57,7 +60,7 @@ const Process: React.FC<IProcessProps> = ({
           {desc}
         </Paragraph>
         <FlexDiv className={styles.tags} flex={{ x: "flex-start" }} wrap>
-          {features.map((feature: IFeature) => {
+          {features?.map((feature: IFeature) => {
             return <Tag chosen>{feature.title}</Tag>;
           })}
         </FlexDiv>
@@ -67,11 +70,13 @@ const Process: React.FC<IProcessProps> = ({
   );
 };
 
-export const Processes: React.FC<IProcesses> = ({ title, processes }) => {
+export const Processes: React.FC<IProcesses> = ({ processes }) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
+  const [lang] = useAtom(langData);
+  const translations = getTranslations(lang);
 
   return (
-    <Block title={title} variant="fabric">
+    <Block title={translations.blockTitles.process} variant="fabric-hori">
       <FlexDiv
         gapArray={[0, 0, 5, 7]}
         width100

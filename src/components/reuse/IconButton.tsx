@@ -5,22 +5,24 @@ import React, {
   PropsWithChildren,
 } from "react";
 import styles from "./IconButton.module.scss";
+import cn from "classnames";
 import { Icon, IconProps } from "./Icon";
 
 export interface IconButtonProps {
   iconProps: IconProps;
+  background?: "black" | "white";
 }
 export const IconButton: FC<PropsWithChildren<
   IconButtonProps &
     ButtonHTMLAttributes<HTMLButtonElement> &
     AnchorHTMLAttributes<HTMLAnchorElement>
->> = ({ iconProps, ...props }) => {
+>> = ({ iconProps, background = "black", ...props }) => {
   const as = props.href ? "a" : "button";
 
   return React.createElement(
     as,
     {
-      className: styles.button,
+      className: cn(styles.button, styles[background]),
       ...props,
     },
     <Icon {...iconProps} />

@@ -1,0 +1,287 @@
+[
+  {
+    "values": {
+      "_type": "reference",
+      "_ref": "476b7505-b556-4333-ae53-beaa98ff191f"
+    },
+    "_rev": "4fqy6B5H6WrCPpGf2W3XK2",
+    "_type": "homePage",
+    "about": {
+      "_ref": "1fefb9ac-5e0c-483a-83e2-785f84b9425d",
+      "_type": "reference"
+    },
+    "hero": {
+      "quote": {
+        "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+        "_type": "reference"
+      },
+      "subTitle": {
+        "part1": "Sedrak",
+        "part2": "(SETO)",
+        "_type": "fancyText",
+        "part3": "Nadzharyan - Graphic Designer"
+      },
+      "_type": "hero",
+      "customImage": {
+        "_type": "customImage",
+        "alt": "Someone Designing",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-e7acb2ed08c2b231430db592204102fc40182e1e-4292x2861-jpg"
+          }
+        }
+      },
+      "title": {
+        "part1": "Revolutionize Your",
+        "part2": "Brand",
+        "_type": "fancyText"
+      },
+      "ctas": {
+        "cta1": {
+          "_type": "cta",
+          "link": "/contact",
+          "text": "WORK WITH ME"
+        }
+      },
+      "desc": "Join me on a journey of modern and organized design, uniquely tailored for your brand's success."
+    },
+    "lang": "en",
+    "_updatedAt": "2024-03-01T05:54:32Z",
+    "footer": {
+      "_type": "reference",
+      "_ref": "6153f403-d1ee-43a4-b054-e625df817442"
+    },
+    "work": {
+      "_ref": "54022238-784d-4eb7-a60c-c18af52e2e72",
+      "_type": "reference"
+    },
+    "services": {
+      "_ref": "e9c19365-c5f7-466d-bdf6-a46d898ba74c",
+      "_type": "reference"
+    },
+    "title": "Home",
+    "_createdAt": "2024-02-16T19:16:31Z",
+    "_id": "10bd1344-4d09-4627-8c9c-e8f13104a5e9"
+  },
+  {
+    "inspired": {
+      "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+      "_type": "reference"
+    },
+    "price": 1500,
+    "_id": "5dac836d-7919-48df-8d39-1abbe1894f00",
+    "lang": "en",
+    "processes": {
+      "_ref": "afdd4d06-339e-4e6d-9ae7-0a205988891a",
+      "_type": "reference"
+    },
+    "_type": "servicePage",
+    "title": "Branding",
+    "features": {
+      "_ref": "bf8a301b-698e-4f32-bc44-ba73a2b6c9db",
+      "_type": "reference"
+    },
+    "path": "/branding",
+    "_createdAt": "2024-02-16T19:46:10Z",
+    "_updatedAt": "2024-02-29T18:40:12Z",
+    "_rev": "f3VLH3aq8RO8NcgZLh4HxQ",
+    "hero": {
+      "quote": {
+        "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+        "_type": "reference"
+      },
+      "_type": "hero",
+      "customImage": {
+        "alt": "Logos, Colors, Typography, Brand Collateral",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-54b1240b6016436aa5b565bc17a717bf3cf15aba-5500x3667-jpg",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage"
+      },
+      "title": {
+        "part1": "Branding:",
+        "part2": "Be Distinguishable",
+        "_type": "fancyText"
+      },
+      "desc": "Establish a unique and recognizable identity for a company or product with distinct logos, color schemes, typography, etc."
+    }
+  },
+  {
+    "_createdAt": "2024-02-20T03:26:33Z",
+    "_type": "aboutPage",
+    "inspired": {
+      "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+      "_type": "reference"
+    },
+    "_updatedAt": "2024-02-23T16:03:11Z",
+    "slug": {
+      "current": "/about",
+      "_type": "slug"
+    },
+    "work": {
+      "_ref": "54022238-784d-4eb7-a60c-c18af52e2e72",
+      "_type": "reference"
+    },
+    "about": {
+      "_ref": "f09e55c7-e0e4-49d2-b0d4-40526e7d84b3",
+      "_type": "reference"
+    },
+    "_id": "625cd53a-b89f-4f0b-9120-901e848be808",
+    "lang": "en",
+    "title": "About Me & Work",
+    "_rev": "rGZ2nN6K5mjOGJOoWXbh2T"
+  },
+  {
+    "_rev": "f3VLH3aq8RO8NcgZLh4ShQ",
+    "hero": {
+      "quote": {
+        "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+        "_type": "reference"
+      },
+      "_type": "hero",
+      "customImage": {
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage",
+        "alt": "landing page"
+      },
+      "title": {
+        "_type": "fancyText",
+        "part1": "Total Package:",
+        "part2": "Unify Your Brand"
+      },
+      "desc": "Combine branding and landing pages designed for optimal engagement, ensuring an online presence that captivates and converts visitors effectively."
+    },
+    "_createdAt": "2024-02-29T01:50:52Z",
+    "_updatedAt": "2024-02-29T18:40:18Z",
+    "inspired": {
+      "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+      "_type": "reference"
+    },
+    "_id": "76b94d48-93c4-40ef-8deb-dd2d365ed137",
+    "processes": {
+      "_ref": "4677ccc4-1d54-4679-9b5d-d9404e21b3f5",
+      "_type": "reference"
+    },
+    "work": {
+      "_ref": "54022238-784d-4eb7-a60c-c18af52e2e72",
+      "_type": "reference"
+    },
+    "features": {
+      "_ref": "49597214-fd7e-4325-b56e-676312d9665c",
+      "_type": "reference"
+    },
+    "path": "/total-package",
+    "price": 2500,
+    "_type": "servicePage",
+    "title": "Total Package",
+    "lang": "en"
+  },
+  {
+    "processes": {
+      "_ref": "3d5f56be-e18a-4849-b8c7-6689a0c5ccef",
+      "_type": "reference"
+    },
+    "_type": "servicePage",
+    "hero": {
+      "_type": "hero",
+      "customImage": {
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage",
+        "alt": "Website landing page"
+      },
+      "title": {
+        "part1": "Landing Page:",
+        "part2": "Captivate & Convert",
+        "_type": "fancyText"
+      },
+      "desc": "Have an impactful page to engage and convert visitors swiftly.",
+      "quote": {
+        "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+        "_type": "reference"
+      }
+    },
+    "_id": "980b92fc-3907-47f5-90e2-8f54824866c2",
+    "lang": "en",
+    "work": {
+      "_ref": "54022238-784d-4eb7-a60c-c18af52e2e72",
+      "_type": "reference"
+    },
+    "_rev": "4fqy6B5H6WrCPpGf2W3WPW",
+    "title": "Landing Page",
+    "features": {
+      "_ref": "0dd04c98-937d-4eb0-957e-9face68b56dc",
+      "_type": "reference"
+    },
+    "path": "/landing-page",
+    "price": 1500,
+    "_createdAt": "2024-02-17T00:57:12Z",
+    "_updatedAt": "2024-03-01T05:52:07Z"
+  },
+  {
+    "lang": "en",
+    "title": "Custom Work",
+    "_rev": "4fqy6B5H6WrCPpGf2W3Wa7",
+    "hero": {
+      "title": {
+        "part1": "Custom Work:",
+        "part2": "From Logos to Videos",
+        "_type": "fancyText"
+      },
+      "ctas": {
+        "cta1": {
+          "text": "Contact Me",
+          "_type": "cta",
+          "link": "/contact"
+        }
+      },
+      "desc": "Request unique and personalized designs tailored to your preferences.",
+      "quote": {
+        "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+        "_type": "reference"
+      },
+      "_type": "hero",
+      "customImage": {
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage",
+        "alt": "working"
+      }
+    },
+    "work": {
+      "_type": "reference",
+      "_ref": "54022238-784d-4eb7-a60c-c18af52e2e72"
+    },
+    "_createdAt": "2024-02-20T03:36:33Z",
+    "_type": "servicePage",
+    "_id": "ee790de7-2019-49a4-8078-95096a767d80",
+    "_updatedAt": "2024-03-01T05:52:15Z",
+    "features": {
+      "_ref": "5d3973e5-b47e-4eb7-9778-bcd294249eb7",
+      "_type": "reference"
+    },
+    "path": "/custom-work"
+  }
+]

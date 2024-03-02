@@ -44,7 +44,10 @@ const TabButton: React.FC<TabButtonProps> = ({
       onClick={(e) => onTabClick(e)}
       className={cn(styles.tabButton, className)}
     >
-      <FlexDiv padding={{ bottom: [1], top: [1] }}>
+      <FlexDiv
+        padding={{ bottom: [1], top: [1] }}
+        className={styles.textWrapper}
+      >
         <Heading font="Seto" level="5" as="h5" color="black">
           {children}
         </Heading>

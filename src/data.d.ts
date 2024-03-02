@@ -43,22 +43,19 @@ export interface IQuote {
 }
 
 export interface IServices {
-  title: string;
   services: IService[];
 }
 
 export interface IService {
   title: string;
-  features: IFeature[];
-  ctas: {
-    cta1: ICta;
-    cta2?: ICta;
-  };
+  path: string;
+  features: IFeatures;
+
+  processes: IProcesses;
   price?: number;
 }
 
 export interface IFeatures {
-  title: string;
   features: IFeature[];
 }
 
@@ -69,7 +66,6 @@ export interface IFeature {
 }
 
 export interface IProcesses {
-  title: string;
   processes: IProcess[];
 }
 
@@ -80,7 +76,6 @@ export interface IProcess {
 }
 
 export interface IValues {
-  title: string;
   values: ValueProps[];
 }
 
@@ -96,16 +91,14 @@ export interface IAboutContent {
   desc1: string;
   title2?: string;
   desc2?: string;
-  cta?: ICta;
+  cta?: boolean;
 }
 
 export interface IAbout {
-  title: string;
   content: IAboutContent;
 }
 
 export interface IWorkBlock {
-  title?: string;
   works: IWork[];
 }
 
@@ -120,11 +113,6 @@ export interface IWork {
   secondaryLinks?: ICta[];
   behanceProjectId?: string;
   kickstarterProjectlink?: string;
-}
-
-export interface IInspired {
-  title: string;
-  cta: ICta;
 }
 
 export interface INavLink {
@@ -148,6 +136,7 @@ export interface IBlock {
 }
 
 export interface ILegalPage {
+  path: string;
   title: string;
   data: IBlock[];
 }
@@ -159,20 +148,23 @@ export interface IFooter {
 
 export interface IForm {
   desc: IFancyText;
-  formFields: IFieldPlaceholders;
-  cta: ICta;
-}
-
-export interface IFieldPlaceholders {
-  name: string;
-  email: string;
-  companyName: string;
-  budget: string;
-  message: string;
 }
 
 export interface INotFound {
   title: string;
   desc: string;
-  cta: ICta;
+}
+
+export enum LocalPaths {
+  HOME = "/home",
+  ABOUT = "/about-work",
+  WORK = "/work",
+  CONTACT = "/contact",
+  TERMS = "/terms-and-conditions",
+  PRIVACY = "/privacy-policy",
+  SERVICE = "/service",
+  BRANDING = "/branding",
+  LANDING = "/landing-page",
+  PACKAGE = "/total-package",
+  CUSTOM = "/custom-work",
 }

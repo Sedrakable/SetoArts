@@ -5,8 +5,9 @@ import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
 import { Paragraph } from "../../../reuse/Paragraph";
 import { IValue, IValues } from "../../../../data";
-
-export const tabTexts: string[] = ["home", "services", "about + work"];
+import { useAtom } from "jotai";
+import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
+import { getTranslations } from "../../../../helpers/langUtils";
 
 const Value: React.FC<IValue & { number: string }> = ({
   number,
@@ -15,11 +16,16 @@ const Value: React.FC<IValue & { number: string }> = ({
 }) => {
   return (
     <FlexDiv
-      flex={{ direction: "column", x: "flex-start" }}
+      flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
       gapArray={[2]}
-      width100
+      className={styles.value}
     >
-      <FlexDiv gapArray={[3]} width100 flex={{ x: "flex-start" }}>
+      <FlexDiv
+        gapArray={[3]}
+        width100
+        flex={{ x: "flex-start" }}
+        className={styles.head}
+      >
         <Heading font="Seto" level="3" as="h3" color="yellow">
           {number}
         </Heading>
@@ -35,17 +41,20 @@ const Value: React.FC<IValue & { number: string }> = ({
   );
 };
 
-export const Values: React.FC<IValues> = ({ title, values }) => {
+export const Values: React.FC<IValues> = ({ values }) => {
+  const [lang] = useAtom(langData);
+  const translations = getTranslations(lang);
+
   return (
-    <Block title="Values" variant="dark">
+    <Block title={translations.blockTitles.values} variant="dark">
       <FlexDiv
         gapArray={[6]}
-        flex={{ y: "flex-start" }}
+        flex={{ x: "flex-start", y: "space-between" }}
         width100
-        customStyle={{ display: "grid" }}
         className={styles.values}
+        wrap
       >
-        {values.map((value: IValue, key) => {
+        {values?.map((value: IValue, key) => {
           return (
             <Value
               title={value.title}

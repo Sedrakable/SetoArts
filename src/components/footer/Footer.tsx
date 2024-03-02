@@ -6,9 +6,11 @@ import { Link } from "../reuse/Link";
 import FlexDiv from "../reuse/FlexDiv";
 import { ReactComponent as LogoHori } from "../../assets/illu/LogoHorizontal.svg";
 import { useWindowResize } from "../../helpers/useWindowResize";
-import { ICta, IFooter, INavBar } from "../../data";
+import { IFooter, INavBar } from "../../data";
 import { isCta } from "../navbar/Navbar";
 import { Socials } from "./Socials";
+import { useAtom } from "jotai";
+import { langData } from "../navbar/LangSwitcher/LangSwitcher";
 
 const Line: React.FC = () => {
   return <div className={styles.line} />;
@@ -21,7 +23,7 @@ const Nav: React.FC<INavBar> = ({ links }) => {
       flex={{ x: "center" }}
       wrap
     >
-      {links.map((link, key) => {
+      {links?.map((link, key) => {
         if (isCta(link)) {
           return (
             <Link href={link?.link!} key={key}>
@@ -31,7 +33,7 @@ const Nav: React.FC<INavBar> = ({ links }) => {
             </Link>
           );
         } else {
-          const subLinks = link.ctaArray.map((link, key) => {
+          const subLinks = link.ctaArray?.map((link, key) => {
             return (
               <Link href={link?.link!} key={key}>
                 <Paragraph
@@ -71,6 +73,7 @@ const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
 const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
   legals,
 }) => {
+  const [lang] = useAtom(langData);
   return (
     <FlexDiv
       className={styles.legal}
@@ -78,9 +81,11 @@ const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
       wrap
       flex={{ x: "flex-start" }}
     >
-      {legals.map((cta, key) => {
+      {legals?.map((cta, key) => {
+        console.log(cta?.path!);
         return (
-          <Link href={cta?.path!} key={key}>
+          // FIX LINK
+          <Link href={`${lang}${cta?.path!}`} key={key}>
             <Paragraph level="small" weight="weak" color="grey" clickable>
               {cta?.title}
             </Paragraph>

@@ -9,11 +9,22 @@
 
   &:hover {
     scale: 1.1;
-
     svg,
     path,
     polygon {
-      fill: var(--white) !important;
+      fill: var(--button-hover-color) !important;
+    }
+  }
+
+  &.black {
+    &:hover {
+      --button-hover-color: var(--white);
+    }
+  }
+
+  &.white {
+    &:hover {
+      --button-hover-color: var(--black);
     }
   }
 }
