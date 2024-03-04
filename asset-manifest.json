@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/SetoArts/static/css/main.97342a0c.css",
-    "main.js": "/SetoArts/static/js/main.f3a4533d.js",
-    "static/js/178.288f3809.chunk.js": "/SetoArts/static/js/178.288f3809.chunk.js",
-    "static/js/726.9bcb607b.chunk.js": "/SetoArts/static/js/726.9bcb607b.chunk.js",
+    "main.css": "/SetoArts/static/css/main.36c2e098.css",
+    "main.js": "/SetoArts/static/js/main.24ae5694.js",
+    "static/js/178.dcf33e1a.chunk.js": "/SetoArts/static/js/178.dcf33e1a.chunk.js",
+    "static/js/726.3a8ffd5e.chunk.js": "/SetoArts/static/js/726.3a8ffd5e.chunk.js",
     "static/media/BigStroke.png": "/SetoArts/static/media/BigStroke.76eadcc71b199e03991e.png",
     "static/media/FabricTexture.png": "/SetoArts/static/media/FabricTexture.f43a06ab4b9db708e62a.png",
     "static/media/GridTexture.png": "/SetoArts/static/media/GridTexture.63c05e97384dc5c91f5b.png",
@@ -27,13 +27,13 @@
     "static/media/Line.svg": "/SetoArts/static/media/Line.4f4f77e71978ae89c698bca00c78d30f.svg",
     "static/media/Layout.svg": "/SetoArts/static/media/Layout.b82dbd3d998bad593919c870824bd2cd.svg",
     "static/media/Diamond.svg": "/SetoArts/static/media/Diamond.3674e786a84ac64b5733f5ded38578cb.svg",
-    "main.97342a0c.css.map": "/SetoArts/static/css/main.97342a0c.css.map",
-    "main.f3a4533d.js.map": "/SetoArts/static/js/main.f3a4533d.js.map",
-    "178.288f3809.chunk.js.map": "/SetoArts/static/js/178.288f3809.chunk.js.map",
-    "726.9bcb607b.chunk.js.map": "/SetoArts/static/js/726.9bcb607b.chunk.js.map"
+    "main.36c2e098.css.map": "/SetoArts/static/css/main.36c2e098.css.map",
+    "main.24ae5694.js.map": "/SetoArts/static/js/main.24ae5694.js.map",
+    "178.dcf33e1a.chunk.js.map": "/SetoArts/static/js/178.dcf33e1a.chunk.js.map",
+    "726.3a8ffd5e.chunk.js.map": "/SetoArts/static/js/726.3a8ffd5e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.97342a0c.css",
-    "static/js/main.f3a4533d.js"
+    "static/css/main.36c2e098.css",
+    "static/js/main.24ae5694.js"
   ]
 }
