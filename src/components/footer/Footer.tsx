@@ -82,10 +82,8 @@ const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
       flex={{ x: "flex-start" }}
     >
       {legals?.map((cta, key) => {
-        console.log(cta?.path!);
         return (
-          // FIX LINK
-          <Link href={`${lang}${cta?.path!}`} key={key}>
+          <Link href={`/${lang}${cta?.path!}`} key={key}>
             <Paragraph level="small" weight="weak" color="grey" clickable>
               {cta?.title}
             </Paragraph>

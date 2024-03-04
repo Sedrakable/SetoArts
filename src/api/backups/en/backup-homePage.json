@@ -1,0 +1,699 @@
+{
+  "services": {
+    "services": [
+      {
+        "path": "/branding",
+        "title": "Branding",
+        "features": {
+          "features": [
+            {
+              "title": "Typography Selection",
+              "customImage": {
+                "alt": "Different Fonts",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Brand Collaterals",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Collaterals"
+              }
+            },
+            {
+              "title": "Market Research",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Research Laptop",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg"
+                  }
+                }
+              }
+            },
+            {
+              "title": "Color Palette Choice",
+              "customImage": {
+                "image": {
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage",
+                "alt": "Color Cards"
+              }
+            },
+            {
+              "title": "Visual Identity Creation",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-899006ee24f9200e3c66efa47c4607c024dd64b9-5568x3712-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Brand Visual Identity"
+              }
+            },
+            {
+              "title": "Design Refinement",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Improving Design",
+                "image": {
+                  "asset": {
+                    "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                }
+              }
+            },
+            {
+              "title": "Symbols & Icons",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Multiple Icons and Symbols",
+                "image": {
+                  "asset": {
+                    "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                }
+              }
+            },
+            {
+              "title": "Brand Strategy Guide",
+              "customImage": {
+                "image": {
+                  "asset": {
+                    "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                    "_type": "reference"
+                  },
+                  "_upload": {
+                    "previewImage": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAB3ALMDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAArEAACAgECBQQCAgMBAAAAAAAAAQIRIQMxEhNBUWEycYGRIlIEM0JDoWL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/AMlS3ZSabpGasvhaVoItITlTqik7Vkzw76oKXFPogTn1ZrFWkyuBblQRyrKobSSTQEBQ6AAAYAAgoYgFQqKEBNCooaVZYCxEzbuXyXOSW+zMk/zRQtTLY1DlxwsstRUfyYLK4mBi5Z2AtyzsgAzouKFQ9sBSjiTj9E6q2ZtGEZJu6fQy1cwXuRFaM8UbpnFCXDI6k7VoqLatAnaBPBKf5Nd9gqxkjIGAgAYCAAAATpgNR7ilKgcjOUqAnUnjYy4spjk7eBx0+svoKucrS8jm6ikTLoKXXN2yiMgbxVRSAIiOOoOJG7LTCofYj/Fw+UbtJkvTb/Lqgjnp9jp0HinugTUlYp/jUo/JFi56ii6ZmtSUpppYRCubyzVJQXkqNnKK3aC490YWFgdCafYdEaS/y+hSm0n4IrWvBL3pLJgtVs0hKSWd2CNHF1gz4qw9wes4yqdU+o9VXG+oC9WNzOUJp1TpnRBJRwOwVzxgo53YzbhXZCaTxSSAxdVkNJcTt7I0enGsg6SpBBaAzAqoD3DoCyQVFNujV4QoqkTJ2/BRnHGo09nsW44omcbWN0bafDOCadPsQYJz01SWBcc/1Ru406BQuXgDDjl+iFxzW8EdihFdAcIvdIIwhqzlF2kkuwuJK84aNnpVmP0QtF3eAuIUoxgmngnnI1X8eJa0ox6Arkm3N7YLktWfRpHUlQwjHS5m0o/JrfQdpETSbtOgqrwLuT1CwQ3mvYmTQnbd3jsYSclOuoVrTAhcdbABXCEY08gmOwKd7IKrclSHdhAY8K5mXSZrWCZxuONwNYrhVI1gsX3OfSnxJN/JtzY+fpg1oBnzY939MObDu/oIsCObD9v+D5kP2QFARzI/vEfMj+0fsCgJ5kf2j9kvVj3X2Bbim7rPcymqxY+dHuvsz1JKTtPcLh8XRoa9yL8hb6EVe5Mm1sNeRsKx45AaUARA7FuOihWVG2Ki1hAS7QJOTH6nReIRCM2lpyx13G+Y/Smvcxc+LUt5VnVCXHG6oJWXL1e//Qenq1u38mj1YqTWcAtaLTw8FGPBq9pfYuXq9n9m3Ph2Y1rRabzgDLThOMrcWbU3uhwnGew4zjKTSeUQTw+BOHg0ALWL0/8AyQ4ySwjpJYK5rkt0xcR0tGM9G3cQVSY7Rk1OO6x3BSC1pxAZt5AFCKWSS0AAt6BjiqywilSMteeKTHOeDCTthNEVk7Yrggl2RzaEbmvGTfWdab8lMYN/jJvq+oRxB+cYFLEIr5B+heWBUfRLfoJeiXwH+v3YL0S9wK0qalcq8laONVpO13M4+iQ9F1qIDrAQrIGArFYDFdMLFYVTVmGpp07RvF9ByjYRx57AbuGQKMkxtgBGlQyKUgAIymyAAM66f46qLfcWu7aiAFVnqP8AKuwTxwrwAAD/AK4oF/W+mQAAj6ZZ6BF1Je4AB12JgACAACkAAQD2NIS4opgADoAAI//Z",
+                    "updatedAt": "2024-02-28T23:31:53.312Z",
+                    "createdAt": "2024-02-28T23:31:51.692Z",
+                    "file": {
+                      "name": "scott-graham-5fNmWej4tAA-unsplash.jpg",
+                      "type": "image/jpeg"
+                    },
+                    "progress": 100
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage",
+                "alt": "Teaching strategy on Laptop"
+              }
+            }
+          ]
+        },
+        "processes": {
+          "_ref": "afdd4d06-339e-4e6d-9ae7-0a205988891a",
+          "_type": "reference"
+        },
+        "price": 1500
+      },
+      {
+        "price": 1500,
+        "path": "/landing-page",
+        "title": "Landing Page",
+        "features": {
+          "features": [
+            {
+              "title": "Landing Page Purpose",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Laptop with statistics"
+              }
+            },
+            {
+              "title": "Mockup Creation",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Web Design Mockup Drawings"
+              }
+            },
+            {
+              "title": "Website Optimization",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Optimizing"
+              }
+            },
+            {
+              "title": "Deployment Assistance",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Helping",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                    "_type": "reference"
+                  }
+                }
+              }
+            },
+            {
+              "title": "Technical Support",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Online help",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                    "_type": "reference"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "processes": {
+          "_type": "reference",
+          "_ref": "3d5f56be-e18a-4849-b8c7-6689a0c5ccef"
+        }
+      },
+      {
+        "processes": {
+          "_type": "reference",
+          "_ref": "4677ccc4-1d54-4679-9b5d-d9404e21b3f5"
+        },
+        "price": 2500,
+        "path": "/total-package",
+        "title": "Total Package",
+        "features": {
+          "features": [
+            {
+              "title": "Logo Design",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-9d9ff04621bf0e47eeb3b467e68b09e6146883de-5568x3712-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Drawing Logo"
+              }
+            },
+            {
+              "title": "Visual Identity Creation",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-899006ee24f9200e3c66efa47c4607c024dd64b9-5568x3712-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Brand Visual Identity"
+              }
+            },
+            {
+              "title": "Color Palette Choice",
+              "customImage": {
+                "image": {
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage",
+                "alt": "Color Cards"
+              }
+            },
+            {
+              "title": "Typography Selection",
+              "customImage": {
+                "alt": "Different Fonts",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Brand Collaterals",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Collaterals"
+              }
+            },
+            {
+              "title": "Image Selection & Buttons",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Website",
+                "image": {
+                  "asset": {
+                    "_ref": "image-d471337c80a95d5c43af6705a472349b5c625042-5184x2920-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                }
+              }
+            },
+            {
+              "title": "Design Refinement",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Improving Design",
+                "image": {
+                  "asset": {
+                    "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                }
+              }
+            },
+            {
+              "title": "UI/UX",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Ui",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+                    "_type": "reference"
+                  }
+                }
+              }
+            },
+            {
+              "title": "Mockup Creation",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Web Design Mockup Drawings"
+              }
+            },
+            {
+              "title": "Website Optimization",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Optimizing"
+              }
+            },
+            {
+              "title": "Market Research",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Research Laptop",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg"
+                  }
+                }
+              }
+            },
+            {
+              "title": "Cross-Platform Compatibility",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "laptop & phone"
+              }
+            },
+            {
+              "title": "Symbols & Icons",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Multiple Icons and Symbols",
+                "image": {
+                  "asset": {
+                    "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                }
+              }
+            },
+            {
+              "title": "Brand Strategy Guide",
+              "customImage": {
+                "image": {
+                  "asset": {
+                    "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                    "_type": "reference"
+                  },
+                  "_upload": {
+                    "updatedAt": "2024-02-28T23:31:53.312Z",
+                    "createdAt": "2024-02-28T23:31:51.692Z",
+                    "file": {
+                      "name": "scott-graham-5fNmWej4tAA-unsplash.jpg",
+                      "type": "image/jpeg"
+                    },
+                    "progress": 100,
+                    "previewImage": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAB3ALMDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAArEAACAgECBQQCAgMBAAAAAAAAAQIRIQMxEhNBUWEycYGRIlIEM0JDoWL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/AMlS3ZSabpGasvhaVoItITlTqik7Vkzw76oKXFPogTn1ZrFWkyuBblQRyrKobSSTQEBQ6AAAYAAgoYgFQqKEBNCooaVZYCxEzbuXyXOSW+zMk/zRQtTLY1DlxwsstRUfyYLK4mBi5Z2AtyzsgAzouKFQ9sBSjiTj9E6q2ZtGEZJu6fQy1cwXuRFaM8UbpnFCXDI6k7VoqLatAnaBPBKf5Nd9gqxkjIGAgAYCAAAATpgNR7ilKgcjOUqAnUnjYy4spjk7eBx0+svoKucrS8jm6ikTLoKXXN2yiMgbxVRSAIiOOoOJG7LTCofYj/Fw+UbtJkvTb/Lqgjnp9jp0HinugTUlYp/jUo/JFi56ii6ZmtSUpppYRCubyzVJQXkqNnKK3aC490YWFgdCafYdEaS/y+hSm0n4IrWvBL3pLJgtVs0hKSWd2CNHF1gz4qw9wes4yqdU+o9VXG+oC9WNzOUJp1TpnRBJRwOwVzxgo53YzbhXZCaTxSSAxdVkNJcTt7I0enGsg6SpBBaAzAqoD3DoCyQVFNujV4QoqkTJ2/BRnHGo09nsW44omcbWN0bafDOCadPsQYJz01SWBcc/1Ru406BQuXgDDjl+iFxzW8EdihFdAcIvdIIwhqzlF2kkuwuJK84aNnpVmP0QtF3eAuIUoxgmngnnI1X8eJa0ox6Arkm3N7YLktWfRpHUlQwjHS5m0o/JrfQdpETSbtOgqrwLuT1CwQ3mvYmTQnbd3jsYSclOuoVrTAhcdbABXCEY08gmOwKd7IKrclSHdhAY8K5mXSZrWCZxuONwNYrhVI1gsX3OfSnxJN/JtzY+fpg1oBnzY939MObDu/oIsCObD9v+D5kP2QFARzI/vEfMj+0fsCgJ5kf2j9kvVj3X2Bbim7rPcymqxY+dHuvsz1JKTtPcLh8XRoa9yL8hb6EVe5Mm1sNeRsKx45AaUARA7FuOihWVG2Ki1hAS7QJOTH6nReIRCM2lpyx13G+Y/Smvcxc+LUt5VnVCXHG6oJWXL1e//Qenq1u38mj1YqTWcAtaLTw8FGPBq9pfYuXq9n9m3Ph2Y1rRabzgDLThOMrcWbU3uhwnGew4zjKTSeUQTw+BOHg0ALWL0/8AyQ4ySwjpJYK5rkt0xcR0tGM9G3cQVSY7Rk1OO6x3BSC1pxAZt5AFCKWSS0AAt6BjiqywilSMteeKTHOeDCTthNEVk7Yrggl2RzaEbmvGTfWdab8lMYN/jJvq+oRxB+cYFLEIr5B+heWBUfRLfoJeiXwH+v3YL0S9wK0qalcq8laONVpO13M4+iQ9F1qIDrAQrIGArFYDFdMLFYVTVmGpp07RvF9ByjYRx57AbuGQKMkxtgBGlQyKUgAIymyAAM66f46qLfcWu7aiAFVnqP8AKuwTxwrwAAD/AK4oF/W+mQAAj6ZZ6BF1Je4AB12JgACAACkAAQD2NIS4opgADoAAI//Z"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage",
+                "alt": "Teaching strategy on Laptop"
+              }
+            },
+            {
+              "title": "Deployment Assistance",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Helping",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                    "_type": "reference"
+                  }
+                }
+              }
+            },
+            {
+              "title": "Technical Support",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Online help",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                    "_type": "reference"
+                  }
+                }
+              }
+            },
+            {
+              "title": "Revisions",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-844c43198e22e2d2c7f2f02bb085d5906939da80-640x479-webp",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Redoing something"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "Custom Work",
+        "features": {
+          "features": [
+            {
+              "title": "Logo Design",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-9d9ff04621bf0e47eeb3b467e68b09e6146883de-5568x3712-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Drawing Logo"
+              }
+            },
+            {
+              "title": "3D Renders",
+              "customImage": {
+                "image": {
+                  "asset": {
+                    "_ref": "image-f0718cd7c77913f57b5b8cd1089510c3cc4ffeb0-7680x4320-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage",
+                "alt": "render"
+              }
+            },
+            {
+              "title": "Brand Collaterals",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Collaterals"
+              }
+            }
+          ]
+        },
+        "processes": null,
+        "price": null,
+        "path": "/custom-work"
+      }
+    ]
+  },
+  "_id": "10bd1344-4d09-4627-8c9c-e8f13104a5e9",
+  "lang": "en",
+  "work": {
+    "works": [
+      {
+        "slug": {
+          "current": "steampunk-dynasty",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-6f39d57094659f89086bb4b1161d670f5a0b73c9-673x687-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "steampunk logo"
+        },
+        "title": "Steampunk Dynasty",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
+          "text": "Kickstarter"
+        }
+      },
+      {
+        "title": "B'Hive",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "www.amazon.com",
+          "text": "B'Hive"
+        },
+        "slug": {
+          "current": "b-hive",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "alt": "B-hive logo",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-455cecc4bf259b2e27f8ed4a68aa28dd30922a91-1080x1080-png"
+            }
+          },
+          "_type": "customImage"
+        }
+      }
+    ]
+  },
+  "values": {
+    "_createdAt": "2024-03-01T05:04:57Z",
+    "values": [
+      {
+        "title": "Creativity",
+        "desc": "I infuse originality and imagination into every branding project, ensuring unique and captivating brand identities that stand out on the market.",
+        "_type": "value",
+        "_key": "8c0bcf871f45"
+      },
+      {
+        "title": "Innovation",
+        "desc": "My approach integrates cutting-edge techniques and fresh ideas to deliver branding that resonates with audiences.",
+        "_type": "value",
+        "_key": "9a2741212bb1"
+      },
+      {
+        "_type": "value",
+        "_key": "de7c43817654",
+        "title": "Collaboration",
+        "desc": "I prioritize open communication and teamwork, partnering closely with clients to bring their vision to life through collaborative and transparent processes."
+      },
+      {
+        "_type": "value",
+        "_key": "e7498d396f3c",
+        "title": "Quality",
+        "desc": "My commitment to excellence drives me to deliver high-quality branding services that elevate brands and leave a lasting impact on their audience.\n"
+      }
+    ],
+    "_rev": "4fqy6B5H6WrCPpGf2W35dM",
+    "_type": "valuesBlock",
+    "hiddenTitle": "Values",
+    "_id": "476b7505-b556-4333-ae53-beaa98ff191f",
+    "_updatedAt": "2024-03-01T05:06:08Z"
+  },
+  "hero": {
+    "customImage": {
+      "image": {
+        "asset": {
+          "_ref": "image-e7acb2ed08c2b231430db592204102fc40182e1e-4292x2861-jpg",
+          "_type": "reference"
+        },
+        "_type": "image"
+      },
+      "_type": "customImage",
+      "alt": "Someone Designing"
+    },
+    "title": {
+      "part1": "Revolutionize Your",
+      "part2": "Brand",
+      "_type": "fancyText"
+    },
+    "ctas": {
+      "cta1": {
+        "_type": "cta",
+        "link": "/contact",
+        "text": "WORK WITH ME"
+      }
+    },
+    "desc": "Join me on a journey of modern and organized design, uniquely tailored for your brand's success.",
+    "quote": {
+      "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+      "_type": "reference"
+    },
+    "subTitle": {
+      "part1": "Sedrak",
+      "part2": "(SETO)",
+      "_type": "fancyText",
+      "part3": "Nadzharyan - Graphic Designer"
+    },
+    "_type": "hero"
+  },
+  "footer": {
+    "_ref": "6153f403-d1ee-43a4-b054-e625df817442",
+    "_type": "reference"
+  },
+  "_type": "homePage",
+  "title": "Home",
+  "_createdAt": "2024-02-16T19:16:31Z",
+  "about": {
+    "hiddenTitle": "About Small English",
+    "_id": "1fefb9ac-5e0c-483a-83e2-785f84b9425d",
+    "_updatedAt": "2024-03-01T05:51:12Z",
+    "content": {
+      "desc1": "Additionally, I have 3 years of full-time experience as a UI/UX designer, which has contributed to my diverse skill set. My focus has now shifted towards brand development, and this has prompted the creation of Seto Arts.",
+      "customImage": {
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-ffad4f3d1b9f5d981c16719a9dcafec510271cd2-999x1468-webp",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage",
+        "alt": "Barney"
+      },
+      "title1": {
+        "_type": "fancyText",
+        "part3": ", a graphic designer with 6 years of experience specializing in illustration and playing card designs.",
+        "part1": "Hi, I'm",
+        "part2": "Seto"
+      }
+    },
+    "_createdAt": "2024-02-03T19:17:25Z",
+    "_rev": "4fqy6B5H6WrCPpGf2W3VkJ",
+    "_type": "aboutBlock"
+  },
+  "_updatedAt": "2024-03-01T05:54:32Z",
+  "_rev": "4fqy6B5H6WrCPpGf2W3XK2"
+}

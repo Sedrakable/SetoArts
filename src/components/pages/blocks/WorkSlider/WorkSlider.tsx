@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import styles from "./Work.module.scss";
+import styles from "./WorkSlider.module.scss";
 
 import { Splider, SpliderProps } from "../../containers/Splider";
 import FlexDiv from "../../../reuse/FlexDiv";
@@ -8,7 +8,9 @@ import { useAtom } from "jotai";
 import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 import { getTranslations } from "../../../../helpers/langUtils";
 
-export const Work: React.FC<PropsWithChildren<IWorkBlock>> = ({ works }) => {
+export const WorkSlider: React.FC<PropsWithChildren<IWorkBlock>> = ({
+  works,
+}) => {
   const [lang] = useAtom(langData);
   const translations = getTranslations(lang);
 
@@ -24,7 +26,7 @@ export const Work: React.FC<PropsWithChildren<IWorkBlock>> = ({ works }) => {
           desc: work.desc,
           primaryCta: {
             text: translations.buttons.view,
-            link: `${LocalPaths.WORK}/${work.slug.current}`,
+            link: `/${lang}${LocalPaths.ABOUT}/${work.slug.current}`,
           },
           seconadryCta: work.primaryLink,
         },

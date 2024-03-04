@@ -6,7 +6,6 @@ import { onClickNavigate } from "../../helpers/useNavigation";
 import { ReactComponent as Line } from "../../assets/illu/Line.svg";
 import FlexDiv from "../reuse/FlexDiv";
 import { Icon } from "../reuse/Icon";
-import { useWindowResize } from "../../helpers/useWindowResize";
 import { DropDown } from "./Dropdown/DropDown";
 import { ICta } from "../../data";
 import { useLocation } from "react-router-dom";
@@ -27,7 +26,6 @@ const TabButton: React.FC<TabButtonProps> = ({
   className,
 }) => {
   const location = useLocation();
-  const { isMobileOrTablet } = useWindowResize();
   const [dropDownOpen, setDropDownOpen] = useState(false);
 
   const onTabClick = (e: React.MouseEvent<HTMLElement>) => {

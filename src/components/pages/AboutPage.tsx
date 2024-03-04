@@ -5,6 +5,9 @@ import { Inspired } from "./blocks/Inspired/Inspired";
 import { About } from "./blocks/About/About";
 import { ImageGrid } from "./blocks/ImageGrid/ImageGrid";
 import { WorkBlock } from "./blocks/WorkBlock/WorkBlock";
+import { useParams } from "react-router-dom";
+import { useAtom } from "jotai";
+import { ModalProps, modalData } from "../reuse/Modal";
 
 export interface AboutPageProps {
   about: IAbout;
@@ -13,6 +16,20 @@ export interface AboutPageProps {
 
 export const AboutPage: React.FC<AboutPageProps> = (props) => {
   const [workImages, setWorkImages] = useState<ICustomImage[]>([]);
+  const [, setModalOpen] = useAtom(modalData);
+  const { slug } = useParams();
+  useEffect(() => {
+    // Check if a work slug is present in the URL and open the modal accordingly
+    console.log(slug);
+    if (slug) {
+      setModalOpen({
+        ...(props.work.works.find(
+          (work) => work.slug.current === slug
+        ) as ModalProps),
+        handleClose: () => setModalOpen(null),
+      });
+    }
+  }, [slug, setModalOpen, props.work.works]);
 
   useEffect(() => {
     const getAllWorkImages = (works: IWork[]) => {

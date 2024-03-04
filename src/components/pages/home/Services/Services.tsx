@@ -3,7 +3,7 @@ import styles from "./Services.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
-import { IService, IServices, LocalPaths } from "../../../../data.d";
+import { IService, IServices } from "../../../../data.d";
 import { Icon, IconType } from "../../../reuse/Icon";
 import { Tag } from "../../../reuse/Tag";
 import { Button } from "../../../reuse/Button";

@@ -1,0 +1,337 @@
+{
+  "features": {
+    "features": [
+      {
+        "_id": "81e45cb2-9d38-4676-81c8-39b6fa60c26b",
+        "title": "Landing Page Purpose",
+        "_updatedAt": "2024-02-17T01:12:09Z",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "_createdAt": "2024-02-17T01:12:09Z",
+        "_rev": "3CCvCCS16TIU7bHjZPNtdc",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Laptop with statistics"
+        }
+      },
+      {
+        "title": "Mockup Creation",
+        "_updatedAt": "2024-02-25T04:06:05Z",
+        "desc": "I create mockups and provide revisions to ensure your vision is captured accurately.",
+        "_createdAt": "2024-02-17T01:12:54Z",
+        "_rev": "rGZ2nN6K5mjOGJOoWaio8y",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Web Design Mockup Drawings"
+        },
+        "_id": "798224fd-d324-4a6f-8365-321007457a0c"
+      },
+      {
+        "desc": "I optimize your website to improve its performance, speed, and user engagement.",
+        "_createdAt": "2024-02-17T01:14:10Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGrXr",
+        "_type": "feature",
+        "customImage": {
+          "_type": "customImage",
+          "alt": "Optimizing",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+              "_type": "reference"
+            }
+          }
+        },
+        "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5",
+        "title": "Website Optimization",
+        "_updatedAt": "2024-02-28T23:30:42Z"
+      },
+      {
+        "title": "Deployment Assistance",
+        "_updatedAt": "2024-02-25T04:07:52Z",
+        "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website.",
+        "_createdAt": "2024-02-17T01:14:50Z",
+        "_rev": "rGZ2nN6K5mjOGJOoWaip9f",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "asset": {
+              "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage",
+          "alt": "Helping"
+        },
+        "_id": "e60a520d-3c08-4548-a3c2-684707e871e7"
+      },
+      {
+        "_createdAt": "2024-02-17T01:15:58Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGxZM",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Online help"
+        },
+        "_id": "259a1ec7-49ff-487e-ae0f-8524dc1106c0",
+        "title": "Technical Support",
+        "_updatedAt": "2024-02-28T23:32:57Z",
+        "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively."
+      }
+    ]
+  },
+  "_updatedAt": "2024-02-23T16:54:42Z",
+  "slug": {
+    "current": "landing-page",
+    "_type": "slug"
+  },
+  "_type": "servicePage",
+  "title": "Landing Page",
+  "_rev": "9mLWnJtMvL1OgKPLcVNeMB",
+  "_createdAt": "2024-02-23T16:29:35Z",
+  "_id": "e252a0e0-3dc4-4806-90c8-a3cf7d01a3f4",
+  "hero": {
+    "_type": "hero",
+    "customImage": {
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-b0d0cd3569ab8c58bb075c3e4d238a7c386f10fc-3440x1935-png",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage",
+      "alt": "Website landing page"
+    },
+    "title": {
+      "part1": "Landing Page:",
+      "part2": "Captivate & Convert",
+      "_type": "fancyText"
+    },
+    "desc": "Have an impactful page to engage and convert visitors swiftly.",
+    "quote": {
+      "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+      "_type": "reference"
+    }
+  },
+  "path": "landing",
+  "work": null,
+  "inspired": {
+    "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+    "_type": "reference"
+  },
+  "lang": "fr",
+  "processes": {
+    "processes": [
+      {
+        "_createdAt": "2024-02-17T01:17:30Z",
+        "_rev": "3CCvCCS16TIU7bHjZPO1fo",
+        "_type": "process",
+        "_id": "072d9200-e73b-4ece-9298-8771d15c53d9",
+        "title": "Initial Consultation",
+        "_updatedAt": "2024-02-17T01:17:30Z",
+        "desc": "The process commences with an in-depth initial consultation, where the client's requirements, target audience, branding objectives, and landing page purpose are discussed comprehensively.",
+        "features": [
+          {
+            "_createdAt": "2024-02-17T01:12:09Z",
+            "_rev": "3CCvCCS16TIU7bHjZPNtdc",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "asset": {
+                  "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                  "_type": "reference"
+                },
+                "_type": "image"
+              },
+              "_type": "customImage",
+              "alt": "Laptop with statistics"
+            },
+            "_id": "81e45cb2-9d38-4676-81c8-39b6fa60c26b",
+            "title": "Landing Page Purpose",
+            "_updatedAt": "2024-02-17T01:12:09Z",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        ]
+      },
+      {
+        "_createdAt": "2024-02-17T01:17:56Z",
+        "_rev": "3CCvCCS16TIU7bHjZPO2G0",
+        "_type": "process",
+        "_id": "4ecffa67-b1c5-4bbd-8e18-163dabc59b5d",
+        "title": "Design and Development",
+        "_updatedAt": "2024-02-17T01:17:56Z",
+        "desc": "Following the consultation, the design and development phase begins, starting with the creation of a mockup or wireframe for the landing page, followed by its development utilizing web technologies.",
+        "features": [
+          {
+            "customImage": {
+              "alt": "Web Design Mockup Drawings",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage"
+            },
+            "_id": "798224fd-d324-4a6f-8365-321007457a0c",
+            "title": "Mockup Creation",
+            "_updatedAt": "2024-02-25T04:06:05Z",
+            "desc": "I create mockups and provide revisions to ensure your vision is captured accurately.",
+            "_createdAt": "2024-02-17T01:12:54Z",
+            "_rev": "rGZ2nN6K5mjOGJOoWaio8y",
+            "_type": "feature"
+          }
+        ]
+      },
+      {
+        "_createdAt": "2024-02-17T01:18:07Z",
+        "_rev": "3CCvCCS16TIU7bHjZPO744",
+        "_type": "process",
+        "_id": "ec029ca4-322c-4a33-9c3e-bcc6b8292833",
+        "title": "Client Feedback and Revisions",
+        "_updatedAt": "2024-02-17T01:20:27Z",
+        "desc": "Upon completion of the initial design, the client is presented with the prototype for feedback. Necessary revisions are then incorporated based on the client's input, ensuring alignment with their",
+        "features": [
+          {
+            "_rev": "7oknzQMg38aRDJFE3SmP91",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-844c43198e22e2d2c7f2f02bb085d5906939da80-640x479-webp",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Redoing something"
+            },
+            "_id": "2cb269bf-a827-4965-8608-ce5b446e5844",
+            "title": "Revisions",
+            "_updatedAt": "2024-02-29T17:30:17Z",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "_createdAt": "2024-02-17T01:18:50Z"
+          }
+        ]
+      },
+      {
+        "title": "Testing and Optimization",
+        "_updatedAt": "2024-02-17T01:20:51Z",
+        "desc": "Following client approval, rigorous testing is conducted to ensure seamless functionality across various devices and browsers. Additionally, optimization techniques are employed to enhance the website’s performance and user experience.",
+        "features": [
+          {
+            "_createdAt": "2024-02-17T01:14:10Z",
+            "_rev": "1yoLMt3Jt0PZv9LdlrGrXr",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Optimizing"
+            },
+            "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5",
+            "title": "Website Optimization",
+            "_updatedAt": "2024-02-28T23:30:42Z",
+            "desc": "I optimize your website to improve its performance, speed, and user engagement."
+          }
+        ],
+        "_createdAt": "2024-02-17T01:20:51Z",
+        "_rev": "3CCvCCS16TIU7bHjZPODXO",
+        "_type": "process",
+        "_id": "233544f5-1cee-4ea7-a276-05fe216a8fd3"
+      },
+      {
+        "_type": "process",
+        "_id": "1881868e-36e9-4613-9bb1-f7165d0cb544",
+        "title": "Delivery and Launch",
+        "_updatedAt": "2024-02-17T01:21:31Z",
+        "desc": "After successful testing and approval, the finalized landing page is delivered to the client. Assistance is provided in deploying the page to their web hosting environment, ensuring a smooth launch.",
+        "features": [
+          {
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Helping"
+            },
+            "_id": "e60a520d-3c08-4548-a3c2-684707e871e7",
+            "title": "Deployment Assistance",
+            "_updatedAt": "2024-02-25T04:07:52Z",
+            "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website.",
+            "_createdAt": "2024-02-17T01:14:50Z",
+            "_rev": "rGZ2nN6K5mjOGJOoWaip9f",
+            "_type": "feature"
+          }
+        ],
+        "_createdAt": "2024-02-17T01:21:31Z",
+        "_rev": "3CCvCCS16TIU7bHjZPOEW4"
+      },
+      {
+        "_createdAt": "2024-02-17T01:21:50Z",
+        "_rev": "3CCvCCS16TIU7bHjZPOEiq",
+        "_type": "process",
+        "_id": "47611d1f-798d-4ded-9187-f585f38c16f5",
+        "title": "Post-launch Support",
+        "_updatedAt": "2024-02-17T01:21:50Z",
+        "desc": "Continued support is offered post-launch to address any technical issues, provide guidance on content updates, and offer further assistance as required, ensuring sustained performance and effectiveness.",
+        "features": [
+          {
+            "_updatedAt": "2024-02-28T23:32:57Z",
+            "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively.",
+            "_createdAt": "2024-02-17T01:15:58Z",
+            "_rev": "1yoLMt3Jt0PZv9LdlrGxZM",
+            "_type": "feature",
+            "customImage": {
+              "alt": "Online help",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage"
+            },
+            "_id": "259a1ec7-49ff-487e-ae0f-8524dc1106c0",
+            "title": "Technical Support"
+          }
+        ]
+      }
+    ]
+  }
+}

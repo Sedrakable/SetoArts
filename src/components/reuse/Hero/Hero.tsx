@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
       )}
       <FlexDiv className={styles.right}>
-        <SanityImage image={customImage.image} alt={customImage.alt} />
+        <SanityImage image={customImage?.image} alt={customImage?.alt} />
         <FlexDiv
           className={styles.container}
           flex={{ direction: "column", x: "flex-start", y: "flex-start" }}

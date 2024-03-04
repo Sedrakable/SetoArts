@@ -26,6 +26,7 @@ export const useFetchPage = (query: string) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // const data = null; // This is to test
         const data = await client.fetch(query);
         setPage(data);
       } catch (error) {
@@ -42,7 +43,7 @@ export const useFetchPage = (query: string) => {
       if (!page) {
         console.error("Error fetch page data: ", query, page);
       } else {
-        console.log("Fetched Page data: ", page);
+        // console.log("Fetched Page data: ", page);
       }
     }
   }, [loading, page, query]);

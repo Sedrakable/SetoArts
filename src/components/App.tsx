@@ -17,13 +17,14 @@ import { ContactPage } from "./pages/ContactPage";
 import { NotFound } from "./pages/NotFound";
 import { LegalPage } from "./pages/LegalPage";
 import { LocalPaths } from "../data.d";
-import { useDataQuery } from "../helpers/useDataQuery";
+import { useDataQuery } from "../api/useDataQuery";
 
 const App = () => {
   const ref = useRef<any>(null);
   const [modalOpen] = useAtom(modalData);
   const [lang] = useAtom(langData);
   const navigate = useNavigate();
+
   const {
     footerData,
     navbarData,
@@ -47,11 +48,23 @@ const App = () => {
     navigate(newLangPath);
   }, [lang, navigate]);
 
+  const handleModalClose = (handleClose: () => void) => {
+    handleClose();
+
+    const newPath = `/${lang}${LocalPaths.ABOUT}`;
+    navigate(newPath);
+  };
+
   return (
     navbarData && (
       <div className={styles.app} ref={ref}>
         <Navbar {...navbarData} />
-        {modalOpen && <Modal {...modalOpen} />}
+        {modalOpen && (
+          <Modal
+            {...modalOpen}
+            handleClose={() => handleModalClose(modalOpen.handleClose)}
+          />
+        )}
 
         <ScrollToTop />
         <div className={styles.page}>
@@ -75,6 +88,10 @@ const App = () => {
             })}
             <Route
               path={`/${lang}${LocalPaths.ABOUT}`}
+              element={<AboutPage {...aboutPageData} />}
+            />
+            <Route
+              path={`/${lang}${LocalPaths.ABOUT}/:slug`}
               element={<AboutPage {...aboutPageData} />}
             />
             <Route

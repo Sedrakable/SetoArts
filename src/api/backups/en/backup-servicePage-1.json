@@ -1,0 +1,481 @@
+{
+  "work": {
+    "title": null,
+    "works": [
+      {
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
+          "text": "Kickstarter"
+        },
+        "slug": {
+          "current": "steampunk-dynasty",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-6f39d57094659f89086bb4b1161d670f5a0b73c9-673x687-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "steampunk logo"
+        },
+        "title": "Steampunk Dynasty"
+      },
+      {
+        "primaryLink": {
+          "_type": "cta",
+          "link": "www.amazon.com",
+          "text": "B'Hive"
+        },
+        "slug": {
+          "current": "b-hive",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-455cecc4bf259b2e27f8ed4a68aa28dd30922a91-1080x1080-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "B-hive logo"
+        },
+        "title": "B'Hive",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    ]
+  },
+  "_type": "servicePage",
+  "hero": {
+    "_type": "hero",
+    "customImage": {
+      "image": {
+        "asset": {
+          "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
+          "_type": "reference"
+        },
+        "_type": "image"
+      },
+      "_type": "customImage",
+      "alt": "landing page"
+    },
+    "title": {
+      "part1": "Total Package:",
+      "part2": "Unify Your Brand",
+      "_type": "fancyText"
+    },
+    "desc": "Combine branding and landing pages designed for optimal engagement, ensuring an online presence that captivates and converts visitors effectively.",
+    "quote": {
+      "_type": "reference",
+      "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7"
+    }
+  },
+  "_id": "76b94d48-93c4-40ef-8deb-dd2d365ed137",
+  "processes": {
+    "processes": [
+      {
+        "_type": "process",
+        "_id": "7cfae497-77d8-42fb-9a4c-2b0b349f10e3",
+        "title": "Finding Direction",
+        "_updatedAt": "2024-02-17T00:52:25Z",
+        "desc": "In this stage the focus is on visual exploration and conceptualization. This entails creating mood boards to capture the essence of the brand and its visual identity. Additionally, a brand style presentation is crafted to showcase potential directions for the brand's visual representation, setting the stage for further development.",
+        "features": [
+          {
+            "_id": "7cbca69e-94f4-4e6b-b5c9-da7db1389c90",
+            "title": "Visual Identity Creation",
+            "_updatedAt": "2024-02-28T23:26:35Z",
+            "desc": "I create a unique look for your brand that makes it stand out from the competition.",
+            "_createdAt": "2024-02-16T19:41:42Z",
+            "_rev": "1yoLMt3Jt0PZv9LdlrGmNu",
+            "_type": "feature",
+            "customImage": {
+              "_type": "customImage",
+              "alt": "Brand Visual Identity",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-899006ee24f9200e3c66efa47c4607c024dd64b9-5568x3712-jpg",
+                  "_type": "reference"
+                }
+              }
+            }
+          }
+        ],
+        "_createdAt": "2024-02-17T00:52:25Z",
+        "_rev": "3CCvCCS16TIU7bHjZPNEAo"
+      }
+    ]
+  },
+  "title": "Total Package",
+  "_createdAt": "2024-02-29T01:50:52Z",
+  "inspired": {
+    "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
+    "_type": "reference"
+  },
+  "path": "/total-package",
+  "lang": "en",
+  "features": {
+    "features": [
+      {
+        "title": "Logo Design",
+        "_updatedAt": "2024-02-26T23:53:00Z",
+        "desc": "I specialize in crafting logos that accurately represent your brand's identity and values.",
+        "_createdAt": "2024-02-17T00:54:31Z",
+        "_rev": "c9hkvQgAJDwuQEMKj1idEd",
+        "_type": "feature",
+        "customImage": {
+          "_type": "customImage",
+          "alt": "Drawing Logo",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-9d9ff04621bf0e47eeb3b467e68b09e6146883de-5568x3712-jpg",
+              "_type": "reference"
+            }
+          }
+        },
+        "_id": "6d77efe2-57b9-4403-ab28-fe91ff005135"
+      },
+      {
+        "_id": "7cbca69e-94f4-4e6b-b5c9-da7db1389c90",
+        "title": "Visual Identity Creation",
+        "_updatedAt": "2024-02-28T23:26:35Z",
+        "desc": "I create a unique look for your brand that makes it stand out from the competition.",
+        "_createdAt": "2024-02-16T19:41:42Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGmNu",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Brand Visual Identity",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-899006ee24f9200e3c66efa47c4607c024dd64b9-5568x3712-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        }
+      },
+      {
+        "_createdAt": "2024-02-16T16:37:17Z",
+        "_rev": "rGZ2nN6K5mjOGJOoWadrUT",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Color Cards"
+        },
+        "_id": "771493a4-5468-4dc6-bfcf-2c91f00b7996",
+        "title": "Color Palette Choice",
+        "_updatedAt": "2024-02-25T02:50:16Z",
+        "desc": "I help you pick colors that work well together and make your brand memorable."
+      },
+      {
+        "title": "Typography Selection",
+        "_updatedAt": "2024-02-25T02:53:54Z",
+        "desc": "I can guide you to choose fonts that match your brand's personality and are easy to read.",
+        "_createdAt": "2024-02-16T19:39:57Z",
+        "_rev": "PbLk1lY4gqV16YAWmNISuc",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Different Fonts"
+        },
+        "_id": "0a49d858-b10b-4eef-a7cc-4093e2a9c172"
+      },
+      {
+        "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
+        "title": "Brand Collaterals",
+        "_updatedAt": "2024-02-28T23:17:34Z",
+        "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
+        "_createdAt": "2024-02-16T16:48:19Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrG7cQ",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Collaterals"
+        }
+      },
+      {
+        "_createdAt": "2024-02-27T00:04:30Z",
+        "_rev": "OgNY2vtdjbR76xUBGB8hBY",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-d471337c80a95d5c43af6705a472349b5c625042-5184x2920-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Website"
+        },
+        "_id": "0f362cc2-a75f-48a0-8708-d1b57ba524f3",
+        "title": "Image Selection & Buttons",
+        "_updatedAt": "2024-02-27T02:57:03Z",
+        "desc": "I select images that resonate with your brand while designing visually appealing buttons to enhance user experience."
+      },
+      {
+        "desc": "I your improve your already existing designs so that they reflect exactly your brand's image.",
+        "_createdAt": "2024-02-16T19:37:13Z",
+        "_rev": "c9hkvQgAJDwuQEMKj1iccZ",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Improving Design",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "_id": "a593a279-7a50-4a8a-a6bb-f53804913817",
+        "title": "Design Refinement",
+        "_updatedAt": "2024-02-26T23:52:47Z"
+      },
+      {
+        "_id": "befea04e-284f-4bd7-9053-e303bf678f80",
+        "title": "UI/UX",
+        "_updatedAt": "2024-02-27T00:08:39Z",
+        "desc": "I work on the user interface and experience design to enhance the usability and accessibility of your website.",
+        "_createdAt": "2024-02-16T16:47:58Z",
+        "_rev": "c9hkvQgAJDwuQEMKj1lH56",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Ui"
+        }
+      },
+      {
+        "_rev": "rGZ2nN6K5mjOGJOoWaio8y",
+        "_type": "feature",
+        "customImage": {
+          "_type": "customImage",
+          "alt": "Web Design Mockup Drawings",
+          "image": {
+            "asset": {
+              "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          }
+        },
+        "_id": "798224fd-d324-4a6f-8365-321007457a0c",
+        "title": "Mockup Creation",
+        "_updatedAt": "2024-02-25T04:06:05Z",
+        "desc": "I create mockups and provide revisions to ensure your vision is captured accurately.",
+        "_createdAt": "2024-02-17T01:12:54Z"
+      },
+      {
+        "title": "Website Optimization",
+        "_updatedAt": "2024-02-28T23:30:42Z",
+        "desc": "I optimize your website to improve its performance, speed, and user engagement.",
+        "_createdAt": "2024-02-17T01:14:10Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGrXr",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Optimizing"
+        },
+        "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5"
+      },
+      {
+        "_rev": "rGZ2nN6K5mjOGJOoWadvqK",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Research Laptop"
+        },
+        "_id": "56491256-2b1f-4fba-8dc0-69e9139c0ac5",
+        "title": "Market Research",
+        "_updatedAt": "2024-02-25T02:50:59Z",
+        "desc": "I study the market to give you useful information for making smart decisions about your brand.",
+        "_createdAt": "2024-02-16T19:35:36Z"
+      },
+      {
+        "_id": "699d2f9c-5881-4bd3-915e-ff73e117dcb6",
+        "title": "Cross-Platform Compatibility",
+        "_updatedAt": "2024-02-27T03:02:28Z",
+        "desc": "I ensure seamless operation across all devices, including Windows, Apple products, Android Products, etc.",
+        "_createdAt": "2024-02-27T03:02:28Z",
+        "_rev": "OgNY2vtdjbR76xUBGB9Jou",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "laptop & phone"
+        }
+      },
+      {
+        "_createdAt": "2024-02-16T19:45:12Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGmog",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Multiple Icons and Symbols"
+        },
+        "_id": "f6fd36f2-26cd-4036-b227-b9317d8ea47a",
+        "title": "Symbols & Icons",
+        "_updatedAt": "2024-02-28T23:27:55Z",
+        "desc": "I design eye catching icons and symbols that can be frequently used on your website or elsewhere."
+      },
+      {
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg"
+            },
+            "_upload": {
+              "createdAt": "2024-02-28T23:31:51.692Z",
+              "file": {
+                "name": "scott-graham-5fNmWej4tAA-unsplash.jpg",
+                "type": "image/jpeg"
+              },
+              "progress": 100,
+              "previewImage": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAB3ALMDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAArEAACAgECBQQCAgMBAAAAAAAAAQIRIQMxEhNBUWEycYGRIlIEM0JDoWL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/AMlS3ZSabpGasvhaVoItITlTqik7Vkzw76oKXFPogTn1ZrFWkyuBblQRyrKobSSTQEBQ6AAAYAAgoYgFQqKEBNCooaVZYCxEzbuXyXOSW+zMk/zRQtTLY1DlxwsstRUfyYLK4mBi5Z2AtyzsgAzouKFQ9sBSjiTj9E6q2ZtGEZJu6fQy1cwXuRFaM8UbpnFCXDI6k7VoqLatAnaBPBKf5Nd9gqxkjIGAgAYCAAAATpgNR7ilKgcjOUqAnUnjYy4spjk7eBx0+svoKucrS8jm6ikTLoKXXN2yiMgbxVRSAIiOOoOJG7LTCofYj/Fw+UbtJkvTb/Lqgjnp9jp0HinugTUlYp/jUo/JFi56ii6ZmtSUpppYRCubyzVJQXkqNnKK3aC490YWFgdCafYdEaS/y+hSm0n4IrWvBL3pLJgtVs0hKSWd2CNHF1gz4qw9wes4yqdU+o9VXG+oC9WNzOUJp1TpnRBJRwOwVzxgo53YzbhXZCaTxSSAxdVkNJcTt7I0enGsg6SpBBaAzAqoD3DoCyQVFNujV4QoqkTJ2/BRnHGo09nsW44omcbWN0bafDOCadPsQYJz01SWBcc/1Ru406BQuXgDDjl+iFxzW8EdihFdAcIvdIIwhqzlF2kkuwuJK84aNnpVmP0QtF3eAuIUoxgmngnnI1X8eJa0ox6Arkm3N7YLktWfRpHUlQwjHS5m0o/JrfQdpETSbtOgqrwLuT1CwQ3mvYmTQnbd3jsYSclOuoVrTAhcdbABXCEY08gmOwKd7IKrclSHdhAY8K5mXSZrWCZxuONwNYrhVI1gsX3OfSnxJN/JtzY+fpg1oBnzY939MObDu/oIsCObD9v+D5kP2QFARzI/vEfMj+0fsCgJ5kf2j9kvVj3X2Bbim7rPcymqxY+dHuvsz1JKTtPcLh8XRoa9yL8hb6EVe5Mm1sNeRsKx45AaUARA7FuOihWVG2Ki1hAS7QJOTH6nReIRCM2lpyx13G+Y/Smvcxc+LUt5VnVCXHG6oJWXL1e//Qenq1u38mj1YqTWcAtaLTw8FGPBq9pfYuXq9n9m3Ph2Y1rRabzgDLThOMrcWbU3uhwnGew4zjKTSeUQTw+BOHg0ALWL0/8AyQ4ySwjpJYK5rkt0xcR0tGM9G3cQVSY7Rk1OO6x3BSC1pxAZt5AFCKWSS0AAt6BjiqywilSMteeKTHOeDCTthNEVk7Yrggl2RzaEbmvGTfWdab8lMYN/jJvq+oRxB+cYFLEIr5B+heWBUfRLfoJeiXwH+v3YL0S9wK0qalcq8laONVpO13M4+iQ9F1qIDrAQrIGArFYDFdMLFYVTVmGpp07RvF9ByjYRx57AbuGQKMkxtgBGlQyKUgAIymyAAM66f46qLfcWu7aiAFVnqP8AKuwTxwrwAAD/AK4oF/W+mQAAj6ZZ6BF1Je4AB12JgACAACkAAQD2NIS4opgADoAAI//Z",
+              "updatedAt": "2024-02-28T23:31:53.312Z"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Teaching strategy on Laptop"
+        },
+        "_id": "f76d9180-461b-45eb-8378-50022c458953",
+        "title": "Brand Strategy Guide",
+        "_updatedAt": "2024-02-28T23:31:54Z",
+        "desc": "I give you a plan with practical steps to maintain your brand's image with the chosen writing style, tone, and more.",
+        "_createdAt": "2024-02-16T19:43:09Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGuo0"
+      },
+      {
+        "_rev": "rGZ2nN6K5mjOGJOoWaip9f",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Helping"
+        },
+        "_id": "e60a520d-3c08-4548-a3c2-684707e871e7",
+        "title": "Deployment Assistance",
+        "_updatedAt": "2024-02-25T04:07:52Z",
+        "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website.",
+        "_createdAt": "2024-02-17T01:14:50Z"
+      },
+      {
+        "_createdAt": "2024-02-17T01:15:58Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGxZM",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Online help"
+        },
+        "_id": "259a1ec7-49ff-487e-ae0f-8524dc1106c0",
+        "title": "Technical Support",
+        "_updatedAt": "2024-02-28T23:32:57Z",
+        "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively."
+      },
+      {
+        "_createdAt": "2024-02-17T01:18:50Z",
+        "_rev": "7oknzQMg38aRDJFE3SmP91",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-844c43198e22e2d2c7f2f02bb085d5906939da80-640x479-webp",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Redoing something"
+        },
+        "_id": "2cb269bf-a827-4965-8608-ce5b446e5844",
+        "title": "Revisions",
+        "_updatedAt": "2024-02-29T17:30:17Z",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      }
+    ]
+  },
+  "_rev": "f3VLH3aq8RO8NcgZLh4ShQ",
+  "price": 2500,
+  "_updatedAt": "2024-02-29T18:40:18Z"
+}

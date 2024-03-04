@@ -1,0 +1,52 @@
+{
+  "_rev": "rGZ2nN6K5mjOGJOoWXcbsw",
+  "_type": "navbar",
+  "links": [
+    {
+      "_type": "cta",
+      "link": "/home",
+      "text": "Home",
+      "_key": "4f46b0d12c68"
+    },
+    {
+      "title": "Services",
+      "ctaArray": [
+        {
+          "_key": "11154909336c",
+          "_type": "cta",
+          "link": "/branding",
+          "text": "Branding"
+        },
+        {
+          "_key": "e573184d8aa4",
+          "_type": "cta",
+          "link": "/landing",
+          "text": "Landing"
+        },
+        {
+          "text": "Custom",
+          "_key": "3e7b99440720",
+          "_type": "cta",
+          "link": "/custom"
+        }
+      ],
+      "_key": "88741c87bee3"
+    },
+    {
+      "_type": "cta",
+      "link": "/about",
+      "text": "About + Work",
+      "_key": "4ef2f32cfdd0"
+    },
+    {
+      "link": "/contact",
+      "text": "Work with me",
+      "_key": "9c871a85916b",
+      "_type": "cta"
+    }
+  ],
+  "_id": "9b71d40d-6006-4c25-88bf-807111698bb6",
+  "lang": "fr",
+  "_updatedAt": "2024-02-23T16:09:06Z",
+  "_createdAt": "2024-02-23T16:08:50Z"
+}

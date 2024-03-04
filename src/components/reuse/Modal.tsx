@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Variants, motion } from "framer-motion";
 import { Backdrop } from "./Backdrop";
 import styles from "./Modal.module.scss";
-import { Heading } from "./Heading";
 import { atom } from "jotai";
 import { Paragraph } from "./Paragraph";
 import { IconButton } from "./IconButton";
 import { Button } from "./Button";
-import { Link } from "./Link";
 import { ICta, IWork } from "../../data";
 import FlexDiv from "./FlexDiv";
 import { Title } from "./Title/Title";
@@ -51,12 +49,6 @@ export const Modal: React.FC<ModalProps> = ({
   kickstarterProjectlink,
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   containerRef.current!.addEventListener("scroll", (event) => {
-  //     event.preventDefault();
-  //   });
-  // }, [containerRef]);
 
   return (
     <Backdrop onClick={handleClose}>

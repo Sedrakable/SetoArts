@@ -5,7 +5,7 @@ import { Hero } from "../reuse/Hero/Hero";
 import { Inspired } from "./blocks/Inspired/Inspired";
 import { Features } from "./services/Features/Features";
 import { Processes } from "./services/Processes/Processes";
-import { Work } from "./blocks/WorkSlidesBlock/Work";
+import { WorkSlider } from "./blocks/WorkSlider/WorkSlider";
 
 export interface ServicePageProps extends IService {
   hero: IHero;
@@ -22,7 +22,7 @@ export const ServicePage: FC<ServicePageProps> = (props) => {
           variant={props?.processes ? "dark" : "grid"}
         />
         {props?.processes && <Processes {...props?.processes} />}
-        {props?.work && <Work {...props?.work} />}
+        {props?.work && <WorkSlider {...props?.work} />}
         <Inspired />
       </>
     )

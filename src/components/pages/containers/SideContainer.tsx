@@ -4,7 +4,6 @@ import cn from "classnames";
 import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../../reuse/Paragraph";
 import { Button } from "../../reuse/Button";
-import { Link } from "../../reuse/Link";
 import FlexDiv from "../../reuse/FlexDiv";
 import { ICta } from "../../../data";
 

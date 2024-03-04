@@ -4,27 +4,31 @@ import cn from "classnames";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
-import { IWork, IWorkBlock } from "../../../../data";
+import { IWork, IWorkBlock, LocalPaths } from "../../../../data.d";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import { useAtom } from "jotai";
 import { modalData } from "../../../reuse/Modal";
 import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 import { getTranslations } from "../../../../helpers/langUtils";
+import { useNavigate } from "react-router-dom";
 
 const Work: FC<IWork> = (props) => {
   const [, setModalOpen] = useAtom(modalData);
+  const [lang] = useAtom(langData);
+  const navigate = useNavigate();
+
+  const handleModalOpen = () => {
+    setModalOpen({
+      handleClose: () => setModalOpen(null),
+      ...props,
+    });
+    // Update the URL programmatically when opening the modal
+    const newPath = `/${lang}${LocalPaths.ABOUT}/${props.slug.current}`;
+    navigate(newPath);
+  };
 
   return (
-    <FlexDiv
-      width100
-      className={styles.container}
-      onClick={() =>
-        setModalOpen({
-          handleClose: () => setModalOpen(null),
-          ...props,
-        })
-      }
-    >
+    <FlexDiv width100 className={styles.container} onClick={handleModalOpen}>
       <div className={styles.imgWrapper}>
         <SanityImage {...props.thumbnailImage} />
       </div>
