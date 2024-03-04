@@ -44,7 +44,7 @@ const App = () => {
 
   useEffect(() => {
     const currentPath = window.location.pathname;
-    const newLangPath = currentPath.replace(/\/(en|fr)\//, `/${lang}/`);
+    const newLangPath = currentPath.replace(/\/(en|fr)\//, `${lang}/`);
     navigate(newLangPath);
   }, [lang, navigate]);
 
