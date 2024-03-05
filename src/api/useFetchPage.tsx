@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
-const client = createClient({
-  projectId: "9mwoew4a",
-  dataset: "production", // Usually 'production'
+export const client = createClient({
+  projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
+  dataset: process.env.REACT_APP_SANITY_DATASET, // Usually 'production'
   useCdn: true, // Set to true for production
   apiVersion: "2024-01-31",
 });

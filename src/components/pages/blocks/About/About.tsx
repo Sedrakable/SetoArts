@@ -60,7 +60,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
           gapArray={[4, 5, 5, 7]}
         >
           {customImage && (
-            <SanityImage image={customImage.image} alt={customImage.alt} />
+            <SanityImage image={customImage?.image} alt={customImage?.alt} />
           )}
           <div>
             {name && (

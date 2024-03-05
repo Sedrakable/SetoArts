@@ -8,6 +8,7 @@ import React, {
 import { ICustomImage } from "../../../data";
 import { urlFor } from "../../../api/useFetchPage";
 import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export const SanityImage: React.FC<PropsWithChildren<
   ICustomImage & ImgHTMLAttributes<HTMLImageElement>
@@ -15,6 +16,7 @@ export const SanityImage: React.FC<PropsWithChildren<
   const [loaded, setLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [imgWidth, setImgWidth] = useState<number | null>(null);
+  const [imgHeight, setImgHeight] = useState<number | null>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const minimumWidth = 600;
 
@@ -54,8 +56,11 @@ export const SanityImage: React.FC<PropsWithChildren<
   useEffect(() => {
     const handleResize = () => {
       if (imgRef.current?.clientWidth && isVisible && loaded) {
+        console.log("Resize event triggered");
         const newWidth = imgRef.current.clientWidth;
+        const aspectRatio = 1; // Default to 1:1 aspect ratio if not available
         setImgWidth(newWidth < minimumWidth ? minimumWidth : newWidth);
+        setImgHeight(newWidth * aspectRatio);
       }
     };
     handleResize();
@@ -66,16 +71,13 @@ export const SanityImage: React.FC<PropsWithChildren<
   }, [imgRef, isVisible, loaded]);
 
   return (
-    <>
-      {/* {!loaded && <div className={styles.placeholder}>Loading...</div>} */}
-      <img
-        ref={imgRef}
+    <figure ref={imgRef}>
+      <LazyLoadImage
         src={src}
         alt={alt}
         onLoad={() => setLoaded(true)}
-        style={{ objectFit: "cover" }}
-        {...props}
+        style={{ objectFit: "cover", maxHeight: imgHeight! }}
       />
-    </>
+    </figure>
   );
 };

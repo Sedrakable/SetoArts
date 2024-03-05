@@ -7,6 +7,7 @@ import { ContactPageProps } from "../components/pages/ContactPage";
 import { HomePageProps } from "../components/pages/HomePage";
 import { ServicePageProps } from "../components/pages/ServicePage";
 import { IFooter, ILegalPage, INavBar, INotFound } from "../data";
+import { useEffect } from "react";
 
 const { generateQueries } = require("./generateSanityQueries");
 
@@ -31,6 +32,10 @@ const importSequentialJSONFiles = (
 export const useDataQuery = () => {
   const [lang] = useAtom(langData);
   // Load JSON data from files using require
+
+  useEffect(() => {
+    console.log(process.env.REACT_APP_SANITY_PROJECT_ID);
+  }, []);
 
   const {
     navbarQuery,

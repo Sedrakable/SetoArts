@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { lazy, useEffect, useRef } from "react";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import { Modal, modalData } from "./reuse/Modal";
 import { useAtom } from "jotai";
@@ -8,16 +8,32 @@ import "../css/ScrollBar.scss";
 
 import { ScrollToTop } from "../helpers/ScrollToTop";
 import { HomePage } from "./pages/HomePage";
-import { ServicePage } from "./pages/ServicePage";
+// import { ServicePage } from "./pages/ServicePage";
 import { Navbar } from "./navbar/Navbar";
 import { Footer } from "./footer/Footer";
-import { AboutPage } from "./pages/AboutPage";
+// import { AboutPage } from "./pages/AboutPage";
 import { langData } from "./navbar/LangSwitcher/LangSwitcher";
-import { ContactPage } from "./pages/ContactPage";
-import { NotFound } from "./pages/NotFound";
-import { LegalPage } from "./pages/LegalPage";
+// import { ContactPage } from "./pages/ContactPage";
+// import { NotFound } from "./pages/NotFound";
+// import { LegalPage } from "./pages/LegalPage";
 import { LocalPaths } from "../data.d";
 import { useDataQuery } from "../api/useDataQuery";
+
+const LegalPage = lazy(() =>
+  import("./pages/LegalPage").then((comp) => ({ default: comp.LegalPage }))
+);
+const NotFound = lazy(() =>
+  import("./pages/NotFound").then((comp) => ({ default: comp.NotFound }))
+);
+const ContactPage = lazy(() =>
+  import("./pages/ContactPage").then((comp) => ({ default: comp.ContactPage }))
+);
+const AboutPage = lazy(() =>
+  import("./pages/AboutPage").then((comp) => ({ default: comp.AboutPage }))
+);
+const ServicePage = lazy(() =>
+  import("./pages/ServicePage").then((comp) => ({ default: comp.ServicePage }))
+);
 
 const App = () => {
   const ref = useRef<any>(null);
@@ -70,7 +86,7 @@ const App = () => {
         <div className={styles.page}>
           <Routes>
             <Route
-              path="/"
+              path="/*"
               element={<Navigate to={`/${lang}${LocalPaths.HOME}`} />}
             />
             <Route
@@ -107,15 +123,6 @@ const App = () => {
                 />
               );
             })}
-            {/* {workData?.map((work) => {
-              return (
-                <Route
-                  key={work._id}
-                  path={`/${lang}${LocalPaths.WORK}${work.slug}`}
-                  element={<Work {...page} />}
-                />
-              );
-            })} */}
             <Route path="*" element={<NotFound {...notFoundPageData} />} />
           </Routes>
         </div>

@@ -30,7 +30,7 @@ const Work: FC<IWork> = (props) => {
   return (
     <FlexDiv width100 className={styles.container} onClick={handleModalOpen}>
       <div className={styles.imgWrapper}>
-        <SanityImage {...props.thumbnailImage} />
+        <SanityImage {...props?.thumbnailImage} />
       </div>
       <FlexDiv
         width100

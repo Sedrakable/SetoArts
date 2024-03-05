@@ -10,7 +10,7 @@ const root = createRoot(container!);
 root.render(
   <React.StrictMode>
     <ParallaxProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
       </BrowserRouter>
     </ParallaxProvider>

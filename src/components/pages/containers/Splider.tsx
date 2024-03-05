@@ -94,8 +94,8 @@ export const Splider: React.FC<SpliderContainerProps> = ({
           className={cn({ [styles.content]: splider?.content })}
         >
           <SanityImage
-            image={splider.customImage.image}
-            alt={splider.customImage.alt}
+            image={splider?.customImage.image}
+            alt={splider?.customImage.alt}
           />
           {text && splider?.content && (
             //NEEDS TO BE REPLACED BY ALTUAL CONTENT

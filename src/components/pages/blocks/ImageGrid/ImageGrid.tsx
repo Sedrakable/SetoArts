@@ -20,13 +20,15 @@ export const ImageGrid: React.FC<ImageGridProps> = ({ customImages }) => {
     >
       {customImages?.map((image, key) => {
         return (
-          <SanityImage
-            {...image}
-            key={key}
-            style={{
-              objectFit: "cover",
-            }}
-          />
+          image && (
+            <SanityImage
+              {...image}
+              key={key}
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          )
         );
       })}
     </FlexDiv>
