@@ -1,10 +1,322 @@
 {
-  "_updatedAt": "2024-02-23T16:54:12Z",
+  "_rev": "42dARgouF4fLoQkzWqYqkN",
+  "title": "Page d'atterrissage",
+  "price": 1500,
+  "lang": "fr",
+  "processes": {
+    "processes": [
+      {
+        "_updatedAt": "2024-03-07T02:33:43Z",
+        "desc": "Le processus commence par une consultation initiale approfondie, au cours de laquelle les besoins du client, le public cible, les objectifs de marque et l'objectif de la page d'atterrissage sont discutés en détail.",
+        "features": [
+          {
+            "desc": "Je mène des consultations pour définir l'objectif de votre page d'atterrissage, en couvrant les exigences, le public cible, les objectifs de branding, etc.",
+            "_createdAt": "2024-03-07T02:21:21Z",
+            "_rev": "42dARgouF4fLoQkzWqWpgP",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "laptop avec statistiques"
+            },
+            "_id": "12ce2df8-3ed5-40f2-8f25-e46e2645ee15",
+            "title": "Objectif de la page d'atterrissage",
+            "_updatedAt": "2024-03-07T02:21:21Z"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:33:21Z",
+        "_rev": "42dARgouF4fLoQkzWqXWuH",
+        "_type": "process",
+        "_id": "5cb59b8d-d22f-4757-b005-2eb71fad8a75",
+        "title": "Consultation initiale:"
+      },
+      {
+        "_id": "95c46193-d26a-4b07-91c2-da3738b6fb2c",
+        "title": "Conception et développement",
+        "_updatedAt": "2024-03-07T02:35:06Z",
+        "desc": "Après la consultation, la phase de conception et de développement commence par la création d'une maquette ou d'un fil de fer pour la page d'atterrissage, suivie de son développement à l'aide de technologies web.",
+        "features": [
+          {
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "asset": {
+                  "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+                  "_type": "reference"
+                },
+                "_type": "image"
+              },
+              "_type": "customImage",
+              "alt": "Croquis de maquettes de design web"
+            },
+            "_id": "26f813ea-aff6-4666-bf49-6ef7b673d8d6",
+            "title": "Création de maquettes",
+            "_updatedAt": "2024-03-07T02:22:56Z",
+            "desc": "Je crée des maquettes et fournis des révisions pour m'assurer que votre vision est capturée avec précision.",
+            "_createdAt": "2024-03-07T02:22:56Z",
+            "_rev": "42dARgouF4fLoQkzWqWu2T"
+          },
+          {
+            "title": "UI/UX",
+            "_updatedAt": "2024-03-07T02:24:51Z",
+            "desc": "Je travaille sur la conception de l'interface utilisateur et de l'expérience utilisateur pour améliorer la convivialité et l'accessibilité de votre site web.",
+            "_createdAt": "2024-03-07T02:24:51Z",
+            "_rev": "42dARgouF4fLoQkzWqWxOD",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "UI"
+            },
+            "_id": "8efc470a-caa8-428c-ae69-dc49d8c04a55"
+          },
+          {
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-d471337c80a95d5c43af6705a472349b5c625042-5184x2920-jpg"
+                }
+              },
+              "_type": "customImage",
+              "alt": "site web avec images"
+            },
+            "_id": "9098aae1-212d-4762-be54-3f4e43ec02e2",
+            "title": "Images et Boutons",
+            "_updatedAt": "2024-03-07T02:26:38Z",
+            "desc": "Je sélectionne des images qui résonnent avec votre marque tout en concevant des boutons visuellement attrayants pour améliorer l'expérience utilisateur.",
+            "_createdAt": "2024-03-07T02:26:38Z",
+            "_rev": "42dARgouF4fLoQkzWqX2fP",
+            "_type": "feature"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:35:06Z",
+        "_rev": "42dARgouF4fLoQkzWqXga8",
+        "_type": "process"
+      },
+      {
+        "_rev": "42dARgouF4fLoQkzWqXo7Y",
+        "_type": "process",
+        "_id": "e19822f2-79b8-4ddb-b72d-e603cf0aca78",
+        "title": "Commentaires du client et révisions",
+        "_updatedAt": "2024-03-07T02:36:45Z",
+        "desc": "Une fois la conception initiale achevée, le prototype est présenté au client pour qu'il puisse donner son avis. Les révisions nécessaires sont alors incorporées en fonction des commentaires du client, afin de garantir l'alignement sur sa vision et ses objectifs.",
+        "features": [
+          {
+            "title": "Révisions",
+            "_updatedAt": "2024-03-07T02:07:42Z",
+            "desc": "Plusieurs révisions sont proposées pour parfaire et s'assurer qu'elles correspondent à l'identité voulue de votre marque et résonnent avec votre public",
+            "_createdAt": "2024-03-07T02:07:42Z",
+            "_rev": "1X3tbPF0boRjlNqQpUDRRH",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-58c26acb5f64ddf63e523be87bfcdbb4160aa742-999x571-png",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Reffaire quelque chose"
+            },
+            "_id": "39419b2d-6078-48b4-a697-57946a24052d"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:35:24Z"
+      },
+      {
+        "_rev": "42dARgouF4fLoQkzWqXrdg",
+        "_type": "process",
+        "_id": "f6171a36-8747-482b-9696-8642be346c05",
+        "title": "Tests et optimisation",
+        "_updatedAt": "2024-03-07T02:38:18Z",
+        "desc": "Following client approval, rigorous testing is conducted to ensure seamless functionality across various devices and browsers. Additionally, optimization techniques are employed to enhance the website’s performance and user experience.",
+        "features": [
+          {
+            "title": "Optimisation de site",
+            "_updatedAt": "2024-03-07T02:27:45Z",
+            "desc": "J'optimise votre site web pour améliorer ses performances, sa vitesse et l'engagement des utilisateurs.",
+            "_createdAt": "2024-03-07T02:27:45Z",
+            "_rev": "42dARgouF4fLoQkzWqX71T",
+            "_type": "feature",
+            "customImage": {
+              "alt": "Optimisation du site web",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage"
+            },
+            "_id": "81ee294b-0064-4a00-b5df-bd916b4a0b2f"
+          },
+          {
+            "customImage": {
+              "image": {
+                "asset": {
+                  "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
+                  "_type": "reference"
+                },
+                "_type": "image"
+              },
+              "_type": "customImage",
+              "alt": "laptop et phone"
+            },
+            "_id": "36301330-1d6f-4d33-b729-f3f1a94b1704",
+            "title": "Compatibilité multiplateforme",
+            "_updatedAt": "2024-03-07T02:28:55Z",
+            "desc": "Je veille à un fonctionnement sans faille sur tous les appareils, y compris les produits Windows, Apple, Android, etc.",
+            "_createdAt": "2024-03-07T02:28:38Z",
+            "_rev": "42dARgouF4fLoQkzWqX9PU",
+            "_type": "feature"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:38:18Z"
+      },
+      {
+        "title": "Livraison et lancement",
+        "_updatedAt": "2024-03-07T02:39:30Z",
+        "desc": "Après avoir été testée et approuvée avec succès, la page d'atterrissage finalisée est livrée au client. Une assistance est fournie pour le déploiement de la page dans l'environnement d'hébergement du client, afin d'assurer un lancement en douceur.",
+        "features": [
+          {
+            "_id": "a61fcd43-64fb-4c64-8e81-50626aaaa62b",
+            "title": "Assistance au déploiement",
+            "_updatedAt": "2024-03-07T02:29:41Z",
+            "desc": "J'assiste avec le processus de déploiement pour garantir un lancement fluide et réussi de votre site web.",
+            "_createdAt": "2024-03-07T02:29:41Z",
+            "_rev": "42dARgouF4fLoQkzWqXAV0",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "aide"
+            }
+          },
+          {
+            "desc": "Je vais développer un site web optimisé et entièrement fonctionnel, complet avec des images, des boutons et tous les éléments nécessaires, soigneusement conçus pour refléter l'identité et les valeurs de votre marque.",
+            "_createdAt": "2024-03-07T02:19:17Z",
+            "_rev": "42dARgouF4fLoQkzWqWVCa",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Site sur un laptop"
+            },
+            "_id": "9d58e474-5571-4b86-8436-ed0da1fa97fa",
+            "title": "Site web",
+            "_updatedAt": "2024-03-07T02:19:17Z"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:39:30Z",
+        "_rev": "42dARgouF4fLoQkzWqY1oh",
+        "_type": "process",
+        "_id": "7e75e50f-02d4-41c7-a698-a2abef8bf4f3"
+      },
+      {
+        "_id": "a680d7d2-6764-4920-b8eb-21fd94abe998",
+        "title": "Assistance après le lancement",
+        "_updatedAt": "2024-03-07T02:40:12Z",
+        "desc": "Une assistance continue est proposée après le lancement pour résoudre les problèmes techniques, fournir des conseils sur les mises à jour du contenu et offrir une assistance supplémentaire si nécessaire, afin de garantir une performance et une efficacité durables.",
+        "features": [
+          {
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Programmation a travers lunettes"
+            },
+            "_id": "738b660a-c7a3-4bd5-99b7-c3d693c2fbf5",
+            "title": "Support technique",
+            "_updatedAt": "2024-03-07T02:31:34Z",
+            "desc": "Je propose un support technique après le lancement pour résoudre tout problème et garantir le bon fonctionnement continu de votre site web.",
+            "_createdAt": "2024-03-07T02:31:05Z",
+            "_rev": "42dARgouF4fLoQkzWqXRXt",
+            "_type": "feature"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:40:12Z",
+        "_rev": "42dARgouF4fLoQkzWqY7LT",
+        "_type": "process"
+      }
+    ]
+  },
   "_type": "servicePage",
+  "_id": "2c1f6742-e229-42cd-8443-02b5eb130871",
+  "_updatedAt": "2024-03-07T02:40:31Z",
+  "hero": {
+    "desc": "Avoir une page percutante pour engager et convertir rapidement les visiteurs.",
+    "quote": {
+      "leftText": "Chaos",
+      "hiddenTitle": "Quote French",
+      "_id": "d8519909-fabe-4263-8a36-5f89fc22f968",
+      "_updatedAt": "2024-03-06T19:38:56Z",
+      "rightText": "organisé",
+      "_createdAt": "2024-03-06T19:37:07Z",
+      "_rev": "42dARgouF4fLoQkzWojxBT",
+      "_type": "quote"
+    },
+    "_type": "hero",
+    "customImage": {
+      "alt": "page d'atterrissage sur laptop",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage"
+    },
+    "title": {
+      "part2": "Captiver et Convertir",
+      "_type": "fancyText",
+      "part1": "page d'atterrissage:"
+    }
+  },
+  "path": "/landing-page",
   "work": {
     "title": null,
     "works": [
       {
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
+          "text": "Kickstarter"
+        },
         "slug": {
           "current": "steampunk-dynasty",
           "_type": "slug"
@@ -20,19 +332,9 @@
           "_type": "customImage",
           "alt": "steampunk logo"
         },
-        "title": "Steampunk Dynasty",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "primaryLink": {
-          "_type": "cta",
-          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
-          "text": "Kickstarter"
-        }
+        "title": "Steampunk Dynasty"
       },
       {
-        "slug": {
-          "current": "b-hive",
-          "_type": "slug"
-        },
         "thumbnailImage": {
           "image": {
             "_type": "image",
@@ -50,118 +352,245 @@
           "_type": "cta",
           "link": "www.amazon.com",
           "text": "B'Hive"
+        },
+        "slug": {
+          "current": "b-hive",
+          "_type": "slug"
+        }
+      },
+      {
+        "slug": {
+          "current": "Happy",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "bruv"
+        },
+        "title": "Seto Gainz ",
+        "desc": "lerem ipsum bruh hah Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "dgdhdjhhd",
+          "text": "ffghfdhd"
+        }
+      },
+      {
+        "title": "Get Gud",
+        "desc": "Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "dhdhd",
+          "text": "gehgdd"
+        },
+        "slug": {
+          "current": "get-gud",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "bedhbed"
         }
       }
     ]
   },
-  "_rev": "9mLWnJtMvL1OgKPLcVNaB4",
-  "path": "custom",
-  "hero": {
-    "quote": {
-      "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
-      "_type": "reference"
-    },
-    "_type": "hero",
-    "customImage": {
-      "image": {
-        "_type": "image",
-        "asset": {
-          "_ref": "image-902898d553013b9114bb74924105fed446c60949-3072x3005-jpg",
-          "_type": "reference"
-        }
-      },
-      "_type": "customImage",
-      "alt": "working"
-    },
-    "title": {
-      "part1": "Custom Work:",
-      "part2": "From Logos to Videos",
-      "_type": "fancyText"
-    },
-    "ctas": {
-      "cta1": {
-        "link": "/contac",
-        "text": "Contact Me",
-        "_type": "cta"
-      }
-    },
-    "desc": "Request unique and personalized designs tailored to your preferences."
-  },
-  "lang": "fr",
-  "slug": {
-    "current": "custom",
-    "_type": "slug"
-  },
-  "title": "Custom Work",
   "features": {
     "features": [
       {
-        "desc": "I specialize in crafting logos that accurately represent your brand's identity and values.",
-        "_createdAt": "2024-02-17T00:54:31Z",
-        "_rev": "c9hkvQgAJDwuQEMKj1idEd",
-        "_type": "feature",
         "customImage": {
           "image": {
+            "_type": "image",
             "asset": {
-              "_ref": "image-9d9ff04621bf0e47eeb3b467e68b09e6146883de-5568x3712-jpg",
+              "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
               "_type": "reference"
-            },
-            "_type": "image"
+            }
           },
           "_type": "customImage",
-          "alt": "Drawing Logo"
+          "alt": "Site sur un laptop"
         },
-        "_id": "6d77efe2-57b9-4403-ab28-fe91ff005135",
-        "title": "Logo Design",
-        "_updatedAt": "2024-02-26T23:53:00Z"
+        "_id": "9d58e474-5571-4b86-8436-ed0da1fa97fa",
+        "title": "Site web",
+        "_updatedAt": "2024-03-07T02:19:17Z",
+        "desc": "Je vais développer un site web optimisé et entièrement fonctionnel, complet avec des images, des boutons et tous les éléments nécessaires, soigneusement conçus pour refléter l'identité et les valeurs de votre marque.",
+        "_createdAt": "2024-03-07T02:19:17Z",
+        "_rev": "42dARgouF4fLoQkzWqWVCa",
+        "_type": "feature"
       },
       {
-        "_updatedAt": "2024-02-20T03:35:31Z",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "_createdAt": "2024-02-20T03:35:31Z",
-        "_rev": "PbLk1lY4gqV16YAWmDwXy6",
+        "_updatedAt": "2024-03-07T02:21:21Z",
+        "desc": "Je mène des consultations pour définir l'objectif de votre page d'atterrissage, en couvrant les exigences, le public cible, les objectifs de branding, etc.",
+        "_createdAt": "2024-03-07T02:21:21Z",
+        "_rev": "42dARgouF4fLoQkzWqWpgP",
+        "_type": "feature",
+        "customImage": {
+          "alt": "laptop avec statistiques",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "_id": "12ce2df8-3ed5-40f2-8f25-e46e2645ee15",
+        "title": "Objectif de la page d'atterrissage"
+      },
+      {
+        "_createdAt": "2024-03-07T02:22:56Z",
+        "_rev": "42dARgouF4fLoQkzWqWu2T",
         "_type": "feature",
         "customImage": {
           "image": {
             "_type": "image",
             "asset": {
-              "_type": "reference",
-              "_ref": "image-f0718cd7c77913f57b5b8cd1089510c3cc4ffeb0-7680x4320-jpg"
+              "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+              "_type": "reference"
             }
           },
           "_type": "customImage",
-          "alt": "render"
+          "alt": "Croquis de maquettes de design web"
         },
-        "_id": "eab5037f-982f-405e-a16a-f8d96b70e67b",
-        "title": "3D Renders"
+        "_id": "26f813ea-aff6-4666-bf49-6ef7b673d8d6",
+        "title": "Création de maquettes",
+        "_updatedAt": "2024-03-07T02:22:56Z",
+        "desc": "Je crée des maquettes et fournis des révisions pour m'assurer que votre vision est capturée avec précision."
       },
       {
         "customImage": {
           "image": {
+            "_type": "image",
             "asset": {
-              "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
+              "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "UI"
+        },
+        "_id": "8efc470a-caa8-428c-ae69-dc49d8c04a55",
+        "title": "UI/UX",
+        "_updatedAt": "2024-03-07T02:24:51Z",
+        "desc": "Je travaille sur la conception de l'interface utilisateur et de l'expérience utilisateur pour améliorer la convivialité et l'accessibilité de votre site web.",
+        "_createdAt": "2024-03-07T02:24:51Z",
+        "_rev": "42dARgouF4fLoQkzWqWxOD",
+        "_type": "feature"
+      },
+      {
+        "title": "Images et Boutons",
+        "_updatedAt": "2024-03-07T02:26:38Z",
+        "desc": "Je sélectionne des images qui résonnent avec votre marque tout en concevant des boutons visuellement attrayants pour améliorer l'expérience utilisateur.",
+        "_createdAt": "2024-03-07T02:26:38Z",
+        "_rev": "42dARgouF4fLoQkzWqX2fP",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-d471337c80a95d5c43af6705a472349b5c625042-5184x2920-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "site web avec images"
+        },
+        "_id": "9098aae1-212d-4762-be54-3f4e43ec02e2"
+      },
+      {
+        "_createdAt": "2024-03-07T02:27:45Z",
+        "_rev": "42dARgouF4fLoQkzWqX71T",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Optimisation du site web"
+        },
+        "_id": "81ee294b-0064-4a00-b5df-bd916b4a0b2f",
+        "title": "Optimisation de site",
+        "_updatedAt": "2024-03-07T02:27:45Z",
+        "desc": "J'optimise votre site web pour améliorer ses performances, sa vitesse et l'engagement des utilisateurs."
+      },
+      {
+        "_rev": "42dARgouF4fLoQkzWqX9PU",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "laptop et phone"
+        },
+        "_id": "36301330-1d6f-4d33-b729-f3f1a94b1704",
+        "title": "Compatibilité multiplateforme",
+        "_updatedAt": "2024-03-07T02:28:55Z",
+        "desc": "Je veille à un fonctionnement sans faille sur tous les appareils, y compris les produits Windows, Apple, Android, etc.",
+        "_createdAt": "2024-03-07T02:28:38Z"
+      },
+      {
+        "_updatedAt": "2024-03-07T02:29:41Z",
+        "desc": "J'assiste avec le processus de déploiement pour garantir un lancement fluide et réussi de votre site web.",
+        "_createdAt": "2024-03-07T02:29:41Z",
+        "_rev": "42dARgouF4fLoQkzWqXAV0",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "asset": {
+              "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
               "_type": "reference"
             },
             "_type": "image"
           },
           "_type": "customImage",
-          "alt": "Collaterals"
+          "alt": "aide"
         },
-        "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
-        "title": "Brand Collaterals",
-        "_updatedAt": "2024-02-28T23:17:34Z",
-        "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
-        "_createdAt": "2024-02-16T16:48:19Z",
-        "_rev": "1yoLMt3Jt0PZv9LdlrG7cQ",
-        "_type": "feature"
+        "_id": "a61fcd43-64fb-4c64-8e81-50626aaaa62b",
+        "title": "Assistance au déploiement"
+      },
+      {
+        "desc": "Je propose un support technique après le lancement pour résoudre tout problème et garantir le bon fonctionnement continu de votre site web.",
+        "_createdAt": "2024-03-07T02:31:05Z",
+        "_rev": "42dARgouF4fLoQkzWqXRXt",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Programmation a travers lunettes",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "_id": "738b660a-c7a3-4bd5-99b7-c3d693c2fbf5",
+        "title": "Support technique",
+        "_updatedAt": "2024-03-07T02:31:34Z"
       }
     ]
   },
-  "inspired": {
-    "_type": "reference",
-    "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d"
-  },
-  "_createdAt": "2024-02-23T16:46:03Z",
-  "_id": "45be4891-387d-41a7-8dff-7bc54e1d5b79",
-  "processes": null
+  "_createdAt": "2024-03-07T02:40:20Z"
 }

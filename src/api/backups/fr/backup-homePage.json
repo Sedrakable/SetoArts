@@ -1,9 +1,93 @@
 {
+  "hero": {
+    "ctas": {
+      "cta1": {
+        "text": "Travail avec Moi",
+        "_type": "localLink",
+        "link": "/contact"
+      }
+    },
+    "desc": "Rejoignez-moi dans un voyage de design moderne et organisé, spécialement conçu pour le succès de votre marque.",
+    "quote": {
+      "rightText": "organisé",
+      "_createdAt": "2024-03-06T19:37:07Z",
+      "_rev": "42dARgouF4fLoQkzWojxBT",
+      "_type": "quote",
+      "leftText": "Chaos",
+      "hiddenTitle": "Quote French",
+      "_id": "d8519909-fabe-4263-8a36-5f89fc22f968",
+      "_updatedAt": "2024-03-06T19:38:56Z"
+    },
+    "subTitle": {
+      "part2": "(SETO)",
+      "_type": "fancyText",
+      "part3": "Nadzharyan - Graphiste",
+      "part1": "Sedrak"
+    },
+    "_type": "hero",
+    "customImage": {
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-f3a3568bc60f1f327fcc660cf816acdfc4cc11b0-4368x2912-jpg"
+        }
+      },
+      "_type": "customImage",
+      "alt": "Des Designs"
+    },
+    "title": {
+      "part1": "Révolutionnez votre",
+      "part2": "marque",
+      "_type": "fancyText"
+    }
+  },
+  "_updatedAt": "2024-03-07T04:51:30Z",
+  "_rev": "1X3tbPF0boRjlNqQpUXh1x",
+  "title": "Home",
+  "_id": "d1227a54-ff8a-47df-92b5-06cee5c75bd9",
+  "footer": {
+    "_ref": "7170174a-5dc3-45cf-8df0-14477ef0674e",
+    "_type": "reference"
+  },
+  "lang": "fr",
+  "about": {
+    "_createdAt": "2024-03-06T19:56:32Z",
+    "_rev": "42dARgouF4fLoQkzWoq5rY",
+    "_type": "aboutBlock",
+    "hiddenTitle": "About Small Fr",
+    "_id": "93a735d3-4faf-45c3-a75e-ca2db8f5eb55",
+    "_updatedAt": "2024-03-06T19:56:32Z",
+    "content": {
+      "desc1": "De plus, j'ai 3 ans d'expérience à temps plein en tant que designer UI/UX, ce qui a contribué à enrichir mes compétences diversifiées. Mon attention s'est désormais tournée vers le développement de marques, ce qui a conduit à la création de Seto Arts.",
+      "customImage": {
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-a585f6e67c490c24cbd4cc89c04b82ae2223bbcf-1080x1080-png",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage",
+        "alt": "Me"
+      },
+      "title1": {
+        "part1": "Salut je suis",
+        "part2": "Seto",
+        "_type": "fancyText",
+        "part3": ", je suis un designer graphique avec 6 ans d'expérience spécialisé dans l'illustration et la conception de cartes de jeu."
+      }
+    }
+  },
+  "_type": "homePage",
   "work": {
     "works": [
       {
+        "slug": {
+          "current": "steampunk-dynasty",
+          "_type": "slug"
+        },
         "thumbnailImage": {
-          "alt": "steampunk logo",
           "image": {
             "_type": "image",
             "asset": {
@@ -11,18 +95,15 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage"
+          "_type": "customImage",
+          "alt": "steampunk logo"
         },
         "title": "Steampunk Dynasty",
         "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "primaryLink": {
-          "_type": "cta",
           "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
-          "text": "Kickstarter"
-        },
-        "slug": {
-          "current": "steampunk-dynasty",
-          "_type": "slug"
+          "text": "Kickstarter",
+          "_type": "cta"
         }
       },
       {
@@ -48,102 +129,731 @@
           "link": "www.amazon.com",
           "text": "B'Hive"
         }
+      },
+      {
+        "primaryLink": {
+          "text": "ffghfdhd",
+          "_type": "cta",
+          "link": "dgdhdjhhd"
+        },
+        "slug": {
+          "_type": "slug",
+          "current": "Happy"
+        },
+        "thumbnailImage": {
+          "alt": "bruv",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg"
+            }
+          },
+          "_type": "customImage"
+        },
+        "title": "Seto Gainz ",
+        "desc": "lerem ipsum bruh hah Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête."
+      },
+      {
+        "slug": {
+          "_type": "slug",
+          "current": "get-gud"
+        },
+        "thumbnailImage": {
+          "image": {
+            "asset": {
+              "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage",
+          "alt": "bedhbed"
+        },
+        "title": "Get Gud",
+        "desc": "Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "dhdhd",
+          "text": "gehgdd"
+        }
       }
     ]
   },
-  "values": null,
-  "_type": "homePage",
-  "navbar": {
-    "_ref": "1bd2295b-5204-4f9a-b2ab-b934a03c3102",
-    "_type": "reference"
-  },
-  "services": null,
-  "_createdAt": "2024-02-23T03:30:50Z",
-  "_rev": "rGZ2nN6K5mjOGJOoWWUzsW",
-  "title": "HomeFrancais",
-  "_id": "7cf3d4b3-f22d-449a-bb8a-c899914b2db3",
-  "footer": {
-    "_ref": "6153f403-d1ee-43a4-b054-e625df817442",
-    "_type": "reference"
-  },
-  "_updatedAt": "2024-02-23T03:35:27Z",
-  "inspired": {
-    "_type": "reference",
-    "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d"
-  },
-  "hero": {
-    "title": {
-      "part1": "Revolutionize Ton",
-      "part2": "Brand",
-      "_type": "fancyText"
-    },
-    "ctas": {
-      "cta2": {
-        "_type": "cta",
-        "link": "/",
-        "text": "Button 2"
+  "values": {
+    "_type": "valuesBlock",
+    "hiddenTitle": "Valeurs",
+    "_id": "606a9ff4-fd0c-4dd7-b3df-bee7c7fcccac",
+    "_updatedAt": "2024-03-06T19:54:14Z",
+    "_createdAt": "2024-03-06T19:48:19Z",
+    "values": [
+      {
+        "title": "Créativité",
+        "desc": "J'insuffle de l'originalité et de l'imagination dans chaque projet de branding, garantissant des identités de marque uniques et captivantes qui se démarquent sur le marché.",
+        "_type": "value",
+        "_key": "139144fd1ac8"
       },
-      "cta1": {
-        "_type": "cta",
-        "link": "/",
-        "text": "Button 1"
+      {
+        "_type": "value",
+        "_key": "936100d886f9",
+        "title": "Innovation",
+        "desc": "Mon approche intègre des techniques d'avant-garde et des idées fraîches pour fournir un branding qui résonne avec le public."
+      },
+      {
+        "title": "Collaboration",
+        "desc": "Je donne la priorité à la communication ouverte et au travail d'équipe, collaborant étroitement avec les clients pour donner vie à leur vision à travers des processus transparents.",
+        "_type": "value",
+        "_key": "1b3e569541de"
+      },
+      {
+        "_type": "value",
+        "_key": "ec7f2e8b711a",
+        "title": "Qualité",
+        "desc": "Mon engagement envers l'excellence me pousse à fournir des services de branding de haute qualité qui élèvent les marques et laissent une impression durable sur leur public."
       }
-    },
-    "desc": "Join me on a journey of modern and organized design, uniquely tailored for your brand's success.",
-    "quote": {
-      "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
-      "_type": "reference"
-    },
-    "subTitle": {
-      "part1": "Sedrak",
-      "part2": "(SETO)",
-      "_type": "fancyText",
-      "part3": "Nadzharyan - Graphic Designere Oui"
-    },
-    "_type": "hero",
-    "customImage": {
-      "image": {
-        "_type": "image",
-        "asset": {
-          "_ref": "image-844c43198e22e2d2c7f2f02bb085d5906939da80-640x479-webp",
+    ],
+    "_rev": "42dARgouF4fLoQkzWopQbj"
+  },
+  "services": {
+    "services": [
+      {
+        "path": "/branding",
+        "title": "Branding",
+        "features": {
+          "features": [
+            {
+              "title": "Identité visuelle",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-899006ee24f9200e3c66efa47c4607c024dd64b9-5568x3712-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Brand Visual Identity"
+              }
+            },
+            {
+              "title": "Logo",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-702195cac10049204c7bea608bd22d5b4833764a-3072x4080-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Logo"
+              }
+            },
+            {
+              "title": "Palette de couleurs",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Color Cards"
+              }
+            },
+            {
+              "title": "Typographie",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Differents Fonts"
+              }
+            },
+            {
+              "title": "Collatéraux d'entreprise",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Collatéraux",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg"
+                  }
+                }
+              }
+            },
+            {
+              "title": "Étude de marché",
+              "customImage": {
+                "alt": "Laptop Étude",
+                "image": {
+                  "asset": {
+                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Raffinements de designs",
+              "customImage": {
+                "alt": "Raffinements",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Symboles et icônes",
+              "customImage": {
+                "alt": "Icones et Symboles",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Guide de stratégie",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Enseignement de stratégie "
+              }
+            }
+          ]
+        },
+        "processes": {
+          "_ref": "cf81a17c-5d13-4ecd-a182-a43d4bd9b793",
           "_type": "reference"
+        },
+        "price": 1500
+      },
+      {
+        "path": "/landing-page",
+        "title": "Page d'atterrissage",
+        "features": {
+          "features": [
+            {
+              "title": "Site web",
+              "customImage": {
+                "image": {
+                  "asset": {
+                    "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage",
+                "alt": "Site sur un laptop"
+              }
+            },
+            {
+              "title": "Objectif de la page d'atterrissage",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "laptop avec statistiques"
+              }
+            },
+            {
+              "title": "Création de maquettes",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Croquis de maquettes de design web",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg"
+                  }
+                }
+              }
+            },
+            {
+              "title": "UI/UX",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "UI"
+              }
+            },
+            {
+              "title": "Images et Boutons",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-d471337c80a95d5c43af6705a472349b5c625042-5184x2920-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "site web avec images"
+              }
+            },
+            {
+              "title": "Optimisation de site",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Optimisation du site web"
+              }
+            },
+            {
+              "title": "Compatibilité multiplateforme",
+              "customImage": {
+                "alt": "laptop et phone",
+                "image": {
+                  "asset": {
+                    "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Assistance au déploiement",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "aide"
+              }
+            },
+            {
+              "title": "Support technique",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Programmation a travers lunettes"
+              }
+            }
+          ]
+        },
+        "processes": {
+          "_ref": "b7127dcb-22c0-4dd6-8a99-d0d742ba19c3",
+          "_type": "reference"
+        },
+        "price": 1500
+      },
+      {
+        "processes": {
+          "_ref": "9070b8bc-e27d-4c10-a791-9e7ac5651084",
+          "_type": "reference"
+        },
+        "price": 2500,
+        "path": "/total-package",
+        "title": "Combo Complet",
+        "features": {
+          "features": [
+            {
+              "title": "Identité visuelle",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-899006ee24f9200e3c66efa47c4607c024dd64b9-5568x3712-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Brand Visual Identity"
+              }
+            },
+            {
+              "title": "Logo",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-702195cac10049204c7bea608bd22d5b4833764a-3072x4080-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Logo"
+              }
+            },
+            {
+              "title": "Site web",
+              "customImage": {
+                "image": {
+                  "asset": {
+                    "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage",
+                "alt": "Site sur un laptop"
+              }
+            },
+            {
+              "title": "Étude de marché",
+              "customImage": {
+                "alt": "Laptop Étude",
+                "image": {
+                  "asset": {
+                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Palette de couleurs",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Color Cards"
+              }
+            },
+            {
+              "title": "Typographie",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Differents Fonts"
+              }
+            },
+            {
+              "title": "Raffinements de designs",
+              "customImage": {
+                "alt": "Raffinements",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Symboles et icônes",
+              "customImage": {
+                "alt": "Icones et Symboles",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Collatéraux d'entreprise",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Collatéraux",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg"
+                  }
+                }
+              }
+            },
+            {
+              "title": "Création de maquettes",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Croquis de maquettes de design web",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg"
+                  }
+                }
+              }
+            },
+            {
+              "title": "UI/UX",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "UI"
+              }
+            },
+            {
+              "title": "Images et Boutons",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-d471337c80a95d5c43af6705a472349b5c625042-5184x2920-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "site web avec images"
+              }
+            },
+            {
+              "title": "Optimisation de site",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Optimisation du site web"
+              }
+            },
+            {
+              "title": "Compatibilité multiplateforme",
+              "customImage": {
+                "alt": "laptop et phone",
+                "image": {
+                  "asset": {
+                    "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "Assistance au déploiement",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "aide"
+              }
+            },
+            {
+              "title": "Guide de stratégie",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Enseignement de stratégie "
+              }
+            },
+            {
+              "title": "Support technique",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Programmation a travers lunettes"
+              }
+            }
+          ]
         }
       },
-      "_type": "customImage",
-      "alt": "Someone Designing"
-    }
-  },
-  "slug": {
-    "current": "homefrancais",
-    "_type": "slug"
-  },
-  "about": {
-    "_type": "aboutBlock",
-    "hiddenTitle": "About Small English",
-    "_id": "1fefb9ac-5e0c-483a-83e2-785f84b9425d",
-    "_updatedAt": "2024-03-01T05:51:12Z",
-    "content": {
-      "title1": {
-        "_type": "fancyText",
-        "part3": ", a graphic designer with 6 years of experience specializing in illustration and playing card designs.",
-        "part1": "Hi, I'm",
-        "part2": "Seto"
-      },
-      "desc1": "Additionally, I have 3 years of full-time experience as a UI/UX designer, which has contributed to my diverse skill set. My focus has now shifted towards brand development, and this has prompted the creation of Seto Arts.",
-      "customImage": {
-        "image": {
-          "asset": {
-            "_type": "reference",
-            "_ref": "image-ffad4f3d1b9f5d981c16719a9dcafec510271cd2-999x1468-webp"
-          },
-          "_type": "image"
+      {
+        "path": "/custom-work",
+        "title": "Travail personnalisé",
+        "features": {
+          "features": [
+            {
+              "title": "Logo",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-702195cac10049204c7bea608bd22d5b4833764a-3072x4080-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Logo"
+              }
+            },
+            {
+              "title": "Site web",
+              "customImage": {
+                "image": {
+                  "asset": {
+                    "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
+                    "_type": "reference"
+                  },
+                  "_type": "image"
+                },
+                "_type": "customImage",
+                "alt": "Site sur un laptop"
+              }
+            },
+            {
+              "title": "Rendus 3D",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-f0718cd7c77913f57b5b8cd1089510c3cc4ffeb0-7680x4320-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "rendus 3D"
+              }
+            },
+            {
+              "title": "Collatéraux d'entreprise",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Collatéraux",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg"
+                  }
+                }
+              }
+            },
+            {
+              "title": "Identité visuelle",
+              "customImage": {
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-899006ee24f9200e3c66efa47c4607c024dd64b9-5568x3712-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage",
+                "alt": "Brand Visual Identity"
+              }
+            },
+            {
+              "title": "Raffinements de designs",
+              "customImage": {
+                "alt": "Raffinements",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+                    "_type": "reference"
+                  }
+                },
+                "_type": "customImage"
+              }
+            },
+            {
+              "title": "...",
+              "customImage": {
+                "_type": "customImage",
+                "alt": "Points d'interogations",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_ref": "image-2de92c703a09a355235addc52336c79bcfb2170e-3840x2160-jpg",
+                    "_type": "reference"
+                  }
+                }
+              }
+            }
+          ]
         },
-        "_type": "customImage",
-        "alt": "Barney"
+        "processes": null,
+        "price": null
       }
-    },
-    "_createdAt": "2024-02-03T19:17:25Z",
-    "_rev": "4fqy6B5H6WrCPpGf2W3VkJ"
+    ]
   },
-  "lang": "fr"
+  "_createdAt": "2024-03-06T19:44:43Z"
 }

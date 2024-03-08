@@ -1,46 +1,154 @@
 {
-  "path": "/custom-work",
-  "hero": {
-    "desc": "Request unique and personalized designs tailored to your preferences.",
-    "quote": {
-      "_ref": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
-      "_type": "reference"
-    },
-    "_type": "hero",
-    "customImage": {
-      "image": {
-        "_type": "image",
-        "asset": {
-          "_type": "reference",
-          "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg"
-        }
-      },
-      "_type": "customImage",
-      "alt": "working"
-    },
-    "title": {
-      "part1": "Custom Work:",
-      "part2": "From Logos to Videos",
-      "_type": "fancyText"
-    },
-    "ctas": {
-      "cta1": {
-        "_type": "cta",
-        "link": "/contact",
-        "text": "Contact Me"
-      }
-    }
-  },
-  "_id": "ee790de7-2019-49a4-8078-95096a767d80",
-  "lang": "en",
-  "title": "Custom Work",
+  "_rev": "4fqy6B5H6WrCPpGf2W3Wa7",
   "_updatedAt": "2024-03-01T05:52:15Z",
+  "features": {
+    "features": [
+      {
+        "_type": "feature",
+        "customImage": {
+          "_type": "customImage",
+          "alt": "Logo",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-702195cac10049204c7bea608bd22d5b4833764a-3072x4080-jpg",
+              "_type": "reference"
+            }
+          }
+        },
+        "_id": "6a092958-662e-42d0-8232-1f58540e3d3a",
+        "title": "Logo",
+        "_updatedAt": "2024-03-06T01:21:54Z",
+        "desc": "A logo will be meticulously crafted with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
+        "_createdAt": "2024-03-06T01:21:54Z",
+        "_rev": "yjwdrWT0n7hNXKlLZheSVG"
+      },
+      {
+        "_rev": "pE4qmNBESg4zKMd9uJCbZ1",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "asset": {
+              "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage",
+          "alt": "Website on laptop"
+        },
+        "_id": "736fcb49-5573-4dae-9ee7-6a9a3492d75f",
+        "title": "Website",
+        "_updatedAt": "2024-03-06T00:58:33Z",
+        "desc": "I will develop an optimized, fully functional website complete with images, buttons, and all necessary elements, meticulously crafted to embody your brand's identity and values.",
+        "_createdAt": "2024-03-06T00:58:33Z"
+      },
+      {
+        "desc": "I produce customized 3D renders that bring your ideas to life with precision and realism.",
+        "_createdAt": "2024-02-20T03:35:31Z",
+        "_rev": "1X3tbPF0boRjlNqQpUVfo3",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-f0718cd7c77913f57b5b8cd1089510c3cc4ffeb0-7680x4320-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "render"
+        },
+        "_id": "eab5037f-982f-405e-a16a-f8d96b70e67b",
+        "title": "3D Renders",
+        "_updatedAt": "2024-03-07T04:33:42Z"
+      },
+      {
+        "_updatedAt": "2024-02-28T23:17:34Z",
+        "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
+        "_createdAt": "2024-02-16T16:48:19Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrG7cQ",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Collaterals"
+        },
+        "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
+        "title": "Brand Collaterals"
+      },
+      {
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-899006ee24f9200e3c66efa47c4607c024dd64b9-5568x3712-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Brand Visual Identity"
+        },
+        "_id": "7cbca69e-94f4-4e6b-b5c9-da7db1389c90",
+        "title": "Visual Identity",
+        "_updatedAt": "2024-03-06T02:55:59Z",
+        "desc": "I create a unique look for your brand that makes it stand out from the competition.",
+        "_createdAt": "2024-02-16T19:41:42Z",
+        "_rev": "yjwdrWT0n7hNXKlLZi1hju",
+        "_type": "feature"
+      },
+      {
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Improving Design"
+        },
+        "_id": "a593a279-7a50-4a8a-a6bb-f53804913817",
+        "title": "Design Refinement",
+        "_updatedAt": "2024-02-26T23:52:47Z",
+        "desc": "I your improve your already existing designs so that they reflect exactly your brand's image.",
+        "_createdAt": "2024-02-16T19:37:13Z",
+        "_rev": "c9hkvQgAJDwuQEMKj1iccZ",
+        "_type": "feature"
+      },
+      {
+        "_rev": "OgNY2vtdjbR76xUBGB9TEO",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-2de92c703a09a355235addc52336c79bcfb2170e-3840x2160-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "question marks"
+        },
+        "_id": "5124b8ec-63f2-4da6-b74f-dbbe31b188fe",
+        "title": "...",
+        "_updatedAt": "2024-02-27T03:07:37Z",
+        "desc": "Contact me and tell me what you have in mind",
+        "_createdAt": "2024-02-27T03:07:37Z"
+      }
+    ]
+  },
   "work": {
     "title": null,
     "works": [
       {
-        "title": "Steampunk Dynasty",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "primaryLink": {
           "_type": "cta",
           "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
@@ -51,6 +159,7 @@
           "_type": "slug"
         },
         "thumbnailImage": {
+          "alt": "steampunk logo",
           "image": {
             "_type": "image",
             "asset": {
@@ -58,9 +167,10 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage",
-          "alt": "steampunk logo"
-        }
+          "_type": "customImage"
+        },
+        "title": "Steampunk Dynasty",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       },
       {
         "slug": {
@@ -85,75 +195,99 @@
           "link": "www.amazon.com",
           "text": "B'Hive"
         }
+      },
+      {
+        "slug": {
+          "current": "Happy",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg"
+            }
+          },
+          "_type": "customImage",
+          "alt": "bruv"
+        },
+        "title": "Seto Gainz ",
+        "desc": "lerem ipsum bruh hah Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "dgdhdjhhd",
+          "text": "ffghfdhd"
+        }
+      },
+      {
+        "slug": {
+          "current": "get-gud",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "image": {
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage",
+          "alt": "bedhbed"
+        },
+        "title": "Get Gud",
+        "desc": "Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "dhdhd",
+          "text": "gehgdd"
+        }
       }
     ]
   },
+  "_id": "ee790de7-2019-49a4-8078-95096a767d80",
+  "processes": null,
   "_createdAt": "2024-02-20T03:36:33Z",
-  "features": {
-    "features": [
-      {
-        "title": "Logo Design",
-        "_updatedAt": "2024-02-26T23:53:00Z",
-        "desc": "I specialize in crafting logos that accurately represent your brand's identity and values.",
-        "_createdAt": "2024-02-17T00:54:31Z",
-        "_rev": "c9hkvQgAJDwuQEMKj1idEd",
-        "_type": "feature",
-        "customImage": {
-          "_type": "customImage",
-          "alt": "Drawing Logo",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-9d9ff04621bf0e47eeb3b467e68b09e6146883de-5568x3712-jpg",
-              "_type": "reference"
-            }
-          }
-        },
-        "_id": "6d77efe2-57b9-4403-ab28-fe91ff005135"
-      },
-      {
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-f0718cd7c77913f57b5b8cd1089510c3cc4ffeb0-7680x4320-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "render"
-        },
-        "_id": "eab5037f-982f-405e-a16a-f8d96b70e67b",
-        "title": "3D Renders",
-        "_updatedAt": "2024-02-20T03:35:31Z",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "_createdAt": "2024-02-20T03:35:31Z",
-        "_rev": "PbLk1lY4gqV16YAWmDwXy6"
-      },
-      {
-        "_createdAt": "2024-02-16T16:48:19Z",
-        "_rev": "1yoLMt3Jt0PZv9LdlrG7cQ",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Collaterals"
-        },
-        "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
-        "title": "Brand Collaterals",
-        "_updatedAt": "2024-02-28T23:17:34Z",
-        "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere."
-      }
-    ]
-  },
-  "_rev": "4fqy6B5H6WrCPpGf2W3Wa7",
   "_type": "servicePage",
-  "processes": null
+  "hero": {
+    "customImage": {
+      "_type": "customImage",
+      "alt": "working",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
+          "_type": "reference"
+        }
+      }
+    },
+    "title": {
+      "part1": "Custom Work:",
+      "part2": "From Logos to Videos",
+      "_type": "fancyText"
+    },
+    "ctas": {
+      "cta1": {
+        "_type": "cta",
+        "link": "/contact",
+        "text": "Contact Me"
+      }
+    },
+    "desc": "Request unique and personalized designs tailored to your preferences.",
+    "quote": {
+      "hiddenTitle": "Quote English",
+      "_id": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+      "_updatedAt": "2024-03-06T19:40:57Z",
+      "rightText": "Chaos",
+      "_createdAt": "2024-01-29T23:15:08Z",
+      "_rev": "42dARgouF4fLoQkzWokNzP",
+      "_type": "quote",
+      "leftText": "Organized"
+    },
+    "_type": "hero"
+  },
+  "lang": "en",
+  "path": "/custom-work",
+  "title": "Custom Work"
 }

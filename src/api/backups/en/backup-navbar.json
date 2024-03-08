@@ -1,19 +1,13 @@
 {
-  "_id": "1bd2295b-5204-4f9a-b2ab-b934a03c3102",
-  "lang": "en",
-  "_updatedAt": "2024-02-29T08:40:21Z",
-  "_createdAt": "2024-02-16T16:09:05Z",
-  "_rev": "c9hkvQgAJDwuQEMKjCVAea",
   "_type": "navbar",
   "links": [
     {
-      "text": "Home Test",
+      "link": "/home",
+      "text": "Home",
       "_key": "57469334049d",
-      "_type": "localLink",
-      "link": "/home"
+      "_type": "localLink"
     },
     {
-      "_key": "5303e3087528",
       "title": "Services",
       "ctaArray": [
         {
@@ -23,10 +17,10 @@
           "_key": "9d5388be39ac"
         },
         {
-          "link": "/landing-page",
           "text": "Landing Page",
           "_key": "9e3c6dd471c9",
-          "_type": "localLink"
+          "_type": "localLink",
+          "link": "/landing-page"
         },
         {
           "_type": "localLink",
@@ -35,12 +29,13 @@
           "_key": "3cd4c91f1ffe"
         },
         {
+          "_type": "localLink",
           "link": "/custom-work",
           "text": "Custom Work",
-          "_key": "f77d3ff7288d",
-          "_type": "localLink"
+          "_key": "f77d3ff7288d"
         }
-      ]
+      ],
+      "_key": "5303e3087528"
     },
     {
       "_type": "localLink",
@@ -54,5 +49,10 @@
       "text": "Work with me",
       "_key": "eeac3056ca8e"
     }
-  ]
+  ],
+  "_id": "1bd2295b-5204-4f9a-b2ab-b934a03c3102",
+  "lang": "en",
+  "_updatedAt": "2024-02-29T08:40:21Z",
+  "_createdAt": "2024-02-16T16:09:05Z",
+  "_rev": "c9hkvQgAJDwuQEMKjCVAea"
 }

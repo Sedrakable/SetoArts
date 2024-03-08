@@ -1,52 +1,58 @@
 {
-  "_rev": "rGZ2nN6K5mjOGJOoWXcbsw",
+  "_createdAt": "2024-03-08T01:06:38Z",
+  "_rev": "D5qaY0ApMKkCjx1DEoL9Mu",
   "_type": "navbar",
   "links": [
     {
-      "_type": "cta",
+      "_type": "localLink",
       "link": "/home",
-      "text": "Home",
-      "_key": "4f46b0d12c68"
+      "text": "Accueil",
+      "_key": "57469334049d"
     },
     {
+      "_key": "5303e3087528",
       "title": "Services",
       "ctaArray": [
         {
-          "_key": "11154909336c",
-          "_type": "cta",
+          "_type": "localLink",
           "link": "/branding",
-          "text": "Branding"
+          "text": "Marque",
+          "_key": "9d5388be39ac"
         },
         {
-          "_key": "e573184d8aa4",
-          "_type": "cta",
-          "link": "/landing",
-          "text": "Landing"
+          "_type": "localLink",
+          "link": "/landing-page",
+          "text": "Page d'atterrissage",
+          "_key": "9e3c6dd471c9"
         },
         {
-          "text": "Custom",
-          "_key": "3e7b99440720",
-          "_type": "cta",
-          "link": "/custom"
+          "_key": "3cd4c91f1ffe",
+          "_type": "localLink",
+          "link": "/total-package",
+          "text": "Forfait complet"
+        },
+        {
+          "_type": "localLink",
+          "link": "/custom-work",
+          "text": "Travail sur mesure",
+          "_key": "f77d3ff7288d"
         }
-      ],
-      "_key": "88741c87bee3"
+      ]
     },
     {
-      "_type": "cta",
-      "link": "/about",
-      "text": "About + Work",
-      "_key": "4ef2f32cfdd0"
+      "link": "/about-work",
+      "text": "À propos + Travaux",
+      "_key": "05ce4081eec0",
+      "_type": "localLink"
     },
     {
-      "link": "/contact",
-      "text": "Work with me",
-      "_key": "9c871a85916b",
-      "_type": "cta"
+      "text": "Travaillez avec moi",
+      "_key": "eeac3056ca8e",
+      "_type": "localLink",
+      "link": "/contact"
     }
   ],
-  "_id": "9b71d40d-6006-4c25-88bf-807111698bb6",
+  "_id": "cf54ba16-cf0e-415c-b175-4cef4042bd3b",
   "lang": "fr",
-  "_updatedAt": "2024-02-23T16:09:06Z",
-  "_createdAt": "2024-02-23T16:08:50Z"
+  "_updatedAt": "2024-03-08T01:11:15Z"
 }

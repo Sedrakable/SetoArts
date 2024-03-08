@@ -1,56 +1,19 @@
 {
+  "lang": "fr",
+  "title": "Termes et conditions",
+  "_updatedAt": "2024-03-08T01:12:59Z",
   "data": [
     {
-      "style": "normal",
-      "_key": "8210ac872662",
+      "_key": "941ca19a5eb1",
       "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "marks": ["strong"],
-          "text": "Seto x Arts TEST FR",
-          "_key": "6960e48bcf160"
-        }
-      ],
-      "_type": "block"
-    },
-    {
-      "style": "normal",
-      "_key": "d9a0b5c2a2b3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "Effective Date: January 9, 2024",
-          "_key": "4fe2ca39d6710"
-        }
-      ],
-      "_type": "block"
-    },
-    {
-      "_type": "block",
-      "style": "normal",
-      "_key": "243c23e28e87",
-      "markDefs": [],
-      "children": [
-        {
-          "marks": ["strong"],
-          "text": "1. Acceptance of Terms",
-          "_key": "2925ef9adcd00",
-          "_type": "span"
-        }
-      ]
-    },
-    {
-      "_key": "0f9c9f25c54a",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "By accessing and using the setoxarts.com website and our services, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these terms, you may not use our website or services.",
-          "_key": "93b7d61a58100"
+          "marks": [
+            "strong"
+          ],
+          "text": "Seto x Arts",
+          "_key": "9a4a3dcdd9c30"
         }
       ],
       "_type": "block",
@@ -59,14 +22,192 @@
     {
       "_type": "block",
       "style": "normal",
-      "_key": "f661e2eb7214",
+      "_key": "e3365043f070",
       "markDefs": [],
       "children": [
         {
-          "marks": ["strong"],
-          "text": "2. Services Offered",
-          "_key": "f2600ee1d5600",
+          "_type": "span",
+          "marks": [
+            "strong"
+          ],
+          "text": "Date d'entrée en vigueur : 9 janvier 2024",
+          "_key": "40580ee66e000"
+        }
+      ]
+    },
+    {
+      "style": "normal",
+      "_key": "bf474fa31aed",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "",
+          "_key": "721c15a284e0"
+        }
+      ],
+      "_type": "block"
+    },
+    {
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [
+            "strong"
+          ],
+          "text": "1. Acceptation des conditions",
+          "_key": "945145168cd20"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "a06e595fa0ab"
+    },
+    {
+      "_key": "1742d91d1e3e",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "e0b7f49d7e920",
+          "_type": "span",
+          "marks": [],
+          "text": "En accédant et en utilisant le site web setoxarts.com et nos services, vous acceptez de vous conformer et d'être lié par ces Termes et Conditions. Si vous n'êtes pas d'accord avec une partie de ces termes, vous ne pouvez pas utiliser notre site web ou nos services."
+        }
+      ],
+      "_type": "block",
+      "style": "normal"
+    },
+    {
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "",
+          "_key": "6849ec940ed0"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "17c347e44870",
+      "markDefs": []
+    },
+    {
+      "style": "normal",
+      "_key": "ce7eca88268a",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [
+            "strong"
+          ],
+          "text": "2. Services proposés",
+          "_key": "751a9ad09c840"
+        }
+      ],
+      "_type": "block"
+    },
+    {
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Seto Arts propose des services de branding et de développement de sites web. Tous les services sont soumis aux termes et conditions décrits ici.",
+          "_key": "bd02b409cc9c0"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "f071a7d26762"
+    },
+    {
+      "children": [
+        {
+          "marks": [],
+          "text": "",
+          "_key": "1425684c9cd8",
           "_type": "span"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "fbf8625db6c1",
+      "markDefs": []
+    },
+    {
+      "style": "normal",
+      "_key": "2ce7d331e6ec",
+      "markDefs": [],
+      "children": [
+        {
+          "marks": [
+            "strong"
+          ],
+          "text": "3. Conduite de l'utilisateur",
+          "_key": "cc3aafb8f2440",
+          "_type": "span"
+        }
+      ],
+      "_type": "block"
+    },
+    {
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Vous acceptez d'utiliser notre site web et nos services de manière légale et responsable. Vous ne devez pas vous livrer à des comportements pouvant perturber ou interférer avec la fonctionnalité du site web ou compromettre la sécurité de nos services.",
+          "_key": "1cae9c274a960"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "2c063c910153"
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "_key": "b9ef6d7c471e",
+      "markDefs": [],
+      "children": [
+        {
+          "text": "",
+          "_key": "0b3670934b2a",
+          "_type": "span",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [
+            "strong"
+          ],
+          "text": "4. Propriété intellectuelle",
+          "_key": "63a4e94146cc0"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "d68de8a4fa7c"
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "_key": "111210ffb985",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Tous les contenus et matériaux sur setoxarts.com, y compris mais sans s'y limiter le texte, les images, les logos et les designs, sont la propriété de Seto Arts et sont protégés par les lois sur la propriété intellectuelle. Vous ne pouvez pas utiliser, reproduire ou distribuer notre contenu sans permission explicite.",
+          "_key": "90155d42fda60"
         }
       ]
     },
@@ -76,24 +217,70 @@
         {
           "_type": "span",
           "marks": [],
-          "text": "Seto Arts provides branding and website development services. All services are subject to the terms and conditions outlined here.",
-          "_key": "8239f40b78e00"
+          "text": "",
+          "_key": "8f3b727a7e8b"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "c2e699bc343a"
+      "_key": "a2fee904a44a"
     },
     {
+      "_type": "block",
       "style": "normal",
-      "_key": "2de68addd3a4",
+      "_key": "9971d62ce7f2",
       "markDefs": [],
       "children": [
         {
-          "_key": "147d66c843f50",
+          "_key": "81df34eacb590",
           "_type": "span",
-          "marks": ["strong"],
-          "text": "3. User Conduct"
+          "marks": [
+            "strong"
+          ],
+          "text": "5. Paiements et frais"
+        }
+      ]
+    },
+    {
+      "style": "normal",
+      "_key": "806d46c4c02f",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Les détails concernant les modalités de paiement, les frais et la facturation de nos services sont décrits dans notre accord de facturation séparé. En utilisant nos services, vous acceptez les termes spécifiés dans l'accord de facturation.",
+          "_key": "0b3f3d824e100"
+        }
+      ],
+      "_type": "block"
+    },
+    {
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "",
+          "_key": "ea05080c58ac"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "b1741c722715"
+    },
+    {
+      "style": "normal",
+      "_key": "29dd2bff86dd",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [
+            "strong"
+          ],
+          "text": "6. Politique de confidentialité",
+          "_key": "a0a9374c0d340"
         }
       ],
       "_type": "block"
@@ -101,97 +288,57 @@
     {
       "_type": "block",
       "style": "normal",
-      "_key": "88e7d56929cc",
+      "_key": "9757e37757da",
       "markDefs": [],
       "children": [
         {
+          "text": "Notre Politique de confidentialité décrit comment nous collectons, utilisons et protégeons vos informations personnelles. En utilisant notre site web et nos services, vous consentez aux pratiques décrites dans notre Politique de confidentialité.",
+          "_key": "d047f4f5ec160",
           "_type": "span",
-          "marks": [],
-          "text": "You agree to use our website and services in a lawful and responsible manner. You shall not engage in any conduct that may disrupt or interfere with the functionality of the website or compromise the security of our services.",
-          "_key": "1a9a726604f50"
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "style": "normal",
-      "_key": "ec2f2bdec02f",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": ["strong"],
-          "text": "4. Intellectual Property",
-          "_key": "ec756693b89e0"
+          "marks": []
         }
       ]
     },
     {
       "children": [
         {
-          "text": "All content and materials on setoxarts.com, including but not limited to text, images, logos, and designs, are the property of Seto Arts and are protected by intellectual property laws. You may not use, reproduce, or distribute our content without explicit permission.",
-          "_key": "70bfbc96a98b0",
+          "text": "",
+          "_key": "019b7072e71a",
           "_type": "span",
           "marks": []
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "057c55688e41",
+      "_key": "c6973cd09fa7",
       "markDefs": []
     },
     {
-      "_key": "4ce5e969f787",
-      "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "marks": ["strong"],
-          "text": "5. Payments and Fees",
-          "_key": "324a736bdad80"
-        }
-      ],
-      "_type": "block",
-      "style": "normal"
-    },
-    {
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "Details regarding payment terms, fees, and invoicing for our services are outlined in our separate billing agreement. By engaging with our services, you agree to the terms specified in the billing agreement.",
-          "_key": "d8a1b16ca29c0"
+          "marks": [
+            "strong"
+          ],
+          "text": "7. Limitation de responsabilité",
+          "_key": "bce88934bc9f0"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "0958e9a5b90c",
+      "_key": "7e7e7c658875",
       "markDefs": []
     },
     {
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": ["strong"],
-          "text": "6. Privacy Policy",
-          "_key": "266005e239dd0"
-        }
-      ],
-      "_type": "block",
       "style": "normal",
-      "_key": "75ad2563d2af"
-    },
-    {
-      "style": "normal",
-      "_key": "7af14e4e17ea",
+      "_key": "237cae8668e2",
       "markDefs": [],
       "children": [
         {
           "_type": "span",
           "marks": [],
-          "text": "Our Privacy Policy outlines how we collect, use, and protect your personal information. By using our website and services, you consent to the practices described in our Privacy Policy.",
-          "_key": "4e142e7fd4ec0"
+          "text": "Seto Arts ne sera pas responsable des dommages directs, indirects, accessoires, consécutifs ou punitifs découlant de l'utilisation de notre site web ou de nos services. Nous ne garantissons pas l'exactitude, l'exhaustivité ou l'actualité du contenu de notre site web.",
+          "_key": "3257392bb8130"
         }
       ],
       "_type": "block"
@@ -200,112 +347,74 @@
       "markDefs": [],
       "children": [
         {
-          "text": "7. Limitation of Liability",
-          "_key": "86b26222839f0",
-          "_type": "span",
-          "marks": ["strong"]
-        }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "802afb5838cb"
-    },
-    {
-      "_key": "011eca8434af",
-      "markDefs": [],
-      "children": [
-        {
-          "marks": [],
-          "text": "Seto Arts shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from the use of our website or services. We do not guarantee the accuracy, completeness, or timeliness of the content on our website.",
-          "_key": "5c819a71c8930",
-          "_type": "span"
-        }
-      ],
-      "_type": "block",
-      "style": "normal"
-    },
-    {
-      "_key": "21d9fab8dc0d",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": ["strong"],
-          "text": "8. Termination of Services",
-          "_key": "50b6004548950"
-        }
-      ],
-      "_type": "block",
-      "style": "normal"
-    },
-    {
-      "style": "normal",
-      "_key": "6687d1a27136",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "We reserve the right to terminate or suspend services to any user for any reason, including a breach of these Terms and Conditions.",
-          "_key": "c2cc77b0ba540"
-        }
-      ],
-      "_type": "block"
-    },
-    {
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": ["strong"],
-          "text": "9. Governing Law",
-          "_key": "dce0d77123900"
-        }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "df4ed1941dd1"
-    },
-    {
-      "_key": "05eb0b0bad7a",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "These Terms and Conditions are governed by and construed in accordance with the laws of [your jurisdiction]. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in [your jurisdiction].",
-          "_key": "7e0d637a9a9c0"
-        }
-      ],
-      "_type": "block",
-      "style": "normal"
-    },
-    {
-      "children": [
-        {
-          "_type": "span",
-          "marks": ["strong"],
-          "text": "10. Contact Information",
-          "_key": "ca4ad0db52d90"
-        }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "93185613e581",
-      "markDefs": []
-    },
-    {
-      "children": [
-        {
-          "text": "If you have any questions or concerns regarding these Terms and Conditions, you can contact us at:",
-          "_key": "3f253b6cd27d0",
+          "text": "",
+          "_key": "1626dc804074",
           "_type": "span",
           "marks": []
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "f2a8edc8a76b",
+      "_key": "7f1aac9e9d76"
+    },
+    {
+      "markDefs": [],
+      "children": [
+        {
+          "marks": [
+            "strong"
+          ],
+          "text": "8. Résiliation des services",
+          "_key": "2b9787a420550",
+          "_type": "span"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "501e95026d40"
+    },
+    {
+      "style": "normal",
+      "_key": "b66694ddca95",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Nous nous réservons le droit de résilier ou de suspendre les services à tout utilisateur pour quelque raison que ce soit, y compris une violation de ces Termes et Conditions.",
+          "_key": "1e21bf3b9ea50"
+        }
+      ],
+      "_type": "block"
+    },
+    {
+      "children": [
+        {
+          "text": "",
+          "_key": "963269bcad86",
+          "_type": "span",
+          "marks": []
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "3d32cd9ed872",
+      "markDefs": []
+    },
+    {
+      "children": [
+        {
+          "marks": [
+            "strong"
+          ],
+          "text": "9. Loi applicable",
+          "_key": "98570a06695b0",
+          "_type": "span"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "c597b5bd6625",
       "markDefs": []
     },
     {
@@ -314,7 +423,65 @@
         {
           "_type": "span",
           "marks": [],
-          "text": "Seto Arts\n1150 rue Dale\ncontact@vostokcards.com",
+          "text": "Ces Termes et Conditions sont régis par et interprétés conformément aux lois de [votre juridiction]. Tout litige découlant de ces termes sera soumis à la juridiction exclusive des tribunaux de [votre juridiction].",
+          "_key": "f9a8ae07c4b30"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "ed3e77957587"
+    },
+    {
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "",
+          "_key": "0a98eeeca0c4"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "e05412875fae",
+      "markDefs": []
+    },
+    {
+      "_key": "abe79f922362",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [
+            "strong"
+          ],
+          "text": "10. Informations de contact",
+          "_key": "d634f5dc14c90"
+        }
+      ],
+      "_type": "block",
+      "style": "normal"
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "_key": "f1fb5ba49d4b",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Si vous avez des questions ou des préoccupations concernant ces Termes et Conditions, vous pouvez nous contacter à :",
+          "_key": "48cbff923f4b0"
+        }
+      ]
+    },
+    {
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Seto Arts\n1150 rue Dale\nsedrak005@gmail.com",
           "_key": "9700b56751f30"
         }
       ],
@@ -323,13 +490,9 @@
       "_key": "20fb11723c9a"
     }
   ],
-  "_id": "35985f27-65f6-4069-bc3e-bf7b3e3d0895",
-  "_updatedAt": "2024-03-01T04:07:49Z",
-  "_type": "legalPage",
-  "hiddenTitle": "Terms French",
-  "lang": "fr",
-  "title": "Termes et conditions",
-  "path": "/terms-and-conditions",
   "_createdAt": "2024-03-01T00:59:33Z",
-  "_rev": "4fqy6B5H6WrCPpGf2W2931"
+  "_type": "legalPage",
+  "_id": "35985f27-65f6-4069-bc3e-bf7b3e3d0895",
+  "path": "/terms-and-conditions",
+  "_rev": "uiWIFkW6n28NyJPxPEXQok"
 }
