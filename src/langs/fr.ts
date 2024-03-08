@@ -13,7 +13,7 @@ export const frTranslations: Translations = {
   },
   buttons: {
     workWithMe: "Travail avec moi",
-    view: "Vue",
+    view: "Voir",
     contact: "Contact",
     send: "Envoyer",
   },

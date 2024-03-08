@@ -77,7 +77,7 @@ export const Form: React.FC<IForm> = ({ desc }) => {
       }}
       gapArray={[4]}
     >
-      <FancyText {...desc} paragraph textAlign="center" />
+      <FancyText {...desc} mode="paragraph" textAlign="center" />
       <form
         ref={form}
         className={cn(styles.form, styles.contactForm)}

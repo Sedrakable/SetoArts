@@ -39,7 +39,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
 
   const logoComp = (
     <Link
-      onClick={(e) => onClickNavigate(e, `/${lang}/home`)}
+      onClick={(e) => onClickNavigate(e, `/${lang}${LocalPaths.HOME}`)}
       href=""
       className={styles.logo}
     >

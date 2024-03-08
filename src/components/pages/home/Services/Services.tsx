@@ -3,7 +3,7 @@ import styles from "./Services.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
-import { IService, IServices } from "../../../../data.d";
+import { IService, IServices, LocalPaths } from "../../../../data.d";
 import { Icon, IconType } from "../../../reuse/Icon";
 import { Tag } from "../../../reuse/Tag";
 import { Button } from "../../../reuse/Button";
@@ -35,6 +35,9 @@ const Service: React.FC<ServiceProps> = ({
   };
 
   const splides: SpliderProps[] = features?.features?.map((feature) => {
+    if (feature.customImage.alt === "Redoing something") {
+      console.log("alt", feature.title);
+    }
     return {
       customImage: {
         image: feature.customImage.image,
@@ -103,11 +106,19 @@ const Service: React.FC<ServiceProps> = ({
           flex={{ direction: "column", x: "flex-start" }}
           className={styles.bottom}
         >
-          <Button variant="primary" fit="grow" path={`/${lang}${path}`}>
+          <Button
+            variant="primary"
+            fit="grow"
+            path={`/${lang}${LocalPaths.SERVICE}${path}`}
+          >
             {translations.buttons.view}
           </Button>
           {cta2 && (
-            <Button variant="secondary" fit="grow" path={`/${lang}${path}`}>
+            <Button
+              variant="secondary"
+              fit="grow"
+              path={`/${lang}${LocalPaths.CONTACT}`}
+            >
               {translations.buttons.contact}
             </Button>
           )}

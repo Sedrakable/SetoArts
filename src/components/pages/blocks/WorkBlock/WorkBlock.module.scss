@@ -1,9 +1,9 @@
 @import "../../../../css/mixins.scss";
 
 @mixin vars() {
-  --ratio: 4/3;
   --transition: 200ms;
   --container-min-width: 100%;
+  --container-height: 400px;
   @media (min-width: $tablet) {
   }
 
@@ -22,11 +22,11 @@
 
 .container {
   @include vars;
-  aspect-ratio: var(--ratio);
+
   position: relative;
   overflow: hidden;
   min-width: var(--container-min-width);
-  max-width: 100%;
+  height: var(--container-height);
   flex: 1;
   cursor: pointer;
 
@@ -34,6 +34,7 @@
     flex: 0 0 auto;
     width: 100%;
     max-width: 100%;
+    height: 100%;
     img {
       transition: var(--transition);
     }
@@ -42,6 +43,10 @@
     background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
     flex: 1;
+    h3 {
+      font-size: var(--heading-seto-h4) !important;
+      line-height: var(--heading-seto-h4-line) !important;
+    }
   }
 
   &:hover {

@@ -97,10 +97,7 @@ export const Splider: React.FC<SpliderContainerProps> = ({
             image={splider?.customImage.image}
             alt={splider?.customImage.alt}
           />
-          {text && splider?.content && (
-            //NEEDS TO BE REPLACED BY ALTUAL CONTENT
-            <SideContainer {...splider.content} />
-          )}
+          {text && splider?.content && <SideContainer {...splider.content} />}
         </SplideSlide>
       );
     });

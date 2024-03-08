@@ -2,14 +2,16 @@ import React from "react";
 import { Variants, motion } from "framer-motion";
 import { Backdrop } from "./Backdrop";
 import styles from "./Modal.module.scss";
-import { atom } from "jotai";
+import { atom, useAtom } from "jotai";
 import { Paragraph } from "./Paragraph";
 import { IconButton } from "./IconButton";
 import { Button } from "./Button";
-import { ICta, IWork } from "../../data";
+import { ICta, IWork, LocalPaths } from "../../data.d";
 import FlexDiv from "./FlexDiv";
 import { Title } from "./Title/Title";
 import { SanityImage } from "./SanityImage/SanityImage";
+import { langData } from "../navbar/LangSwitcher/LangSwitcher";
+import { useNavigate } from "react-router-dom";
 
 export interface ModalProps extends IWork {
   handleClose: () => void;
@@ -49,9 +51,17 @@ export const Modal: React.FC<ModalProps> = ({
   kickstarterProjectlink,
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const [lang] = useAtom(langData);
+  const navigate = useNavigate();
+
+  const handleModalClose = () => {
+    handleClose();
+    const newPath = `/${lang}${LocalPaths.ABOUT}`;
+    navigate(newPath);
+  };
 
   return (
-    <Backdrop onClick={handleClose}>
+    <Backdrop onClick={() => handleModalClose()}>
       <motion.div
         // onClick={(e) => e.stopPropagation()}
         className={styles.modal}

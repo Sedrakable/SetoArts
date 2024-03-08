@@ -33,7 +33,6 @@ export const WorkSlider: React.FC<PropsWithChildren<IWorkBlock>> = ({
       };
     }
   );
-
   return (
     <FlexDiv flex={{ direction: "column" }} width100 className={styles.block}>
       <Splider slides={slides} arrows />

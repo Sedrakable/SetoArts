@@ -16,7 +16,10 @@ export const generateQueries = (lang) => {
       path,
       title,
       lang,
-      hero,
+      hero{
+        ...,
+        quote->,
+      },
       features->{
         features[]->,
       },
@@ -53,7 +56,10 @@ export const generateQueries = (lang) => {
       ...,
       title,
       lang,
-      hero,
+      hero{
+        ...,
+        quote->,
+      },
       services-> {
         services[]->{
           path,

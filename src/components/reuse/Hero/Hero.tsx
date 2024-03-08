@@ -23,10 +23,11 @@ export const Hero: React.FC<HeroProps> = ({
   title,
   ctas,
   subTitle,
+  quote,
   version = 1,
 }) => {
   const { isMobileOrTablet } = useWindowResize();
-
+  console.log("quote", quote);
   useEffect(() => {
     const setQuoteWidth = () => {
       const leftElement = document.getElementById("hero-left");
@@ -48,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({
     <div className={cn(styles.hero)}>
       {!isMobileOrTablet && (
         <div className={styles.quote}>
-          <Quote leftText="Organized" rightText="Chaos" version={version} />
+          <Quote {...quote} version={version} />
         </div>
       )}
 
@@ -67,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({
       )}
       {isMobileOrTablet && version === 1 && (
         <div className={styles.quote}>
-          <Quote leftText="Organized" rightText="Chaos" version={version} />
+          <Quote {...quote} version={version} />
         </div>
       )}
       <FlexDiv className={styles.right}>
@@ -81,9 +82,10 @@ export const Hero: React.FC<HeroProps> = ({
           <FlexDiv
             flex={{ direction: "column", x: "flex-start" }}
             gapArray={[3]}
+            customStyle={{ zIndex: 1 }}
           >
-            {subTitle && <FancyText {...subTitle} paragraph />}
-            {title && <FancyText {...title} />}
+            {subTitle && <FancyText {...subTitle} mode="paragraph" />}
+            {title && <FancyText mode="heading" {...title} />}
             <Paragraph
               level="small"
               weight="weak"
@@ -108,7 +110,7 @@ export const Hero: React.FC<HeroProps> = ({
       </FlexDiv>
       {isMobileOrTablet && version === 2 && (
         <div className={styles.quote}>
-          <Quote leftText="Organized" rightText="Chaos" version={version} />
+          <Quote {...quote} version={version} />
         </div>
       )}
     </div>

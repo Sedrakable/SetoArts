@@ -41,9 +41,10 @@ const Work: FC<IWork> = (props) => {
       >
         <Heading
           font="Seto"
-          level="3"
+          level="2"
           as="h3"
           color="white"
+          textAlign="center"
           className={styles.title}
         >
           {props.title}

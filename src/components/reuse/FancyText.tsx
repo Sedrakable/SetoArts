@@ -6,7 +6,7 @@ import { IFancyText } from "../../data";
 import FlexDiv from "./FlexDiv";
 
 export interface FancyTextProps extends IFancyText {
-  paragraph?: boolean;
+  mode: "paragraph" | "heading" | "tab";
   dark?: boolean;
   textAlign?: CSSProperties["textAlign"];
 }
@@ -14,7 +14,7 @@ export const FancyText: React.FC<FancyTextProps> = ({
   part1,
   part2,
   part3,
-  paragraph,
+  mode,
   textAlign,
   dark = false,
 }) => {
@@ -22,38 +22,61 @@ export const FancyText: React.FC<FancyTextProps> = ({
     return <span className={styles.cursive}>{part2}</span>;
   };
   const colorChoose = dark ? "black" : "white";
-  return paragraph ? (
-    <FlexDiv
-      gapArray={[3]}
-      flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
-      className={styles.fancyParagraph}
-      width100
-      wrap
-    >
-      <Paragraph
-        level="big"
-        color={colorChoose}
-        weight="regular"
-        textAlign={textAlign}
-      >
-        <>
-          {part1} <CursiveText /> {part3}
-        </>
-      </Paragraph>
-    </FlexDiv>
-  ) : (
-    <FlexDiv
-      gapArray={[4]}
-      flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
-      className={styles.fancyHeading}
-      width100
-      wrap
-    >
-      <Heading font="Seto" as="h2" level="2" color={colorChoose}>
-        <>
-          {part1} <CursiveText /> {part3}
-        </>
-      </Heading>
-    </FlexDiv>
-  );
+  switch (mode) {
+    case "paragraph":
+      return (
+        <FlexDiv
+          gapArray={[3]}
+          flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
+          className={styles.fancyParagraph}
+          width100
+          wrap
+        >
+          <Paragraph
+            level="big"
+            color={colorChoose}
+            weight="regular"
+            textAlign={textAlign}
+          >
+            <>
+              {part1} <CursiveText /> {part3}
+            </>
+          </Paragraph>
+        </FlexDiv>
+      );
+    case "heading":
+      return (
+        <FlexDiv
+          gapArray={[4]}
+          flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
+          className={styles.fancyHeading}
+          width100
+          wrap
+        >
+          <Heading font="Seto" as="h2" level="2" color={colorChoose}>
+            <>
+              {part1} <CursiveText /> {part3}
+            </>
+          </Heading>
+        </FlexDiv>
+      );
+    case "tab":
+      return (
+        <FlexDiv
+          gapArray={[4]}
+          flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
+          className={styles.fancyTab}
+          width100
+          wrap
+        >
+          <Heading font="Seto" as="h5" level="5" color={colorChoose}>
+            <>
+              {part1} <CursiveText /> {part3}
+            </>
+          </Heading>
+        </FlexDiv>
+      );
+    default:
+      return "broken";
+  }
 };

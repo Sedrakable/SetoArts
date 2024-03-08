@@ -36,10 +36,14 @@
     bottom: 0;
   }
   .scrollWrapper {
+    display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     width: auto;
+    max-height: fit-content;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.1);
     @media (min-width: $laptop) {
       width: 100%;
       table {

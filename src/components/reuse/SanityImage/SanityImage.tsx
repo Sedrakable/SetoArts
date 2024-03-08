@@ -16,7 +16,6 @@ export const SanityImage: React.FC<PropsWithChildren<
   const [loaded, setLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [imgWidth, setImgWidth] = useState<number | null>(null);
-  const [imgHeight, setImgHeight] = useState<number | null>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const minimumWidth = 600;
 
@@ -58,9 +57,7 @@ export const SanityImage: React.FC<PropsWithChildren<
       if (imgRef.current?.clientWidth && isVisible && loaded) {
         console.log("Resize event triggered");
         const newWidth = imgRef.current.clientWidth;
-        const aspectRatio = 1; // Default to 1:1 aspect ratio if not available
         setImgWidth(newWidth < minimumWidth ? minimumWidth : newWidth);
-        setImgHeight(newWidth * aspectRatio);
       }
     };
     handleResize();
@@ -71,12 +68,12 @@ export const SanityImage: React.FC<PropsWithChildren<
   }, [imgRef, isVisible, loaded]);
 
   return (
-    <figure ref={imgRef}>
+    <figure ref={imgRef} style={{ width: "auto", height: "100%" }}>
       <LazyLoadImage
         src={src}
         alt={alt}
         onLoad={() => setLoaded(true)}
-        style={{ objectFit: "cover", maxHeight: imgHeight! }}
+        style={{ objectFit: "cover" }}
       />
     </figure>
   );

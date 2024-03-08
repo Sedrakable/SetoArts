@@ -1,13 +1,11 @@
 import { useFetchPage } from "./useFetchPage";
-import { langData } from "../components/navbar/LangSwitcher/LangSwitcher";
-import { useAtom } from "jotai";
+import { LangType } from "../components/navbar/LangSwitcher/LangSwitcher";
 
 import { AboutPageProps } from "../components/pages/AboutPage";
 import { ContactPageProps } from "../components/pages/ContactPage";
 import { HomePageProps } from "../components/pages/HomePage";
 import { ServicePageProps } from "../components/pages/ServicePage";
 import { IFooter, ILegalPage, INavBar, INotFound } from "../data";
-import { useEffect } from "react";
 
 const { generateQueries } = require("./generateSanityQueries");
 
@@ -29,13 +27,8 @@ const importSequentialJSONFiles = (
 };
 
 // Custom hook for handling form state
-export const useDataQuery = () => {
-  const [lang] = useAtom(langData);
+export const useDataQuery = (lang: LangType) => {
   // Load JSON data from files using require
-
-  useEffect(() => {
-    console.log(process.env.REACT_APP_SANITY_PROJECT_ID);
-  }, []);
 
   const {
     navbarQuery,
@@ -72,22 +65,6 @@ export const useDataQuery = () => {
   const notFoundPageData: INotFound =
     useFetchPage(notFoundQuery)! ||
     require(`./backups/${lang}/backup-notFoundPage.json`);
-
-  // const navbarData: INavBar =
-  //   require(`./backups/${lang}/backup-navbar.json`) || undefined;
-  // const footerData: IFooter = require(`./backups/${lang}/backup-footer.json`);
-  // const homePageData: HomePageProps = require(`./backups/${lang}/backup-homePage.json`);
-  // const servicePageData: ServicePageProps[] = importSequentialJSONFiles(
-  //   lang,
-  //   "backup-servicePage"
-  // );
-  // const contactPageData: ContactPageProps = require(`./backups/${lang}/backup-contactPage.json`);
-  // const aboutPageData: AboutPageProps = require(`./backups/${lang}/backup-aboutPage.json`);
-  // const legalPageData: ILegalPage[] = importSequentialJSONFiles(
-  //   lang,
-  //   "backup-legalPage"
-  // );
-  // const notFoundPageData: INotFound = require(`./backups/${lang}/backup-notFoundPage.json`);
 
   return {
     navbarData,

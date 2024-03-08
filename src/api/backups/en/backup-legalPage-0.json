@@ -4,10 +4,8 @@
       "children": [
         {
           "_type": "span",
-          "marks": [
-            "strong"
-          ],
-          "text": "Seto x Arts",
+          "marks": ["strong"],
+          "text": "Seto x Arts TEST EN",
           "_key": "6960e48bcf160"
         }
       ],
@@ -37,9 +35,7 @@
       "children": [
         {
           "_type": "span",
-          "marks": [
-            "strong"
-          ],
+          "marks": ["strong"],
           "text": "1. Acceptance of Terms",
           "_key": "2925ef9adcd00"
         }
@@ -69,9 +65,7 @@
           "text": "2. Services Offered",
           "_key": "f2600ee1d5600",
           "_type": "span",
-          "marks": [
-            "strong"
-          ]
+          "marks": ["strong"]
         }
       ],
       "_type": "block"
@@ -94,9 +88,7 @@
       "children": [
         {
           "_type": "span",
-          "marks": [
-            "strong"
-          ],
+          "marks": ["strong"],
           "text": "3. User Conduct",
           "_key": "147d66c843f50"
         }
@@ -124,9 +116,7 @@
       "markDefs": [],
       "children": [
         {
-          "marks": [
-            "strong"
-          ],
+          "marks": ["strong"],
           "text": "4. Intellectual Property",
           "_key": "ec756693b89e0",
           "_type": "span"
@@ -158,9 +148,7 @@
       "children": [
         {
           "_type": "span",
-          "marks": [
-            "strong"
-          ],
+          "marks": ["strong"],
           "text": "5. Payments and Fees",
           "_key": "324a736bdad80"
         }
@@ -186,9 +174,7 @@
       "children": [
         {
           "_type": "span",
-          "marks": [
-            "strong"
-          ],
+          "marks": ["strong"],
           "text": "6. Privacy Policy",
           "_key": "266005e239dd0"
         }
@@ -214,9 +200,7 @@
       "children": [
         {
           "_type": "span",
-          "marks": [
-            "strong"
-          ],
+          "marks": ["strong"],
           "text": "7. Limitation of Liability",
           "_key": "86b26222839f0"
         }
@@ -245,9 +229,7 @@
       "children": [
         {
           "_type": "span",
-          "marks": [
-            "strong"
-          ],
+          "marks": ["strong"],
           "text": "8. Termination of Services",
           "_key": "50b6004548950"
         }
@@ -275,9 +257,7 @@
       "children": [
         {
           "_type": "span",
-          "marks": [
-            "strong"
-          ],
+          "marks": ["strong"],
           "text": "9. Governing Law",
           "_key": "dce0d77123900"
         }
@@ -308,9 +288,7 @@
       "children": [
         {
           "_type": "span",
-          "marks": [
-            "strong"
-          ],
+          "marks": ["strong"],
           "text": "10. Contact Information",
           "_key": "ca4ad0db52d90"
         }
