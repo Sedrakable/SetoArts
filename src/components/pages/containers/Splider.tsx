@@ -49,8 +49,7 @@ export const Splider: React.FC<SpliderContainerProps> = ({
           if (setSplideProgress) {
             setSplideProgress(index);
           }
-
-          const progressBarWidth = `${(index / slides.length) * 100}%`;
+          const progressBarWidth = `${((index + 1) / slides.length) * 100}%`;
           progressBarRef.current!.style.width = progressBarWidth;
         });
       }

@@ -55,7 +55,6 @@ export const SanityImage: React.FC<PropsWithChildren<
   useEffect(() => {
     const handleResize = () => {
       if (imgRef.current?.clientWidth && isVisible && loaded) {
-        console.log("Resize event triggered");
         const newWidth = imgRef.current.clientWidth;
         setImgWidth(newWidth < minimumWidth ? minimumWidth : newWidth);
       }

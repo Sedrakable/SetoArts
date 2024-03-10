@@ -21,13 +21,14 @@ export interface TabButtonProps {
 
 const MyHeadingComponent: FC<{ text: string }> = ({ text }) => {
   // Split the children string based on the '+' sign
-  const parts = text.replace(/ /g, "").split("+");
-  console.log(parts);
+  const parts = text.split("+");
+
   const normalHead = (head: string) => (
     <Heading font="Seto" level="5" as="h5" color="black">
       {head}
     </Heading>
   );
+
   return parts.length === 1 ? (
     normalHead(parts[0])
   ) : (

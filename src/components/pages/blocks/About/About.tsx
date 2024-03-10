@@ -82,7 +82,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
                 flex={{ direction: "column", x: "flex-start" }}
                 gapArray={[1]}
               >
-                <FancyText {...title1} paragraph dark />
+                <FancyText {...title1} mode="paragraph" dark />
                 <Paragraph
                   level="regular"
                   color="black"

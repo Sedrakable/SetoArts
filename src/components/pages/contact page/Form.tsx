@@ -65,7 +65,6 @@ export const Form: React.FC<IForm> = ({ desc }) => {
         (textarea: HTMLTextAreaElement) => textarea.value.trim() !== ""
       );
     setFormValid(allRequiredFieldsFilled);
-    console.log(allRequiredFieldsFilled);
   };
 
   const contact = (

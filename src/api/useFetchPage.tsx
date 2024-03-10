@@ -38,14 +38,14 @@ export const useFetchPage = (query: string) => {
 
     fetchData();
   }, [query]);
-  useEffect(() => {
-    if (!loading) {
-      if (!page) {
-        console.error("Error fetch page data: ", query, page);
-      } else {
-        // console.log("Fetched Page data: ", page);
-      }
-    }
-  }, [loading, page, query]);
+  // useEffect(() => {
+  //   if (!loading) {
+  //     if (!page) {
+  //       console.error("Error fetch page data: ", query, page);
+  //     } else {
+  //       console.log("Fetched Page data: ", page);
+  //     }
+  //   }
+  // }, [loading, page, query]);
   return page;
 };

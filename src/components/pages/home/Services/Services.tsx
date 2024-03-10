@@ -29,22 +29,21 @@ const Service: React.FC<ServiceProps> = ({
   const [lang] = useAtom(langData);
   const [tagIndex, setTagIndex] = React.useState(0);
   const translations = getTranslations(lang);
-
+  const numberOfTags = 5;
   const updateChildState = (newState: number) => {
     setTagIndex(newState);
   };
 
-  const splides: SpliderProps[] = features?.features?.map((feature) => {
-    if (feature.customImage.alt === "Redoing something") {
-      console.log("alt", feature.title);
-    }
-    return {
-      customImage: {
-        image: feature.customImage.image,
-        alt: feature.customImage.alt,
-      },
-    };
-  });
+  const splides: SpliderProps[] = features?.features
+    ?.slice(0, numberOfTags)
+    .map((feature) => {
+      return {
+        customImage: {
+          image: feature.customImage.image,
+          alt: feature.customImage.alt,
+        },
+      };
+    });
 
   return (
     <FlexDiv
@@ -84,8 +83,7 @@ const Service: React.FC<ServiceProps> = ({
           gapArray={[1]}
           flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
         >
-          {features.features.slice(0, 5)?.map((feature, key) => {
-            // Limit to first 5 tags
+          {features.features.slice(0, numberOfTags)?.map((feature, key) => {
             return (
               <Tag
                 chosen={tagIndex === key}

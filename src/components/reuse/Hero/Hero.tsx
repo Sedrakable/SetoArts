@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({
   version = 1,
 }) => {
   const { isMobileOrTablet } = useWindowResize();
-  console.log("quote", quote);
+
   useEffect(() => {
     const setQuoteWidth = () => {
       const leftElement = document.getElementById("hero-left");
