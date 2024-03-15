@@ -1,13 +1,20 @@
 import React from "react";
 import styles from "./ServicesGrid.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
-import { IService } from "../../../../data";
+import { IService, LocalPaths } from "../../../../data.d";
 import { Paragraph } from "../../../reuse/Paragraph";
 import { Heading } from "../../../reuse/Heading";
+import { Button } from "../../../reuse/Button";
+import { useAtom } from "jotai";
+import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
+import { getTranslations } from "../../../../helpers/langUtils";
 
 export const ServicesGrid: React.FC<{ services: IService[] }> = ({
   services,
 }) => {
+  const [lang] = useAtom(langData);
+  const translations = getTranslations(lang);
+
   const renderCheckmark = (service: any, feature: string) => {
     return service.features.features.some((f: any) => f.title === feature) ? (
       <Heading as="h5" level="5" font="Cursive" color="yellow">
@@ -40,9 +47,15 @@ export const ServicesGrid: React.FC<{ services: IService[] }> = ({
               {services?.map((service) => {
                 return (
                   <th key={service.title}>
-                    <Paragraph level="big" color="white" weight="regular">
+                    <Heading
+                      level="5"
+                      color="white"
+                      as="h6"
+                      font="Seto"
+                      paddingBottomArray={[2]}
+                    >
                       {service.title}
-                    </Paragraph>
+                    </Heading>
                     {service?.price && (
                       <FlexDiv
                         className={styles.priceWrapper}
@@ -80,6 +93,22 @@ export const ServicesGrid: React.FC<{ services: IService[] }> = ({
               );
             })}
           </tbody>
+          <tfoot>
+            <tr>
+              <td className={styles.mainColumn}></td>
+              {services?.map((service) => (
+                <td key={service.path}>
+                  <Button
+                    variant="secondary"
+                    fit="grow"
+                    path={`/${lang}${LocalPaths.SERVICE}${service.path}`}
+                  >
+                    {translations.buttons.view}
+                  </Button>
+                </td>
+              ))}
+            </tr>
+          </tfoot>
         </table>
       </div>
     </FlexDiv>

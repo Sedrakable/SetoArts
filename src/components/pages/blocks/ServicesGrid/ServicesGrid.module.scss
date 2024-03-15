@@ -42,7 +42,7 @@
     white-space: nowrap;
     width: auto;
     max-height: fit-content;
-    border-radius: 4px 4px 0 0;
+    border-radius: 4px;
     box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.1);
     @media (min-width: $laptop) {
       width: 100%;
@@ -96,7 +96,7 @@
       border: 2px solid var(--yellow);
       border-bottom: none;
       th {
-        padding: var(--pad-4) 0 var(--pad-2) 0;
+        padding: var(--pad-3) 0 var(--pad-2) 0;
         position: relative;
         vertical-align: bottom;
       }
@@ -110,6 +110,13 @@
         &:not(.mainColumn) {
           padding: var(--pad-2) var(--pad-3);
         }
+      }
+    }
+    tfoot {
+      background: var(--black);
+      border: var(--black) 2px solid;
+      td {
+        padding-top: var(--pad-2);
       }
     }
   }

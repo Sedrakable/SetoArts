@@ -1,18 +1,21 @@
 @import "../../../css/mixins.scss";
 
 @mixin vars() {
-  --left-height: 100vw;
+  --left-height: 60vw;
+  --logo-width: 70%;
   --desc-width: 100%;
   --left-flex: unset;
   --right-flex: 1;
   --logo-offset: 0px;
   --bg-size: 350%;
   @media (min-width: $tablet) {
+    --logo-width: 80%;
     --left-height: auto;
     --bg-size: 150%;
   }
 
   @media (min-width: $laptop) {
+    --logo-width: auto;
     --left-height: 100%;
     --left-flex: 1;
     --right-flex: 2;
@@ -36,6 +39,7 @@
   box-sizing: border-box;
   height: auto;
   border-bottom: 2px solid var(--gold);
+  overflow: hidden;
   .quote {
     @include flex(flex-start);
     width: 100% !important;
@@ -62,13 +66,15 @@
     }
     svg {
       position: relative;
+      width: var(--logo-width);
     }
   }
   .right {
     position: relative;
-    width: fit-content;
+    width: 100%;
     height: 100%;
     flex: var(--right-flex);
+    z-index: 0;
 
     figure {
       position: absolute;
@@ -90,8 +96,8 @@
         content: "";
         background: linear-gradient(
           to bottom,
-          rgba(0, 0, 0, 0.4),
-          rgba(0, 0, 0, 0)
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0.5)
         );
       }
     }
@@ -109,6 +115,7 @@
     .left {
       height: 100%;
       padding-bottom: unset !important;
+      border-bottom: 3px solid var(--black);
       svg {
         position: absolute;
         right: calc(var(--logo-offset) * -1);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { IAbout, IWorkBlock, IWork, ICustomImage } from "../../data";
+import { IAbout, IWorkBlock, IWork, ICustomImage, IValues } from "../../data";
 import { Inspired } from "./blocks/Inspired/Inspired";
 import { About } from "./blocks/About/About";
 import { ImageGrid } from "./blocks/ImageGrid/ImageGrid";
@@ -8,9 +8,11 @@ import { WorkBlock } from "./blocks/WorkBlock/WorkBlock";
 import { useParams } from "react-router-dom";
 import { useAtom } from "jotai";
 import { ModalProps, modalData } from "../reuse/Modal";
+import { Values } from "./home/Values/Values";
 
 export interface AboutPageProps {
   about: IAbout;
+  values: IValues;
   work: IWorkBlock;
 }
 
@@ -47,6 +49,7 @@ export const AboutPage: React.FC<AboutPageProps> = (props) => {
       <>
         <About {...props.about} />
         <WorkBlock {...props.work} />
+        <Values {...props.values} />
         <ImageGrid customImages={workImages} />
         <Inspired />
       </>

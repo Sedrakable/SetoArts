@@ -62,6 +62,7 @@ export const Button: FC<PropsWithChildren<
           ...props,
           onClick,
           disabled,
+          "aria-label": children as string,
         },
         <ButtonHeading />
       )}

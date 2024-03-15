@@ -2,11 +2,13 @@
 
 @mixin vars() {
   --text-lines: 3;
+  --width: 100%;
   @media (min-width: $tablet) {
     --text-lines: 5;
   }
 
   @media (min-width: $laptop) {
+    --width: calc(100% / 3);
     --text-lines: 6;
   }
 
@@ -20,7 +22,7 @@
   // @include blurEffect;
 
   $padding: calc((100vw - var(--screen-width-small)) / 2);
-  width: 100%;
+  width: var(--width);
   z-index: 1;
 
   .container {
@@ -40,7 +42,8 @@
 
   @media (min-width: $laptop) {
     .container {
-      padding-left: var(--pad-8) !important;
+      padding-left: var(--pad-7) !important;
+      padding-right: var(--pad-7) !important;
     }
   }
 }

@@ -6,16 +6,19 @@ import { Link } from "../reuse/Link";
 import FlexDiv from "../reuse/FlexDiv";
 import { ReactComponent as LogoHori } from "../../assets/illu/LogoHorizontal.svg";
 import { useWindowResize } from "../../helpers/useWindowResize";
-import { IFooter, INavBar } from "../../data";
+import { IFooter, INavBar, LocalPaths } from "../../data.d";
 import { isCta } from "../navbar/Navbar";
 import { Socials } from "./Socials";
 import { useAtom } from "jotai";
 import { langData } from "../navbar/LangSwitcher/LangSwitcher";
+import { onClickNavigate } from "../../helpers/useNavigation";
 
 const Line: React.FC = () => {
   return <div className={styles.line} />;
 };
 const Nav: React.FC<INavBar> = ({ links }) => {
+  const [lang] = useAtom(langData);
+
   return (
     <FlexDiv
       className={styles.links}
@@ -24,9 +27,14 @@ const Nav: React.FC<INavBar> = ({ links }) => {
       wrap
     >
       {links?.map((link, key) => {
+        console.log("link", link);
         if (isCta(link)) {
           return (
-            <Link href={link?.link!} key={key}>
+            <Link
+              href=""
+              onClick={(e) => onClickNavigate(e, `/${lang}${link?.link}`)}
+              key={key}
+            >
               <Paragraph level="regular" weight="regular" capitalise clickable>
                 {link?.text}
               </Paragraph>
@@ -35,7 +43,16 @@ const Nav: React.FC<INavBar> = ({ links }) => {
         } else {
           const subLinks = link.ctaArray?.map((link, key) => {
             return (
-              <Link href={link?.link!} key={key}>
+              <Link
+                href=""
+                onClick={(e) =>
+                  onClickNavigate(
+                    e,
+                    `/${lang}${LocalPaths.SERVICE}${link?.link}`
+                  )
+                }
+                key={key}
+              >
                 <Paragraph
                   level="regular"
                   weight="regular"

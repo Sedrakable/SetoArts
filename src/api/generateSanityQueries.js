@@ -33,6 +33,7 @@ export const generateQueries = (lang) => {
         title,
         works[]->{
           slug,
+          customImages,
           thumbnailImage,
           title,
           desc,
@@ -43,6 +44,7 @@ export const generateQueries = (lang) => {
   const aboutQuery = `*[_type == 'aboutPage' && lang == '${lang}'][0] {
       ...,
       about->,
+      values->,
       work->{
         works[]->,
       },
@@ -80,6 +82,7 @@ export const generateQueries = (lang) => {
         works[]->{
           slug,
           thumbnailImage,
+          customImages,
           title,
           desc,
           primaryLink,

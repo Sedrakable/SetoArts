@@ -38,10 +38,12 @@ const Service: React.FC<ServiceProps> = ({
     ?.slice(0, numberOfTags)
     .map((feature) => {
       return {
-        customImage: {
-          image: feature.customImage.image,
-          alt: feature.customImage.alt,
-        },
+        customImages: [
+          {
+            image: feature.customImage.image,
+            alt: feature.customImage.alt,
+          },
+        ],
       };
     });
 

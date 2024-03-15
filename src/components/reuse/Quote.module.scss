@@ -13,9 +13,9 @@
   }
 
   @media (min-width: $laptop) {
-    --quote-width: auto;
+    --quote-width: 100%;
     --right-width: auto;
-    --left-width: calc(100vw / 3);
+    --left-width: calc(100% / 3);
   }
 
   @media (min-width: $desktop) {
@@ -40,7 +40,7 @@
   .left {
     background: var(--black);
     width: var(--left-width);
-    box-sizing: border-box;
+    box-sizing: content-box;
     position: relative;
     .x {
       position: absolute;

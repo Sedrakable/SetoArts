@@ -17,7 +17,7 @@ import { useWindowResize } from "../../../helpers/useWindowResize";
 import { ICustomImage } from "../../../data";
 
 export interface SpliderProps {
-  customImage: ICustomImage;
+  customImages: ICustomImage[];
   content?: SideContainerProps;
 }
 
@@ -66,24 +66,66 @@ export const Splider: React.FC<SpliderContainerProps> = ({
     }
   }, [splideProgress]);
 
-  // Adding event listeners outside of useEffect
+  useEffect(() => {
+    if (mainRef.current) {
+      const splideInstance = mainRef.current.splide;
+
+      const handleDragStart = () => {
+        // Hide the arrow elements when dragging starts.
+        if (prevArrowRef.current && nextArrowRef.current) {
+          prevArrowRef.current.style.opacity = "0%";
+          nextArrowRef.current.style.opacity = "0%";
+        }
+      };
+
+      const handleDragEnd = () => {
+        // Restore the visibility of the arrow elements when dragging ends.
+        if (prevArrowRef.current && nextArrowRef.current) {
+          prevArrowRef.current.style.opacity = "100%";
+          nextArrowRef.current.style.opacity = "100%";
+        }
+      };
+
+      if (!splideInstance) return;
+      splideInstance.on("drag", handleDragStart);
+      splideInstance.on("dragged", handleDragEnd); // Listen for the "dragged" event, which occurs when dragging ends.
+
+      return () => {
+        splideInstance.off("drag");
+        splideInstance.off("dragged");
+      };
+    }
+  }, [mainRef]);
+
   useEffect(() => {
     const splideInstance = mainRef.current?.splide;
-    prevArrowRef.current?.addEventListener("click", () => {
+    const prevArrowElement = prevArrowRef.current;
+    const nextArrowElement = nextArrowRef.current;
+
+    const handlePrevArrowClick = () => {
       if (setSplideProgress) {
         setSplideProgress(splideInstance?.index! - 1);
-        return;
+      } else {
+        splideInstance?.go("-1");
       }
-      splideInstance?.go("-1");
-    });
-    nextArrowRef.current?.addEventListener("click", () => {
+    };
+
+    const handleNextArrowClick = () => {
       if (setSplideProgress) {
         setSplideProgress(splideInstance?.index! + 1);
-        return;
+      } else {
+        splideInstance?.go("+1");
       }
-      splideInstance?.go("+1");
-    });
-  }, [mainRef, setSplideProgress]);
+    };
+
+    prevArrowElement?.addEventListener("click", handlePrevArrowClick);
+    nextArrowElement?.addEventListener("click", handleNextArrowClick);
+
+    return () => {
+      prevArrowElement?.removeEventListener("click", handlePrevArrowClick);
+      nextArrowElement?.removeEventListener("click", handleNextArrowClick);
+    };
+  }, [mainRef, prevArrowRef, nextArrowRef, setSplideProgress]);
 
   const renderSlides = (text: boolean) => {
     return slides?.map((splider: SpliderProps, key) => {
@@ -92,11 +134,39 @@ export const Splider: React.FC<SpliderContainerProps> = ({
           key={key}
           className={cn({ [styles.content]: splider?.content })}
         >
-          <SanityImage
-            image={splider?.customImage.image}
-            alt={splider?.customImage.alt}
-          />
-          {text && splider?.content && <SideContainer {...splider.content} />}
+          {!isMobileOrTablet && text && splider?.content && (
+            <SideContainer {...splider.content} />
+          )}
+          {splider?.customImages &&
+            (splider?.customImages?.length > 1 ? (
+              <div className={styles.imgGridWrapper}>
+                <div className={styles.imgGrid}>
+                  {/* Duplicate images if there are less than 9 */}
+                  {[...Array(Math.max(9, splider.customImages.length))].map(
+                    (_, index) => {
+                      const imageIndex = index % splider.customImages.length; // Ensure index does not exceed the length of customImages
+                      const image = splider.customImages[imageIndex];
+                      return (
+                        <SanityImage
+                          visible
+                          key={index}
+                          image={image.image}
+                          alt={image.alt}
+                        />
+                      );
+                    }
+                  )}
+                </div>
+              </div>
+            ) : (
+              <SanityImage
+                image={splider?.customImages[0].image}
+                alt={splider?.customImages[0].alt}
+              />
+            ))}
+          {isMobileOrTablet && text && splider?.content && (
+            <SideContainer {...splider.content} />
+          )}
         </SplideSlide>
       );
     });

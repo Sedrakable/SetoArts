@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Hero.module.scss";
 import cn from "classnames";
 import { Paragraph } from "../Paragraph";
@@ -28,23 +28,6 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   const { isMobileOrTablet } = useWindowResize();
 
-  useEffect(() => {
-    const setQuoteWidth = () => {
-      const leftElement = document.getElementById("hero-left");
-      const quoteElement = document.getElementById("quote-left");
-      if (isMobileOrTablet && quoteElement) {
-        quoteElement.style.width = "50%";
-        return;
-      }
-      if (leftElement && quoteElement) {
-        const leftWidth = leftElement.offsetWidth;
-        quoteElement.style.width = leftWidth + "px";
-      }
-    };
-
-    setQuoteWidth();
-    window.addEventListener("resize", () => setQuoteWidth());
-  }, [isMobileOrTablet]);
   return (
     <div className={cn(styles.hero)}>
       {!isMobileOrTablet && (
@@ -59,7 +42,6 @@ export const Hero: React.FC<HeroProps> = ({
           padding={{
             horizontal: [3, 8, 0],
             vertical: [0, 5, 0],
-            bottom: [4, 5, 0],
           }}
           id="hero-left"
         >
@@ -100,9 +82,13 @@ export const Hero: React.FC<HeroProps> = ({
               flex={{ direction: "row" }}
               customStyle={{ flexWrap: "wrap" }}
             >
-              <Button variant="fancy">{ctas?.cta1.text}</Button>
+              <Button variant="fancy" id="primary">
+                {ctas?.cta1.text}
+              </Button>
               {ctas?.cta2 && (
-                <Button variant="secondary">{ctas?.cta1.text}</Button>
+                <Button variant="secondary" id="secondary">
+                  {ctas?.cta1.text}
+                </Button>
               )}
             </FlexDiv>
           )}

@@ -8,13 +8,15 @@ import React, {
 import { ICustomImage } from "../../../data";
 import { urlFor } from "../../../api/useFetchPage";
 import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
+interface SanityImageProps extends ICustomImage {
+  visible?: boolean;
+}
 export const SanityImage: React.FC<PropsWithChildren<
-  ICustomImage & ImgHTMLAttributes<HTMLImageElement>
->> = ({ image, alt, ...props }) => {
+  SanityImageProps & ImgHTMLAttributes<HTMLImageElement>
+>> = ({ image, alt, visible = false, ...props }) => {
   const [loaded, setLoaded] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(visible);
   const [imgWidth, setImgWidth] = useState<number | null>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const minimumWidth = 600;
@@ -68,9 +70,10 @@ export const SanityImage: React.FC<PropsWithChildren<
 
   return (
     <figure ref={imgRef} style={{ width: "auto", height: "100%" }}>
-      <LazyLoadImage
+      <img
         src={src}
         alt={alt}
+        loading="lazy"
         onLoad={() => setLoaded(true)}
         style={{ objectFit: "cover" }}
       />

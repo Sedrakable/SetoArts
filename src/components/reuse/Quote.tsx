@@ -17,13 +17,15 @@ export const Quote: React.FC<QuoteProps> = ({
   version,
 }) => {
   return (
-    <FlexDiv className={cn(styles.quote, { [styles.v2]: version === 2 })}>
+    <FlexDiv
+      className={cn(styles.quote, { [styles.v2]: version === 2 })}
+      flex={{ x: "flex-start" }}
+    >
       <FlexDiv
         className={styles.left}
         flex={{ x: "flex-end" }}
         height100
         padding={{ right: [4, 6, 6, 7] }}
-        id="quote-left"
       >
         <Heading font="Seto" as="h3" level="3">
           {leftText}

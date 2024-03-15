@@ -16,11 +16,9 @@ export const WorkSlider: React.FC<PropsWithChildren<IWorkBlock>> = ({
 
   const slides: SpliderProps[] = works!?.map(
     (work: IWork): SpliderProps => {
+      console.log(work);
       return {
-        customImage: {
-          image: work.thumbnailImage.image,
-          alt: work.thumbnailImage.alt,
-        },
+        customImages: work?.customImages,
         content: {
           title: work.title,
           desc: work.desc,

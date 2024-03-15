@@ -12,6 +12,7 @@ import { Button } from "../reuse/Button";
 import { ICta, INavBar, INavLink, LocalPaths } from "../../data.d";
 import { LangSwitcher, langData } from "./LangSwitcher/LangSwitcher";
 import { useAtom } from "jotai";
+import { getTranslations } from "../../helpers/langUtils";
 
 export const isCta = (link: INavLink | ICta): link is ICta => {
   return (link as ICta).link !== undefined;
@@ -23,6 +24,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const [lang] = useAtom(langData);
+  const translations = getTranslations(lang);
 
   useEffect(() => {
     const handleScroll = (e: Event) => {
@@ -42,6 +44,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
       onClick={(e) => onClickNavigate(e, `/${lang}${LocalPaths.HOME}`)}
       href=""
       className={styles.logo}
+      aria-label={translations.nav.home}
     >
       <Logo />
     </Link>

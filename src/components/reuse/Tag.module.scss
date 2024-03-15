@@ -17,6 +17,7 @@
   cursor: pointer;
   &.chosen {
     border-color: var(--yellow);
+    cursor: default;
   }
   p {
     font-size: 20px !important;

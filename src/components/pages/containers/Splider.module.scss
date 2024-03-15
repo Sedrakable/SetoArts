@@ -4,16 +4,19 @@
   --thumbnail-height: 60px;
   --wrapper-padding-bottom: var(--pad-5);
   --ratio: 4/3;
+  --ratio-flip: 3/4;
   @media (min-width: $tablet) {
     --thumbnail-height: 90px;
     --wrapper-padding-bottom: var(--pad-6);
     --ratio: 16/9;
+    --ratio-flip: 9/16;
   }
 
   @media (min-width: $laptop) {
     --thumbnail-height: 120px;
     --wrapper-padding-bottom: var(--pad-7);
     --ratio: unset;
+    --ratio-flip: unset;
   }
 
   @media (min-width: $desktop) {
@@ -48,6 +51,7 @@
       background-color: var(--white);
       border-radius: 4px;
       overflow: hidden;
+      z-index: 4;
       .progress {
         height: 100%;
         background: var(--yellow);
@@ -55,39 +59,57 @@
     }
 
     .customArrows {
-      @include flex(space-between, center);
+      @include flex(flex-start, flex-end);
 
-      $padding: calc((100vw - var(--screen-width-large)) / 2);
       position: absolute;
       top: 0;
-      left: $padding;
-      right: $padding;
+      left: 0;
+      width: 100%;
       height: 100%;
       z-index: 3;
 
       > * {
         cursor: pointer;
         pointer-events: all;
+        padding-bottom: var(--pad-8) !important;
+        transition: 200ms;
       }
 
       .prevArrow {
-        left: 0;
+        margin-left: calc(100% / 3);
+        padding: var(--pad-3) var(--pad-5);
+        transform: translate(-100%, var(--pad-3));
+        background: var(--white);
       }
 
       .nextArrow {
-        right: 0;
+        padding: var(--pad-3) var(--pad-5);
+
+        transform: translate(calc(-100% - 1px), var(--pad-3));
+        background: var(--black);
+        // border-radius: 0 60px 60px 0;
       }
     }
   }
 
   .content {
-    @include flexColumn(stretch, flex-start);
-    > * {
-      position: relative !important;
-      width: 100% !important;
+    @include flexColumn(stretch, stretch);
+    > figure {
+      height: calc(100vw * var(--ratio-flip)) !important;
     }
-    img {
-      aspect-ratio: var(--ratio);
+    .imgGridWrapper {
+      width: 100%;
+      height: 100%;
+      flex: 1;
+
+      .imgGrid {
+        display: grid;
+        width: 65%;
+        height: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 33.3%);
+        transform: rotateZ(-20deg) scale(1.7) translate(130px, 50px);
+      }
     }
   }
 
@@ -107,8 +129,11 @@
     }
     .content {
       flex-direction: row !important;
-      > * {
-        width: 50% !important;
+      flex: 1;
+      min-width: 100%;
+      > figure {
+        height: 100% !important;
+        flex: 1;
       }
     }
   }

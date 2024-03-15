@@ -21,10 +21,10 @@ export const HomePage: FC<HomePageProps> = (props) => {
     props && (
       <>
         <Hero {...props?.hero} />
+        <WorkSlider {...props?.work} />
         <Services {...props.services} />
         <Values {...props.values} />
         <About content={{ ...props?.about?.content, cta: true }} />
-        <WorkSlider {...props.work} />
         <Inspired />
       </>
     )
