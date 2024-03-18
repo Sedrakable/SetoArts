@@ -1,13 +1,13 @@
 {
-  "_type": "navbar",
   "links": [
     {
-      "link": "/home",
       "text": "Home",
       "_key": "57469334049d",
-      "_type": "localLink"
+      "_type": "localLink",
+      "link": "/home"
     },
     {
+      "_key": "5303e3087528",
       "title": "Services",
       "ctaArray": [
         {
@@ -17,10 +17,10 @@
           "_key": "9d5388be39ac"
         },
         {
-          "text": "Landing Page",
-          "_key": "9e3c6dd471c9",
           "_type": "localLink",
-          "link": "/landing-page"
+          "link": "/landing-page",
+          "text": "Landing Page",
+          "_key": "9e3c6dd471c9"
         },
         {
           "_type": "localLink",
@@ -34,14 +34,13 @@
           "text": "Custom Work",
           "_key": "f77d3ff7288d"
         }
-      ],
-      "_key": "5303e3087528"
+      ]
     },
     {
-      "_type": "localLink",
-      "link": "/about-work",
       "text": "About + Work",
-      "_key": "05ce4081eec0"
+      "_key": "05ce4081eec0",
+      "_type": "localLink",
+      "link": "/about-work"
     },
     {
       "_type": "localLink",
@@ -54,5 +53,6 @@
   "lang": "en",
   "_updatedAt": "2024-02-29T08:40:21Z",
   "_createdAt": "2024-02-16T16:09:05Z",
-  "_rev": "c9hkvQgAJDwuQEMKjCVAea"
+  "_rev": "c9hkvQgAJDwuQEMKjCVAea",
+  "_type": "navbar"
 }

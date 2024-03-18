@@ -1,35 +1,12 @@
 {
-  "_createdAt": "2024-02-20T03:26:33Z",
-  "_type": "aboutPage",
   "work": {
     "works": [
       {
-        "_id": "cbd76985-d222-473c-affa-ad3fdabda57f",
-        "thumbnailImage": {
-          "_type": "customImage",
-          "alt": "steampunk logo",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-6f39d57094659f89086bb4b1161d670f5a0b73c9-673x687-png",
-              "_type": "reference"
-            }
-          }
-        },
         "slug": {
           "current": "steampunk-dynasty",
           "_type": "slug"
         },
         "_rev": "1X3tbPF0boRjlNqQpUWJaT",
-        "_type": "work",
-        "kickstarterProjectlink": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory",
-        "title": "Steampunk Dynasty",
-        "primaryLink": {
-          "_type": "cta",
-          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
-          "text": "Kickstarter"
-        },
-        "behanceProjectId": "158215055",
         "customImages": [
           {
             "image": {
@@ -69,27 +46,27 @@
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-1eec8a41caa48ff888f1f756fa9359800a0065e1-826x1102-jpg",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "bruh",
             "_key": "b3537125d071"
           },
           {
-            "_type": "customImage",
-            "alt": "yey",
-            "_key": "4262ded0ab79",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-48d2a9dac6b5a52cb1f49ef74d92bab4a0eaee92-3072x3071-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "yey",
+            "_key": "4262ded0ab79"
           },
           {
             "image": {
@@ -116,35 +93,68 @@
             "_key": "7e81716eba0d"
           }
         ],
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-6f39d57094659f89086bb4b1161d670f5a0b73c9-673x687-png"
+            }
+          },
+          "_type": "customImage",
+          "alt": "steampunk logo"
+        },
+        "title": "Steampunk Dynasty",
         "_createdAt": "2024-01-31T01:37:25Z",
+        "primaryLink": {
+          "text": "Kickstarter",
+          "_type": "cta",
+          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu"
+        },
+        "_id": "cbd76985-d222-473c-affa-ad3fdabda57f",
         "_updatedAt": "2024-03-07T04:38:59Z",
+        "behanceProjectId": "158215055",
+        "_type": "work",
+        "kickstarterProjectlink": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory",
         "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       },
       {
-        "slug": {
-          "current": "b-hive",
-          "_type": "slug"
+        "_rev": "1X3tbPF0boRjlNqQpUWIqt",
+        "title": "B'Hive",
+        "_createdAt": "2024-02-01T01:02:35Z",
+        "_id": "ec4292ec-9246-4ddf-8156-3bcea26ad59a",
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-455cecc4bf259b2e27f8ed4a68aa28dd30922a91-1080x1080-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "B-hive logo"
         },
+        "_updatedAt": "2024-03-07T04:38:43Z",
         "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "customImages": [
           {
-            "alt": "dggd",
             "_key": "c0cb125fbd47",
             "image": {
-              "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg"
-              }
+                "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+                "_type": "reference"
+              },
+              "_type": "image"
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "dggd"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg"
+                "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
@@ -152,20 +162,18 @@
             "_key": "896cc865a362"
           },
           {
-            "_type": "customImage",
-            "alt": "dgdg",
-            "_key": "48d58ff3da7b",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "dgdg",
+            "_key": "48d58ff3da7b"
           },
           {
-            "alt": "oops",
-            "_key": "675357faab48",
             "image": {
               "_type": "image",
               "asset": {
@@ -173,9 +181,13 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "oops",
+            "_key": "675357faab48"
           },
           {
+            "alt": "what",
+            "_key": "d639ce1e73a0",
             "image": {
               "_type": "image",
               "asset": {
@@ -183,9 +195,7 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "what",
-            "_key": "d639ce1e73a0"
+            "_type": "customImage"
           },
           {
             "image": {
@@ -215,8 +225,8 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-2009d0d577400995982740237c823705014c2f44-1080x1045-jpg"
+                "_ref": "image-2009d0d577400995982740237c823705014c2f44-1080x1045-jpg",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
@@ -224,148 +234,140 @@
             "_key": "7651d0362619"
           }
         ],
-        "title": "B'Hive",
-        "_createdAt": "2024-02-01T01:02:35Z",
-        "_id": "ec4292ec-9246-4ddf-8156-3bcea26ad59a",
-        "_updatedAt": "2024-03-07T04:38:43Z",
-        "behanceProjectId": "190730837",
-        "_rev": "1X3tbPF0boRjlNqQpUWIqt",
-        "_type": "work",
         "kickstarterProjectlink": "https://www.kickstarter.com/projects/makeplayingcards/chao-emperor-and-yin-yang-playing-cards-a-historical-deck",
+        "behanceProjectId": "190730837",
+        "_type": "work",
+        "primaryLink": {
+          "text": "B'Hive",
+          "_type": "cta",
+          "link": "www.amazon.com"
+        },
         "secondaryLinks": [
           {
+            "text": "behance",
             "_key": "d916d012f227",
             "_type": "cta",
-            "link": "https://www.behance.net/gallery/179677113/MESSYMOD-PLAYING-CARDS-EDITION-2",
-            "text": "behance"
+            "link": "https://www.behance.net/gallery/179677113/MESSYMOD-PLAYING-CARDS-EDITION-2"
           }
         ],
+        "slug": {
+          "current": "b-hive",
+          "_type": "slug"
+        }
+      },
+      {
+        "_createdAt": "2024-03-07T04:41:08Z",
         "primaryLink": {
+          "text": "ffghfdhd",
           "_type": "cta",
-          "link": "www.amazon.com",
-          "text": "B'Hive"
+          "link": "dgdhdjhhd"
         },
         "thumbnailImage": {
           "image": {
             "_type": "image",
             "asset": {
-              "_ref": "image-455cecc4bf259b2e27f8ed4a68aa28dd30922a91-1080x1080-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "B-hive logo"
-        }
-      },
-      {
-        "_createdAt": "2024-03-07T04:41:08Z",
-        "_type": "work",
-        "_id": "7fdc71cf-82e7-405d-93f9-34eb59fd2f4c",
-        "thumbnailImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
-              "_type": "reference"
+              "_type": "reference",
+              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg"
             }
           },
           "_type": "customImage",
           "alt": "bruv"
         },
+        "_id": "7fdc71cf-82e7-405d-93f9-34eb59fd2f4c",
         "title": "Seto Gainz ",
         "_updatedAt": "2024-03-07T04:41:08Z",
         "slug": {
-          "_type": "slug",
-          "current": "Happy"
+          "current": "Happy",
+          "_type": "slug"
         },
         "desc": "lerem ipsum bruh hah Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
         "_rev": "1X3tbPF0boRjlNqQpUWnyT",
+        "_type": "work",
         "customImages": [
           {
-            "_type": "customImage",
-            "alt": "rdfhtrfj",
-            "_key": "0f2fb0748206",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "rdfhtrfj",
+            "_key": "0f2fb0748206"
+          },
+          {
+            "alt": "gegn",
+            "_key": "1b878d9df8ce",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-9d9ff04621bf0e47eeb3b467e68b09e6146883de-5568x3712-jpg"
+              }
+            },
+            "_type": "customImage"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-9d9ff04621bf0e47eeb3b467e68b09e6146883de-5568x3712-jpg",
+                "_ref": "image-f3a3568bc60f1f327fcc660cf816acdfc4cc11b0-4368x2912-jpg",
                 "_type": "reference"
               }
             },
             "_type": "customImage",
-            "alt": "gegn",
-            "_key": "1b878d9df8ce"
-          },
-          {
-            "_type": "customImage",
             "alt": "gdhdbn",
-            "_key": "44fa17078113",
-            "image": {
-              "asset": {
-                "_ref": "image-f3a3568bc60f1f327fcc660cf816acdfc4cc11b0-4368x2912-jpg",
-                "_type": "reference"
-              },
-              "_type": "image"
-            }
+            "_key": "44fa17078113"
           },
           {
             "image": {
+              "_type": "image",
               "asset": {
-                "_ref": "image-a7a4bba238e40be24f5a1556863775d37df01b01-2268x4032-jpg",
-                "_type": "reference"
-              },
-              "_type": "image"
+                "_type": "reference",
+                "_ref": "image-a7a4bba238e40be24f5a1556863775d37df01b01-2268x4032-jpg"
+              }
             },
             "_type": "customImage",
             "alt": "lox",
             "_key": "01668f2f87b5"
           },
           {
+            "image": {
+              "asset": {
+                "_ref": "image-2de92c703a09a355235addc52336c79bcfb2170e-3840x2160-jpg",
+                "_type": "reference"
+              },
+              "_type": "image"
+            },
             "_type": "customImage",
             "alt": "???",
-            "_key": "f7405ecd4995",
-            "image": {
-              "_type": "image",
-              "asset": {
-                "_type": "reference",
-                "_ref": "image-2de92c703a09a355235addc52336c79bcfb2170e-3840x2160-jpg"
-              }
-            }
+            "_key": "f7405ecd4995"
           }
-        ],
-        "primaryLink": {
-          "text": "ffghfdhd",
-          "_type": "cta",
-          "link": "dgdhdjhhd"
-        }
+        ]
       },
       {
-        "_updatedAt": "2024-03-07T04:43:31Z",
-        "desc": "Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
-        "_createdAt": "2024-03-07T04:43:31Z",
         "_rev": "1X3tbPF0boRjlNqQpUX6Br",
         "_type": "work",
+        "_id": "bba2f63d-f088-4561-b4cc-6c9b6e092aaa",
+        "desc": "Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
+        "slug": {
+          "current": "get-gud",
+          "_type": "slug"
+        },
+        "_createdAt": "2024-03-07T04:43:31Z",
         "customImages": [
           {
-            "_type": "customImage",
-            "alt": "hdhn",
-            "_key": "c8399432d8df",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-4f9acf55d44293fbed8ab821a681d1bc715b7bca-4000x6000-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "hdhn",
+            "_key": "c8399432d8df"
           },
           {
             "image": {
@@ -380,6 +382,7 @@
             "_key": "6dabf05d133f"
           },
           {
+            "_key": "d28ab8ba5515",
             "image": {
               "_type": "image",
               "asset": {
@@ -388,12 +391,9 @@
               }
             },
             "_type": "customImage",
-            "alt": "ffjhf",
-            "_key": "d28ab8ba5515"
+            "alt": "ffjhf"
           },
           {
-            "alt": "fjfkj",
-            "_key": "0154c73f994a",
             "image": {
               "_type": "image",
               "asset": {
@@ -401,7 +401,9 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "fjfkj",
+            "_key": "0154c73f994a"
           },
           {
             "image": {
@@ -425,31 +427,24 @@
           "image": {
             "_type": "image",
             "asset": {
-              "_type": "reference",
-              "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg"
+              "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+              "_type": "reference"
             }
           },
           "_type": "customImage",
           "alt": "bedhbed"
         },
-        "_id": "bba2f63d-f088-4561-b4cc-6c9b6e092aaa",
         "title": "Get Gud",
-        "slug": {
-          "current": "get-gud",
-          "_type": "slug"
-        }
+        "_updatedAt": "2024-03-07T04:43:31Z"
       }
     ]
   },
-  "title": "About Me & Work",
+  "_rev": "ksdOFLICVye5gSRZtBE82K",
+  "_id": "625cd53a-b89f-4f0b-9120-901e848be808",
+  "_createdAt": "2024-02-20T03:26:33Z",
   "about": {
-    "_rev": "42dARgouF4fLoQkzWohzDf",
-    "_type": "aboutBlock",
-    "hiddenTitle": "About Long",
-    "_id": "f09e55c7-e0e4-49d2-b0d4-40526e7d84b3",
-    "title": "About me long",
-    "_updatedAt": "2024-03-06T19:28:01Z",
     "content": {
+      "title2": "With my shift to brand development, I've launched this Seto Arts as the next phase of my career.",
       "desc1": "I've been able to balance my passion for illustration with my full-time job in web development while working on various projects. This includes my involvement with Vostok Cards, my playing card company for which I led two successful Kickstarter campaigns. Additionally, I have experience designing a variety of logos and creating detailed 3D product renderings.",
       "desc2": "Building on years of creativity and innovation, I'm eager to apply my expertise to deliver exceptional branding solutions.",
       "name": "Sedrak Nadzharyan",
@@ -465,25 +460,55 @@
         "alt": "Me"
       },
       "title1": {
-        "_type": "fancyText",
-        "part3": ". Throughout my career, I've refined a diverse set of skills, ranging from graphic design to web development.",
         "part1": "Hi, I am",
-        "part2": "Seto"
-      },
-      "title2": "With my shift to brand development, I've launched this Seto Arts as the next phase of my career."
+        "part2": "Seto",
+        "_type": "fancyText",
+        "part3": ". Throughout my career, I've refined a diverse set of skills, ranging from graphic design to web development."
+      }
     },
-    "_createdAt": "2024-02-20T03:26:19Z"
+    "_createdAt": "2024-02-20T03:26:19Z",
+    "_rev": "42dARgouF4fLoQkzWohzDf",
+    "_type": "aboutBlock",
+    "hiddenTitle": "About Long",
+    "_id": "f09e55c7-e0e4-49d2-b0d4-40526e7d84b3",
+    "title": "About me long",
+    "_updatedAt": "2024-03-06T19:28:01Z"
   },
   "lang": "en",
-  "slug": {
-    "current": "/about",
-    "_type": "slug"
+  "values": {
+    "hiddenTitle": "Values",
+    "_id": "476b7505-b556-4333-ae53-beaa98ff191f",
+    "_updatedAt": "2024-03-01T05:06:08Z",
+    "_createdAt": "2024-03-01T05:04:57Z",
+    "values": [
+      {
+        "_type": "value",
+        "_key": "8c0bcf871f45",
+        "title": "Creativity",
+        "desc": "I infuse originality and imagination into every branding project, ensuring unique and captivating brand identities that stand out on the market."
+      },
+      {
+        "_key": "9a2741212bb1",
+        "title": "Innovation",
+        "desc": "My approach integrates cutting-edge techniques and fresh ideas to deliver branding that resonates with audiences.",
+        "_type": "value"
+      },
+      {
+        "_type": "value",
+        "_key": "de7c43817654",
+        "title": "Collaboration",
+        "desc": "I prioritize open communication and teamwork, partnering closely with clients to bring their vision to life through collaborative and transparent processes."
+      },
+      {
+        "_type": "value",
+        "_key": "e7498d396f3c",
+        "title": "Quality",
+        "desc": "My commitment to excellence drives me to deliver high-quality branding services that elevate brands and leave a lasting impact on their audience.\n"
+      }
+    ],
+    "_rev": "4fqy6B5H6WrCPpGf2W35dM",
+    "_type": "valuesBlock"
   },
-  "_rev": "rGZ2nN6K5mjOGJOoWXbh2T",
-  "_updatedAt": "2024-02-23T16:03:11Z",
-  "_id": "625cd53a-b89f-4f0b-9120-901e848be808",
-  "inspired": {
-    "_ref": "f2abf0bf-87fb-487a-b763-e7a36747fb2d",
-    "_type": "reference"
-  }
+  "_type": "aboutPage",
+  "_updatedAt": "2024-03-14T20:53:39Z"
 }

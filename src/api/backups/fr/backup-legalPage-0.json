@@ -1,28 +1,25 @@
 {
-  "lang": "fr",
+  "_id": "35985f27-65f6-4069-bc3e-bf7b3e3d0895",
   "title": "Termes et conditions",
   "_updatedAt": "2024-03-08T01:12:59Z",
   "data": [
     {
-      "_key": "941ca19a5eb1",
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [
             "strong"
           ],
           "text": "Seto x Arts",
-          "_key": "9a4a3dcdd9c30"
+          "_key": "9a4a3dcdd9c30",
+          "_type": "span"
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "941ca19a5eb1"
     },
     {
-      "_type": "block",
-      "style": "normal",
-      "_key": "e3365043f070",
       "markDefs": [],
       "children": [
         {
@@ -33,47 +30,50 @@
           "text": "Date d'entrée en vigueur : 9 janvier 2024",
           "_key": "40580ee66e000"
         }
-      ]
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "e3365043f070"
     },
     {
-      "style": "normal",
       "_key": "bf474fa31aed",
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [],
           "text": "",
-          "_key": "721c15a284e0"
+          "_key": "721c15a284e0",
+          "_type": "span"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal"
     },
     {
+      "style": "normal",
+      "_key": "a06e595fa0ab",
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [
             "strong"
           ],
           "text": "1. Acceptation des conditions",
-          "_key": "945145168cd20"
+          "_key": "945145168cd20",
+          "_type": "span"
         }
       ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "a06e595fa0ab"
+      "_type": "block"
     },
     {
       "_key": "1742d91d1e3e",
       "markDefs": [],
       "children": [
         {
-          "_key": "e0b7f49d7e920",
           "_type": "span",
           "marks": [],
-          "text": "En accédant et en utilisant le site web setoxarts.com et nos services, vous acceptez de vous conformer et d'être lié par ces Termes et Conditions. Si vous n'êtes pas d'accord avec une partie de ces termes, vous ne pouvez pas utiliser notre site web ou nos services."
+          "text": "En accédant et en utilisant le site web setoxarts.com et nos services, vous acceptez de vous conformer et d'être lié par ces Termes et Conditions. Si vous n'êtes pas d'accord avec une partie de ces termes, vous ne pouvez pas utiliser notre site web ou nos services.",
+          "_key": "e0b7f49d7e920"
         }
       ],
       "_type": "block",
@@ -82,10 +82,10 @@
     {
       "children": [
         {
+          "_key": "6849ec940ed0",
           "_type": "span",
           "marks": [],
-          "text": "",
-          "_key": "6849ec940ed0"
+          "text": ""
         }
       ],
       "_type": "block",
@@ -94,6 +94,7 @@
       "markDefs": []
     },
     {
+      "_type": "block",
       "style": "normal",
       "_key": "ce7eca88268a",
       "markDefs": [],
@@ -106,82 +107,84 @@
           "text": "2. Services proposés",
           "_key": "751a9ad09c840"
         }
+      ]
+    },
+    {
+      "style": "normal",
+      "_key": "f071a7d26762",
+      "markDefs": [],
+      "children": [
+        {
+          "marks": [],
+          "text": "Seto Arts propose des services de branding et de développement de sites web. Tous les services sont soumis aux termes et conditions décrits ici.",
+          "_key": "bd02b409cc9c0",
+          "_type": "span"
+        }
       ],
       "_type": "block"
+    },
+    {
+      "_key": "fbf8625db6c1",
+      "markDefs": [],
+      "children": [
+        {
+          "text": "",
+          "_key": "1425684c9cd8",
+          "_type": "span",
+          "marks": []
+        }
+      ],
+      "_type": "block",
+      "style": "normal"
     },
     {
       "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "marks": [],
-          "text": "Seto Arts propose des services de branding et de développement de sites web. Tous les services sont soumis aux termes et conditions décrits ici.",
-          "_key": "bd02b409cc9c0"
-        }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "f071a7d26762"
-    },
-    {
-      "children": [
-        {
-          "marks": [],
-          "text": "",
-          "_key": "1425684c9cd8",
-          "_type": "span"
-        }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "fbf8625db6c1",
-      "markDefs": []
-    },
-    {
-      "style": "normal",
-      "_key": "2ce7d331e6ec",
-      "markDefs": [],
-      "children": [
-        {
           "marks": [
             "strong"
           ],
           "text": "3. Conduite de l'utilisateur",
-          "_key": "cc3aafb8f2440",
-          "_type": "span"
+          "_key": "cc3aafb8f2440"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "2ce7d331e6ec"
+    },
+    {
+      "style": "normal",
+      "_key": "2c063c910153",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "1cae9c274a960",
+          "_type": "span",
+          "marks": [],
+          "text": "Vous acceptez d'utiliser notre site web et nos services de manière légale et responsable. Vous ne devez pas vous livrer à des comportements pouvant perturber ou interférer avec la fonctionnalité du site web ou compromettre la sécurité de nos services."
         }
       ],
       "_type": "block"
     },
     {
-      "markDefs": [],
       "children": [
         {
           "_type": "span",
           "marks": [],
-          "text": "Vous acceptez d'utiliser notre site web et nos services de manière légale et responsable. Vous ne devez pas vous livrer à des comportements pouvant perturber ou interférer avec la fonctionnalité du site web ou compromettre la sécurité de nos services.",
-          "_key": "1cae9c274a960"
+          "text": "",
+          "_key": "0b3670934b2a"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "2c063c910153"
+      "_key": "b9ef6d7c471e",
+      "markDefs": []
     },
     {
       "_type": "block",
       "style": "normal",
-      "_key": "b9ef6d7c471e",
-      "markDefs": [],
-      "children": [
-        {
-          "text": "",
-          "_key": "0b3670934b2a",
-          "_type": "span",
-          "marks": []
-        }
-      ]
-    },
-    {
+      "_key": "d68de8a4fa7c",
       "markDefs": [],
       "children": [
         {
@@ -192,16 +195,9 @@
           "text": "4. Propriété intellectuelle",
           "_key": "63a4e94146cc0"
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "d68de8a4fa7c"
+      ]
     },
     {
-      "_type": "block",
-      "style": "normal",
-      "_key": "111210ffb985",
-      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -209,7 +205,11 @@
           "text": "Tous les contenus et matériaux sur setoxarts.com, y compris mais sans s'y limiter le texte, les images, les logos et les designs, sont la propriété de Seto Arts et sont protégés par les lois sur la propriété intellectuelle. Vous ne pouvez pas utiliser, reproduire ou distribuer notre contenu sans permission explicite.",
           "_key": "90155d42fda60"
         }
-      ]
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "111210ffb985",
+      "markDefs": []
     },
     {
       "markDefs": [],
@@ -226,24 +226,22 @@
       "_key": "a2fee904a44a"
     },
     {
-      "_type": "block",
-      "style": "normal",
       "_key": "9971d62ce7f2",
       "markDefs": [],
       "children": [
         {
-          "_key": "81df34eacb590",
           "_type": "span",
           "marks": [
             "strong"
           ],
-          "text": "5. Paiements et frais"
+          "text": "5. Paiements et frais",
+          "_key": "81df34eacb590"
         }
-      ]
+      ],
+      "_type": "block",
+      "style": "normal"
     },
     {
-      "style": "normal",
-      "_key": "806d46c4c02f",
       "markDefs": [],
       "children": [
         {
@@ -253,25 +251,25 @@
           "_key": "0b3f3d824e100"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal",
+      "_key": "806d46c4c02f"
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "b1741c722715",
       "markDefs": [],
       "children": [
         {
+          "_key": "ea05080c58ac",
           "_type": "span",
           "marks": [],
-          "text": "",
-          "_key": "ea05080c58ac"
+          "text": ""
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "b1741c722715"
+      ]
     },
     {
-      "style": "normal",
-      "_key": "29dd2bff86dd",
       "markDefs": [],
       "children": [
         {
@@ -283,37 +281,40 @@
           "_key": "a0a9374c0d340"
         }
       ],
-      "_type": "block"
-    },
-    {
       "_type": "block",
       "style": "normal",
-      "_key": "9757e37757da",
+      "_key": "29dd2bff86dd"
+    },
+    {
       "markDefs": [],
       "children": [
         {
-          "text": "Notre Politique de confidentialité décrit comment nous collectons, utilisons et protégeons vos informations personnelles. En utilisant notre site web et nos services, vous consentez aux pratiques décrites dans notre Politique de confidentialité.",
           "_key": "d047f4f5ec160",
           "_type": "span",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "children": [
-        {
-          "text": "",
-          "_key": "019b7072e71a",
-          "_type": "span",
-          "marks": []
+          "marks": [],
+          "text": "Notre Politique de confidentialité décrit comment nous collectons, utilisons et protégeons vos informations personnelles. En utilisant notre site web et nos services, vous consentez aux pratiques décrites dans notre Politique de confidentialité."
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "c6973cd09fa7",
-      "markDefs": []
+      "_key": "9757e37757da"
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "c6973cd09fa7",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "",
+          "_key": "019b7072e71a"
+        }
+      ]
+    },
+    {
+      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -326,12 +327,9 @@
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "7e7e7c658875",
-      "markDefs": []
+      "_key": "7e7e7c658875"
     },
     {
-      "style": "normal",
-      "_key": "237cae8668e2",
       "markDefs": [],
       "children": [
         {
@@ -341,39 +339,42 @@
           "_key": "3257392bb8130"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal",
+      "_key": "237cae8668e2"
     },
     {
+      "_key": "7f1aac9e9d76",
       "markDefs": [],
       "children": [
         {
-          "text": "",
-          "_key": "1626dc804074",
           "_type": "span",
-          "marks": []
+          "marks": [],
+          "text": "",
+          "_key": "1626dc804074"
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "7f1aac9e9d76"
+      "style": "normal"
     },
     {
-      "markDefs": [],
       "children": [
         {
+          "_type": "span",
           "marks": [
             "strong"
           ],
           "text": "8. Résiliation des services",
-          "_key": "2b9787a420550",
-          "_type": "span"
+          "_key": "2b9787a420550"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "501e95026d40"
+      "_key": "501e95026d40",
+      "markDefs": []
     },
     {
+      "_type": "block",
       "style": "normal",
       "_key": "b66694ddca95",
       "markDefs": [],
@@ -384,47 +385,46 @@
           "text": "Nous nous réservons le droit de résilier ou de suspendre les services à tout utilisateur pour quelque raison que ce soit, y compris une violation de ces Termes et Conditions.",
           "_key": "1e21bf3b9ea50"
         }
-      ],
-      "_type": "block"
+      ]
     },
     {
-      "children": [
-        {
-          "text": "",
-          "_key": "963269bcad86",
-          "_type": "span",
-          "marks": []
-        }
-      ],
       "_type": "block",
       "style": "normal",
       "_key": "3d32cd9ed872",
-      "markDefs": []
-    },
-    {
+      "markDefs": [],
       "children": [
         {
+          "_key": "963269bcad86",
+          "_type": "span",
+          "marks": [],
+          "text": ""
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "_key": "c597b5bd6625",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
           "marks": [
             "strong"
           ],
           "text": "9. Loi applicable",
-          "_key": "98570a06695b0",
-          "_type": "span"
+          "_key": "98570a06695b0"
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "c597b5bd6625",
-      "markDefs": []
+      ]
     },
     {
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [],
           "text": "Ces Termes et Conditions sont régis par et interprétés conformément aux lois de [votre juridiction]. Tout litige découlant de ces termes sera soumis à la juridiction exclusive des tribunaux de [votre juridiction].",
-          "_key": "f9a8ae07c4b30"
+          "_key": "f9a8ae07c4b30",
+          "_type": "span"
         }
       ],
       "_type": "block",
@@ -432,6 +432,9 @@
       "_key": "ed3e77957587"
     },
     {
+      "style": "normal",
+      "_key": "e05412875fae",
+      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -440,10 +443,7 @@
           "_key": "0a98eeeca0c4"
         }
       ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "e05412875fae",
-      "markDefs": []
+      "_type": "block"
     },
     {
       "_key": "abe79f922362",
@@ -462,10 +462,6 @@
       "style": "normal"
     },
     {
-      "_type": "block",
-      "style": "normal",
-      "_key": "f1fb5ba49d4b",
-      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -473,10 +469,13 @@
           "text": "Si vous avez des questions ou des préoccupations concernant ces Termes et Conditions, vous pouvez nous contacter à :",
           "_key": "48cbff923f4b0"
         }
-      ]
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "f1fb5ba49d4b",
+      "markDefs": []
     },
     {
-      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -487,12 +486,13 @@
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "20fb11723c9a"
+      "_key": "20fb11723c9a",
+      "markDefs": []
     }
   ],
-  "_createdAt": "2024-03-01T00:59:33Z",
   "_type": "legalPage",
-  "_id": "35985f27-65f6-4069-bc3e-bf7b3e3d0895",
+  "_rev": "uiWIFkW6n28NyJPxPEXQok",
+  "lang": "fr",
   "path": "/terms-and-conditions",
-  "_rev": "uiWIFkW6n28NyJPxPEXQok"
+  "_createdAt": "2024-03-01T00:59:33Z"
 }

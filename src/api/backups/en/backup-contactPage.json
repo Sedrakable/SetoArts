@@ -1,40 +1,40 @@
 {
+  "_createdAt": "2024-02-25T03:29:55Z",
+  "_id": "00da58c7-4dde-42cb-a661-881c98fad9d5",
+  "lang": "en",
+  "_updatedAt": "2024-03-06T19:30:08Z",
   "form": {
-    "_createdAt": "2024-02-25T03:32:29Z",
-    "_rev": "c9hkvQgAJDwuQEMKj29iz9",
-    "_type": "form",
-    "_id": "952f2144-a4ee-4fc1-a9d9-70b370f7aaae",
     "formFields": {
+      "_type": "fieldPlaceholders",
+      "name": "Name",
       "message": "Message",
       "email": "Email",
       "budget": "Budget",
-      "companyName": "Company Name",
-      "_type": "fieldPlaceholders",
-      "name": "Name"
+      "companyName": "Company Name"
     },
     "_updatedAt": "2024-02-27T03:40:08Z",
     "desc": {
+      "part1": "Hello",
       "part2": "there!",
       "_type": "fancyText",
-      "part3": " Please feel free to fill out this form and share details about the project you have in mind.",
-      "part1": "Hello"
+      "part3": " Please feel free to fill out this form and share details about the project you have in mind."
     },
     "cta": {
       "_type": "cta",
       "text": "Send"
-    }
+    },
+    "_createdAt": "2024-02-25T03:32:29Z",
+    "_rev": "c9hkvQgAJDwuQEMKj29iz9",
+    "_type": "form",
+    "_id": "952f2144-a4ee-4fc1-a9d9-70b370f7aaae"
   },
-  "title": "Contact",
-  "_updatedAt": "2024-03-06T19:30:08Z",
-  "_rev": "42dARgouF4fLoQkzWoiL5B",
-  "_type": "contactPage",
-  "_id": "00da58c7-4dde-42cb-a661-881c98fad9d5",
   "desc": {
+    "part1": " ",
     "part2": "Hello!",
     "_type": "fancyText",
-    "part3": " Please feel free to fill out this form and share details about the project you have in mind.",
-    "part1": " "
+    "part3": " Please feel free to fill out this form and share details about the project you have in mind."
   },
-  "lang": "en",
-  "_createdAt": "2024-02-25T03:29:55Z"
+  "_type": "contactPage",
+  "title": "Contact",
+  "_rev": "42dARgouF4fLoQkzWoiL5B"
 }
