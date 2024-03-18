@@ -1,56 +1,323 @@
 {
-  "title": "Page d'atterrissage",
+  "lang": "fr",
+  "_updatedAt": "2024-03-07T02:40:31Z",
+  "processes": {
+    "processes": [
+      {
+        "desc": "Le processus commence par une consultation initiale approfondie, au cours de laquelle les besoins du client, le public cible, les objectifs de marque et l'objectif de la page d'atterrissage sont discutés en détail.",
+        "features": [
+          {
+            "_updatedAt": "2024-03-07T02:21:21Z",
+            "desc": "Je mène des consultations pour définir l'objectif de votre page d'atterrissage, en couvrant les exigences, le public cible, les objectifs de branding, etc.",
+            "_createdAt": "2024-03-07T02:21:21Z",
+            "_rev": "42dARgouF4fLoQkzWqWpgP",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "laptop avec statistiques"
+            },
+            "_id": "12ce2df8-3ed5-40f2-8f25-e46e2645ee15",
+            "title": "Objectif de la page d'atterrissage"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:33:21Z",
+        "_rev": "42dARgouF4fLoQkzWqXWuH",
+        "_type": "process",
+        "_id": "5cb59b8d-d22f-4757-b005-2eb71fad8a75",
+        "title": "Consultation initiale:",
+        "_updatedAt": "2024-03-07T02:33:43Z"
+      },
+      {
+        "desc": "Après la consultation, la phase de conception et de développement commence par la création d'une maquette ou d'un fil de fer pour la page d'atterrissage, suivie de son développement à l'aide de technologies web.",
+        "features": [
+          {
+            "_id": "26f813ea-aff6-4666-bf49-6ef7b673d8d6",
+            "title": "Création de maquettes",
+            "_updatedAt": "2024-03-07T02:22:56Z",
+            "desc": "Je crée des maquettes et fournis des révisions pour m'assurer que votre vision est capturée avec précision.",
+            "_createdAt": "2024-03-07T02:22:56Z",
+            "_rev": "42dARgouF4fLoQkzWqWu2T",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Croquis de maquettes de design web"
+            }
+          },
+          {
+            "desc": "Je travaille sur la conception de l'interface utilisateur et de l'expérience utilisateur pour améliorer la convivialité et l'accessibilité de votre site web.",
+            "_createdAt": "2024-03-07T02:24:51Z",
+            "_rev": "42dARgouF4fLoQkzWqWxOD",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "UI"
+            },
+            "_id": "8efc470a-caa8-428c-ae69-dc49d8c04a55",
+            "title": "UI/UX",
+            "_updatedAt": "2024-03-07T02:24:51Z"
+          },
+          {
+            "title": "Images et Boutons",
+            "_updatedAt": "2024-03-07T02:26:38Z",
+            "desc": "Je sélectionne des images qui résonnent avec votre marque tout en concevant des boutons visuellement attrayants pour améliorer l'expérience utilisateur.",
+            "_createdAt": "2024-03-07T02:26:38Z",
+            "_rev": "42dARgouF4fLoQkzWqX2fP",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-d471337c80a95d5c43af6705a472349b5c625042-5184x2920-jpg"
+                }
+              },
+              "_type": "customImage",
+              "alt": "site web avec images"
+            },
+            "_id": "9098aae1-212d-4762-be54-3f4e43ec02e2"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:35:06Z",
+        "_rev": "42dARgouF4fLoQkzWqXga8",
+        "_type": "process",
+        "_id": "95c46193-d26a-4b07-91c2-da3738b6fb2c",
+        "title": "Conception et développement",
+        "_updatedAt": "2024-03-07T02:35:06Z"
+      },
+      {
+        "_id": "e19822f2-79b8-4ddb-b72d-e603cf0aca78",
+        "title": "Commentaires du client et révisions",
+        "_updatedAt": "2024-03-07T02:36:45Z",
+        "desc": "Une fois la conception initiale achevée, le prototype est présenté au client pour qu'il puisse donner son avis. Les révisions nécessaires sont alors incorporées en fonction des commentaires du client, afin de garantir l'alignement sur sa vision et ses objectifs.",
+        "features": [
+          {
+            "_createdAt": "2024-03-07T02:07:42Z",
+            "_rev": "1X3tbPF0boRjlNqQpUDRRH",
+            "_type": "feature",
+            "customImage": {
+              "_type": "customImage",
+              "alt": "Reffaire quelque chose",
+              "image": {
+                "asset": {
+                  "_ref": "image-58c26acb5f64ddf63e523be87bfcdbb4160aa742-999x571-png",
+                  "_type": "reference"
+                },
+                "_type": "image"
+              }
+            },
+            "_id": "39419b2d-6078-48b4-a697-57946a24052d",
+            "title": "Révisions",
+            "_updatedAt": "2024-03-07T02:07:42Z",
+            "desc": "Plusieurs révisions sont proposées pour parfaire et s'assurer qu'elles correspondent à l'identité voulue de votre marque et résonnent avec votre public"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:35:24Z",
+        "_rev": "42dARgouF4fLoQkzWqXo7Y",
+        "_type": "process"
+      },
+      {
+        "_type": "process",
+        "_id": "f6171a36-8747-482b-9696-8642be346c05",
+        "title": "Tests et optimisation",
+        "_updatedAt": "2024-03-07T02:38:18Z",
+        "desc": "Following client approval, rigorous testing is conducted to ensure seamless functionality across various devices and browsers. Additionally, optimization techniques are employed to enhance the website’s performance and user experience.",
+        "features": [
+          {
+            "_id": "81ee294b-0064-4a00-b5df-bd916b4a0b2f",
+            "title": "Optimisation de site",
+            "_updatedAt": "2024-03-07T02:27:45Z",
+            "desc": "J'optimise votre site web pour améliorer ses performances, sa vitesse et l'engagement des utilisateurs.",
+            "_createdAt": "2024-03-07T02:27:45Z",
+            "_rev": "42dARgouF4fLoQkzWqX71T",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Optimisation du site web"
+            }
+          },
+          {
+            "_id": "36301330-1d6f-4d33-b729-f3f1a94b1704",
+            "title": "Compatibilité multiplateforme",
+            "_updatedAt": "2024-03-07T02:28:55Z",
+            "desc": "Je veille à un fonctionnement sans faille sur tous les appareils, y compris les produits Windows, Apple, Android, etc.",
+            "_createdAt": "2024-03-07T02:28:38Z",
+            "_rev": "42dARgouF4fLoQkzWqX9PU",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "laptop et phone"
+            }
+          }
+        ],
+        "_createdAt": "2024-03-07T02:38:18Z",
+        "_rev": "42dARgouF4fLoQkzWqXrdg"
+      },
+      {
+        "_createdAt": "2024-03-07T02:39:30Z",
+        "_rev": "42dARgouF4fLoQkzWqY1oh",
+        "_type": "process",
+        "_id": "7e75e50f-02d4-41c7-a698-a2abef8bf4f3",
+        "title": "Livraison et lancement",
+        "_updatedAt": "2024-03-07T02:39:30Z",
+        "desc": "Après avoir été testée et approuvée avec succès, la page d'atterrissage finalisée est livrée au client. Une assistance est fournie pour le déploiement de la page dans l'environnement d'hébergement du client, afin d'assurer un lancement en douceur.",
+        "features": [
+          {
+            "_type": "feature",
+            "customImage": {
+              "_type": "customImage",
+              "alt": "aide",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            "_id": "a61fcd43-64fb-4c64-8e81-50626aaaa62b",
+            "title": "Assistance au déploiement",
+            "_updatedAt": "2024-03-07T02:29:41Z",
+            "desc": "J'assiste avec le processus de déploiement pour garantir un lancement fluide et réussi de votre site web.",
+            "_createdAt": "2024-03-07T02:29:41Z",
+            "_rev": "42dARgouF4fLoQkzWqXAV0"
+          },
+          {
+            "_rev": "42dARgouF4fLoQkzWqWVCa",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Site sur un laptop"
+            },
+            "_id": "9d58e474-5571-4b86-8436-ed0da1fa97fa",
+            "title": "Site web",
+            "_updatedAt": "2024-03-07T02:19:17Z",
+            "desc": "Je vais développer un site web optimisé et entièrement fonctionnel, complet avec des images, des boutons et tous les éléments nécessaires, soigneusement conçus pour refléter l'identité et les valeurs de votre marque.",
+            "_createdAt": "2024-03-07T02:19:17Z"
+          }
+        ]
+      },
+      {
+        "desc": "Une assistance continue est proposée après le lancement pour résoudre les problèmes techniques, fournir des conseils sur les mises à jour du contenu et offrir une assistance supplémentaire si nécessaire, afin de garantir une performance et une efficacité durables.",
+        "features": [
+          {
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Programmation a travers lunettes"
+            },
+            "_id": "738b660a-c7a3-4bd5-99b7-c3d693c2fbf5",
+            "title": "Support technique",
+            "_updatedAt": "2024-03-07T02:31:34Z",
+            "desc": "Je propose un support technique après le lancement pour résoudre tout problème et garantir le bon fonctionnement continu de votre site web.",
+            "_createdAt": "2024-03-07T02:31:05Z",
+            "_rev": "42dARgouF4fLoQkzWqXRXt",
+            "_type": "feature"
+          }
+        ],
+        "_createdAt": "2024-03-07T02:40:12Z",
+        "_rev": "42dARgouF4fLoQkzWqY7LT",
+        "_type": "process",
+        "_id": "a680d7d2-6764-4920-b8eb-21fd94abe998",
+        "title": "Assistance après le lancement",
+        "_updatedAt": "2024-03-07T02:40:12Z"
+      }
+    ]
+  },
   "features": {
     "features": [
       {
+        "_id": "9d58e474-5571-4b86-8436-ed0da1fa97fa",
+        "title": "Site web",
+        "_updatedAt": "2024-03-07T02:19:17Z",
         "desc": "Je vais développer un site web optimisé et entièrement fonctionnel, complet avec des images, des boutons et tous les éléments nécessaires, soigneusement conçus pour refléter l'identité et les valeurs de votre marque.",
         "_createdAt": "2024-03-07T02:19:17Z",
         "_rev": "42dARgouF4fLoQkzWqWVCa",
         "_type": "feature",
         "customImage": {
+          "_type": "customImage",
+          "alt": "Site sur un laptop",
           "image": {
             "_type": "image",
             "asset": {
               "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
               "_type": "reference"
             }
-          },
-          "_type": "customImage",
-          "alt": "Site sur un laptop"
-        },
-        "_id": "9d58e474-5571-4b86-8436-ed0da1fa97fa",
-        "title": "Site web",
-        "_updatedAt": "2024-03-07T02:19:17Z"
+          }
+        }
       },
       {
+        "title": "Objectif de la page d'atterrissage",
+        "_updatedAt": "2024-03-07T02:21:21Z",
+        "desc": "Je mène des consultations pour définir l'objectif de votre page d'atterrissage, en couvrant les exigences, le public cible, les objectifs de branding, etc.",
         "_createdAt": "2024-03-07T02:21:21Z",
         "_rev": "42dARgouF4fLoQkzWqWpgP",
         "_type": "feature",
         "customImage": {
           "image": {
-            "_type": "image",
             "asset": {
               "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
               "_type": "reference"
-            }
+            },
+            "_type": "image"
           },
           "_type": "customImage",
           "alt": "laptop avec statistiques"
         },
-        "_id": "12ce2df8-3ed5-40f2-8f25-e46e2645ee15",
-        "title": "Objectif de la page d'atterrissage",
-        "_updatedAt": "2024-03-07T02:21:21Z",
-        "desc": "Je mène des consultations pour définir l'objectif de votre page d'atterrissage, en couvrant les exigences, le public cible, les objectifs de branding, etc."
+        "_id": "12ce2df8-3ed5-40f2-8f25-e46e2645ee15"
       },
       {
-        "title": "Création de maquettes",
-        "_updatedAt": "2024-03-07T02:22:56Z",
-        "desc": "Je crée des maquettes et fournis des révisions pour m'assurer que votre vision est capturée avec précision.",
         "_createdAt": "2024-03-07T02:22:56Z",
         "_rev": "42dARgouF4fLoQkzWqWu2T",
         "_type": "feature",
         "customImage": {
-          "alt": "Croquis de maquettes de design web",
           "image": {
             "_type": "image",
             "asset": {
@@ -58,18 +325,22 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage"
+          "_type": "customImage",
+          "alt": "Croquis de maquettes de design web"
         },
-        "_id": "26f813ea-aff6-4666-bf49-6ef7b673d8d6"
+        "_id": "26f813ea-aff6-4666-bf49-6ef7b673d8d6",
+        "title": "Création de maquettes",
+        "_updatedAt": "2024-03-07T02:22:56Z",
+        "desc": "Je crée des maquettes et fournis des révisions pour m'assurer que votre vision est capturée avec précision."
       },
       {
         "customImage": {
           "image": {
+            "_type": "image",
             "asset": {
               "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
               "_type": "reference"
-            },
-            "_type": "image"
+            }
           },
           "_type": "customImage",
           "alt": "UI"
@@ -103,12 +374,12 @@
         "title": "Images et Boutons"
       },
       {
+        "_updatedAt": "2024-03-07T02:27:45Z",
         "desc": "J'optimise votre site web pour améliorer ses performances, sa vitesse et l'engagement des utilisateurs.",
         "_createdAt": "2024-03-07T02:27:45Z",
         "_rev": "42dARgouF4fLoQkzWqX71T",
         "_type": "feature",
         "customImage": {
-          "alt": "Optimisation du site web",
           "image": {
             "_type": "image",
             "asset": {
@@ -116,15 +387,22 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage"
+          "_type": "customImage",
+          "alt": "Optimisation du site web"
         },
         "_id": "81ee294b-0064-4a00-b5df-bd916b4a0b2f",
-        "title": "Optimisation de site",
-        "_updatedAt": "2024-03-07T02:27:45Z"
+        "title": "Optimisation de site"
       },
       {
+        "_id": "36301330-1d6f-4d33-b729-f3f1a94b1704",
+        "title": "Compatibilité multiplateforme",
+        "_updatedAt": "2024-03-07T02:28:55Z",
+        "desc": "Je veille à un fonctionnement sans faille sur tous les appareils, y compris les produits Windows, Apple, Android, etc.",
+        "_createdAt": "2024-03-07T02:28:38Z",
+        "_rev": "42dARgouF4fLoQkzWqX9PU",
         "_type": "feature",
         "customImage": {
+          "alt": "laptop et phone",
           "image": {
             "_type": "image",
             "asset": {
@@ -132,17 +410,13 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage",
-          "alt": "laptop et phone"
-        },
-        "_id": "36301330-1d6f-4d33-b729-f3f1a94b1704",
-        "title": "Compatibilité multiplateforme",
-        "_updatedAt": "2024-03-07T02:28:55Z",
-        "desc": "Je veille à un fonctionnement sans faille sur tous les appareils, y compris les produits Windows, Apple, Android, etc.",
-        "_createdAt": "2024-03-07T02:28:38Z",
-        "_rev": "42dARgouF4fLoQkzWqX9PU"
+          "_type": "customImage"
+        }
       },
       {
+        "desc": "J'assiste avec le processus de déploiement pour garantir un lancement fluide et réussi de votre site web.",
+        "_createdAt": "2024-03-07T02:29:41Z",
+        "_rev": "42dARgouF4fLoQkzWqXAV0",
         "_type": "feature",
         "customImage": {
           "image": {
@@ -157,15 +431,9 @@
         },
         "_id": "a61fcd43-64fb-4c64-8e81-50626aaaa62b",
         "title": "Assistance au déploiement",
-        "_updatedAt": "2024-03-07T02:29:41Z",
-        "desc": "J'assiste avec le processus de déploiement pour garantir un lancement fluide et réussi de votre site web.",
-        "_createdAt": "2024-03-07T02:29:41Z",
-        "_rev": "42dARgouF4fLoQkzWqXAV0"
+        "_updatedAt": "2024-03-07T02:29:41Z"
       },
       {
-        "desc": "Je propose un support technique après le lancement pour résoudre tout problème et garantir le bon fonctionnement continu de votre site web.",
-        "_createdAt": "2024-03-07T02:31:05Z",
-        "_rev": "42dARgouF4fLoQkzWqXRXt",
         "_type": "feature",
         "customImage": {
           "image": {
@@ -180,309 +448,57 @@
         },
         "_id": "738b660a-c7a3-4bd5-99b7-c3d693c2fbf5",
         "title": "Support technique",
-        "_updatedAt": "2024-03-07T02:31:34Z"
+        "_updatedAt": "2024-03-07T02:31:34Z",
+        "desc": "Je propose un support technique après le lancement pour résoudre tout problème et garantir le bon fonctionnement continu de votre site web.",
+        "_createdAt": "2024-03-07T02:31:05Z",
+        "_rev": "42dARgouF4fLoQkzWqXRXt"
       }
     ]
   },
-  "_createdAt": "2024-03-07T02:40:20Z",
+  "path": "/landing-page",
+  "price": 1500,
   "_id": "2c1f6742-e229-42cd-8443-02b5eb130871",
-  "_updatedAt": "2024-03-07T02:40:31Z",
-  "processes": {
-    "processes": [
-      {
-        "_id": "5cb59b8d-d22f-4757-b005-2eb71fad8a75",
-        "title": "Consultation initiale:",
-        "_updatedAt": "2024-03-07T02:33:43Z",
-        "desc": "Le processus commence par une consultation initiale approfondie, au cours de laquelle les besoins du client, le public cible, les objectifs de marque et l'objectif de la page d'atterrissage sont discutés en détail.",
-        "features": [
-          {
-            "_rev": "42dARgouF4fLoQkzWqWpgP",
-            "_type": "feature",
-            "customImage": {
-              "_type": "customImage",
-              "alt": "laptop avec statistiques",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
-                  "_type": "reference"
-                }
-              }
-            },
-            "_id": "12ce2df8-3ed5-40f2-8f25-e46e2645ee15",
-            "title": "Objectif de la page d'atterrissage",
-            "_updatedAt": "2024-03-07T02:21:21Z",
-            "desc": "Je mène des consultations pour définir l'objectif de votre page d'atterrissage, en couvrant les exigences, le public cible, les objectifs de branding, etc.",
-            "_createdAt": "2024-03-07T02:21:21Z"
-          }
-        ],
-        "_createdAt": "2024-03-07T02:33:21Z",
-        "_rev": "42dARgouF4fLoQkzWqXWuH",
-        "_type": "process"
-      },
-      {
-        "_type": "process",
-        "_id": "95c46193-d26a-4b07-91c2-da3738b6fb2c",
-        "title": "Conception et développement",
-        "_updatedAt": "2024-03-07T02:35:06Z",
-        "desc": "Après la consultation, la phase de conception et de développement commence par la création d'une maquette ou d'un fil de fer pour la page d'atterrissage, suivie de son développement à l'aide de technologies web.",
-        "features": [
-          {
-            "desc": "Je crée des maquettes et fournis des révisions pour m'assurer que votre vision est capturée avec précision.",
-            "_createdAt": "2024-03-07T02:22:56Z",
-            "_rev": "42dARgouF4fLoQkzWqWu2T",
-            "_type": "feature",
-            "customImage": {
-              "_type": "customImage",
-              "alt": "Croquis de maquettes de design web",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_type": "reference",
-                  "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg"
-                }
-              }
-            },
-            "_id": "26f813ea-aff6-4666-bf49-6ef7b673d8d6",
-            "title": "Création de maquettes",
-            "_updatedAt": "2024-03-07T02:22:56Z"
-          },
-          {
-            "_createdAt": "2024-03-07T02:24:51Z",
-            "_rev": "42dARgouF4fLoQkzWqWxOD",
-            "_type": "feature",
-            "customImage": {
-              "alt": "UI",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage"
-            },
-            "_id": "8efc470a-caa8-428c-ae69-dc49d8c04a55",
-            "title": "UI/UX",
-            "_updatedAt": "2024-03-07T02:24:51Z",
-            "desc": "Je travaille sur la conception de l'interface utilisateur et de l'expérience utilisateur pour améliorer la convivialité et l'accessibilité de votre site web."
-          },
-          {
-            "_type": "feature",
-            "customImage": {
-              "_type": "customImage",
-              "alt": "site web avec images",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_type": "reference",
-                  "_ref": "image-d471337c80a95d5c43af6705a472349b5c625042-5184x2920-jpg"
-                }
-              }
-            },
-            "_id": "9098aae1-212d-4762-be54-3f4e43ec02e2",
-            "title": "Images et Boutons",
-            "_updatedAt": "2024-03-07T02:26:38Z",
-            "desc": "Je sélectionne des images qui résonnent avec votre marque tout en concevant des boutons visuellement attrayants pour améliorer l'expérience utilisateur.",
-            "_createdAt": "2024-03-07T02:26:38Z",
-            "_rev": "42dARgouF4fLoQkzWqX2fP"
-          }
-        ],
-        "_createdAt": "2024-03-07T02:35:06Z",
-        "_rev": "42dARgouF4fLoQkzWqXga8"
-      },
-      {
-        "_updatedAt": "2024-03-07T02:36:45Z",
-        "desc": "Une fois la conception initiale achevée, le prototype est présenté au client pour qu'il puisse donner son avis. Les révisions nécessaires sont alors incorporées en fonction des commentaires du client, afin de garantir l'alignement sur sa vision et ses objectifs.",
-        "features": [
-          {
-            "desc": "Plusieurs révisions sont proposées pour parfaire et s'assurer qu'elles correspondent à l'identité voulue de votre marque et résonnent avec votre public",
-            "_createdAt": "2024-03-07T02:07:42Z",
-            "_rev": "1X3tbPF0boRjlNqQpUDRRH",
-            "_type": "feature",
-            "customImage": {
-              "alt": "Reffaire quelque chose",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_type": "reference",
-                  "_ref": "image-58c26acb5f64ddf63e523be87bfcdbb4160aa742-999x571-png"
-                }
-              },
-              "_type": "customImage"
-            },
-            "_id": "39419b2d-6078-48b4-a697-57946a24052d",
-            "title": "Révisions",
-            "_updatedAt": "2024-03-07T02:07:42Z"
-          }
-        ],
-        "_createdAt": "2024-03-07T02:35:24Z",
-        "_rev": "42dARgouF4fLoQkzWqXo7Y",
-        "_type": "process",
-        "_id": "e19822f2-79b8-4ddb-b72d-e603cf0aca78",
-        "title": "Commentaires du client et révisions"
-      },
-      {
-        "_updatedAt": "2024-03-07T02:38:18Z",
-        "desc": "Following client approval, rigorous testing is conducted to ensure seamless functionality across various devices and browsers. Additionally, optimization techniques are employed to enhance the website’s performance and user experience.",
-        "features": [
-          {
-            "customImage": {
-              "_type": "customImage",
-              "alt": "Optimisation du site web",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_type": "reference",
-                  "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg"
-                }
-              }
-            },
-            "_id": "81ee294b-0064-4a00-b5df-bd916b4a0b2f",
-            "title": "Optimisation de site",
-            "_updatedAt": "2024-03-07T02:27:45Z",
-            "desc": "J'optimise votre site web pour améliorer ses performances, sa vitesse et l'engagement des utilisateurs.",
-            "_createdAt": "2024-03-07T02:27:45Z",
-            "_rev": "42dARgouF4fLoQkzWqX71T",
-            "_type": "feature"
-          },
-          {
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "laptop et phone"
-            },
-            "_id": "36301330-1d6f-4d33-b729-f3f1a94b1704",
-            "title": "Compatibilité multiplateforme",
-            "_updatedAt": "2024-03-07T02:28:55Z",
-            "desc": "Je veille à un fonctionnement sans faille sur tous les appareils, y compris les produits Windows, Apple, Android, etc.",
-            "_createdAt": "2024-03-07T02:28:38Z",
-            "_rev": "42dARgouF4fLoQkzWqX9PU"
-          }
-        ],
-        "_createdAt": "2024-03-07T02:38:18Z",
-        "_rev": "42dARgouF4fLoQkzWqXrdg",
-        "_type": "process",
-        "_id": "f6171a36-8747-482b-9696-8642be346c05",
-        "title": "Tests et optimisation"
-      },
-      {
-        "desc": "Après avoir été testée et approuvée avec succès, la page d'atterrissage finalisée est livrée au client. Une assistance est fournie pour le déploiement de la page dans l'environnement d'hébergement du client, afin d'assurer un lancement en douceur.",
-        "features": [
-          {
-            "_id": "a61fcd43-64fb-4c64-8e81-50626aaaa62b",
-            "title": "Assistance au déploiement",
-            "_updatedAt": "2024-03-07T02:29:41Z",
-            "desc": "J'assiste avec le processus de déploiement pour garantir un lancement fluide et réussi de votre site web.",
-            "_createdAt": "2024-03-07T02:29:41Z",
-            "_rev": "42dARgouF4fLoQkzWqXAV0",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "aide"
-            }
-          },
-          {
-            "_updatedAt": "2024-03-07T02:19:17Z",
-            "desc": "Je vais développer un site web optimisé et entièrement fonctionnel, complet avec des images, des boutons et tous les éléments nécessaires, soigneusement conçus pour refléter l'identité et les valeurs de votre marque.",
-            "_createdAt": "2024-03-07T02:19:17Z",
-            "_rev": "42dARgouF4fLoQkzWqWVCa",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Site sur un laptop"
-            },
-            "_id": "9d58e474-5571-4b86-8436-ed0da1fa97fa",
-            "title": "Site web"
-          }
-        ],
-        "_createdAt": "2024-03-07T02:39:30Z",
-        "_rev": "42dARgouF4fLoQkzWqY1oh",
-        "_type": "process",
-        "_id": "7e75e50f-02d4-41c7-a698-a2abef8bf4f3",
-        "title": "Livraison et lancement",
-        "_updatedAt": "2024-03-07T02:39:30Z"
-      },
-      {
-        "_createdAt": "2024-03-07T02:40:12Z",
-        "_rev": "42dARgouF4fLoQkzWqY7LT",
-        "_type": "process",
-        "_id": "a680d7d2-6764-4920-b8eb-21fd94abe998",
-        "title": "Assistance après le lancement",
-        "_updatedAt": "2024-03-07T02:40:12Z",
-        "desc": "Une assistance continue est proposée après le lancement pour résoudre les problèmes techniques, fournir des conseils sur les mises à jour du contenu et offrir une assistance supplémentaire si nécessaire, afin de garantir une performance et une efficacité durables.",
-        "features": [
-          {
-            "_id": "738b660a-c7a3-4bd5-99b7-c3d693c2fbf5",
-            "title": "Support technique",
-            "_updatedAt": "2024-03-07T02:31:34Z",
-            "desc": "Je propose un support technique après le lancement pour résoudre tout problème et garantir le bon fonctionnement continu de votre site web.",
-            "_createdAt": "2024-03-07T02:31:05Z",
-            "_rev": "42dARgouF4fLoQkzWqXRXt",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Programmation a travers lunettes"
-            }
-          }
-        ]
-      }
-    ]
-  },
   "_rev": "42dARgouF4fLoQkzWqYqkN",
+  "_createdAt": "2024-03-07T02:40:20Z",
+  "_type": "servicePage",
+  "hero": {
+    "quote": {
+      "_type": "quote",
+      "leftText": "Chaos",
+      "hiddenTitle": "Quote French",
+      "_id": "d8519909-fabe-4263-8a36-5f89fc22f968",
+      "_updatedAt": "2024-03-06T19:38:56Z",
+      "rightText": "organisé",
+      "_createdAt": "2024-03-06T19:37:07Z",
+      "_rev": "42dARgouF4fLoQkzWojxBT"
+    },
+    "_type": "hero",
+    "customImage": {
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage",
+      "alt": "page d'atterrissage sur laptop"
+    },
+    "title": {
+      "part1": "page d'atterrissage:",
+      "part2": "Captiver et Convertir",
+      "_type": "fancyText"
+    },
+    "desc": "Avoir une page percutante pour engager et convertir rapidement les visiteurs."
+  },
+  "title": "Page d'atterrissage",
   "work": {
     "title": null,
     "works": [
       {
-        "thumbnailImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-6f39d57094659f89086bb4b1161d670f5a0b73c9-673x687-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "steampunk logo"
-        },
-        "title": "Steampunk Dynasty",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "primaryLink": {
-          "_type": "cta",
-          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
-          "text": "Kickstarter"
-        },
         "slug": {
-          "_type": "slug",
-          "current": "steampunk-dynasty"
+          "current": "steampunk-dynasty",
+          "_type": "slug"
         },
         "customImages": [
           {
@@ -498,87 +514,98 @@
             "_key": "33a8f041eff6"
           },
           {
-            "image": {
-              "_type": "image",
-              "asset": {
-                "_type": "reference",
-                "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg"
-              }
-            },
             "_type": "customImage",
             "alt": "vdg",
-            "_key": "3311c6d1920b"
+            "_key": "3311c6d1920b",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                "_type": "reference"
+              }
+            }
           },
           {
-            "image": {
-              "asset": {
-                "_type": "reference",
-                "_ref": "image-a7a4bba238e40be24f5a1556863775d37df01b01-2268x4032-jpg"
-              },
-              "_type": "image"
-            },
             "_type": "customImage",
             "alt": "Real G",
-            "_key": "9d1afd99922b"
+            "_key": "9d1afd99922b",
+            "image": {
+              "asset": {
+                "_ref": "image-a7a4bba238e40be24f5a1556863775d37df01b01-2268x4032-jpg",
+                "_type": "reference"
+              },
+              "_type": "image"
+            }
+          },
+          {
+            "_key": "b3537125d071",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-1eec8a41caa48ff888f1f756fa9359800a0065e1-826x1102-jpg"
+              }
+            },
+            "_type": "customImage",
+            "alt": "bruh"
           },
           {
             "image": {
               "_type": "image",
-              "asset": {
-                "_ref": "image-1eec8a41caa48ff888f1f756fa9359800a0065e1-826x1102-jpg",
-                "_type": "reference"
-              }
-            },
-            "_type": "customImage",
-            "alt": "bruh",
-            "_key": "b3537125d071"
-          },
-          {
-            "_key": "4262ded0ab79",
-            "image": {
               "asset": {
                 "_ref": "image-48d2a9dac6b5a52cb1f49ef74d92bab4a0eaee92-3072x3071-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
-            "alt": "yey"
+            "alt": "yey",
+            "_key": "4262ded0ab79"
           },
           {
             "_key": "406a709f572e",
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-bb2d408f0139529af9ee004208fed26254b267e5-3072x3071-jpg",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "rah"
           },
           {
+            "_type": "customImage",
+            "alt": "beer",
+            "_key": "7e81716eba0d",
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-f9394c5e95c45d4d443ea795ef02bc4f8f3cab0a-683x1024-jpg",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-f9394c5e95c45d4d443ea795ef02bc4f8f3cab0a-683x1024-jpg"
               }
-            },
-            "_type": "customImage",
-            "alt": "beer",
-            "_key": "7e81716eba0d"
+            }
           }
-        ]
-      },
-      {
-        "title": "B'Hive",
+        ],
+        "thumbnailImage": {
+          "image": {
+            "asset": {
+              "_ref": "image-6f39d57094659f89086bb4b1161d670f5a0b73c9-673x687-png",
+              "_type": "reference"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage",
+          "alt": "steampunk logo"
+        },
+        "title": "Steampunk Dynasty",
         "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "primaryLink": {
-          "_type": "cta",
-          "link": "www.amazon.com",
-          "text": "B'Hive"
-        },
+          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
+          "text": "Kickstarter",
+          "_type": "cta"
+        }
+      },
+      {
         "slug": {
           "current": "b-hive",
           "_type": "slug"
@@ -598,11 +625,11 @@
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "gdgd",
@@ -621,8 +648,6 @@
             "_key": "48d58ff3da7b"
           },
           {
-            "alt": "oops",
-            "_key": "675357faab48",
             "image": {
               "_type": "image",
               "asset": {
@@ -630,10 +655,11 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "oops",
+            "_key": "675357faab48"
           },
           {
-            "_key": "d639ce1e73a0",
             "image": {
               "_type": "image",
               "asset": {
@@ -642,9 +668,12 @@
               }
             },
             "_type": "customImage",
-            "alt": "what"
+            "alt": "what",
+            "_key": "d639ce1e73a0"
           },
           {
+            "alt": "hi",
+            "_key": "943068ef2eaa",
             "image": {
               "_type": "image",
               "asset": {
@@ -652,21 +681,19 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "hi",
-            "_key": "943068ef2eaa"
+            "_type": "customImage"
           },
           {
-            "_type": "customImage",
             "alt": "comrade",
             "_key": "c42ce0736c4e",
             "image": {
-              "_type": "image",
               "asset": {
                 "_type": "reference",
                 "_ref": "image-62596c810268e7699dfb8c618fc16e5ad137b80c-667x599-png"
-              }
-            }
+              },
+              "_type": "image"
+            },
+            "_type": "customImage"
           },
           {
             "image": {
@@ -682,6 +709,7 @@
           }
         ],
         "thumbnailImage": {
+          "alt": "B-hive logo",
           "image": {
             "_type": "image",
             "asset": {
@@ -689,14 +717,20 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage",
-          "alt": "B-hive logo"
+          "_type": "customImage"
+        },
+        "title": "B'Hive",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "primaryLink": {
+          "text": "B'Hive",
+          "_type": "cta",
+          "link": "www.amazon.com"
         }
       },
       {
         "slug": {
-          "_type": "slug",
-          "current": "Happy"
+          "current": "Happy",
+          "_type": "slug"
         },
         "customImages": [
           {
@@ -712,6 +746,8 @@
             "_key": "0f2fb0748206"
           },
           {
+            "alt": "gegn",
+            "_key": "1b878d9df8ce",
             "image": {
               "_type": "image",
               "asset": {
@@ -719,41 +755,39 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "gegn",
-            "_key": "1b878d9df8ce"
+            "_type": "customImage"
           },
           {
+            "_type": "customImage",
+            "alt": "gdhdbn",
+            "_key": "44fa17078113",
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-f3a3568bc60f1f327fcc660cf816acdfc4cc11b0-4368x2912-jpg",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-f3a3568bc60f1f327fcc660cf816acdfc4cc11b0-4368x2912-jpg"
               }
-            },
-            "_type": "customImage",
-            "alt": "gdhdbn",
-            "_key": "44fa17078113"
+            }
           },
           {
             "_key": "01668f2f87b5",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-a7a4bba238e40be24f5a1556863775d37df01b01-2268x4032-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
             "alt": "lox"
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-2de92c703a09a355235addc52336c79bcfb2170e-3840x2160-jpg",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "???",
@@ -764,8 +798,8 @@
           "image": {
             "_type": "image",
             "asset": {
-              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
-              "_type": "reference"
+              "_type": "reference",
+              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg"
             }
           },
           "_type": "customImage",
@@ -774,9 +808,9 @@
         "title": "Seto Gainz ",
         "desc": "lerem ipsum bruh hah Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
         "primaryLink": {
+          "text": "ffghfdhd",
           "_type": "cta",
-          "link": "dgdhdjhhd",
-          "text": "ffghfdhd"
+          "link": "dgdhdjhhd"
         }
       },
       {
@@ -786,7 +820,6 @@
         },
         "customImages": [
           {
-            "_key": "c8399432d8df",
             "image": {
               "_type": "image",
               "asset": {
@@ -795,9 +828,11 @@
               }
             },
             "_type": "customImage",
-            "alt": "hdhn"
+            "alt": "hdhn",
+            "_key": "c8399432d8df"
           },
           {
+            "alt": "dhhd",
             "_key": "6dabf05d133f",
             "image": {
               "_type": "image",
@@ -806,28 +841,15 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "dhhd"
+            "_type": "customImage"
           },
           {
+            "alt": "ffjhf",
+            "_key": "d28ab8ba5515",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-ed79e7a683fc20c778b54455db39e3e018e58dea-2000x2500-jpg",
-                "_type": "reference"
-              }
-            },
-            "_type": "customImage",
-            "alt": "ffjhf",
-            "_key": "d28ab8ba5515"
-          },
-          {
-            "alt": "fjfkj",
-            "_key": "0154c73f994a",
-            "image": {
-              "_type": "image",
-              "asset": {
-                "_ref": "image-2cfbda702df1de106365c649f4f8c9c6543c6dd2-2000x2500-jpg",
                 "_type": "reference"
               }
             },
@@ -837,8 +859,20 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-1eec8a41caa48ff888f1f756fa9359800a0065e1-826x1102-jpg",
+                "_ref": "image-2cfbda702df1de106365c649f4f8c9c6543c6dd2-2000x2500-jpg",
                 "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "fjfkj",
+            "_key": "0154c73f994a"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-1eec8a41caa48ff888f1f756fa9359800a0065e1-826x1102-jpg"
               }
             },
             "_type": "customImage",
@@ -850,8 +884,8 @@
           "image": {
             "_type": "image",
             "asset": {
-              "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
-              "_type": "reference"
+              "_type": "reference",
+              "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg"
             }
           },
           "_type": "customImage",
@@ -860,45 +894,11 @@
         "title": "Get Gud",
         "desc": "Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.Contactez-moi et dites-moi ce que vous avez en tête.",
         "primaryLink": {
-          "text": "gehgdd",
           "_type": "cta",
-          "link": "dhdhd"
+          "link": "dhdhd",
+          "text": "gehgdd"
         }
       }
     ]
-  },
-  "path": "/landing-page",
-  "lang": "fr",
-  "_type": "servicePage",
-  "hero": {
-    "quote": {
-      "_updatedAt": "2024-03-06T19:38:56Z",
-      "rightText": "organisé",
-      "_createdAt": "2024-03-06T19:37:07Z",
-      "_rev": "42dARgouF4fLoQkzWojxBT",
-      "_type": "quote",
-      "leftText": "Chaos",
-      "hiddenTitle": "Quote French",
-      "_id": "d8519909-fabe-4263-8a36-5f89fc22f968"
-    },
-    "_type": "hero",
-    "customImage": {
-      "image": {
-        "_type": "image",
-        "asset": {
-          "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
-          "_type": "reference"
-        }
-      },
-      "_type": "customImage",
-      "alt": "page d'atterrissage sur laptop"
-    },
-    "title": {
-      "_type": "fancyText",
-      "part1": "page d'atterrissage:",
-      "part2": "Captiver et Convertir"
-    },
-    "desc": "Avoir une page percutante pour engager et convertir rapidement les visiteurs."
-  },
-  "price": 1500
+  }
 }

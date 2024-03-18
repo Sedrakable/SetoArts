@@ -1,46 +1,48 @@
 {
+  "work": null,
+  "_id": "a1883ce2-976f-4ab2-a146-6ff441a8cea2",
   "processes": {
     "processes": [
       {
+        "_type": "process",
+        "_id": "9189d290-b1be-4727-af45-f1d5f78e4986",
         "title": "Recherche",
         "_updatedAt": "2024-03-06T23:32:49Z",
         "desc": "Au stade initial de notre service de stratégie de marque, nous entreprenons des recherches approfondies afin d'obtenir des informations précieuses. Il s'agit d'effectuer des recherches sur la concurrence, d'administrer un questionnaire au client pour comprendre les aspirations de la marque, de mener des entretiens avec le client pour approfondir la vision de la marque, d'étudier le secteur d'activité de l'entreprise pour saisir la dynamique du marché, d'identifier l'argument de vente unique qui différencie la marque et de déterminer la population cible pour aligner les stratégies de marque sur le public visé.",
         "features": [
           {
+            "title": "Étude de marché",
+            "_updatedAt": "2024-03-06T23:24:52Z",
+            "desc": "J'étudie le marché pour vous fournir des informations utiles afin de prendre des décisions éclairées concernant votre marque.",
             "_createdAt": "2024-03-06T23:24:52Z",
             "_rev": "42dARgouF4fLoQkzWq3gFD",
             "_type": "feature",
             "customImage": {
+              "_type": "customImage",
+              "alt": "Laptop Étude",
               "image": {
                 "_type": "image",
                 "asset": {
                   "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
                   "_type": "reference"
                 }
-              },
-              "_type": "customImage",
-              "alt": "Laptop Étude"
+              }
             },
-            "_id": "6643b3ff-de8e-4e7a-aa80-f94c30092afe",
-            "title": "Étude de marché",
-            "_updatedAt": "2024-03-06T23:24:52Z",
-            "desc": "J'étudie le marché pour vous fournir des informations utiles afin de prendre des décisions éclairées concernant votre marque."
+            "_id": "6643b3ff-de8e-4e7a-aa80-f94c30092afe"
           }
         ],
         "_createdAt": "2024-03-06T23:32:49Z",
-        "_rev": "42dARgouF4fLoQkzWq4wol",
-        "_type": "process",
-        "_id": "9189d290-b1be-4727-af45-f1d5f78e4986"
+        "_rev": "42dARgouF4fLoQkzWq4wol"
       },
       {
+        "_rev": "1X3tbPF0boRjlNqQpUCJlF",
+        "_type": "process",
         "_id": "eaa625a7-3534-48bf-9a75-93af47def1aa",
         "title": "Trouver une orientation",
         "_updatedAt": "2024-03-07T02:03:29Z",
         "desc": "À ce stade, l'accent est mis sur l'exploration visuelle et la conceptualisation. Il s'agit de créer des planches d'ambiance pour capturer l'essence de la marque et son identité visuelle. En outre, une présentation du style de la marque est élaborée pour mettre en évidence les orientations potentielles de la représentation visuelle de la marque, préparant ainsi le terrain pour la suite du développement.",
         "features": [
           {
-            "_rev": "1X3tbPF0boRjlNqQpSyeIt",
-            "_type": "feature",
             "customImage": {
               "image": {
                 "_type": "image",
@@ -56,16 +58,14 @@
             "title": "Identité visuelle",
             "_updatedAt": "2024-03-06T22:58:21Z",
             "desc": "J'élaborerai une apparence unique pour votre marque, la démarquant ainsi de la concurrence.",
-            "_createdAt": "2024-03-06T22:58:21Z"
+            "_createdAt": "2024-03-06T22:58:21Z",
+            "_rev": "1X3tbPF0boRjlNqQpSyeIt",
+            "_type": "feature"
           }
         ],
-        "_createdAt": "2024-03-07T02:03:29Z",
-        "_rev": "1X3tbPF0boRjlNqQpUCJlF",
-        "_type": "process"
+        "_createdAt": "2024-03-07T02:03:29Z"
       },
       {
-        "_createdAt": "2024-03-07T02:04:11Z",
-        "_rev": "1X3tbPF0boRjlNqQpUCLTb",
         "_type": "process",
         "_id": "17c99847-8856-45cd-bf34-797e56a3833f",
         "title": "Brainstorming et esquisse",
@@ -73,14 +73,8 @@
         "desc": "Au cours de cette étape, des exercices de cartographie ou d'association de mots sont menés pour générer des idées créatives. On procède ensuite à l'élaboration d'esquisses à l'aide d'un stylo et de papier, ainsi qu'à la création de symboles, d'icônes et de textes numériques. Ces activités sont essentielles pour explorer et visualiser les concepts et les éléments potentiels de l'identité de la marque.",
         "features": [
           {
-            "_id": "92773b10-de4d-4c3d-93af-037d728b5325",
-            "title": "Symboles et icônes",
-            "_updatedAt": "2024-03-06T23:27:12Z",
-            "desc": "Je conçois des icônes et des symboles attrayants qui peuvent être utilisés fréquemment sur votre site web ou ailleurs.",
-            "_createdAt": "2024-03-06T23:27:12Z",
-            "_rev": "42dARgouF4fLoQkzWq48Dr",
-            "_type": "feature",
             "customImage": {
+              "alt": "Icones et Symboles",
               "image": {
                 "_type": "image",
                 "asset": {
@@ -88,19 +82,25 @@
                   "_type": "reference"
                 }
               },
-              "_type": "customImage",
-              "alt": "Icones et Symboles"
-            }
+              "_type": "customImage"
+            },
+            "_id": "92773b10-de4d-4c3d-93af-037d728b5325",
+            "title": "Symboles et icônes",
+            "_updatedAt": "2024-03-06T23:27:12Z",
+            "desc": "Je conçois des icônes et des symboles attrayants qui peuvent être utilisés fréquemment sur votre site web ou ailleurs.",
+            "_createdAt": "2024-03-06T23:27:12Z",
+            "_rev": "42dARgouF4fLoQkzWq48Dr",
+            "_type": "feature"
           }
-        ]
+        ],
+        "_createdAt": "2024-03-07T02:04:11Z",
+        "_rev": "1X3tbPF0boRjlNqQpUCLTb"
       },
       {
-        "title": "Affinement et sélection des concepts",
         "_updatedAt": "2024-03-07T02:07:50Z",
         "desc": "Au cours de cette étape, les meilleures esquisses de la phase de brainstorming sont numérisées. L'accent est mis sur l'affinement des concepts et sur les petites retouches et modifications à apporter pour améliorer les conceptions. Cette étape vise à sélectionner les concepts de marque les plus prometteurs et les plus efficaces pour avancer dans le processus de création de la marque. Je fournis jusqu'à ... révisions pour m'assurer qu'ils répondent à la vision de la marque.",
         "features": [
           {
-            "_rev": "1X3tbPF0boRjlNqQpSzB8p",
             "_type": "feature",
             "customImage": {
               "image": {
@@ -117,91 +117,87 @@
             "title": "Logo",
             "_updatedAt": "2024-03-06T22:59:53Z",
             "desc": "Un logo sera méticuleusement conçu avec plusieurs variétés de couleurs, de formes et de tailles pour s'assurer qu'il capture parfaitement l'essence de votre marque.",
-            "_createdAt": "2024-03-06T22:59:53Z"
+            "_createdAt": "2024-03-06T22:59:53Z",
+            "_rev": "1X3tbPF0boRjlNqQpSzB8p"
           },
           {
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "asset": {
+                  "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+                  "_type": "reference"
+                },
+                "_type": "image"
+              },
+              "_type": "customImage",
+              "alt": "Raffinements"
+            },
             "_id": "625459c7-d142-40b3-aa85-055ef734efd1",
             "title": "Raffinements de designs",
             "_updatedAt": "2024-03-06T23:26:13Z",
             "desc": "J'améliore vos designs déjà existants pour qu'ils reflètent exactement l'image de votre marque.",
             "_createdAt": "2024-03-06T23:26:13Z",
-            "_rev": "42dARgouF4fLoQkzWq3yIQ",
-            "_type": "feature",
-            "customImage": {
-              "alt": "Raffinements",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage"
-            }
+            "_rev": "42dARgouF4fLoQkzWq3yIQ"
           },
           {
+            "_id": "39419b2d-6078-48b4-a697-57946a24052d",
+            "title": "Révisions",
+            "_updatedAt": "2024-03-07T02:07:42Z",
+            "desc": "Plusieurs révisions sont proposées pour parfaire et s'assurer qu'elles correspondent à l'identité voulue de votre marque et résonnent avec votre public",
             "_createdAt": "2024-03-07T02:07:42Z",
             "_rev": "1X3tbPF0boRjlNqQpUDRRH",
             "_type": "feature",
             "customImage": {
+              "_type": "customImage",
               "alt": "Reffaire quelque chose",
               "image": {
-                "_type": "image",
                 "asset": {
-                  "_type": "reference",
-                  "_ref": "image-58c26acb5f64ddf63e523be87bfcdbb4160aa742-999x571-png"
-                }
-              },
-              "_type": "customImage"
-            },
-            "_id": "39419b2d-6078-48b4-a697-57946a24052d",
-            "title": "Révisions",
-            "_updatedAt": "2024-03-07T02:07:42Z",
-            "desc": "Plusieurs révisions sont proposées pour parfaire et s'assurer qu'elles correspondent à l'identité voulue de votre marque et résonnent avec votre public"
+                  "_ref": "image-58c26acb5f64ddf63e523be87bfcdbb4160aa742-999x571-png",
+                  "_type": "reference"
+                },
+                "_type": "image"
+              }
+            }
           }
         ],
         "_createdAt": "2024-03-07T02:07:50Z",
         "_rev": "1X3tbPF0boRjlNqQpUDSkJ",
         "_type": "process",
-        "_id": "110196e3-77a4-449b-ad8a-aaf86628515e"
+        "_id": "110196e3-77a4-449b-ad8a-aaf86628515e",
+        "title": "Affinement et sélection des concepts"
       },
       {
-        "_type": "process",
         "_id": "c2260431-bd8f-4ffc-8c4b-eaa7344f7ca0",
         "title": "Création de l'identité visuelle",
         "_updatedAt": "2024-03-07T02:10:46Z",
         "desc": "Après l'approbation des concepts de logo et la sélection de la direction générale du style, l'accent est mis sur le choix des options de typographie et l'établissement d'une palette de couleurs. Cette étape est cruciale pour créer une identité visuelle cohérente et consistante pour la marque, en veillant à ce que les éléments choisis soient en accord avec le message et la position de la marque.",
         "features": [
           {
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Differents Fonts"
+            },
             "_id": "319a8fbc-6d5a-40cf-a007-4db3f439ab23",
             "title": "Typographie",
             "_updatedAt": "2024-03-06T23:19:26Z",
             "desc": "Je peux vous guider pour choisir des polices qui correspondent à la personnalité de votre marque et qui sont faciles à lire.",
             "_createdAt": "2024-03-06T23:19:26Z",
-            "_rev": "42dARgouF4fLoQkzWq1mas",
-            "_type": "feature",
-            "customImage": {
-              "_type": "customImage",
-              "alt": "Differents Fonts",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
-                  "_type": "reference"
-                }
-              }
-            }
+            "_rev": "42dARgouF4fLoQkzWq1mas"
           },
           {
-            "_id": "3da421d6-1b89-454f-8a63-7219d4ce8743",
-            "title": "Palette de couleurs",
-            "_updatedAt": "2024-03-06T23:17:39Z",
-            "desc": "Je vous aide à choisir des couleurs qui se complètent bien et rendent votre marque mémorable.",
             "_createdAt": "2024-03-06T23:17:39Z",
             "_rev": "ZDh6fOtlef3FB9ED2wEM7h",
             "_type": "feature",
             "customImage": {
-              "alt": "Color Cards",
               "image": {
                 "_type": "image",
                 "asset": {
@@ -209,8 +205,13 @@
                   "_type": "reference"
                 }
               },
-              "_type": "customImage"
-            }
+              "_type": "customImage",
+              "alt": "Color Cards"
+            },
+            "_id": "3da421d6-1b89-454f-8a63-7219d4ce8743",
+            "title": "Palette de couleurs",
+            "_updatedAt": "2024-03-06T23:17:39Z",
+            "desc": "Je vous aide à choisir des couleurs qui se complètent bien et rendent votre marque mémorable."
           },
           {
             "customImage": {
@@ -234,10 +235,10 @@
           }
         ],
         "_createdAt": "2024-03-07T02:10:12Z",
-        "_rev": "1X3tbPF0boRjlNqQpUDy21"
+        "_rev": "1X3tbPF0boRjlNqQpUDy21",
+        "_type": "process"
       },
       {
-        "_rev": "1X3tbPF0boRjlNqQpUE76B",
         "_type": "process",
         "_id": "7154c012-47f4-4080-b674-455d442549f9",
         "title": "Deliverables",
@@ -265,12 +266,11 @@
             "_createdAt": "2024-03-06T22:59:53Z"
           },
           {
-            "_updatedAt": "2024-03-06T23:27:12Z",
-            "desc": "Je conçois des icônes et des symboles attrayants qui peuvent être utilisés fréquemment sur votre site web ou ailleurs.",
             "_createdAt": "2024-03-06T23:27:12Z",
             "_rev": "42dARgouF4fLoQkzWq48Dr",
             "_type": "feature",
             "customImage": {
+              "alt": "Icones et Symboles",
               "image": {
                 "_type": "image",
                 "asset": {
@@ -278,14 +278,14 @@
                   "_type": "reference"
                 }
               },
-              "_type": "customImage",
-              "alt": "Icones et Symboles"
+              "_type": "customImage"
             },
             "_id": "92773b10-de4d-4c3d-93af-037d728b5325",
-            "title": "Symboles et icônes"
+            "title": "Symboles et icônes",
+            "_updatedAt": "2024-03-06T23:27:12Z",
+            "desc": "Je conçois des icônes et des symboles attrayants qui peuvent être utilisés fréquemment sur votre site web ou ailleurs."
           },
           {
-            "_id": "ef30571f-3cab-4839-bc73-c172200a6be6",
             "title": "Collatéraux d'entreprise",
             "_updatedAt": "2024-03-07T02:12:09Z",
             "desc": "Je conçois une variété de produits tels que des cartes de visite, des flyers, des sacs, et bien plus encore. Ces collatéraux aident votre marque à avoir une apparence cohérente et attrayante partout.",
@@ -293,20 +293,28 @@
             "_rev": "1X3tbPF0boRjlNqQpUE6bn",
             "_type": "feature",
             "customImage": {
-              "_type": "customImage",
-              "alt": "Collatéraux",
               "image": {
                 "_type": "image",
                 "asset": {
                   "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
                   "_type": "reference"
                 }
-              }
-            }
+              },
+              "_type": "customImage",
+              "alt": "Collatéraux"
+            },
+            "_id": "ef30571f-3cab-4839-bc73-c172200a6be6"
           },
           {
+            "_id": "d6207cb2-5f25-404c-acfe-97422aaa7570",
+            "title": "Guide de stratégie",
+            "_updatedAt": "2024-03-06T23:29:07Z",
+            "desc": "Je vous fournis un plan avec des étapes pratiques pour maintenir l'image de votre marque avec le style d'écriture choisi, le ton, et plus encore.",
+            "_createdAt": "2024-03-06T23:29:07Z",
+            "_rev": "42dARgouF4fLoQkzWq4Ks5",
             "_type": "feature",
             "customImage": {
+              "alt": "Enseignement de stratégie ",
               "image": {
                 "_type": "image",
                 "asset": {
@@ -314,37 +322,31 @@
                   "_type": "reference"
                 }
               },
-              "_type": "customImage",
-              "alt": "Enseignement de stratégie "
-            },
-            "_id": "d6207cb2-5f25-404c-acfe-97422aaa7570",
-            "title": "Guide de stratégie",
-            "_updatedAt": "2024-03-06T23:29:07Z",
-            "desc": "Je vous fournis un plan avec des étapes pratiques pour maintenir l'image de votre marque avec le style d'écriture choisi, le ton, et plus encore.",
-            "_createdAt": "2024-03-06T23:29:07Z",
-            "_rev": "42dARgouF4fLoQkzWq4Ks5"
+              "_type": "customImage"
+            }
           }
         ],
-        "_createdAt": "2024-03-07T02:12:19Z"
+        "_createdAt": "2024-03-07T02:12:19Z",
+        "_rev": "1X3tbPF0boRjlNqQpUE76B"
       }
     ]
   },
+  "_createdAt": "2024-03-06T22:34:06Z",
+  "_rev": "1X3tbPF0boRjlNqQpUE7aZ",
+  "title": "Branding",
   "price": 1500,
   "_type": "servicePage",
-  "path": "/branding",
-  "_createdAt": "2024-03-06T22:34:06Z",
+  "lang": "fr",
+  "_updatedAt": "2024-03-07T02:12:33Z",
   "features": {
     "features": [
       {
-        "_id": "f11bced3-d1f3-43cc-a85e-8ad823968815",
-        "title": "Identité visuelle",
         "_updatedAt": "2024-03-06T22:58:21Z",
         "desc": "J'élaborerai une apparence unique pour votre marque, la démarquant ainsi de la concurrence.",
         "_createdAt": "2024-03-06T22:58:21Z",
         "_rev": "1X3tbPF0boRjlNqQpSyeIt",
         "_type": "feature",
         "customImage": {
-          "alt": "Brand Visual Identity",
           "image": {
             "_type": "image",
             "asset": {
@@ -352,13 +354,13 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage"
-        }
+          "_type": "customImage",
+          "alt": "Brand Visual Identity"
+        },
+        "_id": "f11bced3-d1f3-43cc-a85e-8ad823968815",
+        "title": "Identité visuelle"
       },
       {
-        "_id": "0ecf1763-c551-419e-8da2-0730ae4c79b1",
-        "title": "Logo",
-        "_updatedAt": "2024-03-06T22:59:53Z",
         "desc": "Un logo sera méticuleusement conçu avec plusieurs variétés de couleurs, de formes et de tailles pour s'assurer qu'il capture parfaitement l'essence de votre marque.",
         "_createdAt": "2024-03-06T22:59:53Z",
         "_rev": "1X3tbPF0boRjlNqQpSzB8p",
@@ -373,12 +375,16 @@
           },
           "_type": "customImage",
           "alt": "Logo"
-        }
+        },
+        "_id": "0ecf1763-c551-419e-8da2-0730ae4c79b1",
+        "title": "Logo",
+        "_updatedAt": "2024-03-06T22:59:53Z"
       },
       {
+        "_createdAt": "2024-03-06T23:17:39Z",
+        "_rev": "ZDh6fOtlef3FB9ED2wEM7h",
         "_type": "feature",
         "customImage": {
-          "alt": "Color Cards",
           "image": {
             "_type": "image",
             "asset": {
@@ -386,16 +392,18 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage"
+          "_type": "customImage",
+          "alt": "Color Cards"
         },
         "_id": "3da421d6-1b89-454f-8a63-7219d4ce8743",
         "title": "Palette de couleurs",
         "_updatedAt": "2024-03-06T23:17:39Z",
-        "desc": "Je vous aide à choisir des couleurs qui se complètent bien et rendent votre marque mémorable.",
-        "_createdAt": "2024-03-06T23:17:39Z",
-        "_rev": "ZDh6fOtlef3FB9ED2wEM7h"
+        "desc": "Je vous aide à choisir des couleurs qui se complètent bien et rendent votre marque mémorable."
       },
       {
+        "title": "Typographie",
+        "_updatedAt": "2024-03-06T23:19:26Z",
+        "desc": "Je peux vous guider pour choisir des polices qui correspondent à la personnalité de votre marque et qui sont faciles à lire.",
         "_createdAt": "2024-03-06T23:19:26Z",
         "_rev": "42dARgouF4fLoQkzWq1mas",
         "_type": "feature",
@@ -410,12 +418,13 @@
           "_type": "customImage",
           "alt": "Differents Fonts"
         },
-        "_id": "319a8fbc-6d5a-40cf-a007-4db3f439ab23",
-        "title": "Typographie",
-        "_updatedAt": "2024-03-06T23:19:26Z",
-        "desc": "Je peux vous guider pour choisir des polices qui correspondent à la personnalité de votre marque et qui sont faciles à lire."
+        "_id": "319a8fbc-6d5a-40cf-a007-4db3f439ab23"
       },
       {
+        "_updatedAt": "2024-03-07T02:12:09Z",
+        "desc": "Je conçois une variété de produits tels que des cartes de visite, des flyers, des sacs, et bien plus encore. Ces collatéraux aident votre marque à avoir une apparence cohérente et attrayante partout.",
+        "_createdAt": "2024-03-06T23:21:55Z",
+        "_rev": "1X3tbPF0boRjlNqQpUE6bn",
         "_type": "feature",
         "customImage": {
           "image": {
@@ -429,16 +438,10 @@
           "alt": "Collatéraux"
         },
         "_id": "ef30571f-3cab-4839-bc73-c172200a6be6",
-        "title": "Collatéraux d'entreprise",
-        "_updatedAt": "2024-03-07T02:12:09Z",
-        "desc": "Je conçois une variété de produits tels que des cartes de visite, des flyers, des sacs, et bien plus encore. Ces collatéraux aident votre marque à avoir une apparence cohérente et attrayante partout.",
-        "_createdAt": "2024-03-06T23:21:55Z",
-        "_rev": "1X3tbPF0boRjlNqQpUE6bn"
+        "title": "Collatéraux d'entreprise"
       },
       {
-        "_type": "feature",
         "customImage": {
-          "alt": "Laptop Étude",
           "image": {
             "_type": "image",
             "asset": {
@@ -446,18 +449,26 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage"
+          "_type": "customImage",
+          "alt": "Laptop Étude"
         },
         "_id": "6643b3ff-de8e-4e7a-aa80-f94c30092afe",
         "title": "Étude de marché",
         "_updatedAt": "2024-03-06T23:24:52Z",
         "desc": "J'étudie le marché pour vous fournir des informations utiles afin de prendre des décisions éclairées concernant votre marque.",
         "_createdAt": "2024-03-06T23:24:52Z",
-        "_rev": "42dARgouF4fLoQkzWq3gFD"
+        "_rev": "42dARgouF4fLoQkzWq3gFD",
+        "_type": "feature"
       },
       {
+        "_id": "625459c7-d142-40b3-aa85-055ef734efd1",
+        "title": "Raffinements de designs",
+        "_updatedAt": "2024-03-06T23:26:13Z",
+        "desc": "J'améliore vos designs déjà existants pour qu'ils reflètent exactement l'image de votre marque.",
+        "_createdAt": "2024-03-06T23:26:13Z",
+        "_rev": "42dARgouF4fLoQkzWq3yIQ",
+        "_type": "feature",
         "customImage": {
-          "alt": "Raffinements",
           "image": {
             "_type": "image",
             "asset": {
@@ -465,18 +476,11 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage"
-        },
-        "_id": "625459c7-d142-40b3-aa85-055ef734efd1",
-        "title": "Raffinements de designs",
-        "_updatedAt": "2024-03-06T23:26:13Z",
-        "desc": "J'améliore vos designs déjà existants pour qu'ils reflètent exactement l'image de votre marque.",
-        "_createdAt": "2024-03-06T23:26:13Z",
-        "_rev": "42dARgouF4fLoQkzWq3yIQ",
-        "_type": "feature"
+          "_type": "customImage",
+          "alt": "Raffinements"
+        }
       },
       {
-        "_createdAt": "2024-03-06T23:27:12Z",
         "_rev": "42dARgouF4fLoQkzWq48Dr",
         "_type": "feature",
         "customImage": {
@@ -493,64 +497,60 @@
         "_id": "92773b10-de4d-4c3d-93af-037d728b5325",
         "title": "Symboles et icônes",
         "_updatedAt": "2024-03-06T23:27:12Z",
-        "desc": "Je conçois des icônes et des symboles attrayants qui peuvent être utilisés fréquemment sur votre site web ou ailleurs."
+        "desc": "Je conçois des icônes et des symboles attrayants qui peuvent être utilisés fréquemment sur votre site web ou ailleurs.",
+        "_createdAt": "2024-03-06T23:27:12Z"
       },
       {
-        "_rev": "42dARgouF4fLoQkzWq4Ks5",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Enseignement de stratégie "
-        },
         "_id": "d6207cb2-5f25-404c-acfe-97422aaa7570",
         "title": "Guide de stratégie",
         "_updatedAt": "2024-03-06T23:29:07Z",
         "desc": "Je vous fournis un plan avec des étapes pratiques pour maintenir l'image de votre marque avec le style d'écriture choisi, le ton, et plus encore.",
-        "_createdAt": "2024-03-06T23:29:07Z"
+        "_createdAt": "2024-03-06T23:29:07Z",
+        "_rev": "42dARgouF4fLoQkzWq4Ks5",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Enseignement de stratégie ",
+          "image": {
+            "asset": {
+              "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage"
+        }
       }
     ]
   },
-  "_updatedAt": "2024-03-07T02:12:33Z",
-  "_rev": "1X3tbPF0boRjlNqQpUE7aZ",
-  "_id": "a1883ce2-976f-4ab2-a146-6ff441a8cea2",
-  "lang": "fr",
-  "title": "Branding",
-  "work": null,
+  "path": "/branding",
   "hero": {
-    "customImage": {
-      "image": {
-        "_type": "image",
-        "asset": {
-          "_ref": "image-54b1240b6016436aa5b565bc17a717bf3cf15aba-5500x3667-jpg",
-          "_type": "reference"
-        }
-      },
-      "_type": "customImage",
-      "alt": "Logos"
-    },
-    "title": {
-      "part2": "Soyez Distingué",
-      "_type": "fancyText",
-      "part1": "Branding:"
-    },
-    "desc": "Établissez une identité unique et reconnaissable pour une entreprise ou un produit avec des logos distincts, des palettes de couleurs, une typographie, etc.",
     "quote": {
+      "leftText": "Chaos",
       "hiddenTitle": "Quote French",
       "_id": "d8519909-fabe-4263-8a36-5f89fc22f968",
       "_updatedAt": "2024-03-06T19:38:56Z",
       "rightText": "organisé",
       "_createdAt": "2024-03-06T19:37:07Z",
       "_rev": "42dARgouF4fLoQkzWojxBT",
-      "_type": "quote",
-      "leftText": "Chaos"
+      "_type": "quote"
     },
-    "_type": "hero"
+    "_type": "hero",
+    "customImage": {
+      "_type": "customImage",
+      "alt": "Logos",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-54b1240b6016436aa5b565bc17a717bf3cf15aba-5500x3667-jpg",
+          "_type": "reference"
+        }
+      }
+    },
+    "title": {
+      "part1": "Branding:",
+      "part2": "Soyez Distingué",
+      "_type": "fancyText"
+    },
+    "desc": "Établissez une identité unique et reconnaissable pour une entreprise ou un produit avec des logos distincts, des palettes de couleurs, une typographie, etc."
   }
 }

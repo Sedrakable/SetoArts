@@ -1,30 +1,29 @@
 {
+  "_rev": "1X3tbPF0boRjlNqQpQwrlX",
   "_type": "legalPage",
   "lang": "fr",
-  "_updatedAt": "2024-03-06T20:23:32Z",
-  "path": "/privacy-policy",
-  "_createdAt": "2024-03-06T20:13:28Z",
-  "_rev": "1X3tbPF0boRjlNqQpQwrlX",
-  "_id": "8b580c60-67c1-4244-a923-e8c6a6784970",
   "title": "Politique de confidentialité",
+  "path": "/privacy-policy",
   "data": [
     {
       "_key": "fcbd39d1f0d7",
       "markDefs": [],
       "children": [
         {
+          "_type": "span",
           "marks": [
             "strong"
           ],
           "text": "Seto x Arts",
-          "_key": "8d2e3c51a9bb0",
-          "_type": "span"
+          "_key": "8d2e3c51a9bb0"
         }
       ],
       "_type": "block",
       "style": "normal"
     },
     {
+      "style": "normal",
+      "_key": "b3c35ecf65f6",
       "markDefs": [],
       "children": [
         {
@@ -36,25 +35,26 @@
           "_key": "daeaaea29b130"
         }
       ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "b3c35ecf65f6"
+      "_type": "block"
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "8c05ebf39756",
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
-          "marks": [],
           "text": "",
-          "_key": "ff9c124a004d"
+          "_key": "ff9c124a004d",
+          "_type": "span",
+          "marks": []
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "8c05ebf39756"
+      ]
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "a68368b117b9",
       "markDefs": [],
       "children": [
         {
@@ -65,24 +65,21 @@
           "text": "1. Introduction",
           "_key": "00e8ecd44b960"
         }
+      ]
+    },
+    {
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Seto Arts s'engage à protéger la confidentialité et la sécurité de vos informations personnelles. Cette Politique de confidentialité décrit comment nous collectons, utilisons, partageons et protégeons vos données lorsque vous utilisez notre site web setoxarts.com et engagez nos services de branding et de site web.",
+          "_key": "4b570631e85b0"
+        }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "a68368b117b9"
-    },
-    {
-      "_type": "block",
-      "style": "normal",
       "_key": "24354ce3e689",
-      "markDefs": [],
-      "children": [
-        {
-          "marks": [],
-          "text": "Seto Arts s'engage à protéger la confidentialité et la sécurité de vos informations personnelles. Cette Politique de confidentialité décrit comment nous collectons, utilisons, partageons et protégeons vos données lorsque vous utilisez notre site web setoxarts.com et engagez nos services de branding et de site web.",
-          "_key": "4b570631e85b0",
-          "_type": "span"
-        }
-      ]
+      "markDefs": []
     },
     {
       "markDefs": [],
@@ -99,37 +96,36 @@
       "_key": "3bbf5d58b5f5"
     },
     {
-      "markDefs": [],
       "children": [
         {
-          "marks": [
-            "strong"
-          ],
           "text": "2. Informations que nous collectons",
           "_key": "48fc4c3abaf30",
-          "_type": "span"
+          "_type": "span",
+          "marks": [
+            "strong"
+          ]
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "66b283d7b450"
+      "_key": "66b283d7b450",
+      "markDefs": []
     },
     {
+      "style": "normal",
       "_key": "024456c36e3a",
       "markDefs": [],
       "children": [
         {
+          "_type": "span",
           "marks": [],
           "text": "Nous pouvons collecter et traiter les types d'informations personnelles suivants :",
-          "_key": "828818bf183e0",
-          "_type": "span"
+          "_key": "828818bf183e0"
         }
       ],
-      "_type": "block",
-      "style": "normal"
+      "_type": "block"
     },
     {
-      "style": "normal",
       "_key": "1fa9c0cf98d4",
       "listItem": "bullet",
       "markDefs": [],
@@ -142,7 +138,8 @@
         }
       ],
       "level": 1,
-      "_type": "block"
+      "_type": "block",
+      "style": "normal"
     },
     {
       "_key": "3de05e750da1",
@@ -167,16 +164,18 @@
       "markDefs": [],
       "children": [
         {
+          "text": "Données d'utilisation du site web : Informations sur la manière dont vous utilisez et naviguez sur notre site web.",
           "_key": "d58fea5059e10",
           "_type": "span",
-          "marks": [],
-          "text": "Données d'utilisation du site web : Informations sur la manière dont vous utilisez et naviguez sur notre site web."
+          "marks": []
         }
       ],
       "level": 1,
       "_type": "block"
     },
     {
+      "_type": "block",
+      "style": "normal",
       "_key": "0c9b33fb0667",
       "markDefs": [],
       "children": [
@@ -186,12 +185,9 @@
           "text": "",
           "_key": "fb700ce067d30"
         }
-      ],
-      "_type": "block",
-      "style": "normal"
+      ]
     },
     {
-      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -204,10 +200,10 @@
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "4241dfeb60b6"
+      "_key": "4241dfeb60b6",
+      "markDefs": []
     },
     {
-      "style": "normal",
       "_key": "1a08fe568b82",
       "markDefs": [],
       "children": [
@@ -218,7 +214,8 @@
           "_key": "3606f4c5c1860"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal"
     },
     {
       "_type": "block",
@@ -228,29 +225,29 @@
       "markDefs": [],
       "children": [
         {
-          "text": "Interactions directes : lorsque vous fournissez des informations via notre site web, des formulaires ou des canaux de communication.",
-          "_key": "27d05720474d0",
           "_type": "span",
-          "marks": []
+          "marks": [],
+          "text": "Interactions directes : lorsque vous fournissez des informations via notre site web, des formulaires ou des canaux de communication.",
+          "_key": "27d05720474d0"
         }
       ],
       "level": 1
     },
     {
-      "level": 1,
-      "_type": "block",
-      "style": "normal",
-      "_key": "0e646c38b8d2",
       "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
-          "marks": [],
           "text": "Technologies automatisées : via des cookies et des technologies similaires lorsque vous interagissez avec notre site web.",
           "_key": "e53e28f6f6ec0",
-          "_type": "span"
+          "_type": "span",
+          "marks": []
         }
-      ]
+      ],
+      "level": 1,
+      "_type": "block",
+      "style": "normal",
+      "_key": "0e646c38b8d2"
     },
     {
       "style": "normal",
@@ -258,29 +255,29 @@
       "markDefs": [],
       "children": [
         {
-          "marks": [],
           "text": "",
           "_key": "d901b996bdbd0",
-          "_type": "span"
+          "_type": "span",
+          "marks": []
         }
       ],
       "_type": "block"
     },
     {
-      "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [
             "strong"
           ],
           "text": "4. Utilisation des informations",
-          "_key": "5ed495e511ca"
+          "_key": "5ed495e511ca",
+          "_type": "span"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "a4e37b1d5beb"
+      "_key": "a4e37b1d5beb",
+      "markDefs": []
     },
     {
       "_type": "block",
@@ -289,14 +286,15 @@
       "markDefs": [],
       "children": [
         {
+          "_key": "583e4e80f5f20",
           "_type": "span",
           "marks": [],
-          "text": "Nous utilisons les informations collectées aux fins suivantes :",
-          "_key": "583e4e80f5f20"
+          "text": "Nous utilisons les informations collectées aux fins suivantes :"
         }
       ]
     },
     {
+      "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
@@ -309,12 +307,9 @@
       "level": 1,
       "_type": "block",
       "style": "normal",
-      "_key": "0e27c5a4be1b",
-      "listItem": "bullet"
+      "_key": "0e27c5a4be1b"
     },
     {
-      "style": "normal",
-      "_key": "a0a3608ab0ff",
       "listItem": "bullet",
       "markDefs": [],
       "children": [
@@ -326,25 +321,28 @@
         }
       ],
       "level": 1,
-      "_type": "block"
+      "_type": "block",
+      "style": "normal",
+      "_key": "a0a3608ab0ff"
     },
     {
+      "style": "normal",
+      "_key": "a1434814bc61",
       "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
-          "text": "Améliorer notre site web et nos services.",
           "_key": "6b530d1e7eb20",
           "_type": "span",
-          "marks": []
+          "marks": [],
+          "text": "Améliorer notre site web et nos services."
         }
       ],
       "level": 1,
-      "_type": "block",
-      "style": "normal",
-      "_key": "a1434814bc61"
+      "_type": "block"
     },
     {
+      "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
@@ -357,33 +355,32 @@
       "level": 1,
       "_type": "block",
       "style": "normal",
-      "_key": "52ec24ae87cd",
-      "listItem": "bullet"
+      "_key": "52ec24ae87cd"
     },
     {
+      "markDefs": [],
+      "children": [
+        {
+          "text": "",
+          "_key": "b1c002e8c7b10",
+          "_type": "span",
+          "marks": []
+        }
+      ],
       "_type": "block",
       "style": "normal",
-      "_key": "e19eb03db968",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "",
-          "_key": "b1c002e8c7b10"
-        }
-      ]
+      "_key": "e19eb03db968"
     },
     {
       "markDefs": [],
       "children": [
         {
-          "_key": "c60f679a4f2d",
           "_type": "span",
           "marks": [
             "strong"
           ],
-          "text": "5. Partage des données"
+          "text": "5. Partage des données",
+          "_key": "c60f679a4f2d"
         }
       ],
       "_type": "block",
@@ -405,20 +402,22 @@
       "_key": "fc48dd055b2e"
     },
     {
+      "_key": "b9ea61df00f8",
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
-          "marks": [],
           "text": "",
-          "_key": "a3cd66134d3c0"
+          "_key": "a3cd66134d3c0",
+          "_type": "span",
+          "marks": []
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "b9ea61df00f8"
+      "style": "normal"
     },
     {
+      "style": "normal",
+      "_key": "d4f4ea84fd1e",
       "markDefs": [],
       "children": [
         {
@@ -430,69 +429,68 @@
           "_key": "7acadf21c343"
         }
       ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "d4f4ea84fd1e"
-    },
-    {
-      "style": "normal",
-      "_key": "8391ef99442e",
-      "markDefs": [],
-      "children": [
-        {
-          "marks": [],
-          "text": "Nous mettons en œuvre des mesures de sécurité raisonnables pour protéger vos informations contre tout accès, divulgation, altération et destruction non autorisés. Cependant, aucune transmission de données sur Internet ou méthode de stockage n'est sécurisée à 100 %, et nous ne pouvons garantir une sécurité absolue.",
-          "_key": "1298a6bfaea10",
-          "_type": "span"
-        }
-      ],
       "_type": "block"
     },
     {
-      "markDefs": [],
       "children": [
         {
+          "_type": "span",
+          "marks": [],
+          "text": "Nous mettons en œuvre des mesures de sécurité raisonnables pour protéger vos informations contre tout accès, divulgation, altération et destruction non autorisés. Cependant, aucune transmission de données sur Internet ou méthode de stockage n'est sécurisée à 100 %, et nous ne pouvons garantir une sécurité absolue.",
+          "_key": "1298a6bfaea10"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "8391ef99442e",
+      "markDefs": []
+    },
+    {
+      "children": [
+        {
+          "_type": "span",
           "marks": [],
           "text": "",
-          "_key": "4b1d2a370b5f0",
-          "_type": "span"
+          "_key": "4b1d2a370b5f0"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "97dc22cdb0fc"
+      "_key": "97dc22cdb0fc",
+      "markDefs": []
     },
     {
+      "_key": "fb5bff498f39",
       "markDefs": [],
       "children": [
         {
-          "marks": [
-            "strong"
-          ],
           "text": "7. Vos droits",
           "_key": "689d335e3204",
-          "_type": "span"
+          "_type": "span",
+          "marks": [
+            "strong"
+          ]
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "fb5bff498f39"
+      "style": "normal"
     },
     {
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Vous avez le droit de :",
+          "_key": "68a9462c04fb0"
+        }
+      ],
       "_type": "block",
       "style": "normal",
       "_key": "b5da7c849efe",
-      "markDefs": [],
-      "children": [
-        {
-          "_key": "68a9462c04fb0",
-          "_type": "span",
-          "marks": [],
-          "text": "Vous avez le droit de :"
-        }
-      ]
+      "markDefs": []
     },
     {
+      "_key": "ca58ce145401",
       "listItem": "bullet",
       "markDefs": [],
       "children": [
@@ -505,10 +503,10 @@
       ],
       "level": 1,
       "_type": "block",
-      "style": "normal",
-      "_key": "ca58ce145401"
+      "style": "normal"
     },
     {
+      "_type": "block",
       "style": "normal",
       "_key": "cb7a163c9727",
       "listItem": "bullet",
@@ -521,10 +519,13 @@
           "_key": "771cb68936ed0"
         }
       ],
-      "level": 1,
-      "_type": "block"
+      "level": 1
     },
     {
+      "style": "normal",
+      "_key": "81254ace11aa",
+      "listItem": "bullet",
+      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -534,27 +535,23 @@
         }
       ],
       "level": 1,
-      "_type": "block",
-      "style": "normal",
-      "_key": "81254ace11aa",
-      "listItem": "bullet",
-      "markDefs": []
+      "_type": "block"
     },
     {
-      "style": "normal",
-      "_key": "87fbad6ae275",
       "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
+          "_type": "span",
           "marks": [],
           "text": "Vous opposer au traitement de vos informations personnelles.",
-          "_key": "b786ce363bda0",
-          "_type": "span"
+          "_key": "b786ce363bda0"
         }
       ],
       "level": 1,
-      "_type": "block"
+      "_type": "block",
+      "style": "normal",
+      "_key": "87fbad6ae275"
     },
     {
       "_type": "block",
@@ -563,14 +560,15 @@
       "markDefs": [],
       "children": [
         {
-          "_key": "eddc1d28b67e0",
-          "_type": "span",
           "marks": [],
-          "text": "Pour exercer ces droits ou pour toute question concernant vos données, contactez-nous à sedrak005@gmail.com."
+          "text": "Pour exercer ces droits ou pour toute question concernant vos données, contactez-nous à sedrak005@gmail.com.",
+          "_key": "eddc1d28b67e0",
+          "_type": "span"
         }
       ]
     },
     {
+      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -581,10 +579,10 @@
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "409a652748e2",
-      "markDefs": []
+      "_key": "409a652748e2"
     },
     {
+      "style": "normal",
       "_key": "30f18b321f34",
       "markDefs": [],
       "children": [
@@ -597,38 +595,39 @@
           "_key": "2eef7ef808fc"
         }
       ],
-      "_type": "block",
-      "style": "normal"
-    },
-    {
-      "style": "normal",
-      "_key": "a402f59b73d5",
-      "markDefs": [],
-      "children": [
-        {
-          "text": "Nous nous réservons le droit de mettre à jour cette Politique de confidentialité. Veuillez la consulter périodiquement pour prendre connaissance des changements.",
-          "_key": "5d130307f8a50",
-          "_type": "span",
-          "marks": []
-        }
-      ],
       "_type": "block"
     },
     {
-      "style": "normal",
-      "_key": "721296d086c6",
       "markDefs": [],
       "children": [
         {
           "_type": "span",
           "marks": [],
-          "text": "",
-          "_key": "a33bbb054eb20"
+          "text": "Nous nous réservons le droit de mettre à jour cette Politique de confidentialité. Veuillez la consulter périodiquement pour prendre connaissance des changements.",
+          "_key": "5d130307f8a50"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal",
+      "_key": "a402f59b73d5"
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "721296d086c6",
+      "markDefs": [],
+      "children": [
+        {
+          "marks": [],
+          "text": "",
+          "_key": "a33bbb054eb20",
+          "_type": "span"
+        }
+      ]
+    },
+    {
+      "style": "normal",
+      "_key": "414215357421",
       "markDefs": [],
       "children": [
         {
@@ -640,25 +639,25 @@
           "_key": "a331f78222b9"
         }
       ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "414215357421"
+      "_type": "block"
     },
     {
-      "_key": "4c367ba63717",
-      "markDefs": [],
       "children": [
         {
+          "_type": "span",
           "marks": [],
           "text": "Si vous avez des questions ou des préoccupations concernant cette Politique de confidentialité, contactez-nous à :",
-          "_key": "a271aef746d80",
-          "_type": "span"
+          "_key": "a271aef746d80"
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "4c367ba63717",
+      "markDefs": []
     },
     {
+      "_type": "block",
+      "style": "normal",
       "_key": "271e6b4e26da",
       "markDefs": [],
       "children": [
@@ -668,23 +667,24 @@
           "text": "Seto Arts\n1150 rue Dale\nsedrak005@gmail.com",
           "_key": "b809dbb97d86"
         }
-      ],
-      "_type": "block",
-      "style": "normal"
+      ]
     },
     {
       "markDefs": [],
       "children": [
         {
+          "marks": [],
           "text": "",
           "_key": "5b10e8f92c15",
-          "_type": "span",
-          "marks": []
+          "_type": "span"
         }
       ],
       "_type": "block",
       "style": "normal",
       "_key": "0a55bb647792"
     }
-  ]
+  ],
+  "_createdAt": "2024-03-06T20:13:28Z",
+  "_id": "8b580c60-67c1-4244-a923-e8c6a6784970",
+  "_updatedAt": "2024-03-06T20:23:32Z"
 }
