@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://setoxarts.com/static/css/main.1fa18def.css",
-    "main.js": "https://setoxarts.com/static/js/main.2a51cca2.js",
+    "main.js": "https://setoxarts.com/static/js/main.f84199bc.js",
     "static/js/160.14f798f2.chunk.js": "https://setoxarts.com/static/js/160.14f798f2.chunk.js",
     "static/js/877.15d3d8ef.chunk.js": "https://setoxarts.com/static/js/877.15d3d8ef.chunk.js",
     "static/css/224.49c8fd11.chunk.css": "https://setoxarts.com/static/css/224.49c8fd11.chunk.css",
@@ -36,7 +36,7 @@
     "static/media/Layout.svg": "https://setoxarts.com/static/media/Layout.b82dbd3d998bad593919c870824bd2cd.svg",
     "static/media/Diamond.svg": "https://setoxarts.com/static/media/Diamond.3674e786a84ac64b5733f5ded38578cb.svg",
     "main.1fa18def.css.map": "https://setoxarts.com/static/css/main.1fa18def.css.map",
-    "main.2a51cca2.js.map": "https://setoxarts.com/static/js/main.2a51cca2.js.map",
+    "main.f84199bc.js.map": "https://setoxarts.com/static/js/main.f84199bc.js.map",
     "160.14f798f2.chunk.js.map": "https://setoxarts.com/static/js/160.14f798f2.chunk.js.map",
     "877.15d3d8ef.chunk.js.map": "https://setoxarts.com/static/js/877.15d3d8ef.chunk.js.map",
     "224.49c8fd11.chunk.css.map": "https://setoxarts.com/static/css/224.49c8fd11.chunk.css.map",
@@ -50,6 +50,6 @@
   },
   "entrypoints": [
     "static/css/main.1fa18def.css",
-    "static/js/main.2a51cca2.js"
+    "static/js/main.f84199bc.js"
   ]
 }
