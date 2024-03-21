@@ -107,15 +107,20 @@ button {
   background: var(--grey) !important;
 }
 
-.container:has(.fancy) {
-  @include vars;
+.container {
   width: 100%;
-  -webkit-mask: url("../../assets/illu/ButtonStroke.svg");
-  mask: url("../../assets/illu/ButtonStroke.svg");
-  position: relative;
   @media (min-width: $tablet) {
     width: auto;
   }
+}
+
+.container:has(.fancy) {
+  @include vars;
+
+  -webkit-mask: url("../../assets/illu/ButtonStroke.svg");
+  mask: url("../../assets/illu/ButtonStroke.svg");
+  position: relative;
+
   .fancy {
     @include button(
       var(--yellow),

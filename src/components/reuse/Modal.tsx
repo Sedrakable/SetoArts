@@ -83,24 +83,18 @@ export const Modal: React.FC<ModalProps> = ({
             </Paragraph>
           </FlexDiv>
           <FlexDiv
-            className={styles.ctas}
-            gapArray={[4]}
+            gapArray={[2, 3, 4, 4]}
             padding={{ bottom: [1, 2, 2, 3] }}
             wrap
+            width100
           >
-            <Button
-              variant="primary"
-              disabled
-              href={primaryLink?.link}
-              target="_blank"
-            >
+            <Button variant="primary" href={primaryLink?.link} target="_blank">
               {primaryLink?.text}
             </Button>
             {secondaryLinks?.map((cta: ICta, key: number) => {
               return (
                 <Button
                   variant="secondary"
-                  disabled
                   href={cta?.link}
                   key={key}
                   target="_blank"
