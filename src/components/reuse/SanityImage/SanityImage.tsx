@@ -10,10 +10,42 @@ import { urlFor } from "../../../api/useFetchPage";
 import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
 import { useWindowResize } from "../../../helpers/useWindowResize";
 
+type ResType = 50 | 40 | 30 | 20 | 10 | 5;
 interface SanityImageProps extends ICustomImage {
   visible?: boolean;
-  res?: 50 | 40 | 30 | 20 | 10 | 5;
+  res?: ResType;
 }
+
+type resToWidthType = {
+  [key in ResType]: number;
+};
+
+const resToWidthMobile: resToWidthType = {
+  50: 1200,
+  40: 1000,
+  30: 800,
+  20: 600,
+  10: 400,
+  5: 200,
+};
+
+const resToWidthTablet: resToWidthType = {
+  50: 1600,
+  40: 1400,
+  30: 1200,
+  20: 1000,
+  10: 800,
+  5: 400,
+};
+
+const resToWidthDesktop: resToWidthType = {
+  50: 1920,
+  40: 1680,
+  30: 1440,
+  20: 1200,
+  10: 1000,
+  5: 500,
+};
 
 export const SanityImage: React.FC<PropsWithChildren<
   SanityImageProps & ImgHTMLAttributes<HTMLImageElement>
@@ -33,7 +65,7 @@ export const SanityImage: React.FC<PropsWithChildren<
           }
         });
       },
-      { rootMargin: "200px" }
+      { rootMargin: "500px" }
     );
 
     if (imgRef.current) {
@@ -52,41 +84,6 @@ export const SanityImage: React.FC<PropsWithChildren<
     const calculateWidth = () => {
       if (isVisible && imgRef.current) {
         // Mapping of res values to image widths
-        const resToWidthMobile = {
-          50: 1200,
-          40: 1000,
-          30: 800,
-          20: 600,
-          10: 400,
-          5: 200,
-        };
-
-        const resToWidthTablet = {
-          50: 1200,
-          40: 1000,
-          30: 800,
-          20: 600,
-          10: 400,
-          5: 200,
-        };
-
-        const resToWidthLaptop = {
-          50: 1600,
-          40: 1400,
-          30: 1200,
-          20: 1000,
-          10: 800,
-          5: 400,
-        };
-
-        const resToWidthDesktop = {
-          50: 1920,
-          40: 1680,
-          30: 1440,
-          20: 1200,
-          10: 1000,
-          5: 500,
-        };
 
         let width = 0;
         if (isMobile) {
@@ -94,7 +91,7 @@ export const SanityImage: React.FC<PropsWithChildren<
         } else if (isTablet) {
           width = resToWidthTablet[res];
         } else if (isLaptop) {
-          width = resToWidthLaptop[res];
+          width = resToWidthDesktop[res];
         } else if (isDesktop) {
           width = resToWidthDesktop[res];
         }
