@@ -9,12 +9,13 @@
   }
 
   @media (min-width: $laptop) {
-    --image-width: 400px;
+    --image-width: 240px;
     --img-pad-top: 12px;
   }
 
   @media (min-width: $desktop) {
-    --img-pad-top: 14px;
+    --image-width: 300px;
+    --img-pad-top: 10px;
   }
 }
 
@@ -26,16 +27,20 @@
 .container {
   @include vars;
 
-  @media (min-width: $tablet) {
-    flex-direction: row !important;
-  }
+  .imgWrapper {
+    min-height: var(--image-width);
 
-  img {
-    width: var(--image-width);
-    min-width: var(--image-width);
-    height: auto !important;
-    max-height: var(--image-width);
     aspect-ratio: 1;
     padding-top: var(--img-pad-top);
+
+    flex: 1;
+  }
+  .text {
+    width: 100%;
+    flex: 2;
+  }
+
+  @media (min-width: $laptop) {
+    flex-direction: row !important;
   }
 }

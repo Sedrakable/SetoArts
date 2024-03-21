@@ -9,9 +9,9 @@ import { Button } from "./Button";
 import { ICta, IWork, LocalPaths } from "../../data.d";
 import FlexDiv from "./FlexDiv";
 import { Title } from "./Title/Title";
-import { SanityImage } from "./SanityImage/SanityImage";
 import { langData } from "../navbar/LangSwitcher/LangSwitcher";
 import { useNavigate } from "react-router-dom";
+import { ImageGrid } from "../pages/blocks/ImageGrid/ImageGrid";
 
 export interface ModalProps extends IWork {
   handleClose: () => void;
@@ -63,7 +63,7 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <Backdrop onClick={() => handleModalClose()}>
       <motion.div
-        // onClick={(e) => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
         className={styles.modal}
         variants={dropIn}
         initial="hidden"
@@ -85,13 +85,25 @@ export const Modal: React.FC<ModalProps> = ({
             className={styles.ctas}
             gapArray={[4]}
             padding={{ bottom: [1, 2, 2, 3] }}
+            wrap
           >
-            <Button variant="primary" disabled href={primaryLink?.link}>
+            <Button
+              variant="primary"
+              disabled
+              href={primaryLink?.link}
+              target="_blank"
+            >
               {primaryLink?.text}
             </Button>
             {secondaryLinks?.map((cta: ICta, key: number) => {
               return (
-                <Button variant="secondary" disabled href={cta?.link} key={key}>
+                <Button
+                  variant="secondary"
+                  disabled
+                  href={cta?.link}
+                  key={key}
+                  target="_blank"
+                >
                   {cta?.text}
                 </Button>
               );
@@ -120,17 +132,7 @@ export const Modal: React.FC<ModalProps> = ({
               referrerPolicy="strict-origin-when-cross-origin"
             />
           </FlexDiv>
-          <FlexDiv
-            className={styles.imagesWrapper}
-            gapArray={[2]}
-            width100
-            padding={{ all: [2] }}
-            wrap
-          >
-            {customImages?.map((image, key) => {
-              return <SanityImage {...image} key={key} />;
-            })}
-          </FlexDiv>
+          <ImageGrid customImages={customImages} />
           <FlexDiv className={styles.close} padding={{ all: [2, 3, 3, 4] }}>
             <IconButton
               onClick={handleClose}

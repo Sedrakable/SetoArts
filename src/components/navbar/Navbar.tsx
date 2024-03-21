@@ -123,7 +123,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
         {isMobile && tabWrapper(<LangSwitcher />)}
         {lastLink &&
           tabWrapper(
-            <Button variant="fancy" path={`/${lang}/contact`}>
+            <Button variant="fancy" path={`/${lang}${LocalPaths.CONTACT}`}>
               {lastLink.text}
             </Button>
           )}

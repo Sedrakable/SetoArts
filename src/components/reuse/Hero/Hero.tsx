@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import cn from "classnames";
 import { Paragraph } from "../Paragraph";
-import { IHero } from "../../../data";
+import { IHero, LocalPaths } from "../../../data.d";
 import FlexDiv from "../FlexDiv";
 import { ReactComponent as Logo } from "../../../assets/illu/LogoBig.svg";
 import { FancyText } from "../FancyText";
@@ -10,6 +10,8 @@ import { Button } from "../Button";
 import { Quote } from "../Quote";
 import { SanityImage } from "../SanityImage/SanityImage";
 import { useWindowResize } from "../../../helpers/useWindowResize";
+import { langData } from "../../navbar/LangSwitcher/LangSwitcher";
+import { useAtom } from "jotai";
 
 export type VersionType = 1 | 2;
 
@@ -27,7 +29,7 @@ export const Hero: React.FC<HeroProps> = ({
   version = 1,
 }) => {
   const { isMobileOrTablet } = useWindowResize();
-
+  const [lang] = useAtom(langData);
   return (
     <div className={cn(styles.hero)}>
       {!isMobileOrTablet && (
@@ -54,7 +56,11 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
       )}
       <FlexDiv className={styles.right}>
-        <SanityImage image={customImage?.image} alt={customImage?.alt} />
+        <SanityImage
+          image={customImage?.image}
+          alt={customImage?.alt}
+          res={50}
+        />
         <FlexDiv
           className={styles.container}
           flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
@@ -77,12 +83,12 @@ export const Hero: React.FC<HeroProps> = ({
             </Paragraph>
           </FlexDiv>
           {ctas && (
-            <FlexDiv
-              gapArray={[4]}
-              flex={{ direction: "row" }}
-              customStyle={{ flexWrap: "wrap" }}
-            >
-              <Button variant="fancy" id="primary">
+            <FlexDiv gapArray={[4]} flex={{ x: "flex-start" }} width100 wrap>
+              <Button
+                variant="fancy"
+                id="primary"
+                path={`/${lang}${LocalPaths.CONTACT}`}
+              >
                 {ctas?.cta1.text}
               </Button>
               {ctas?.cta2 && (

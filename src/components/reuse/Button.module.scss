@@ -109,9 +109,13 @@ button {
 
 .container:has(.fancy) {
   @include vars;
+  width: 100%;
   -webkit-mask: url("../../assets/illu/ButtonStroke.svg");
   mask: url("../../assets/illu/ButtonStroke.svg");
   position: relative;
+  @media (min-width: $tablet) {
+    width: auto;
+  }
   .fancy {
     @include button(
       var(--yellow),

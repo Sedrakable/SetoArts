@@ -22,6 +22,7 @@ export const Title: React.FC<PropsWithChildren<TitleProps>> = ({
         level="2"
         color={color}
         className={styles.heading}
+        textAlign="center"
       >
         {title}
       </Heading>

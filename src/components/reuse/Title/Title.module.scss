@@ -1,18 +1,6 @@
 @import "../../../css/mixins.scss";
 
-@mixin vars() {
-  --stroke-height: 32px;
-  @media (min-width: $tablet) {
-    --stroke-height: 48px;
-  }
-
-  @media (min-width: $desktop) {
-    --stroke-height: 64px;
-  }
-}
-
 .title {
-  @include vars;
   position: relative;
   box-sizing: content-box;
   width: fit-content;
@@ -25,7 +13,7 @@
     transform: translateY(-50%);
     left: 0;
     width: 100%;
-    height: var(--stroke-height);
+    height: calc(100% - 14px);
     object-fit: fill !important;
   }
 }

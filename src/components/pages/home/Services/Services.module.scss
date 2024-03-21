@@ -38,6 +38,11 @@
     background: var(--white);
 
     flex: 1;
+    .tags > * {
+      &:last-child {
+        cursor: auto;
+      }
+    }
   }
   .bottom > * {
     flex: 1;

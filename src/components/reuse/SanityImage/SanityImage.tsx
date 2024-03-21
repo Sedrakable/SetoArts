@@ -8,18 +8,20 @@ import React, {
 import { ICustomImage } from "../../../data";
 import { urlFor } from "../../../api/useFetchPage";
 import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
+import { useWindowResize } from "../../../helpers/useWindowResize";
 
 interface SanityImageProps extends ICustomImage {
   visible?: boolean;
+  res?: 50 | 40 | 30 | 20 | 10 | 5;
 }
+
 export const SanityImage: React.FC<PropsWithChildren<
   SanityImageProps & ImgHTMLAttributes<HTMLImageElement>
->> = ({ image, alt, visible = false, ...props }) => {
-  const [loaded, setLoaded] = useState(false);
-  const [isVisible, setIsVisible] = useState(visible);
-  const [imgWidth, setImgWidth] = useState<number | null>(null);
+>> = ({ image, alt, visible = false, res = 50, ...props }) => {
   const imgRef = useRef<HTMLImageElement>(null);
-  const minimumWidth = 600;
+  const [isVisible, setIsVisible] = useState(visible);
+  const [imageWidth, setImageWidth] = useState<number>(300);
+  const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,7 +33,7 @@ export const SanityImage: React.FC<PropsWithChildren<
           }
         });
       },
-      { rootMargin: "200px" } // Adjust root margin as per your requirement
+      { rootMargin: "200px" }
     );
 
     if (imgRef.current) {
@@ -44,39 +46,85 @@ export const SanityImage: React.FC<PropsWithChildren<
         observer.unobserve(imgRef.current);
       }
     };
-  }, [imgRef]);
+  }, []);
+
+  useEffect(() => {
+    const calculateWidth = () => {
+      if (isVisible && imgRef.current) {
+        // Mapping of res values to image widths
+        const resToWidthMobile = {
+          50: 1200,
+          40: 1000,
+          30: 800,
+          20: 600,
+          10: 400,
+          5: 200,
+        };
+
+        const resToWidthTablet = {
+          50: 1200,
+          40: 1000,
+          30: 800,
+          20: 600,
+          10: 400,
+          5: 200,
+        };
+
+        const resToWidthLaptop = {
+          50: 1600,
+          40: 1400,
+          30: 1200,
+          20: 1000,
+          10: 800,
+          5: 400,
+        };
+
+        const resToWidthDesktop = {
+          50: 1920,
+          40: 1680,
+          30: 1440,
+          20: 1200,
+          10: 1000,
+          5: 500,
+        };
+
+        let width = 0;
+        if (isMobile) {
+          width = resToWidthMobile[res];
+        } else if (isTablet) {
+          width = resToWidthTablet[res];
+        } else if (isLaptop) {
+          width = resToWidthLaptop[res];
+        } else if (isDesktop) {
+          width = resToWidthDesktop[res];
+        }
+        setImageWidth(width);
+      }
+    };
+
+    calculateWidth();
+    window.addEventListener("resize", calculateWidth);
+    return () => window.removeEventListener("resize", calculateWidth);
+  }, [isVisible, res, isMobile, isTablet, isLaptop, isDesktop]);
 
   const src =
     image && isVisible
       ? (urlFor(image) as ImageUrlBuilder)
-          .width(imgWidth || minimumWidth)
           .auto("format")
+          .width(imageWidth)
+          .quality(res)
           .url()
       : "";
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (imgRef.current?.clientWidth && isVisible && loaded) {
-        const newWidth = imgRef.current.clientWidth;
-        setImgWidth(newWidth < minimumWidth ? minimumWidth : newWidth);
-      }
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [imgRef, isVisible, loaded]);
-
   return (
-    <figure ref={imgRef} style={{ width: "auto", height: "100%" }}>
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        onLoad={() => setLoaded(true)}
-        style={{ objectFit: "cover" }}
-      />
-    </figure>
+    <img
+      ref={imgRef}
+      src={src}
+      alt={alt}
+      loading="lazy"
+      style={{ objectFit: "cover", width: "100%" }}
+      about={res.toString()}
+      {...props}
+    />
   );
 };

@@ -26,6 +26,7 @@
   background: var(--white);
   border-radius: var(--pad-1);
   box-shadow: 0 0 20px rgba(var(--gold-light-rgb), 0.5);
+  cursor: auto;
 
   .container {
     @include flexColumn(center, space-between);
@@ -38,9 +39,9 @@
       @include flexColumn(flex-start, flex-start);
 
       width: 100%;
-      p {
-        @include paragraphMaxLines(8, auto);
-      }
+      // p {
+      //   @include paragraphMaxLines(8, auto);
+      // }
       gap: var(--pad-3);
       flex: 1;
     }
@@ -51,15 +52,6 @@
         min-width: var(--container-min-width);
         border: none;
         border-radius: 6px;
-      }
-    }
-    .imagesWrapper {
-      background-color: var(--black);
-      img {
-        flex: 1;
-        height: var(--image-height) !important;
-        width: auto !important;
-        max-width: 100%;
       }
     }
     .close {

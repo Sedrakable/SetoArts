@@ -15,6 +15,7 @@ import { Icon } from "../../reuse/Icon";
 import { SanityImage } from "../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../helpers/useWindowResize";
 import { ICustomImage } from "../../../data";
+import { shuffleArray } from "../../../helpers/functions";
 
 export interface SpliderProps {
   customImages: ICustomImage[];
@@ -129,6 +130,18 @@ export const Splider: React.FC<SpliderContainerProps> = ({
 
   const renderSlides = (text: boolean) => {
     return slides?.map((splider: SpliderProps, key) => {
+      // Randomize the customImages array
+      const randomizedImages: ICustomImage[] = shuffleArray([
+        ...splider.customImages,
+      ]);
+
+      // Ensure there are at least 9 images
+      const repeatedImages: ICustomImage[] = Array.from(
+        { length: Math.ceil(9 / randomizedImages.length) },
+        () => randomizedImages
+      )
+        .flat()
+        .slice(0, 9);
       return (
         <SplideSlide
           key={key}
@@ -138,30 +151,29 @@ export const Splider: React.FC<SpliderContainerProps> = ({
             <SideContainer {...splider.content} />
           )}
           {splider?.customImages &&
-            (splider?.customImages?.length > 1 ? (
+            (splider.customImages?.length > 1 ? (
               <div className={styles.imgGridWrapper}>
                 <div className={styles.imgGrid}>
                   {/* Duplicate images if there are less than 9 */}
-                  {[...Array(Math.max(9, splider.customImages.length))].map(
-                    (_, index) => {
-                      const imageIndex = index % splider.customImages.length; // Ensure index does not exceed the length of customImages
-                      const image = splider.customImages[imageIndex];
-                      return (
-                        <SanityImage
-                          visible
-                          key={index}
-                          image={image.image}
-                          alt={image.alt}
-                        />
-                      );
-                    }
-                  )}
+                  {repeatedImages.map((image, index) => {
+                    return (
+                      <SanityImage
+                        visible
+                        key={index}
+                        image={image.image}
+                        alt={image.alt}
+                        res={30}
+                        className={index % 2 === 1 ? styles.grayscale : ""}
+                      />
+                    );
+                  })}
                 </div>
               </div>
             ) : (
               <SanityImage
                 image={splider?.customImages[0].image}
                 alt={splider?.customImages[0].alt}
+                res={30}
               />
             ))}
           {isMobileOrTablet && text && splider?.content && (

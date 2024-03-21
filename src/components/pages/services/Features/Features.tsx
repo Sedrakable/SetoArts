@@ -21,7 +21,7 @@ const Feature: React.FC<IFeature> = ({ title, customImage, desc }) => {
       className={styles.container}
     >
       <div className={styles.imgWrapper}>
-        <SanityImage {...customImage} />
+        <SanityImage {...customImage} res={20} />
       </div>
       <FlexDiv
         flex={{ direction: "column", x: "flex-start", y: "flex-start" }}

@@ -1,14 +1,91 @@
 @import "../../../../css/mixins.scss";
 
-.wrapper {
-  background-color: var(--black);
-  figure {
-    flex: 1;
-    height: 400px !important;
+@mixin vars() {
+  --row-height: 300px;
+  --ratio: 3 / 4;
+  --gap: 10px;
+  --number-of-rows: 20;
+  @media (min-width: $tablet) {
+    --row-height: 250px;
+    --number-of-rows: 12;
+  }
 
-    img {
-      width: auto !important;
-      min-width: 100%;
+  @media (min-width: $laptop) {
+    --row-height: 300px;
+    --number-of-rows: 9;
+  }
+
+  @media (min-width: $desktop) {
+    --row-height: 400px;
+    --number-of-rows: 9;
+  }
+}
+
+.container {
+  @include vars;
+  height: calc(
+    (var(--row-height) * var(--ratio) + (var(--gap) / 2)) *
+      var(--number-of-rows)
+  );
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+  .wrapper {
+    position: absolute;
+    top: 0;
+    background-color: var(--black);
+    display: grid !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+
+    grid-template-columns: repeat(auto-fit, minmax(var(--row-height), 1fr));
+    grid-auto-rows: calc(var(--row-height) * var(--ratio));
+    grid-auto-flow: dense;
+    grid-gap: 10px;
+    overflow: hidden;
+    .imgWrapper {
+      position: relative;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+      }
+      // &:nth-child(5n + 1) {
+      //   display: flex;
+      //   grid-column-end: span 3; /* This item spans two columns */
+      // }
     }
+
+    @media (min-width: $tablet) {
+      .imgWrapper {
+        &:nth-child(4n -2) {
+          grid-column: span 2;
+          grid-row: span 2;
+        }
+      }
+      &:after {
+        content: "";
+        grid-row: span 1;
+        grid-column: span 1;
+
+        background: linear-gradient(45deg, var(--white), var(--yellow));
+        background-size: 200%;
+
+        animation: pulsate 2s infinite linear alternate-reverse;
+        opacity: 1;
+      }
+      @keyframes pulsate {
+        0% {
+          filter: contrast(0.8);
+          background-position: 0% 0%;
+        }
+        100% {
+          filter: contrast(1.2);
+          background-position: 100% 100%;
+        }
+      }
+    }
+
+    /* Ensure all grid cells are filled even if they are empty */
   }
 }

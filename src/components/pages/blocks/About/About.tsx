@@ -4,8 +4,7 @@ import { Block } from "../../containers/Block";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { FancyText } from "../../../reuse/FancyText";
-import { Button } from "../../../reuse/Button";
-import { IAbout, LocalPaths } from "../../../../data.d";
+import { IAbout } from "../../../../data";
 import { Paragraph } from "../../../reuse/Paragraph";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../../helpers/useWindowResize";
@@ -18,8 +17,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
   const [lang] = useAtom(langData);
   const translations = getTranslations(lang);
 
-  const { customImage, name, title1, desc1, title2, desc2, cta } =
-    content || {};
+  const { customImage, name, title1, desc1, title2, desc2 } = content || {};
 
   const SecondText = () => {
     return (
@@ -42,11 +40,11 @@ export const About: React.FC<IAbout> = ({ content }) => {
             </Paragraph>
           </FlexDiv>
         )}
-        {cta && (
+        {/* {cta && (
           <Button variant="fancy" href={`/${lang}${LocalPaths.CONTACT}`}>
             {translations.buttons.workWithMe}
           </Button>
-        )}
+        )} */}
       </FlexDiv>
     );
   };
@@ -60,23 +58,29 @@ export const About: React.FC<IAbout> = ({ content }) => {
           gapArray={[4, 5, 5, 7]}
         >
           {customImage && (
-            <SanityImage image={customImage?.image} alt={customImage?.alt} />
+            <div className={styles.imgWrapper}>
+              <SanityImage
+                image={customImage?.image}
+                alt={customImage?.alt}
+                res={30}
+              />
+            </div>
           )}
-          <div>
+          <div className={styles.text}>
             {name && (
               <Heading
                 font="Seto"
                 as="h2"
                 level="2"
                 color="black"
-                paddingBottomArray={[4]}
+                paddingBottomArray={[2, 3, 3, 4]}
               >
                 {name}
               </Heading>
             )}
             <FlexDiv
               flex={{ direction: "column", x: "flex-start" }}
-              gapArray={[5]}
+              gapArray={[2, 3, 3, 4]}
             >
               <FlexDiv
                 flex={{ direction: "column", x: "flex-start" }}
@@ -86,7 +90,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
                 <Paragraph
                   level="regular"
                   color="black"
-                  paddingBottomArray={[2, 3, 2, 3]}
+                  paddingBottomArray={[2, 3, 2, 2]}
                 >
                   {desc1}
                 </Paragraph>

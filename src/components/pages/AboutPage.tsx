@@ -50,7 +50,7 @@ export const AboutPage: React.FC<AboutPageProps> = (props) => {
         <About {...props.about} />
         <WorkBlock {...props.work} />
         <Values {...props.values} />
-        <ImageGrid customImages={workImages} />
+        <ImageGrid customImages={workImages} maxImages={24} randomize />
         <Inspired />
       </>
     )

@@ -27,7 +27,6 @@ const Nav: React.FC<INavBar> = ({ links }) => {
       wrap
     >
       {links?.map((link, key) => {
-        console.log("link", link);
         if (isCta(link)) {
           return (
             <Link
