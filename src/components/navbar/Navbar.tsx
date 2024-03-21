@@ -9,9 +9,10 @@ import FlexDiv from "../reuse/FlexDiv";
 import { ReactComponent as Logo } from "../../assets/illu/LogoSmall.svg";
 import { Button } from "../reuse/Button";
 import { ICta, INavBar, INavLink, LocalPaths } from "../../data.d";
-import { LangSwitcher, langData } from "./LangSwitcher/LangSwitcher";
+import { LangSwitcher, LangType, langData } from "./LangSwitcher/LangSwitcher";
 import { useAtom } from "jotai";
 import { getTranslations } from "../../helpers/langUtils";
+import { Sidebar, sidebarData } from "./Sidebar";
 
 export const isCta = (link: INavLink | ICta): link is ICta => {
   return (link as ICta).link !== undefined;
@@ -19,11 +20,11 @@ export const isCta = (link: INavLink | ICta): link is ICta => {
 
 export const Navbar: React.FC<INavBar> = ({ links }) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
-  const [sidebar, setSidebar] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const [, setSidebar] = useAtom(sidebarData);
 
   useEffect(() => {
     const handleScroll = (e: Event) => {
@@ -38,97 +39,6 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
     };
   }, [navRef]);
 
-  const logoComp = (
-    <Link
-      path={`/${lang}${LocalPaths.HOME}`}
-      className={styles.logo}
-      aria-label={translations.nav.home}
-    >
-      <Logo />
-    </Link>
-  );
-
-  const tab = (cta: ICta, key?: number) => {
-    return (
-      <TabButton key={key} className={styles.tab} path={`/${lang}${cta.link!}`}>
-        {cta.text}
-      </TabButton>
-    );
-  };
-
-  const dropDown = (navLink: INavLink, key?: number) => {
-    return (
-      <TabButton
-        key={key}
-        className={styles.tab}
-        path={`/${lang}${LocalPaths.SERVICE}`}
-        dropdown={navLink.ctaArray}
-      >
-        {navLink.title}
-      </TabButton>
-    );
-  };
-
-  const tabWrapper = (
-    child: React.JSX.Element,
-    dropDown: boolean = false,
-    key?: number
-  ) => {
-    return (
-      <FlexDiv
-        key={key}
-        className={styles.tabWrapper}
-        flex={{ x: "flex-start" }}
-        padding={{ horizontal: [4, 6, 0, 0], vertical: [3, 4, 0, 0] }}
-        onClick={() => !dropDown && setSidebar(false)}
-      >
-        {child}
-      </FlexDiv>
-    );
-  };
-
-  const lastLink =
-    isCta(links[links.length - 1]) && (links[links.length - 1] as ICta);
-
-  const sidebarComp = (
-    <div className={cn(styles.sidebar, { [styles.isOpen]: sidebar })}>
-      <FlexDiv
-        className={styles.closeTab}
-        width100
-        flex={{ x: "space-between" }}
-        padding={{ horizontal: [4, 5, 0, 0] }}
-      >
-        {logoComp}
-        <IconButton
-          onClick={() => setSidebar(false)}
-          iconProps={{ icon: "close", size: "regular" }}
-        />
-      </FlexDiv>
-
-      <FlexDiv
-        className={styles.tabs}
-        flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-        width100
-      >
-        {links?.map((link: INavLink | ICta, key) => {
-          if (key !== links.length - 1) {
-            return isCta(link)
-              ? tabWrapper(tab(link), false, key)
-              : tabWrapper(dropDown(link), true, key);
-          }
-          return null;
-        })}
-        {isMobile && tabWrapper(<LangSwitcher />)}
-        {lastLink &&
-          tabWrapper(
-            <Button variant="fancy" path={`/${lang}${LocalPaths.CONTACT}`}>
-              {lastLink.text}
-            </Button>
-          )}
-      </FlexDiv>
-    </div>
-  );
-
   return (
     <>
       <div
@@ -140,7 +50,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
           flex={{ x: "space-between", y: "center" }}
           height100
         >
-          {logoComp}
+          <LogoLink lang={lang} />
 
           <FlexDiv
             flex={{ x: "space-between", y: "center" }}
@@ -154,7 +64,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
                       <Button
                         variant="fancy"
                         small={isMobile}
-                        path={`/${lang}/contact`}
+                        path={`/${lang}${LocalPaths.CONTACT}`}
                         key={key}
                       >
                         {link.text}
@@ -163,7 +73,17 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
                   }
                   return (
                     !isMobileOrTablet &&
-                    (isCta(link) ? tab(link, key) : dropDown(link, key))
+                    (isCta(link) ? (
+                      <TabButton
+                        key={key}
+                        className={styles.tab}
+                        path={`/${lang}${link.link!}`}
+                      >
+                        {link.text}
+                      </TabButton>
+                    ) : (
+                      dropDown(link, lang, key)
+                    ))
                   );
                 })}
               </FlexDiv>
@@ -179,7 +99,34 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
           </FlexDiv>
         </FlexDiv>
       </div>
-      {isMobileOrTablet && sidebarComp}
+      {isMobileOrTablet && <Sidebar links={links} lang={lang} />}
     </>
   );
 };
+
+// Helper components
+export const LogoLink: React.FC<{ lang: LangType }> = ({ lang }) => {
+  const translations = getTranslations(lang);
+  const [, setSidebar] = useAtom(sidebarData);
+  return (
+    <Link
+      path={`/${lang}${LocalPaths.HOME}`}
+      className={styles.logo}
+      aria-label={translations.nav.home}
+      onClick={() => setSidebar(false)}
+    >
+      <Logo />
+    </Link>
+  );
+};
+
+export const dropDown = (navLink: INavLink, lang: LangType, key?: number) => (
+  <TabButton
+    key={key}
+    className={styles.tab}
+    path={`/${lang}${LocalPaths.SERVICE}`}
+    dropdown={navLink.ctaArray}
+  >
+    {navLink.title}
+  </TabButton>
+);

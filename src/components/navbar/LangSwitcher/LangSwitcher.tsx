@@ -1,16 +1,10 @@
 import React, { useEffect } from "react";
 import styles from "./LangSwitcher.module.scss";
 import FlexDiv from "../../reuse/FlexDiv";
-import { ICta } from "../../../data";
 import { Paragraph } from "../../reuse/Paragraph";
 import { atom, useAtom } from "jotai";
 import { Icon } from "../../reuse/Icon";
 import { useNavigate } from "react-router-dom";
-
-export interface DropDownProps {
-  parentPath: string;
-  dropdown: ICta[];
-}
 
 export const langData = atom<LangType>("en");
 
@@ -18,11 +12,11 @@ export const Langs = ["en", "fr"] as const;
 
 export type LangType = typeof Langs[number];
 
-export const LangSwitcher: React.FC = () => {
+export const LangSwitcher: React.FC<{ onClick?: Function }> = ({ onClick }) => {
   const [lang, setLang] = useAtom(langData);
   const navigate = useNavigate();
 
-  const onClick = () => {
+  const langClick = () => {
     const newLang: LangType = lang === "en" ? "fr" : "en";
     const currentPath = window.location.pathname;
     const newLangPath = currentPath.replace(/\/(en|fr)\//, `/${newLang}/`);
@@ -30,6 +24,7 @@ export const LangSwitcher: React.FC = () => {
       navigate(newLangPath);
       setLang(newLang);
     }
+    onClick && onClick();
   };
 
   useEffect(() => {
@@ -44,7 +39,7 @@ export const LangSwitcher: React.FC = () => {
     <FlexDiv
       gapArray={[2]}
       className={styles.langWrapper}
-      onClick={() => onClick()}
+      onClick={() => langClick()}
     >
       <Paragraph level="big" color="yellow">
         {lang.toUpperCase()}

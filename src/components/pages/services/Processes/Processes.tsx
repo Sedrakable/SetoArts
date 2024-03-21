@@ -19,9 +19,9 @@ interface IProcessProps extends IProcess {
 }
 
 const svgArray = [
-  <Analysis className={styles.one} />,
-  <Developer className={styles.two} />,
-  <Draw className={styles.three} />,
+  <Analysis className={styles.one} key="one" />,
+  <Developer className={styles.two} key="two" />,
+  <Draw className={styles.three} key="three" />,
 ];
 const Process: React.FC<IProcessProps> = ({
   title,
@@ -61,7 +61,11 @@ const Process: React.FC<IProcessProps> = ({
         </Paragraph>
         <FlexDiv className={styles.tags} flex={{ x: "flex-start" }} wrap>
           {features?.map((feature: IFeature) => {
-            return <Tag chosen>{feature.title}</Tag>;
+            return (
+              <Tag chosen key={feature.title}>
+                {feature.title}
+              </Tag>
+            );
           })}
         </FlexDiv>
       </FlexDiv>
@@ -93,7 +97,7 @@ export const Processes: React.FC<IProcesses> = ({ processes }) => {
             return (
               <>
                 {key % 2 === 1 && isMobile && svgArray[(key - 1) / 2]}
-                <Process {...process} number={key} key={key} />
+                <Process {...process} number={key} key={process.title} />
               </>
             );
           })}

@@ -55,6 +55,7 @@ export const Modal: React.FC<ModalProps> = ({
   const navigate = useNavigate();
 
   const handleModalClose = () => {
+    console.log("weHere");
     handleClose();
     const newPath = `/${lang}${LocalPaths.ABOUT}`;
     navigate(newPath);
@@ -73,7 +74,7 @@ export const Modal: React.FC<ModalProps> = ({
       >
         <FlexDiv
           className={styles.container}
-          padding={{ vertical: [6, 7, 7, 8], horizontal: [6, 7, 7, 8] }}
+          padding={{ vertical: [6, 7, 7, 8], horizontal: [5, 7, 7, 8] }}
         >
           <FlexDiv className={styles.text}>
             <Title title={title} />
@@ -123,19 +124,21 @@ export const Modal: React.FC<ModalProps> = ({
               />
             )}
 
-            <iframe
-              title={title}
-              src={`https://www.behance.net/embed/project/${behanceProjectId}?ilo0=1`}
-              allowFullScreen
-              loading="lazy"
-              allow="clipboard-write"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
+            {behanceProjectId && (
+              <iframe
+                title={title}
+                src={`https://www.behance.net/embed/project/${behanceProjectId}?ilo0=1`}
+                allowFullScreen
+                loading="lazy"
+                allow="clipboard-write"
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            )}
           </FlexDiv>
-          <ImageGrid customImages={customImages} />
+          <ImageGrid customImages={customImages} version={2} />
           <FlexDiv className={styles.close} padding={{ all: [2, 3, 3, 4] }}>
             <IconButton
-              onClick={handleClose}
+              onClick={handleModalClose}
               iconProps={{ icon: "close", size: "regular" }}
             />
           </FlexDiv>

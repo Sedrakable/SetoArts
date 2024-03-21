@@ -1,5 +1,6 @@
 import * as React from "react";
 import styles from "./ImageGrid.module.scss";
+import cn from "classnames";
 import { ICustomImage } from "../../../../data";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import FlexDiv from "../../../reuse/FlexDiv";
@@ -7,12 +8,14 @@ import { shuffleArray } from "../../../../helpers/functions";
 
 interface ImageGridProps {
   customImages: ICustomImage[];
+  version?: 1 | 2;
   maxImages?: number;
   randomize?: boolean;
 }
 
 export const ImageGrid: React.FC<ImageGridProps> = ({
   customImages,
+  version = 1,
   maxImages,
   randomize,
 }) => {
@@ -22,7 +25,11 @@ export const ImageGrid: React.FC<ImageGridProps> = ({
   }, [customImages, maxImages, randomize]);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={cn(styles.container, {
+        [styles[`version_${version}`]]: version,
+      })}
+    >
       <FlexDiv
         className={styles.wrapper}
         width100

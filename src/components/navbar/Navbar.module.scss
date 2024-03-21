@@ -18,6 +18,7 @@
 }
 
 .logo {
+  @include vars;
   height: var(--logo-size);
 
   transition: 200ms;
@@ -58,80 +59,4 @@
 
   position: absolute;
   left: var(--pad-3);
-}
-
-.sidebar {
-  @include vars;
-  @include flexColumn(flex-start, flex-start);
-
-  position: fixed;
-  width: var(--sidebar-width);
-  height: 100%;
-  transform: translateX(100%);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 12;
-  transition: transform 200ms ease;
-
-  &.isOpen {
-    transform: translateX(0);
-  }
-
-  .closeTab {
-    height: var(--navbar-height);
-    background-color: var(--black);
-    path:global(.x) {
-      fill: var(--white);
-    }
-  }
-
-  .tabs {
-    flex: 1;
-    .tabWrapper {
-      background-color: var(--white);
-      width: 100%;
-      min-height: var(--navbar-height);
-      height: fit-content;
-      border-bottom: 1px solid var(--grey);
-      &:last-child {
-        background-color: transparent;
-        padding: var(--pad-3) var(--pad-4) !important;
-        height: fit-content !important;
-        border-bottom: none;
-        @media (min-width: $tablet) {
-          display: none !important;
-        }
-      }
-      &:nth-last-child(2) {
-        border-bottom-color: var(--white);
-      }
-    }
-
-    // .emailList,
-    // .followUs {
-    //   @include flexColumn(center, flex-start);
-
-    //   width: 100%;
-    //   padding: var(--pad-4);
-    //   padding-bottom: var(--pad-5);
-    //   box-sizing: border-box;
-    //   background-color: var(--black);
-    // }
-
-    // .followUs {
-    //   background-color: var(--grey);
-    // }
-
-    &:after {
-      position: absolute;
-      content: "";
-      width: 100%;
-
-      background-color: var(--black);
-      opacity: 0.95;
-      height: 100vh;
-      z-index: -1;
-    }
-  }
 }

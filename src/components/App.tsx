@@ -1,5 +1,5 @@
 import React, { lazy, useEffect, useRef, Suspense } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { Modal, modalData } from "./reuse/Modal";
 import { useAtom } from "jotai";
 import styles from "./App.module.scss";
@@ -37,8 +37,9 @@ const ServicePage = lazy(() =>
 
 const App = () => {
   const ref = useRef<any>(null);
-  const [modalOpen] = useAtom(modalData);
+  const [modalOpen, setModalOpen] = useAtom(modalData);
   const [lang] = useAtom(langData);
+  const location = useLocation();
 
   const {
     footerData,
@@ -56,6 +57,13 @@ const App = () => {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "auto");
   }, [modalOpen]);
+
+  // Close modal when navigating to /about route
+  useEffect(() => {
+    if (location.pathname === `/${lang}${LocalPaths.ABOUT}`) {
+      setModalOpen(null);
+    }
+  }, [lang, setModalOpen, location]);
 
   return (
     navbarData && (

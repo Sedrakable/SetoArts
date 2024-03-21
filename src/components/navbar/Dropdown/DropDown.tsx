@@ -4,6 +4,8 @@ import FlexDiv from "../../reuse/FlexDiv";
 import { ICta } from "../../../data";
 import { Link } from "../../reuse/Link";
 import { Paragraph } from "../../reuse/Paragraph";
+import { useAtom } from "jotai";
+import { sidebarData } from "../Sidebar";
 
 export interface DropDownProps {
   parentPath: string;
@@ -18,6 +20,7 @@ export const DropDown: React.FC<DropDownProps> = ({
   onClose,
 }) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [, setSidebar] = useAtom(sidebarData);
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -46,7 +49,7 @@ export const DropDown: React.FC<DropDownProps> = ({
     isOpen && (
       <FlexDiv
         flex={{ direction: "column", x: "flex-start" }}
-        gapArray={[2]}
+        gapArray={[3, 3, 2, 2]}
         padding={{ vertical: [3], horizontal: [3] }}
         className={styles.dropdown}
         ref={dropdownRef}
@@ -54,7 +57,10 @@ export const DropDown: React.FC<DropDownProps> = ({
         {dropdown?.map((cta, index) => {
           return (
             <FlexDiv key={index} flex={{ x: "space-between" }} width100>
-              <Link path={`${parentPath}${cta.link!}`}>
+              <Link
+                path={`${parentPath}${cta.link!}`}
+                onClick={() => setSidebar(false)}
+              >
                 <Paragraph level="regular">{cta.text}</Paragraph>
               </Link>
             </FlexDiv>
