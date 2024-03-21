@@ -1,15 +1,21 @@
 {
+  "_createdAt": "2024-02-25T03:41:22Z",
+  "_rev": "9mLWnJtMvL1OgKPLcXjHRo",
+  "_type": "contactPage",
+  "_id": "71b374ce-491e-4f5e-9301-fe2fc484fab8",
+  "lang": "fr",
+  "title": "Contactez",
   "_updatedAt": "2024-02-25T03:42:37Z",
   "form": {
     "_type": "form",
     "_id": "98a0688c-86ed-4eba-a524-37b9412645bd",
     "formFields": {
+      "email": "Email",
       "budget": "Budget",
       "companyName": "Nom de Companie",
       "_type": "fieldPlaceholders",
       "name": "Nom",
-      "message": "Message",
-      "email": "Email"
+      "message": "Message"
     },
     "_updatedAt": "2024-02-25T03:42:18Z",
     "desc": {
@@ -24,11 +30,5 @@
     },
     "_createdAt": "2024-02-25T03:42:18Z",
     "_rev": "9mLWnJtMvL1OgKPLcXjGbY"
-  },
-  "_createdAt": "2024-02-25T03:41:22Z",
-  "_rev": "9mLWnJtMvL1OgKPLcXjHRo",
-  "_type": "contactPage",
-  "_id": "71b374ce-491e-4f5e-9301-fe2fc484fab8",
-  "lang": "fr",
-  "title": "Contactez"
+  }
 }

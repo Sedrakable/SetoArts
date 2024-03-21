@@ -2,13 +2,12 @@ import React, { FC, useState } from "react";
 import { Heading } from "../reuse/Heading";
 import styles from "./TabButton.module.scss";
 import cn from "classnames";
-import { onClickNavigate } from "../../helpers/useNavigation";
 import { ReactComponent as Line } from "../../assets/illu/Line.svg";
 import FlexDiv from "../reuse/FlexDiv";
 import { Icon } from "../reuse/Icon";
 import { DropDown } from "./Dropdown/DropDown";
 import { ICta } from "../../data";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FancyText } from "../reuse/FancyText";
 
 export interface TabButtonProps {
@@ -45,13 +44,14 @@ const TabButton: FC<TabButtonProps> = ({
 }) => {
   const location = useLocation();
   const [dropDownOpen, setDropDownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const onTabClick = (e: React.MouseEvent<HTMLElement>) => {
     if (dropdown) {
       setDropDownOpen((prevState) => !prevState);
     } else {
       onClick && onClick();
-      onClickNavigate(e, path);
+      navigate(path);
     }
   };
 

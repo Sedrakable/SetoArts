@@ -5,7 +5,6 @@ import { useWindowResize } from "../../helpers/useWindowResize";
 import { IconButton } from "../reuse/IconButton";
 import cn from "classnames";
 import { Link } from "../reuse/Link";
-import { onClickNavigate } from "../../helpers/useNavigation";
 import FlexDiv from "../reuse/FlexDiv";
 import { ReactComponent as Logo } from "../../assets/illu/LogoSmall.svg";
 import { Button } from "../reuse/Button";
@@ -41,8 +40,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
 
   const logoComp = (
     <Link
-      onClick={(e) => onClickNavigate(e, `/${lang}${LocalPaths.HOME}`)}
-      href=""
+      path={`/${lang}${LocalPaths.HOME}`}
       className={styles.logo}
       aria-label={translations.nav.home}
     >

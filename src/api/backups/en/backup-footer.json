@@ -1,8 +1,15 @@
 {
-  "_rev": "ov70woV1798blVieqgPo7z",
+  "_createdAt": "2024-01-31T01:41:25Z",
   "_type": "footer",
+  "trademark": "@2024 Seto x Arts",
+  "_updatedAt": "2024-03-02T01:40:36Z",
+  "_rev": "ov70woV1798blVieqgPo7z",
+  "lang": "en",
   "_id": "6153f403-d1ee-43a4-b054-e625df817442",
   "socials": {
+    "_updatedAt": "2024-02-27T01:17:52Z",
+    "_createdAt": "2024-02-27T01:17:52Z",
+    "_rev": "OWI0A10Iz7jJbYSKtGJ4GG",
     "_type": "socials",
     "links": [
       {
@@ -12,10 +19,10 @@
         "_key": "b91e06d42b3b"
       },
       {
+        "_key": "900640cb8eed",
         "_type": "cta",
         "link": "https://www.behance.net/sedraknadzhar",
-        "text": "behance",
-        "_key": "900640cb8eed"
+        "text": "behance"
       },
       {
         "_type": "cta",
@@ -31,10 +38,7 @@
       }
     ],
     "_id": "06d4dfc0-6b4d-4fff-a138-0dca41a1a7df",
-    "title": "Follow Us",
-    "_updatedAt": "2024-02-27T01:17:52Z",
-    "_createdAt": "2024-02-27T01:17:52Z",
-    "_rev": "OWI0A10Iz7jJbYSKtGJ4GG"
+    "title": "Follow Us"
   },
   "legals": [
     {
@@ -45,9 +49,5 @@
       "title": "Privacy Policy",
       "path": "/privacy-policy"
     }
-  ],
-  "trademark": "@2024 Seto x Arts",
-  "lang": "en",
-  "_updatedAt": "2024-03-02T01:40:36Z",
-  "_createdAt": "2024-01-31T01:41:25Z"
+  ]
 }

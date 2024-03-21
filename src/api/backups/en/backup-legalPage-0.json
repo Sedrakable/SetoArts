@@ -1,10 +1,12 @@
 {
-  "_rev": "1X3tbPF0boRjlNqQpQx9AH",
-  "_type": "legalPage",
+  "lang": "en",
   "title": "Terms & Conditions",
-  "_createdAt": "2024-02-27T16:54:48Z",
+  "_updatedAt": "2024-03-06T20:24:14Z",
+  "path": "/terms-and-conditions",
   "data": [
     {
+      "style": "normal",
+      "_key": "8210ac872662",
       "markDefs": [],
       "children": [
         {
@@ -16,12 +18,9 @@
           "_key": "6960e48bcf160"
         }
       ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "8210ac872662"
+      "_type": "block"
     },
     {
-      "style": "normal",
       "_key": "d9a0b5c2a2b3",
       "markDefs": [],
       "children": [
@@ -32,11 +31,10 @@
           "_key": "4fe2ca39d6710"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal"
     },
     {
-      "style": "normal",
-      "_key": "37807b19c522",
       "markDefs": [],
       "children": [
         {
@@ -46,37 +44,39 @@
           "_key": "2ee6ee3038f8"
         }
       ],
-      "_type": "block"
-    },
-    {
-      "children": [
-        {
-          "_key": "2925ef9adcd00",
-          "_type": "span",
-          "marks": [
-            "strong"
-          ],
-          "text": "1. Acceptance of Terms"
-        }
-      ],
       "_type": "block",
       "style": "normal",
-      "_key": "243c23e28e87",
-      "markDefs": []
+      "_key": "37807b19c522"
     },
     {
       "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "marks": [],
-          "text": "By accessing and using the setoxarts.com website and our services, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these terms, you may not use our website or services.",
-          "_key": "93b7d61a58100"
+          "marks": [
+            "strong"
+          ],
+          "text": "1. Acceptance of Terms",
+          "_key": "2925ef9adcd00"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "0f9c9f25c54a"
+      "_key": "243c23e28e87"
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "_key": "0f9c9f25c54a",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "93b7d61a58100",
+          "_type": "span",
+          "marks": [],
+          "text": "By accessing and using the setoxarts.com website and our services, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these terms, you may not use our website or services."
+        }
+      ]
     },
     {
       "_type": "block",
@@ -97,19 +97,18 @@
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [
             "strong"
           ],
           "text": "2. Services Offered",
-          "_key": "4ff34b955fce"
+          "_key": "4ff34b955fce",
+          "_type": "span"
         }
       ],
       "_type": "block",
       "style": "normal"
     },
     {
-      "_key": "c2e699bc343a",
       "markDefs": [],
       "children": [
         {
@@ -120,23 +119,25 @@
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "c2e699bc343a"
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "2de68addd3a4",
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
-          "marks": [],
           "text": "",
-          "_key": "147d66c843f50"
+          "_key": "147d66c843f50",
+          "_type": "span",
+          "marks": []
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "2de68addd3a4"
+      ]
     },
     {
+      "style": "normal",
       "_key": "3bfc5b06495f",
       "markDefs": [],
       "children": [
@@ -149,22 +150,21 @@
           ]
         }
       ],
-      "_type": "block",
-      "style": "normal"
+      "_type": "block"
     },
     {
+      "_key": "88e7d56929cc",
+      "markDefs": [],
       "children": [
         {
+          "_key": "1a9a726604f50",
           "_type": "span",
           "marks": [],
-          "text": "You agree to use our website and services in a lawful and responsible manner. You shall not engage in any conduct that may disrupt or interfere with the functionality of the website or compromise the security of our services.",
-          "_key": "1a9a726604f50"
+          "text": "You agree to use our website and services in a lawful and responsible manner. You shall not engage in any conduct that may disrupt or interfere with the functionality of the website or compromise the security of our services."
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "88e7d56929cc",
-      "markDefs": []
+      "style": "normal"
     },
     {
       "markDefs": [],
@@ -181,7 +181,6 @@
       "_key": "ec2f2bdec02f"
     },
     {
-      "_type": "block",
       "style": "normal",
       "_key": "ce76554f560e",
       "markDefs": [],
@@ -194,12 +193,10 @@
           "text": "4. Intellectual Property",
           "_key": "848e4a520a9a"
         }
-      ]
+      ],
+      "_type": "block"
     },
     {
-      "_type": "block",
-      "style": "normal",
-      "_key": "057c55688e41",
       "markDefs": [],
       "children": [
         {
@@ -208,21 +205,24 @@
           "text": "All content and materials on setoxarts.com, including but not limited to text, images, logos, and designs, are the property of Seto Arts and are protected by intellectual property laws. You may not use, reproduce, or distribute our content without explicit permission.",
           "_key": "70bfbc96a98b0"
         }
-      ]
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "057c55688e41"
     },
     {
-      "style": "normal",
-      "_key": "4ce5e969f787",
-      "markDefs": [],
       "children": [
         {
-          "_key": "324a736bdad80",
           "_type": "span",
           "marks": [],
-          "text": ""
+          "text": "",
+          "_key": "324a736bdad80"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal",
+      "_key": "4ce5e969f787",
+      "markDefs": []
     },
     {
       "markDefs": [],
@@ -241,6 +241,10 @@
       "_key": "2d8e3d1ac4b6"
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "0958e9a5b90c",
+      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -248,13 +252,10 @@
           "text": "Details regarding payment terms, fees, and invoicing for our services are outlined in our separate billing agreement. By engaging with our services, you agree to the terms specified in the billing agreement.",
           "_key": "d8a1b16ca29c0"
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "0958e9a5b90c",
-      "markDefs": []
+      ]
     },
     {
+      "style": "normal",
       "_key": "75ad2563d2af",
       "markDefs": [],
       "children": [
@@ -265,30 +266,25 @@
           "_key": "266005e239dd0"
         }
       ],
-      "_type": "block",
-      "style": "normal"
+      "_type": "block"
     },
     {
-      "_type": "block",
-      "style": "normal",
-      "_key": "70aef31facbb",
       "markDefs": [],
       "children": [
         {
+          "text": "6. Privacy Policy",
           "_key": "3ab2f235b617",
           "_type": "span",
           "marks": [
             "strong"
-          ],
-          "text": "6. Privacy Policy"
+          ]
         }
-      ]
-    },
-    {
+      ],
       "_type": "block",
       "style": "normal",
-      "_key": "7af14e4e17ea",
-      "markDefs": [],
+      "_key": "70aef31facbb"
+    },
+    {
       "children": [
         {
           "text": "Our Privacy Policy outlines how we collect, use, and protect your personal information. By using our website and services, you consent to the practices described in our Privacy Policy.",
@@ -296,40 +292,43 @@
           "_type": "span",
           "marks": []
         }
-      ]
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "7af14e4e17ea",
+      "markDefs": []
     },
     {
-      "style": "normal",
       "_key": "802afb5838cb",
       "markDefs": [],
       "children": [
         {
+          "_key": "86b26222839f0",
           "_type": "span",
           "marks": [],
-          "text": "",
-          "_key": "86b26222839f0"
+          "text": ""
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal"
     },
     {
+      "markDefs": [],
       "children": [
         {
+          "text": "7. Limitation of Liability",
+          "_key": "a6a92b543454",
           "_type": "span",
           "marks": [
             "strong"
-          ],
-          "text": "7. Limitation of Liability",
-          "_key": "a6a92b543454"
+          ]
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "a298f592aa6b",
-      "markDefs": []
+      "_key": "a298f592aa6b"
     },
     {
-      "style": "normal",
       "_key": "011eca8434af",
       "markDefs": [],
       "children": [
@@ -340,23 +339,26 @@
           "text": "Seto Arts shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from the use of our website or services. We do not guarantee the accuracy, completeness, or timeliness of the content on our website."
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal"
     },
     {
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "",
-          "_key": "50b6004548950"
-        }
-      ],
       "_type": "block",
       "style": "normal",
       "_key": "21d9fab8dc0d",
-      "markDefs": []
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "50b6004548950",
+          "_type": "span",
+          "marks": [],
+          "text": ""
+        }
+      ]
     },
     {
+      "style": "normal",
+      "_key": "35214486ffd4",
       "markDefs": [],
       "children": [
         {
@@ -368,23 +370,21 @@
           "_key": "858c00d070de"
         }
       ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "35214486ffd4"
+      "_type": "block"
     },
     {
+      "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [],
           "text": "We reserve the right to terminate or suspend services to any user for any reason, including a breach of these Terms and Conditions.",
-          "_key": "c2cc77b0ba540"
+          "_key": "c2cc77b0ba540",
+          "_type": "span"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "6687d1a27136",
-      "markDefs": []
+      "_key": "6687d1a27136"
     },
     {
       "_type": "block",
@@ -401,37 +401,36 @@
       ]
     },
     {
-      "style": "normal",
-      "_key": "5f3f03ebc45e",
-      "markDefs": [],
       "children": [
         {
-          "text": "9. Governing Law",
           "_key": "56e205789463",
           "_type": "span",
           "marks": [
             "strong"
-          ]
+          ],
+          "text": "9. Governing Law"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal",
+      "_key": "5f3f03ebc45e",
+      "markDefs": []
     },
     {
-      "style": "normal",
-      "_key": "05eb0b0bad7a",
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [],
           "text": "These Terms and Conditions are governed by and construed in accordance with the laws of [your jurisdiction]. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in [your jurisdiction].",
-          "_key": "7e0d637a9a9c0"
+          "_key": "7e0d637a9a9c0",
+          "_type": "span"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal",
+      "_key": "05eb0b0bad7a"
     },
     {
-      "style": "normal",
       "_key": "93185613e581",
       "markDefs": [],
       "children": [
@@ -442,11 +441,10 @@
           "_key": "ca4ad0db52d90"
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal"
     },
     {
-      "style": "normal",
-      "_key": "541e23f770b6",
       "markDefs": [],
       "children": [
         {
@@ -458,39 +456,41 @@
           "_type": "span"
         }
       ],
-      "_type": "block"
-    },
-    {
+      "_type": "block",
       "style": "normal",
-      "_key": "f2a8edc8a76b",
-      "markDefs": [],
-      "children": [
-        {
-          "text": "If you have any questions or concerns regarding these Terms and Conditions, you can contact us at:",
-          "_key": "3f253b6cd27d0",
-          "_type": "span",
-          "marks": []
-        }
-      ],
-      "_type": "block"
+      "_key": "541e23f770b6"
     },
     {
       "markDefs": [],
       "children": [
         {
+          "_type": "span",
           "marks": [],
-          "text": "Seto Arts\n1150 rue Dale\nsedrak005@gmail.com",
-          "_key": "9700b56751f30",
-          "_type": "span"
+          "text": "If you have any questions or concerns regarding these Terms and Conditions, you can contact us at:",
+          "_key": "3f253b6cd27d0"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "20fb11723c9a"
+      "_key": "f2a8edc8a76b"
+    },
+    {
+      "_key": "20fb11723c9a",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Seto Arts\n1150 rue Dale\nsedrak005@gmail.com",
+          "_key": "9700b56751f30"
+        }
+      ],
+      "_type": "block",
+      "style": "normal"
     }
   ],
+  "_createdAt": "2024-02-27T16:54:48Z",
+  "_rev": "1X3tbPF0boRjlNqQpQx9AH",
   "_id": "4a84d5d8-26f6-46e2-a303-ccb2dfbb5f92",
-  "lang": "en",
-  "_updatedAt": "2024-03-06T20:24:14Z",
-  "path": "/terms-and-conditions"
+  "_type": "legalPage"
 }

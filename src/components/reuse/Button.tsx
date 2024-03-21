@@ -7,8 +7,8 @@ import React, {
 import styles from "./Button.module.scss";
 import cn from "classnames";
 import { Heading } from "./Heading";
-import { onClickNavigate } from "../../helpers/useNavigation";
 import { ReactComponent as ButtonStroke } from "../../assets/illu/ButtonStroke.svg";
+import { useNavigate } from "react-router-dom";
 
 export interface ButtonProps {
   variant: "fancy" | "primary" | "secondary";
@@ -25,9 +25,11 @@ export const Button: FC<PropsWithChildren<
     ButtonHTMLAttributes<HTMLButtonElement> &
     AnchorHTMLAttributes<HTMLAnchorElement>
 >> = ({ children, variant, path, disabled, small, fit, ...props }) => {
-  const onClick = (e: React.MouseEvent) => {
+  const navigate = useNavigate();
+
+  const onClick = () => {
     if (path) {
-      return onClickNavigate(e, path);
+      return navigate(path);
     }
 
     if (props?.onClick) {

@@ -1,4 +1,7 @@
 {
+  "lang": "fr",
+  "_updatedAt": "2024-03-08T01:11:15Z",
+  "_createdAt": "2024-03-08T01:06:38Z",
   "_rev": "D5qaY0ApMKkCjx1DEoL9Mu",
   "_type": "navbar",
   "links": [
@@ -9,6 +12,7 @@
       "_type": "localLink"
     },
     {
+      "title": "Services",
       "ctaArray": [
         {
           "_type": "localLink",
@@ -17,16 +21,16 @@
           "_key": "9d5388be39ac"
         },
         {
-          "_key": "9e3c6dd471c9",
           "_type": "localLink",
           "link": "/landing-page",
-          "text": "Page d'atterrissage"
+          "text": "Page d'atterrissage",
+          "_key": "9e3c6dd471c9"
         },
         {
+          "_key": "3cd4c91f1ffe",
           "_type": "localLink",
           "link": "/total-package",
-          "text": "Forfait complet",
-          "_key": "3cd4c91f1ffe"
+          "text": "Forfait complet"
         },
         {
           "link": "/custom-work",
@@ -35,8 +39,7 @@
           "_type": "localLink"
         }
       ],
-      "_key": "5303e3087528",
-      "title": "Services"
+      "_key": "5303e3087528"
     },
     {
       "_type": "localLink",
@@ -45,14 +48,11 @@
       "_key": "05ce4081eec0"
     },
     {
-      "text": "Travaillez avec moi",
-      "_key": "eeac3056ca8e",
       "_type": "localLink",
-      "link": "/contact"
+      "link": "/contact",
+      "text": "Travaillez avec moi",
+      "_key": "eeac3056ca8e"
     }
   ],
-  "_id": "cf54ba16-cf0e-415c-b175-4cef4042bd3b",
-  "lang": "fr",
-  "_updatedAt": "2024-03-08T01:11:15Z",
-  "_createdAt": "2024-03-08T01:06:38Z"
+  "_id": "cf54ba16-cf0e-415c-b175-4cef4042bd3b"
 }

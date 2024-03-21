@@ -11,7 +11,6 @@ import { isCta } from "../navbar/Navbar";
 import { Socials } from "./Socials";
 import { useAtom } from "jotai";
 import { langData } from "../navbar/LangSwitcher/LangSwitcher";
-import { onClickNavigate } from "../../helpers/useNavigation";
 
 const Line: React.FC = () => {
   return <div className={styles.line} />;
@@ -29,11 +28,7 @@ const Nav: React.FC<INavBar> = ({ links }) => {
       {links?.map((link, key) => {
         if (isCta(link)) {
           return (
-            <Link
-              href=""
-              onClick={(e) => onClickNavigate(e, `/${lang}${link?.link}`)}
-              key={key}
-            >
+            <Link path={`/${lang}${link?.link}`} key={key}>
               <Paragraph level="regular" weight="regular" capitalise clickable>
                 {link?.text}
               </Paragraph>
@@ -43,13 +38,7 @@ const Nav: React.FC<INavBar> = ({ links }) => {
           const subLinks = link.ctaArray?.map((link, key) => {
             return (
               <Link
-                href=""
-                onClick={(e) =>
-                  onClickNavigate(
-                    e,
-                    `/${lang}${LocalPaths.SERVICE}${link?.link}`
-                  )
-                }
+                path={`/${lang}${LocalPaths.SERVICE}${link?.link}`}
                 key={key}
               >
                 <Paragraph
@@ -99,7 +88,7 @@ const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
     >
       {legals?.map((cta, key) => {
         return (
-          <Link href={`/${lang}${cta?.path!}`} key={key}>
+          <Link path={`/${lang}${cta?.path!}`} key={key}>
             <Paragraph level="small" weight="weak" color="grey" clickable>
               {cta?.title}
             </Paragraph>

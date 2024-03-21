@@ -54,7 +54,7 @@ export const DropDown: React.FC<DropDownProps> = ({
         {dropdown?.map((cta, index) => {
           return (
             <FlexDiv key={index} flex={{ x: "space-between" }} width100>
-              <Link href={`${parentPath}${cta.link!}`}>
+              <Link path={`${parentPath}${cta.link!}`}>
                 <Paragraph level="regular">{cta.text}</Paragraph>
               </Link>
             </FlexDiv>

@@ -1,23 +1,34 @@
 {
   "_createdAt": "2024-02-23T16:21:48Z",
+  "legals": [
+    {
+      "title": "Termes et conditions",
+      "path": "/terms-and-conditions"
+    },
+    {
+      "title": "Politique de confidentialité",
+      "path": "/privacy-policy"
+    }
+  ],
+  "_rev": "1X3tbPF0boRjlNqQpQxBcD",
   "trademark": "@2024 Seto x Arts",
   "_updatedAt": "2024-03-06T20:24:26Z",
-  "_rev": "1X3tbPF0boRjlNqQpQxBcD",
+  "_type": "footer",
   "_id": "7170174a-5dc3-45cf-8df0-14477ef0674e",
+  "lang": "fr",
   "socials": {
-    "_type": "socials",
     "links": [
       {
+        "_key": "b91e06d42b3b",
         "_type": "cta",
         "link": "https://www.instagram.com/seto.arts/",
-        "text": "instagram",
-        "_key": "b91e06d42b3b"
+        "text": "instagram"
       },
       {
-        "_key": "900640cb8eed",
         "_type": "cta",
         "link": "https://www.behance.net/sedraknadzhar",
-        "text": "behance"
+        "text": "behance",
+        "_key": "900640cb8eed"
       },
       {
         "_type": "cta",
@@ -36,18 +47,7 @@
     "title": "Suivez-nous",
     "_updatedAt": "2024-02-27T01:18:41Z",
     "_createdAt": "2024-02-27T01:18:16Z",
-    "_rev": "OWI0A10Iz7jJbYSKtGJ88S"
-  },
-  "lang": "fr",
-  "legals": [
-    {
-      "title": "Termes et conditions",
-      "path": "/terms-and-conditions"
-    },
-    {
-      "title": "Politique de confidentialité",
-      "path": "/privacy-policy"
-    }
-  ],
-  "_type": "footer"
+    "_rev": "OWI0A10Iz7jJbYSKtGJ88S",
+    "_type": "socials"
+  }
 }
