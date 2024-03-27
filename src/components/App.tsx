@@ -77,7 +77,7 @@ const App = () => {
             <Routes>
               <Route
                 path="/"
-                element={<Navigate to={`/${lang}${LocalPaths.HOME}`} replace />}
+                element={<Navigate to={`/${lang}${LocalPaths.HOME}`} />}
               />
               <Route
                 path={`/${lang}${LocalPaths.HOME}`}
@@ -113,6 +113,7 @@ const App = () => {
                   />
                 );
               })}
+
               <Route path="*" element={<NotFound {...notFoundPageData} />} />
             </Routes>
           </Suspense>
