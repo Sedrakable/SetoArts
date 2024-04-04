@@ -32,7 +32,7 @@
     border-radius: var(--price-wrapper-border-radius);
     width: fit-content;
     margin: 0 auto;
-    height: var(--price-wrapper-height);
+    min-height: var(--price-wrapper-height);
     bottom: 0;
   }
   .scrollWrapper {
@@ -96,7 +96,7 @@
       border: 2px solid var(--yellow);
       border-bottom: none;
       th {
-        padding: var(--pad-3) 0 var(--pad-2) 0;
+        padding: var(--pad-3) var(--pad-2) var(--pad-2) var(--pad-2);
         position: relative;
         vertical-align: bottom;
       }

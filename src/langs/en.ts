@@ -29,4 +29,7 @@ export const enTranslations: Translations = {
     about: "About+Work",
     services: "Services",
   },
+  other: {
+    startAt: "Starting at",
+  },
 };

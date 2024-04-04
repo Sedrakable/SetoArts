@@ -1,6 +1,10 @@
 {
-  "_id": "00da58c7-4dde-42cb-a661-881c98fad9d5",
   "_updatedAt": "2024-03-06T19:30:08Z",
+  "title": "Contact",
+  "_createdAt": "2024-02-25T03:29:55Z",
+  "_type": "contactPage",
+  "lang": "en",
+  "_id": "00da58c7-4dde-42cb-a661-881c98fad9d5",
   "form": {
     "cta": {
       "_type": "cta",
@@ -26,15 +30,11 @@
       "part3": " Please feel free to fill out this form and share details about the project you have in mind."
     }
   },
-  "lang": "en",
-  "_type": "contactPage",
-  "title": "Contact",
+  "_rev": "42dARgouF4fLoQkzWoiL5B",
   "desc": {
-    "part3": " Please feel free to fill out this form and share details about the project you have in mind.",
     "part1": " ",
     "part2": "Hello!",
-    "_type": "fancyText"
-  },
-  "_createdAt": "2024-02-25T03:29:55Z",
-  "_rev": "42dARgouF4fLoQkzWoiL5B"
+    "_type": "fancyText",
+    "part3": " Please feel free to fill out this form and share details about the project you have in mind."
+  }
 }

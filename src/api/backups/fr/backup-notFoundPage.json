@@ -1,4 +1,8 @@
 {
+  "_id": "c736ddd8-1866-456c-ab59-4c57d13dbb65",
+  "lang": "fr",
+  "_updatedAt": "2024-02-27T16:40:50Z",
+  "desc": "Le lien de cette page n'existe pas. Retournez à la page d'accueil pour vous remettre sur la bonne voie",
   "cta": {
     "_type": "cta",
     "text": "page d'accueil"
@@ -6,9 +10,5 @@
   "_createdAt": "2024-02-27T16:39:25Z",
   "_rev": "WjrOfoVSJhJsP6MZtodYCR",
   "_type": "notFoundPage",
-  "_id": "c736ddd8-1866-456c-ab59-4c57d13dbb65",
-  "lang": "fr",
-  "title": "Je ne trouve pas cette page",
-  "_updatedAt": "2024-02-27T16:40:50Z",
-  "desc": "Le lien de cette page n'existe pas. Retournez à la page d'accueil pour vous remettre sur la bonne voie"
+  "title": "Je ne trouve pas cette page"
 }

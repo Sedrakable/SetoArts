@@ -29,4 +29,7 @@ export const frTranslations: Translations = {
     about: "À propos+Travail",
     services: "Services",
   },
+  other: {
+    startAt: "À partir de",
+  },
 };

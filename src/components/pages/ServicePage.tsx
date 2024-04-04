@@ -6,6 +6,7 @@ import { Inspired } from "./blocks/Inspired/Inspired";
 import { Features } from "./services/Features/Features";
 import { Processes } from "./services/Processes/Processes";
 import { WorkSlider } from "./blocks/WorkSlider/WorkSlider";
+import { PriceBlock } from "./blocks/PriceBlock/PriceBlock";
 
 export interface ServicePageProps extends IService {
   hero: IHero;
@@ -21,6 +22,7 @@ export const ServicePage: FC<ServicePageProps> = (props) => {
           {...props?.features}
           variant={props?.processes ? "dark" : "grid"}
         />
+        {props?.price && <PriceBlock price={props?.price} />}
         {props?.processes && <Processes {...props?.processes} />}
         {props?.work && <WorkSlider {...props?.work} />}
         <Inspired />

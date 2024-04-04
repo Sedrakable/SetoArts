@@ -1,5 +1,6 @@
 {
-  "_createdAt": "2024-02-23T16:21:48Z",
+  "_updatedAt": "2024-03-06T20:24:26Z",
+  "_id": "7170174a-5dc3-45cf-8df0-14477ef0674e",
   "legals": [
     {
       "title": "Termes et conditions",
@@ -10,19 +11,22 @@
       "path": "/privacy-policy"
     }
   ],
-  "_rev": "1X3tbPF0boRjlNqQpQxBcD",
-  "trademark": "@2024 Seto x Arts",
-  "_updatedAt": "2024-03-06T20:24:26Z",
   "_type": "footer",
-  "_id": "7170174a-5dc3-45cf-8df0-14477ef0674e",
+  "trademark": "@2024 Seto x Arts",
+  "_rev": "1X3tbPF0boRjlNqQpQxBcD",
   "lang": "fr",
   "socials": {
+    "title": "Suivez-nous",
+    "_updatedAt": "2024-02-27T01:18:41Z",
+    "_createdAt": "2024-02-27T01:18:16Z",
+    "_rev": "OWI0A10Iz7jJbYSKtGJ88S",
+    "_type": "socials",
     "links": [
       {
-        "_key": "b91e06d42b3b",
         "_type": "cta",
         "link": "https://www.instagram.com/seto.arts/",
-        "text": "instagram"
+        "text": "instagram",
+        "_key": "b91e06d42b3b"
       },
       {
         "_type": "cta",
@@ -31,10 +35,10 @@
         "_key": "900640cb8eed"
       },
       {
-        "_type": "cta",
         "link": "https://www.facebook.com",
         "text": "facebook",
-        "_key": "26aeb1acf667"
+        "_key": "26aeb1acf667",
+        "_type": "cta"
       },
       {
         "_type": "cta",
@@ -43,11 +47,7 @@
         "_key": "ec77ef8353ff"
       }
     ],
-    "_id": "60d93d39-dd2b-4c39-831a-ee81fa959b5c",
-    "title": "Suivez-nous",
-    "_updatedAt": "2024-02-27T01:18:41Z",
-    "_createdAt": "2024-02-27T01:18:16Z",
-    "_rev": "OWI0A10Iz7jJbYSKtGJ88S",
-    "_type": "socials"
-  }
+    "_id": "60d93d39-dd2b-4c39-831a-ee81fa959b5c"
+  },
+  "_createdAt": "2024-02-23T16:21:48Z"
 }

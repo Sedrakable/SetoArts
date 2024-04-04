@@ -30,9 +30,14 @@ interface Nav {
   services: string;
 }
 
+interface Other {
+  startAt: string;
+}
+
 export interface Translations {
   buttons: Buttons;
   blockTitles: Titles;
   form: Form;
   nav: Nav;
+  other: Other;
 }

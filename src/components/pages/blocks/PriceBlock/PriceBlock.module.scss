@@ -1,0 +1,11 @@
+@import "../../../../css/mixins.scss";
+
+.wrapper {
+  background-color: var(--yellow);
+  p {
+    text-align: center;
+  }
+  span {
+    color: var(--black);
+  }
+}

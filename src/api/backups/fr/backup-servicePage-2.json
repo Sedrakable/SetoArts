@@ -1,187 +1,310 @@
 {
-  "title": "Travail personnalisé",
-  "_rev": "1X3tbPF0boRjlNqQpUW49H",
-  "features": {
-    "features": [
-      {
-        "customImage": {
-          "_type": "customImage",
-          "alt": "Logo",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-702195cac10049204c7bea608bd22d5b4833764a-3072x4080-jpg",
-              "_type": "reference"
-            }
-          }
-        },
-        "_id": "0ecf1763-c551-419e-8da2-0730ae4c79b1",
-        "title": "Logo",
-        "_updatedAt": "2024-03-06T22:59:53Z",
-        "desc": "Un logo sera méticuleusement conçu avec plusieurs variétés de couleurs, de formes et de tailles pour s'assurer qu'il capture parfaitement l'essence de votre marque.",
-        "_createdAt": "2024-03-06T22:59:53Z",
-        "_rev": "1X3tbPF0boRjlNqQpSzB8p",
-        "_type": "feature"
-      },
-      {
-        "_rev": "42dARgouF4fLoQkzWqWVCa",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-94b6f2686bcbd7b0d55c33be9b343482e496cbce-5626x3393-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Site sur un laptop"
-        },
-        "_id": "9d58e474-5571-4b86-8436-ed0da1fa97fa",
-        "title": "Site web",
-        "_updatedAt": "2024-03-07T02:19:17Z",
-        "desc": "Je vais développer un site web optimisé et entièrement fonctionnel, complet avec des images, des boutons et tous les éléments nécessaires, soigneusement conçus pour refléter l'identité et les valeurs de votre marque.",
-        "_createdAt": "2024-03-07T02:19:17Z"
-      },
-      {
-        "desc": "Je produis des rendus 3D personnalisés qui donnent vie à vos idées avec précision et réalisme.",
-        "_createdAt": "2024-03-07T04:34:04Z",
-        "_rev": "1X3tbPF0boRjlNqQpUViQ7",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-f0718cd7c77913f57b5b8cd1089510c3cc4ffeb0-7680x4320-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "rendus 3D"
-        },
-        "_id": "783bec71-fc78-4cd3-b49e-f35443b4ce42",
-        "title": "Rendus 3D",
-        "_updatedAt": "2024-03-07T04:34:04Z"
-      },
-      {
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "asset": {
-              "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
-              "_type": "reference"
-            },
-            "_type": "image"
-          },
-          "_type": "customImage",
-          "alt": "Collatéraux"
-        },
-        "_id": "ef30571f-3cab-4839-bc73-c172200a6be6",
-        "title": "Collatéraux d'entreprise",
-        "_updatedAt": "2024-03-07T02:12:09Z",
-        "desc": "Je conçois une variété de produits tels que des cartes de visite, des flyers, des sacs, et bien plus encore. Ces collatéraux aident votre marque à avoir une apparence cohérente et attrayante partout.",
-        "_createdAt": "2024-03-06T23:21:55Z",
-        "_rev": "1X3tbPF0boRjlNqQpUE6bn"
-      },
-      {
-        "_id": "f11bced3-d1f3-43cc-a85e-8ad823968815",
-        "title": "Identité visuelle",
-        "_updatedAt": "2024-03-06T22:58:21Z",
-        "desc": "J'élaborerai une apparence unique pour votre marque, la démarquant ainsi de la concurrence.",
-        "_createdAt": "2024-03-06T22:58:21Z",
-        "_rev": "1X3tbPF0boRjlNqQpSyeIt",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-899006ee24f9200e3c66efa47c4607c024dd64b9-5568x3712-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Brand Visual Identity"
+  "_createdAt": "2024-03-07T04:34:21Z",
+  "_rev": "14bF2iHNiRa7syDF0Sg0nV",
+  "_id": "d505dfda-f211-45ea-af4a-dae6a88a0683",
+  "lang": "fr",
+  "processes": null,
+  "hero": {
+    "desc": "Demandez des conceptions uniques et personnalisées adaptées à vos préférences.",
+    "quote": {
+      "rightText": "organisé",
+      "_createdAt": "2024-03-06T19:37:07Z",
+      "_rev": "42dARgouF4fLoQkzWojxBT",
+      "_type": "quote",
+      "leftText": "Chaos",
+      "hiddenTitle": "Quote French",
+      "_id": "d8519909-fabe-4263-8a36-5f89fc22f968",
+      "_updatedAt": "2024-03-06T19:38:56Z"
+    },
+    "_type": "hero",
+    "customImage": {
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-2f885c2481740b609111eb9f73accd20929ab9ef-1080x720-png",
+          "_type": "reference"
         }
       },
-      {
-        "_createdAt": "2024-03-06T23:26:13Z",
-        "_rev": "42dARgouF4fLoQkzWq3yIQ",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "asset": {
-              "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
-              "_type": "reference"
-            },
-            "_type": "image"
-          },
-          "_type": "customImage",
-          "alt": "Raffinements"
-        },
-        "_id": "625459c7-d142-40b3-aa85-055ef734efd1",
-        "title": "Raffinements de designs",
-        "_updatedAt": "2024-03-06T23:26:13Z",
-        "desc": "J'améliore vos designs déjà existants pour qu'ils reflètent exactement l'image de votre marque."
-      },
-      {
-        "title": "...",
-        "_updatedAt": "2024-03-07T04:35:18Z",
-        "desc": "Contactez-moi et dites-moi ce que vous avez en tête.",
-        "_createdAt": "2024-03-07T04:35:18Z",
-        "_rev": "1X3tbPF0boRjlNqQpUVvUR",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-2de92c703a09a355235addc52336c79bcfb2170e-3840x2160-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Points d'interogations"
-        },
-        "_id": "017d6a8b-0f64-4cea-9d13-7a12f691219a"
-      }
-    ]
+      "_type": "customImage",
+      "alt": "Travail personnalisé"
+    },
+    "title": {
+      "part1": "Travail personnalisé",
+      "part2": "De logos à vidéos",
+      "_type": "fancyText"
+    }
   },
-  "path": "/custom-work",
-  "processes": null,
-  "lang": "fr",
   "work": {
     "title": null,
     "works": [
       {
         "slug": {
-          "_type": "slug",
-          "current": "steampunk-dynasty"
+          "current": "b-nest",
+          "_type": "slug"
         },
         "customImages": [
           {
+            "_type": "customImage",
+            "alt": "Cream Jar",
+            "_key": "293a52fdaf4d",
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-f316d94102f08f972316d7e9023bef8db956fa70-1920x1080-png",
+                "_ref": "image-273e87e7e0c3077c3aa70a2b504ae9f18333c069-2000x1300-jpg",
+                "_type": "reference"
+              }
+            }
+          },
+          {
+            "alt": "Research",
+            "_key": "9936a8978659",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-de0902948e760435d7c77046b7a126d257988c9b-2000x1301-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage"
+          },
+          {
+            "image": {
+              "asset": {
+                "_ref": "image-afc8d88a256ef8d0fe4bf2cfffd0d634276271cf-2000x901-jpg",
+                "_type": "reference"
+              },
+              "_type": "image"
+            },
+            "_type": "customImage",
+            "alt": "Logo Design",
+            "_key": "e57c33be7681"
+          },
+          {
+            "_key": "3baf8857d245",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-65897a93a7676bc6dc9832cc982b2cd338b6cfa4-2000x1301-jpg",
                 "_type": "reference"
               }
             },
             "_type": "customImage",
-            "alt": "deck on deck",
-            "_key": "3493a5b9c083"
+            "alt": "Logo Scalable and Light"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-ebf430c498b3e165f29da0f1890f2a46e1e7b365-2000x1301-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Logo Scalable and Dark",
+            "_key": "2a76714169a1"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
                 "_type": "reference",
-                "_ref": "image-97cb0621782ac2ab666db3aa4049be4385ec44c3-1920x1080-png"
+                "_ref": "image-96e804272f850d6ff969864cf705816c7ccc4c73-2000x901-jpg"
               }
             },
             "_type": "customImage",
-            "alt": "back of the cards spread",
-            "_key": "42ff436f1c29"
+            "alt": "Word Mark",
+            "_key": "282ecf4f2d0e"
           },
           {
+            "_type": "customImage",
+            "alt": "Color System",
+            "_key": "d368eadcd21c",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-c4a6ece6041be82861f8ba42720a49bb784d495c-2000x1301-jpg",
+                "_type": "reference"
+              }
+            }
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-9781a50cbc987f87b68e320468583962f5b4db6d-2000x1301-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Typography",
+            "_key": "c538a8b29f37"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-0f4cef381203136af106d8ab2ee4fcaf268c410d-2000x901-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Textures",
+            "_key": "4b58fcbd6a97"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-836d7f079eb3e74d406ddfd377dde5e55f047593-2000x1301-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Brand Voice",
+            "_key": "82576573d025"
+          },
+          {
+            "_type": "customImage",
+            "alt": "Gear",
+            "_key": "afa52e846f41",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-755bb30222304f846ac89f8c0ab82ed6c4340fb3-2000x1301-jpg",
+                "_type": "reference"
+              }
+            }
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-2b37c2b2420a1d7f4f4e689ed40f5e4ee9081472-2000x1301-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Digital Adoptation",
+            "_key": "27b5945f661f"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-75248c55e6de87de6d5bc01af43b0b3342314566-3999x2662-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Bee hive",
+            "_key": "e33d209e3a75"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-b96612762e9a8dae0174f04becc949c6645caf32-5184x3456-jpg"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Honey",
+            "_key": "ecc9ddfde67d"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-b3b034fa93c96a8af78565ddc8b5eeb2f8f5f217-4096x3072-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Familly",
+            "_key": "8ad7eb1b8f39"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-5c091eb124a30bd71ef32e1a5b0b200eda380cc1-3072x4096-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Bees",
+            "_key": "4c442cae916b"
+          }
+        ],
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-c828375b67dfd06c1a6ad4595bcdd10ae13ea2c9-2000x1301-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "B'nest logo"
+        },
+        "title": "B'nest",
+        "desc": "B'nest is more than just a cream company; it's a celebration of natural goodness and family traditions. Rooted in the heart of nature, B'nest crafts luxurious creams using locally sourced honey from artisanal beekeepers. Our brand embodies warmth, authenticity, and the timeless joy of shared moments. Each jar of B'nest cream is a testament to our commitment to quality, purity, and the simple pleasures of life. Join us on a journey where every scoop is a taste of wholesome indulgence, where tradition meets innovation in perfect harmony.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "https://www.behance.net/gallery/195033325/Bnest-Brand-Design-Project",
+          "text": "Behance"
+        }
+      },
+      {
+        "thumbnailImage": {
+          "alt": "steampunk dynasty thumbnail",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-127a8d59167aab266c9d468295cdb182accb85cd-1920x1080-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "title": "Steampunk Dynasty",
+        "desc": "Welcome to the world of Steampunk Dynasty! Imagine holding a deck of playing cards that transports you to a fascinating retro-futuristic world, filled with steam-powered machinery and Victorian-era elegance.\n\nWe are excited to introduce not just one, but four unique decks with distinct colour schemes, each representing one of the four suits in the deck. But we didn't stop there - to fully immerse you in this captivating world, we've also created a novel called Steampunk Dynasty: Gears and Glory. Get ready to experience a thrilling adventure and discover the stories behind each of the four dynasties.\n\nThe world of Steampunk is a mesmerizing blend of the Victorian era and retro-futuristic science fiction, powered by steam machinery. This unique combination of elegance and creativity has given rise to a multitude of fascinating and inspiring ideas. The decks of the Vostok Cards collection embody this spirit, with their intricate designs, luxurious look and feel, and attention to detail. Each deck is uniquely crafted to represent a specific dynasty or suit, with elements that beautifully capture the essence of the Steampunk world.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
+          "text": "Kickstarter"
+        },
+        "slug": {
+          "current": "steampunk-dynasty",
+          "_type": "slug"
+        },
+        "customImages": [
+          {
+            "alt": "deck on deck",
+            "_key": "3493a5b9c083",
+            "image": {
+              "asset": {
+                "_ref": "image-f316d94102f08f972316d7e9023bef8db956fa70-1920x1080-png",
+                "_type": "reference"
+              },
+              "_type": "image"
+            },
+            "_type": "customImage"
+          },
+          {
+            "_type": "customImage",
+            "alt": "back of the cards spread",
+            "_key": "42ff436f1c29",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-97cb0621782ac2ab666db3aa4049be4385ec44c3-1920x1080-png",
+                "_type": "reference"
+              }
+            }
+          },
+          {
+            "_type": "customImage",
             "alt": "Cards closup",
             "_key": "deaaa24add5a",
             "image": {
@@ -190,8 +313,7 @@
                 "_ref": "image-ed119641fb51b8fc50bbbb699f450dbe7bef9879-1920x1080-png",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage"
+            }
           },
           {
             "image": {
@@ -209,8 +331,8 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-bbf924f7c9d2127c98f8e0941cf2c4e3a1f1421f-1921x1080-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-bbf924f7c9d2127c98f8e0941cf2c4e3a1f1421f-1921x1080-png"
               }
             },
             "_type": "customImage",
@@ -218,7 +340,6 @@
             "_key": "6a2cfa9571bb"
           },
           {
-            "alt": "Amber deck variant",
             "_key": "45675be26708",
             "image": {
               "_type": "image",
@@ -227,7 +348,8 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Amber deck variant"
           },
           {
             "image": {
@@ -242,71 +364,71 @@
             "_key": "9e63436e642c"
           },
           {
+            "_type": "customImage",
             "alt": "Crimson deck variant",
             "_key": "6f56e398952c",
             "image": {
-              "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-1982afda61dc7a46d8023ab42b482d8aa11cb08b-1921x1080-png"
-              }
-            },
-            "_type": "customImage"
-          },
-          {
-            "alt": "Cards grid",
-            "_key": "e7919640053d",
-            "image": {
-              "asset": {
-                "_type": "reference",
-                "_ref": "image-992adbf34a18d7df4b133b4a53b8a2ea74920a0b-1920x1440-png"
+                "_ref": "image-1982afda61dc7a46d8023ab42b482d8aa11cb08b-1921x1080-png",
+                "_type": "reference"
               },
               "_type": "image"
+            }
+          },
+          {
+            "_key": "e7919640053d",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-992adbf34a18d7df4b133b4a53b8a2ea74920a0b-1920x1440-png",
+                "_type": "reference"
+              }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Cards grid"
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-95fdeec71ff834ee1914874008d029b9fb7752a8-800x800-gif",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Card Details",
             "_key": "23af887ae7a1"
           },
           {
+            "_type": "customImage",
+            "alt": "Jokers",
+            "_key": "3877560d28fd",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-919a1ef64c058f674551ca2c66e86fc21c29ac01-1920x1080-png",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Jokers",
-            "_key": "3877560d28fd"
-          },
-          {
-            "_type": "customImage",
-            "alt": "Map",
-            "_key": "f96615eb0d5b",
-            "image": {
-              "_type": "image",
-              "asset": {
-                "_ref": "image-306f3f22dfc3f3093945df7f8418c580c469a454-1920x1440-png",
-                "_type": "reference"
-              }
             }
           },
           {
             "image": {
+              "asset": {
+                "_ref": "image-306f3f22dfc3f3093945df7f8418c580c469a454-1920x1440-png",
+                "_type": "reference"
+              },
+              "_type": "image"
+            },
+            "_type": "customImage",
+            "alt": "Map",
+            "_key": "f96615eb0d5b"
+          },
+          {
+            "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-f87a484d2b1ef8d51b2254fdc2fce29435cd38fe-1920x1080-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-f87a484d2b1ef8d51b2254fdc2fce29435cd38fe-1920x1080-png"
               }
             },
             "_type": "customImage",
@@ -314,8 +436,6 @@
             "_key": "a5f1ed5ade1c"
           },
           {
-            "alt": "Back Cover",
-            "_key": "bfdb9882a33c",
             "image": {
               "_type": "image",
               "asset": {
@@ -323,21 +443,25 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Back Cover",
+            "_key": "bfdb9882a33c"
           },
           {
+            "alt": "Book Open",
+            "_key": "7856b7cab3e6",
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-26be4fdd13be6a35617f55c93ec6a0532ef688ed-1920x1440-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-26be4fdd13be6a35617f55c93ec6a0532ef688ed-1920x1440-png"
               }
             },
-            "_type": "customImage",
-            "alt": "Book Open",
-            "_key": "7856b7cab3e6"
+            "_type": "customImage"
           },
           {
+            "alt": "Ebook",
+            "_key": "01f76448fec1",
             "image": {
               "_type": "image",
               "asset": {
@@ -345,11 +469,11 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Ebook",
-            "_key": "01f76448fec1"
+            "_type": "customImage"
           },
           {
+            "alt": "Coin",
+            "_key": "c4c73fbabd8c",
             "image": {
               "_type": "image",
               "asset": {
@@ -357,11 +481,11 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Coin",
-            "_key": "c4c73fbabd8c"
+            "_type": "customImage"
           },
           {
+            "alt": "Coins",
+            "_key": "e86c9f4acea8",
             "image": {
               "_type": "image",
               "asset": {
@@ -369,37 +493,33 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Coins",
-            "_key": "e86c9f4acea8"
+            "_type": "customImage"
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-2cbcb19110ade4051db20804a96736f895d7c992-1920x1440-png",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Artbook",
             "_key": "d28e6118fad0"
           },
           {
-            "_type": "customImage",
             "alt": "Box",
             "_key": "3e69c9d21de2",
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-fea25910b3a9b7f6b2e538f9d7f198aa8455e3f3-1920x1080-png",
                 "_type": "reference"
-              }
-            }
+              },
+              "_type": "image"
+            },
+            "_type": "customImage"
           },
           {
-            "alt": "Combo",
-            "_key": "c95b1d58187f",
             "image": {
               "_type": "image",
               "asset": {
@@ -407,58 +527,24 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Combo",
+            "_key": "c95b1d58187f"
           }
-        ],
-        "thumbnailImage": {
-          "image": {
-            "asset": {
-              "_ref": "image-127a8d59167aab266c9d468295cdb182accb85cd-1920x1080-png",
-              "_type": "reference"
-            },
-            "_type": "image"
-          },
-          "_type": "customImage",
-          "alt": "steampunk dynasty thumbnail"
-        },
-        "title": "Steampunk Dynasty",
-        "desc": "Welcome to the world of Steampunk Dynasty! Imagine holding a deck of playing cards that transports you to a fascinating retro-futuristic world, filled with steam-powered machinery and Victorian-era elegance.\n\nWe are excited to introduce not just one, but four unique decks with distinct colour schemes, each representing one of the four suits in the deck. But we didn't stop there - to fully immerse you in this captivating world, we've also created a novel called Steampunk Dynasty: Gears and Glory. Get ready to experience a thrilling adventure and discover the stories behind each of the four dynasties.\n\nThe world of Steampunk is a mesmerizing blend of the Victorian era and retro-futuristic science fiction, powered by steam machinery. This unique combination of elegance and creativity has given rise to a multitude of fascinating and inspiring ideas. The decks of the Vostok Cards collection embody this spirit, with their intricate designs, luxurious look and feel, and attention to detail. Each deck is uniquely crafted to represent a specific dynasty or suit, with elements that beautifully capture the essence of the Steampunk world.",
-        "primaryLink": {
-          "_type": "cta",
-          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
-          "text": "Kickstarter"
-        }
+        ]
       },
       {
-        "thumbnailImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-7ad4429c6d3f7014f475bd2acb6bb6478f297cc1-3872x2592-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Animal Gangdom Deck"
-        },
-        "title": "Animal Gangdom",
-        "desc": "Did you ever imagine a card where the Jack of Spades is in a tracksuit, has a ski mask on, and not to mention is a wolf!? In this deck, every suit is associated with a different gang, from a different culture and a different animal kingdom. Every character has its own personality, while still keeping the traditional, minimalistic look of a playing card. ",
-        "primaryLink": {
-          "_type": "cta",
-          "link": "https://www.kickstarter.com/projects/vostokcards/vostok-cards-animal-gangdom",
-          "text": "Kickstarter"
-        },
         "slug": {
-          "current": "animal-gangdom",
-          "_type": "slug"
+          "_type": "slug",
+          "current": "animal-gangdom"
         },
         "customImages": [
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-066f2dc54b8e0981e0488e73a21dacac2006dc7d-3872x2592-jpg",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-066f2dc54b8e0981e0488e73a21dacac2006dc7d-3872x2592-jpg"
               }
             },
             "_type": "customImage",
@@ -466,8 +552,6 @@
             "_key": "8d6a335fdad6"
           },
           {
-            "alt": "Back of Tuck Box",
-            "_key": "8e6508ad3a78",
             "image": {
               "_type": "image",
               "asset": {
@@ -475,26 +559,28 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
-          },
-          {
             "_type": "customImage",
-            "alt": "Card Close Up",
-            "_key": "fa8a37fd1c30",
-            "image": {
-              "asset": {
-                "_ref": "image-e3f78c6d3ba2adf84667165b348839a875445ab7-3872x2592-jpg",
-                "_type": "reference"
-              },
-              "_type": "image"
-            }
+            "alt": "Back of Tuck Box",
+            "_key": "8e6508ad3a78"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-f1e14eb5b9906cef109371b1153c12ce1527c57a-3872x2592-jpg"
+                "_ref": "image-e3f78c6d3ba2adf84667165b348839a875445ab7-3872x2592-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Card Close Up",
+            "_key": "fa8a37fd1c30"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-f1e14eb5b9906cef109371b1153c12ce1527c57a-3872x2592-jpg",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
@@ -514,16 +600,16 @@
             "_key": "b8f520def095"
           },
           {
-            "_type": "customImage",
-            "alt": "Jack and Queen of Clubs",
-            "_key": "9527755e234b",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-0009a96eff1e8068c698a717db11e6066a99080a-2250x2250-png",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Jack and Queen of Clubs",
+            "_key": "9527755e234b"
           },
           {
             "image": {
@@ -538,7 +624,6 @@
             "_key": "08a1b64e8c9d"
           },
           {
-            "_key": "a716648b334b",
             "image": {
               "_type": "image",
               "asset": {
@@ -547,15 +632,16 @@
               }
             },
             "_type": "customImage",
-            "alt": "Jack and Queen of Hearts"
+            "alt": "Jack and Queen of Hearts",
+            "_key": "a716648b334b"
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-92bf97b44398739f22d640c18640d5c44277d515-2250x2250-png",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Jack and Queen of Diamonds",
@@ -574,7 +660,6 @@
             "_key": "e9f8914a8ebd"
           },
           {
-            "_key": "1396efeba39c",
             "image": {
               "_type": "image",
               "asset": {
@@ -583,7 +668,8 @@
               }
             },
             "_type": "customImage",
-            "alt": "King and Ace of Spades"
+            "alt": "King and Ace of Spades",
+            "_key": "1396efeba39c"
           },
           {
             "image": {
@@ -601,8 +687,8 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-1966c272d4fe8126dabdd87db44930cdd7c328c2-2250x2250-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-1966c272d4fe8126dabdd87db44930cdd7c328c2-2250x2250-png"
               }
             },
             "_type": "customImage",
@@ -621,42 +707,154 @@
             "alt": "Playing with the Cards",
             "_key": "f275d27b6cbd"
           }
-        ]
+        ],
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-7ad4429c6d3f7014f475bd2acb6bb6478f297cc1-3872x2592-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Animal Gangdom Deck"
+        },
+        "title": "Animal Gangdom",
+        "desc": "Did you ever imagine a card where the Jack of Spades is in a tracksuit, has a ski mask on, and not to mention is a wolf!? In this deck, every suit is associated with a different gang, from a different culture and a different animal kingdom. Every character has its own personality, while still keeping the traditional, minimalistic look of a playing card. ",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "https://www.kickstarter.com/projects/vostokcards/vostok-cards-animal-gangdom",
+          "text": "Kickstarter"
+        }
       }
     ]
   },
-  "_id": "d505dfda-f211-45ea-af4a-dae6a88a0683",
   "_type": "servicePage",
-  "hero": {
-    "customImage": {
-      "alt": "Travail personnalisé",
-      "image": {
-        "_type": "image",
-        "asset": {
-          "_ref": "image-96bf125db06bcac2f30c0b9bd3110ea00374d9c4-4712x3366-jpg",
-          "_type": "reference"
-        }
+  "title": "Travail personnalisé",
+  "features": {
+    "features": [
+      {
+        "_rev": "OEnRojb5pXWjE2sC6rNTvj",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Logo"
+        },
+        "_id": "0ecf1763-c551-419e-8da2-0730ae4c79b1",
+        "title": "Logo",
+        "_updatedAt": "2024-03-30T19:49:17Z",
+        "desc": "Je vais méticuleusement concevoir un logo avec plusieurs variétés de couleur, de forme et de taille pour m'assurer qu'il capture parfaitement l'essence de votre marque.",
+        "_createdAt": "2024-03-06T22:59:53Z"
       },
-      "_type": "customImage"
-    },
-    "title": {
-      "part1": "Travail personnalisé",
-      "part2": "De logos à vidéos",
-      "_type": "fancyText"
-    },
-    "desc": "Demandez des conceptions uniques et personnalisées adaptées à vos préférences.",
-    "quote": {
-      "_updatedAt": "2024-03-06T19:38:56Z",
-      "rightText": "organisé",
-      "_createdAt": "2024-03-06T19:37:07Z",
-      "_rev": "42dARgouF4fLoQkzWojxBT",
-      "_type": "quote",
-      "leftText": "Chaos",
-      "hiddenTitle": "Quote French",
-      "_id": "d8519909-fabe-4263-8a36-5f89fc22f968"
-    },
-    "_type": "hero"
+      {
+        "_createdAt": "2024-03-31T21:16:56Z",
+        "_rev": "OEnRojb5pXWjE2sC6tiaRj",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-785499dbb912ca57216d820f54ea770c44e43f26-1920x1080-png"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Maquettes de jeux de cartes personnalisés"
+        },
+        "_id": "4f034b60-d9e2-43c7-976a-0cd38c82076c",
+        "title": "Conception du produit",
+        "_updatedAt": "2024-03-31T21:16:56Z",
+        "desc": "De la conception à la réalisation, je travaillerai en étroite collaboration avec vous pour transformer vos idées en conceptions innovantes et fonctionnelles qui se démarqueront sur le marché et qui résonneront avec votre public."
+      },
+      {
+        "_updatedAt": "2024-03-31T21:11:48Z",
+        "desc": "Je produirai des visuels et des images uniques adaptés à votre marque, en veillant à ce que votre message soit percutant et mémorable.",
+        "_createdAt": "2024-03-07T02:24:51Z",
+        "_rev": "OEnRojb5pXWjE2sC6ti2hE",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-b83a5e92880473b025e2e6492bde9e0407905f28-4001x4000-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Art personnalisé - Camarade Boris"
+        },
+        "_id": "8efc470a-caa8-428c-ae69-dc49d8c04a55",
+        "title": "art personnalisé"
+      },
+      {
+        "_rev": "YXByP76OkInEwmmjNaq0is",
+        "_type": "feature",
+        "customImage": {
+          "_type": "customImage",
+          "alt": "rendus 3D",
+          "image": {
+            "asset": {
+              "_ref": "image-273e87e7e0c3077c3aa70a2b504ae9f18333c069-2000x1300-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          }
+        },
+        "_id": "783bec71-fc78-4cd3-b49e-f35443b4ce42",
+        "title": "Rendus 3D",
+        "_updatedAt": "2024-03-30T17:15:41Z",
+        "desc": "Je produis des rendus 3D personnalisés qui donnent vie à vos idées avec précision et réalisme.",
+        "_createdAt": "2024-03-07T04:34:04Z"
+      },
+      {
+        "desc": "J'améliore vos designs déjà existants pour qu'ils reflètent exactement l'image de votre marque.",
+        "_createdAt": "2024-03-06T23:26:13Z",
+        "_rev": "42dARgouF4fLoQkzWq3yIQ",
+        "_type": "feature",
+        "customImage": {
+          "_type": "customImage",
+          "alt": "Raffinements",
+          "image": {
+            "asset": {
+              "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          }
+        },
+        "_id": "625459c7-d142-40b3-aa85-055ef734efd1",
+        "title": "Raffinements de designs",
+        "_updatedAt": "2024-03-06T23:26:13Z"
+      },
+      {
+        "desc": "Contactez-moi et dites-moi ce que vous avez en tête.",
+        "_createdAt": "2024-03-07T04:35:18Z",
+        "_rev": "1X3tbPF0boRjlNqQpUVvUR",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Points d'interogations",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-2de92c703a09a355235addc52336c79bcfb2170e-3840x2160-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "_id": "017d6a8b-0f64-4cea-9d13-7a12f691219a",
+        "title": "...",
+        "_updatedAt": "2024-03-07T04:35:18Z"
+      }
+    ]
   },
-  "_createdAt": "2024-03-07T04:34:21Z",
-  "_updatedAt": "2024-03-07T04:37:04Z"
+  "_updatedAt": "2024-03-30T17:59:42Z",
+  "path": "/custom-work"
 }

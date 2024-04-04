@@ -50,9 +50,8 @@ export interface IService {
   title: string;
   path: string;
   features: IFeatures;
-
   processes: IProcesses;
-  price?: number;
+  price?: string;
 }
 
 export interface IFeatures {

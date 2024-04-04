@@ -66,7 +66,10 @@ export const ServicesGrid: React.FC<{ services: IService[] }> = ({
                           color="yellow"
                           weight="regular"
                         >
-                          {service?.price.toString() + "CAD"}
+                          {translations.other.startAt +
+                            " " +
+                            service?.price +
+                            "CAD"}
                         </Paragraph>
                       </FlexDiv>
                     )}

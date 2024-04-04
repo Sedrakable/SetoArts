@@ -6,13 +6,12 @@
   "_type": "navbar",
   "links": [
     {
-      "link": "/home",
       "text": "Accueil",
       "_key": "57469334049d",
-      "_type": "localLink"
+      "_type": "localLink",
+      "link": "/home"
     },
     {
-      "title": "Services",
       "ctaArray": [
         {
           "_type": "localLink",
@@ -27,19 +26,20 @@
           "_key": "9e3c6dd471c9"
         },
         {
+          "text": "Forfait complet",
           "_key": "3cd4c91f1ffe",
           "_type": "localLink",
-          "link": "/total-package",
-          "text": "Forfait complet"
+          "link": "/total-package"
         },
         {
+          "_type": "localLink",
           "link": "/custom-work",
           "text": "Travail sur mesure",
-          "_key": "f77d3ff7288d",
-          "_type": "localLink"
+          "_key": "f77d3ff7288d"
         }
       ],
-      "_key": "5303e3087528"
+      "_key": "5303e3087528",
+      "title": "Services"
     },
     {
       "_type": "localLink",
