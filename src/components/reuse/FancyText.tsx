@@ -53,7 +53,7 @@ export const FancyText: React.FC<FancyTextProps> = ({
           width100
           wrap
         >
-          <Heading font="Seto" as="h2" level="2" color={colorChoose}>
+          <Heading font="Seto" as="h1" level="2" color={colorChoose}>
             <>
               {part1} <CursiveText /> {part3}
             </>

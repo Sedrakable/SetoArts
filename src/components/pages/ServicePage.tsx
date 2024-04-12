@@ -7,6 +7,7 @@ import { Features } from "./services/Features/Features";
 import { Processes } from "./services/Processes/Processes";
 import { WorkSlider } from "./blocks/WorkSlider/WorkSlider";
 import { PriceBlock } from "./blocks/PriceBlock/PriceBlock";
+import { SEO } from "../SEO";
 
 export interface ServicePageProps extends IService {
   hero: IHero;
@@ -17,6 +18,12 @@ export const ServicePage: FC<ServicePageProps> = (props) => {
   return (
     props && (
       <>
+        <SEO
+          title={props.title}
+          description={props.hero.desc}
+          imgUrl="https://i.imgur.com/u9EH6vH.png"
+          url="https://www.setoxarts.com/en/home"
+        />
         <Hero {...props?.hero} version={2} />
         <Features
           {...props?.features}

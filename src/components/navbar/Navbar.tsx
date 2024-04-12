@@ -20,7 +20,6 @@ export const isCta = (link: INavLink | ICta): link is ICta => {
 
 export const Navbar: React.FC<INavBar> = ({ links }) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
-
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const [lang] = useAtom(langData);
