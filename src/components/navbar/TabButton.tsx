@@ -56,7 +56,7 @@ const TabButton: FC<TabButtonProps> = ({
   };
 
   return (
-    <nav
+    <li
       onClick={(e) => onTabClick(e)}
       className={cn(styles.tabButton, className)}
     >
@@ -79,7 +79,7 @@ const TabButton: FC<TabButtonProps> = ({
           onClose={() => setDropDownOpen(false)}
         />
       )}
-    </nav>
+    </li>
   );
 };
 

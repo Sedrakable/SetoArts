@@ -19,6 +19,7 @@ export const Inspired: React.FC = () => {
       className={styles.block}
       padding={{ vertical: [6, 7, 7, 8] }}
       width100
+      as="section"
     >
       <FlexDiv
         className={styles.wrapper}

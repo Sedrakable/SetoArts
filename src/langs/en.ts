@@ -10,6 +10,7 @@ export const enTranslations: Translations = {
     aboutMe: "About Me",
     work: "Work",
     contact: "Contact",
+    reviews: "Reviews",
   },
   buttons: {
     workWithMe: "Work with me",
@@ -23,6 +24,7 @@ export const enTranslations: Translations = {
     companyName: "Company Name",
     budget: "Budget",
     message: "Message*",
+    sent: "Email Was Sent",
   },
   nav: {
     home: "Home",

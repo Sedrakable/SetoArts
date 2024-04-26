@@ -19,6 +19,7 @@ const Feature: React.FC<IFeature> = ({ title, customImage, desc }) => {
       flex={{ direction: "column", x: "flex-start" }}
       width100
       className={styles.container}
+      as="li"
     >
       <div className={styles.imgWrapper}>
         <SanityImage {...customImage} res={20} />
@@ -35,7 +36,7 @@ const Feature: React.FC<IFeature> = ({ title, customImage, desc }) => {
             {title}
           </Paragraph>
         ) : (
-          <Heading font="Cursive" level="5" as="h5" color="black">
+          <Heading font="Cursive" level="5" as="h3" color="black">
             {title}
           </Heading>
         )}
@@ -65,6 +66,7 @@ export const Features: React.FC<FeaturesProps> = ({
         flex={{ y: "flex-start" }}
         width100
         className={cn(styles.features, styles[variant])}
+        as="ul"
       >
         {features?.map((feature: IFeature, key) => {
           return <Feature {...feature} key={key} />;

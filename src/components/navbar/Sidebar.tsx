@@ -31,6 +31,7 @@ export const Sidebar: React.FC<{
       flex={{ x: "flex-start" }}
       padding={{ horizontal: [4, 6, 0, 0], vertical: [3, 4, 0, 0] }}
       onClick={() => onClick && onClick()}
+      as="li"
     >
       {child}
     </FlexDiv>
@@ -60,6 +61,7 @@ export const Sidebar: React.FC<{
         className={styles.tabs}
         flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
         width100
+        as="ul"
       >
         {links?.map((link: INavLink | ICta, key) => {
           if (key !== links.length - 1) {

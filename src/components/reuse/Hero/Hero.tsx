@@ -31,7 +31,7 @@ export const Hero: React.FC<HeroProps> = ({
   const { isMobileOrTablet } = useWindowResize();
   const [lang] = useAtom(langData);
   return (
-    <div className={cn(styles.hero)}>
+    <header className={cn(styles.hero)}>
       {!isMobileOrTablet && (
         <div className={styles.quote}>
           <Quote {...quote} version={version} />
@@ -71,6 +71,7 @@ export const Hero: React.FC<HeroProps> = ({
             flex={{ direction: "column", x: "flex-start" }}
             gapArray={[3]}
             customStyle={{ zIndex: 1 }}
+            as="header"
           >
             {subTitle && <FancyText {...subTitle} mode="paragraph" />}
             {title && <FancyText mode="heading" {...title} />}
@@ -101,10 +102,10 @@ export const Hero: React.FC<HeroProps> = ({
         </FlexDiv>
       </FlexDiv>
       {isMobileOrTablet && version === 2 && (
-        <div className={styles.quote}>
+        <q className={styles.quote}>
           <Quote {...quote} version={version} />
-        </div>
+        </q>
       )}
-    </div>
+    </header>
   );
 };

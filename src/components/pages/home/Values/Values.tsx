@@ -19,6 +19,7 @@ const Value: React.FC<IValue & { number: string }> = ({
       flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
       gapArray={[2]}
       className={styles.value}
+      as="li"
     >
       <FlexDiv
         gapArray={[3]}
@@ -53,6 +54,7 @@ export const Values: React.FC<IValues> = ({ values }) => {
         width100
         className={styles.values}
         wrap
+        as="ul"
       >
         {values?.map((value: IValue, key) => {
           return (

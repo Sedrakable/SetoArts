@@ -48,6 +48,7 @@ export interface IServices {
 
 export interface IService {
   title: string;
+  metaTitle: string;
   path: string;
   features: IFeatures;
   processes: IProcesses;
@@ -163,7 +164,7 @@ export enum LocalPaths {
   PRIVACY = "/privacy-policy",
   SERVICE = "/service",
   BRANDING = "/branding",
-  LANDING = "/landing-page",
+  WEB = "/web-design",
   PACKAGE = "/total-package",
   CUSTOM = "/custom-work",
 }

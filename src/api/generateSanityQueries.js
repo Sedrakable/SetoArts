@@ -14,7 +14,7 @@ export const generateQueries = (lang) => {
   const serviceQuery = `*[_type == 'servicePage' && lang == '${lang}'] {
       ...,
       path,
-      title,
+      metatitle,
       lang,
       hero{
         ...,
@@ -43,6 +43,8 @@ export const generateQueries = (lang) => {
     }`;
   const aboutQuery = `*[_type == 'aboutPage' && lang == '${lang}'][0] {
       ...,
+      title,
+      metaDesc,
       about->,
       values->,
       work->{
@@ -52,7 +54,8 @@ export const generateQueries = (lang) => {
   const contactQuery = `*[_type == 'contactPage' && lang == '${lang}'][0] {
       ...,
       title,
-      form->,
+      metaDesc,
+      desc,
     }`;
   const homeQuery = `*[_type == 'homePage' && lang == '${lang}'][0] {
       ...,

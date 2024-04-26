@@ -33,6 +33,7 @@ export const SideContainer: React.FC<SideContainerProps> = ({
           flex={{ direction: "column", x: "flex-start" }}
           className={styles.text}
           gapArray={[2, 3]}
+          as="header"
         >
           <Heading font="Cursive" as="h4" level="4" color="yellow">
             {title}

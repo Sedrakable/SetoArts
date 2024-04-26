@@ -24,6 +24,7 @@ const Nav: React.FC<INavBar> = ({ links }) => {
       gapArray={[5]}
       flex={{ x: "center" }}
       wrap
+      as="ul"
     >
       {links?.map((link, key) => {
         if (isCta(link)) {

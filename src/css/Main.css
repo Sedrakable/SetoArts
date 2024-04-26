@@ -4,3 +4,13 @@ body {
   width: 100%;
   background-size: cover;
 }
+
+cite {
+  font-style: normal;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

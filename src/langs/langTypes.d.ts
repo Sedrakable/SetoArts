@@ -7,6 +7,7 @@ interface Titles {
   aboutMe: string;
   work: string;
   contact: string;
+  reviews: string;
 }
 
 interface Buttons {
@@ -22,6 +23,7 @@ interface Form {
   companyName: string;
   budget: string;
   message: string;
+  sent: string;
 }
 
 interface Nav {

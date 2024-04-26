@@ -52,6 +52,7 @@ const Service: React.FC<ServiceProps> = ({
       flex={{ direction: "column", x: "flex-start" }}
       width100
       className={styles.container}
+      as="li"
     >
       <FlexDiv
         gapArray={[4]}
@@ -141,6 +142,7 @@ export const Services: React.FC<IServices> = ({ services }) => {
           flex={{ y: "flex-start" }}
           width100
           className={styles.services}
+          as="ul"
         >
           {services?.map((service: IService, key) => {
             service.processes && serviceGridServices.push(service);

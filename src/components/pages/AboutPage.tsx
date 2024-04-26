@@ -9,11 +9,11 @@ import { useParams } from "react-router-dom";
 import { useAtom } from "jotai";
 import { ModalProps, modalData } from "../reuse/Modal";
 import { Values } from "./home/Values/Values";
-import { getTranslations } from "../../helpers/langUtils";
 import { SEO } from "../SEO";
-import { langData } from "../navbar/LangSwitcher/LangSwitcher";
 
 export interface AboutPageProps {
+  title: string;
+  metaDesc: string;
   about: IAbout;
   values: IValues;
   work: IWorkBlock;
@@ -23,7 +23,6 @@ export const AboutPage: React.FC<AboutPageProps> = (props) => {
   const [workImages, setWorkImages] = useState<ICustomImage[]>([]);
   const [, setModalOpen] = useAtom(modalData);
   const { slug } = useParams();
-  const [lang] = useAtom(langData);
 
   useEffect(() => {
     if (slug) {
@@ -53,8 +52,8 @@ export const AboutPage: React.FC<AboutPageProps> = (props) => {
     props && (
       <>
         <SEO
-          title={getTranslations(lang).blockTitles.aboutMe}
-          description={props.about.content.desc1}
+          title={props.title}
+          description={props.metaDesc}
           imgUrl="https://i.imgur.com/u9EH6vH.png"
           url="https://www.setoxarts.com/en/about-work"
         />

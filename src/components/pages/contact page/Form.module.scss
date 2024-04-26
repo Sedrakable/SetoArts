@@ -1,5 +1,10 @@
 @import "../../../css/mixins.scss";
 
+.emailSent {
+  background-color: var(--yellow);
+  border-radius: var(--pad-3);
+}
+
 .form {
   @include flexColumn;
 

@@ -25,6 +25,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
         flex={{ direction: "column", x: "center" }}
         gapArray={[3]}
         className={styles.secondText}
+        as="header"
       >
         {title2 && desc2 && (
           <FlexDiv
@@ -66,7 +67,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
               />
             </div>
           )}
-          <div className={styles.text}>
+          <header className={styles.text}>
             {name && (
               <Heading
                 font="Seto"
@@ -95,11 +96,11 @@ export const About: React.FC<IAbout> = ({ content }) => {
                   {desc1}
                 </Paragraph>
               </FlexDiv>
-              {!isMobileOrTablet && <SecondText />}
+              {!isMobileOrTablet && title2 && <SecondText />}
             </FlexDiv>
-          </div>
+          </header>
         </FlexDiv>
-        {isMobileOrTablet && <SecondText />}
+        {isMobileOrTablet && title2 && <SecondText />}
       </FlexDiv>
     </Block>
   );

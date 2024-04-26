@@ -10,11 +10,13 @@ import { IForm } from "../../../data";
 import { useAtom } from "jotai";
 import { langData } from "../../navbar/LangSwitcher/LangSwitcher";
 import { getTranslations } from "../../../helpers/langUtils";
+import { Heading } from "../../reuse/Heading";
 
 export const Form: React.FC<IForm> = ({ desc }) => {
   const form = useRef<HTMLFormElement>(null);
   const { isMobileOrTablet, isLaptop } = useWindowResize();
   const [budget, setBudget] = useState<string>("");
+  const [emailSent, setEmailSent] = useState<boolean>(false);
   const [lang] = useAtom(langData);
   const translations = getTranslations(lang);
   const [formValid, setFormValid] = useState<boolean>(false);
@@ -38,6 +40,7 @@ export const Form: React.FC<IForm> = ({ desc }) => {
       .then(
         (result) => {
           console.log("sent");
+          setEmailSent(true);
         },
         (error) => {
           console.error("didint work", error);
@@ -67,7 +70,7 @@ export const Form: React.FC<IForm> = ({ desc }) => {
     setFormValid(allRequiredFieldsFilled);
   };
 
-  const contact = (
+  return (
     <FlexDiv
       width100
       flex={{
@@ -76,57 +79,69 @@ export const Form: React.FC<IForm> = ({ desc }) => {
       }}
       gapArray={[4]}
     >
-      <FancyText {...desc} mode="paragraph" textAlign="center" />
-      <form
-        ref={form}
-        className={cn(styles.form, styles.contactForm)}
-        onSubmit={sendEmail}
-      >
-        <div className={styles.info}>
-          <input
-            type="text"
-            name="user_name"
-            required
-            placeholder={translations.form.name}
-            onChange={handleInputChange}
-          />
-          <input
-            type="email"
-            name="user_email"
-            required
-            placeholder={translations.form.email}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className={styles.info}>
-          <input
-            type="text"
-            name="company_name"
-            placeholder={translations.form.companyName}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            name="budget"
-            placeholder={translations.form.budget}
-            onChange={handleBudgetChange}
-            value={budget}
-          />
-        </div>
+      {emailSent ? (
+        <FlexDiv
+          padding={{ horizontal: [6], vertical: [4] }}
+          className={styles.emailSent}
+        >
+          <Heading as="h2" level="1" font="Seto" color="white">
+            {translations.form.sent}
+          </Heading>
+        </FlexDiv>
+      ) : (
+        <>
+          <FancyText {...desc} mode="paragraph" textAlign="center" />
+          <form
+            ref={form}
+            className={cn(styles.form, styles.contactForm)}
+            onSubmit={sendEmail}
+          >
+            <div className={styles.info}>
+              <input
+                type="text"
+                name="user_name"
+                required
+                placeholder={translations.form.name}
+                onChange={handleInputChange}
+              />
+              <input
+                type="email"
+                name="user_email"
+                required
+                placeholder={translations.form.email}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className={styles.info}>
+              <input
+                type="text"
+                name="company_name"
+                placeholder={translations.form.companyName}
+                onChange={handleInputChange}
+              />
+              <input
+                type="text"
+                name="budget"
+                placeholder={translations.form.budget}
+                onChange={handleBudgetChange}
+                value={budget}
+              />
+            </div>
 
-        <textarea
-          onKeyDown={handleKeyDown}
-          onChange={handleInputChange}
-          name="message"
-          placeholder={translations.form.message}
-          required
-        />
+            <textarea
+              onKeyDown={handleKeyDown}
+              onChange={handleInputChange}
+              name="message"
+              placeholder={translations.form.message}
+              required
+            />
 
-        <Button variant="fancy" disabled={!formValid}>
-          {translations.buttons.send}
-        </Button>
-      </form>
+            <Button variant="fancy" disabled={!formValid}>
+              {translations.buttons.send}
+            </Button>
+          </form>
+        </>
+      )}
     </FlexDiv>
   );
-  return contact;
 };

@@ -19,7 +19,7 @@ export const ServicePage: FC<ServicePageProps> = (props) => {
     props && (
       <>
         <SEO
-          title={props.title}
+          title={props.metaTitle}
           description={props.hero.desc}
           imgUrl="https://i.imgur.com/u9EH6vH.png"
           url="https://www.setoxarts.com/en/home"

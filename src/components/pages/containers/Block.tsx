@@ -33,6 +33,7 @@ export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
       gapArray={[5, 6, 6, 7]}
       padding={{ top: [6, 7, 7, 8], bottom: [8, 8, 8, 9] }}
       width100
+      as="article"
     >
       <Title title={title} color={variant === "dark" ? "white" : "black"} />
       {strokes && variant === "dark" && (

@@ -40,7 +40,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
 
   return (
     <>
-      <div
+      <nav
         className={cn(styles.navbarWrapper, { [styles.scrolled]: scrolled })}
         ref={navRef}
       >
@@ -56,7 +56,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
             gapArray={[3, 5, 6, 7]}
           >
             {!isMobile && (
-              <FlexDiv gapArray={[5, 4, 5, 6]}>
+              <FlexDiv gapArray={[5, 4, 5, 6]} as="ul">
                 {links?.map((link: INavLink | ICta, key) => {
                   if (key === links.length - 1 && isCta(link)) {
                     return (
@@ -97,7 +97,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
             )}
           </FlexDiv>
         </FlexDiv>
-      </div>
+      </nav>
       {isMobileOrTablet && <Sidebar links={links} lang={lang} />}
     </>
   );

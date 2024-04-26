@@ -35,6 +35,7 @@ const Process: React.FC<IProcessProps> = ({
       className={styles.container}
       flex={{ y: "flex-start" }}
       gapArray={[4, 5, 5, 6]}
+      as="li"
     >
       <FlexDiv className={styles.number}>
         <Heading font="Seto" level="2" as="h2" color="yellow">
@@ -92,6 +93,7 @@ export const Processes: React.FC<IProcesses> = ({ processes }) => {
           flex={{ direction: "column", y: "flex-start" }}
           width100
           className={styles.processes}
+          as="ol"
         >
           {processes?.map((process: IProcess, key) => {
             return (

@@ -38,6 +38,7 @@ const Work: FC<IWork> = (props) => {
         className={styles.content}
         padding={{ horizontal: [4], top: [4], bottom: [5] }}
         gapArray={[3]}
+        as="cite"
       >
         <Heading
           font="Seto"

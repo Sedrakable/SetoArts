@@ -7,8 +7,10 @@ import { WorkSlider } from "./blocks/WorkSlider/WorkSlider";
 import { About } from "./blocks/About/About";
 import { Inspired } from "./blocks/Inspired/Inspired";
 import { SEO } from "../SEO";
+import { Reviews } from "./blocks/Reviews/Reviews";
 
 export interface HomePageProps {
+  title: string;
   hero: IHero;
   services: IServices;
   values: IValues;
@@ -21,13 +23,7 @@ export const HomePage: FC<HomePageProps> = (props) => {
     props && (
       <>
         <SEO
-          title={
-            props.hero.title.part1 +
-            " " +
-            props.hero.title.part2 +
-            " " +
-            props.hero.title.part3
-          }
+          title={props.title}
           description={props.hero.desc}
           imgUrl="https://i.imgur.com/u9EH6vH.png"
           url="https://www.setoxarts.com/en/home"
@@ -37,6 +33,7 @@ export const HomePage: FC<HomePageProps> = (props) => {
         <Services {...props.services} />
         <Values {...props.values} />
         <About content={{ ...props?.about?.content, cta: true }} />
+        <Reviews />
         <Inspired />
       </>
     )

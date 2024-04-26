@@ -22,7 +22,7 @@
   box-sizing: content-box !important;
 
   @media (min-width: $laptop) {
-    width: 100%;
+    width: fit-content;
     position: absolute;
     margin-top: 0;
     top: 0;
@@ -36,5 +36,8 @@
   }
   p:hover {
     color: var(--black) !important;
+  }
+  p {
+    text-wrap: nowrap;
   }
 }

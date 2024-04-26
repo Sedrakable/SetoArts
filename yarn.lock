@@ -8501,6 +8501,11 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-elfsight-widget@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-elfsight-widget/-/react-elfsight-widget-1.1.1.tgz#9bc98f12d316e23aa88b4784c339850aa0b1e50f"
+  integrity sha512-f6r0gC9266yRcNZak8sKev/UwkAP5RYpcEt5X5eeYqHo8agXCQzdYwA0+8HDz5pSPHb0/C54o6oWv+Ukf2GO9w==
+
 react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
