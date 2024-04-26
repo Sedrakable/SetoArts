@@ -1,52 +1,49 @@
 {
-  "lang": "en",
-  "_type": "servicePage",
-  "path": "/landing-page",
   "processes": {
     "processes": [
       {
-        "_rev": "yjwdrWT0n7hNXKlLZhMObu",
-        "_type": "process",
-        "_id": "072d9200-e73b-4ece-9298-8771d15c53d9",
-        "title": "Initial Consultation",
-        "_updatedAt": "2024-03-05T23:47:54Z",
-        "desc": "The process commences with an in-depth initial consultation, where the client's requirements, target audience, branding objectives, and landing page purpose are discussed comprehensively.",
+        "_updatedAt": "2024-04-26T03:07:39Z",
+        "desc": "The process commences with an in-depth initial consultation, where the client's requirements, target audience, branding objectives, and website purpose are discussed comprehensively.",
         "features": [
           {
-            "desc": "I'll collaborate with you to develop a targeted content strategy for your landing page, ensuring it speaks directly to your audience and effectively communicates your brand's value.",
+            "_id": "81e45cb2-9d38-4676-81c8-39b6fa60c26b",
+            "title": "Content Strategy Development",
+            "_updatedAt": "2024-04-26T03:07:23Z",
+            "desc": "I'll collaborate with you to develop a targeted content strategy for your website, ensuring it speaks directly to your audience and effectively communicates your brand's value.",
             "_createdAt": "2024-02-17T01:12:09Z",
-            "_rev": "OEnRojb5pXWjE2sC6thYVE",
+            "_rev": "Z5IDu749svD6Fxx4WWATWO",
             "_type": "feature",
             "customImage": {
               "image": {
+                "_type": "image",
                 "asset": {
                   "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
                   "_type": "reference"
-                },
-                "_type": "image"
+                }
               },
               "_type": "customImage",
               "alt": "Laptop with statistics"
-            },
-            "_id": "81e45cb2-9d38-4676-81c8-39b6fa60c26b",
-            "title": "Content Strategy Development",
-            "_updatedAt": "2024-03-31T21:07:26Z"
+            }
           }
         ],
-        "_createdAt": "2024-02-17T01:17:30Z"
+        "_createdAt": "2024-02-17T01:17:30Z",
+        "_rev": "Z5IDu749svD6Fxx4WWATiS",
+        "_type": "process",
+        "_id": "072d9200-e73b-4ece-9298-8771d15c53d9",
+        "title": "Initial Consultation"
       },
       {
-        "_rev": "YXByP76OkInEwmmjNaqJ5N",
         "_type": "process",
         "_id": "4ecffa67-b1c5-4bbd-8e18-163dabc59b5d",
         "title": "Design and Development",
-        "_updatedAt": "2024-03-30T17:20:56Z",
-        "desc": "Following the consultation, the design and development phase begins, starting with the creation of a mockup or wireframe for the landing page, followed by its development utilizing web technologies.",
+        "_updatedAt": "2024-04-26T03:07:47Z",
+        "desc": "Following the consultation, the design and development phase begins, starting with the creation of a mockup or wireframe for the website, followed by its development utilizing web technologies.",
         "features": [
           {
-            "desc": "I will create wireframes and prototypes of your landing page, providing visual blueprints of its layout and functionality. These prototypes will allow us to iterate and refine the design before moving into full development, saving time and ensuring alignment with your vision.",
+            "_updatedAt": "2024-04-26T03:07:17Z",
+            "desc": "I will create wireframes and prototypes of your website, providing visual blueprints of its layout and functionality. These prototypes will allow us to iterate and refine the design before moving into full development, saving time and ensuring alignment with your vision.",
             "_createdAt": "2024-02-17T01:12:54Z",
-            "_rev": "OEnRojb5pXWjE2sC6qvSCj",
+            "_rev": "Z5IDu749svD6Fxx4WWATKK",
             "_type": "feature",
             "customImage": {
               "image": {
@@ -60,10 +57,13 @@
               "alt": "Web Design Mockup Drawings"
             },
             "_id": "798224fd-d324-4a6f-8365-321007457a0c",
-            "title": "Mockup Creation",
-            "_updatedAt": "2024-03-30T16:16:10Z"
+            "title": "Mockup Creation"
           },
           {
+            "_id": "736fcb49-5573-4dae-9ee7-6a9a3492d75f",
+            "title": "Custom Art",
+            "_updatedAt": "2024-03-31T21:10:10Z",
+            "desc": "I'll produce unique visuals and images tailored to your brand, ensuring your message shines through vividly and memorably.",
             "_createdAt": "2024-03-06T00:58:33Z",
             "_rev": "14bF2iHNiRa7syDF0TXFYb",
             "_type": "feature",
@@ -77,18 +77,13 @@
                   "_type": "reference"
                 }
               }
-            },
-            "_id": "736fcb49-5573-4dae-9ee7-6a9a3492d75f",
-            "title": "Custom Art",
-            "_updatedAt": "2024-03-31T21:10:10Z",
-            "desc": "I'll produce unique visuals and images tailored to your brand, ensuring your message shines through vividly and memorably."
+            }
           }
         ],
-        "_createdAt": "2024-02-17T01:17:56Z"
+        "_createdAt": "2024-02-17T01:17:56Z",
+        "_rev": "Z5IDu749svD6Fxx4WWATuW"
       },
       {
-        "_createdAt": "2024-02-17T01:18:07Z",
-        "_rev": "pE4qmNBESg4zKMd9uJBnCq",
         "_type": "process",
         "_id": "ec029ca4-322c-4a33-9c3e-bcc6b8292833",
         "title": "Client Feedback & Revisions",
@@ -115,15 +110,21 @@
             "_createdAt": "2024-02-17T01:18:50Z",
             "_rev": "uiWIFkW6n28NyJPxPEs18k"
           }
-        ]
+        ],
+        "_createdAt": "2024-02-17T01:18:07Z",
+        "_rev": "pE4qmNBESg4zKMd9uJBnCq"
       },
       {
+        "_createdAt": "2024-02-17T01:20:51Z",
+        "_rev": "pE4qmNBESg4zKMd9uJBm5t",
+        "_type": "process",
         "_id": "233544f5-1cee-4ea7-a276-05fe216a8fd3",
         "title": "Testing & Optimization",
         "_updatedAt": "2024-03-06T00:35:25Z",
         "desc": "Following client approval, rigorous testing is conducted to ensure seamless functionality across various devices and browsers. Additionally, optimization techniques are employed to enhance the website’s performance and user experience.",
         "features": [
           {
+            "title": "Website Optimization",
             "_updatedAt": "2024-02-28T23:30:42Z",
             "desc": "I optimize your website to improve its performance, speed, and user engagement.",
             "_createdAt": "2024-02-17T01:14:10Z",
@@ -140,12 +141,9 @@
               "_type": "customImage",
               "alt": "Optimizing"
             },
-            "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5",
-            "title": "Website Optimization"
+            "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5"
           },
           {
-            "_createdAt": "2024-02-27T03:02:28Z",
-            "_rev": "OgNY2vtdjbR76xUBGB9Jou",
             "_type": "feature",
             "customImage": {
               "alt": "laptop & phone",
@@ -161,104 +159,116 @@
             "_id": "699d2f9c-5881-4bd3-915e-ff73e117dcb6",
             "title": "Cross-Platform Compatibility",
             "_updatedAt": "2024-02-27T03:02:28Z",
-            "desc": "I ensure seamless operation across all devices, including Windows, Apple products, Android Products, etc."
+            "desc": "I ensure seamless operation across all devices, including Windows, Apple products, Android Products, etc.",
+            "_createdAt": "2024-02-27T03:02:28Z",
+            "_rev": "OgNY2vtdjbR76xUBGB9Jou"
           }
-        ],
-        "_createdAt": "2024-02-17T01:20:51Z",
-        "_rev": "pE4qmNBESg4zKMd9uJBm5t",
-        "_type": "process"
+        ]
       },
       {
         "_type": "process",
         "_id": "1881868e-36e9-4613-9bb1-f7165d0cb544",
         "title": "Delivery and Launch",
-        "_updatedAt": "2024-03-30T16:24:27Z",
-        "desc": "After successful testing and approval, the finalized landing page is delivered to the client. Assistance is provided in deploying the page to their web hosting environment, ensuring a smooth launch.",
+        "_updatedAt": "2024-04-26T03:07:56Z",
+        "desc": "After successful testing and approval, the finalized website is delivered to the client. Assistance is provided in deploying the page to their web hosting environment, ensuring a smooth launch.",
         "features": [
           {
-            "title": "Deployment Assistance",
-            "_updatedAt": "2024-02-25T04:07:52Z",
             "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website.",
             "_createdAt": "2024-02-17T01:14:50Z",
             "_rev": "rGZ2nN6K5mjOGJOoWaip9f",
             "_type": "feature",
             "customImage": {
-              "_type": "customImage",
               "alt": "Helping",
               "image": {
+                "_type": "image",
                 "asset": {
                   "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
                   "_type": "reference"
-                },
-                "_type": "image"
-              }
+                }
+              },
+              "_type": "customImage"
             },
-            "_id": "e60a520d-3c08-4548-a3c2-684707e871e7"
+            "_id": "e60a520d-3c08-4548-a3c2-684707e871e7",
+            "title": "Deployment Assistance",
+            "_updatedAt": "2024-02-25T04:07:52Z"
           }
         ],
         "_createdAt": "2024-02-17T01:21:31Z",
-        "_rev": "YXByP76OkInEwmmjNan8zX"
+        "_rev": "Z5IDu749svD6Fxx4WWAU6a"
       },
       {
-        "_rev": "yjwdrWT0n7hNXKlLZhNp42",
-        "_type": "process",
-        "_id": "47611d1f-798d-4ded-9187-f585f38c16f5",
         "title": "Post-launch Support",
         "_updatedAt": "2024-03-05T23:54:15Z",
         "desc": "Continued support is offered post-launch to address any technical issues, provide guidance on content updates, and offer further assistance as required, ensuring sustained performance and effectiveness.",
         "features": [
           {
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Programming through glasses"
+            },
             "_id": "259a1ec7-49ff-487e-ae0f-8524dc1106c0",
             "title": "Technical Support",
             "_updatedAt": "2024-03-07T02:30:49Z",
             "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively.",
             "_createdAt": "2024-02-17T01:15:58Z",
             "_rev": "42dARgouF4fLoQkzWqXMlr",
-            "_type": "feature",
-            "customImage": {
-              "alt": "Programming through glasses",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage"
-            }
+            "_type": "feature"
           }
         ],
-        "_createdAt": "2024-02-17T01:21:50Z"
+        "_createdAt": "2024-02-17T01:21:50Z",
+        "_rev": "yjwdrWT0n7hNXKlLZhNp42",
+        "_type": "process",
+        "_id": "47611d1f-798d-4ded-9187-f585f38c16f5"
       }
     ]
   },
-  "title": "Landing Page",
+  "_type": "servicePage",
+  "price": 1500,
+  "path": "/web-design",
   "_createdAt": "2024-02-17T00:57:12Z",
   "_id": "980b92fc-3907-47f5-90e2-8f54824866c2",
+  "lang": "en",
+  "_updatedAt": "2024-04-26T03:03:25Z",
+  "metaTitle": "Modern Web Design / Development | Seto x Arts | Montreal & Laval",
   "features": {
     "features": [
       {
-        "_rev": "OEnRojb5pXWjE2sC6thYVE",
+        "_id": "81e45cb2-9d38-4676-81c8-39b6fa60c26b",
+        "title": "Content Strategy Development",
+        "_updatedAt": "2024-04-26T03:07:23Z",
+        "desc": "I'll collaborate with you to develop a targeted content strategy for your website, ensuring it speaks directly to your audience and effectively communicates your brand's value.",
+        "_createdAt": "2024-02-17T01:12:09Z",
+        "_rev": "Z5IDu749svD6Fxx4WWATWO",
         "_type": "feature",
         "customImage": {
+          "_type": "customImage",
+          "alt": "Laptop with statistics",
           "image": {
             "_type": "image",
             "asset": {
               "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
               "_type": "reference"
             }
-          },
-          "_type": "customImage",
-          "alt": "Laptop with statistics"
-        },
-        "_id": "81e45cb2-9d38-4676-81c8-39b6fa60c26b",
-        "title": "Content Strategy Development",
-        "_updatedAt": "2024-03-31T21:07:26Z",
-        "desc": "I'll collaborate with you to develop a targeted content strategy for your landing page, ensuring it speaks directly to your audience and effectively communicates your brand's value.",
-        "_createdAt": "2024-02-17T01:12:09Z"
+          }
+        }
       },
       {
+        "_id": "798224fd-d324-4a6f-8365-321007457a0c",
+        "title": "Mockup Creation",
+        "_updatedAt": "2024-04-26T03:07:17Z",
+        "desc": "I will create wireframes and prototypes of your website, providing visual blueprints of its layout and functionality. These prototypes will allow us to iterate and refine the design before moving into full development, saving time and ensuring alignment with your vision.",
+        "_createdAt": "2024-02-17T01:12:54Z",
+        "_rev": "Z5IDu749svD6Fxx4WWATKK",
+        "_type": "feature",
         "customImage": {
+          "alt": "Web Design Mockup Drawings",
           "image": {
             "_type": "image",
             "asset": {
@@ -266,58 +276,33 @@
               "_type": "reference"
             }
           },
-          "_type": "customImage",
-          "alt": "Web Design Mockup Drawings"
-        },
-        "_id": "798224fd-d324-4a6f-8365-321007457a0c",
-        "title": "Mockup Creation",
-        "_updatedAt": "2024-03-30T16:16:10Z",
-        "desc": "I will create wireframes and prototypes of your landing page, providing visual blueprints of its layout and functionality. These prototypes will allow us to iterate and refine the design before moving into full development, saving time and ensuring alignment with your vision.",
-        "_createdAt": "2024-02-17T01:12:54Z",
-        "_rev": "OEnRojb5pXWjE2sC6qvSCj",
-        "_type": "feature"
+          "_type": "customImage"
+        }
       },
       {
-        "title": "Custom Art",
-        "_updatedAt": "2024-03-31T21:10:10Z",
-        "desc": "I'll produce unique visuals and images tailored to your brand, ensuring your message shines through vividly and memorably.",
-        "_createdAt": "2024-03-06T00:58:33Z",
-        "_rev": "14bF2iHNiRa7syDF0TXFYb",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-3a0ee2d2c357264a3cf96f5e2e2cf11af2b32ba6-4001x4000-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Custom Art - Comrade Boris"
-        },
-        "_id": "736fcb49-5573-4dae-9ee7-6a9a3492d75f"
-      },
-      {
+        "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5",
+        "title": "Website Optimization",
+        "_updatedAt": "2024-02-28T23:30:42Z",
+        "desc": "I optimize your website to improve its performance, speed, and user engagement.",
         "_createdAt": "2024-02-17T01:14:10Z",
         "_rev": "1yoLMt3Jt0PZv9LdlrGrXr",
         "_type": "feature",
         "customImage": {
+          "_type": "customImage",
+          "alt": "Optimizing",
           "image": {
             "_type": "image",
             "asset": {
               "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
               "_type": "reference"
             }
-          },
-          "_type": "customImage",
-          "alt": "Optimizing"
-        },
-        "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5",
-        "title": "Website Optimization",
-        "_updatedAt": "2024-02-28T23:30:42Z",
-        "desc": "I optimize your website to improve its performance, speed, and user engagement."
+          }
+        }
       },
       {
+        "_id": "699d2f9c-5881-4bd3-915e-ff73e117dcb6",
+        "title": "Cross-Platform Compatibility",
+        "_updatedAt": "2024-02-27T03:02:28Z",
         "desc": "I ensure seamless operation across all devices, including Windows, Apple products, Android Products, etc.",
         "_createdAt": "2024-02-27T03:02:28Z",
         "_rev": "OgNY2vtdjbR76xUBGB9Jou",
@@ -332,15 +317,9 @@
           },
           "_type": "customImage",
           "alt": "laptop & phone"
-        },
-        "_id": "699d2f9c-5881-4bd3-915e-ff73e117dcb6",
-        "title": "Cross-Platform Compatibility",
-        "_updatedAt": "2024-02-27T03:02:28Z"
+        }
       },
       {
-        "title": "Deployment Assistance",
-        "_updatedAt": "2024-02-25T04:07:52Z",
-        "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website.",
         "_createdAt": "2024-02-17T01:14:50Z",
         "_rev": "rGZ2nN6K5mjOGJOoWaip9f",
         "_type": "feature",
@@ -355,9 +334,15 @@
           },
           "_type": "customImage"
         },
-        "_id": "e60a520d-3c08-4548-a3c2-684707e871e7"
+        "_id": "e60a520d-3c08-4548-a3c2-684707e871e7",
+        "title": "Deployment Assistance",
+        "_updatedAt": "2024-02-25T04:07:52Z",
+        "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website."
       },
       {
+        "_createdAt": "2024-02-17T01:15:58Z",
+        "_rev": "42dARgouF4fLoQkzWqXMlr",
+        "_type": "feature",
         "customImage": {
           "image": {
             "_type": "image",
@@ -372,23 +357,211 @@
         "_id": "259a1ec7-49ff-487e-ae0f-8524dc1106c0",
         "title": "Technical Support",
         "_updatedAt": "2024-03-07T02:30:49Z",
-        "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively.",
-        "_createdAt": "2024-02-17T01:15:58Z",
-        "_rev": "42dARgouF4fLoQkzWqXMlr",
-        "_type": "feature"
+        "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively."
       }
     ]
   },
-  "_updatedAt": "2024-04-04T21:04:52Z",
+  "hero": {
+    "customImage": {
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage",
+      "alt": "Website landing page"
+    },
+    "title": {
+      "part1": "Web Design:",
+      "part2": "Captivate & Convert",
+      "_type": "fancyText"
+    },
+    "desc": "Elevate your online presence with Seto x Arts. Experience modern web design / development, that weren't made by cavemen,  in Montreal and Laval, Quebec. Captivate your audience with engaging, user-friendly websites that swiftly convert visitors into customers.",
+    "quote": {
+      "_id": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
+      "_updatedAt": "2024-03-06T19:40:57Z",
+      "rightText": "Chaos",
+      "_createdAt": "2024-01-29T23:15:08Z",
+      "_rev": "42dARgouF4fLoQkzWokNzP",
+      "_type": "quote",
+      "leftText": "Organized",
+      "hiddenTitle": "Quote English"
+    },
+    "_type": "hero"
+  },
+  "_rev": "xaX3aVF8PvCD6wtCay4vTL",
+  "title": "Web Design",
+  "hiddenTitle": "Web Design English",
+  "metatitle": null,
   "work": {
     "title": null,
     "works": [
       {
-        "desc": "B'nest is more than just a cream company; it's a celebration of natural goodness and family traditions. Rooted in the heart of nature, B'nest crafts luxurious creams using locally sourced honey from artisanal beekeepers. Our brand embodies warmth, authenticity, and the timeless joy of shared moments. Each jar of B'nest cream is a testament to our commitment to quality, purity, and the simple pleasures of life. Join us on a journey where every scoop is a taste of wholesome indulgence, where tradition meets innovation in perfect harmony.",
+        "title": "Krusty Krab",
+        "desc": "Growing up, SpongeBob was a huge part of my childhood, but I couldn't help but think that Mr Krabs was cutting corners when it came to branding, so I took it upon myself to give the Krusty Krab the modern and vibrant identity it deserves. With a colorful palette and a fresh approach, I aimed to streamline and elevate this iconic fast-food brand while staying true to its roots.",
         "primaryLink": {
           "_type": "cta",
-          "link": "https://www.behance.net/gallery/195033325/Bnest-Brand-Design-Project",
+          "link": "https://www.behance.net/gallery/196756359/Krusty-Krab-Rebrand",
           "text": "Behance"
+        },
+        "slug": {
+          "current": "krusty-krab",
+          "_type": "slug"
+        },
+        "customImages": [
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-45a4c343ccf97bcdd550c933ae41eebaa0496d62-2000x1300-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "The Krusty Krab Logo Re Brand",
+            "_key": "97cfec5da6e8"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-a9338c6657b61a3fa035eb9fe8979c55ebd86330-2000x800-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "The Wordmark of the Krysty Krab Logo",
+            "_key": "263a6b346c2a"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-7279907c50fd4c6330c458857f2575a4a2861a2c-2000x1000-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Two version of the Krusty Krab Logo",
+            "_key": "503d477e3a5f"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-7da2e2bf5ed0a52cf916e9bea9692c4b4060398c-2000x800-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Colors for the Krusty Krab Rebrand. Krab Red, Koral Pink, Pearl White, Sea Blue and Deep Sea Blue",
+            "_key": "8cb58c0748e7"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-509ef19027c80cba8d2d8d94ca200f16240f3bf2-2000x922-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Icons for the Kusty Krab Rebrand. Some Fries, Burger, and a Soda",
+            "_key": "135bb0c4919b"
+          },
+          {
+            "alt": "Fonts for the Used in the Krusty Krab Brand. Passero One and Montserrat",
+            "_key": "d591fd7e12a8",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-5ea5d2651377b1b6c6d0a4a3f6146c28bcdc4eb6-2000x1120-jpg"
+              }
+            },
+            "_type": "customImage"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-bfa1cae4f9e8f133eb9be7a0756390efdfcbce09-2000x800-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Three different Textures. A grid of the icons, a floral texture and a coral pattern",
+            "_key": "93acf20f25f8"
+          },
+          {
+            "_type": "customImage",
+            "alt": "Mobile Integration of the Krusty Krab. Mobile Website with a Navbar with an order Button. Shell Icon, Burger Menu. Hero Section with the Krusty Meal. Outside of phone, Mobile Icons",
+            "_key": "e8f283eda718",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-07860d76b7a763e3d9305865673d0285d71c435e-2000x1000-jpg",
+                "_type": "reference"
+              }
+            }
+          },
+          {
+            "_type": "customImage",
+            "alt": "A Krusty Krab Menu with all the food. Plankton in the corner",
+            "_key": "63dbc6a50967",
+            "image": {
+              "asset": {
+                "_ref": "image-601ae636d4beed1a6f18fc9f222bd6f3381b8b9a-1920x1080-png",
+                "_type": "reference"
+              },
+              "_type": "image"
+            }
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-7229b77bd1e2094f215a1660aa15166905b3424e-2000x718-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Mockups of a Billboard and the Krusty Krab Meal. Burger, Soda and fries on a table",
+            "_key": "36171a105e97"
+          }
+        ],
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-45a4c343ccf97bcdd550c933ae41eebaa0496d62-2000x1300-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Krusty Krab Rebrand"
+        }
+      },
+      {
+        "thumbnailImage": {
+          "_type": "customImage",
+          "alt": "B'nest logo",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-c828375b67dfd06c1a6ad4595bcdd10ae13ea2c9-2000x1301-jpg",
+              "_type": "reference"
+            }
+          }
+        },
+        "title": "B'nest",
+        "desc": "B'nest is more than just a cream company; it's a celebration of natural goodness and family traditions. Rooted in the heart of nature, B'nest crafts luxurious creams using locally sourced honey from artisanal beekeepers. Our brand embodies warmth, authenticity, and the timeless joy of shared moments. Each jar of B'nest cream is a testament to our commitment to quality, purity, and the simple pleasures of life. Join us on a journey where every scoop is a taste of wholesome indulgence, where tradition meets innovation in perfect harmony.",
+        "primaryLink": {
+          "text": "Behance",
+          "_type": "cta",
+          "link": "https://www.behance.net/gallery/195033325/Bnest-Brand-Design-Project"
         },
         "slug": {
           "current": "b-nest",
@@ -399,28 +572,27 @@
             "alt": "Cream Jar",
             "_key": "293a52fdaf4d",
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-273e87e7e0c3077c3aa70a2b504ae9f18333c069-2000x1300-jpg",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage"
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-de0902948e760435d7c77046b7a126d257988c9b-2000x1301-jpg",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Research",
             "_key": "9936a8978659"
           },
           {
-            "alt": "Logo Design",
             "_key": "e57c33be7681",
             "image": {
               "_type": "image",
@@ -429,19 +601,20 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Logo Design"
           },
           {
+            "alt": "Logo Scalable and Light",
+            "_key": "3baf8857d245",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-65897a93a7676bc6dc9832cc982b2cd338b6cfa4-2000x1301-jpg"
+                "_ref": "image-65897a93a7676bc6dc9832cc982b2cd338b6cfa4-2000x1301-jpg",
+                "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Logo Scalable and Light",
-            "_key": "3baf8857d245"
+            "_type": "customImage"
           },
           {
             "image": {
@@ -456,20 +629,18 @@
             "_key": "2a76714169a1"
           },
           {
-            "_type": "customImage",
-            "alt": "Word Mark",
             "_key": "282ecf4f2d0e",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-96e804272f850d6ff969864cf705816c7ccc4c73-2000x901-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
-            }
+              }
+            },
+            "_type": "customImage",
+            "alt": "Word Mark"
           },
           {
-            "alt": "Color System",
-            "_key": "d368eadcd21c",
             "image": {
               "_type": "image",
               "asset": {
@@ -477,7 +648,9 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Color System",
+            "_key": "d368eadcd21c"
           },
           {
             "image": {
@@ -492,20 +665,18 @@
             "_key": "c538a8b29f37"
           },
           {
-            "_type": "customImage",
-            "alt": "Textures",
-            "_key": "4b58fcbd6a97",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-0f4cef381203136af106d8ab2ee4fcaf268c410d-2000x901-jpg"
+                "_ref": "image-0f4cef381203136af106d8ab2ee4fcaf268c410d-2000x901-jpg",
+                "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Textures",
+            "_key": "4b58fcbd6a97"
           },
           {
-            "alt": "Brand Voice",
-            "_key": "82576573d025",
             "image": {
               "_type": "image",
               "asset": {
@@ -513,9 +684,12 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Brand Voice",
+            "_key": "82576573d025"
           },
           {
+            "_key": "afa52e846f41",
             "image": {
               "_type": "image",
               "asset": {
@@ -524,8 +698,7 @@
               }
             },
             "_type": "customImage",
-            "alt": "Gear",
-            "_key": "afa52e846f41"
+            "alt": "Gear"
           },
           {
             "image": {
@@ -540,16 +713,16 @@
             "_key": "27b5945f661f"
           },
           {
+            "_type": "customImage",
+            "alt": "Bee hive",
+            "_key": "e33d209e3a75",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-75248c55e6de87de6d5bc01af43b0b3342314566-3999x2662-jpg"
+                "_ref": "image-75248c55e6de87de6d5bc01af43b0b3342314566-3999x2662-jpg",
+                "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Bee hive",
-            "_key": "e33d209e3a75"
+            }
           },
           {
             "alt": "Honey",
@@ -576,35 +749,33 @@
             "_key": "8ad7eb1b8f39"
           },
           {
-            "_key": "4c442cae916b",
             "image": {
-              "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-5c091eb124a30bd71ef32e1a5b0b200eda380cc1-3072x4096-jpg"
-              }
+                "_ref": "image-5c091eb124a30bd71ef32e1a5b0b200eda380cc1-3072x4096-jpg",
+                "_type": "reference"
+              },
+              "_type": "image"
             },
             "_type": "customImage",
-            "alt": "Bees"
+            "alt": "Bees",
+            "_key": "4c442cae916b"
           }
-        ],
-        "thumbnailImage": {
-          "_type": "customImage",
-          "alt": "B'nest logo",
-          "image": {
-            "asset": {
-              "_ref": "image-c828375b67dfd06c1a6ad4595bcdd10ae13ea2c9-2000x1301-jpg",
-              "_type": "reference"
-            },
-            "_type": "image"
-          }
-        },
-        "title": "B'nest"
+        ]
       },
       {
+        "title": "Steampunk Dynasty",
+        "desc": "Welcome to the world of Steampunk Dynasty! Imagine holding a deck of playing cards that transports you to a fascinating retro-futuristic world, filled with steam-powered machinery and Victorian-era elegance.\n\nWe are excited to introduce not just one, but four unique decks with distinct colour schemes, each representing one of the four suits in the deck. But we didn't stop there - to fully immerse you in this captivating world, we've also created a novel called Steampunk Dynasty: Gears and Glory. Get ready to experience a thrilling adventure and discover the stories behind each of the four dynasties.\n\nThe world of Steampunk is a mesmerizing blend of the Victorian era and retro-futuristic science fiction, powered by steam machinery. This unique combination of elegance and creativity has given rise to a multitude of fascinating and inspiring ideas. The decks of the Vostok Cards collection embody this spirit, with their intricate designs, luxurious look and feel, and attention to detail. Each deck is uniquely crafted to represent a specific dynasty or suit, with elements that beautifully capture the essence of the Steampunk world.",
+        "primaryLink": {
+          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
+          "text": "Kickstarter",
+          "_type": "cta"
+        },
+        "slug": {
+          "_type": "slug",
+          "current": "steampunk-dynasty"
+        },
         "customImages": [
           {
-            "_key": "3493a5b9c083",
             "image": {
               "_type": "image",
               "asset": {
@@ -613,31 +784,32 @@
               }
             },
             "_type": "customImage",
-            "alt": "deck on deck"
+            "alt": "deck on deck",
+            "_key": "3493a5b9c083"
           },
           {
-            "_type": "customImage",
-            "alt": "back of the cards spread",
-            "_key": "42ff436f1c29",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-97cb0621782ac2ab666db3aa4049be4385ec44c3-1920x1080-png",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "back of the cards spread",
+            "_key": "42ff436f1c29"
           },
           {
+            "alt": "Cards closup",
+            "_key": "deaaa24add5a",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-ed119641fb51b8fc50bbbb699f450dbe7bef9879-1920x1080-png",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
-            "_type": "customImage",
-            "alt": "Cards closup",
-            "_key": "deaaa24add5a"
+            "_type": "customImage"
           },
           {
             "image": {
@@ -652,28 +824,28 @@
             "_key": "8f96d0754b7a"
           },
           {
+            "_type": "customImage",
+            "alt": "Azure deck variant",
+            "_key": "6a2cfa9571bb",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-bbf924f7c9d2127c98f8e0941cf2c4e3a1f1421f-1921x1080-png",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Azure deck variant",
-            "_key": "6a2cfa9571bb"
+            }
           },
           {
+            "_type": "customImage",
+            "alt": "Amber deck variant",
+            "_key": "45675be26708",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-e7e51475ff2a85cc11b4623b916804c1be48f697-1921x1080-png",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Amber deck variant",
-            "_key": "45675be26708"
+            }
           },
           {
             "image": {
@@ -688,16 +860,16 @@
             "_key": "9e63436e642c"
           },
           {
-            "alt": "Crimson deck variant",
-            "_key": "6f56e398952c",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-1982afda61dc7a46d8023ab42b482d8aa11cb08b-1921x1080-png"
+                "_ref": "image-1982afda61dc7a46d8023ab42b482d8aa11cb08b-1921x1080-png",
+                "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Crimson deck variant",
+            "_key": "6f56e398952c"
           },
           {
             "image": {
@@ -712,35 +884,35 @@
             "_key": "e7919640053d"
           },
           {
-            "_type": "customImage",
-            "alt": "Card Details",
-            "_key": "23af887ae7a1",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-95fdeec71ff834ee1914874008d029b9fb7752a8-800x800-gif",
                 "_type": "reference"
               }
-            }
-          },
-          {
+            },
             "_type": "customImage",
-            "alt": "Jokers",
-            "_key": "3877560d28fd",
-            "image": {
-              "asset": {
-                "_ref": "image-919a1ef64c058f674551ca2c66e86fc21c29ac01-1920x1080-png",
-                "_type": "reference"
-              },
-              "_type": "image"
-            }
+            "alt": "Card Details",
+            "_key": "23af887ae7a1"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-306f3f22dfc3f3093945df7f8418c580c469a454-1920x1440-png",
+                "_ref": "image-919a1ef64c058f674551ca2c66e86fc21c29ac01-1920x1080-png",
                 "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Jokers",
+            "_key": "3877560d28fd"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-306f3f22dfc3f3093945df7f8418c580c469a454-1920x1440-png"
               }
             },
             "_type": "customImage",
@@ -748,16 +920,16 @@
             "_key": "f96615eb0d5b"
           },
           {
+            "_type": "customImage",
+            "alt": "Novel Closup",
+            "_key": "a5f1ed5ade1c",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-f87a484d2b1ef8d51b2254fdc2fce29435cd38fe-1920x1080-png",
                 "_type": "reference"
-              },
-              "_type": "image"
-            },
-            "_type": "customImage",
-            "alt": "Novel Closup",
-            "_key": "a5f1ed5ade1c"
+              }
+            }
           },
           {
             "image": {
@@ -772,30 +944,31 @@
             "_key": "bfdb9882a33c"
           },
           {
-            "_type": "customImage",
-            "alt": "Book Open",
-            "_key": "7856b7cab3e6",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-26be4fdd13be6a35617f55c93ec6a0532ef688ed-1920x1440-png"
+                "_ref": "image-26be4fdd13be6a35617f55c93ec6a0532ef688ed-1920x1440-png",
+                "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Book Open",
+            "_key": "7856b7cab3e6"
           },
           {
-            "_key": "01f76448fec1",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-f8187721db64117e2f24df00807cf3798292f8f9-1920x1920-png",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
-            "alt": "Ebook"
+            "alt": "Ebook",
+            "_key": "01f76448fec1"
           },
           {
+            "_type": "customImage",
             "alt": "Coin",
             "_key": "c4c73fbabd8c",
             "image": {
@@ -804,8 +977,7 @@
                 "_ref": "image-442a64b300afdbb454e006c27346c3b8b8f798dc-1080x1080-gif",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage"
+            }
           },
           {
             "image": {
@@ -820,31 +992,30 @@
             "_key": "e86c9f4acea8"
           },
           {
+            "_type": "customImage",
+            "alt": "Artbook",
             "_key": "d28e6118fad0",
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-2cbcb19110ade4051db20804a96736f895d7c992-1920x1440-png",
                 "_type": "reference"
-              }
-            },
-            "_type": "customImage",
-            "alt": "Artbook"
+              },
+              "_type": "image"
+            }
           },
           {
             "image": {
+              "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-fea25910b3a9b7f6b2e538f9d7f198aa8455e3f3-1920x1080-png"
-              },
-              "_type": "image"
+                "_ref": "image-fea25910b3a9b7f6b2e538f9d7f198aa8455e3f3-1920x1080-png",
+                "_type": "reference"
+              }
             },
             "_type": "customImage",
             "alt": "Box",
             "_key": "3e69c9d21de2"
           },
           {
-            "_key": "c95b1d58187f",
             "image": {
               "_type": "image",
               "asset": {
@@ -853,50 +1024,29 @@
               }
             },
             "_type": "customImage",
-            "alt": "Combo"
+            "alt": "Combo",
+            "_key": "c95b1d58187f"
           }
         ],
         "thumbnailImage": {
-          "_type": "customImage",
-          "alt": "steampunk dynasty thumbnail",
           "image": {
             "_type": "image",
             "asset": {
               "_ref": "image-127a8d59167aab266c9d468295cdb182accb85cd-1920x1080-png",
               "_type": "reference"
             }
-          }
-        },
-        "title": "Steampunk Dynasty",
-        "desc": "Welcome to the world of Steampunk Dynasty! Imagine holding a deck of playing cards that transports you to a fascinating retro-futuristic world, filled with steam-powered machinery and Victorian-era elegance.\n\nWe are excited to introduce not just one, but four unique decks with distinct colour schemes, each representing one of the four suits in the deck. But we didn't stop there - to fully immerse you in this captivating world, we've also created a novel called Steampunk Dynasty: Gears and Glory. Get ready to experience a thrilling adventure and discover the stories behind each of the four dynasties.\n\nThe world of Steampunk is a mesmerizing blend of the Victorian era and retro-futuristic science fiction, powered by steam machinery. This unique combination of elegance and creativity has given rise to a multitude of fascinating and inspiring ideas. The decks of the Vostok Cards collection embody this spirit, with their intricate designs, luxurious look and feel, and attention to detail. Each deck is uniquely crafted to represent a specific dynasty or suit, with elements that beautifully capture the essence of the Steampunk world.",
-        "primaryLink": {
-          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
-          "text": "Kickstarter",
-          "_type": "cta"
-        },
-        "slug": {
-          "current": "steampunk-dynasty",
-          "_type": "slug"
+          },
+          "_type": "customImage",
+          "alt": "steampunk dynasty thumbnail"
         }
       },
       {
-        "thumbnailImage": {
-          "image": {
-            "asset": {
-              "_ref": "image-7ad4429c6d3f7014f475bd2acb6bb6478f297cc1-3872x2592-jpg",
-              "_type": "reference"
-            },
-            "_type": "image"
-          },
-          "_type": "customImage",
-          "alt": "Animal Gangdom Deck"
-        },
         "title": "Animal Gangdom",
         "desc": "Did you ever imagine a card where the Jack of Spades is in a tracksuit, has a ski mask on, and not to mention is a wolf!? In this deck, every suit is associated with a different gang, from a different culture and a different animal kingdom. Every character has its own personality, while still keeping the traditional, minimalistic look of a playing card. ",
         "primaryLink": {
+          "_type": "cta",
           "link": "https://www.kickstarter.com/projects/vostokcards/vostok-cards-animal-gangdom",
-          "text": "Kickstarter",
-          "_type": "cta"
+          "text": "Kickstarter"
         },
         "slug": {
           "current": "animal-gangdom",
@@ -907,8 +1057,8 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-066f2dc54b8e0981e0488e73a21dacac2006dc7d-3872x2592-jpg",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-066f2dc54b8e0981e0488e73a21dacac2006dc7d-3872x2592-jpg"
               }
             },
             "_type": "customImage",
@@ -916,7 +1066,6 @@
             "_key": "8d6a335fdad6"
           },
           {
-            "_key": "8e6508ad3a78",
             "image": {
               "_type": "image",
               "asset": {
@@ -925,22 +1074,22 @@
               }
             },
             "_type": "customImage",
-            "alt": "Back of Tuck Box"
+            "alt": "Back of Tuck Box",
+            "_key": "8e6508ad3a78"
           },
           {
-            "_type": "customImage",
-            "alt": "Card Close Up",
-            "_key": "fa8a37fd1c30",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-e3f78c6d3ba2adf84667165b348839a875445ab7-3872x2592-jpg"
+                "_ref": "image-e3f78c6d3ba2adf84667165b348839a875445ab7-3872x2592-jpg",
+                "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Card Close Up",
+            "_key": "fa8a37fd1c30"
           },
           {
-            "alt": "Back of Card Close Up",
             "_key": "0ab319502b4c",
             "image": {
               "_type": "image",
@@ -949,23 +1098,22 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Back of Card Close Up"
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-769de7ebf8cc52ac219abbe14c9a49d352bfbeb3-3872x2592-jpg",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Aesthetic image",
             "_key": "b8f520def095"
           },
           {
-            "alt": "Jack and Queen of Clubs",
-            "_key": "9527755e234b",
             "image": {
               "_type": "image",
               "asset": {
@@ -973,14 +1121,16 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Jack and Queen of Clubs",
+            "_key": "9527755e234b"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-1f05742faed551984e76ef83fc634d2501fe1f76-2250x2250-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-1f05742faed551984e76ef83fc634d2501fe1f76-2250x2250-png"
               }
             },
             "_type": "customImage",
@@ -988,13 +1138,37 @@
             "_key": "08a1b64e8c9d"
           },
           {
-            "_type": "customImage",
-            "alt": "Jack and Queen of Hearts",
-            "_key": "a716648b334b",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-8e7c957d513f0dfbe2fa688cc40400714649a164-2250x2250-png",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Jack and Queen of Hearts",
+            "_key": "a716648b334b"
+          },
+          {
+            "image": {
+              "asset": {
+                "_ref": "image-92bf97b44398739f22d640c18640d5c44277d515-2250x2250-png",
+                "_type": "reference"
+              },
+              "_type": "image"
+            },
+            "_type": "customImage",
+            "alt": "Jack and Queen of Diamonds",
+            "_key": "2e9546eb6874"
+          },
+          {
+            "_type": "customImage",
+            "alt": "King and Ace of Clubs",
+            "_key": "e9f8914a8ebd",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-859ea427b3756d391382c582c54fa3265c28c3f0-2250x2250-png",
                 "_type": "reference"
               }
             }
@@ -1003,33 +1177,9 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-92bf97b44398739f22d640c18640d5c44277d515-2250x2250-png",
-                "_type": "reference"
-              }
-            },
-            "_type": "customImage",
-            "alt": "Jack and Queen of Diamonds",
-            "_key": "2e9546eb6874"
-          },
-          {
-            "image": {
-              "_type": "image",
-              "asset": {
-                "_ref": "image-859ea427b3756d391382c582c54fa3265c28c3f0-2250x2250-png",
-                "_type": "reference"
-              }
-            },
-            "_type": "customImage",
-            "alt": "King and Ace of Clubs",
-            "_key": "e9f8914a8ebd"
-          },
-          {
-            "image": {
-              "asset": {
                 "_ref": "image-919e7e862c025095c2e56a716352642f1df0c61e-2250x2250-png",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
             "alt": "King and Ace of Spades",
@@ -1037,17 +1187,19 @@
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-03f790eae1b6d5d3970a9e6021f6efdf308ca1a4-2250x2250-png",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "King and Ace of Hearts",
             "_key": "e01f5089deb3"
           },
           {
+            "alt": "King and Ace of Diamonds",
+            "_key": "adf87e78f1e2",
             "image": {
               "_type": "image",
               "asset": {
@@ -1055,56 +1207,33 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "King and Ace of Diamonds",
-            "_key": "adf87e78f1e2"
+            "_type": "customImage"
           },
           {
-            "_type": "customImage",
-            "alt": "Playing with the Cards",
-            "_key": "f275d27b6cbd",
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-3b4bac79f69a9d52964aae6b94c5e7128ac209df-2817x3250-jpg",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-3b4bac79f69a9d52964aae6b94c5e7128ac209df-2817x3250-jpg"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Playing with the Cards",
+            "_key": "f275d27b6cbd"
           }
-        ]
+        ],
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-7ad4429c6d3f7014f475bd2acb6bb6478f297cc1-3872x2592-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Animal Gangdom Deck"
+        }
       }
     ]
-  },
-  "_rev": "UD4dNj2lTKtYuLoYYHrj3b",
-  "hero": {
-    "customImage": {
-      "image": {
-        "_type": "image",
-        "asset": {
-          "_ref": "image-cfb0a49620c9c1aa4c0184ebdc18f32cb08d7f15-5320x3073-jpg",
-          "_type": "reference"
-        }
-      },
-      "_type": "customImage",
-      "alt": "Website landing page"
-    },
-    "title": {
-      "part1": "Landing Page:",
-      "part2": "Captivate & Convert",
-      "_type": "fancyText"
-    },
-    "desc": "Have an impactful page to engage and convert visitors swiftly.",
-    "quote": {
-      "_type": "quote",
-      "leftText": "Organized",
-      "hiddenTitle": "Quote English",
-      "_id": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
-      "_updatedAt": "2024-03-06T19:40:57Z",
-      "rightText": "Chaos",
-      "_createdAt": "2024-01-29T23:15:08Z",
-      "_rev": "42dARgouF4fLoQkzWokNzP"
-    },
-    "_type": "hero"
-  },
-  "price": 1500
+  }
 }

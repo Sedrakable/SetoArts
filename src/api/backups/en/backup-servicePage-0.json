@@ -1,28 +1,18 @@
 {
-  "_type": "servicePage",
-  "_updatedAt": "2024-04-04T21:04:44Z",
-  "_rev": "UD4dNj2lTKtYuLoYYHriG3",
-  "title": "Branding",
-  "price": 1500,
-  "_id": "5dac836d-7919-48df-8d39-1abbe1894f00",
-  "lang": "en",
-  "path": "/branding",
-  "_createdAt": "2024-02-16T19:46:10Z",
   "hero": {
-    "desc": "Establish a unique and recognizable identity for a company or product with distinct logos, color schemes, typography, etc.",
+    "desc": "Enhance your brand's appeal with Seto x Arts. Explore contemporary branding solutions tailored for your success in Montreal and Laval, Quebec. Let's craft a distinct visual identity with logos, color schemes, typography, and more, setting your business apart.",
     "quote": {
-      "rightText": "Chaos",
-      "_createdAt": "2024-01-29T23:15:08Z",
       "_rev": "42dARgouF4fLoQkzWokNzP",
       "_type": "quote",
       "leftText": "Organized",
       "hiddenTitle": "Quote English",
       "_id": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
-      "_updatedAt": "2024-03-06T19:40:57Z"
+      "_updatedAt": "2024-03-06T19:40:57Z",
+      "rightText": "Chaos",
+      "_createdAt": "2024-01-29T23:15:08Z"
     },
     "_type": "hero",
     "customImage": {
-      "alt": "Logos, Colors, Typography, Brand Collateral",
       "image": {
         "_type": "image",
         "asset": {
@@ -30,7 +20,8 @@
           "_type": "reference"
         }
       },
-      "_type": "customImage"
+      "_type": "customImage",
+      "alt": "Logos, Colors, Typography, Brand Collateral"
     },
     "title": {
       "part1": "Branding:",
@@ -38,266 +29,50 @@
       "_type": "fancyText"
     }
   },
-  "features": {
-    "features": [
-      {
-        "customImage": {
-          "alt": "Brand Visual Identity",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage"
-        },
-        "_id": "7cbca69e-94f4-4e6b-b5c9-da7db1389c90",
-        "title": "Visual Identity",
-        "_updatedAt": "2024-03-29T22:32:27Z",
-        "desc": "I create a unique look for your brand that makes it stand out from the competition.",
-        "_createdAt": "2024-02-16T19:41:42Z",
-        "_rev": "14bF2iHNiRa7syDF0S9QHK",
-        "_type": "feature"
-      },
-      {
-        "_id": "6a092958-662e-42d0-8232-1f58540e3d3a",
-        "title": "Logo Design",
-        "_updatedAt": "2024-03-30T19:48:43Z",
-        "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
-        "_createdAt": "2024-03-06T01:21:54Z",
-        "_rev": "OEnRojb5pXWjE2sC6rNPME",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Logo"
-        }
-      },
-      {
-        "_id": "771493a4-5468-4dc6-bfcf-2c91f00b7996",
-        "title": "Color Palette",
-        "_updatedAt": "2024-03-06T02:57:46Z",
-        "desc": "I help you pick colors that work well together and make your brand memorable.",
-        "_createdAt": "2024-02-16T16:37:17Z",
-        "_rev": "pE4qmNBESg4zKMd9uJIr4Q",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Color Cards"
-        }
-      },
-      {
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Different Fonts"
-        },
-        "_id": "0a49d858-b10b-4eef-a7cc-4093e2a9c172",
-        "title": "Typography",
-        "_updatedAt": "2024-03-06T02:57:54Z",
-        "desc": "I can guide you to choose fonts that match your brand's personality and are easy to read.",
-        "_createdAt": "2024-02-16T19:39:57Z",
-        "_rev": "pE4qmNBESg4zKMd9uJIr9G"
-      },
-      {
-        "_type": "feature",
-        "customImage": {
-          "_type": "customImage",
-          "alt": "Collaterals",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png",
-              "_type": "reference"
-            }
-          }
-        },
-        "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
-        "title": "Brand Collaterals",
-        "_updatedAt": "2024-03-29T22:54:18Z",
-        "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
-        "_createdAt": "2024-02-16T16:48:19Z",
-        "_rev": "YXByP76OkInEwmmjNaFpvO"
-      },
-      {
-        "_id": "56491256-2b1f-4fba-8dc0-69e9139c0ac5",
-        "title": "Market Research",
-        "_updatedAt": "2024-02-25T02:50:59Z",
-        "desc": "I study the market to give you useful information for making smart decisions about your brand.",
-        "_createdAt": "2024-02-16T19:35:36Z",
-        "_rev": "rGZ2nN6K5mjOGJOoWadvqK",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Research Laptop"
-        }
-      },
-      {
-        "desc": "I'll expertly sketch out your ideas with precision and creativity, bringing your visions to life.",
-        "_createdAt": "2024-03-29T22:37:06Z",
-        "_rev": "14bF2iHNiRa7syDF0TVPOI",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-f9c3f86d5cd6f93c3dee2e8696973776f2db836d-6000x4000-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Sketching "
-        },
-        "_id": "8725129c-4981-4056-8d86-2fa38d475005",
-        "title": "Sketching",
-        "_updatedAt": "2024-03-31T20:17:13Z"
-      },
-      {
-        "_updatedAt": "2024-02-26T23:52:47Z",
-        "desc": "I your improve your already existing designs so that they reflect exactly your brand's image.",
-        "_createdAt": "2024-02-16T19:37:13Z",
-        "_rev": "c9hkvQgAJDwuQEMKj1iccZ",
-        "_type": "feature",
-        "customImage": {
-          "alt": "Improving Design",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage"
-        },
-        "_id": "a593a279-7a50-4a8a-a6bb-f53804913817",
-        "title": "Design Refinement"
-      },
-      {
-        "desc": "I design eye catching icons and symbols that can be frequently used on your website or elsewhere.",
-        "_createdAt": "2024-02-16T19:45:12Z",
-        "_rev": "1yoLMt3Jt0PZv9LdlrGmog",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "asset": {
-              "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
-              "_type": "reference"
-            },
-            "_type": "image"
-          },
-          "_type": "customImage",
-          "alt": "Multiple Icons and Symbols"
-        },
-        "_id": "f6fd36f2-26cd-4036-b227-b9317d8ea47a",
-        "title": "Symbols & Icons",
-        "_updatedAt": "2024-02-28T23:27:55Z"
-      },
-      {
-        "_updatedAt": "2024-03-31T20:20:26Z",
-        "desc": "I'll craft a distinctive tone and voice for your brand that resonates with your audience, setting you apart in the crowded market\n",
-        "_createdAt": "2024-03-29T23:03:49Z",
-        "_rev": "14bF2iHNiRa7syDF0TVSNN",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-c511f742b4901222167cfb3a48213af7c89eb0a0-721x540-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Brand Language"
-        },
-        "_id": "833bdd35-93a2-481b-ae11-8e014050b3bc",
-        "title": "Brand Language"
-      },
-      {
-        "_id": "f76d9180-461b-45eb-8378-50022c458953",
-        "title": "Brand Strategy Guide",
-        "_updatedAt": "2024-03-06T23:29:15Z",
-        "desc": "I give you a plan with practical steps to maintain your brand's image with the chosen writing style, tone, and more.",
-        "_createdAt": "2024-02-16T19:43:09Z",
-        "_rev": "42dARgouF4fLoQkzWq4LPq",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "asset": {
-              "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
-              "_type": "reference"
-            },
-            "_type": "image"
-          },
-          "_type": "customImage",
-          "alt": "Teaching strategy"
-        }
-      }
-    ]
-  },
+  "lang": "en",
+  "title": "Branding",
+  "hiddenTitle": "Branding English",
+  "_type": "servicePage",
+  "price": 1500,
+  "_rev": "Z5IDu749svD6Fxx4WW73xF",
+  "path": "/branding",
+  "_createdAt": "2024-02-16T19:46:10Z",
+  "_id": "5dac836d-7919-48df-8d39-1abbe1894f00",
+  "work": null,
   "processes": {
     "processes": [
       {
+        "_type": "process",
         "_id": "2df554c4-46ac-451a-8fcd-635b17bf9c28",
         "title": "Research",
         "_updatedAt": "2024-03-29T23:09:40Z",
         "desc": "At the initial stage of our branding service, we embark on thorough research to gain valuable insights. This involves conducting competitor research, administering a client questionnaire to understand the brand's aspirations, conducting client interviews to delve into the brand's vision, studying the company's industry to grasp market dynamics, identifying the unique selling point that sets the brand apart, and determining the target demographic to align branding strategies with the intended audience.",
         "features": [
           {
+            "_updatedAt": "2024-02-25T02:50:59Z",
+            "desc": "I study the market to give you useful information for making smart decisions about your brand.",
             "_createdAt": "2024-02-16T19:35:36Z",
             "_rev": "rGZ2nN6K5mjOGJOoWadvqK",
             "_type": "feature",
             "customImage": {
-              "alt": "Research Laptop",
               "image": {
-                "_type": "image",
                 "asset": {
                   "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
                   "_type": "reference"
-                }
+                },
+                "_type": "image"
               },
-              "_type": "customImage"
+              "_type": "customImage",
+              "alt": "Research Laptop"
             },
             "_id": "56491256-2b1f-4fba-8dc0-69e9139c0ac5",
-            "title": "Market Research",
-            "_updatedAt": "2024-02-25T02:50:59Z",
-            "desc": "I study the market to give you useful information for making smart decisions about your brand."
+            "title": "Market Research"
           }
         ],
         "_createdAt": "2024-02-17T00:22:18Z",
-        "_rev": "YXByP76OkInEwmmjNaGGAV",
-        "_type": "process"
+        "_rev": "YXByP76OkInEwmmjNaGGAV"
       },
       {
-        "_type": "process",
-        "_id": "7cfae497-77d8-42fb-9a4c-2b0b349f10e3",
         "title": "Finding Direction",
         "_updatedAt": "2024-03-05T22:25:12Z",
         "desc": "In this stage the focus is on visual exploration and conceptualization. This entails creating mood boards to capture the essence of the brand and its visual identity. Additionally, a brand style presentation is crafted to showcase potential directions for the brand's visual representation, setting the stage for further development.",
@@ -313,8 +88,8 @@
               "image": {
                 "_type": "image",
                 "asset": {
-                  "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png",
-                  "_type": "reference"
+                  "_type": "reference",
+                  "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png"
                 }
               },
               "_type": "customImage",
@@ -324,15 +99,23 @@
           }
         ],
         "_createdAt": "2024-02-17T00:52:25Z",
-        "_rev": "yjwdrWT0n7hNXKlLZgleGo"
+        "_rev": "yjwdrWT0n7hNXKlLZgleGo",
+        "_type": "process",
+        "_id": "7cfae497-77d8-42fb-9a4c-2b0b349f10e3"
       },
       {
+        "_type": "process",
         "_id": "e5a0da6c-4570-4ad4-88a0-c409cb4dc034",
         "title": "Brainstorming & Sketching",
         "_updatedAt": "2024-03-29T23:07:27Z",
         "desc": "During this stage, word mapping or word association exercises are conducted to generate creative ideas. This is followed by the development of rough sketches using pen and paper, as well as the creation of digital symbols, icons, and text. These activities are crucial for exploring and visualizing potential design concepts and elements for the brand's identity.",
         "features": [
           {
+            "title": "Sketching",
+            "_updatedAt": "2024-03-31T20:17:13Z",
+            "desc": "I'll expertly sketch out your ideas with precision and creativity, bringing your visions to life.",
+            "_createdAt": "2024-03-29T22:37:06Z",
+            "_rev": "14bF2iHNiRa7syDF0TVPOI",
             "_type": "feature",
             "customImage": {
               "image": {
@@ -345,17 +128,11 @@
               "_type": "customImage",
               "alt": "Sketching "
             },
-            "_id": "8725129c-4981-4056-8d86-2fa38d475005",
-            "title": "Sketching",
-            "_updatedAt": "2024-03-31T20:17:13Z",
-            "desc": "I'll expertly sketch out your ideas with precision and creativity, bringing your visions to life.",
-            "_createdAt": "2024-03-29T22:37:06Z",
-            "_rev": "14bF2iHNiRa7syDF0TVPOI"
+            "_id": "8725129c-4981-4056-8d86-2fa38d475005"
           }
         ],
         "_createdAt": "2024-02-17T00:53:06Z",
-        "_rev": "14bF2iHNiRa7syDF0SAmKN",
-        "_type": "process"
+        "_rev": "14bF2iHNiRa7syDF0SAmKN"
       },
       {
         "_rev": "YXByP76OkInEwmmjNaGL75",
@@ -366,6 +143,11 @@
         "desc": "During this stage, the best sketches from the brainstorming phase are digitized. The key focus is on narrowing down the concepts and making small tweaks and changes to enhance the designs. This step aims to select the most promising and effective branding concepts to move forward in the branding process. I provide up to … revisions to ensure it meets the vision of the brand.",
         "features": [
           {
+            "title": "Logo Design",
+            "_updatedAt": "2024-03-30T19:48:43Z",
+            "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
+            "_createdAt": "2024-03-06T01:21:54Z",
+            "_rev": "OEnRojb5pXWjE2sC6rNPME",
             "_type": "feature",
             "customImage": {
               "image": {
@@ -378,21 +160,9 @@
               "_type": "customImage",
               "alt": "Logo"
             },
-            "_id": "6a092958-662e-42d0-8232-1f58540e3d3a",
-            "title": "Logo Design",
-            "_updatedAt": "2024-03-30T19:48:43Z",
-            "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
-            "_createdAt": "2024-03-06T01:21:54Z",
-            "_rev": "OEnRojb5pXWjE2sC6rNPME"
+            "_id": "6a092958-662e-42d0-8232-1f58540e3d3a"
           },
           {
-            "_id": "2cb269bf-a827-4965-8608-ce5b446e5844",
-            "title": "Revisions",
-            "_updatedAt": "2024-03-08T02:51:05Z",
-            "desc": "Multiple revisions are offered to perfect and ensure it aligns with your brand's intended identity and resonates with your audience.",
-            "_createdAt": "2024-02-17T01:18:50Z",
-            "_rev": "uiWIFkW6n28NyJPxPEs18k",
-            "_type": "feature",
             "customImage": {
               "image": {
                 "_type": "image",
@@ -403,27 +173,34 @@
               },
               "_type": "customImage",
               "alt": "Revisions"
-            }
+            },
+            "_id": "2cb269bf-a827-4965-8608-ce5b446e5844",
+            "title": "Revisions",
+            "_updatedAt": "2024-03-08T02:51:05Z",
+            "desc": "Multiple revisions are offered to perfect and ensure it aligns with your brand's intended identity and resonates with your audience.",
+            "_createdAt": "2024-02-17T01:18:50Z",
+            "_rev": "uiWIFkW6n28NyJPxPEs18k",
+            "_type": "feature"
           },
           {
-            "desc": "I your improve your already existing designs so that they reflect exactly your brand's image.",
             "_createdAt": "2024-02-16T19:37:13Z",
-            "_rev": "c9hkvQgAJDwuQEMKj1iccZ",
+            "_rev": "UD4dNj2lTKtYuLoYYHv2mB",
             "_type": "feature",
             "customImage": {
-              "_type": "customImage",
-              "alt": "Improving Design",
               "image": {
                 "_type": "image",
                 "asset": {
-                  "_type": "reference",
-                  "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg"
+                  "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+                  "_type": "reference"
                 }
-              }
+              },
+              "_type": "customImage",
+              "alt": "Improving Design"
             },
             "_id": "a593a279-7a50-4a8a-a6bb-f53804913817",
             "title": "Design Refinement",
-            "_updatedAt": "2024-02-26T23:52:47Z"
+            "_updatedAt": "2024-04-04T21:50:51Z",
+            "desc": "I will improve your already existing designs so that they reflect exactly your brand's image."
           }
         ],
         "_createdAt": "2024-02-17T00:54:41Z"
@@ -431,27 +208,33 @@
       {
         "features": [
           {
-            "_updatedAt": "2024-03-06T02:57:46Z",
-            "desc": "I help you pick colors that work well together and make your brand memorable.",
-            "_createdAt": "2024-02-16T16:37:17Z",
-            "_rev": "pE4qmNBESg4zKMd9uJIr4Q",
             "_type": "feature",
             "customImage": {
-              "_type": "customImage",
-              "alt": "Color Cards",
               "image": {
                 "_type": "image",
                 "asset": {
                   "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg",
                   "_type": "reference"
                 }
-              }
+              },
+              "_type": "customImage",
+              "alt": "Color Cards"
             },
             "_id": "771493a4-5468-4dc6-bfcf-2c91f00b7996",
-            "title": "Color Palette"
+            "title": "Color Palette",
+            "_updatedAt": "2024-03-06T02:57:46Z",
+            "desc": "I help you pick colors that work well together and make your brand memorable.",
+            "_createdAt": "2024-02-16T16:37:17Z",
+            "_rev": "pE4qmNBESg4zKMd9uJIr4Q"
           },
           {
+            "_updatedAt": "2024-03-06T02:57:54Z",
+            "desc": "I can guide you to choose fonts that match your brand's personality and are easy to read.",
+            "_createdAt": "2024-02-16T19:39:57Z",
+            "_rev": "pE4qmNBESg4zKMd9uJIr9G",
+            "_type": "feature",
             "customImage": {
+              "alt": "Different Fonts",
               "image": {
                 "_type": "image",
                 "asset": {
@@ -459,16 +242,10 @@
                   "_type": "reference"
                 }
               },
-              "_type": "customImage",
-              "alt": "Different Fonts"
+              "_type": "customImage"
             },
             "_id": "0a49d858-b10b-4eef-a7cc-4093e2a9c172",
-            "title": "Typography",
-            "_updatedAt": "2024-03-06T02:57:54Z",
-            "desc": "I can guide you to choose fonts that match your brand's personality and are easy to read.",
-            "_createdAt": "2024-02-16T19:39:57Z",
-            "_rev": "pE4qmNBESg4zKMd9uJIr9G",
-            "_type": "feature"
+            "title": "Typography"
           },
           {
             "customImage": {
@@ -500,51 +277,50 @@
         "desc": "After the approval of logo concepts and the selection of the overall style direction, the focus shifts to choosing typography options and establishing a color palette. This step is crucial in creating a cohesive and consistent visual identity for the brand, ensuring that the chosen elements align with the brand's messaging and positioning."
       },
       {
-        "title": "Deliverables",
-        "_updatedAt": "2024-03-29T23:10:31Z",
-        "desc": "At the last stage, the finalized branding materials and assets are compiled and presented to the client. This includes the delivery of the completed logo, a captivating landing page, essential business collateral, thoughtfully curated typography choices, a unique color palette, and any other relevant brand elements in the necessary file formats. Additionally, a digital brand guidelines manual will be delivered to the client, offering comprehensive instructions on how to appropriately utilize all the deliverables. This step marks the culmination of the branding process, providing the client with the essential tools and assets to establish a strong and consistent brand presence.",
         "features": [
           {
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Multiple Icons and Symbols"
-            },
             "_id": "f6fd36f2-26cd-4036-b227-b9317d8ea47a",
             "title": "Symbols & Icons",
             "_updatedAt": "2024-02-28T23:27:55Z",
             "desc": "I design eye catching icons and symbols that can be frequently used on your website or elsewhere.",
             "_createdAt": "2024-02-16T19:45:12Z",
-            "_rev": "1yoLMt3Jt0PZv9LdlrGmog"
+            "_rev": "1yoLMt3Jt0PZv9LdlrGmog",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "asset": {
+                  "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+                  "_type": "reference"
+                },
+                "_type": "image"
+              },
+              "_type": "customImage",
+              "alt": "Multiple Icons and Symbols"
+            }
           },
           {
+            "title": "Brand Collaterals",
+            "_updatedAt": "2024-03-29T22:54:18Z",
+            "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
+            "_createdAt": "2024-02-16T16:48:19Z",
             "_rev": "YXByP76OkInEwmmjNaFpvO",
             "_type": "feature",
             "customImage": {
-              "_type": "customImage",
-              "alt": "Collaterals",
               "image": {
                 "_type": "image",
                 "asset": {
                   "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png",
                   "_type": "reference"
                 }
-              }
+              },
+              "_type": "customImage",
+              "alt": "Collaterals"
             },
-            "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
-            "title": "Brand Collaterals",
-            "_updatedAt": "2024-03-29T22:54:18Z",
-            "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
-            "_createdAt": "2024-02-16T16:48:19Z"
+            "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec"
           },
           {
+            "desc": "I give you a plan with practical steps to maintain your brand's image with the chosen writing style, tone, and more.",
+            "_createdAt": "2024-02-16T19:43:09Z",
             "_rev": "42dARgouF4fLoQkzWq4LPq",
             "_type": "feature",
             "customImage": {
@@ -560,17 +336,244 @@
             },
             "_id": "f76d9180-461b-45eb-8378-50022c458953",
             "title": "Brand Strategy Guide",
-            "_updatedAt": "2024-03-06T23:29:15Z",
-            "desc": "I give you a plan with practical steps to maintain your brand's image with the chosen writing style, tone, and more.",
-            "_createdAt": "2024-02-16T19:43:09Z"
+            "_updatedAt": "2024-03-06T23:29:15Z"
           }
         ],
         "_createdAt": "2024-02-17T00:56:13Z",
         "_rev": "YXByP76OkInEwmmjNaGIkB",
         "_type": "process",
-        "_id": "1aeece56-0140-4b3b-831a-0a9171797574"
+        "_id": "1aeece56-0140-4b3b-831a-0a9171797574",
+        "title": "Deliverables",
+        "_updatedAt": "2024-03-29T23:10:31Z",
+        "desc": "At the last stage, the finalized branding materials and assets are compiled and presented to the client. This includes the delivery of the completed logo, a captivating landing page, essential business collateral, thoughtfully curated typography choices, a unique color palette, and any other relevant brand elements in the necessary file formats. Additionally, a digital brand guidelines manual will be delivered to the client, offering comprehensive instructions on how to appropriately utilize all the deliverables. This step marks the culmination of the branding process, providing the client with the essential tools and assets to establish a strong and consistent brand presence."
       }
     ]
   },
-  "work": null
+  "metatitle": null,
+  "features": {
+    "features": [
+      {
+        "_createdAt": "2024-02-16T19:41:42Z",
+        "_rev": "14bF2iHNiRa7syDF0S9QHK",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Brand Visual Identity",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "_id": "7cbca69e-94f4-4e6b-b5c9-da7db1389c90",
+        "title": "Visual Identity",
+        "_updatedAt": "2024-03-29T22:32:27Z",
+        "desc": "I create a unique look for your brand that makes it stand out from the competition."
+      },
+      {
+        "_createdAt": "2024-03-06T01:21:54Z",
+        "_rev": "OEnRojb5pXWjE2sC6rNPME",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Logo"
+        },
+        "_id": "6a092958-662e-42d0-8232-1f58540e3d3a",
+        "title": "Logo Design",
+        "_updatedAt": "2024-03-30T19:48:43Z",
+        "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence."
+      },
+      {
+        "desc": "I help you pick colors that work well together and make your brand memorable.",
+        "_createdAt": "2024-02-16T16:37:17Z",
+        "_rev": "pE4qmNBESg4zKMd9uJIr4Q",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Color Cards"
+        },
+        "_id": "771493a4-5468-4dc6-bfcf-2c91f00b7996",
+        "title": "Color Palette",
+        "_updatedAt": "2024-03-06T02:57:46Z"
+      },
+      {
+        "desc": "I can guide you to choose fonts that match your brand's personality and are easy to read.",
+        "_createdAt": "2024-02-16T19:39:57Z",
+        "_rev": "pE4qmNBESg4zKMd9uJIr9G",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Different Fonts",
+          "image": {
+            "asset": {
+              "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage"
+        },
+        "_id": "0a49d858-b10b-4eef-a7cc-4093e2a9c172",
+        "title": "Typography",
+        "_updatedAt": "2024-03-06T02:57:54Z"
+      },
+      {
+        "_rev": "YXByP76OkInEwmmjNaFpvO",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Collaterals"
+        },
+        "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
+        "title": "Brand Collaterals",
+        "_updatedAt": "2024-03-29T22:54:18Z",
+        "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
+        "_createdAt": "2024-02-16T16:48:19Z"
+      },
+      {
+        "desc": "I study the market to give you useful information for making smart decisions about your brand.",
+        "_createdAt": "2024-02-16T19:35:36Z",
+        "_rev": "rGZ2nN6K5mjOGJOoWadvqK",
+        "_type": "feature",
+        "customImage": {
+          "_type": "customImage",
+          "alt": "Research Laptop",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+              "_type": "reference"
+            }
+          }
+        },
+        "_id": "56491256-2b1f-4fba-8dc0-69e9139c0ac5",
+        "title": "Market Research",
+        "_updatedAt": "2024-02-25T02:50:59Z"
+      },
+      {
+        "desc": "I'll expertly sketch out your ideas with precision and creativity, bringing your visions to life.",
+        "_createdAt": "2024-03-29T22:37:06Z",
+        "_rev": "14bF2iHNiRa7syDF0TVPOI",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-f9c3f86d5cd6f93c3dee2e8696973776f2db836d-6000x4000-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Sketching "
+        },
+        "_id": "8725129c-4981-4056-8d86-2fa38d475005",
+        "title": "Sketching",
+        "_updatedAt": "2024-03-31T20:17:13Z"
+      },
+      {
+        "_updatedAt": "2024-04-04T21:50:51Z",
+        "desc": "I will improve your already existing designs so that they reflect exactly your brand's image.",
+        "_createdAt": "2024-02-16T19:37:13Z",
+        "_rev": "UD4dNj2lTKtYuLoYYHv2mB",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Improving Design"
+        },
+        "_id": "a593a279-7a50-4a8a-a6bb-f53804913817",
+        "title": "Design Refinement"
+      },
+      {
+        "_createdAt": "2024-02-16T19:45:12Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGmog",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Multiple Icons and Symbols",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "_id": "f6fd36f2-26cd-4036-b227-b9317d8ea47a",
+        "title": "Symbols & Icons",
+        "_updatedAt": "2024-02-28T23:27:55Z",
+        "desc": "I design eye catching icons and symbols that can be frequently used on your website or elsewhere."
+      },
+      {
+        "_updatedAt": "2024-03-31T20:20:26Z",
+        "desc": "I'll craft a distinctive tone and voice for your brand that resonates with your audience, setting you apart in the crowded market\n",
+        "_createdAt": "2024-03-29T23:03:49Z",
+        "_rev": "14bF2iHNiRa7syDF0TVSNN",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-c511f742b4901222167cfb3a48213af7c89eb0a0-721x540-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Brand Language"
+        },
+        "_id": "833bdd35-93a2-481b-ae11-8e014050b3bc",
+        "title": "Brand Language"
+      },
+      {
+        "_id": "f76d9180-461b-45eb-8378-50022c458953",
+        "title": "Brand Strategy Guide",
+        "_updatedAt": "2024-03-06T23:29:15Z",
+        "desc": "I give you a plan with practical steps to maintain your brand's image with the chosen writing style, tone, and more.",
+        "_createdAt": "2024-02-16T19:43:09Z",
+        "_rev": "42dARgouF4fLoQkzWq4LPq",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Teaching strategy"
+        }
+      }
+    ]
+  },
+  "metaTitle": "Branding, Rebranding, Logos design services | Seto x Arts | Montreal & Laval",
+  "_updatedAt": "2024-04-26T02:04:58Z"
 }

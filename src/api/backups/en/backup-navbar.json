@@ -1,8 +1,4 @@
 {
-  "lang": "en",
-  "_updatedAt": "2024-02-29T08:40:21Z",
-  "_createdAt": "2024-02-16T16:09:05Z",
-  "_rev": "c9hkvQgAJDwuQEMKjCVAea",
   "_type": "navbar",
   "links": [
     {
@@ -12,20 +8,19 @@
       "_key": "57469334049d"
     },
     {
-      "_key": "5303e3087528",
       "title": "Services",
       "ctaArray": [
         {
+          "_key": "9d5388be39ac",
           "_type": "localLink",
           "link": "/branding",
-          "text": "Branding",
-          "_key": "9d5388be39ac"
+          "text": "Branding"
         },
         {
-          "_type": "localLink",
-          "link": "/landing-page",
-          "text": "Landing Page",
-          "_key": "9e3c6dd471c9"
+          "link": "/web-design",
+          "text": "Web Design",
+          "_key": "9e3c6dd471c9",
+          "_type": "localLink"
         },
         {
           "_type": "localLink",
@@ -39,20 +34,25 @@
           "text": "Custom Work",
           "_key": "f77d3ff7288d"
         }
-      ]
+      ],
+      "_key": "5303e3087528"
     },
     {
-      "_type": "localLink",
-      "link": "/about-work",
       "text": "About + Work",
-      "_key": "05ce4081eec0"
+      "_key": "05ce4081eec0",
+      "_type": "localLink",
+      "link": "/about-work"
     },
     {
-      "_type": "localLink",
-      "link": "/contact",
       "text": "Work with me",
-      "_key": "eeac3056ca8e"
+      "_key": "eeac3056ca8e",
+      "_type": "localLink",
+      "link": "/contact"
     }
   ],
-  "_id": "1bd2295b-5204-4f9a-b2ab-b934a03c3102"
+  "_id": "1bd2295b-5204-4f9a-b2ab-b934a03c3102",
+  "lang": "en",
+  "_updatedAt": "2024-04-26T03:05:03Z",
+  "_createdAt": "2024-02-16T16:09:05Z",
+  "_rev": "Z5IDu749svD6Fxx4WWA3gp"
 }

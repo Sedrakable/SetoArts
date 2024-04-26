@@ -1,21 +1,171 @@
 {
+  "_createdAt": "2024-03-06T19:44:43Z",
   "work": {
     "works": [
       {
+        "slug": {
+          "current": "krusty-krab",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "alt": "Krusty Krab Rebrand",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-45a4c343ccf97bcdd550c933ae41eebaa0496d62-2000x1300-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "customImages": [
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-45a4c343ccf97bcdd550c933ae41eebaa0496d62-2000x1300-jpg"
+              }
+            },
+            "_type": "customImage",
+            "alt": "The Krusty Krab Logo Re Brand",
+            "_key": "97cfec5da6e8"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-a9338c6657b61a3fa035eb9fe8979c55ebd86330-2000x800-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "The Wordmark of the Krysty Krab Logo",
+            "_key": "263a6b346c2a"
+          },
+          {
+            "_key": "503d477e3a5f",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-7279907c50fd4c6330c458857f2575a4a2861a2c-2000x1000-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Two version of the Krusty Krab Logo"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-7da2e2bf5ed0a52cf916e9bea9692c4b4060398c-2000x800-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Colors for the Krusty Krab Rebrand. Krab Red, Koral Pink, Pearl White, Sea Blue and Deep Sea Blue",
+            "_key": "8cb58c0748e7"
+          },
+          {
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-509ef19027c80cba8d2d8d94ca200f16240f3bf2-2000x922-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Icons for the Kusty Krab Rebrand. Some Fries, Burger, and a Soda",
+            "_key": "135bb0c4919b"
+          },
+          {
+            "_type": "customImage",
+            "alt": "Fonts for the Used in the Krusty Krab Brand. Passero One and Montserrat",
+            "_key": "d591fd7e12a8",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-5ea5d2651377b1b6c6d0a4a3f6146c28bcdc4eb6-2000x1120-jpg",
+                "_type": "reference"
+              }
+            }
+          },
+          {
+            "_key": "93acf20f25f8",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-bfa1cae4f9e8f133eb9be7a0756390efdfcbce09-2000x800-jpg",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Three different Textures. A grid of the icons, a floral texture and a coral pattern"
+          },
+          {
+            "_key": "e8f283eda718",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-07860d76b7a763e3d9305865673d0285d71c435e-2000x1000-jpg"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Mobile Integration of the Krusty Krab. Mobile Website with a Navbar with an order Button. Shell Icon, Burger Menu. Hero Section with the Krusty Meal. Outside of phone, Mobile Icons"
+          },
+          {
+            "_key": "63dbc6a50967",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-601ae636d4beed1a6f18fc9f222bd6f3381b8b9a-1920x1080-png",
+                "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "A Krusty Krab Menu with all the food. Plankton in the corner"
+          },
+          {
+            "_key": "36171a105e97",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-7229b77bd1e2094f215a1660aa15166905b3424e-2000x718-jpg"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Mockups of a Billboard and the Krusty Krab Meal. Burger, Soda and fries on a table"
+          }
+        ],
+        "title": "Krusty Krab",
+        "desc": "Growing up, SpongeBob was a huge part of my childhood, but I couldn't help but think that Mr Krabs was cutting corners when it came to branding, so I took it upon myself to give the Krusty Krab the modern and vibrant identity it deserves. With a colorful palette and a fresh approach, I aimed to streamline and elevate this iconic fast-food brand while staying true to its roots.",
+        "primaryLink": {
+          "text": "Behance",
+          "_type": "cta",
+          "link": "https://www.behance.net/gallery/196756359/Krusty-Krab-Rebrand"
+        }
+      },
+      {
+        "slug": {
+          "current": "b-nest",
+          "_type": "slug"
+        },
         "thumbnailImage": {
           "image": {
+            "_type": "image",
             "asset": {
               "_type": "reference",
               "_ref": "image-c828375b67dfd06c1a6ad4595bcdd10ae13ea2c9-2000x1301-jpg"
-            },
-            "_type": "image"
+            }
           },
           "_type": "customImage",
           "alt": "B'nest logo"
         },
         "customImages": [
           {
-            "_type": "customImage",
             "alt": "Cream Jar",
             "_key": "293a52fdaf4d",
             "image": {
@@ -24,26 +174,27 @@
                 "_ref": "image-273e87e7e0c3077c3aa70a2b504ae9f18333c069-2000x1300-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage"
           },
           {
+            "_type": "customImage",
+            "alt": "Research",
+            "_key": "9936a8978659",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-de0902948e760435d7c77046b7a126d257988c9b-2000x1301-jpg",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Research",
-            "_key": "9936a8978659"
+            }
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-afc8d88a256ef8d0fe4bf2cfffd0d634276271cf-2000x901-jpg"
+                "_ref": "image-afc8d88a256ef8d0fe4bf2cfffd0d634276271cf-2000x901-jpg",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
@@ -51,19 +202,18 @@
             "_key": "e57c33be7681"
           },
           {
-            "_type": "customImage",
-            "alt": "Logo Scalable and Light",
-            "_key": "3baf8857d245",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-65897a93a7676bc6dc9832cc982b2cd338b6cfa4-2000x1301-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Logo Scalable and Light",
+            "_key": "3baf8857d245"
           },
           {
-            "_key": "2a76714169a1",
             "image": {
               "_type": "image",
               "asset": {
@@ -72,15 +222,16 @@
               }
             },
             "_type": "customImage",
-            "alt": "Logo Scalable and Dark"
+            "alt": "Logo Scalable and Dark",
+            "_key": "2a76714169a1"
           },
           {
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-96e804272f850d6ff969864cf705816c7ccc4c73-2000x901-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
             "alt": "Word Mark",
@@ -90,8 +241,8 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-c4a6ece6041be82861f8ba42720a49bb784d495c-2000x1301-jpg",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-c4a6ece6041be82861f8ba42720a49bb784d495c-2000x1301-jpg"
               }
             },
             "_type": "customImage",
@@ -99,6 +250,7 @@
             "_key": "d368eadcd21c"
           },
           {
+            "alt": "Typography",
             "_key": "c538a8b29f37",
             "image": {
               "_type": "image",
@@ -107,36 +259,33 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Typography"
+            "_type": "customImage"
           },
           {
+            "_type": "customImage",
+            "alt": "Textures",
+            "_key": "4b58fcbd6a97",
             "image": {
               "asset": {
                 "_ref": "image-0f4cef381203136af106d8ab2ee4fcaf268c410d-2000x901-jpg",
                 "_type": "reference"
               },
               "_type": "image"
-            },
-            "_type": "customImage",
-            "alt": "Textures",
-            "_key": "4b58fcbd6a97"
+            }
           },
           {
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-836d7f079eb3e74d406ddfd377dde5e55f047593-2000x1301-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
             "alt": "Brand Voice",
             "_key": "82576573d025"
           },
           {
-            "alt": "Gear",
-            "_key": "afa52e846f41",
             "image": {
               "asset": {
                 "_ref": "image-755bb30222304f846ac89f8c0ab82ed6c4340fb3-2000x1301-jpg",
@@ -144,7 +293,9 @@
               },
               "_type": "image"
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Gear",
+            "_key": "afa52e846f41"
           },
           {
             "image": {
@@ -159,46 +310,46 @@
             "_key": "27b5945f661f"
           },
           {
-            "_type": "customImage",
-            "alt": "Bee hive",
-            "_key": "e33d209e3a75",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-75248c55e6de87de6d5bc01af43b0b3342314566-3999x2662-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Bee hive",
+            "_key": "e33d209e3a75"
           },
           {
+            "alt": "Honey",
+            "_key": "ecc9ddfde67d",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-b96612762e9a8dae0174f04becc949c6645caf32-5184x3456-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
-            "_type": "customImage",
-            "alt": "Honey",
-            "_key": "ecc9ddfde67d"
+            "_type": "customImage"
           },
           {
-            "_type": "customImage",
-            "alt": "Familly",
-            "_key": "8ad7eb1b8f39",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-b3b034fa93c96a8af78565ddc8b5eeb2f8f5f217-4096x3072-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Familly",
+            "_key": "8ad7eb1b8f39"
           },
           {
             "image": {
               "asset": {
-                "_type": "reference",
-                "_ref": "image-5c091eb124a30bd71ef32e1a5b0b200eda380cc1-3072x4096-jpg"
+                "_ref": "image-5c091eb124a30bd71ef32e1a5b0b200eda380cc1-3072x4096-jpg",
+                "_type": "reference"
               },
               "_type": "image"
             },
@@ -213,28 +364,9 @@
           "_type": "cta",
           "link": "https://www.behance.net/gallery/195033325/Bnest-Brand-Design-Project",
           "text": "Behance"
-        },
-        "slug": {
-          "current": "b-nest",
-          "_type": "slug"
         }
       },
       {
-        "slug": {
-          "current": "steampunk-dynasty",
-          "_type": "slug"
-        },
-        "thumbnailImage": {
-          "image": {
-            "asset": {
-              "_ref": "image-127a8d59167aab266c9d468295cdb182accb85cd-1920x1080-png",
-              "_type": "reference"
-            },
-            "_type": "image"
-          },
-          "_type": "customImage",
-          "alt": "steampunk dynasty thumbnail"
-        },
         "customImages": [
           {
             "alt": "deck on deck",
@@ -264,8 +396,8 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-ed119641fb51b8fc50bbbb699f450dbe7bef9879-1920x1080-png"
+                "_ref": "image-ed119641fb51b8fc50bbbb699f450dbe7bef9879-1920x1080-png",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
@@ -297,6 +429,8 @@
             "_key": "6a2cfa9571bb"
           },
           {
+            "alt": "Amber deck variant",
+            "_key": "45675be26708",
             "image": {
               "_type": "image",
               "asset": {
@@ -304,9 +438,7 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Amber deck variant",
-            "_key": "45675be26708"
+            "_type": "customImage"
           },
           {
             "image": {
@@ -321,6 +453,7 @@
             "_key": "9e63436e642c"
           },
           {
+            "alt": "Crimson deck variant",
             "_key": "6f56e398952c",
             "image": {
               "_type": "image",
@@ -329,8 +462,7 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Crimson deck variant"
+            "_type": "customImage"
           },
           {
             "image": {
@@ -345,6 +477,7 @@
             "_key": "e7919640053d"
           },
           {
+            "_key": "23af887ae7a1",
             "image": {
               "_type": "image",
               "asset": {
@@ -353,8 +486,7 @@
               }
             },
             "_type": "customImage",
-            "alt": "Card Details",
-            "_key": "23af887ae7a1"
+            "alt": "Card Details"
           },
           {
             "_type": "customImage",
@@ -369,6 +501,8 @@
             }
           },
           {
+            "alt": "Map",
+            "_key": "f96615eb0d5b",
             "image": {
               "_type": "image",
               "asset": {
@@ -376,16 +510,14 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Map",
-            "_key": "f96615eb0d5b"
+            "_type": "customImage"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-f87a484d2b1ef8d51b2254fdc2fce29435cd38fe-1920x1080-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-f87a484d2b1ef8d51b2254fdc2fce29435cd38fe-1920x1080-png"
               }
             },
             "_type": "customImage",
@@ -408,8 +540,8 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-26be4fdd13be6a35617f55c93ec6a0532ef688ed-1920x1440-png"
+                "_ref": "image-26be4fdd13be6a35617f55c93ec6a0532ef688ed-1920x1440-png",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
@@ -417,6 +549,7 @@
             "_key": "7856b7cab3e6"
           },
           {
+            "_key": "01f76448fec1",
             "image": {
               "_type": "image",
               "asset": {
@@ -425,8 +558,7 @@
               }
             },
             "_type": "customImage",
-            "alt": "Ebook",
-            "_key": "01f76448fec1"
+            "alt": "Ebook"
           },
           {
             "image": {
@@ -441,8 +573,6 @@
             "_key": "c4c73fbabd8c"
           },
           {
-            "alt": "Coins",
-            "_key": "e86c9f4acea8",
             "image": {
               "asset": {
                 "_ref": "image-50db4de551a61d63bcaa234b194cd83995f783e7-1920x1080-png",
@@ -450,7 +580,9 @@
               },
               "_type": "image"
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Coins",
+            "_key": "e86c9f4acea8"
           },
           {
             "image": {
@@ -466,11 +598,11 @@
           },
           {
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-fea25910b3a9b7f6b2e538f9d7f198aa8455e3f3-1920x1080-png",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
             "alt": "Box",
@@ -495,17 +627,47 @@
           "_type": "cta",
           "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
           "text": "Kickstarter"
+        },
+        "slug": {
+          "_type": "slug",
+          "current": "steampunk-dynasty"
+        },
+        "thumbnailImage": {
+          "alt": "steampunk dynasty thumbnail",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-127a8d59167aab266c9d468295cdb182accb85cd-1920x1080-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
         }
       },
       {
+        "slug": {
+          "current": "animal-gangdom",
+          "_type": "slug"
+        },
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-7ad4429c6d3f7014f475bd2acb6bb6478f297cc1-3872x2592-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Animal Gangdom Deck"
+        },
         "customImages": [
           {
             "_key": "8d6a335fdad6",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-066f2dc54b8e0981e0488e73a21dacac2006dc7d-3872x2592-jpg"
+                "_ref": "image-066f2dc54b8e0981e0488e73a21dacac2006dc7d-3872x2592-jpg",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
@@ -524,16 +686,16 @@
             "_key": "8e6508ad3a78"
           },
           {
+            "_type": "customImage",
+            "alt": "Card Close Up",
+            "_key": "fa8a37fd1c30",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-e3f78c6d3ba2adf84667165b348839a875445ab7-3872x2592-jpg",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Card Close Up",
-            "_key": "fa8a37fd1c30"
+            }
           },
           {
             "image": {
@@ -548,40 +710,40 @@
             "_key": "0ab319502b4c"
           },
           {
-            "_type": "customImage",
-            "alt": "Aesthetic image",
-            "_key": "b8f520def095",
             "image": {
               "_type": "image",
               "asset": {
                 "_type": "reference",
                 "_ref": "image-769de7ebf8cc52ac219abbe14c9a49d352bfbeb3-3872x2592-jpg"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Aesthetic image",
+            "_key": "b8f520def095"
           },
           {
+            "_type": "customImage",
+            "alt": "Jack and Queen of Clubs",
+            "_key": "9527755e234b",
             "image": {
               "_type": "image",
               "asset": {
                 "_type": "reference",
                 "_ref": "image-0009a96eff1e8068c698a717db11e6066a99080a-2250x2250-png"
               }
-            },
-            "_type": "customImage",
-            "alt": "Jack and Queen of Clubs",
-            "_key": "9527755e234b"
+            }
           },
           {
-            "_type": "customImage",
-            "alt": "Jack and Queen of Spades",
-            "_key": "08a1b64e8c9d",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-1f05742faed551984e76ef83fc634d2501fe1f76-2250x2250-png",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Jack and Queen of Spades",
+            "_key": "08a1b64e8c9d"
           },
           {
             "image": {
@@ -620,8 +782,6 @@
             "_key": "e9f8914a8ebd"
           },
           {
-            "alt": "King and Ace of Spades",
-            "_key": "1396efeba39c",
             "image": {
               "_type": "image",
               "asset": {
@@ -629,9 +789,12 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "King and Ace of Spades",
+            "_key": "1396efeba39c"
           },
           {
+            "_key": "e01f5089deb3",
             "image": {
               "_type": "image",
               "asset": {
@@ -640,11 +803,9 @@
               }
             },
             "_type": "customImage",
-            "alt": "King and Ace of Hearts",
-            "_key": "e01f5089deb3"
+            "alt": "King and Ace of Hearts"
           },
           {
-            "_key": "adf87e78f1e2",
             "image": {
               "_type": "image",
               "asset": {
@@ -653,19 +814,20 @@
               }
             },
             "_type": "customImage",
-            "alt": "King and Ace of Diamonds"
+            "alt": "King and Ace of Diamonds",
+            "_key": "adf87e78f1e2"
           },
           {
-            "_type": "customImage",
-            "alt": "Playing with the Cards",
-            "_key": "f275d27b6cbd",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-3b4bac79f69a9d52964aae6b94c5e7128ac209df-2817x3250-jpg"
+                "_ref": "image-3b4bac79f69a9d52964aae6b94c5e7128ac209df-2817x3250-jpg",
+                "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Playing with the Cards",
+            "_key": "f275d27b6cbd"
           }
         ],
         "title": "Animal Gangdom",
@@ -674,38 +836,22 @@
           "link": "https://www.kickstarter.com/projects/vostokcards/vostok-cards-animal-gangdom",
           "text": "Kickstarter",
           "_type": "cta"
-        },
-        "slug": {
-          "current": "animal-gangdom",
-          "_type": "slug"
-        },
-        "thumbnailImage": {
-          "alt": "Animal Gangdom Deck",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-7ad4429c6d3f7014f475bd2acb6bb6478f297cc1-3872x2592-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage"
         }
       }
     ]
   },
-  "_rev": "1X3tbPF0boRjlNqQpUXh1x",
-  "_type": "homePage",
+  "_updatedAt": "2024-04-26T01:52:23Z",
   "hero": {
     "desc": "Rejoignez-moi dans un voyage de design moderne et organisé, spécialement conçu pour le succès de votre marque.",
     "quote": {
+      "hiddenTitle": "Quote French",
+      "_id": "d8519909-fabe-4263-8a36-5f89fc22f968",
       "_updatedAt": "2024-03-06T19:38:56Z",
       "rightText": "organisé",
       "_createdAt": "2024-03-06T19:37:07Z",
       "_rev": "42dARgouF4fLoQkzWojxBT",
       "_type": "quote",
-      "leftText": "Chaos",
-      "hiddenTitle": "Quote French",
-      "_id": "d8519909-fabe-4263-8a36-5f89fc22f968"
+      "leftText": "Chaos"
     },
     "subTitle": {
       "part1": "Sedrak",
@@ -718,28 +864,31 @@
       "image": {
         "_type": "image",
         "asset": {
-          "_ref": "image-f3a3568bc60f1f327fcc660cf816acdfc4cc11b0-4368x2912-jpg",
-          "_type": "reference"
+          "_type": "reference",
+          "_ref": "image-bc2ce3f6c61c77cead4484deb3649a6ed3187893-2268x2269-jpg"
         }
       },
       "_type": "customImage",
       "alt": "Des Designs"
     },
     "title": {
+      "part1": "Révolutionnez votre",
       "part2": "marque",
-      "_type": "fancyText",
-      "part1": "Révolutionnez votre"
+      "_type": "fancyText"
     },
     "ctas": {
       "cta1": {
-        "_type": "localLink",
         "link": "/contact",
-        "text": "Travail avec Moi"
+        "text": "Travail avec Moi",
+        "_type": "localLink"
       }
     }
   },
-  "title": "Home",
   "about": {
+    "_type": "aboutBlock",
+    "hiddenTitle": "About Small Fr",
+    "_id": "93a735d3-4faf-45c3-a75e-ca2db8f5eb55",
+    "_updatedAt": "2024-03-06T19:56:32Z",
     "content": {
       "desc1": "De plus, j'ai 3 ans d'expérience à temps plein en tant que designer UI/UX, ce qui a contribué à enrichir mes compétences diversifiées. Mon attention s'est désormais tournée vers le développement de marques, ce qui a conduit à la création de Seto Arts.",
       "customImage": {
@@ -761,11 +910,41 @@
       }
     },
     "_createdAt": "2024-03-06T19:56:32Z",
-    "_rev": "42dARgouF4fLoQkzWoq5rY",
-    "_type": "aboutBlock",
-    "hiddenTitle": "About Small Fr",
-    "_id": "93a735d3-4faf-45c3-a75e-ca2db8f5eb55",
-    "_updatedAt": "2024-03-06T19:56:32Z"
+    "_rev": "42dARgouF4fLoQkzWoq5rY"
+  },
+  "values": {
+    "hiddenTitle": "Valeurs",
+    "_id": "606a9ff4-fd0c-4dd7-b3df-bee7c7fcccac",
+    "_updatedAt": "2024-03-06T19:54:14Z",
+    "_createdAt": "2024-03-06T19:48:19Z",
+    "values": [
+      {
+        "_key": "139144fd1ac8",
+        "title": "Créativité",
+        "desc": "J'insuffle de l'originalité et de l'imagination dans chaque projet de branding, garantissant des identités de marque uniques et captivantes qui se démarquent sur le marché.",
+        "_type": "value"
+      },
+      {
+        "_type": "value",
+        "_key": "936100d886f9",
+        "title": "Innovation",
+        "desc": "Mon approche intègre des techniques d'avant-garde et des idées fraîches pour fournir un branding qui résonne avec le public."
+      },
+      {
+        "_key": "1b3e569541de",
+        "title": "Collaboration",
+        "desc": "Je donne la priorité à la communication ouverte et au travail d'équipe, collaborant étroitement avec les clients pour donner vie à leur vision à travers des processus transparents.",
+        "_type": "value"
+      },
+      {
+        "_type": "value",
+        "_key": "ec7f2e8b711a",
+        "title": "Qualité",
+        "desc": "Mon engagement envers l'excellence me pousse à fournir des services de branding de haute qualité qui élèvent les marques et laissent une impression durable sur leur public."
+      }
+    ],
+    "_rev": "42dARgouF4fLoQkzWopQbj",
+    "_type": "valuesBlock"
   },
   "services": {
     "services": [
@@ -777,26 +956,26 @@
             {
               "title": "Identité visuelle",
               "customImage": {
+                "_type": "customImage",
+                "alt": "Brand Visual Identity",
                 "image": {
                   "_type": "image",
                   "asset": {
                     "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png",
                     "_type": "reference"
                   }
-                },
-                "_type": "customImage",
-                "alt": "Brand Visual Identity"
+                }
               }
             },
             {
               "title": "Logo",
               "customImage": {
                 "image": {
+                  "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png"
-                  },
-                  "_type": "image"
+                    "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
+                    "_type": "reference"
+                  }
                 },
                 "_type": "customImage",
                 "alt": "Logo"
@@ -834,11 +1013,11 @@
               "title": "Collatéraux d'entreprise",
               "customImage": {
                 "image": {
+                  "_type": "image",
                   "asset": {
-                    "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png",
-                    "_type": "reference"
-                  },
-                  "_type": "image"
+                    "_type": "reference",
+                    "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png"
+                  }
                 },
                 "_type": "customImage",
                 "alt": "Collatéraux"
@@ -847,15 +1026,15 @@
             {
               "title": "Étude de marché",
               "customImage": {
+                "_type": "customImage",
+                "alt": "Laptop Étude",
                 "image": {
                   "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg"
+                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                    "_type": "reference"
                   }
-                },
-                "_type": "customImage",
-                "alt": "Laptop Étude"
+                }
               }
             },
             {
@@ -864,26 +1043,26 @@
                 "_type": "customImage",
                 "alt": "croquis",
                 "image": {
-                  "_type": "image",
                   "asset": {
                     "_ref": "image-d20e0519359c10f205fc1e8d8e3575a029f07b70-6000x4000-jpg",
                     "_type": "reference"
-                  }
+                  },
+                  "_type": "image"
                 }
               }
             },
             {
               "title": "Raffinements de designs",
               "customImage": {
+                "_type": "customImage",
+                "alt": "Raffinements",
                 "image": {
-                  "_type": "image",
                   "asset": {
                     "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
                     "_type": "reference"
-                  }
-                },
-                "_type": "customImage",
-                "alt": "Raffinements"
+                  },
+                  "_type": "image"
+                }
               }
             },
             {
@@ -892,8 +1071,8 @@
                 "image": {
                   "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg"
+                    "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+                    "_type": "reference"
                   }
                 },
                 "_type": "customImage",
@@ -917,7 +1096,6 @@
             {
               "title": "Guide de stratégie",
               "customImage": {
-                "alt": "Enseignement de stratégie ",
                 "image": {
                   "_type": "image",
                   "asset": {
@@ -925,25 +1103,22 @@
                     "_type": "reference"
                   }
                 },
-                "_type": "customImage"
+                "_type": "customImage",
+                "alt": "Enseignement de stratégie "
               }
             }
           ]
         },
         "processes": {
-          "_ref": "cf81a17c-5d13-4ecd-a182-a43d4bd9b793",
-          "_type": "reference"
+          "_type": "reference",
+          "_ref": "cf81a17c-5d13-4ecd-a182-a43d4bd9b793"
         },
         "price": 1500
       },
       {
-        "processes": {
-          "_ref": "b7127dcb-22c0-4dd6-8a99-d0d742ba19c3",
-          "_type": "reference"
-        },
         "price": 1500,
-        "path": "/landing-page",
-        "title": "Page d'atterrissage",
+        "path": "/web-design",
+        "title": "Développement web",
         "features": {
           "features": [
             {
@@ -966,8 +1141,8 @@
                 "image": {
                   "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg"
+                    "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+                    "_type": "reference"
                   }
                 },
                 "_type": "customImage",
@@ -975,31 +1150,17 @@
               }
             },
             {
-              "title": "art personnalisé",
+              "title": "Optimisation de site",
               "customImage": {
+                "_type": "customImage",
+                "alt": "Optimisation du site web",
                 "image": {
                   "_type": "image",
                   "asset": {
-                    "_ref": "image-b83a5e92880473b025e2e6492bde9e0407905f28-4001x4000-png",
-                    "_type": "reference"
+                    "_type": "reference",
+                    "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg"
                   }
-                },
-                "_type": "customImage",
-                "alt": "Art personnalisé - Camarade Boris"
-              }
-            },
-            {
-              "title": "Optimisation de site",
-              "customImage": {
-                "image": {
-                  "asset": {
-                    "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
-                    "_type": "reference"
-                  },
-                  "_type": "image"
-                },
-                "_type": "customImage",
-                "alt": "Optimisation du site web"
+                }
               }
             },
             {
@@ -1036,8 +1197,8 @@
                 "image": {
                   "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg"
+                    "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                    "_type": "reference"
                   }
                 },
                 "_type": "customImage",
@@ -1045,35 +1206,40 @@
               }
             }
           ]
+        },
+        "processes": {
+          "_ref": "b7127dcb-22c0-4dd6-8a99-d0d742ba19c3",
+          "_type": "reference"
         }
       },
       {
+        "path": "/total-package",
         "title": "Combo Complet",
         "features": {
           "features": [
             {
               "title": "Identité visuelle",
               "customImage": {
+                "_type": "customImage",
+                "alt": "Brand Visual Identity",
                 "image": {
                   "_type": "image",
                   "asset": {
                     "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png",
                     "_type": "reference"
                   }
-                },
-                "_type": "customImage",
-                "alt": "Brand Visual Identity"
+                }
               }
             },
             {
               "title": "Logo",
               "customImage": {
                 "image": {
+                  "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png"
-                  },
-                  "_type": "image"
+                    "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
+                    "_type": "reference"
+                  }
                 },
                 "_type": "customImage",
                 "alt": "Logo"
@@ -1096,15 +1262,15 @@
             {
               "title": "Étude de marché",
               "customImage": {
+                "_type": "customImage",
+                "alt": "Laptop Étude",
                 "image": {
                   "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg"
+                    "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                    "_type": "reference"
                   }
-                },
-                "_type": "customImage",
-                "alt": "Laptop Étude"
+                }
               }
             },
             {
@@ -1138,15 +1304,15 @@
             {
               "title": "Raffinements de designs",
               "customImage": {
+                "_type": "customImage",
+                "alt": "Raffinements",
                 "image": {
-                  "_type": "image",
                   "asset": {
                     "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
                     "_type": "reference"
-                  }
-                },
-                "_type": "customImage",
-                "alt": "Raffinements"
+                  },
+                  "_type": "image"
+                }
               }
             },
             {
@@ -1155,8 +1321,8 @@
                 "image": {
                   "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg"
+                    "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+                    "_type": "reference"
                   }
                 },
                 "_type": "customImage",
@@ -1167,11 +1333,11 @@
               "title": "Collatéraux d'entreprise",
               "customImage": {
                 "image": {
+                  "_type": "image",
                   "asset": {
-                    "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png",
-                    "_type": "reference"
-                  },
-                  "_type": "image"
+                    "_type": "reference",
+                    "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png"
+                  }
                 },
                 "_type": "customImage",
                 "alt": "Collatéraux"
@@ -1183,8 +1349,8 @@
                 "image": {
                   "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg"
+                    "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+                    "_type": "reference"
                   }
                 },
                 "_type": "customImage",
@@ -1194,15 +1360,15 @@
             {
               "title": "Optimisation de site",
               "customImage": {
-                "image": {
-                  "asset": {
-                    "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
-                    "_type": "reference"
-                  },
-                  "_type": "image"
-                },
                 "_type": "customImage",
-                "alt": "Optimisation du site web"
+                "alt": "Optimisation du site web",
+                "image": {
+                  "_type": "image",
+                  "asset": {
+                    "_type": "reference",
+                    "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg"
+                  }
+                }
               }
             },
             {
@@ -1236,7 +1402,6 @@
             {
               "title": "Guide de stratégie",
               "customImage": {
-                "alt": "Enseignement de stratégie ",
                 "image": {
                   "_type": "image",
                   "asset": {
@@ -1244,7 +1409,8 @@
                     "_type": "reference"
                   }
                 },
-                "_type": "customImage"
+                "_type": "customImage",
+                "alt": "Enseignement de stratégie "
               }
             },
             {
@@ -1253,8 +1419,8 @@
                 "image": {
                   "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg"
+                    "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                    "_type": "reference"
                   }
                 },
                 "_type": "customImage",
@@ -1267,8 +1433,7 @@
           "_ref": "9070b8bc-e27d-4c10-a791-9e7ac5651084",
           "_type": "reference"
         },
-        "price": 2500,
-        "path": "/total-package"
+        "price": 2500
       },
       {
         "path": "/custom-work",
@@ -1279,11 +1444,11 @@
               "title": "Logo",
               "customImage": {
                 "image": {
+                  "_type": "image",
                   "asset": {
-                    "_type": "reference",
-                    "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png"
-                  },
-                  "_type": "image"
+                    "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
+                    "_type": "reference"
+                  }
                 },
                 "_type": "customImage",
                 "alt": "Logo"
@@ -1334,29 +1499,29 @@
             {
               "title": "Raffinements de designs",
               "customImage": {
+                "_type": "customImage",
+                "alt": "Raffinements",
                 "image": {
-                  "_type": "image",
                   "asset": {
                     "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
                     "_type": "reference"
-                  }
-                },
-                "_type": "customImage",
-                "alt": "Raffinements"
+                  },
+                  "_type": "image"
+                }
               }
             },
             {
               "title": "...",
               "customImage": {
-                "alt": "Points d'interogations",
                 "image": {
-                  "_type": "image",
                   "asset": {
-                    "_ref": "image-2de92c703a09a355235addc52336c79bcfb2170e-3840x2160-jpg",
-                    "_type": "reference"
-                  }
+                    "_type": "reference",
+                    "_ref": "image-2de92c703a09a355235addc52336c79bcfb2170e-3840x2160-jpg"
+                  },
+                  "_type": "image"
                 },
-                "_type": "customImage"
+                "_type": "customImage",
+                "alt": "Points d'interogations"
               }
             }
           ]
@@ -1366,46 +1531,14 @@
       }
     ]
   },
-  "_id": "d1227a54-ff8a-47df-92b5-06cee5c75bd9",
-  "lang": "fr",
-  "values": {
-    "_type": "valuesBlock",
-    "hiddenTitle": "Valeurs",
-    "_id": "606a9ff4-fd0c-4dd7-b3df-bee7c7fcccac",
-    "_updatedAt": "2024-03-06T19:54:14Z",
-    "_createdAt": "2024-03-06T19:48:19Z",
-    "values": [
-      {
-        "title": "Créativité",
-        "desc": "J'insuffle de l'originalité et de l'imagination dans chaque projet de branding, garantissant des identités de marque uniques et captivantes qui se démarquent sur le marché.",
-        "_type": "value",
-        "_key": "139144fd1ac8"
-      },
-      {
-        "_key": "936100d886f9",
-        "title": "Innovation",
-        "desc": "Mon approche intègre des techniques d'avant-garde et des idées fraîches pour fournir un branding qui résonne avec le public.",
-        "_type": "value"
-      },
-      {
-        "_type": "value",
-        "_key": "1b3e569541de",
-        "title": "Collaboration",
-        "desc": "Je donne la priorité à la communication ouverte et au travail d'équipe, collaborant étroitement avec les clients pour donner vie à leur vision à travers des processus transparents."
-      },
-      {
-        "title": "Qualité",
-        "desc": "Mon engagement envers l'excellence me pousse à fournir des services de branding de haute qualité qui élèvent les marques et laissent une impression durable sur leur public.",
-        "_type": "value",
-        "_key": "ec7f2e8b711a"
-      }
-    ],
-    "_rev": "42dARgouF4fLoQkzWopQbj"
-  },
-  "_updatedAt": "2024-03-07T04:51:30Z",
+  "_type": "homePage",
   "footer": {
     "_ref": "7170174a-5dc3-45cf-8df0-14477ef0674e",
     "_type": "reference"
   },
-  "_createdAt": "2024-03-06T19:44:43Z"
+  "title": "Home",
+  "_rev": "rVpYcj5p7bUXDET2Rrg6so",
+  "_id": "d1227a54-ff8a-47df-92b5-06cee5c75bd9",
+  "hiddenTitle": "Home French",
+  "lang": "fr"
 }

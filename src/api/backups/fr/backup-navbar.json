@@ -1,17 +1,17 @@
 {
-  "lang": "fr",
-  "_updatedAt": "2024-03-08T01:11:15Z",
   "_createdAt": "2024-03-08T01:06:38Z",
-  "_rev": "D5qaY0ApMKkCjx1DEoL9Mu",
+  "_rev": "Z5IDu749svD6Fxx4WWAfpT",
   "_type": "navbar",
   "links": [
     {
-      "text": "Accueil",
       "_key": "57469334049d",
       "_type": "localLink",
-      "link": "/home"
+      "link": "/home",
+      "text": "Accueil"
     },
     {
+      "_key": "5303e3087528",
+      "title": "Services",
       "ctaArray": [
         {
           "_type": "localLink",
@@ -21,15 +21,15 @@
         },
         {
           "_type": "localLink",
-          "link": "/landing-page",
-          "text": "Page d'atterrissage",
+          "link": "/web-design",
+          "text": "Développement web",
           "_key": "9e3c6dd471c9"
         },
         {
-          "text": "Forfait complet",
-          "_key": "3cd4c91f1ffe",
           "_type": "localLink",
-          "link": "/total-package"
+          "link": "/total-package",
+          "text": "Forfait complet",
+          "_key": "3cd4c91f1ffe"
         },
         {
           "_type": "localLink",
@@ -37,9 +37,7 @@
           "text": "Travail sur mesure",
           "_key": "f77d3ff7288d"
         }
-      ],
-      "_key": "5303e3087528",
-      "title": "Services"
+      ]
     },
     {
       "_type": "localLink",
@@ -54,5 +52,7 @@
       "_key": "eeac3056ca8e"
     }
   ],
-  "_id": "cf54ba16-cf0e-415c-b175-4cef4042bd3b"
+  "_id": "cf54ba16-cf0e-415c-b175-4cef4042bd3b",
+  "lang": "fr",
+  "_updatedAt": "2024-04-26T03:13:30Z"
 }

@@ -1,34 +1,21 @@
 {
-  "lang": "fr",
+  "_id": "71b374ce-491e-4f5e-9301-fe2fc484fab8",
   "title": "Contactez",
-  "_updatedAt": "2024-02-25T03:42:37Z",
+  "desc": {
+    "part3": "N'hésitez pas à remplir ce formulaire et à partager des détails sur le projet que vous avez en tête.",
+    "part1": " ",
+    "part2": "Allo!",
+    "_type": "fancyText"
+  },
   "form": {
-    "desc": {
-      "part1": "Salut",
-      "part2": "Mon Amis",
-      "_type": "fancyText",
-      "part3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
-    "cta": {
-      "_type": "cta",
-      "text": "Envoyer"
-    },
-    "_createdAt": "2024-02-25T03:42:18Z",
-    "_rev": "9mLWnJtMvL1OgKPLcXjGbY",
-    "_type": "form",
-    "_id": "98a0688c-86ed-4eba-a524-37b9412645bd",
-    "formFields": {
-      "name": "Nom",
-      "message": "Message",
-      "email": "Email",
-      "budget": "Budget",
-      "companyName": "Nom de Companie",
-      "_type": "fieldPlaceholders"
-    },
-    "_updatedAt": "2024-02-25T03:42:18Z"
+    "_ref": "98a0688c-86ed-4eba-a524-37b9412645bd",
+    "_type": "reference"
   },
   "_createdAt": "2024-02-25T03:41:22Z",
-  "_rev": "9mLWnJtMvL1OgKPLcXjHRo",
   "_type": "contactPage",
-  "_id": "71b374ce-491e-4f5e-9301-fe2fc484fab8"
+  "hiddenTitle": "Contact French",
+  "_updatedAt": "2024-04-26T02:28:35Z",
+  "_rev": "rVpYcj5p7bUXDET2Rrjw45",
+  "metaDesc": "bb",
+  "lang": "fr"
 }
