@@ -8,6 +8,7 @@ interface Titles {
   work: string;
   contact: string;
   reviews: string;
+  blog: string;
 }
 
 interface Buttons {

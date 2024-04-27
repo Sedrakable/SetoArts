@@ -102,6 +102,20 @@ export interface IWorkBlock {
   works: IWork[];
 }
 
+export interface IBlog {
+  articles: IArticle[];
+}
+
+export interface IArticle {
+  slug: ISlug;
+  customImage: ICustomImage;
+  title: string;
+  desc: string;
+  date: string;
+  facebookLink?: string;
+  content: IBlock[];
+}
+
 export interface IWork {
   _id: string;
   slug: ISlug;
@@ -132,6 +146,7 @@ export interface ISocials {
 export interface IBlock {
   _key: string;
   _type: string;
+  style: "h1" | "h2" | "h3" | "h4" | "h5" | "normal" | "blockquote";
   children: { _key: string; _type: string; marks: string[]; text: string }[];
 }
 
@@ -158,6 +173,7 @@ export interface INotFound {
 export enum LocalPaths {
   HOME = "/home",
   ABOUT = "/about-work",
+  BLOG = "/blog",
   WORK = "/work",
   CONTACT = "/contact",
   TERMS = "/terms-and-conditions",

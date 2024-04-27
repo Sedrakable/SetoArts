@@ -1,0 +1,582 @@
+{
+  "_rev": "rVpYcj5p7bUXDET2RtfDaA",
+  "hiddenTitle": "Blog English",
+  "lang": "en",
+  "_createdAt": "2024-04-26T16:24:47Z",
+  "_id": "e8aa7e44-2750-499d-9028-659e300aa04e",
+  "blog": {
+    "articles": [
+      {
+        "date": "2024-04-26",
+        "_rev": "JnY2LXiF9P0XRUxiZNeDlD",
+        "_updatedAt": "2024-04-26T23:54:40Z",
+        "slug": {
+          "current": "embracing-tradition",
+          "_type": "slug"
+        },
+        "desc": "Explore how traditional tools like pen and paper are making a comeback in branding and web design. Learn how these simple yet effective tools can enhance creativity and streamline the design process in today's digital age.",
+        "_createdAt": "2024-04-26T16:29:31Z",
+        "_type": "article",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-ba6a715614a7875f2f05d43e5d8365280e952312-6016x4016-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Crafts"
+        },
+        "_id": "211f4779-8ca6-4202-b8a4-5620a2e66a2b",
+        "title": "Embracing Tradition: The Role of Conventional Tools in Modern Design",
+        "content": [
+          {
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "In an era dominated by digital technologies, the simplicity and effectiveness of traditional tools like pen and paper may seem outdated. However, within the fast-paced world of branding and web design, these humble mediums are experiencing a resurgence. Let's delve into how pen and paper are reclaiming their role as indispensable assets in the design process.",
+                "_key": "4ac03d1efde10"
+              }
+            ],
+            "_type": "block",
+            "style": "normal",
+            "_key": "bb180f87ede3"
+          },
+          {
+            "_key": "34e25989dfc5",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "The Tangibility of Ideas",
+                "_key": "c75674a997aa0"
+              }
+            ],
+            "_type": "block",
+            "style": "h4"
+          },
+          {
+            "style": "normal",
+            "_key": "e1d06981e7fc",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "There's something inherently tactile about putting pen to paper that sparks creativity in a way digital tools often can't match. Sketching out ideas by hand allows designers to explore concepts freely, unencumbered by the limitations of a screen. This tangible approach fosters a deeper connection to the design process, enabling designers to iterate and refine their ideas with ease.",
+                "_key": "33fadc0979710"
+              }
+            ],
+            "_type": "block"
+          },
+          {
+            "_type": "block",
+            "style": "blockquote",
+            "_key": "aecbba88c743",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "\"There are three responses to a piece of design – yes, no, and WOW! Wow is the one to aim for.\" - ",
+                "_key": "aa3a9bae82a10"
+              },
+              {
+                "_type": "span",
+                "marks": [
+                  "strong"
+                ],
+                "text": "Milton Glaser",
+                "_key": "5651aad79eef"
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "style": "normal",
+            "_key": "0b50556eadca",
+            "markDefs": [],
+            "children": [
+              {
+                "marks": [],
+                "text": "Pen and paper provide a direct pathway to that elusive \"wow\" factor, allowing designers to tap into their intuition and unleash their creativity in its purest form.",
+                "_key": "c11d950ac5fb",
+                "_type": "span"
+              }
+            ]
+          },
+          {
+            "_key": "0dea69b1c547",
+            "markDefs": [],
+            "children": [
+              {
+                "_key": "d46d50fc439c0",
+                "_type": "span",
+                "marks": [],
+                "text": "Enhancing Collaboration and Communication"
+              }
+            ],
+            "_type": "block",
+            "style": "h4"
+          },
+          {
+            "_key": "a089620b875f",
+            "markDefs": [],
+            "children": [
+              {
+                "marks": [],
+                "text": "In a collaborative setting, pen and paper serve as universal tools that transcend technological barriers. Whether brainstorming ideas with colleagues or sketching concepts for client feedback, the simplicity of pen and paper facilitates seamless communication and fosters a sense of camaraderie among team members.",
+                "_key": "4e4caf03b74d0",
+                "_type": "span"
+              }
+            ],
+            "_type": "block",
+            "style": "normal"
+          },
+          {
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "Bridging the Analog-Digital Divide",
+                "_key": "1f4ca55d08f80"
+              }
+            ],
+            "_type": "block",
+            "style": "h4",
+            "_key": "8905c9850b85"
+          },
+          {
+            "style": "normal",
+            "_key": "36356acfda3d",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "While pen and paper hold undeniable appeal, they're not without their limitations. Fortunately, advancements in technology have blurred the lines between analog and digital, offering designers the best of both worlds. Tools like digital tablets and styluses allow designers to translate their hand-drawn sketches into digital formats seamlessly, preserving the spontaneity of their initial concepts while harnessing the precision and flexibility of digital editing tools.",
+                "_key": "2a7fc4f79a120"
+              }
+            ],
+            "_type": "block"
+          },
+          {
+            "style": "h4",
+            "_key": "1ce4fee64e6e",
+            "markDefs": [],
+            "children": [
+              {
+                "marks": [],
+                "text": "Conclusion",
+                "_key": "0b35cdc715d70",
+                "_type": "span"
+              }
+            ],
+            "_type": "block"
+          },
+          {
+            "style": "normal",
+            "_key": "46ada93f7347",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "In a world enamored with the latest technological innovations, it's easy to overlook the enduring value of traditional tools like pen and paper. Yet, as designers rediscover the tactile pleasure and creative freedom afforded by these humble mediums, it becomes clear that their role in the design process is far from obsolete. From sparking creativity to facilitating collaboration and bridging the analog-digital divide, pen and paper continue to play an essential role in shaping the visual landscapes of tomorrow. So, the next time you embark on a design journey, don't underestimate the power of pen and paper to bring your ideas to life in ways you never imagined possible.",
+                "_key": "2400938757cc0"
+              }
+            ],
+            "_type": "block"
+          }
+        ]
+      },
+      {
+        "_createdAt": "2024-04-26T16:29:31Z",
+        "_type": "article",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-ba6a715614a7875f2f05d43e5d8365280e952312-6016x4016-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Crafts"
+        },
+        "_id": "211f4779-8ca6-4202-b8a4-5620a2e66a2b",
+        "title": "Embracing Tradition: The Role of Conventional Tools in Modern Design",
+        "content": [
+          {
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "In an era dominated by digital technologies, the simplicity and effectiveness of traditional tools like pen and paper may seem outdated. However, within the fast-paced world of branding and web design, these humble mediums are experiencing a resurgence. Let's delve into how pen and paper are reclaiming their role as indispensable assets in the design process.",
+                "_key": "4ac03d1efde10"
+              }
+            ],
+            "_type": "block",
+            "style": "normal",
+            "_key": "bb180f87ede3",
+            "markDefs": []
+          },
+          {
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "The Tangibility of Ideas",
+                "_key": "c75674a997aa0"
+              }
+            ],
+            "_type": "block",
+            "style": "h4",
+            "_key": "34e25989dfc5"
+          },
+          {
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "There's something inherently tactile about putting pen to paper that sparks creativity in a way digital tools often can't match. Sketching out ideas by hand allows designers to explore concepts freely, unencumbered by the limitations of a screen. This tangible approach fosters a deeper connection to the design process, enabling designers to iterate and refine their ideas with ease.",
+                "_key": "33fadc0979710"
+              }
+            ],
+            "_type": "block",
+            "style": "normal",
+            "_key": "e1d06981e7fc",
+            "markDefs": []
+          },
+          {
+            "_key": "aecbba88c743",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "\"There are three responses to a piece of design – yes, no, and WOW! Wow is the one to aim for.\" - ",
+                "_key": "aa3a9bae82a10"
+              },
+              {
+                "_type": "span",
+                "marks": [
+                  "strong"
+                ],
+                "text": "Milton Glaser",
+                "_key": "5651aad79eef"
+              }
+            ],
+            "_type": "block",
+            "style": "blockquote"
+          },
+          {
+            "_key": "0b50556eadca",
+            "markDefs": [],
+            "children": [
+              {
+                "marks": [],
+                "text": "Pen and paper provide a direct pathway to that elusive \"wow\" factor, allowing designers to tap into their intuition and unleash their creativity in its purest form.",
+                "_key": "c11d950ac5fb",
+                "_type": "span"
+              }
+            ],
+            "_type": "block",
+            "style": "normal"
+          },
+          {
+            "markDefs": [],
+            "children": [
+              {
+                "_key": "d46d50fc439c0",
+                "_type": "span",
+                "marks": [],
+                "text": "Enhancing Collaboration and Communication"
+              }
+            ],
+            "_type": "block",
+            "style": "h4",
+            "_key": "0dea69b1c547"
+          },
+          {
+            "_key": "a089620b875f",
+            "markDefs": [],
+            "children": [
+              {
+                "marks": [],
+                "text": "In a collaborative setting, pen and paper serve as universal tools that transcend technological barriers. Whether brainstorming ideas with colleagues or sketching concepts for client feedback, the simplicity of pen and paper facilitates seamless communication and fosters a sense of camaraderie among team members.",
+                "_key": "4e4caf03b74d0",
+                "_type": "span"
+              }
+            ],
+            "_type": "block",
+            "style": "normal"
+          },
+          {
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "Bridging the Analog-Digital Divide",
+                "_key": "1f4ca55d08f80"
+              }
+            ],
+            "_type": "block",
+            "style": "h4",
+            "_key": "8905c9850b85"
+          },
+          {
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "While pen and paper hold undeniable appeal, they're not without their limitations. Fortunately, advancements in technology have blurred the lines between analog and digital, offering designers the best of both worlds. Tools like digital tablets and styluses allow designers to translate their hand-drawn sketches into digital formats seamlessly, preserving the spontaneity of their initial concepts while harnessing the precision and flexibility of digital editing tools.",
+                "_key": "2a7fc4f79a120"
+              }
+            ],
+            "_type": "block",
+            "style": "normal",
+            "_key": "36356acfda3d"
+          },
+          {
+            "children": [
+              {
+                "marks": [],
+                "text": "Conclusion",
+                "_key": "0b35cdc715d70",
+                "_type": "span"
+              }
+            ],
+            "_type": "block",
+            "style": "h4",
+            "_key": "1ce4fee64e6e",
+            "markDefs": []
+          },
+          {
+            "_key": "46ada93f7347",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "In a world enamored with the latest technological innovations, it's easy to overlook the enduring value of traditional tools like pen and paper. Yet, as designers rediscover the tactile pleasure and creative freedom afforded by these humble mediums, it becomes clear that their role in the design process is far from obsolete. From sparking creativity to facilitating collaboration and bridging the analog-digital divide, pen and paper continue to play an essential role in shaping the visual landscapes of tomorrow. So, the next time you embark on a design journey, don't underestimate the power of pen and paper to bring your ideas to life in ways you never imagined possible.",
+                "_key": "2400938757cc0"
+              }
+            ],
+            "_type": "block",
+            "style": "normal"
+          }
+        ],
+        "date": "2024-04-26",
+        "_rev": "JnY2LXiF9P0XRUxiZNeDlD",
+        "_updatedAt": "2024-04-26T23:54:40Z",
+        "slug": {
+          "current": "embracing-tradition",
+          "_type": "slug"
+        },
+        "desc": "Explore how traditional tools like pen and paper are making a comeback in branding and web design. Learn how these simple yet effective tools can enhance creativity and streamline the design process in today's digital age."
+      },
+      {
+        "date": "2024-04-26",
+        "_rev": "JnY2LXiF9P0XRUxiZNeDlD",
+        "_updatedAt": "2024-04-26T23:54:40Z",
+        "slug": {
+          "current": "embracing-tradition",
+          "_type": "slug"
+        },
+        "desc": "Explore how traditional tools like pen and paper are making a comeback in branding and web design. Learn how these simple yet effective tools can enhance creativity and streamline the design process in today's digital age.",
+        "_createdAt": "2024-04-26T16:29:31Z",
+        "_type": "article",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-ba6a715614a7875f2f05d43e5d8365280e952312-6016x4016-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Crafts"
+        },
+        "_id": "211f4779-8ca6-4202-b8a4-5620a2e66a2b",
+        "title": "Embracing Tradition: The Role of Conventional Tools in Modern Design",
+        "content": [
+          {
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "In an era dominated by digital technologies, the simplicity and effectiveness of traditional tools like pen and paper may seem outdated. However, within the fast-paced world of branding and web design, these humble mediums are experiencing a resurgence. Let's delve into how pen and paper are reclaiming their role as indispensable assets in the design process.",
+                "_key": "4ac03d1efde10"
+              }
+            ],
+            "_type": "block",
+            "style": "normal",
+            "_key": "bb180f87ede3",
+            "markDefs": []
+          },
+          {
+            "_type": "block",
+            "style": "h4",
+            "_key": "34e25989dfc5",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "The Tangibility of Ideas",
+                "_key": "c75674a997aa0"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "There's something inherently tactile about putting pen to paper that sparks creativity in a way digital tools often can't match. Sketching out ideas by hand allows designers to explore concepts freely, unencumbered by the limitations of a screen. This tangible approach fosters a deeper connection to the design process, enabling designers to iterate and refine their ideas with ease.",
+                "_key": "33fadc0979710"
+              }
+            ],
+            "_type": "block",
+            "style": "normal",
+            "_key": "e1d06981e7fc",
+            "markDefs": []
+          },
+          {
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "\"There are three responses to a piece of design – yes, no, and WOW! Wow is the one to aim for.\" - ",
+                "_key": "aa3a9bae82a10"
+              },
+              {
+                "_type": "span",
+                "marks": [
+                  "strong"
+                ],
+                "text": "Milton Glaser",
+                "_key": "5651aad79eef"
+              }
+            ],
+            "_type": "block",
+            "style": "blockquote",
+            "_key": "aecbba88c743",
+            "markDefs": []
+          },
+          {
+            "_type": "block",
+            "style": "normal",
+            "_key": "0b50556eadca",
+            "markDefs": [],
+            "children": [
+              {
+                "marks": [],
+                "text": "Pen and paper provide a direct pathway to that elusive \"wow\" factor, allowing designers to tap into their intuition and unleash their creativity in its purest form.",
+                "_key": "c11d950ac5fb",
+                "_type": "span"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "_key": "d46d50fc439c0",
+                "_type": "span",
+                "marks": [],
+                "text": "Enhancing Collaboration and Communication"
+              }
+            ],
+            "_type": "block",
+            "style": "h4",
+            "_key": "0dea69b1c547",
+            "markDefs": []
+          },
+          {
+            "children": [
+              {
+                "marks": [],
+                "text": "In a collaborative setting, pen and paper serve as universal tools that transcend technological barriers. Whether brainstorming ideas with colleagues or sketching concepts for client feedback, the simplicity of pen and paper facilitates seamless communication and fosters a sense of camaraderie among team members.",
+                "_key": "4e4caf03b74d0",
+                "_type": "span"
+              }
+            ],
+            "_type": "block",
+            "style": "normal",
+            "_key": "a089620b875f",
+            "markDefs": []
+          },
+          {
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "Bridging the Analog-Digital Divide",
+                "_key": "1f4ca55d08f80"
+              }
+            ],
+            "_type": "block",
+            "style": "h4",
+            "_key": "8905c9850b85"
+          },
+          {
+            "style": "normal",
+            "_key": "36356acfda3d",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "While pen and paper hold undeniable appeal, they're not without their limitations. Fortunately, advancements in technology have blurred the lines between analog and digital, offering designers the best of both worlds. Tools like digital tablets and styluses allow designers to translate their hand-drawn sketches into digital formats seamlessly, preserving the spontaneity of their initial concepts while harnessing the precision and flexibility of digital editing tools.",
+                "_key": "2a7fc4f79a120"
+              }
+            ],
+            "_type": "block"
+          },
+          {
+            "markDefs": [],
+            "children": [
+              {
+                "marks": [],
+                "text": "Conclusion",
+                "_key": "0b35cdc715d70",
+                "_type": "span"
+              }
+            ],
+            "_type": "block",
+            "style": "h4",
+            "_key": "1ce4fee64e6e"
+          },
+          {
+            "style": "normal",
+            "_key": "46ada93f7347",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "marks": [],
+                "text": "In a world enamored with the latest technological innovations, it's easy to overlook the enduring value of traditional tools like pen and paper. Yet, as designers rediscover the tactile pleasure and creative freedom afforded by these humble mediums, it becomes clear that their role in the design process is far from obsolete. From sparking creativity to facilitating collaboration and bridging the analog-digital divide, pen and paper continue to play an essential role in shaping the visual landscapes of tomorrow. So, the next time you embark on a design journey, don't underestimate the power of pen and paper to bring your ideas to life in ways you never imagined possible.",
+                "_key": "2400938757cc0"
+              }
+            ],
+            "_type": "block"
+          }
+        ]
+      }
+    ]
+  },
+  "title": "Some Meta Title",
+  "_updatedAt": "2024-04-26T17:29:56Z",
+  "_type": "blogPage",
+  "metaDesc": "Some Meta Description"
+}

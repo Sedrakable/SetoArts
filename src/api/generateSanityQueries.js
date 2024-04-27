@@ -57,6 +57,12 @@ export const generateQueries = (lang) => {
       metaDesc,
       desc,
     }`;
+  const blogQuery = `*[_type == 'blogPage' && lang == '${lang}'][0]{
+      ...,
+      blog ->{
+        articles[]->
+      }
+  }`;
   const homeQuery = `*[_type == 'homePage' && lang == '${lang}'][0] {
       ...,
       title,
@@ -100,6 +106,7 @@ export const generateQueries = (lang) => {
     footerQuery,
     serviceQuery,
     aboutQuery,
+    blogQuery,
     contactQuery,
     homeQuery,
     legalQuery,

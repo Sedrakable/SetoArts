@@ -1,11 +1,914 @@
 {
+  "_rev": "rVpYcj5p7bUXDET2RrjHEZ",
+  "metaTitle": "Branding & Web Design Services in one Package | Seto x Arts | Montreal & Laval",
+  "title": "Total Package",
+  "lang": "en",
+  "_createdAt": "2024-02-29T01:50:52Z",
+  "features": {
+    "features": [
+      {
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Brand Visual Identity"
+        },
+        "_id": "7cbca69e-94f4-4e6b-b5c9-da7db1389c90",
+        "title": "Visual Identity",
+        "_updatedAt": "2024-03-29T22:32:27Z",
+        "desc": "I create a unique look for your brand that makes it stand out from the competition.",
+        "_createdAt": "2024-02-16T19:41:42Z",
+        "_rev": "14bF2iHNiRa7syDF0S9QHK",
+        "_type": "feature"
+      },
+      {
+        "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
+        "_createdAt": "2024-03-06T01:21:54Z",
+        "_rev": "OEnRojb5pXWjE2sC6rNPME",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Logo",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "_id": "6a092958-662e-42d0-8232-1f58540e3d3a",
+        "title": "Logo Design",
+        "_updatedAt": "2024-03-30T19:48:43Z"
+      },
+      {
+        "_updatedAt": "2024-03-31T21:10:10Z",
+        "desc": "I'll produce unique visuals and images tailored to your brand, ensuring your message shines through vividly and memorably.",
+        "_createdAt": "2024-03-06T00:58:33Z",
+        "_rev": "14bF2iHNiRa7syDF0TXFYb",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "asset": {
+              "_ref": "image-3a0ee2d2c357264a3cf96f5e2e2cf11af2b32ba6-4001x4000-png",
+              "_type": "reference"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage",
+          "alt": "Custom Art - Comrade Boris"
+        },
+        "_id": "736fcb49-5573-4dae-9ee7-6a9a3492d75f",
+        "title": "Custom Art"
+      },
+      {
+        "_createdAt": "2024-02-16T19:35:36Z",
+        "_rev": "rGZ2nN6K5mjOGJOoWadvqK",
+        "_type": "feature",
+        "customImage": {
+          "alt": "Research Laptop",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "_id": "56491256-2b1f-4fba-8dc0-69e9139c0ac5",
+        "title": "Market Research",
+        "_updatedAt": "2024-02-25T02:50:59Z",
+        "desc": "I study the market to give you useful information for making smart decisions about your brand."
+      },
+      {
+        "_id": "771493a4-5468-4dc6-bfcf-2c91f00b7996",
+        "title": "Color Palette",
+        "_updatedAt": "2024-03-06T02:57:46Z",
+        "desc": "I help you pick colors that work well together and make your brand memorable.",
+        "_createdAt": "2024-02-16T16:37:17Z",
+        "_rev": "pE4qmNBESg4zKMd9uJIr4Q",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Color Cards"
+        }
+      },
+      {
+        "title": "Typography",
+        "_updatedAt": "2024-03-06T02:57:54Z",
+        "desc": "I can guide you to choose fonts that match your brand's personality and are easy to read.",
+        "_createdAt": "2024-02-16T19:39:57Z",
+        "_rev": "pE4qmNBESg4zKMd9uJIr9G",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Different Fonts"
+        },
+        "_id": "0a49d858-b10b-4eef-a7cc-4093e2a9c172"
+      },
+      {
+        "_createdAt": "2024-02-16T19:37:13Z",
+        "_rev": "UD4dNj2lTKtYuLoYYHv2mB",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Improving Design"
+        },
+        "_id": "a593a279-7a50-4a8a-a6bb-f53804913817",
+        "title": "Design Refinement",
+        "_updatedAt": "2024-04-04T21:50:51Z",
+        "desc": "I will improve your already existing designs so that they reflect exactly your brand's image."
+      },
+      {
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Multiple Icons and Symbols"
+        },
+        "_id": "f6fd36f2-26cd-4036-b227-b9317d8ea47a",
+        "title": "Symbols & Icons",
+        "_updatedAt": "2024-02-28T23:27:55Z",
+        "desc": "I design eye catching icons and symbols that can be frequently used on your website or elsewhere.",
+        "_createdAt": "2024-02-16T19:45:12Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGmog",
+        "_type": "feature"
+      },
+      {
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Collaterals"
+        },
+        "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
+        "title": "Brand Collaterals",
+        "_updatedAt": "2024-03-29T22:54:18Z",
+        "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
+        "_createdAt": "2024-02-16T16:48:19Z",
+        "_rev": "YXByP76OkInEwmmjNaFpvO"
+      },
+      {
+        "_createdAt": "2024-02-17T01:12:54Z",
+        "_rev": "Z5IDu749svD6Fxx4WWATKK",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Web Design Mockup Drawings"
+        },
+        "_id": "798224fd-d324-4a6f-8365-321007457a0c",
+        "title": "Mockup Creation",
+        "_updatedAt": "2024-04-26T03:07:17Z",
+        "desc": "I will create wireframes and prototypes of your website, providing visual blueprints of its layout and functionality. These prototypes will allow us to iterate and refine the design before moving into full development, saving time and ensuring alignment with your vision."
+      },
+      {
+        "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5",
+        "title": "Website Optimization",
+        "_updatedAt": "2024-02-28T23:30:42Z",
+        "desc": "I optimize your website to improve its performance, speed, and user engagement.",
+        "_createdAt": "2024-02-17T01:14:10Z",
+        "_rev": "1yoLMt3Jt0PZv9LdlrGrXr",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Optimizing"
+        }
+      },
+      {
+        "_updatedAt": "2024-02-27T03:02:28Z",
+        "desc": "I ensure seamless operation across all devices, including Windows, Apple products, Android Products, etc.",
+        "_createdAt": "2024-02-27T03:02:28Z",
+        "_rev": "OgNY2vtdjbR76xUBGB9Jou",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "laptop & phone"
+        },
+        "_id": "699d2f9c-5881-4bd3-915e-ff73e117dcb6",
+        "title": "Cross-Platform Compatibility"
+      },
+      {
+        "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website.",
+        "_createdAt": "2024-02-17T01:14:50Z",
+        "_rev": "rGZ2nN6K5mjOGJOoWaip9f",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Helping"
+        },
+        "_id": "e60a520d-3c08-4548-a3c2-684707e871e7",
+        "title": "Deployment Assistance",
+        "_updatedAt": "2024-02-25T04:07:52Z"
+      },
+      {
+        "_rev": "42dARgouF4fLoQkzWq4LPq",
+        "_type": "feature",
+        "customImage": {
+          "image": {
+            "asset": {
+              "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
+              "_type": "reference"
+            },
+            "_type": "image"
+          },
+          "_type": "customImage",
+          "alt": "Teaching strategy"
+        },
+        "_id": "f76d9180-461b-45eb-8378-50022c458953",
+        "title": "Brand Strategy Guide",
+        "_updatedAt": "2024-03-06T23:29:15Z",
+        "desc": "I give you a plan with practical steps to maintain your brand's image with the chosen writing style, tone, and more.",
+        "_createdAt": "2024-02-16T19:43:09Z"
+      },
+      {
+        "customImage": {
+          "alt": "Programming through glasses",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage"
+        },
+        "_id": "259a1ec7-49ff-487e-ae0f-8524dc1106c0",
+        "title": "Technical Support",
+        "_updatedAt": "2024-03-07T02:30:49Z",
+        "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively.",
+        "_createdAt": "2024-02-17T01:15:58Z",
+        "_rev": "42dARgouF4fLoQkzWqXMlr",
+        "_type": "feature"
+      }
+    ]
+  },
   "price": 2500,
+  "metatitle": null,
+  "hero": {
+    "_type": "hero",
+    "customImage": {
+      "alt": "This is the sign you've been looking for",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-1df50a8885ce3626a0a3ac8157c3b7e8c065fe13-5184x3456-jpg",
+          "_type": "reference"
+        }
+      },
+      "_type": "customImage"
+    },
+    "title": {
+      "part1": "Total Package:",
+      "part2": "Unify Your Brand",
+      "_type": "fancyText"
+    },
+    "desc": "Maximize your brand's impact with Seto x Arts. Enjoy a total package of branding and web design expertise in Montreal and Laval, Quebec. I combine captivating branding with engaging, conversion-focused websites to ensure your brand's optimal success.",
+    "quote": {
+      "_updatedAt": "2024-03-06T19:40:57Z",
+      "rightText": "Chaos",
+      "_createdAt": "2024-01-29T23:15:08Z",
+      "_rev": "42dARgouF4fLoQkzWokNzP",
+      "_type": "quote",
+      "leftText": "Organized",
+      "hiddenTitle": "Quote English",
+      "_id": "6291c7c8-1e43-49c1-b61c-c45c053083a7"
+    }
+  },
+  "processes": {
+    "processes": [
+      {
+        "features": [
+          {
+            "desc": "I study the market to give you useful information for making smart decisions about your brand.",
+            "_createdAt": "2024-02-16T19:35:36Z",
+            "_rev": "rGZ2nN6K5mjOGJOoWadvqK",
+            "_type": "feature",
+            "customImage": {
+              "alt": "Research Laptop",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage"
+            },
+            "_id": "56491256-2b1f-4fba-8dc0-69e9139c0ac5",
+            "title": "Market Research",
+            "_updatedAt": "2024-02-25T02:50:59Z"
+          }
+        ],
+        "_createdAt": "2024-02-17T00:22:18Z",
+        "_rev": "YXByP76OkInEwmmjNaGGAV",
+        "_type": "process",
+        "_id": "2df554c4-46ac-451a-8fcd-635b17bf9c28",
+        "title": "Research",
+        "_updatedAt": "2024-03-29T23:09:40Z",
+        "desc": "At the initial stage of our branding service, we embark on thorough research to gain valuable insights. This involves conducting competitor research, administering a client questionnaire to understand the brand's aspirations, conducting client interviews to delve into the brand's vision, studying the company's industry to grasp market dynamics, identifying the unique selling point that sets the brand apart, and determining the target demographic to align branding strategies with the intended audience."
+      },
+      {
+        "_rev": "yjwdrWT0n7hNXKlLZgleGo",
+        "_type": "process",
+        "_id": "7cfae497-77d8-42fb-9a4c-2b0b349f10e3",
+        "title": "Finding Direction",
+        "_updatedAt": "2024-03-05T22:25:12Z",
+        "desc": "In this stage the focus is on visual exploration and conceptualization. This entails creating mood boards to capture the essence of the brand and its visual identity. Additionally, a brand style presentation is crafted to showcase potential directions for the brand's visual representation, setting the stage for further development.",
+        "features": [
+          {
+            "_id": "7cbca69e-94f4-4e6b-b5c9-da7db1389c90",
+            "title": "Visual Identity",
+            "_updatedAt": "2024-03-29T22:32:27Z",
+            "desc": "I create a unique look for your brand that makes it stand out from the competition.",
+            "_createdAt": "2024-02-16T19:41:42Z",
+            "_rev": "14bF2iHNiRa7syDF0S9QHK",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Brand Visual Identity"
+            }
+          }
+        ],
+        "_createdAt": "2024-02-17T00:52:25Z"
+      },
+      {
+        "_id": "e5a0da6c-4570-4ad4-88a0-c409cb4dc034",
+        "title": "Brainstorming & Sketching",
+        "_updatedAt": "2024-03-29T23:07:27Z",
+        "desc": "During this stage, word mapping or word association exercises are conducted to generate creative ideas. This is followed by the development of rough sketches using pen and paper, as well as the creation of digital symbols, icons, and text. These activities are crucial for exploring and visualizing potential design concepts and elements for the brand's identity.",
+        "features": [
+          {
+            "_id": "8725129c-4981-4056-8d86-2fa38d475005",
+            "title": "Sketching",
+            "_updatedAt": "2024-03-31T20:17:13Z",
+            "desc": "I'll expertly sketch out your ideas with precision and creativity, bringing your visions to life.",
+            "_createdAt": "2024-03-29T22:37:06Z",
+            "_rev": "14bF2iHNiRa7syDF0TVPOI",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-f9c3f86d5cd6f93c3dee2e8696973776f2db836d-6000x4000-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Sketching "
+            }
+          }
+        ],
+        "_createdAt": "2024-02-17T00:53:06Z",
+        "_rev": "14bF2iHNiRa7syDF0SAmKN",
+        "_type": "process"
+      },
+      {
+        "_updatedAt": "2024-03-29T23:11:06Z",
+        "desc": "During this stage, the best sketches from the brainstorming phase are digitized. The key focus is on narrowing down the concepts and making small tweaks and changes to enhance the designs. This step aims to select the most promising and effective branding concepts to move forward in the branding process. I provide up to … revisions to ensure it meets the vision of the brand.",
+        "features": [
+          {
+            "title": "Logo Design",
+            "_updatedAt": "2024-03-30T19:48:43Z",
+            "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
+            "_createdAt": "2024-03-06T01:21:54Z",
+            "_rev": "OEnRojb5pXWjE2sC6rNPME",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Logo"
+            },
+            "_id": "6a092958-662e-42d0-8232-1f58540e3d3a"
+          },
+          {
+            "_updatedAt": "2024-03-08T02:51:05Z",
+            "desc": "Multiple revisions are offered to perfect and ensure it aligns with your brand's intended identity and resonates with your audience.",
+            "_createdAt": "2024-02-17T01:18:50Z",
+            "_rev": "uiWIFkW6n28NyJPxPEs18k",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-844c43198e22e2d2c7f2f02bb085d5906939da80-640x479-webp"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Revisions"
+            },
+            "_id": "2cb269bf-a827-4965-8608-ce5b446e5844",
+            "title": "Revisions"
+          },
+          {
+            "_id": "a593a279-7a50-4a8a-a6bb-f53804913817",
+            "title": "Design Refinement",
+            "_updatedAt": "2024-04-04T21:50:51Z",
+            "desc": "I will improve your already existing designs so that they reflect exactly your brand's image.",
+            "_createdAt": "2024-02-16T19:37:13Z",
+            "_rev": "UD4dNj2lTKtYuLoYYHv2mB",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Improving Design"
+            }
+          }
+        ],
+        "_createdAt": "2024-02-17T00:54:41Z",
+        "_rev": "YXByP76OkInEwmmjNaGL75",
+        "_type": "process",
+        "_id": "aff5ad40-6270-4eb4-8bf2-b2a2140b4509",
+        "title": "Concept Refinement & Selection"
+      },
+      {
+        "_updatedAt": "2024-03-29T23:09:35Z",
+        "desc": "After the approval of logo concepts and the selection of the overall style direction, the focus shifts to choosing typography options and establishing a color palette. This step is crucial in creating a cohesive and consistent visual identity for the brand, ensuring that the chosen elements align with the brand's messaging and positioning.",
+        "features": [
+          {
+            "_updatedAt": "2024-03-06T02:57:46Z",
+            "desc": "I help you pick colors that work well together and make your brand memorable.",
+            "_createdAt": "2024-02-16T16:37:17Z",
+            "_rev": "pE4qmNBESg4zKMd9uJIr4Q",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Color Cards"
+            },
+            "_id": "771493a4-5468-4dc6-bfcf-2c91f00b7996",
+            "title": "Color Palette"
+          },
+          {
+            "_updatedAt": "2024-03-06T02:57:54Z",
+            "desc": "I can guide you to choose fonts that match your brand's personality and are easy to read.",
+            "_createdAt": "2024-02-16T19:39:57Z",
+            "_rev": "pE4qmNBESg4zKMd9uJIr9G",
+            "_type": "feature",
+            "customImage": {
+              "_type": "customImage",
+              "alt": "Different Fonts",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            "_id": "0a49d858-b10b-4eef-a7cc-4093e2a9c172",
+            "title": "Typography"
+          },
+          {
+            "title": "Brand Language",
+            "_updatedAt": "2024-03-31T20:20:26Z",
+            "desc": "I'll craft a distinctive tone and voice for your brand that resonates with your audience, setting you apart in the crowded market\n",
+            "_createdAt": "2024-03-29T23:03:49Z",
+            "_rev": "14bF2iHNiRa7syDF0TVSNN",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-c511f742b4901222167cfb3a48213af7c89eb0a0-721x540-png",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Brand Language"
+            },
+            "_id": "833bdd35-93a2-481b-ae11-8e014050b3bc"
+          }
+        ],
+        "_createdAt": "2024-02-17T00:55:18Z",
+        "_rev": "YXByP76OkInEwmmjNaGG5i",
+        "_type": "process",
+        "_id": "9b17d2ed-a825-4580-b20b-79dc75feff49",
+        "title": "Visual Identity Creation"
+      },
+      {
+        "_updatedAt": "2024-03-30T17:21:48Z",
+        "desc": "After finalizing your branding, the development of the landing page can commence. An extensive initial consultation will be conducted to gather requirements and objectives for the landing page. Subsequently, I create mockups or wireframes to visualize the design, followed by development using advanced web technologies.",
+        "features": [
+          {
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Web Design Mockup Drawings"
+            },
+            "_id": "798224fd-d324-4a6f-8365-321007457a0c",
+            "title": "Mockup Creation",
+            "_updatedAt": "2024-04-26T03:07:17Z",
+            "desc": "I will create wireframes and prototypes of your website, providing visual blueprints of its layout and functionality. These prototypes will allow us to iterate and refine the design before moving into full development, saving time and ensuring alignment with your vision.",
+            "_createdAt": "2024-02-17T01:12:54Z",
+            "_rev": "Z5IDu749svD6Fxx4WWATKK"
+          },
+          {
+            "title": "UI/UX",
+            "_updatedAt": "2024-02-27T00:08:39Z",
+            "desc": "I work on the user interface and experience design to enhance the usability and accessibility of your website.",
+            "_createdAt": "2024-02-16T16:47:58Z",
+            "_rev": "c9hkvQgAJDwuQEMKj1lH56",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Ui"
+            },
+            "_id": "befea04e-284f-4bd7-9053-e303bf678f80"
+          },
+          {
+            "_createdAt": "2024-02-17T01:12:09Z",
+            "_rev": "Z5IDu749svD6Fxx4WWATWO",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Laptop with statistics"
+            },
+            "_id": "81e45cb2-9d38-4676-81c8-39b6fa60c26b",
+            "title": "Content Strategy Development",
+            "_updatedAt": "2024-04-26T03:07:23Z",
+            "desc": "I'll collaborate with you to develop a targeted content strategy for your website, ensuring it speaks directly to your audience and effectively communicates your brand's value."
+          }
+        ],
+        "_createdAt": "2024-03-06T00:34:16Z",
+        "_rev": "YXByP76OkInEwmmjNaqK0r",
+        "_type": "process",
+        "_id": "87c37c54-f233-4970-9d93-06f11d54c5c6",
+        "title": "Consultation & Development"
+      },
+      {
+        "_createdAt": "2024-02-17T01:18:07Z",
+        "_rev": "pE4qmNBESg4zKMd9uJBnCq",
+        "_type": "process",
+        "_id": "ec029ca4-322c-4a33-9c3e-bcc6b8292833",
+        "title": "Client Feedback & Revisions",
+        "_updatedAt": "2024-03-06T00:35:44Z",
+        "desc": "Upon completion of the initial design, the client is presented with the prototype for feedback. Necessary revisions are then incorporated based on the client's input, ensuring alignment with their vision and goals.",
+        "features": [
+          {
+            "_rev": "uiWIFkW6n28NyJPxPEs18k",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-844c43198e22e2d2c7f2f02bb085d5906939da80-640x479-webp"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Revisions"
+            },
+            "_id": "2cb269bf-a827-4965-8608-ce5b446e5844",
+            "title": "Revisions",
+            "_updatedAt": "2024-03-08T02:51:05Z",
+            "desc": "Multiple revisions are offered to perfect and ensure it aligns with your brand's intended identity and resonates with your audience.",
+            "_createdAt": "2024-02-17T01:18:50Z"
+          }
+        ]
+      },
+      {
+        "features": [
+          {
+            "_createdAt": "2024-02-17T01:14:10Z",
+            "_rev": "1yoLMt3Jt0PZv9LdlrGrXr",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Optimizing"
+            },
+            "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5",
+            "title": "Website Optimization",
+            "_updatedAt": "2024-02-28T23:30:42Z",
+            "desc": "I optimize your website to improve its performance, speed, and user engagement."
+          },
+          {
+            "_id": "699d2f9c-5881-4bd3-915e-ff73e117dcb6",
+            "title": "Cross-Platform Compatibility",
+            "_updatedAt": "2024-02-27T03:02:28Z",
+            "desc": "I ensure seamless operation across all devices, including Windows, Apple products, Android Products, etc.",
+            "_createdAt": "2024-02-27T03:02:28Z",
+            "_rev": "OgNY2vtdjbR76xUBGB9Jou",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "laptop & phone"
+            }
+          }
+        ],
+        "_createdAt": "2024-02-17T01:20:51Z",
+        "_rev": "pE4qmNBESg4zKMd9uJBm5t",
+        "_type": "process",
+        "_id": "233544f5-1cee-4ea7-a276-05fe216a8fd3",
+        "title": "Testing & Optimization",
+        "_updatedAt": "2024-03-06T00:35:25Z",
+        "desc": "Following client approval, rigorous testing is conducted to ensure seamless functionality across various devices and browsers. Additionally, optimization techniques are employed to enhance the website’s performance and user experience."
+      },
+      {
+        "_updatedAt": "2024-03-06T01:22:23Z",
+        "desc": "Upon successful testing and approval, the finalized landing page is delivered to the client, accompanied by the completed branding materials. I provide comprehensive assistance in deploying the landing page to the client's web hosting environment, ensuring a smooth and successful launch. Additionally, a digital brand guidelines manual will be delivered to the client, offering comprehensive instructions on how to appropriately utilize all the deliverables. This final step of the process, provides the client with essential tools for a strong brand presence.",
+        "features": [
+          {
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Logo"
+            },
+            "_id": "6a092958-662e-42d0-8232-1f58540e3d3a",
+            "title": "Logo Design",
+            "_updatedAt": "2024-03-30T19:48:43Z",
+            "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
+            "_createdAt": "2024-03-06T01:21:54Z",
+            "_rev": "OEnRojb5pXWjE2sC6rNPME"
+          },
+          {
+            "_id": "736fcb49-5573-4dae-9ee7-6a9a3492d75f",
+            "title": "Custom Art",
+            "_updatedAt": "2024-03-31T21:10:10Z",
+            "desc": "I'll produce unique visuals and images tailored to your brand, ensuring your message shines through vividly and memorably.",
+            "_createdAt": "2024-03-06T00:58:33Z",
+            "_rev": "14bF2iHNiRa7syDF0TXFYb",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-3a0ee2d2c357264a3cf96f5e2e2cf11af2b32ba6-4001x4000-png",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Custom Art - Comrade Boris"
+            }
+          },
+          {
+            "customImage": {
+              "_type": "customImage",
+              "alt": "Collaterals",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png",
+                  "_type": "reference"
+                }
+              }
+            },
+            "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
+            "title": "Brand Collaterals",
+            "_updatedAt": "2024-03-29T22:54:18Z",
+            "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
+            "_createdAt": "2024-02-16T16:48:19Z",
+            "_rev": "YXByP76OkInEwmmjNaFpvO",
+            "_type": "feature"
+          },
+          {
+            "_createdAt": "2024-02-16T19:43:09Z",
+            "_rev": "42dARgouF4fLoQkzWq4LPq",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Teaching strategy"
+            },
+            "_id": "f76d9180-461b-45eb-8378-50022c458953",
+            "title": "Brand Strategy Guide",
+            "_updatedAt": "2024-03-06T23:29:15Z",
+            "desc": "I give you a plan with practical steps to maintain your brand's image with the chosen writing style, tone, and more."
+          },
+          {
+            "title": "Deployment Assistance",
+            "_updatedAt": "2024-02-25T04:07:52Z",
+            "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website.",
+            "_createdAt": "2024-02-17T01:14:50Z",
+            "_rev": "rGZ2nN6K5mjOGJOoWaip9f",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "asset": {
+                  "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
+                  "_type": "reference"
+                },
+                "_type": "image"
+              },
+              "_type": "customImage",
+              "alt": "Helping"
+            },
+            "_id": "e60a520d-3c08-4548-a3c2-684707e871e7"
+          },
+          {
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Multiple Icons and Symbols"
+            },
+            "_id": "f6fd36f2-26cd-4036-b227-b9317d8ea47a",
+            "title": "Symbols & Icons",
+            "_updatedAt": "2024-02-28T23:27:55Z",
+            "desc": "I design eye catching icons and symbols that can be frequently used on your website or elsewhere.",
+            "_createdAt": "2024-02-16T19:45:12Z",
+            "_rev": "1yoLMt3Jt0PZv9LdlrGmog"
+          }
+        ],
+        "_createdAt": "2024-03-06T00:32:01Z",
+        "_rev": "yjwdrWT0n7hNXKlLZheZ50",
+        "_type": "process",
+        "_id": "1ebaa15a-a67f-413d-be8e-1df8c9bb239c",
+        "title": "Deliverables & Deployment"
+      },
+      {
+        "_type": "process",
+        "_id": "47611d1f-798d-4ded-9187-f585f38c16f5",
+        "title": "Post-launch Support",
+        "_updatedAt": "2024-03-05T23:54:15Z",
+        "desc": "Continued support is offered post-launch to address any technical issues, provide guidance on content updates, and offer further assistance as required, ensuring sustained performance and effectiveness.",
+        "features": [
+          {
+            "title": "Technical Support",
+            "_updatedAt": "2024-03-07T02:30:49Z",
+            "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively.",
+            "_createdAt": "2024-02-17T01:15:58Z",
+            "_rev": "42dARgouF4fLoQkzWqXMlr",
+            "_type": "feature",
+            "customImage": {
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
+                  "_type": "reference"
+                }
+              },
+              "_type": "customImage",
+              "alt": "Programming through glasses"
+            },
+            "_id": "259a1ec7-49ff-487e-ae0f-8524dc1106c0"
+          }
+        ],
+        "_createdAt": "2024-02-17T01:21:50Z",
+        "_rev": "yjwdrWT0n7hNXKlLZhNp42"
+      }
+    ]
+  },
+  "_updatedAt": "2024-04-26T02:21:50Z",
   "_id": "76b94d48-93c4-40ef-8deb-dd2d365ed137",
+  "path": "/total-package",
   "_type": "servicePage",
   "work": {
     "title": null,
     "works": [
       {
+        "title": "Krusty Krab",
+        "desc": "Growing up, SpongeBob was a huge part of my childhood, but I couldn't help but think that Mr Krabs was cutting corners when it came to branding, so I took it upon myself to give the Krusty Krab the modern and vibrant identity it deserves. With a colorful palette and a fresh approach, I aimed to streamline and elevate this iconic fast-food brand while staying true to its roots.",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "https://www.behance.net/gallery/196756359/Krusty-Krab-Rebrand",
+          "text": "Behance"
+        },
         "slug": {
           "current": "krusty-krab",
           "_type": "slug"
@@ -24,16 +927,16 @@
             "_key": "97cfec5da6e8"
           },
           {
+            "_type": "customImage",
+            "alt": "The Wordmark of the Krysty Krab Logo",
+            "_key": "263a6b346c2a",
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-a9338c6657b61a3fa035eb9fe8979c55ebd86330-2000x800-jpg",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-a9338c6657b61a3fa035eb9fe8979c55ebd86330-2000x800-jpg"
               }
-            },
-            "_type": "customImage",
-            "alt": "The Wordmark of the Krysty Krab Logo",
-            "_key": "263a6b346c2a"
+            }
           },
           {
             "image": {
@@ -72,16 +975,16 @@
             "_key": "135bb0c4919b"
           },
           {
-            "alt": "Fonts for the Used in the Krusty Krab Brand. Passero One and Montserrat",
-            "_key": "d591fd7e12a8",
             "image": {
-              "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-5ea5d2651377b1b6c6d0a4a3f6146c28bcdc4eb6-2000x1120-jpg"
-              }
+                "_ref": "image-5ea5d2651377b1b6c6d0a4a3f6146c28bcdc4eb6-2000x1120-jpg",
+                "_type": "reference"
+              },
+              "_type": "image"
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Fonts for the Used in the Krusty Krab Brand. Passero One and Montserrat",
+            "_key": "d591fd7e12a8"
           },
           {
             "image": {
@@ -96,28 +999,28 @@
             "_key": "93acf20f25f8"
           },
           {
-            "_type": "customImage",
-            "alt": "Mobile Integration of the Krusty Krab. Mobile Website with a Navbar with an order Button. Shell Icon, Burger Menu. Hero Section with the Krusty Meal. Outside of phone, Mobile Icons",
-            "_key": "e8f283eda718",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-07860d76b7a763e3d9305865673d0285d71c435e-2000x1000-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Mobile Integration of the Krusty Krab. Mobile Website with a Navbar with an order Button. Shell Icon, Burger Menu. Hero Section with the Krusty Meal. Outside of phone, Mobile Icons",
+            "_key": "e8f283eda718"
           },
           {
-            "_type": "customImage",
-            "alt": "A Krusty Krab Menu with all the food. Plankton in the corner",
-            "_key": "63dbc6a50967",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-601ae636d4beed1a6f18fc9f222bd6f3381b8b9a-1920x1080-png",
                 "_type": "reference"
-              },
-              "_type": "image"
-            }
+              }
+            },
+            "_type": "customImage",
+            "alt": "A Krusty Krab Menu with all the food. Plankton in the corner",
+            "_key": "63dbc6a50967"
           },
           {
             "image": {
@@ -136,39 +1039,21 @@
           "image": {
             "_type": "image",
             "asset": {
-              "_ref": "image-45a4c343ccf97bcdd550c933ae41eebaa0496d62-2000x1300-jpg",
-              "_type": "reference"
+              "_type": "reference",
+              "_ref": "image-45a4c343ccf97bcdd550c933ae41eebaa0496d62-2000x1300-jpg"
             }
           },
           "_type": "customImage",
           "alt": "Krusty Krab Rebrand"
-        },
-        "title": "Krusty Krab",
-        "desc": "Growing up, SpongeBob was a huge part of my childhood, but I couldn't help but think that Mr Krabs was cutting corners when it came to branding, so I took it upon myself to give the Krusty Krab the modern and vibrant identity it deserves. With a colorful palette and a fresh approach, I aimed to streamline and elevate this iconic fast-food brand while staying true to its roots.",
-        "primaryLink": {
-          "_type": "cta",
-          "link": "https://www.behance.net/gallery/196756359/Krusty-Krab-Rebrand",
-          "text": "Behance"
         }
       },
       {
-        "thumbnailImage": {
-          "_type": "customImage",
-          "alt": "B'nest logo",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-c828375b67dfd06c1a6ad4595bcdd10ae13ea2c9-2000x1301-jpg",
-              "_type": "reference"
-            }
-          }
-        },
         "title": "B'nest",
         "desc": "B'nest is more than just a cream company; it's a celebration of natural goodness and family traditions. Rooted in the heart of nature, B'nest crafts luxurious creams using locally sourced honey from artisanal beekeepers. Our brand embodies warmth, authenticity, and the timeless joy of shared moments. Each jar of B'nest cream is a testament to our commitment to quality, purity, and the simple pleasures of life. Join us on a journey where every scoop is a taste of wholesome indulgence, where tradition meets innovation in perfect harmony.",
         "primaryLink": {
-          "text": "Behance",
           "_type": "cta",
-          "link": "https://www.behance.net/gallery/195033325/Bnest-Brand-Design-Project"
+          "link": "https://www.behance.net/gallery/195033325/Bnest-Brand-Design-Project",
+          "text": "Behance"
         },
         "slug": {
           "current": "b-nest",
@@ -176,44 +1061,42 @@
         },
         "customImages": [
           {
-            "alt": "Cream Jar",
             "_key": "293a52fdaf4d",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-273e87e7e0c3077c3aa70a2b504ae9f18333c069-2000x1300-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Cream Jar"
+          },
+          {
+            "alt": "Research",
+            "_key": "9936a8978659",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_ref": "image-de0902948e760435d7c77046b7a126d257988c9b-2000x1301-jpg",
+                "_type": "reference"
+              }
             },
             "_type": "customImage"
           },
           {
             "image": {
               "asset": {
-                "_ref": "image-de0902948e760435d7c77046b7a126d257988c9b-2000x1301-jpg",
+                "_ref": "image-afc8d88a256ef8d0fe4bf2cfffd0d634276271cf-2000x901-jpg",
                 "_type": "reference"
               },
               "_type": "image"
             },
             "_type": "customImage",
-            "alt": "Research",
-            "_key": "9936a8978659"
+            "alt": "Logo Design",
+            "_key": "e57c33be7681"
           },
           {
-            "_key": "e57c33be7681",
-            "image": {
-              "_type": "image",
-              "asset": {
-                "_ref": "image-afc8d88a256ef8d0fe4bf2cfffd0d634276271cf-2000x901-jpg",
-                "_type": "reference"
-              }
-            },
-            "_type": "customImage",
-            "alt": "Logo Design"
-          },
-          {
-            "alt": "Logo Scalable and Light",
-            "_key": "3baf8857d245",
             "image": {
               "_type": "image",
               "asset": {
@@ -221,21 +1104,24 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Logo Scalable and Light",
+            "_key": "3baf8857d245"
           },
           {
+            "_type": "customImage",
+            "alt": "Logo Scalable and Dark",
+            "_key": "2a76714169a1",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-ebf430c498b3e165f29da0f1890f2a46e1e7b365-2000x1301-jpg",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Logo Scalable and Dark",
-            "_key": "2a76714169a1"
+            }
           },
           {
+            "alt": "Word Mark",
             "_key": "282ecf4f2d0e",
             "image": {
               "_type": "image",
@@ -244,10 +1130,11 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Word Mark"
+            "_type": "customImage"
           },
           {
+            "alt": "Color System",
+            "_key": "d368eadcd21c",
             "image": {
               "_type": "image",
               "asset": {
@@ -255,16 +1142,14 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Color System",
-            "_key": "d368eadcd21c"
+            "_type": "customImage"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-9781a50cbc987f87b68e320468583962f5b4db6d-2000x1301-jpg",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-9781a50cbc987f87b68e320468583962f5b4db6d-2000x1301-jpg"
               }
             },
             "_type": "customImage",
@@ -272,6 +1157,8 @@
             "_key": "c538a8b29f37"
           },
           {
+            "alt": "Textures",
+            "_key": "4b58fcbd6a97",
             "image": {
               "_type": "image",
               "asset": {
@@ -279,9 +1166,7 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Textures",
-            "_key": "4b58fcbd6a97"
+            "_type": "customImage"
           },
           {
             "image": {
@@ -296,6 +1181,8 @@
             "_key": "82576573d025"
           },
           {
+            "_type": "customImage",
+            "alt": "Gear",
             "_key": "afa52e846f41",
             "image": {
               "_type": "image",
@@ -303,9 +1190,7 @@
                 "_ref": "image-755bb30222304f846ac89f8c0ab82ed6c4340fb3-2000x1301-jpg",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Gear"
+            }
           },
           {
             "image": {
@@ -320,18 +1205,19 @@
             "_key": "27b5945f661f"
           },
           {
-            "_type": "customImage",
-            "alt": "Bee hive",
-            "_key": "e33d209e3a75",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-75248c55e6de87de6d5bc01af43b0b3342314566-3999x2662-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Bee hive",
+            "_key": "e33d209e3a75"
           },
           {
+            "_type": "customImage",
             "alt": "Honey",
             "_key": "ecc9ddfde67d",
             "image": {
@@ -340,10 +1226,10 @@
                 "_ref": "image-b96612762e9a8dae0174f04becc949c6645caf32-5184x3456-jpg",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage"
+            }
           },
           {
+            "_key": "8ad7eb1b8f39",
             "image": {
               "_type": "image",
               "asset": {
@@ -352,24 +1238,39 @@
               }
             },
             "_type": "customImage",
-            "alt": "Familly",
-            "_key": "8ad7eb1b8f39"
+            "alt": "Familly"
           },
           {
+            "_type": "customImage",
+            "alt": "Bees",
+            "_key": "4c442cae916b",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-5c091eb124a30bd71ef32e1a5b0b200eda380cc1-3072x4096-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
-            },
-            "_type": "customImage",
-            "alt": "Bees",
-            "_key": "4c442cae916b"
+              }
+            }
           }
-        ]
+        ],
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-c828375b67dfd06c1a6ad4595bcdd10ae13ea2c9-2000x1301-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "B'nest logo"
+        }
       },
       {
+        "primaryLink": {
+          "_type": "cta",
+          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
+          "text": "Kickstarter"
+        },
         "slug": {
           "_type": "slug",
           "current": "steampunk-dynasty"
@@ -400,13 +1301,25 @@
             "_key": "42ff436f1c29"
           },
           {
-            "alt": "Cards closup",
-            "_key": "deaaa24add5a",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-ed119641fb51b8fc50bbbb699f450dbe7bef9879-1920x1080-png",
                 "_type": "reference"
+              }
+            },
+            "_type": "customImage",
+            "alt": "Cards closup",
+            "_key": "deaaa24add5a"
+          },
+          {
+            "alt": "Rotating Deck",
+            "_key": "8f96d0754b7a",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-7a51cf978f72be72213d654babfc60bf185429cd-800x800-gif"
               }
             },
             "_type": "customImage"
@@ -415,37 +1328,25 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-7a51cf978f72be72213d654babfc60bf185429cd-800x800-gif",
+                "_ref": "image-bbf924f7c9d2127c98f8e0941cf2c4e3a1f1421f-1921x1080-png",
                 "_type": "reference"
               }
             },
             "_type": "customImage",
-            "alt": "Rotating Deck",
-            "_key": "8f96d0754b7a"
-          },
-          {
-            "_type": "customImage",
             "alt": "Azure deck variant",
-            "_key": "6a2cfa9571bb",
-            "image": {
-              "_type": "image",
-              "asset": {
-                "_ref": "image-bbf924f7c9d2127c98f8e0941cf2c4e3a1f1421f-1921x1080-png",
-                "_type": "reference"
-              }
-            }
+            "_key": "6a2cfa9571bb"
           },
           {
-            "_type": "customImage",
-            "alt": "Amber deck variant",
-            "_key": "45675be26708",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-e7e51475ff2a85cc11b4623b916804c1be48f697-1921x1080-png",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Amber deck variant",
+            "_key": "45675be26708"
           },
           {
             "image": {
@@ -460,36 +1361,36 @@
             "_key": "9e63436e642c"
           },
           {
+            "_type": "customImage",
+            "alt": "Crimson deck variant",
+            "_key": "6f56e398952c",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-1982afda61dc7a46d8023ab42b482d8aa11cb08b-1921x1080-png",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Crimson deck variant",
-            "_key": "6f56e398952c"
+            }
           },
           {
+            "_type": "customImage",
+            "alt": "Cards grid",
+            "_key": "e7919640053d",
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-992adbf34a18d7df4b133b4a53b8a2ea74920a0b-1920x1440-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-992adbf34a18d7df4b133b4a53b8a2ea74920a0b-1920x1440-png"
               }
-            },
-            "_type": "customImage",
-            "alt": "Cards grid",
-            "_key": "e7919640053d"
+            }
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-95fdeec71ff834ee1914874008d029b9fb7752a8-800x800-gif",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Card Details",
@@ -497,11 +1398,11 @@
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-919a1ef64c058f674551ca2c66e86fc21c29ac01-1920x1080-png",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Jokers",
@@ -532,6 +1433,7 @@
             }
           },
           {
+            "_key": "bfdb9882a33c",
             "image": {
               "_type": "image",
               "asset": {
@@ -540,10 +1442,10 @@
               }
             },
             "_type": "customImage",
-            "alt": "Back Cover",
-            "_key": "bfdb9882a33c"
+            "alt": "Back Cover"
           },
           {
+            "_key": "7856b7cab3e6",
             "image": {
               "_type": "image",
               "asset": {
@@ -552,8 +1454,7 @@
               }
             },
             "_type": "customImage",
-            "alt": "Book Open",
-            "_key": "7856b7cab3e6"
+            "alt": "Book Open"
           },
           {
             "image": {
@@ -568,8 +1469,6 @@
             "_key": "01f76448fec1"
           },
           {
-            "_type": "customImage",
-            "alt": "Coin",
             "_key": "c4c73fbabd8c",
             "image": {
               "_type": "image",
@@ -577,14 +1476,16 @@
                 "_ref": "image-442a64b300afdbb454e006c27346c3b8b8f798dc-1080x1080-gif",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Coin"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-50db4de551a61d63bcaa234b194cd83995f783e7-1920x1080-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-50db4de551a61d63bcaa234b194cd83995f783e7-1920x1080-png"
               }
             },
             "_type": "customImage",
@@ -596,11 +1497,11 @@
             "alt": "Artbook",
             "_key": "d28e6118fad0",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-2cbcb19110ade4051db20804a96736f895d7c992-1920x1440-png",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             }
           },
           {
@@ -617,11 +1518,11 @@
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-2f885c2481740b609111eb9f73accd20929ab9ef-1080x720-png",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Combo",
@@ -640,30 +1541,30 @@
           "alt": "steampunk dynasty thumbnail"
         },
         "title": "Steampunk Dynasty",
-        "desc": "Welcome to the world of Steampunk Dynasty! Imagine holding a deck of playing cards that transports you to a fascinating retro-futuristic world, filled with steam-powered machinery and Victorian-era elegance.\n\nWe are excited to introduce not just one, but four unique decks with distinct colour schemes, each representing one of the four suits in the deck. But we didn't stop there - to fully immerse you in this captivating world, we've also created a novel called Steampunk Dynasty: Gears and Glory. Get ready to experience a thrilling adventure and discover the stories behind each of the four dynasties.\n\nThe world of Steampunk is a mesmerizing blend of the Victorian era and retro-futuristic science fiction, powered by steam machinery. This unique combination of elegance and creativity has given rise to a multitude of fascinating and inspiring ideas. The decks of the Vostok Cards collection embody this spirit, with their intricate designs, luxurious look and feel, and attention to detail. Each deck is uniquely crafted to represent a specific dynasty or suit, with elements that beautifully capture the essence of the Steampunk world.",
-        "primaryLink": {
-          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
-          "text": "Kickstarter",
-          "_type": "cta"
-        }
+        "desc": "Welcome to the world of Steampunk Dynasty! Imagine holding a deck of playing cards that transports you to a fascinating retro-futuristic world, filled with steam-powered machinery and Victorian-era elegance.\n\nWe are excited to introduce not just one, but four unique decks with distinct colour schemes, each representing one of the four suits in the deck. But we didn't stop there - to fully immerse you in this captivating world, we've also created a novel called Steampunk Dynasty: Gears and Glory. Get ready to experience a thrilling adventure and discover the stories behind each of the four dynasties.\n\nThe world of Steampunk is a mesmerizing blend of the Victorian era and retro-futuristic science fiction, powered by steam machinery. This unique combination of elegance and creativity has given rise to a multitude of fascinating and inspiring ideas. The decks of the Vostok Cards collection embody this spirit, with their intricate designs, luxurious look and feel, and attention to detail. Each deck is uniquely crafted to represent a specific dynasty or suit, with elements that beautifully capture the essence of the Steampunk world."
       },
       {
+        "primaryLink": {
+          "text": "Kickstarter",
+          "_type": "cta",
+          "link": "https://www.kickstarter.com/projects/vostokcards/vostok-cards-animal-gangdom"
+        },
         "slug": {
           "current": "animal-gangdom",
           "_type": "slug"
         },
         "customImages": [
           {
+            "_type": "customImage",
+            "alt": "Front of Tuck Box",
+            "_key": "8d6a335fdad6",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-066f2dc54b8e0981e0488e73a21dacac2006dc7d-3872x2592-jpg"
+                "_ref": "image-066f2dc54b8e0981e0488e73a21dacac2006dc7d-3872x2592-jpg",
+                "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Front of Tuck Box",
-            "_key": "8d6a335fdad6"
+            }
           },
           {
             "image": {
@@ -690,6 +1591,8 @@
             "_key": "fa8a37fd1c30"
           },
           {
+            "_type": "customImage",
+            "alt": "Back of Card Close Up",
             "_key": "0ab319502b4c",
             "image": {
               "_type": "image",
@@ -697,33 +1600,31 @@
                 "_ref": "image-f1e14eb5b9906cef109371b1153c12ce1527c57a-3872x2592-jpg",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Back of Card Close Up"
+            }
           },
           {
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-769de7ebf8cc52ac219abbe14c9a49d352bfbeb3-3872x2592-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
             "alt": "Aesthetic image",
             "_key": "b8f520def095"
           },
           {
+            "_type": "customImage",
+            "alt": "Jack and Queen of Clubs",
+            "_key": "9527755e234b",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-0009a96eff1e8068c698a717db11e6066a99080a-2250x2250-png",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Jack and Queen of Clubs",
-            "_key": "9527755e234b"
+            }
           },
           {
             "image": {
@@ -750,16 +1651,16 @@
             "_key": "a716648b334b"
           },
           {
+            "_type": "customImage",
+            "alt": "Jack and Queen of Diamonds",
+            "_key": "2e9546eb6874",
             "image": {
               "asset": {
                 "_ref": "image-92bf97b44398739f22d640c18640d5c44277d515-2250x2250-png",
                 "_type": "reference"
               },
               "_type": "image"
-            },
-            "_type": "customImage",
-            "alt": "Jack and Queen of Diamonds",
-            "_key": "2e9546eb6874"
+            }
           },
           {
             "_type": "customImage",
@@ -786,20 +1687,18 @@
             "_key": "1396efeba39c"
           },
           {
-            "image": {
-              "asset": {
-                "_ref": "image-03f790eae1b6d5d3970a9e6021f6efdf308ca1a4-2250x2250-png",
-                "_type": "reference"
-              },
-              "_type": "image"
-            },
             "_type": "customImage",
             "alt": "King and Ace of Hearts",
-            "_key": "e01f5089deb3"
+            "_key": "e01f5089deb3",
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-03f790eae1b6d5d3970a9e6021f6efdf308ca1a4-2250x2250-png"
+              }
+            }
           },
           {
-            "alt": "King and Ace of Diamonds",
-            "_key": "adf87e78f1e2",
             "image": {
               "_type": "image",
               "asset": {
@@ -807,14 +1706,16 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "King and Ace of Diamonds",
+            "_key": "adf87e78f1e2"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-3b4bac79f69a9d52964aae6b94c5e7128ac209df-2817x3250-jpg"
+                "_ref": "image-3b4bac79f69a9d52964aae6b94c5e7128ac209df-2817x3250-jpg",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
@@ -823,921 +1724,20 @@
           }
         ],
         "thumbnailImage": {
+          "_type": "customImage",
+          "alt": "Animal Gangdom Deck",
           "image": {
             "_type": "image",
             "asset": {
               "_ref": "image-7ad4429c6d3f7014f475bd2acb6bb6478f297cc1-3872x2592-jpg",
               "_type": "reference"
             }
-          },
-          "_type": "customImage",
-          "alt": "Animal Gangdom Deck"
+          }
         },
         "title": "Animal Gangdom",
-        "desc": "Did you ever imagine a card where the Jack of Spades is in a tracksuit, has a ski mask on, and not to mention is a wolf!? In this deck, every suit is associated with a different gang, from a different culture and a different animal kingdom. Every character has its own personality, while still keeping the traditional, minimalistic look of a playing card. ",
-        "primaryLink": {
-          "_type": "cta",
-          "link": "https://www.kickstarter.com/projects/vostokcards/vostok-cards-animal-gangdom",
-          "text": "Kickstarter"
-        }
+        "desc": "Did you ever imagine a card where the Jack of Spades is in a tracksuit, has a ski mask on, and not to mention is a wolf!? In this deck, every suit is associated with a different gang, from a different culture and a different animal kingdom. Every character has its own personality, while still keeping the traditional, minimalistic look of a playing card. "
       }
     ]
   },
-  "path": "/total-package",
-  "lang": "en",
-  "hiddenTitle": "Total Package English",
-  "processes": {
-    "processes": [
-      {
-        "_createdAt": "2024-02-17T00:22:18Z",
-        "_rev": "YXByP76OkInEwmmjNaGGAV",
-        "_type": "process",
-        "_id": "2df554c4-46ac-451a-8fcd-635b17bf9c28",
-        "title": "Research",
-        "_updatedAt": "2024-03-29T23:09:40Z",
-        "desc": "At the initial stage of our branding service, we embark on thorough research to gain valuable insights. This involves conducting competitor research, administering a client questionnaire to understand the brand's aspirations, conducting client interviews to delve into the brand's vision, studying the company's industry to grasp market dynamics, identifying the unique selling point that sets the brand apart, and determining the target demographic to align branding strategies with the intended audience.",
-        "features": [
-          {
-            "_id": "56491256-2b1f-4fba-8dc0-69e9139c0ac5",
-            "title": "Market Research",
-            "_updatedAt": "2024-02-25T02:50:59Z",
-            "desc": "I study the market to give you useful information for making smart decisions about your brand.",
-            "_createdAt": "2024-02-16T19:35:36Z",
-            "_rev": "rGZ2nN6K5mjOGJOoWadvqK",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "asset": {
-                  "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
-                  "_type": "reference"
-                },
-                "_type": "image"
-              },
-              "_type": "customImage",
-              "alt": "Research Laptop"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Finding Direction",
-        "_updatedAt": "2024-03-05T22:25:12Z",
-        "desc": "In this stage the focus is on visual exploration and conceptualization. This entails creating mood boards to capture the essence of the brand and its visual identity. Additionally, a brand style presentation is crafted to showcase potential directions for the brand's visual representation, setting the stage for further development.",
-        "features": [
-          {
-            "_id": "7cbca69e-94f4-4e6b-b5c9-da7db1389c90",
-            "title": "Visual Identity",
-            "_updatedAt": "2024-03-29T22:32:27Z",
-            "desc": "I create a unique look for your brand that makes it stand out from the competition.",
-            "_createdAt": "2024-02-16T19:41:42Z",
-            "_rev": "14bF2iHNiRa7syDF0S9QHK",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_type": "reference",
-                  "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Brand Visual Identity"
-            }
-          }
-        ],
-        "_createdAt": "2024-02-17T00:52:25Z",
-        "_rev": "yjwdrWT0n7hNXKlLZgleGo",
-        "_type": "process",
-        "_id": "7cfae497-77d8-42fb-9a4c-2b0b349f10e3"
-      },
-      {
-        "features": [
-          {
-            "desc": "I'll expertly sketch out your ideas with precision and creativity, bringing your visions to life.",
-            "_createdAt": "2024-03-29T22:37:06Z",
-            "_rev": "14bF2iHNiRa7syDF0TVPOI",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-f9c3f86d5cd6f93c3dee2e8696973776f2db836d-6000x4000-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Sketching "
-            },
-            "_id": "8725129c-4981-4056-8d86-2fa38d475005",
-            "title": "Sketching",
-            "_updatedAt": "2024-03-31T20:17:13Z"
-          }
-        ],
-        "_createdAt": "2024-02-17T00:53:06Z",
-        "_rev": "14bF2iHNiRa7syDF0SAmKN",
-        "_type": "process",
-        "_id": "e5a0da6c-4570-4ad4-88a0-c409cb4dc034",
-        "title": "Brainstorming & Sketching",
-        "_updatedAt": "2024-03-29T23:07:27Z",
-        "desc": "During this stage, word mapping or word association exercises are conducted to generate creative ideas. This is followed by the development of rough sketches using pen and paper, as well as the creation of digital symbols, icons, and text. These activities are crucial for exploring and visualizing potential design concepts and elements for the brand's identity."
-      },
-      {
-        "desc": "During this stage, the best sketches from the brainstorming phase are digitized. The key focus is on narrowing down the concepts and making small tweaks and changes to enhance the designs. This step aims to select the most promising and effective branding concepts to move forward in the branding process. I provide up to … revisions to ensure it meets the vision of the brand.",
-        "features": [
-          {
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Logo"
-            },
-            "_id": "6a092958-662e-42d0-8232-1f58540e3d3a",
-            "title": "Logo Design",
-            "_updatedAt": "2024-03-30T19:48:43Z",
-            "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
-            "_createdAt": "2024-03-06T01:21:54Z",
-            "_rev": "OEnRojb5pXWjE2sC6rNPME",
-            "_type": "feature"
-          },
-          {
-            "_rev": "uiWIFkW6n28NyJPxPEs18k",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-844c43198e22e2d2c7f2f02bb085d5906939da80-640x479-webp",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Revisions"
-            },
-            "_id": "2cb269bf-a827-4965-8608-ce5b446e5844",
-            "title": "Revisions",
-            "_updatedAt": "2024-03-08T02:51:05Z",
-            "desc": "Multiple revisions are offered to perfect and ensure it aligns with your brand's intended identity and resonates with your audience.",
-            "_createdAt": "2024-02-17T01:18:50Z"
-          },
-          {
-            "_updatedAt": "2024-04-04T21:50:51Z",
-            "desc": "I will improve your already existing designs so that they reflect exactly your brand's image.",
-            "_createdAt": "2024-02-16T19:37:13Z",
-            "_rev": "UD4dNj2lTKtYuLoYYHv2mB",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Improving Design"
-            },
-            "_id": "a593a279-7a50-4a8a-a6bb-f53804913817",
-            "title": "Design Refinement"
-          }
-        ],
-        "_createdAt": "2024-02-17T00:54:41Z",
-        "_rev": "YXByP76OkInEwmmjNaGL75",
-        "_type": "process",
-        "_id": "aff5ad40-6270-4eb4-8bf2-b2a2140b4509",
-        "title": "Concept Refinement & Selection",
-        "_updatedAt": "2024-03-29T23:11:06Z"
-      },
-      {
-        "desc": "After the approval of logo concepts and the selection of the overall style direction, the focus shifts to choosing typography options and establishing a color palette. This step is crucial in creating a cohesive and consistent visual identity for the brand, ensuring that the chosen elements align with the brand's messaging and positioning.",
-        "features": [
-          {
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Color Cards"
-            },
-            "_id": "771493a4-5468-4dc6-bfcf-2c91f00b7996",
-            "title": "Color Palette",
-            "_updatedAt": "2024-03-06T02:57:46Z",
-            "desc": "I help you pick colors that work well together and make your brand memorable.",
-            "_createdAt": "2024-02-16T16:37:17Z",
-            "_rev": "pE4qmNBESg4zKMd9uJIr4Q",
-            "_type": "feature"
-          },
-          {
-            "_id": "0a49d858-b10b-4eef-a7cc-4093e2a9c172",
-            "title": "Typography",
-            "_updatedAt": "2024-03-06T02:57:54Z",
-            "desc": "I can guide you to choose fonts that match your brand's personality and are easy to read.",
-            "_createdAt": "2024-02-16T19:39:57Z",
-            "_rev": "pE4qmNBESg4zKMd9uJIr9G",
-            "_type": "feature",
-            "customImage": {
-              "alt": "Different Fonts",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage"
-            }
-          },
-          {
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-c511f742b4901222167cfb3a48213af7c89eb0a0-721x540-png",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Brand Language"
-            },
-            "_id": "833bdd35-93a2-481b-ae11-8e014050b3bc",
-            "title": "Brand Language",
-            "_updatedAt": "2024-03-31T20:20:26Z",
-            "desc": "I'll craft a distinctive tone and voice for your brand that resonates with your audience, setting you apart in the crowded market\n",
-            "_createdAt": "2024-03-29T23:03:49Z",
-            "_rev": "14bF2iHNiRa7syDF0TVSNN",
-            "_type": "feature"
-          }
-        ],
-        "_createdAt": "2024-02-17T00:55:18Z",
-        "_rev": "YXByP76OkInEwmmjNaGG5i",
-        "_type": "process",
-        "_id": "9b17d2ed-a825-4580-b20b-79dc75feff49",
-        "title": "Visual Identity Creation",
-        "_updatedAt": "2024-03-29T23:09:35Z"
-      },
-      {
-        "features": [
-          {
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Web Design Mockup Drawings"
-            },
-            "_id": "798224fd-d324-4a6f-8365-321007457a0c",
-            "title": "Mockup Creation",
-            "_updatedAt": "2024-04-26T03:07:17Z",
-            "desc": "I will create wireframes and prototypes of your website, providing visual blueprints of its layout and functionality. These prototypes will allow us to iterate and refine the design before moving into full development, saving time and ensuring alignment with your vision.",
-            "_createdAt": "2024-02-17T01:12:54Z",
-            "_rev": "Z5IDu749svD6Fxx4WWATKK"
-          },
-          {
-            "desc": "I work on the user interface and experience design to enhance the usability and accessibility of your website.",
-            "_createdAt": "2024-02-16T16:47:58Z",
-            "_rev": "c9hkvQgAJDwuQEMKj1lH56",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-0bd07e370b460e7e83447b35d1791117423edc46-4366x2910-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Ui"
-            },
-            "_id": "befea04e-284f-4bd7-9053-e303bf678f80",
-            "title": "UI/UX",
-            "_updatedAt": "2024-02-27T00:08:39Z"
-          },
-          {
-            "_id": "81e45cb2-9d38-4676-81c8-39b6fa60c26b",
-            "title": "Content Strategy Development",
-            "_updatedAt": "2024-04-26T03:07:23Z",
-            "desc": "I'll collaborate with you to develop a targeted content strategy for your website, ensuring it speaks directly to your audience and effectively communicates your brand's value.",
-            "_createdAt": "2024-02-17T01:12:09Z",
-            "_rev": "Z5IDu749svD6Fxx4WWATWO",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Laptop with statistics"
-            }
-          }
-        ],
-        "_createdAt": "2024-03-06T00:34:16Z",
-        "_rev": "YXByP76OkInEwmmjNaqK0r",
-        "_type": "process",
-        "_id": "87c37c54-f233-4970-9d93-06f11d54c5c6",
-        "title": "Consultation & Development",
-        "_updatedAt": "2024-03-30T17:21:48Z",
-        "desc": "After finalizing your branding, the development of the landing page can commence. An extensive initial consultation will be conducted to gather requirements and objectives for the landing page. Subsequently, I create mockups or wireframes to visualize the design, followed by development using advanced web technologies."
-      },
-      {
-        "_createdAt": "2024-02-17T01:18:07Z",
-        "_rev": "pE4qmNBESg4zKMd9uJBnCq",
-        "_type": "process",
-        "_id": "ec029ca4-322c-4a33-9c3e-bcc6b8292833",
-        "title": "Client Feedback & Revisions",
-        "_updatedAt": "2024-03-06T00:35:44Z",
-        "desc": "Upon completion of the initial design, the client is presented with the prototype for feedback. Necessary revisions are then incorporated based on the client's input, ensuring alignment with their vision and goals.",
-        "features": [
-          {
-            "_rev": "uiWIFkW6n28NyJPxPEs18k",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-844c43198e22e2d2c7f2f02bb085d5906939da80-640x479-webp",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Revisions"
-            },
-            "_id": "2cb269bf-a827-4965-8608-ce5b446e5844",
-            "title": "Revisions",
-            "_updatedAt": "2024-03-08T02:51:05Z",
-            "desc": "Multiple revisions are offered to perfect and ensure it aligns with your brand's intended identity and resonates with your audience.",
-            "_createdAt": "2024-02-17T01:18:50Z"
-          }
-        ]
-      },
-      {
-        "title": "Testing & Optimization",
-        "_updatedAt": "2024-03-06T00:35:25Z",
-        "desc": "Following client approval, rigorous testing is conducted to ensure seamless functionality across various devices and browsers. Additionally, optimization techniques are employed to enhance the website’s performance and user experience.",
-        "features": [
-          {
-            "desc": "I optimize your website to improve its performance, speed, and user engagement.",
-            "_createdAt": "2024-02-17T01:14:10Z",
-            "_rev": "1yoLMt3Jt0PZv9LdlrGrXr",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "asset": {
-                  "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
-                  "_type": "reference"
-                },
-                "_type": "image"
-              },
-              "_type": "customImage",
-              "alt": "Optimizing"
-            },
-            "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5",
-            "title": "Website Optimization",
-            "_updatedAt": "2024-02-28T23:30:42Z"
-          },
-          {
-            "_type": "feature",
-            "customImage": {
-              "alt": "laptop & phone",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage"
-            },
-            "_id": "699d2f9c-5881-4bd3-915e-ff73e117dcb6",
-            "title": "Cross-Platform Compatibility",
-            "_updatedAt": "2024-02-27T03:02:28Z",
-            "desc": "I ensure seamless operation across all devices, including Windows, Apple products, Android Products, etc.",
-            "_createdAt": "2024-02-27T03:02:28Z",
-            "_rev": "OgNY2vtdjbR76xUBGB9Jou"
-          }
-        ],
-        "_createdAt": "2024-02-17T01:20:51Z",
-        "_rev": "pE4qmNBESg4zKMd9uJBm5t",
-        "_type": "process",
-        "_id": "233544f5-1cee-4ea7-a276-05fe216a8fd3"
-      },
-      {
-        "desc": "Upon successful testing and approval, the finalized landing page is delivered to the client, accompanied by the completed branding materials. I provide comprehensive assistance in deploying the landing page to the client's web hosting environment, ensuring a smooth and successful launch. Additionally, a digital brand guidelines manual will be delivered to the client, offering comprehensive instructions on how to appropriately utilize all the deliverables. This final step of the process, provides the client with essential tools for a strong brand presence.",
-        "features": [
-          {
-            "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
-            "_createdAt": "2024-03-06T01:21:54Z",
-            "_rev": "OEnRojb5pXWjE2sC6rNPME",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Logo"
-            },
-            "_id": "6a092958-662e-42d0-8232-1f58540e3d3a",
-            "title": "Logo Design",
-            "_updatedAt": "2024-03-30T19:48:43Z"
-          },
-          {
-            "customImage": {
-              "_type": "customImage",
-              "alt": "Custom Art - Comrade Boris",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-3a0ee2d2c357264a3cf96f5e2e2cf11af2b32ba6-4001x4000-png",
-                  "_type": "reference"
-                }
-              }
-            },
-            "_id": "736fcb49-5573-4dae-9ee7-6a9a3492d75f",
-            "title": "Custom Art",
-            "_updatedAt": "2024-03-31T21:10:10Z",
-            "desc": "I'll produce unique visuals and images tailored to your brand, ensuring your message shines through vividly and memorably.",
-            "_createdAt": "2024-03-06T00:58:33Z",
-            "_rev": "14bF2iHNiRa7syDF0TXFYb",
-            "_type": "feature"
-          },
-          {
-            "_createdAt": "2024-02-16T16:48:19Z",
-            "_rev": "YXByP76OkInEwmmjNaFpvO",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Collaterals"
-            },
-            "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
-            "title": "Brand Collaterals",
-            "_updatedAt": "2024-03-29T22:54:18Z",
-            "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere."
-          },
-          {
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Teaching strategy"
-            },
-            "_id": "f76d9180-461b-45eb-8378-50022c458953",
-            "title": "Brand Strategy Guide",
-            "_updatedAt": "2024-03-06T23:29:15Z",
-            "desc": "I give you a plan with practical steps to maintain your brand's image with the chosen writing style, tone, and more.",
-            "_createdAt": "2024-02-16T19:43:09Z",
-            "_rev": "42dARgouF4fLoQkzWq4LPq"
-          },
-          {
-            "_id": "e60a520d-3c08-4548-a3c2-684707e871e7",
-            "title": "Deployment Assistance",
-            "_updatedAt": "2024-02-25T04:07:52Z",
-            "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website.",
-            "_createdAt": "2024-02-17T01:14:50Z",
-            "_rev": "rGZ2nN6K5mjOGJOoWaip9f",
-            "_type": "feature",
-            "customImage": {
-              "alt": "Helping",
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
-                  "_type": "reference"
-                }
-              },
-              "_type": "customImage"
-            }
-          },
-          {
-            "desc": "I design eye catching icons and symbols that can be frequently used on your website or elsewhere.",
-            "_createdAt": "2024-02-16T19:45:12Z",
-            "_rev": "1yoLMt3Jt0PZv9LdlrGmog",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "asset": {
-                  "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
-                  "_type": "reference"
-                },
-                "_type": "image"
-              },
-              "_type": "customImage",
-              "alt": "Multiple Icons and Symbols"
-            },
-            "_id": "f6fd36f2-26cd-4036-b227-b9317d8ea47a",
-            "title": "Symbols & Icons",
-            "_updatedAt": "2024-02-28T23:27:55Z"
-          }
-        ],
-        "_createdAt": "2024-03-06T00:32:01Z",
-        "_rev": "yjwdrWT0n7hNXKlLZheZ50",
-        "_type": "process",
-        "_id": "1ebaa15a-a67f-413d-be8e-1df8c9bb239c",
-        "title": "Deliverables & Deployment",
-        "_updatedAt": "2024-03-06T01:22:23Z"
-      },
-      {
-        "features": [
-          {
-            "_id": "259a1ec7-49ff-487e-ae0f-8524dc1106c0",
-            "title": "Technical Support",
-            "_updatedAt": "2024-03-07T02:30:49Z",
-            "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively.",
-            "_createdAt": "2024-02-17T01:15:58Z",
-            "_rev": "42dARgouF4fLoQkzWqXMlr",
-            "_type": "feature",
-            "customImage": {
-              "image": {
-                "_type": "image",
-                "asset": {
-                  "_type": "reference",
-                  "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg"
-                }
-              },
-              "_type": "customImage",
-              "alt": "Programming through glasses"
-            }
-          }
-        ],
-        "_createdAt": "2024-02-17T01:21:50Z",
-        "_rev": "yjwdrWT0n7hNXKlLZhNp42",
-        "_type": "process",
-        "_id": "47611d1f-798d-4ded-9187-f585f38c16f5",
-        "title": "Post-launch Support",
-        "_updatedAt": "2024-03-05T23:54:15Z",
-        "desc": "Continued support is offered post-launch to address any technical issues, provide guidance on content updates, and offer further assistance as required, ensuring sustained performance and effectiveness."
-      }
-    ]
-  },
-  "_rev": "rVpYcj5p7bUXDET2RrjHEZ",
-  "title": "Total Package",
-  "metatitle": null,
-  "_createdAt": "2024-02-29T01:50:52Z",
-  "metaTitle": "Branding & Web Design Services in one Package | Seto x Arts | Montreal & Laval",
-  "_updatedAt": "2024-04-26T02:21:50Z",
-  "hero": {
-    "_type": "hero",
-    "customImage": {
-      "alt": "This is the sign you've been looking for",
-      "image": {
-        "_type": "image",
-        "asset": {
-          "_ref": "image-1df50a8885ce3626a0a3ac8157c3b7e8c065fe13-5184x3456-jpg",
-          "_type": "reference"
-        }
-      },
-      "_type": "customImage"
-    },
-    "title": {
-      "part1": "Total Package:",
-      "part2": "Unify Your Brand",
-      "_type": "fancyText"
-    },
-    "desc": "Maximize your brand's impact with Seto x Arts. Enjoy a total package of branding and web design expertise in Montreal and Laval, Quebec. I combine captivating branding with engaging, conversion-focused websites to ensure your brand's optimal success.",
-    "quote": {
-      "_rev": "42dARgouF4fLoQkzWokNzP",
-      "_type": "quote",
-      "leftText": "Organized",
-      "hiddenTitle": "Quote English",
-      "_id": "6291c7c8-1e43-49c1-b61c-c45c053083a7",
-      "_updatedAt": "2024-03-06T19:40:57Z",
-      "rightText": "Chaos",
-      "_createdAt": "2024-01-29T23:15:08Z"
-    }
-  },
-  "features": {
-    "features": [
-      {
-        "_updatedAt": "2024-03-29T22:32:27Z",
-        "desc": "I create a unique look for your brand that makes it stand out from the competition.",
-        "_createdAt": "2024-02-16T19:41:42Z",
-        "_rev": "14bF2iHNiRa7syDF0S9QHK",
-        "_type": "feature",
-        "customImage": {
-          "alt": "Brand Visual Identity",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-9308d90861177322c3e23ba42417f3a63c61cc61-1600x1200-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage"
-        },
-        "_id": "7cbca69e-94f4-4e6b-b5c9-da7db1389c90",
-        "title": "Visual Identity"
-      },
-      {
-        "desc": "I will meticulously craft a logo with multiple varieties of color, shape, and size to ensure it perfectly captures your brand's essence.",
-        "_createdAt": "2024-03-06T01:21:54Z",
-        "_rev": "OEnRojb5pXWjE2sC6rNPME",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-7548c496bf3ae1227ec238c344da062c2a8d0106-1600x1200-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Logo"
-        },
-        "_id": "6a092958-662e-42d0-8232-1f58540e3d3a",
-        "title": "Logo Design",
-        "_updatedAt": "2024-03-30T19:48:43Z"
-      },
-      {
-        "title": "Custom Art",
-        "_updatedAt": "2024-03-31T21:10:10Z",
-        "desc": "I'll produce unique visuals and images tailored to your brand, ensuring your message shines through vividly and memorably.",
-        "_createdAt": "2024-03-06T00:58:33Z",
-        "_rev": "14bF2iHNiRa7syDF0TXFYb",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-3a0ee2d2c357264a3cf96f5e2e2cf11af2b32ba6-4001x4000-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Custom Art - Comrade Boris"
-        },
-        "_id": "736fcb49-5573-4dae-9ee7-6a9a3492d75f"
-      },
-      {
-        "_id": "56491256-2b1f-4fba-8dc0-69e9139c0ac5",
-        "title": "Market Research",
-        "_updatedAt": "2024-02-25T02:50:59Z",
-        "desc": "I study the market to give you useful information for making smart decisions about your brand.",
-        "_createdAt": "2024-02-16T19:35:36Z",
-        "_rev": "rGZ2nN6K5mjOGJOoWadvqK",
-        "_type": "feature",
-        "customImage": {
-          "_type": "customImage",
-          "alt": "Research Laptop",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-928c2c2cdc67a507253902630c28d4919917d32c-2426x1728-jpg",
-              "_type": "reference"
-            }
-          }
-        }
-      },
-      {
-        "_updatedAt": "2024-03-06T02:57:46Z",
-        "desc": "I help you pick colors that work well together and make your brand memorable.",
-        "_createdAt": "2024-02-16T16:37:17Z",
-        "_rev": "pE4qmNBESg4zKMd9uJIr4Q",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-cde8ed508cfb2648f11956689926f4dcb42c69ab-5184x3456-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Color Cards"
-        },
-        "_id": "771493a4-5468-4dc6-bfcf-2c91f00b7996",
-        "title": "Color Palette"
-      },
-      {
-        "title": "Typography",
-        "_updatedAt": "2024-03-06T02:57:54Z",
-        "desc": "I can guide you to choose fonts that match your brand's personality and are easy to read.",
-        "_createdAt": "2024-02-16T19:39:57Z",
-        "_rev": "pE4qmNBESg4zKMd9uJIr9G",
-        "_type": "feature",
-        "customImage": {
-          "alt": "Different Fonts",
-          "image": {
-            "asset": {
-              "_ref": "image-78163aaad9574547ad3e0953bd016ce4e5f99acc-5184x3888-jpg",
-              "_type": "reference"
-            },
-            "_type": "image"
-          },
-          "_type": "customImage"
-        },
-        "_id": "0a49d858-b10b-4eef-a7cc-4093e2a9c172"
-      },
-      {
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-908ea587fa6faed7deed998dc6666f97133aecd6-3000x1982-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Improving Design"
-        },
-        "_id": "a593a279-7a50-4a8a-a6bb-f53804913817",
-        "title": "Design Refinement",
-        "_updatedAt": "2024-04-04T21:50:51Z",
-        "desc": "I will improve your already existing designs so that they reflect exactly your brand's image.",
-        "_createdAt": "2024-02-16T19:37:13Z",
-        "_rev": "UD4dNj2lTKtYuLoYYHv2mB",
-        "_type": "feature"
-      },
-      {
-        "desc": "I design eye catching icons and symbols that can be frequently used on your website or elsewhere.",
-        "_createdAt": "2024-02-16T19:45:12Z",
-        "_rev": "1yoLMt3Jt0PZv9LdlrGmog",
-        "_type": "feature",
-        "customImage": {
-          "alt": "Multiple Icons and Symbols",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-bf331a531cdb7145d5b1a0a89b789f7c7c02117b-4840x3632-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage"
-        },
-        "_id": "f6fd36f2-26cd-4036-b227-b9317d8ea47a",
-        "title": "Symbols & Icons",
-        "_updatedAt": "2024-02-28T23:27:55Z"
-      },
-      {
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-7edf9758c00a84eece7e50425212ab4406a1a3ce-721x540-png",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Collaterals"
-        },
-        "_id": "3eea4c1f-c0b3-4191-bfc4-aa5fe2dc90ec",
-        "title": "Brand Collaterals",
-        "_updatedAt": "2024-03-29T22:54:18Z",
-        "desc": "I design a variety of products such as business cards, flyers, bags and more. These collaterals help your brand look good and consistent everywhere.",
-        "_createdAt": "2024-02-16T16:48:19Z",
-        "_rev": "YXByP76OkInEwmmjNaFpvO",
-        "_type": "feature"
-      },
-      {
-        "title": "Mockup Creation",
-        "_updatedAt": "2024-04-26T03:07:17Z",
-        "desc": "I will create wireframes and prototypes of your website, providing visual blueprints of its layout and functionality. These prototypes will allow us to iterate and refine the design before moving into full development, saving time and ensuring alignment with your vision.",
-        "_createdAt": "2024-02-17T01:12:54Z",
-        "_rev": "Z5IDu749svD6Fxx4WWATKK",
-        "_type": "feature",
-        "customImage": {
-          "alt": "Web Design Mockup Drawings",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-5cde045ac060702d7e70340b919d96473be6f2e8-5184x3456-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage"
-        },
-        "_id": "798224fd-d324-4a6f-8365-321007457a0c"
-      },
-      {
-        "_type": "feature",
-        "customImage": {
-          "_type": "customImage",
-          "alt": "Optimizing",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-eb8e92e0d323095ed8f732125cbf8d71c1ddc5d9-5870x3302-jpg",
-              "_type": "reference"
-            }
-          }
-        },
-        "_id": "72d42942-f2a3-4347-9fda-e2bdfb5928e5",
-        "title": "Website Optimization",
-        "_updatedAt": "2024-02-28T23:30:42Z",
-        "desc": "I optimize your website to improve its performance, speed, and user engagement.",
-        "_createdAt": "2024-02-17T01:14:10Z",
-        "_rev": "1yoLMt3Jt0PZv9LdlrGrXr"
-      },
-      {
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-8c5e001d0a8b97e7a14011aaa860b64f28495caa-5000x4000-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "laptop & phone"
-        },
-        "_id": "699d2f9c-5881-4bd3-915e-ff73e117dcb6",
-        "title": "Cross-Platform Compatibility",
-        "_updatedAt": "2024-02-27T03:02:28Z",
-        "desc": "I ensure seamless operation across all devices, including Windows, Apple products, Android Products, etc.",
-        "_createdAt": "2024-02-27T03:02:28Z",
-        "_rev": "OgNY2vtdjbR76xUBGB9Jou"
-      },
-      {
-        "title": "Deployment Assistance",
-        "_updatedAt": "2024-02-25T04:07:52Z",
-        "desc": "I assist with the deployment process to ensure a smooth and successful launch of your website.",
-        "_createdAt": "2024-02-17T01:14:50Z",
-        "_rev": "rGZ2nN6K5mjOGJOoWaip9f",
-        "_type": "feature",
-        "customImage": {
-          "alt": "Helping",
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-ad321f18f4d158b5911924c3470a37478c30264b-5184x3456-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage"
-        },
-        "_id": "e60a520d-3c08-4548-a3c2-684707e871e7"
-      },
-      {
-        "_id": "f76d9180-461b-45eb-8378-50022c458953",
-        "title": "Brand Strategy Guide",
-        "_updatedAt": "2024-03-06T23:29:15Z",
-        "desc": "I give you a plan with practical steps to maintain your brand's image with the chosen writing style, tone, and more.",
-        "_createdAt": "2024-02-16T19:43:09Z",
-        "_rev": "42dARgouF4fLoQkzWq4LPq",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-a788d71207208966dc2149defa62b8d55fbc0fde-5029x3353-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Teaching strategy"
-        }
-      },
-      {
-        "_rev": "42dARgouF4fLoQkzWqXMlr",
-        "_type": "feature",
-        "customImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-992f4392c583cbd62e9253cd73eb11b0bb692a7b-3353x2514-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Programming through glasses"
-        },
-        "_id": "259a1ec7-49ff-487e-ae0f-8524dc1106c0",
-        "title": "Technical Support",
-        "_updatedAt": "2024-03-07T02:30:49Z",
-        "desc": "I offer technical support post-launch to address any issues and ensure your website continues to function effectively.",
-        "_createdAt": "2024-02-17T01:15:58Z"
-      }
-    ]
-  }
+  "hiddenTitle": "Total Package English"
 }

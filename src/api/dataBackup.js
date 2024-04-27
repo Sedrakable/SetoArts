@@ -26,7 +26,7 @@ const backupData = async (query, lang = "en") => {
     } else {
       // If data is not an array, create a single JSON file
       const backupFilePath = `src/api/backups/${lang}/backup-${
-        data._type
+        data?._type
       }.json`;
       fs.writeFileSync(backupFilePath, JSON.stringify(data, null, 2));
     }
@@ -47,6 +47,7 @@ const backupDataForLang = (lang) => {
     legalQuery,
     notFoundQuery,
     serviceQuery,
+    blogQuery,
   } = generateQueries(lang);
   
   backupData(navbarQuery, lang);
@@ -57,6 +58,7 @@ const backupDataForLang = (lang) => {
   backupData(legalQuery, lang);
   backupData(notFoundQuery, lang);
   backupData(serviceQuery, lang);
+  backupData(blogQuery, lang);
 };
 
 const langs = ["en", "fr"];

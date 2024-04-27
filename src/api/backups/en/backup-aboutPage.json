@@ -1,52 +1,12 @@
 {
-  "values": {
-    "_createdAt": "2024-03-01T05:04:57Z",
-    "values": [
-      {
-        "desc": "I infuse originality and imagination into every branding project, ensuring unique and captivating brand identities that stand out on the market.",
-        "_type": "value",
-        "_key": "8c0bcf871f45",
-        "title": "Creativity"
-      },
-      {
-        "_type": "value",
-        "_key": "9a2741212bb1",
-        "title": "Innovation",
-        "desc": "My approach integrates cutting-edge techniques and fresh ideas to deliver branding that resonates with audiences."
-      },
-      {
-        "_type": "value",
-        "_key": "de7c43817654",
-        "title": "Collaboration",
-        "desc": "I prioritize open communication and teamwork, partnering closely with clients to bring their vision to life through collaborative and transparent processes."
-      },
-      {
-        "_type": "value",
-        "_key": "e7498d396f3c",
-        "title": "Quality",
-        "desc": "My commitment to excellence drives me to deliver high-quality branding services that elevate brands and leave a lasting impact on their audience.\n"
-      }
-    ],
-    "_rev": "4fqy6B5H6WrCPpGf2W35dM",
-    "_type": "valuesBlock",
-    "hiddenTitle": "Values",
-    "_id": "476b7505-b556-4333-ae53-beaa98ff191f",
-    "_updatedAt": "2024-03-01T05:06:08Z"
-  },
-  "hiddenTitle": "About English",
-  "title": "About me | Graphic Designer | Seto x Arts | Montreal & Laval",
-  "_rev": "Z5IDu749svD6Fxx4WW8xmJ",
-  "_type": "aboutPage",
-  "metaDesc": "Learn about the creative mind behind Seto x Arts. A dedicated graphic designer from Montreal / Laval passionate about delivering exceptional branding and web development solutions.",
+  "_id": "625cd53a-b89f-4f0b-9120-901e848be808",
   "work": {
     "works": [
       {
-        "slug": {
-          "current": "krusty-krab",
-          "_type": "slug"
-        },
         "behanceProjectId": "196756359",
+        "_createdAt": "2024-04-21T23:18:49Z",
         "_rev": "hGGon5kKM1M2njBoxRoaGu",
+        "_type": "work",
         "customImages": [
           {
             "image": {
@@ -61,32 +21,30 @@
             "_key": "97cfec5da6e8"
           },
           {
-            "_type": "customImage",
-            "alt": "The Wordmark of the Krysty Krab Logo",
-            "_key": "263a6b346c2a",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-a9338c6657b61a3fa035eb9fe8979c55ebd86330-2000x800-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "The Wordmark of the Krysty Krab Logo",
+            "_key": "263a6b346c2a"
           },
           {
-            "_key": "503d477e3a5f",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-7279907c50fd4c6330c458857f2575a4a2861a2c-2000x1000-jpg"
+                "_ref": "image-7279907c50fd4c6330c458857f2575a4a2861a2c-2000x1000-jpg",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
-            "alt": "Two version of the Krusty Krab Logo"
+            "alt": "Two version of the Krusty Krab Logo",
+            "_key": "503d477e3a5f"
           },
           {
-            "_type": "customImage",
-            "alt": "Colors for the Krusty Krab Rebrand. Krab Red, Koral Pink, Pearl White, Sea Blue and Deep Sea Blue",
             "_key": "8cb58c0748e7",
             "image": {
               "_type": "image",
@@ -94,7 +52,9 @@
                 "_ref": "image-7da2e2bf5ed0a52cf916e9bea9692c4b4060398c-2000x800-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Colors for the Krusty Krab Rebrand. Krab Red, Koral Pink, Pearl White, Sea Blue and Deep Sea Blue"
           },
           {
             "image": {
@@ -121,20 +81,18 @@
             "_key": "d591fd7e12a8"
           },
           {
-            "_type": "customImage",
-            "alt": "Three different Textures. A grid of the icons, a floral texture and a coral pattern",
-            "_key": "93acf20f25f8",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-bfa1cae4f9e8f133eb9be7a0756390efdfcbce09-2000x800-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Three different Textures. A grid of the icons, a floral texture and a coral pattern",
+            "_key": "93acf20f25f8"
           },
           {
-            "_type": "customImage",
-            "alt": "Mobile Integration of the Krusty Krab. Mobile Website with a Navbar with an order Button. Shell Icon, Burger Menu. Hero Section with the Krusty Meal. Outside of phone, Mobile Icons",
             "_key": "e8f283eda718",
             "image": {
               "_type": "image",
@@ -142,14 +100,16 @@
                 "_ref": "image-07860d76b7a763e3d9305865673d0285d71c435e-2000x1000-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Mobile Integration of the Krusty Krab. Mobile Website with a Navbar with an order Button. Shell Icon, Burger Menu. Hero Section with the Krusty Meal. Outside of phone, Mobile Icons"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-601ae636d4beed1a6f18fc9f222bd6f3381b8b9a-1920x1080-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-601ae636d4beed1a6f18fc9f222bd6f3381b8b9a-1920x1080-png"
               }
             },
             "_type": "customImage",
@@ -157,7 +117,6 @@
             "_key": "63dbc6a50967"
           },
           {
-            "_key": "36171a105e97",
             "image": {
               "_type": "image",
               "asset": {
@@ -166,59 +125,63 @@
               }
             },
             "_type": "customImage",
-            "alt": "Mockups of a Billboard and the Krusty Krab Meal. Burger, Soda and fries on a table"
+            "alt": "Mockups of a Billboard and the Krusty Krab Meal. Burger, Soda and fries on a table",
+            "_key": "36171a105e97"
           }
         ],
         "_id": "a8cf51ce-d682-40d2-bbfe-ce9bd596e9b2",
-        "title": "Krusty Krab",
-        "_updatedAt": "2024-04-21T23:18:49Z",
-        "_createdAt": "2024-04-21T23:18:49Z",
-        "_type": "work",
+        "slug": {
+          "current": "krusty-krab",
+          "_type": "slug"
+        },
         "primaryLink": {
+          "text": "Behance",
           "_type": "cta",
-          "link": "https://www.behance.net/gallery/196756359/Krusty-Krab-Rebrand",
-          "text": "Behance"
+          "link": "https://www.behance.net/gallery/196756359/Krusty-Krab-Rebrand"
         },
         "thumbnailImage": {
           "image": {
             "_type": "image",
             "asset": {
-              "_type": "reference",
-              "_ref": "image-45a4c343ccf97bcdd550c933ae41eebaa0496d62-2000x1300-jpg"
+              "_ref": "image-45a4c343ccf97bcdd550c933ae41eebaa0496d62-2000x1300-jpg",
+              "_type": "reference"
             }
           },
           "_type": "customImage",
           "alt": "Krusty Krab Rebrand"
         },
+        "title": "Krusty Krab",
+        "_updatedAt": "2024-04-21T23:18:49Z",
         "desc": "Growing up, SpongeBob was a huge part of my childhood, but I couldn't help but think that Mr Krabs was cutting corners when it came to branding, so I took it upon myself to give the Krusty Krab the modern and vibrant identity it deserves. With a colorful palette and a fresh approach, I aimed to streamline and elevate this iconic fast-food brand while staying true to its roots."
       },
       {
+        "desc": "B'nest is more than just a cream company; it's a celebration of natural goodness and family traditions. Rooted in the heart of nature, B'nest crafts luxurious creams using locally sourced honey from artisanal beekeepers. Our brand embodies warmth, authenticity, and the timeless joy of shared moments. Each jar of B'nest cream is a testament to our commitment to quality, purity, and the simple pleasures of life. Join us on a journey where every scoop is a taste of wholesome indulgence, where tradition meets innovation in perfect harmony.",
+        "behanceProjectId": "195033325",
+        "_createdAt": "2024-02-01T01:02:35Z",
         "_type": "work",
         "primaryLink": {
-          "_type": "cta",
           "link": "https://www.behance.net/gallery/195033325/Bnest-Brand-Design-Project",
-          "text": "Behance"
+          "text": "Behance",
+          "_type": "cta"
         },
         "_id": "ec4292ec-9246-4ddf-8156-3bcea26ad59a",
         "thumbnailImage": {
-          "_type": "customImage",
-          "alt": "B'nest logo",
           "image": {
             "_type": "image",
             "asset": {
               "_ref": "image-c828375b67dfd06c1a6ad4595bcdd10ae13ea2c9-2000x1301-jpg",
               "_type": "reference"
             }
-          }
+          },
+          "_type": "customImage",
+          "alt": "B'nest logo"
         },
-        "slug": {
-          "current": "b-nest",
-          "_type": "slug"
-        },
-        "behanceProjectId": "195033325",
+        "_updatedAt": "2024-03-29T03:10:42Z",
         "_rev": "OEnRojb5pXWjE2sC6mkjNE",
         "customImages": [
           {
+            "alt": "Cream Jar",
+            "_key": "293a52fdaf4d",
             "image": {
               "_type": "image",
               "asset": {
@@ -226,9 +189,7 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Cream Jar",
-            "_key": "293a52fdaf4d"
+            "_type": "customImage"
           },
           {
             "image": {
@@ -243,20 +204,18 @@
             "_key": "9936a8978659"
           },
           {
-            "alt": "Logo Design",
-            "_key": "e57c33be7681",
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-afc8d88a256ef8d0fe4bf2cfffd0d634276271cf-2000x901-jpg",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Logo Design",
+            "_key": "e57c33be7681"
           },
           {
-            "_type": "customImage",
-            "alt": "Logo Scalable and Light",
             "_key": "3baf8857d245",
             "image": {
               "_type": "image",
@@ -264,9 +223,12 @@
                 "_ref": "image-65897a93a7676bc6dc9832cc982b2cd338b6cfa4-2000x1301-jpg",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Logo Scalable and Light"
           },
           {
+            "_key": "2a76714169a1",
             "image": {
               "_type": "image",
               "asset": {
@@ -275,35 +237,33 @@
               }
             },
             "_type": "customImage",
-            "alt": "Logo Scalable and Dark",
-            "_key": "2a76714169a1"
+            "alt": "Logo Scalable and Dark"
           },
           {
+            "_key": "282ecf4f2d0e",
+            "image": {
+              "asset": {
+                "_ref": "image-96e804272f850d6ff969864cf705816c7ccc4c73-2000x901-jpg",
+                "_type": "reference"
+              },
+              "_type": "image"
+            },
+            "_type": "customImage",
+            "alt": "Word Mark"
+          },
+          {
+            "_key": "d368eadcd21c",
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-96e804272f850d6ff969864cf705816c7ccc4c73-2000x901-jpg",
+                "_ref": "image-c4a6ece6041be82861f8ba42720a49bb784d495c-2000x1301-jpg",
                 "_type": "reference"
               }
             },
             "_type": "customImage",
-            "alt": "Word Mark",
-            "_key": "282ecf4f2d0e"
+            "alt": "Color System"
           },
           {
-            "image": {
-              "_type": "image",
-              "asset": {
-                "_type": "reference",
-                "_ref": "image-c4a6ece6041be82861f8ba42720a49bb784d495c-2000x1301-jpg"
-              }
-            },
-            "_type": "customImage",
-            "alt": "Color System",
-            "_key": "d368eadcd21c"
-          },
-          {
-            "_key": "c538a8b29f37",
             "image": {
               "_type": "image",
               "asset": {
@@ -312,9 +272,12 @@
               }
             },
             "_type": "customImage",
-            "alt": "Typography"
+            "alt": "Typography",
+            "_key": "c538a8b29f37"
           },
           {
+            "_type": "customImage",
+            "alt": "Textures",
             "_key": "4b58fcbd6a97",
             "image": {
               "_type": "image",
@@ -322,17 +285,15 @@
                 "_ref": "image-0f4cef381203136af106d8ab2ee4fcaf268c410d-2000x901-jpg",
                 "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Textures"
+            }
           },
           {
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-836d7f079eb3e74d406ddfd377dde5e55f047593-2000x1301-jpg",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
             "alt": "Brand Voice",
@@ -351,8 +312,6 @@
             "_key": "afa52e846f41"
           },
           {
-            "alt": "Digital Adoptation",
-            "_key": "27b5945f661f",
             "image": {
               "_type": "image",
               "asset": {
@@ -360,15 +319,17 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Digital Adoptation",
+            "_key": "27b5945f661f"
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
-                "_ref": "image-75248c55e6de87de6d5bc01af43b0b3342314566-3999x2662-jpg",
-                "_type": "reference"
-              }
+                "_type": "reference",
+                "_ref": "image-75248c55e6de87de6d5bc01af43b0b3342314566-3999x2662-jpg"
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Bee hive",
@@ -387,6 +348,7 @@
             "_key": "ecc9ddfde67d"
           },
           {
+            "_key": "8ad7eb1b8f39",
             "image": {
               "_type": "image",
               "asset": {
@@ -395,8 +357,7 @@
               }
             },
             "_type": "customImage",
-            "alt": "Familly",
-            "_key": "8ad7eb1b8f39"
+            "alt": "Familly"
           },
           {
             "image": {
@@ -412,12 +373,12 @@
           }
         ],
         "title": "B'nest",
-        "_updatedAt": "2024-03-29T03:10:42Z",
-        "desc": "B'nest is more than just a cream company; it's a celebration of natural goodness and family traditions. Rooted in the heart of nature, B'nest crafts luxurious creams using locally sourced honey from artisanal beekeepers. Our brand embodies warmth, authenticity, and the timeless joy of shared moments. Each jar of B'nest cream is a testament to our commitment to quality, purity, and the simple pleasures of life. Join us on a journey where every scoop is a taste of wholesome indulgence, where tradition meets innovation in perfect harmony.",
-        "_createdAt": "2024-02-01T01:02:35Z"
+        "slug": {
+          "current": "b-nest",
+          "_type": "slug"
+        }
       },
       {
-        "title": "Steampunk Dynasty",
         "thumbnailImage": {
           "image": {
             "_type": "image",
@@ -429,31 +390,7 @@
           "_type": "customImage",
           "alt": "steampunk dynasty thumbnail"
         },
-        "_id": "cbd76985-d222-473c-affa-ad3fdabda57f",
         "_rev": "eVvFdyqjsRJTP2Pq1heNCa",
-        "_type": "work",
-        "secondaryLinks": [
-          {
-            "_key": "d4e9a6d9860b",
-            "_type": "cta",
-            "link": "https://www.vostokcards.com/collection/steampunk_dynasty",
-            "text": "Vostok Cards"
-          },
-          {
-            "text": "Behance",
-            "_key": "11df23867fb2",
-            "_type": "cta",
-            "link": "https://www.behance.net/gallery/188079355/Steampunk-Dynasty-Gears-Glory"
-          }
-        ],
-        "_createdAt": "2024-01-31T01:37:25Z",
-        "primaryLink": {
-          "_type": "cta",
-          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
-          "text": "Kickstarter"
-        },
-        "_updatedAt": "2024-03-19T15:03:25Z",
-        "behanceProjectId": "188079355",
         "customImages": [
           {
             "image": {
@@ -469,19 +406,17 @@
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-97cb0621782ac2ab666db3aa4049be4385ec44c3-1920x1080-png",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "back of the cards spread",
             "_key": "42ff436f1c29"
           },
           {
-            "alt": "Cards closup",
-            "_key": "deaaa24add5a",
             "image": {
               "_type": "image",
               "asset": {
@@ -489,14 +424,16 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Cards closup",
+            "_key": "deaaa24add5a"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-7a51cf978f72be72213d654babfc60bf185429cd-800x800-gif",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-7a51cf978f72be72213d654babfc60bf185429cd-800x800-gif"
               }
             },
             "_type": "customImage",
@@ -504,7 +441,6 @@
             "_key": "8f96d0754b7a"
           },
           {
-            "_key": "6a2cfa9571bb",
             "image": {
               "_type": "image",
               "asset": {
@@ -513,26 +449,27 @@
               }
             },
             "_type": "customImage",
-            "alt": "Azure deck variant"
+            "alt": "Azure deck variant",
+            "_key": "6a2cfa9571bb"
           },
           {
-            "alt": "Amber deck variant",
-            "_key": "45675be26708",
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-e7e51475ff2a85cc11b4623b916804c1be48f697-1921x1080-png",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Amber deck variant",
+            "_key": "45675be26708"
           },
           {
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-4dd73fdc34a22e92719ff68197a28dcd48fd7a44-1921x1080-png",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-4dd73fdc34a22e92719ff68197a28dcd48fd7a44-1921x1080-png"
               }
             },
             "_type": "customImage",
@@ -543,8 +480,8 @@
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-1982afda61dc7a46d8023ab42b482d8aa11cb08b-1921x1080-png"
+                "_ref": "image-1982afda61dc7a46d8023ab42b482d8aa11cb08b-1921x1080-png",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
@@ -552,16 +489,16 @@
             "_key": "6f56e398952c"
           },
           {
+            "alt": "Cards grid",
+            "_key": "e7919640053d",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-992adbf34a18d7df4b133b4a53b8a2ea74920a0b-1920x1440-png",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
-            "_type": "customImage",
-            "alt": "Cards grid",
-            "_key": "e7919640053d"
+            "_type": "customImage"
           },
           {
             "image": {
@@ -576,6 +513,7 @@
             "_key": "23af887ae7a1"
           },
           {
+            "alt": "Jokers",
             "_key": "3877560d28fd",
             "image": {
               "_type": "image",
@@ -584,10 +522,10 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Jokers"
+            "_type": "customImage"
           },
           {
+            "alt": "Map",
             "_key": "f96615eb0d5b",
             "image": {
               "_type": "image",
@@ -596,10 +534,10 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage",
-            "alt": "Map"
+            "_type": "customImage"
           },
           {
+            "_key": "a5f1ed5ade1c",
             "image": {
               "_type": "image",
               "asset": {
@@ -608,20 +546,19 @@
               }
             },
             "_type": "customImage",
-            "alt": "Novel Closup",
-            "_key": "a5f1ed5ade1c"
+            "alt": "Novel Closup"
           },
           {
+            "alt": "Back Cover",
+            "_key": "bfdb9882a33c",
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-4fb0291660aa68424776325ddc2577646eb61a81-3525x2550-png",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
-            "_type": "customImage",
-            "alt": "Back Cover",
-            "_key": "bfdb9882a33c"
+            "_type": "customImage"
           },
           {
             "image": {
@@ -648,7 +585,6 @@
             "_key": "01f76448fec1"
           },
           {
-            "_type": "customImage",
             "alt": "Coin",
             "_key": "c4c73fbabd8c",
             "image": {
@@ -657,7 +593,8 @@
                 "_ref": "image-442a64b300afdbb454e006c27346c3b8b8f798dc-1080x1080-gif",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage"
           },
           {
             "image": {
@@ -672,88 +609,79 @@
             "_key": "e86c9f4acea8"
           },
           {
-            "_key": "d28e6118fad0",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-2cbcb19110ade4051db20804a96736f895d7c992-1920x1440-png"
+                "_ref": "image-2cbcb19110ade4051db20804a96736f895d7c992-1920x1440-png",
+                "_type": "reference"
               }
             },
             "_type": "customImage",
-            "alt": "Artbook"
+            "alt": "Artbook",
+            "_key": "d28e6118fad0"
           },
           {
-            "_type": "customImage",
-            "alt": "Box",
-            "_key": "3e69c9d21de2",
             "image": {
               "_type": "image",
               "asset": {
                 "_ref": "image-fea25910b3a9b7f6b2e538f9d7f198aa8455e3f3-1920x1080-png",
                 "_type": "reference"
               }
-            }
+            },
+            "_type": "customImage",
+            "alt": "Box",
+            "_key": "3e69c9d21de2"
           },
           {
+            "_type": "customImage",
+            "alt": "Combo",
+            "_key": "c95b1d58187f",
             "image": {
               "_type": "image",
               "asset": {
-                "_type": "reference",
-                "_ref": "image-2f885c2481740b609111eb9f73accd20929ab9ef-1080x720-png"
+                "_ref": "image-2f885c2481740b609111eb9f73accd20929ab9ef-1080x720-png",
+                "_type": "reference"
               }
-            },
-            "_type": "customImage",
-            "alt": "Combo",
-            "_key": "c95b1d58187f"
+            }
           }
         ],
-        "kickstarterProjectlink": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory",
-        "slug": {
-          "current": "steampunk-dynasty",
-          "_type": "slug"
-        },
-        "desc": "Welcome to the world of Steampunk Dynasty! Imagine holding a deck of playing cards that transports you to a fascinating retro-futuristic world, filled with steam-powered machinery and Victorian-era elegance.\n\nWe are excited to introduce not just one, but four unique decks with distinct colour schemes, each representing one of the four suits in the deck. But we didn't stop there - to fully immerse you in this captivating world, we've also created a novel called Steampunk Dynasty: Gears and Glory. Get ready to experience a thrilling adventure and discover the stories behind each of the four dynasties.\n\nThe world of Steampunk is a mesmerizing blend of the Victorian era and retro-futuristic science fiction, powered by steam machinery. This unique combination of elegance and creativity has given rise to a multitude of fascinating and inspiring ideas. The decks of the Vostok Cards collection embody this spirit, with their intricate designs, luxurious look and feel, and attention to detail. Each deck is uniquely crafted to represent a specific dynasty or suit, with elements that beautifully capture the essence of the Steampunk world."
-      },
-      {
-        "title": "Animal Gangdom",
-        "primaryLink": {
-          "_type": "cta",
-          "link": "https://www.kickstarter.com/projects/vostokcards/vostok-cards-animal-gangdom",
-          "text": "Kickstarter"
-        },
-        "_id": "dede3046-d3f9-4981-878d-5c7191cd9cad",
-        "thumbnailImage": {
-          "image": {
-            "_type": "image",
-            "asset": {
-              "_ref": "image-7ad4429c6d3f7014f475bd2acb6bb6478f297cc1-3872x2592-jpg",
-              "_type": "reference"
-            }
-          },
-          "_type": "customImage",
-          "alt": "Animal Gangdom Deck"
-        },
-        "_rev": "BLD0eT012j4MLkQvifUnaP",
-        "_type": "work",
         "secondaryLinks": [
           {
             "_type": "cta",
-            "link": "https://www.vostokcards.com/collection/animal_gangdom",
+            "link": "https://www.vostokcards.com/collection/steampunk_dynasty",
             "text": "Vostok Cards",
-            "_key": "b364dd29470d"
+            "_key": "d4e9a6d9860b"
+          },
+          {
+            "_type": "cta",
+            "link": "https://www.behance.net/gallery/188079355/Steampunk-Dynasty-Gears-Glory",
+            "text": "Behance",
+            "_key": "11df23867fb2"
           }
         ],
-        "_updatedAt": "2024-03-21T16:49:22Z",
-        "slug": {
-          "current": "animal-gangdom",
-          "_type": "slug"
+        "kickstarterProjectlink": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory",
+        "primaryLink": {
+          "link": "https://www.kickstarter.com/projects/vostokcards/steampunk-dynasty-gears-and-glory?ref=user_menu",
+          "text": "Kickstarter",
+          "_type": "cta"
         },
-        "desc": "Did you ever imagine a card where the Jack of Spades is in a tracksuit, has a ski mask on, and not to mention is a wolf!? In this deck, every suit is associated with a different gang, from a different culture and a different animal kingdom. Every character has its own personality, while still keeping the traditional, minimalistic look of a playing card. ",
+        "behanceProjectId": "188079355",
+        "_createdAt": "2024-01-31T01:37:25Z",
+        "_type": "work",
+        "_id": "cbd76985-d222-473c-affa-ad3fdabda57f",
+        "_updatedAt": "2024-03-19T15:03:25Z",
+        "slug": {
+          "_type": "slug",
+          "current": "steampunk-dynasty"
+        },
+        "desc": "Welcome to the world of Steampunk Dynasty! Imagine holding a deck of playing cards that transports you to a fascinating retro-futuristic world, filled with steam-powered machinery and Victorian-era elegance.\n\nWe are excited to introduce not just one, but four unique decks with distinct colour schemes, each representing one of the four suits in the deck. But we didn't stop there - to fully immerse you in this captivating world, we've also created a novel called Steampunk Dynasty: Gears and Glory. Get ready to experience a thrilling adventure and discover the stories behind each of the four dynasties.\n\nThe world of Steampunk is a mesmerizing blend of the Victorian era and retro-futuristic science fiction, powered by steam machinery. This unique combination of elegance and creativity has given rise to a multitude of fascinating and inspiring ideas. The decks of the Vostok Cards collection embody this spirit, with their intricate designs, luxurious look and feel, and attention to detail. Each deck is uniquely crafted to represent a specific dynasty or suit, with elements that beautifully capture the essence of the Steampunk world.",
+        "title": "Steampunk Dynasty"
+      },
+      {
+        "_updatedAt": "2024-03-21T16:49:22Z",
+        "_type": "work",
         "customImages": [
           {
-            "alt": "Front of Tuck Box",
-            "_key": "8d6a335fdad6",
             "image": {
               "_type": "image",
               "asset": {
@@ -761,19 +689,21 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Front of Tuck Box",
+            "_key": "8d6a335fdad6"
           },
           {
-            "_type": "customImage",
             "alt": "Back of Tuck Box",
             "_key": "8e6508ad3a78",
             "image": {
               "_type": "image",
               "asset": {
-                "_ref": "image-56780cf4f553096677500700d7457f84d4dee1a0-3872x2592-jpg",
-                "_type": "reference"
+                "_type": "reference",
+                "_ref": "image-56780cf4f553096677500700d7457f84d4dee1a0-3872x2592-jpg"
               }
-            }
+            },
+            "_type": "customImage"
           },
           {
             "image": {
@@ -800,8 +730,6 @@
             "_key": "0ab319502b4c"
           },
           {
-            "alt": "Aesthetic image",
-            "_key": "b8f520def095",
             "image": {
               "_type": "image",
               "asset": {
@@ -809,22 +737,23 @@
                 "_type": "reference"
               }
             },
-            "_type": "customImage"
+            "_type": "customImage",
+            "alt": "Aesthetic image",
+            "_key": "b8f520def095"
           },
           {
-            "_key": "9527755e234b",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-0009a96eff1e8068c698a717db11e6066a99080a-2250x2250-png",
                 "_type": "reference"
-              },
-              "_type": "image"
+              }
             },
             "_type": "customImage",
-            "alt": "Jack and Queen of Clubs"
+            "alt": "Jack and Queen of Clubs",
+            "_key": "9527755e234b"
           },
           {
-            "_key": "08a1b64e8c9d",
             "image": {
               "_type": "image",
               "asset": {
@@ -833,7 +762,8 @@
               }
             },
             "_type": "customImage",
-            "alt": "Jack and Queen of Spades"
+            "alt": "Jack and Queen of Spades",
+            "_key": "08a1b64e8c9d"
           },
           {
             "image": {
@@ -848,6 +778,7 @@
             "_key": "a716648b334b"
           },
           {
+            "_key": "2e9546eb6874",
             "image": {
               "_type": "image",
               "asset": {
@@ -856,23 +787,21 @@
               }
             },
             "_type": "customImage",
-            "alt": "Jack and Queen of Diamonds",
-            "_key": "2e9546eb6874"
+            "alt": "Jack and Queen of Diamonds"
           },
           {
-            "_type": "customImage",
-            "alt": "King and Ace of Clubs",
-            "_key": "e9f8914a8ebd",
             "image": {
+              "_type": "image",
               "asset": {
                 "_ref": "image-859ea427b3756d391382c582c54fa3265c28c3f0-2250x2250-png",
                 "_type": "reference"
-              },
-              "_type": "image"
-            }
+              }
+            },
+            "_type": "customImage",
+            "alt": "King and Ace of Clubs",
+            "_key": "e9f8914a8ebd"
           },
           {
-            "_key": "1396efeba39c",
             "image": {
               "_type": "image",
               "asset": {
@@ -881,7 +810,8 @@
               }
             },
             "_type": "customImage",
-            "alt": "King and Ace of Spades"
+            "alt": "King and Ace of Spades",
+            "_key": "1396efeba39c"
           },
           {
             "image": {
@@ -896,51 +826,128 @@
             "_key": "e01f5089deb3"
           },
           {
+            "_type": "customImage",
+            "alt": "King and Ace of Diamonds",
+            "_key": "adf87e78f1e2",
             "image": {
               "asset": {
                 "_ref": "image-1966c272d4fe8126dabdd87db44930cdd7c328c2-2250x2250-png",
                 "_type": "reference"
               },
               "_type": "image"
-            },
-            "_type": "customImage",
-            "alt": "King and Ace of Diamonds",
-            "_key": "adf87e78f1e2"
+            }
           },
           {
             "image": {
-              "_type": "image",
               "asset": {
                 "_ref": "image-3b4bac79f69a9d52964aae6b94c5e7128ac209df-2817x3250-jpg",
                 "_type": "reference"
-              }
+              },
+              "_type": "image"
             },
             "_type": "customImage",
             "alt": "Playing with the Cards",
             "_key": "f275d27b6cbd"
           }
         ],
+        "secondaryLinks": [
+          {
+            "_type": "cta",
+            "link": "https://www.vostokcards.com/collection/animal_gangdom",
+            "text": "Vostok Cards",
+            "_key": "b364dd29470d"
+          }
+        ],
         "kickstarterProjectlink": "https://www.kickstarter.com/projects/vostokcards/vostok-cards-animal-gangdom",
-        "_createdAt": "2024-03-21T16:49:22Z"
+        "_id": "dede3046-d3f9-4981-878d-5c7191cd9cad",
+        "thumbnailImage": {
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-7ad4429c6d3f7014f475bd2acb6bb6478f297cc1-3872x2592-jpg",
+              "_type": "reference"
+            }
+          },
+          "_type": "customImage",
+          "alt": "Animal Gangdom Deck"
+        },
+        "slug": {
+          "current": "animal-gangdom",
+          "_type": "slug"
+        },
+        "desc": "Did you ever imagine a card where the Jack of Spades is in a tracksuit, has a ski mask on, and not to mention is a wolf!? In this deck, every suit is associated with a different gang, from a different culture and a different animal kingdom. Every character has its own personality, while still keeping the traditional, minimalistic look of a playing card. ",
+        "_rev": "BLD0eT012j4MLkQvifUnaP",
+        "title": "Animal Gangdom",
+        "_createdAt": "2024-03-21T16:49:22Z",
+        "primaryLink": {
+          "_type": "cta",
+          "link": "https://www.kickstarter.com/projects/vostokcards/vostok-cards-animal-gangdom",
+          "text": "Kickstarter"
+        }
       }
     ]
   },
+  "lang": "en",
+  "title": "About me | Graphic Designer | Seto x Arts | Montreal & Laval",
+  "_type": "aboutPage",
+  "hiddenTitle": "About English",
+  "metaDesc": "Learn about the creative mind behind Seto x Arts. A dedicated graphic designer from Montreal / Laval passionate about delivering exceptional branding and web development solutions.",
+  "_updatedAt": "2024-04-26T02:45:29Z",
   "_createdAt": "2024-02-20T03:26:33Z",
+  "_rev": "Z5IDu749svD6Fxx4WW8xmJ",
+  "values": {
+    "_createdAt": "2024-03-01T05:04:57Z",
+    "values": [
+      {
+        "title": "Creativity",
+        "desc": "I infuse originality and imagination into every branding project, ensuring unique and captivating brand identities that stand out on the market.",
+        "_type": "value",
+        "_key": "8c0bcf871f45"
+      },
+      {
+        "_type": "value",
+        "_key": "9a2741212bb1",
+        "title": "Innovation",
+        "desc": "My approach integrates cutting-edge techniques and fresh ideas to deliver branding that resonates with audiences."
+      },
+      {
+        "_key": "de7c43817654",
+        "title": "Collaboration",
+        "desc": "I prioritize open communication and teamwork, partnering closely with clients to bring their vision to life through collaborative and transparent processes.",
+        "_type": "value"
+      },
+      {
+        "_type": "value",
+        "_key": "e7498d396f3c",
+        "title": "Quality",
+        "desc": "My commitment to excellence drives me to deliver high-quality branding services that elevate brands and leave a lasting impact on their audience.\n"
+      }
+    ],
+    "_rev": "4fqy6B5H6WrCPpGf2W35dM",
+    "_type": "valuesBlock",
+    "hiddenTitle": "Values",
+    "_id": "476b7505-b556-4333-ae53-beaa98ff191f",
+    "_updatedAt": "2024-03-01T05:06:08Z"
+  },
   "about": {
+    "_rev": "xaX3aVF8PvCD6wtCayD1iR",
+    "_type": "aboutBlock",
     "hiddenTitle": "About Long",
     "_id": "f09e55c7-e0e4-49d2-b0d4-40526e7d84b3",
     "_updatedAt": "2024-04-26T06:17:42Z",
     "content": {
+      "desc2": "Building on years of creativity and innovation, I'm eager to apply my expertise to deliver exceptional branding solutions.",
+      "name": "Sedrak Nadzharyan",
       "customImage": {
-        "_type": "customImage",
         "alt": "Me",
         "image": {
+          "_type": "image",
           "asset": {
-            "_type": "reference",
-            "_ref": "image-a585f6e67c490c24cbd4cc89c04b82ae2223bbcf-1080x1080-png"
-          },
-          "_type": "image"
-        }
+            "_ref": "image-a585f6e67c490c24cbd4cc89c04b82ae2223bbcf-1080x1080-png",
+            "_type": "reference"
+          }
+        },
+        "_type": "customImage"
       },
       "title1": {
         "part1": "Hi, I am",
@@ -949,15 +956,8 @@
         "part3": ". Throughout my career, I've refined a diverse set of skills, ranging from graphic design to web development."
       },
       "title2": "With my shift to brand development, I've launched this Seto Arts as the next phase of my career.",
-      "desc1": "I've been able to balance my passion for illustration with my full-time job in web development while working on various projects. This includes my involvement with Vostok Cards, my playing card company for which I led two successful Kickstarter campaigns. Additionally, I have experience designing a variety of logos and creating detailed 3D product renderings.",
-      "desc2": "Building on years of creativity and innovation, I'm eager to apply my expertise to deliver exceptional branding solutions.",
-      "name": "Sedrak Nadzharyan"
+      "desc1": "I've been able to balance my passion for illustration with my full-time job in web development while working on various projects. This includes my involvement with Vostok Cards, my playing card company for which I led two successful Kickstarter campaigns. Additionally, I have experience designing a variety of logos and creating detailed 3D product renderings."
     },
-    "_createdAt": "2024-02-20T03:26:19Z",
-    "_rev": "xaX3aVF8PvCD6wtCayD1iR",
-    "_type": "aboutBlock"
-  },
-  "_id": "625cd53a-b89f-4f0b-9120-901e848be808",
-  "lang": "en",
-  "_updatedAt": "2024-04-26T02:45:29Z"
+    "_createdAt": "2024-02-20T03:26:19Z"
+  }
 }

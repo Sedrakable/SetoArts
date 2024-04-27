@@ -1,20 +1,23 @@
 {
-  "path": "/privacy-policy",
+  "_createdAt": "2024-03-02T01:39:52Z",
+  "_updatedAt": "2024-04-26T15:36:59Z",
   "_type": "legalPage",
   "_id": "685dc65e-2890-4992-adeb-9f8c54f742c1",
+  "lang": "en",
   "title": "Privacy Policy",
+  "path": "/privacy-policy",
   "data": [
     {
       "_key": "f4dcbc557a2e",
       "markDefs": [],
       "children": [
         {
+          "_key": "897c0a1165c90",
           "_type": "span",
           "marks": [
             "strong"
           ],
-          "text": "Seto x Arts",
-          "_key": "897c0a1165c90"
+          "text": "Seto x Arts"
         }
       ],
       "_type": "block",
@@ -28,25 +31,25 @@
         {
           "_type": "span",
           "marks": [],
-          "text": "Effective Date: March ..., 2024",
+          "text": "Effective Date: April 1, 2024",
           "_key": "bbe5d201cea60"
         }
       ],
       "_type": "block"
     },
     {
-      "_type": "block",
-      "style": "normal",
-      "_key": "35983a4e9d7c",
       "markDefs": [],
       "children": [
         {
-          "marks": [],
-          "text": "",
           "_key": "0636793c22f30",
-          "_type": "span"
+          "_type": "span",
+          "marks": [],
+          "text": ""
         }
-      ]
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "35983a4e9d7c"
     },
     {
       "_type": "block",
@@ -55,17 +58,16 @@
       "markDefs": [],
       "children": [
         {
-          "_key": "bcc6022dc0d1",
           "_type": "span",
           "marks": [
             "strong"
           ],
-          "text": "1. Introduction"
+          "text": "1. Introduction",
+          "_key": "bcc6022dc0d1"
         }
       ]
     },
     {
-      "_key": "a7d9a527b565",
       "markDefs": [],
       "children": [
         {
@@ -76,7 +78,8 @@
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "a7d9a527b565"
     },
     {
       "markDefs": [],
@@ -109,36 +112,37 @@
       "markDefs": []
     },
     {
+      "markDefs": [],
       "children": [
         {
+          "_key": "10257ff4dd860",
           "_type": "span",
           "marks": [],
-          "text": "We may collect and process the following types of personal information:",
-          "_key": "10257ff4dd860"
+          "text": "We may collect and process the following types of personal information:"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "e041615230f4",
-      "markDefs": []
+      "_key": "e041615230f4"
     },
     {
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "Contact Information: Name, email address, phone number.",
-          "_key": "bccb649579b70"
-        }
-      ],
       "level": 1,
       "_type": "block",
       "style": "normal",
       "_key": "c8825465adc4",
-      "listItem": "bullet"
+      "listItem": "bullet",
+      "markDefs": [],
+      "children": [
+        {
+          "marks": [],
+          "text": "Contact Information: Name, email address, phone number.",
+          "_key": "bccb649579b70",
+          "_type": "span"
+        }
+      ]
     },
     {
+      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -151,38 +155,37 @@
       "_type": "block",
       "style": "normal",
       "_key": "97d79b3cba2a",
-      "listItem": "bullet",
-      "markDefs": []
+      "listItem": "bullet"
     },
     {
-      "_key": "dbff62e02b87",
       "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
-          "text": "Website Usage Data: Information about how you use and navigate our website.",
           "_key": "e341ef326ea30",
           "_type": "span",
-          "marks": []
+          "marks": [],
+          "text": "Website Usage Data: Information about how you use and navigate our website."
         }
       ],
       "level": 1,
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "dbff62e02b87"
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "ce98d8c8686a",
       "markDefs": [],
       "children": [
         {
-          "marks": [],
-          "text": "",
           "_key": "fe6c122fbe7c0",
-          "_type": "span"
+          "_type": "span",
+          "marks": [],
+          "text": ""
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "ce98d8c8686a"
+      ]
     },
     {
       "children": [
@@ -207,14 +210,18 @@
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [],
           "text": "We collect information through:",
-          "_key": "f46eef3fb86a0"
+          "_key": "f46eef3fb86a0",
+          "_type": "span"
         }
       ]
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "02808bfdd1bb",
+      "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
@@ -224,61 +231,55 @@
           "_key": "eaf22740f467"
         }
       ],
-      "level": 1,
-      "_type": "block",
-      "style": "normal",
-      "_key": "02808bfdd1bb",
-      "listItem": "bullet"
+      "level": 1
     },
     {
-      "markDefs": [],
-      "children": [
-        {
-          "_key": "65d61c62200f0",
-          "_type": "span",
-          "marks": [],
-          "text": "Automated technologies: through cookies and similar technologies when you interact with our website."
-        }
-      ],
-      "level": 1,
-      "_type": "block",
-      "style": "normal",
       "_key": "c40af028f2bb",
-      "listItem": "bullet"
-    },
-    {
+      "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
-          "_key": "7868ddb2850a0",
           "_type": "span",
           "marks": [],
-          "text": ""
+          "text": "Automated technologies: through cookies and similar technologies when you interact with our website.",
+          "_key": "65d61c62200f0"
         }
       ],
+      "level": 1,
       "_type": "block",
-      "style": "normal",
-      "_key": "b08a99c694e6"
+      "style": "normal"
     },
     {
       "style": "normal",
-      "_key": "20e5c35b89d8",
+      "_key": "b08a99c694e6",
       "markDefs": [],
       "children": [
         {
-          "text": "4. Use of Information",
-          "_key": "084e59e8fd46",
           "_type": "span",
-          "marks": [
-            "strong"
-          ]
+          "marks": [],
+          "text": "",
+          "_key": "7868ddb2850a0"
         }
       ],
       "_type": "block"
     },
     {
-      "_key": "01332ce2c75f",
+      "_key": "20e5c35b89d8",
       "markDefs": [],
+      "children": [
+        {
+          "_key": "084e59e8fd46",
+          "_type": "span",
+          "marks": [
+            "strong"
+          ],
+          "text": "4. Use of Information"
+        }
+      ],
+      "_type": "block",
+      "style": "normal"
+    },
+    {
       "children": [
         {
           "_type": "span",
@@ -288,53 +289,39 @@
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "01332ce2c75f",
+      "markDefs": []
     },
     {
-      "listItem": "bullet",
-      "markDefs": [],
       "children": [
         {
+          "_type": "span",
           "marks": [],
           "text": "Providing and managing our services.",
-          "_key": "c91a066675a50",
-          "_type": "span"
+          "_key": "c91a066675a50"
         }
       ],
       "level": 1,
       "_type": "block",
       "style": "normal",
-      "_key": "ae5c47a12a54"
+      "_key": "ae5c47a12a54",
+      "listItem": "bullet",
+      "markDefs": []
     },
     {
+      "level": 1,
+      "_type": "block",
+      "style": "normal",
       "_key": "c9c66613dc9f",
       "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [],
           "text": "Communicating with you about our services.",
-          "_key": "c85f9d4e254a0"
-        }
-      ],
-      "level": 1,
-      "_type": "block",
-      "style": "normal"
-    },
-    {
-      "level": 1,
-      "_type": "block",
-      "style": "normal",
-      "_key": "a53000ea8b0e",
-      "listItem": "bullet",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "Improving our website and services.",
-          "_key": "a6b771709e670"
+          "_key": "c85f9d4e254a0",
+          "_type": "span"
         }
       ]
     },
@@ -343,16 +330,32 @@
         {
           "_type": "span",
           "marks": [],
-          "text": "Complying with legal obligations.",
-          "_key": "7aac63f8ec5e0"
+          "text": "Improving our website and services.",
+          "_key": "a6b771709e670"
         }
       ],
       "level": 1,
       "_type": "block",
       "style": "normal",
-      "_key": "9de2a0a96e3c",
+      "_key": "a53000ea8b0e",
       "listItem": "bullet",
       "markDefs": []
+    },
+    {
+      "level": 1,
+      "_type": "block",
+      "style": "normal",
+      "_key": "9de2a0a96e3c",
+      "listItem": "bullet",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "Complying with legal obligations.",
+          "_key": "7aac63f8ec5e0"
+        }
+      ]
     },
     {
       "_type": "block",
@@ -361,16 +364,14 @@
       "markDefs": [],
       "children": [
         {
-          "text": "",
           "_key": "35a8bacfdaeb0",
           "_type": "span",
-          "marks": []
+          "marks": [],
+          "text": ""
         }
       ]
     },
     {
-      "_key": "20852835b453",
-      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -382,16 +383,18 @@
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "20852835b453",
+      "markDefs": []
     },
     {
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [],
           "text": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as outlined in this policy or when required by law.",
-          "_key": "1564a945620e0"
+          "_key": "1564a945620e0",
+          "_type": "span"
         }
       ],
       "_type": "block",
@@ -401,10 +404,10 @@
     {
       "children": [
         {
-          "text": "",
-          "_key": "1b23df55c5630",
           "_type": "span",
-          "marks": []
+          "marks": [],
+          "text": "",
+          "_key": "1b23df55c5630"
         }
       ],
       "_type": "block",
@@ -413,7 +416,6 @@
       "markDefs": []
     },
     {
-      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -426,9 +428,13 @@
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "133d9071af97"
+      "_key": "133d9071af97",
+      "markDefs": []
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "3030c1ea8329",
       "markDefs": [],
       "children": [
         {
@@ -437,24 +443,21 @@
           "text": "We implement reasonable security measures to protect your information from unauthorized access, disclosure, alteration, and destruction. However, no data transmission over the internet or method of storage is 100% secure, and we cannot guarantee absolute security.",
           "_key": "a034d04e0e800"
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "3030c1ea8329"
+      ]
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "88dd430b7411",
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
           "marks": [],
           "text": "",
-          "_key": "328e5a344bfb0"
+          "_key": "328e5a344bfb0",
+          "_type": "span"
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "88dd430b7411"
+      ]
     },
     {
       "_type": "block",
@@ -463,28 +466,28 @@
       "markDefs": [],
       "children": [
         {
-          "text": "7. Your Rights",
-          "_key": "c111c6caa5620",
-          "_type": "span",
           "marks": [
             "strong"
-          ]
+          ],
+          "text": "7. Your Rights",
+          "_key": "c111c6caa5620",
+          "_type": "span"
         }
       ]
     },
     {
+      "_key": "bcea6bcbaec7",
+      "markDefs": [],
       "children": [
         {
-          "_type": "span",
-          "marks": [],
           "text": "You have the right to:",
-          "_key": "7022740c94070"
+          "_key": "7022740c94070",
+          "_type": "span",
+          "marks": []
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "bcea6bcbaec7",
-      "markDefs": []
+      "style": "normal"
     },
     {
       "style": "normal",
@@ -493,19 +496,16 @@
       "markDefs": [],
       "children": [
         {
+          "marks": [],
           "text": "Access the personal information we hold about you.",
           "_key": "01ac054b95c1",
-          "_type": "span",
-          "marks": []
+          "_type": "span"
         }
       ],
       "level": 1,
       "_type": "block"
     },
     {
-      "level": 1,
-      "_type": "block",
-      "style": "normal",
       "_key": "e00ce8fbd005",
       "listItem": "bullet",
       "markDefs": [],
@@ -516,29 +516,28 @@
           "text": "Rectify inaccuracies in your personal information.",
           "_key": "1a172bed218d0"
         }
-      ]
+      ],
+      "level": 1,
+      "_type": "block",
+      "style": "normal"
     },
     {
-      "_type": "block",
       "style": "normal",
       "_key": "fe526eb3664f",
       "listItem": "bullet",
       "markDefs": [],
       "children": [
         {
-          "text": "Erase your personal information.",
-          "_key": "a5c190c821c80",
           "_type": "span",
-          "marks": []
+          "marks": [],
+          "text": "Erase your personal information.",
+          "_key": "a5c190c821c80"
         }
       ],
-      "level": 1
+      "level": 1,
+      "_type": "block"
     },
     {
-      "level": 1,
-      "_type": "block",
-      "style": "normal",
-      "_key": "0a6631f7103e",
       "listItem": "bullet",
       "markDefs": [],
       "children": [
@@ -548,23 +547,29 @@
           "text": "Object to the processing of your personal information.",
           "_key": "d0efdc740d000"
         }
-      ]
+      ],
+      "level": 1,
+      "_type": "block",
+      "style": "normal",
+      "_key": "0a6631f7103e"
     },
     {
-      "_key": "596a614c9767",
-      "markDefs": [],
       "children": [
         {
-          "text": "To exercise these rights or for inquiries about your data, contact us at contact@vostokcards.com.",
-          "_key": "549341e4ee490",
           "_type": "span",
-          "marks": []
+          "marks": [],
+          "text": "To exercise these rights or for inquiries about your data, contact us at contact@vostokcards.com.",
+          "_key": "549341e4ee490"
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "596a614c9767",
+      "markDefs": []
     },
     {
+      "style": "normal",
+      "_key": "a3202dcc89ad",
       "markDefs": [],
       "children": [
         {
@@ -574,11 +579,10 @@
           "marks": []
         }
       ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "a3202dcc89ad"
+      "_type": "block"
     },
     {
+      "_key": "a3144fe3fc6c",
       "markDefs": [],
       "children": [
         {
@@ -591,11 +595,9 @@
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "a3144fe3fc6c"
+      "style": "normal"
     },
     {
-      "_key": "010122174b97",
       "markDefs": [],
       "children": [
         {
@@ -606,7 +608,8 @@
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "010122174b97"
     },
     {
       "_type": "block",
@@ -623,7 +626,6 @@
       ]
     },
     {
-      "_key": "d6112c912cf9",
       "markDefs": [],
       "children": [
         {
@@ -636,39 +638,37 @@
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "d6112c912cf9"
     },
     {
-      "_key": "601596d07998",
-      "markDefs": [],
       "children": [
         {
-          "marks": [],
-          "text": "If you have questions or concerns about this Privacy Policy, contact us at:",
           "_key": "894f229f7b860",
-          "_type": "span"
+          "_type": "span",
+          "marks": [],
+          "text": "If you have questions or concerns about this Privacy Policy, contact us at:"
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "601596d07998",
+      "markDefs": []
     },
     {
-      "_type": "block",
       "style": "normal",
       "_key": "b0400549374a",
       "markDefs": [],
       "children": [
         {
+          "_key": "6afa9e7606490",
           "_type": "span",
           "marks": [],
-          "text": "Seto Arts\n1150 rue Dale\nsedrak005@gmail.com",
-          "_key": "6afa9e7606490"
+          "text": "Seto x Arts\n1150 rue Dale\ncontact@setoxarts.com"
         }
-      ]
+      ],
+      "_type": "block"
     }
   ],
-  "_createdAt": "2024-03-02T01:39:52Z",
-  "_rev": "uiWIFkW6n28NyJPxPEXQ6k",
-  "lang": "en",
-  "_updatedAt": "2024-03-08T01:12:46Z"
+  "_rev": "Z5IDu749svD6Fxx4WX4s2f"
 }

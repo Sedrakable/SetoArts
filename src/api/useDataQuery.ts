@@ -6,6 +6,7 @@ import { ContactPageProps } from "../components/pages/ContactPage";
 import { HomePageProps } from "../components/pages/HomePage";
 import { ServicePageProps } from "../components/pages/ServicePage";
 import { IFooter, ILegalPage, INavBar, INotFound } from "../data";
+import { BlogPageProps } from "../components/pages/BlogPage";
 
 const { generateQueries } = require("./generateSanityQueries");
 
@@ -39,6 +40,7 @@ export const useDataQuery = (lang: LangType) => {
     homeQuery,
     legalQuery,
     notFoundQuery,
+    blogQuery,
   } = generateQueries(lang);
 
   const navbarData: INavBar =
@@ -65,6 +67,9 @@ export const useDataQuery = (lang: LangType) => {
   const notFoundPageData: INotFound =
     useFetchPage(notFoundQuery)! ||
     require(`./backups/${lang}/backup-notFoundPage.json`);
+  const blogPageData: BlogPageProps =
+    useFetchPage(blogQuery)! ||
+    require(`./backups/${lang}/backup-blogPage.json`);
 
   return {
     navbarData,
@@ -75,5 +80,6 @@ export const useDataQuery = (lang: LangType) => {
     contactPageData,
     legalPageData,
     notFoundPageData,
+    blogPageData,
   };
 };

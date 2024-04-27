@@ -1,8 +1,43 @@
 {
-  "_updatedAt": "2024-03-06T20:24:26Z",
   "_type": "footer",
-  "trademark": "@2024 Seto x Arts",
+  "_id": "7170174a-5dc3-45cf-8df0-14477ef0674e",
+  "_updatedAt": "2024-03-06T20:24:26Z",
+  "_createdAt": "2024-02-23T16:21:48Z",
   "lang": "fr",
+  "socials": {
+    "title": "Suivez-nous",
+    "_updatedAt": "2024-02-27T01:18:41Z",
+    "_createdAt": "2024-02-27T01:18:16Z",
+    "_rev": "OWI0A10Iz7jJbYSKtGJ88S",
+    "_type": "socials",
+    "links": [
+      {
+        "_key": "b91e06d42b3b",
+        "_type": "cta",
+        "link": "https://www.instagram.com/seto.arts/",
+        "text": "instagram"
+      },
+      {
+        "_type": "cta",
+        "link": "https://www.behance.net/sedraknadzhar",
+        "text": "behance",
+        "_key": "900640cb8eed"
+      },
+      {
+        "link": "https://www.facebook.com",
+        "text": "facebook",
+        "_key": "26aeb1acf667",
+        "_type": "cta"
+      },
+      {
+        "_type": "cta",
+        "link": "https://www.linkedin.com/in/sedrak-n/",
+        "text": "linkedin",
+        "_key": "ec77ef8353ff"
+      }
+    ],
+    "_id": "60d93d39-dd2b-4c39-831a-ee81fa959b5c"
+  },
   "legals": [
     {
       "title": "Termes et conditions",
@@ -13,41 +48,6 @@
       "path": "/privacy-policy"
     }
   ],
-  "_rev": "1X3tbPF0boRjlNqQpQxBcD",
-  "socials": {
-    "_updatedAt": "2024-02-27T01:18:41Z",
-    "_createdAt": "2024-02-27T01:18:16Z",
-    "_rev": "OWI0A10Iz7jJbYSKtGJ88S",
-    "_type": "socials",
-    "links": [
-      {
-        "_type": "cta",
-        "link": "https://www.instagram.com/seto.arts/",
-        "text": "instagram",
-        "_key": "b91e06d42b3b"
-      },
-      {
-        "_type": "cta",
-        "link": "https://www.behance.net/sedraknadzhar",
-        "text": "behance",
-        "_key": "900640cb8eed"
-      },
-      {
-        "_type": "cta",
-        "link": "https://www.facebook.com",
-        "text": "facebook",
-        "_key": "26aeb1acf667"
-      },
-      {
-        "_type": "cta",
-        "link": "https://www.linkedin.com/in/sedrak-n/",
-        "text": "linkedin",
-        "_key": "ec77ef8353ff"
-      }
-    ],
-    "_id": "60d93d39-dd2b-4c39-831a-ee81fa959b5c",
-    "title": "Suivez-nous"
-  },
-  "_createdAt": "2024-02-23T16:21:48Z",
-  "_id": "7170174a-5dc3-45cf-8df0-14477ef0674e"
+  "trademark": "@2024 Seto x Arts",
+  "_rev": "1X3tbPF0boRjlNqQpQxBcD"
 }

@@ -11,6 +11,7 @@ export const frTranslations: Translations = {
     work: "Travail",
     contact: "Contact",
     reviews: "Avis",
+    blog: "Blog",
   },
   buttons: {
     workWithMe: "Travail avec moi",

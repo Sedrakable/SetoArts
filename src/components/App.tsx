@@ -13,6 +13,8 @@ import { langData } from "./navbar/LangSwitcher/LangSwitcher";
 import { LocalPaths } from "../data.d";
 import { useDataQuery } from "../api/useDataQuery";
 import { ScrollToTop } from "../helpers/ScrollToTop";
+import { BlogPage } from "./pages/BlogPage";
+import { ArticlePage } from "./pages/ArticlePage";
 
 const LegalPage = lazy(() =>
   import("./pages/LegalPage").then((comp) => ({ default: comp.LegalPage }))
@@ -45,6 +47,7 @@ const App = () => {
     aboutPageData,
     contactPageData,
     notFoundPageData,
+    blogPageData,
   } = useDataQuery(lang);
 
   useEffect(() => {
@@ -59,7 +62,6 @@ const App = () => {
       setModalOpen(null);
     }
   }, [lang, setModalOpen, location]);
-
   return (
     navbarData && (
       <div className={styles.app} ref={ref}>
@@ -95,6 +97,19 @@ const App = () => {
                 path={`/${lang}${LocalPaths.ABOUT}/:slug`}
                 element={<AboutPage {...aboutPageData} />}
               />
+              <Route
+                path={`/${lang}${LocalPaths.BLOG}`}
+                element={<BlogPage {...blogPageData} />}
+              />
+              {blogPageData?.blog.articles?.map((article) => {
+                return (
+                  <Route
+                    key={article.slug.current}
+                    path={`/${lang}${LocalPaths.BLOG}/${article.slug.current}`}
+                    element={<ArticlePage article={article} />}
+                  />
+                );
+              })}
               <Route
                 path={`/${lang}${LocalPaths.CONTACT}`}
                 element={<ContactPage {...contactPageData} />}

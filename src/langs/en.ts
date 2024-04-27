@@ -11,6 +11,7 @@ export const enTranslations: Translations = {
     work: "Work",
     contact: "Contact",
     reviews: "Reviews",
+    blog: "Blog",
   },
   buttons: {
     workWithMe: "Work with me",
