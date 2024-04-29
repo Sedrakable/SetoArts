@@ -1,31 +1,27 @@
 {
-  "lang": "en",
-  "_updatedAt": "2024-04-26T16:42:18Z",
-  "_createdAt": "2024-02-16T16:09:05Z",
   "_rev": "xaX3aVF8PvCD6wtCayp4zX",
   "_type": "navbar",
   "links": [
     {
+      "_type": "localLink",
       "link": "/home",
       "text": "Home",
-      "_key": "57469334049d",
-      "_type": "localLink"
+      "_key": "57469334049d"
     },
     {
-      "_key": "5303e3087528",
       "title": "Services",
       "ctaArray": [
         {
-          "_key": "9d5388be39ac",
-          "_type": "localLink",
           "link": "/branding",
-          "text": "Branding"
+          "text": "Branding",
+          "_key": "9d5388be39ac",
+          "_type": "localLink"
         },
         {
-          "text": "Web Design",
-          "_key": "9e3c6dd471c9",
           "_type": "localLink",
-          "link": "/web-design"
+          "link": "/web-design",
+          "text": "Web Design",
+          "_key": "9e3c6dd471c9"
         },
         {
           "_type": "localLink",
@@ -34,12 +30,13 @@
           "_key": "3cd4c91f1ffe"
         },
         {
-          "text": "Custom Work",
-          "_key": "f77d3ff7288d",
           "_type": "localLink",
-          "link": "/custom-work"
+          "link": "/custom-work",
+          "text": "Custom Work",
+          "_key": "f77d3ff7288d"
         }
-      ]
+      ],
+      "_key": "5303e3087528"
     },
     {
       "_type": "localLink",
@@ -48,10 +45,10 @@
       "_key": "05ce4081eec0"
     },
     {
-      "_type": "localLink",
-      "link": "/blog",
       "text": "Blog",
-      "_key": "8279a812a77b"
+      "_key": "8279a812a77b",
+      "_type": "localLink",
+      "link": "/blog"
     },
     {
       "_type": "localLink",
@@ -60,5 +57,8 @@
       "_key": "eeac3056ca8e"
     }
   ],
-  "_id": "1bd2295b-5204-4f9a-b2ab-b934a03c3102"
+  "_id": "1bd2295b-5204-4f9a-b2ab-b934a03c3102",
+  "lang": "en",
+  "_updatedAt": "2024-04-26T16:42:18Z",
+  "_createdAt": "2024-02-16T16:09:05Z"
 }

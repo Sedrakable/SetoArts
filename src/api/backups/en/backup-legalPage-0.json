@@ -1,11 +1,13 @@
 {
-  "path": "/terms-and-conditions",
+  "_rev": "Z5IDu749svD6Fxx4WX4sxy",
   "title": "Terms & Conditions",
+  "_updatedAt": "2024-04-26T15:38:02Z",
   "_id": "4a84d5d8-26f6-46e2-a303-ccb2dfbb5f92",
   "lang": "en",
-  "_updatedAt": "2024-04-26T15:38:02Z",
+  "path": "/terms-and-conditions",
   "data": [
     {
+      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -18,10 +20,10 @@
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "8210ac872662",
-      "markDefs": []
+      "_key": "8210ac872662"
     },
     {
+      "_type": "block",
       "style": "normal",
       "_key": "d9a0b5c2a2b3",
       "markDefs": [],
@@ -32,10 +34,11 @@
           "text": "Effective Date: 1 april, 2024",
           "_key": "4fe2ca39d6710"
         }
-      ],
-      "_type": "block"
+      ]
     },
     {
+      "_key": "37807b19c522",
+      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -45,55 +48,55 @@
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "37807b19c522",
-      "markDefs": []
+      "style": "normal"
     },
     {
-      "style": "normal",
-      "_key": "243c23e28e87",
       "markDefs": [],
       "children": [
         {
+          "_type": "span",
           "marks": [
             "strong"
           ],
           "text": "1. Acceptance of Terms",
-          "_key": "2925ef9adcd00",
-          "_type": "span"
-        }
-      ],
-      "_type": "block"
-    },
-    {
-      "children": [
-        {
-          "_key": "93b7d61a58100",
-          "_type": "span",
-          "marks": [],
-          "text": "By accessing and using the setoxarts.com website and our services, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these terms, you may not use our website or services."
+          "_key": "2925ef9adcd00"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "0f9c9f25c54a",
-      "markDefs": []
+      "_key": "243c23e28e87"
     },
     {
       "style": "normal",
-      "_key": "f661e2eb7214",
+      "_key": "0f9c9f25c54a",
       "markDefs": [],
       "children": [
         {
+          "_type": "span",
           "marks": [],
-          "text": "",
-          "_key": "f2600ee1d5600",
-          "_type": "span"
+          "text": "By accessing and using the setoxarts.com website and our services, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these terms, you may not use our website or services.",
+          "_key": "93b7d61a58100"
         }
       ],
       "_type": "block"
     },
     {
+      "_key": "f661e2eb7214",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "f2600ee1d5600",
+          "_type": "span",
+          "marks": [],
+          "text": ""
+        }
+      ],
+      "_type": "block",
+      "style": "normal"
+    },
+    {
+      "style": "normal",
+      "_key": "a9d6d7d33e9f",
       "markDefs": [],
       "children": [
         {
@@ -105,9 +108,7 @@
           "_key": "4ff34b955fce"
         }
       ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "a9d6d7d33e9f"
+      "_type": "block"
     },
     {
       "markDefs": [],
@@ -126,10 +127,10 @@
     {
       "children": [
         {
+          "_type": "span",
           "marks": [],
           "text": "",
-          "_key": "147d66c843f50",
-          "_type": "span"
+          "_key": "147d66c843f50"
         }
       ],
       "_type": "block",
@@ -138,8 +139,6 @@
       "markDefs": []
     },
     {
-      "_key": "3bfc5b06495f",
-      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -151,9 +150,12 @@
         }
       ],
       "_type": "block",
-      "style": "normal"
+      "style": "normal",
+      "_key": "3bfc5b06495f",
+      "markDefs": []
     },
     {
+      "markDefs": [],
       "children": [
         {
           "_type": "span",
@@ -164,11 +166,9 @@
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "88e7d56929cc",
-      "markDefs": []
+      "_key": "88e7d56929cc"
     },
     {
-      "_type": "block",
       "style": "normal",
       "_key": "ec2f2bdec02f",
       "markDefs": [],
@@ -179,23 +179,24 @@
           "text": "",
           "_key": "ec756693b89e0"
         }
-      ]
+      ],
+      "_type": "block"
     },
     {
-      "_type": "block",
-      "style": "normal",
       "_key": "ce76554f560e",
       "markDefs": [],
       "children": [
         {
-          "_key": "848e4a520a9a",
-          "_type": "span",
           "marks": [
             "strong"
           ],
-          "text": "4. Intellectual Property"
+          "text": "4. Intellectual Property",
+          "_key": "848e4a520a9a",
+          "_type": "span"
         }
-      ]
+      ],
+      "_type": "block",
+      "style": "normal"
     },
     {
       "_key": "057c55688e41",
@@ -212,20 +213,21 @@
       "style": "normal"
     },
     {
-      "style": "normal",
-      "_key": "4ce5e969f787",
       "markDefs": [],
       "children": [
         {
+          "_key": "324a736bdad80",
           "_type": "span",
           "marks": [],
-          "text": "",
-          "_key": "324a736bdad80"
+          "text": ""
         }
       ],
-      "_type": "block"
+      "_type": "block",
+      "style": "normal",
+      "_key": "4ce5e969f787"
     },
     {
+      "_key": "2d8e3d1ac4b6",
       "markDefs": [],
       "children": [
         {
@@ -238,10 +240,12 @@
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "2d8e3d1ac4b6"
+      "style": "normal"
     },
     {
+      "_type": "block",
+      "style": "normal",
+      "_key": "0958e9a5b90c",
       "markDefs": [],
       "children": [
         {
@@ -250,12 +254,10 @@
           "text": "Details regarding payment terms, fees, and invoicing for our services are outlined in our separate billing agreement. By engaging with our services, you agree to the terms specified in the billing agreement.",
           "_key": "d8a1b16ca29c0"
         }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "0958e9a5b90c"
+      ]
     },
     {
+      "_key": "75ad2563d2af",
       "markDefs": [],
       "children": [
         {
@@ -266,10 +268,11 @@
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "75ad2563d2af"
+      "style": "normal"
     },
     {
+      "_type": "block",
+      "style": "normal",
       "_key": "70aef31facbb",
       "markDefs": [],
       "children": [
@@ -281,32 +284,30 @@
           "text": "6. Privacy Policy",
           "_key": "3ab2f235b617"
         }
-      ],
-      "_type": "block",
-      "style": "normal"
-    },
-    {
-      "_type": "block",
-      "style": "normal",
-      "_key": "7af14e4e17ea",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "Our Privacy Policy outlines how we collect, use, and protect your personal information. By using our website and services, you consent to the practices described in our Privacy Policy.",
-          "_key": "4e142e7fd4ec0"
-        }
       ]
     },
     {
       "markDefs": [],
       "children": [
         {
-          "_type": "span",
+          "marks": [],
+          "text": "Our Privacy Policy outlines how we collect, use, and protect your personal information. By using our website and services, you consent to the practices described in our Privacy Policy.",
+          "_key": "4e142e7fd4ec0",
+          "_type": "span"
+        }
+      ],
+      "_type": "block",
+      "style": "normal",
+      "_key": "7af14e4e17ea"
+    },
+    {
+      "markDefs": [],
+      "children": [
+        {
           "marks": [],
           "text": "",
-          "_key": "86b26222839f0"
+          "_key": "86b26222839f0",
+          "_type": "span"
         }
       ],
       "_type": "block",
@@ -318,18 +319,20 @@
       "markDefs": [],
       "children": [
         {
-          "marks": [
-            "strong"
-          ],
           "text": "7. Limitation of Liability",
           "_key": "a6a92b543454",
-          "_type": "span"
+          "_type": "span",
+          "marks": [
+            "strong"
+          ]
         }
       ],
       "_type": "block",
       "style": "normal"
     },
     {
+      "_type": "block",
+      "style": "normal",
       "_key": "011eca8434af",
       "markDefs": [],
       "children": [
@@ -339,39 +342,37 @@
           "_key": "5c819a71c8930",
           "_type": "span"
         }
-      ],
-      "_type": "block",
-      "style": "normal"
+      ]
     },
     {
+      "markDefs": [],
       "children": [
         {
-          "_key": "50b6004548950",
           "_type": "span",
           "marks": [],
-          "text": ""
+          "text": "",
+          "_key": "50b6004548950"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "21d9fab8dc0d",
-      "markDefs": []
+      "_key": "21d9fab8dc0d"
     },
     {
+      "_key": "35214486ffd4",
+      "markDefs": [],
       "children": [
         {
-          "_key": "858c00d070de",
-          "_type": "span",
           "marks": [
             "strong"
           ],
-          "text": "8. Termination of Services"
+          "text": "8. Termination of Services",
+          "_key": "858c00d070de",
+          "_type": "span"
         }
       ],
       "_type": "block",
-      "style": "normal",
-      "_key": "35214486ffd4",
-      "markDefs": []
+      "style": "normal"
     },
     {
       "style": "normal",
@@ -379,10 +380,54 @@
       "markDefs": [],
       "children": [
         {
+          "_key": "c2cc77b0ba540",
           "_type": "span",
           "marks": [],
-          "text": "We reserve the right to terminate or suspend services to any user for any reason, including a breach of these Terms and Conditions.",
-          "_key": "c2cc77b0ba540"
+          "text": "We reserve the right to terminate or suspend services to any user for any reason, including a breach of these Terms and Conditions."
+        }
+      ],
+      "_type": "block"
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "_key": "df4ed1941dd1",
+      "markDefs": [],
+      "children": [
+        {
+          "text": "",
+          "_key": "dce0d77123900",
+          "_type": "span",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "5f3f03ebc45e",
+      "markDefs": [],
+      "children": [
+        {
+          "text": "9. Governing Law",
+          "_key": "56e205789463",
+          "_type": "span",
+          "marks": [
+            "strong"
+          ]
+        }
+      ],
+      "_type": "block",
+      "style": "normal"
+    },
+    {
+      "style": "normal",
+      "_key": "05eb0b0bad7a",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "marks": [],
+          "text": "These Terms and Conditions are governed by and construed in accordance with the laws of [your jurisdiction]. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in [your jurisdiction].",
+          "_key": "7e0d637a9a9c0"
         }
       ],
       "_type": "block"
@@ -391,61 +436,18 @@
       "markDefs": [],
       "children": [
         {
+          "_key": "ca4ad0db52d90",
           "_type": "span",
           "marks": [],
-          "text": "",
-          "_key": "dce0d77123900"
+          "text": ""
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "df4ed1941dd1"
-    },
-    {
-      "_key": "5f3f03ebc45e",
-      "markDefs": [],
-      "children": [
-        {
-          "marks": [
-            "strong"
-          ],
-          "text": "9. Governing Law",
-          "_key": "56e205789463",
-          "_type": "span"
-        }
-      ],
-      "_type": "block",
-      "style": "normal"
+      "_key": "93185613e581"
     },
     {
       "markDefs": [],
-      "children": [
-        {
-          "text": "These Terms and Conditions are governed by and construed in accordance with the laws of [your jurisdiction]. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in [your jurisdiction].",
-          "_key": "7e0d637a9a9c0",
-          "_type": "span",
-          "marks": []
-        }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "05eb0b0bad7a"
-    },
-    {
-      "children": [
-        {
-          "_type": "span",
-          "marks": [],
-          "text": "",
-          "_key": "ca4ad0db52d90"
-        }
-      ],
-      "_type": "block",
-      "style": "normal",
-      "_key": "93185613e581",
-      "markDefs": []
-    },
-    {
       "children": [
         {
           "_type": "span",
@@ -458,22 +460,21 @@
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "541e23f770b6",
-      "markDefs": []
+      "_key": "541e23f770b6"
     },
     {
+      "markDefs": [],
       "children": [
         {
+          "_key": "3f253b6cd27d0",
           "_type": "span",
           "marks": [],
-          "text": "If you have any questions or concerns regarding these Terms and Conditions, you can contact us at:",
-          "_key": "3f253b6cd27d0"
+          "text": "If you have any questions or concerns regarding these Terms and Conditions, you can contact us at:"
         }
       ],
       "_type": "block",
       "style": "normal",
-      "_key": "f2a8edc8a76b",
-      "markDefs": []
+      "_key": "f2a8edc8a76b"
     },
     {
       "markDefs": [],
@@ -491,6 +492,5 @@
     }
   ],
   "_createdAt": "2024-02-27T16:54:48Z",
-  "_rev": "Z5IDu749svD6Fxx4WX4sxy",
   "_type": "legalPage"
 }

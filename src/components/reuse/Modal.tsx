@@ -55,7 +55,6 @@ export const Modal: React.FC<ModalProps> = ({
   const navigate = useNavigate();
 
   const handleModalClose = () => {
-    console.log("weHere");
     handleClose();
     const newPath = `/${lang}${LocalPaths.ABOUT}`;
     navigate(newPath);

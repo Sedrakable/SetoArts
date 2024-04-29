@@ -55,7 +55,6 @@ const blocks = (block: IBlock) => {
   }
 };
 export const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
-  console.log(article.content);
   return (
     article && (
       <>

@@ -1,17 +1,17 @@
 {
-  "_type": "contactPage",
-  "hiddenTitle": "Contact English",
+  "metaDesc": "Get in touch with Seto x Arts for tailored web design and branding services. Reach out today to discuss your project needs in Montreal and Laval.",
+  "lang": "en",
   "title": "Contact Me | Web Design & Branding Services | Seto x Arts | Montreal & Laval",
   "_updatedAt": "2024-04-26T02:28:14Z",
-  "_createdAt": "2024-02-25T03:29:55Z",
-  "_rev": "Z5IDu749svD6Fxx4WW83mk",
-  "lang": "en",
-  "metaDesc": "Get in touch with Seto x Arts for tailored web design and branding services. Reach out today to discuss your project needs in Montreal and Laval.",
-  "_id": "00da58c7-4dde-42cb-a661-881c98fad9d5",
   "desc": {
     "part1": " ",
     "part2": "Hello!",
     "_type": "fancyText",
     "part3": " Please feel free to fill out this form and share details about the project you have in mind."
-  }
+  },
+  "_rev": "Z5IDu749svD6Fxx4WW83mk",
+  "hiddenTitle": "Contact English",
+  "_createdAt": "2024-02-25T03:29:55Z",
+  "_type": "contactPage",
+  "_id": "00da58c7-4dde-42cb-a661-881c98fad9d5"
 }

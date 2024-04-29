@@ -1,5 +1,5 @@
 {
-  "_updatedAt": "2024-03-02T01:40:36Z",
+  "lang": "en",
   "legals": [
     {
       "title": "Terms & Conditions",
@@ -10,8 +10,11 @@
       "path": "/privacy-policy"
     }
   ],
-  "_type": "footer",
+  "_updatedAt": "2024-03-02T01:40:36Z",
+  "_id": "6153f403-d1ee-43a4-b054-e625df817442",
   "_createdAt": "2024-01-31T01:41:25Z",
+  "_type": "footer",
+  "trademark": "@2024 Seto x Arts",
   "_rev": "ov70woV1798blVieqgPo7z",
   "socials": {
     "_type": "socials",
@@ -35,10 +38,10 @@
         "_key": "26aeb1acf667"
       },
       {
-        "link": "https://www.linkedin.com/in/sedrak-n/",
-        "text": "linkedin",
         "_key": "ec77ef8353ff",
-        "_type": "cta"
+        "_type": "cta",
+        "link": "https://www.linkedin.com/in/sedrak-n/",
+        "text": "linkedin"
       }
     ],
     "_id": "06d4dfc0-6b4d-4fff-a138-0dca41a1a7df",
@@ -46,8 +49,5 @@
     "_updatedAt": "2024-02-27T01:17:52Z",
     "_createdAt": "2024-02-27T01:17:52Z",
     "_rev": "OWI0A10Iz7jJbYSKtGJ4GG"
-  },
-  "_id": "6153f403-d1ee-43a4-b054-e625df817442",
-  "lang": "en",
-  "trademark": "@2024 Seto x Arts"
+  }
 }

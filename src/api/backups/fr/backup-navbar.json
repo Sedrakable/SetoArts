@@ -7,24 +7,26 @@
       "link": "/home"
     },
     {
+      "_key": "5303e3087528",
+      "title": "Services",
       "ctaArray": [
         {
+          "_type": "localLink",
           "link": "/branding",
           "text": "Marque",
-          "_key": "9d5388be39ac",
-          "_type": "localLink"
+          "_key": "9d5388be39ac"
         },
         {
-          "text": "Développement web",
-          "_key": "9e3c6dd471c9",
           "_type": "localLink",
-          "link": "/web-design"
+          "link": "/web-design",
+          "text": "Développement web",
+          "_key": "9e3c6dd471c9"
         },
         {
+          "_key": "3cd4c91f1ffe",
           "_type": "localLink",
           "link": "/total-package",
-          "text": "Forfait complet",
-          "_key": "3cd4c91f1ffe"
+          "text": "Forfait complet"
         },
         {
           "_type": "localLink",
@@ -32,21 +34,19 @@
           "text": "Travail sur mesure",
           "_key": "f77d3ff7288d"
         }
-      ],
-      "_key": "5303e3087528",
-      "title": "Services"
+      ]
     },
     {
-      "_key": "05ce4081eec0",
       "_type": "localLink",
       "link": "/about-work",
-      "text": "À propos + Travaux"
+      "text": "À propos + Travaux",
+      "_key": "05ce4081eec0"
     },
     {
+      "_type": "localLink",
       "link": "/blog",
       "text": "Blog",
-      "_key": "9e705f3e3c31",
-      "_type": "localLink"
+      "_key": "9e705f3e3c31"
     },
     {
       "_type": "localLink",
