@@ -19,9 +19,9 @@ const blocks = (block: IBlock) => {
       return (
         <Paragraph
           key={block._key}
-          level="big"
+          level="regular"
           color="black"
-          paddingBottomArray={[2, 3, 3, 4]}
+          paddingBottomArray={[4, 5, 5, 6]}
         >
           {block.children.map((child) => child.text).join("")}
         </Paragraph>
@@ -47,7 +47,7 @@ const blocks = (block: IBlock) => {
           as={block.style!}
           level={block.style!.substring(1) as "1" | "2" | "3" | "4" | "5"}
           color="black"
-          paddingBottomArray={[2, 3, 3, 4]}
+          paddingBottomArray={[2]}
         >
           {block.children.map((child) => child.text).join("")}
         </Heading>
@@ -94,8 +94,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
               flex={{ direction: "column", x: "flex-start" }}
               className={styles.text}
               height100
-              gapArray={[1, 2, 2, 3]}
-              as="header"
+              as="section"
             >
               {article.content?.map((block) => {
                 return blocks(block);

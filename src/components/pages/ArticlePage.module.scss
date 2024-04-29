@@ -22,10 +22,8 @@
   background-position: bottom;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: var(--pad-1);
-  .imgWrapper {
-    // padding-top: var(--img-pad-top);
+  img {
+    padding-bottom: var(--pad-5);
     aspect-ratio: var(--ratio);
-  }
-  .text {
   }
 }

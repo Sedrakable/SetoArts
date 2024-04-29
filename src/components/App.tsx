@@ -73,7 +73,7 @@ const App = () => {
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route
-                path="/"
+                index
                 element={<Navigate to={`/${lang}${LocalPaths.HOME}`} />}
               />
               <Route
@@ -91,10 +91,6 @@ const App = () => {
               })}
               <Route
                 path={`/${lang}${LocalPaths.ABOUT}`}
-                element={<AboutPage {...aboutPageData} />}
-              />
-              <Route
-                path={`/${lang}${LocalPaths.ABOUT}/:slug`}
                 element={<AboutPage {...aboutPageData} />}
               />
               <Route
@@ -123,7 +119,10 @@ const App = () => {
                   />
                 );
               })}
-
+              <Route
+                path={`/${lang}${LocalPaths.ABOUT}/:slug`}
+                element={<AboutPage {...aboutPageData} />}
+              />
               <Route path="*" element={<NotFound {...notFoundPageData} />} />
             </Routes>
           </Suspense>
