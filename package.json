@@ -19,6 +19,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^1.6.7",
     "classnames": "^2.3.2",
+    "express": "^4.19.2",
     "framer-motion": "^10.15.1",
     "gh-pages": "^6.0.0",
     "is-svg": "^5.0.0",
@@ -36,9 +37,10 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "dev": "react-scripts start",
+    "start": "node server.cjs",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
