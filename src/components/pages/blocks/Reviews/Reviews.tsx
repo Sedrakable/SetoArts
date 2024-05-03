@@ -1,15 +1,16 @@
+"use client";
 import React from "react";
 import styles from "./Reviews.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
-import { useAtom } from "jotai";
 import { getTranslations } from "../../../../helpers/langUtils";
 import { ElfsightWidget } from "react-elfsight-widget";
 import { Block } from "../../containers/Block";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
 
 export const Reviews: React.FC = () => {
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   return (
     <Block title={translations.blockTitles.reviews} variant="grid">

@@ -1,4 +1,4 @@
-@import "../../../css/mixins.scss";
+@import "../../../styles/mixins.scss";
 
 @mixin vars() {
   --left-height: 60vw;
@@ -59,7 +59,7 @@
       left: 0;
       width: 100%;
       height: 100%; /* Adjust as needed */
-      background-image: url("../../../assets/photos/Textures/FabricTexture.png");
+      background-image: url("/photos/Textures/FabricTexture.png");
       background-size: var(--bg-size); /* Adjust as needed */
       background-position: bottom;
       background-repeat: repeat-x;
@@ -76,8 +76,8 @@
     flex: var(--right-flex);
     z-index: 0;
 
-    img {
-      position: absolute;
+    figure {
+      position: absolute !important;
       height: 100% !important;
       width: 100% !important;
       object-fit: cover;

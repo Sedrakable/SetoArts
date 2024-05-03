@@ -1,9 +1,16 @@
 import React, { CSSProperties } from "react";
+import cn from "classnames";
 import styles from "./FancyText.module.scss";
 import { Heading } from "./Heading";
 import { Paragraph } from "./Paragraph";
-import { IFancyText } from "../../data";
+import { IFancyText } from "../../data.d";
 import FlexDiv from "./FlexDiv";
+import { Caveat } from "next/font/google";
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+});
 
 export interface FancyTextProps extends IFancyText {
   mode: "paragraph" | "heading" | "tab";
@@ -28,7 +35,7 @@ export const FancyText: React.FC<FancyTextProps> = ({
         <FlexDiv
           gapArray={[3]}
           flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
-          className={styles.fancyParagraph}
+          className={cn(styles.fancyParagraph, caveat.variable)}
           width100
           wrap
         >
@@ -49,7 +56,7 @@ export const FancyText: React.FC<FancyTextProps> = ({
         <FlexDiv
           gapArray={[4]}
           flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
-          className={styles.fancyHeading}
+          className={cn(styles.fancyHeading, caveat.variable)}
           width100
           wrap
         >
@@ -65,7 +72,7 @@ export const FancyText: React.FC<FancyTextProps> = ({
         <FlexDiv
           gapArray={[4]}
           flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
-          className={styles.fancyTab}
+          className={cn(styles.fancyTab, caveat.variable)}
           width100
           wrap
         >

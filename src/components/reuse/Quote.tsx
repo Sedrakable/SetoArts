@@ -3,8 +3,8 @@ import styles from "./Quote.module.scss";
 import cn from "classnames";
 import { Heading } from "./Heading";
 import FlexDiv from "./FlexDiv";
-import { ReactComponent as X } from "../../assets/illu/X.svg";
-import { IQuote } from "../../data";
+import X from "@/assets/vector/X.svg";
+import { IQuote } from "../../data.d";
 import { VersionType } from "./Hero/Hero";
 
 interface QuoteProps extends IQuote {

@@ -1,4 +1,4 @@
-@import "../../../css/mixins.scss";
+@import "../../../styles/mixins.scss";
 
 @mixin vars() {
   --stroke-height: 32px;
@@ -59,7 +59,7 @@
     background: var(--black);
   }
   &.grid {
-    background-image: url("../../../assets/photos/Textures/GridTexture.png");
+    background-image: url("/photos/Textures/GridTexture.png");
   }
   &.fabric,
   &.fabric-hori {
@@ -71,7 +71,7 @@
       height: 100%;
       content: "";
       background-position: bottom;
-      background-image: url("../../../assets/photos/Textures/FabricTexture.png");
+      background-image: url("/photos/Textures/FabricTexture.png");
       background-repeat: repeat-x;
       aspect-ratio: 1;
       width: 100%;
@@ -93,6 +93,7 @@
       height: auto !important;
       object-fit: contain !important;
       transform: rotate(240deg);
+      inset: unset !important;
       &:nth-child(1) {
         top: var(--big-stroke-1-y);
         left: var(--big-stroke-1-x);

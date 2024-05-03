@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./DropDown.module.scss";
 import FlexDiv from "../../reuse/FlexDiv";
-import { ICta } from "../../../data";
-import { Link } from "../../reuse/Link";
+import { ICta } from "../../../data.d";
 import { Paragraph } from "../../reuse/Paragraph";
 import { useAtom } from "jotai";
-import { sidebarData } from "../Sidebar";
+import { sidebarData } from "../Sidebar/Sidebar";
+import Link from "next/link";
 
 export interface DropDownProps {
   parentPath: string;
@@ -45,6 +45,8 @@ export const DropDown: React.FC<DropDownProps> = ({
     };
   }, [isOpen, onClose]);
 
+  if (!isOpen) return null;
+
   return (
     isOpen && (
       <FlexDiv
@@ -58,7 +60,7 @@ export const DropDown: React.FC<DropDownProps> = ({
           return (
             <FlexDiv key={index} flex={{ x: "space-between" }} width100>
               <Link
-                path={`${parentPath}${cta.link!}`}
+                href={`${parentPath}${cta.link!}`}
                 onClick={() => setSidebar(false)}
               >
                 <Paragraph level="regular">{cta.text}</Paragraph>

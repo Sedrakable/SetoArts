@@ -2,10 +2,10 @@ import React, { PropsWithChildren } from "react";
 import styles from "./Block.module.scss";
 
 import FlexDiv from "../../reuse/FlexDiv";
-import { Image } from "../../reuse/Image";
+import Image from "next/image";
 import cn from "classnames";
 import { Title } from "../../reuse/Title/Title";
-const bigStroke = require("../../../assets/photos/BigStroke.png");
+import bigStroke from "../../../../public/photos/BigStroke.png";
 
 export const BlockVariants = ["grid", "dark", "fabric", "fabric-hori"] as const;
 
@@ -38,9 +38,9 @@ export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
       <Title title={title} color={variant === "dark" ? "white" : "black"} />
       {strokes && variant === "dark" && (
         <div className={styles.strokes}>
-          <Image src={bigStroke} alt="stroke" />
-          <Image src={bigStroke} alt="stroke" />
-          <Image src={bigStroke} alt="stroke" />
+          <Image src={bigStroke.src} alt="stroke" fill />
+          <Image src={bigStroke.src} alt="stroke" fill />
+          <Image src={bigStroke.src} alt="stroke" fill />
         </div>
       )}
       <FlexDiv

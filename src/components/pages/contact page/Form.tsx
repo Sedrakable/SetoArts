@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./Form.module.scss";
@@ -6,20 +7,22 @@ import { Button } from "../../reuse/Button";
 import { FancyText } from "../../reuse/FancyText";
 import FlexDiv from "../../reuse/FlexDiv";
 import { useWindowResize } from "../../../helpers/useWindowResize";
-import { IForm } from "../../../data";
-import { useAtom } from "jotai";
-import { langData } from "../../navbar/LangSwitcher/LangSwitcher";
+import { IForm } from "../../../data.d";
 import { getTranslations } from "../../../helpers/langUtils";
 import { Heading } from "../../reuse/Heading";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
 
 export const Form: React.FC<IForm> = ({ desc }) => {
   const form = useRef<HTMLFormElement>(null);
-  const { isMobileOrTablet, isLaptop } = useWindowResize();
   const [budget, setBudget] = useState<string>("");
   const [emailSent, setEmailSent] = useState<boolean>(false);
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
   const [formValid, setFormValid] = useState<boolean>(false);
+
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
+
+  const { isMobileOrTablet, isLaptop } = useWindowResize();
 
   const handleBudgetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -38,8 +41,7 @@ export const Form: React.FC<IForm> = ({ desc }) => {
     emailjs
       .sendForm("gmail", "contact-seto", form.current!, "bVxK7PZwLIutCAifw")
       .then(
-        (result) => {
-          console.log("sent");
+        () => {
           setEmailSent(true);
         },
         (error) => {

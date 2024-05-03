@@ -1,18 +1,19 @@
+"use client";
 import React, { PropsWithChildren } from "react";
 import styles from "./WorkSlider.module.scss";
 
 import { Splider, SpliderProps } from "../../containers/Splider";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { IWork, IWorkBlock, LocalPaths } from "../../../../data.d";
-import { useAtom } from "jotai";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 import { getTranslations } from "../../../../helpers/langUtils";
+import { LangType } from "@/i18n";
+import { useLocale } from "next-intl";
 
 export const WorkSlider: React.FC<PropsWithChildren<IWorkBlock>> = ({
   works,
 }) => {
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   const slides: SpliderProps[] = works!?.map(
     (work: IWork): SpliderProps => {
@@ -23,7 +24,7 @@ export const WorkSlider: React.FC<PropsWithChildren<IWorkBlock>> = ({
           desc: work.desc,
           primaryCta: {
             text: translations.buttons.view,
-            link: `/${lang}${LocalPaths.ABOUT}/${work.slug.current}`,
+            link: `/${locale}${LocalPaths.ABOUT}/${work.slug.current}`,
           },
           seconadryCta: work.primaryLink,
         },

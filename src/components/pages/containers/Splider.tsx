@@ -1,9 +1,11 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import {
   Options,
   Splide,
   SplideSlide,
   SplideTrack,
+  // @ts-ignore
 } from "@splidejs/react-splide";
 import styles from "./Splider.module.scss";
 import "@splidejs/react-splide/css/skyblue";
@@ -12,9 +14,8 @@ import { SideContainer, SideContainerProps } from "./SideContainer";
 import cn from "classnames";
 import FlexDiv from "../../reuse/FlexDiv";
 import { Icon } from "../../reuse/Icon";
-import { SanityImage } from "../../reuse/SanityImage/SanityImage";
+import { ICustomImage, SanityImage } from "../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../helpers/useWindowResize";
-import { ICustomImage } from "../../../data";
 import { shuffleArray } from "../../../helpers/functions";
 
 export interface SpliderProps {
@@ -26,7 +27,7 @@ export interface SpliderContainerProps {
   slides: SpliderProps[];
   arrows?: boolean;
   splideProgress?: number;
-  setSplideProgress?: (progress: number) => void;
+  setSplideProgress?: Function;
 }
 
 export const Splider: React.FC<SpliderContainerProps> = ({
@@ -158,11 +159,9 @@ export const Splider: React.FC<SpliderContainerProps> = ({
                   {repeatedImages.map((image, index) => {
                     return (
                       <SanityImage
-                        visible
                         key={index}
                         image={image.image}
                         alt={image.alt}
-                        res={30}
                         className={index % 2 === 1 ? styles.grayscale : ""}
                       />
                     );
@@ -173,7 +172,6 @@ export const Splider: React.FC<SpliderContainerProps> = ({
               <SanityImage
                 image={splider?.customImages[0].image}
                 alt={splider?.customImages[0].alt}
-                res={30}
               />
             ))}
           {isMobileOrTablet && text && splider?.content && (

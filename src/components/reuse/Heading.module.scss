@@ -1,4 +1,4 @@
-@import "../../css/mixins.scss";
+@import "../../styles/mixins.scss";
 
 @mixin sizing($font, $size) {
   font-size: var(--heading#{$font}-h#{$size});
@@ -47,7 +47,7 @@
 }
 
 .cursive {
-  @include fontHeaderCaveat;
+  font-family: var(--font-caveat);
 
   font-weight: 600;
   @for $i from 1 through 3 {
@@ -70,19 +70,4 @@
   100% {
     background-position: 100% 50%;
   }
-}
-
-.gradient {
-  background: var(--gold-grad);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
 }

@@ -1,8 +1,10 @@
 import * as React from "react";
 import styles from "./ImageGrid.module.scss";
 import cn from "classnames";
-import { ICustomImage } from "../../../../data";
-import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
+import {
+  ICustomImage,
+  SanityImage,
+} from "../../../reuse/SanityImage/SanityImage";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { shuffleArray } from "../../../../helpers/functions";
 

@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./PriceBlock.module.scss";
-import FlexDiv from "../../../reuse/FlexDiv";
-import { useAtom } from "jotai";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
-import { getTranslations } from "../../../../helpers/langUtils";
-import { FancyText } from "../../../reuse/FancyText";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
+import { getTranslations } from "@/helpers/langUtils";
+import FlexDiv from "@/components/reuse/FlexDiv";
+import { FancyText } from "@/components/reuse/FancyText";
 
 export const PriceBlock: React.FC<{ price: string }> = ({ price }) => {
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   return (
     <FlexDiv padding={{ vertical: [2] }} width100 className={styles.wrapper}>

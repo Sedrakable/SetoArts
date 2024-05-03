@@ -1,3 +1,4 @@
+"use client";
 import React, { FC } from "react";
 import styles from "./WorkBlock.module.scss";
 import cn from "classnames";
@@ -6,31 +7,16 @@ import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
 import { IWork, IWorkBlock, LocalPaths } from "../../../../data.d";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
-import { useAtom } from "jotai";
-import { modalData } from "../../../reuse/Modal";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 import { getTranslations } from "../../../../helpers/langUtils";
-import { useNavigate } from "react-router-dom";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
+import Link from "next/link";
 
 const Work: FC<IWork> = (props) => {
-  const [, setModalOpen] = useAtom(modalData);
-  const [lang] = useAtom(langData);
-  const navigate = useNavigate();
-
-  const handleModalOpen = () => {
-    setModalOpen({
-      handleClose: () => setModalOpen(null),
-      ...props,
-    });
-    // Update the URL programmatically when opening the modal
-    const newPath = `/${lang}${LocalPaths.ABOUT}/${props.slug.current}`;
-    navigate(newPath);
-  };
-
   return (
-    <FlexDiv width100 className={styles.container} onClick={handleModalOpen}>
+    <FlexDiv width100 className={styles.container}>
       <div className={styles.imgWrapper}>
-        <SanityImage {...props?.thumbnailImage} res={40} />
+        <SanityImage {...props?.thumbnailImage} />
       </div>
       <FlexDiv
         width100
@@ -56,8 +42,8 @@ const Work: FC<IWork> = (props) => {
 };
 
 export const WorkBlock: React.FC<IWorkBlock> = ({ works }) => {
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   return (
     <Block title={translations.blockTitles.work} variant="grid" shadow={false}>
@@ -68,8 +54,15 @@ export const WorkBlock: React.FC<IWorkBlock> = ({ works }) => {
         className={cn(styles.workBlock)}
         wrap
       >
-        {works?.map((work: IWork, key: number) => {
-          return <Work {...work} key={key} />;
+        {works?.map((work: IWork) => {
+          return (
+            <Link
+              href={`/${locale}${LocalPaths.ABOUT}/${work?.slug.current}`}
+              key={work?.slug.current}
+            >
+              <Work {...work} />
+            </Link>
+          );
         })}
       </FlexDiv>
     </Block>

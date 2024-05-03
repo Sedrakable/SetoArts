@@ -1,13 +1,14 @@
+"use client";
 import React from "react";
 import styles from "./Values.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
 import { Paragraph } from "../../../reuse/Paragraph";
-import { IValue, IValues } from "../../../../data";
-import { useAtom } from "jotai";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
+import { IValue, IValues } from "../../../../data.d";
 import { getTranslations } from "../../../../helpers/langUtils";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
 
 const Value: React.FC<IValue & { number: string }> = ({
   number,
@@ -43,8 +44,8 @@ const Value: React.FC<IValue & { number: string }> = ({
 };
 
 export const Values: React.FC<IValues> = ({ values }) => {
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   return (
     <Block title={translations.blockTitles.values} variant="dark">

@@ -1,48 +1,37 @@
-import React, { useEffect } from "react";
 import styles from "./LangSwitcher.module.scss";
-import FlexDiv from "../../reuse/FlexDiv";
-import { Paragraph } from "../../reuse/Paragraph";
-import { atom, useAtom } from "jotai";
-import { Icon } from "../../reuse/Icon";
-import { useNavigate } from "react-router-dom";
-
-export const langData = atom<LangType>("en");
-
-export const Langs = ["en", "fr"] as const;
-
-export type LangType = typeof Langs[number];
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/navigation";
+import { useTransition } from "react";
+import { useParams } from "next/navigation";
+import FlexDiv from "@/components/reuse/FlexDiv";
+import { Icon } from "@/components/reuse/Icon";
+import { Paragraph } from "@/components/reuse/Paragraph";
 
 export const LangSwitcher: React.FC<{ onClick?: Function }> = ({ onClick }) => {
-  const [lang, setLang] = useAtom(langData);
-  const navigate = useNavigate();
+  const router = useRouter();
+  const [, startTransition] = useTransition();
+  const locale = useLocale();
+  const pathname = usePathname();
+  const params = useParams();
 
   const langClick = () => {
-    const newLang: LangType = lang === "en" ? "fr" : "en";
-    const currentPath = window.location.pathname;
-    const newLangPath = currentPath.replace(/\/(en|fr)\//, `/${newLang}/`);
-    if (newLangPath !== currentPath) {
-      navigate(newLangPath);
-      setLang(newLang);
-    }
+    const newLang = locale === "en" ? "fr" : "en";
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error -- TypeScript will validate that only known `params`
+        // are used in combination with a given `pathname`. Since the two will
+        // always match for the current route, we can skip runtime checks.
+        { pathname, params },
+        { locale: newLang }
+      );
+    });
     onClick && onClick();
   };
 
-  useEffect(() => {
-    const currentPath = window.location.pathname;
-    const langFromUrl = currentPath.split("/")[1] as LangType | null;
-    if (langFromUrl && Object.values(Langs).includes(langFromUrl)) {
-      setLang(langFromUrl);
-    }
-  }, [setLang]);
-
   return (
-    <FlexDiv
-      gapArray={[2]}
-      className={styles.langWrapper}
-      onClick={() => langClick()}
-    >
+    <FlexDiv gapArray={[2]} className={styles.langWrapper} onClick={langClick}>
       <Paragraph level="big" color="yellow">
-        {lang.toUpperCase()}
+        {locale?.toUpperCase()}
       </Paragraph>
       <Icon icon="internet" size="regular" />
     </FlexDiv>

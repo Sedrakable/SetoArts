@@ -1,3 +1,4 @@
+"use client";
 import React, { CSSProperties } from "react";
 import styles from "./Paragraph.module.scss";
 import cn from "classnames";
@@ -5,6 +6,12 @@ import {
   SpacingArrayType,
   useSpacingGenerator,
 } from "../../helpers/SpacingGenerator";
+import { Anek_Gurmukhi } from "next/font/google";
+
+const anek = Anek_Gurmukhi({
+  variable: "--font-anek",
+  subsets: ["latin"],
+});
 
 export interface ParagraphProps {
   children: string | JSX.Element;
@@ -52,6 +59,7 @@ export const Paragraph: React.FC<ParagraphProps> = ({
     <p
       className={cn(
         styles.paragraph,
+        anek.variable,
         styles[level],
         {
           [styles.clickable]: clickable,

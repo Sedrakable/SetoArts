@@ -3,15 +3,15 @@ import styles from "./Icon.module.scss";
 import cn from "classnames";
 import { ColorType } from "./Heading";
 
-import { ReactComponent as Burger } from "../../assets/illu/Burger.svg";
-import { ReactComponent as Close } from "../../assets/illu/X.svg";
-import { ReactComponent as Diamond } from "../../assets/illu/Diamond.svg";
-import { ReactComponent as Arrow } from "../../assets/illu/Arrow.svg";
-import { ReactComponent as Bulb } from "../../assets/illu/Bulb.svg";
-import { ReactComponent as Layout } from "../../assets/illu/Layout.svg";
-import { ReactComponent as Palette } from "../../assets/illu/ColorPalette.svg";
-import { ReactComponent as Package } from "../../assets/illu/Package.svg";
-import { ReactComponent as Internet } from "../../assets/illu/Internet.svg";
+import Burger from "@/assets/vector/Burger.svg";
+import Close from "@/assets/vector/X.svg";
+import Diamond from "@/assets/vector/Diamond.svg";
+import Arrow from "@/assets/vector/Arrow.svg";
+import Bulb from "@/assets/vector/Bulb.svg";
+import Layout from "@/assets/vector/Layout.svg";
+import Palette from "@/assets/vector/ColorPalette.svg";
+import Package from "@/assets/vector/Package.svg";
+import Internet from "@/assets/vector/Internet.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
@@ -24,7 +24,9 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-const icons = {
+const icons: {
+  [key: string]: ReactNode | IconDefinition;
+} = {
   kickstarter: faKickstarter,
   instagram: faInstagram,
   tiktok: faTiktok,
