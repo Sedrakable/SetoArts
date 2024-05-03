@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./Heading.module.scss";
 import cn from "classnames";
@@ -5,6 +6,12 @@ import {
   SpacingArrayType,
   useSpacingGenerator,
 } from "../../helpers/SpacingGenerator";
+import { Caveat } from "next/font/google";
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+});
 
 export type ColorType = "white" | "black" | "yellow" | "grey";
 
@@ -85,6 +92,7 @@ export const Heading: React.FC<HeadingProps> = ({
           [styles.clickable]: clickable,
           [styles.seto]: font === "Seto",
           [styles.cursive]: font === "Cursive",
+          [caveat.variable]: font === "Cursive",
         },
         className
       )}

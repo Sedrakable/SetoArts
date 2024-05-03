@@ -3,8 +3,8 @@ import styles from "./Title.module.scss";
 
 import FlexDiv from "../../reuse/FlexDiv";
 import { ColorType, Heading } from "../../reuse/Heading";
-import { Image } from "../../reuse/Image";
-const stroke = require("../../../assets/photos/TitleStroke.png");
+import Image from "next/image";
+import stroke from "../../../../public/photos/TitleStroke.png";
 
 interface TitleProps {
   title: string;
@@ -26,7 +26,12 @@ export const Title: React.FC<PropsWithChildren<TitleProps>> = ({
       >
         {title}
       </Heading>
-      <Image src={stroke} alt="stroke" />
+      <Image
+        src={stroke.src}
+        width={stroke.width}
+        height={stroke.height}
+        alt="stroke"
+      />
     </FlexDiv>
   );
 };

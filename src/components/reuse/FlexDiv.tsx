@@ -1,3 +1,4 @@
+"use client";
 import React, { ElementType, HTMLAttributes, PropsWithChildren } from "react";
 import {
   useSpacingGenerator,
@@ -91,7 +92,7 @@ const FlexDiv = React.forwardRef(
     } as FlexProps;
 
     const paddingString = Object.entries(paddings)
-      ?.map(([_key, value]) => (value ? `var(--pad-${value})` : 0))
+      ?.map(([, value]) => (value ? `var(--pad-${value})` : 0))
       .join(" ");
 
     return (
@@ -118,4 +119,5 @@ const FlexDiv = React.forwardRef(
   }
 );
 
+FlexDiv.displayName = "FlexDiv";
 export default FlexDiv;

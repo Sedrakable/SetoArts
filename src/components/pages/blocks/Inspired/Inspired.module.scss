@@ -1,4 +1,4 @@
-@import "../../../../css/mixins.scss";
+@import "../../../../styles/mixins.scss";
 
 @mixin vars() {
   --stroke-width: 400px;
@@ -34,10 +34,11 @@
     img {
       position: absolute;
       filter: grayscale(100%) brightness(0%);
-      width: var(--stroke-width);
-      height: 10000px;
+      width: var(--stroke-width) !important;
+      height: 10000px !important;
       object-fit: scale-down !important;
       transform: rotate(60deg) translateX(-1%);
+      inset: unset !important;
     }
   }
 }

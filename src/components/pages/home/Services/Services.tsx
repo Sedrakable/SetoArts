@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./Services.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
@@ -8,10 +9,10 @@ import { Icon, IconType } from "../../../reuse/Icon";
 import { Tag } from "../../../reuse/Tag";
 import { Button } from "../../../reuse/Button";
 import { Splider, SpliderProps } from "../../containers/Splider";
-import { useAtom } from "jotai";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 import { ServicesGrid } from "../../blocks/ServicesGrid/ServicesGrid";
 import { getTranslations } from "../../../../helpers/langUtils";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
 
 const icons: IconType[] = ["bulb", "layout", "package", "palette"];
 
@@ -26,9 +27,9 @@ const Service: React.FC<ServiceProps> = ({
   path,
   cta2,
 }) => {
-  const [lang] = useAtom(langData);
+  const locale = useLocale() as LangType;
   const [tagIndex, setTagIndex] = React.useState(0);
-  const translations = getTranslations(lang);
+  const translations = getTranslations(locale);
   const numberOfTags = 5;
   const updateChildState = (newState: number) => {
     setTagIndex(newState);
@@ -110,7 +111,7 @@ const Service: React.FC<ServiceProps> = ({
           <Button
             variant="primary"
             fit="grow"
-            path={`/${lang}${LocalPaths.SERVICE}${path}`}
+            path={`/${locale}${LocalPaths.SERVICE}${path}`}
           >
             {translations.buttons.view}
           </Button>
@@ -118,7 +119,7 @@ const Service: React.FC<ServiceProps> = ({
             <Button
               variant="secondary"
               fit="grow"
-              path={`/${lang}${LocalPaths.CONTACT}`}
+              path={`/${locale}${LocalPaths.CONTACT}`}
             >
               {translations.buttons.contact}
             </Button>
@@ -131,8 +132,8 @@ const Service: React.FC<ServiceProps> = ({
 
 export const Services: React.FC<IServices> = ({ services }) => {
   const serviceGridServices: IService[] = [];
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   return (
     <Block title={translations.blockTitles.services} variant="grid">

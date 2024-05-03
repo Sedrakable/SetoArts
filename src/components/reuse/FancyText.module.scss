@@ -1,4 +1,4 @@
-@import "../../css/mixins.scss";
+@import "../../styles/mixins.scss";
 
 @mixin vars() {
   --heading-font-size: 42px;
@@ -21,7 +21,7 @@
 }
 
 .cursive {
-  @include fontHeaderCaveat;
+  font-family: var(--font-caveat);
 
   font-weight: 600;
   font-size: 28px;
@@ -31,6 +31,7 @@
 
 .fancyParagraph {
   @include vars;
+
   .cursive {
     font-size: var(--paragraph-font-size);
     line-height: var(--paragraph-font-size);

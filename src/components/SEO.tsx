@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Helmet } from "react-helmet-async";
 
 interface SEOProps {
   title: string;
@@ -8,9 +7,10 @@ interface SEOProps {
   imgUrl: string;
 }
 
+//FIX SEO
 export const SEO: FC<SEOProps> = ({ title, description, url, imgUrl }) => {
   return (
-    <Helmet>
+    <>
       {/* Standard metadata tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -29,6 +29,6 @@ export const SEO: FC<SEOProps> = ({ title, description, url, imgUrl }) => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imgUrl} />
       {/* End Twitter tags */}
-    </Helmet>
+    </>
   );
 };

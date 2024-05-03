@@ -1,4 +1,4 @@
-@import "../../../css/mixins.scss";
+@import "../../../styles/mixins.scss";
 
 .emailSent {
   background-color: var(--yellow);
@@ -34,40 +34,15 @@
       flex-direction: column;
     }
   }
-}
 
-input,
-textarea {
-  @include fontParagraph();
-
-  font-size: var(--paragraph-small);
-  line-height: var(--paragraph-small-line);
-  box-sizing: border-box;
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid var(--yellow);
-  padding: var(--pad-4) var(--pad-3) var(--pad-3) var(--pad-3);
-  margin: 0;
-
-  &:focus-visible {
-    outline: none;
-    border: 2px solid var(--yellow);
+  &::-webkit-resizer {
+    $size: 8px;
+    background: none;
+    width: 0;
+    height: 0;
+    border-bottom: $size solid var(--primary);
+    border-right: $size solid var(--primary);
+    border-left: $size solid transparent;
+    border-top: $size solid transparent;
   }
-}
-
-textarea {
-  min-height: var(--pad-9);
-  overflow-y: hidden;
-  resize: vertical;
-}
-
-::-webkit-resizer {
-  $size: 8px;
-  background: none;
-  width: 0;
-  height: 0;
-  border-bottom: $size solid var(--yellow);
-  border-right: $size solid var(--yellow);
-  border-left: $size solid transparent;
-  border-top: $size solid transparent;
 }

@@ -5,7 +5,7 @@ import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../../reuse/Paragraph";
 import { Button } from "../../reuse/Button";
 import FlexDiv from "../../reuse/FlexDiv";
-import { ICta } from "../../../data";
+import { ICta } from "../../../data.d";
 
 export interface SideContainerProps {
   title: string;

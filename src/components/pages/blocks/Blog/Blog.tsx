@@ -1,16 +1,15 @@
 import React from "react";
-import FlexDiv from "../../../reuse/FlexDiv";
-import { IBlog } from "../../../../data.d";
-import { useAtom } from "jotai";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
-import { getTranslations } from "../../../../helpers/langUtils";
-import { Block } from "../../containers/Block";
 import { Article } from "./Article";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
+import FlexDiv from "@/components/reuse/FlexDiv";
+import { IBlog } from "@/data.d";
+import { Block } from "../../containers/Block";
+import { getTranslations } from "@/helpers/langUtils";
 
 export const Blog: React.FC<IBlog> = ({ articles }) => {
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
-
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
   return (
     articles && (
       <Block title={translations.blockTitles.blog} variant="grid">

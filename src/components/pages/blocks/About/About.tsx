@@ -1,21 +1,22 @@
+"use client";
 import React from "react";
 import styles from "./About.module.scss";
 import { Block } from "../../containers/Block";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { FancyText } from "../../../reuse/FancyText";
-import { IAbout } from "../../../../data";
+import { IAbout } from "../../../../data.d";
 import { Paragraph } from "../../../reuse/Paragraph";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../../helpers/useWindowResize";
-import { useAtom } from "jotai";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 import { getTranslations } from "../../../../helpers/langUtils";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
 
 export const About: React.FC<IAbout> = ({ content }) => {
   const { isMobileOrTablet } = useWindowResize();
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   const { customImage, name, title1, desc1, title2, desc2 } = content || {};
 
@@ -42,7 +43,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
           </FlexDiv>
         )}
         {/* {cta && (
-          <Button variant="fancy" href={`/${lang}${LocalPaths.CONTACT}`}>
+          <Button variant="fancy" href={`/${locale}${LocalPaths.CONTACT}`}>
             {translations.buttons.workWithMe}
           </Button>
         )} */}
@@ -60,11 +61,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
         >
           {customImage && (
             <div className={styles.imgWrapper}>
-              <SanityImage
-                image={customImage?.image}
-                alt={customImage?.alt}
-                res={30}
-              />
+              <SanityImage image={customImage?.image} alt={customImage?.alt} />
             </div>
           )}
           <header className={styles.text}>

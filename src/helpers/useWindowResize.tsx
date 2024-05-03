@@ -1,4 +1,4 @@
-// useWindowResize.ts
+"use client";
 import { useEffect, useState } from "react";
 import { useWindowDimensions } from "./useWindowDimensions";
 

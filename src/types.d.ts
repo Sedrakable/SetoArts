@@ -1,3 +1,4 @@
+/* eslint-disable */
 declare module "*.jpg" {
   const value: string;
 }

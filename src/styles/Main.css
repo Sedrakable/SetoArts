@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+  background-size: cover;
+}
+
+cite {
+  font-style: normal;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+figure {
+  margin: 0;
+}
+a {
+  text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  overflow: hidden;
+}
+
+input,
+textarea {
+  @include fontParagraph();
+
+  font-size: var(--paragraph-small);
+  line-height: var(--paragraph-small-line);
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--yellow);
+  padding: var(--pad-4) var(--pad-3) var(--pad-3) var(--pad-3);
+  margin: 0;
+
+  &:focus-visible {
+    outline: none;
+    border: 2px solid var(--yellow);
+  }
+}
+
+textarea {
+  min-height: var(--pad-9);
+  overflow-y: hidden;
+  resize: vertical;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}

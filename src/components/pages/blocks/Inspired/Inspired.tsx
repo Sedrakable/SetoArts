@@ -1,18 +1,19 @@
+"use client";
 import React from "react";
 import styles from "./Inspired.module.scss";
 import { Heading } from "../../../reuse/Heading";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { LocalPaths } from "../../../../data.d";
 import { Button } from "../../../reuse/Button";
-import { Image } from "../../../reuse/Image";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
-import { useAtom } from "jotai";
 import { getTranslations } from "../../../../helpers/langUtils";
-const stroke = require("../../../../assets/photos/BigStroke.png");
+import stroke from "/public/photos/BigStroke.png";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
+import Image from "next/image";
 
 export const Inspired: React.FC = () => {
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   return (
     <FlexDiv
@@ -26,7 +27,7 @@ export const Inspired: React.FC = () => {
         flex={{ direction: "column" }}
         gapArray={[4, 5, 5, 5]}
       >
-        <Image src={stroke} alt="stroke" />
+        <Image src={stroke.src} alt="stroke" fill />
         <FlexDiv className={styles.title}>
           <Heading font="Seto" as="h1" level="1">
             {translations.blockTitles.inspired}
@@ -41,7 +42,7 @@ export const Inspired: React.FC = () => {
             ?
           </Heading>
         </FlexDiv>
-        <Button variant="fancy" path={`/${lang}${LocalPaths.CONTACT}`}>
+        <Button variant="fancy" path={`/${locale}${LocalPaths.CONTACT}`}>
           {translations.buttons.workWithMe}
         </Button>
       </FlexDiv>

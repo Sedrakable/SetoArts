@@ -1,14 +1,10 @@
-import React, {
-  PropsWithChildren,
-  ButtonHTMLAttributes,
-  FC,
-  AnchorHTMLAttributes,
-} from "react";
+"use client";
+import React, { PropsWithChildren, ButtonHTMLAttributes, FC } from "react";
 import styles from "./Button.module.scss";
 import cn from "classnames";
 import { Heading } from "./Heading";
-import { ReactComponent as ButtonStroke } from "../../assets/illu/ButtonStroke.svg";
-import { useNavigate } from "react-router-dom";
+import ButtonStroke from "@/assets/vector/ButtonStroke.svg";
+import Link, { LinkProps } from "next/link";
 
 export interface ButtonProps {
   variant: "fancy" | "primary" | "secondary";
@@ -18,26 +14,17 @@ export interface ButtonProps {
   path?: string;
   disabled?: boolean;
   className?: string;
+  target?: React.HTMLAttributeAnchorTarget;
 }
 
 export const Button: FC<PropsWithChildren<
-  ButtonProps &
-    ButtonHTMLAttributes<HTMLButtonElement> &
-    AnchorHTMLAttributes<HTMLAnchorElement>
->> = ({ children, variant, path, disabled, small, fit, ...props }) => {
-  const navigate = useNavigate();
-
+  ButtonProps & (ButtonHTMLAttributes<HTMLButtonElement> | LinkProps)
+>> = ({ children, variant, path, disabled, small, fit, target, ...props }) => {
   const onClick = () => {
-    if (path) {
-      return navigate(path);
-    }
-
     if (props?.onClick) {
       props.onClick();
     }
   };
-
-  const as = props.href ? "a" : "button";
 
   const ButtonHeading: React.FC<{ className?: string }> = ({ className }) => (
     <Heading
@@ -54,19 +41,29 @@ export const Button: FC<PropsWithChildren<
   return (
     <div className={styles.container}>
       {variant === "fancy" && <ButtonStroke className={styles.stroke} />}
-      {React.createElement(
-        as,
-        {
-          className: cn(styles.button, styles[variant], {
+      {path ? (
+        <Link
+          href={path}
+          className={cn(styles.button, styles[variant], {
             [styles.small]: small,
-          }),
-          style: { width: fit === "grow" && "100%" },
-          ...props,
-          onClick,
-          disabled,
-          "aria-label": children as string,
-        },
-        <ButtonHeading />
+          })}
+          style={{ width: fit === "grow" ? "100%" : "auto" }}
+          target={target}
+        >
+          <ButtonHeading />
+        </Link>
+      ) : (
+        <button
+          className={cn(styles.button, styles[variant], {
+            [styles.small]: small,
+          })}
+          style={{ width: fit === "grow" ? "100%" : "auto" }}
+          onClick={() => onClick()}
+          disabled={disabled}
+          aria-label={children as string}
+        >
+          <ButtonHeading />
+        </button>
       )}
       {variant === "fancy" && <ButtonHeading className={styles.hoverText} />}
     </div>

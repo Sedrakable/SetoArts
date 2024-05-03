@@ -1,4 +1,4 @@
-@import "../../css/mixins.scss";
+@import "@/styles/mixins.scss";
 
 @mixin vars() {
   --button-height-fancy: 54px;
@@ -56,6 +56,11 @@
   text-decoration: none;
   box-sizing: border-box;
 
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--grey) !important;
+  }
+
   &.secondary {
     min-height: var(--button-height);
     height: var(--button-height);
@@ -95,18 +100,6 @@
   }
 }
 
-button {
-  background: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-:disabled {
-  cursor: not-allowed;
-  background: var(--grey) !important;
-}
-
 .container {
   width: 100%;
   @media (min-width: $tablet) {
@@ -117,8 +110,8 @@ button {
 .container:has(.fancy) {
   @include vars;
 
-  -webkit-mask: url("../../assets/illu/ButtonStroke.svg");
-  mask: url("../../assets/illu/ButtonStroke.svg");
+  -webkit-mask: url("../../assets/vector/ButtonStroke.svg");
+  mask: url("../../assets/vector/ButtonStroke.svg");
   position: relative;
 
   .fancy {

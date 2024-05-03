@@ -1,4 +1,4 @@
-@import "../../css/mixins.scss";
+@import "../../styles/mixins.scss";
 
 @mixin sizing($level) {
   font-size: var(--paragraph-p#{$level});
@@ -47,7 +47,7 @@
 }
 
 .paragraph {
-  @include fontParagraph;
+  font-family: var(--font-anek);
   width: 100%;
 }
 
@@ -55,9 +55,4 @@
   &:hover {
     color: var(--yellow) !important;
   }
-}
-
-p {
-  margin: 0;
-  overflow: hidden;
 }

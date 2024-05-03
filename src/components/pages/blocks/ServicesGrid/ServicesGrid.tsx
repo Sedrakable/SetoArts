@@ -5,15 +5,15 @@ import { IService, LocalPaths } from "../../../../data.d";
 import { Paragraph } from "../../../reuse/Paragraph";
 import { Heading } from "../../../reuse/Heading";
 import { Button } from "../../../reuse/Button";
-import { useAtom } from "jotai";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
 import { getTranslations } from "../../../../helpers/langUtils";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
 
 export const ServicesGrid: React.FC<{ services: IService[] }> = ({
   services,
 }) => {
-  const [lang] = useAtom(langData);
-  const translations = getTranslations(lang);
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   const renderCheckmark = (service: any, feature: string) => {
     return service.features.features.some((f: any) => f.title === feature) ? (
@@ -104,7 +104,7 @@ export const ServicesGrid: React.FC<{ services: IService[] }> = ({
                   <Button
                     variant="secondary"
                     fit="grow"
-                    path={`/${lang}${LocalPaths.SERVICE}${service.path}`}
+                    path={`/${locale}${LocalPaths.SERVICE}${service.path}`}
                   >
                     {translations.buttons.view}
                   </Button>

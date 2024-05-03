@@ -1,4 +1,4 @@
-@import "../../../css/mixins.scss";
+@import "../../../styles/mixins.scss";
 
 @mixin vars() {
   --wrapper-padding-bottom: var(--pad-5);
@@ -94,7 +94,7 @@
 
   .content {
     @include flexColumn(stretch, stretch);
-    > img {
+    > figure {
       height: calc(100vw * var(--ratio-flip)) !important;
     }
     .imgGridWrapper {
@@ -142,7 +142,7 @@
       flex-direction: row !important;
       flex: 1;
       min-width: 100%;
-      > img {
+      > figure {
         height: 100% !important;
         flex: 1;
       }

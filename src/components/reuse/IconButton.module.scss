@@ -1,4 +1,4 @@
-@import "../../css/mixins.scss";
+@import "../../styles/mixins.scss";
 
 .button {
   svg {
@@ -27,11 +27,4 @@
       --button-hover-color: var(--black);
     }
   }
-}
-
-button {
-  background: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
 }

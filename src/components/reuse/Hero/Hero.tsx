@@ -1,17 +1,18 @@
+"use client";
 import React from "react";
 import styles from "./Hero.module.scss";
 import cn from "classnames";
 import { Paragraph } from "../Paragraph";
 import { IHero, LocalPaths } from "../../../data.d";
 import FlexDiv from "../FlexDiv";
-import { ReactComponent as Logo } from "../../../assets/illu/LogoBig.svg";
+import Logo from "@/assets/vector/LogoBig.svg";
 import { FancyText } from "../FancyText";
 import { Button } from "../Button";
 import { Quote } from "../Quote";
 import { SanityImage } from "../SanityImage/SanityImage";
 import { useWindowResize } from "../../../helpers/useWindowResize";
-import { langData } from "../../navbar/LangSwitcher/LangSwitcher";
-import { useAtom } from "jotai";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
 
 export type VersionType = 1 | 2;
 
@@ -29,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({
   version = 1,
 }) => {
   const { isMobileOrTablet } = useWindowResize();
-  const [lang] = useAtom(langData);
+  const locale = useLocale() as LangType;
   return (
     <header className={cn(styles.hero)}>
       {!isMobileOrTablet && (
@@ -56,11 +57,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
       )}
       <FlexDiv className={styles.right}>
-        <SanityImage
-          image={customImage?.image}
-          alt={customImage?.alt}
-          res={50}
-        />
+        <SanityImage image={customImage?.image} alt={customImage?.alt} />
         <FlexDiv
           className={styles.container}
           flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
@@ -88,7 +85,7 @@ export const Hero: React.FC<HeroProps> = ({
               <Button
                 variant="fancy"
                 id="primary"
-                path={`/${lang}${LocalPaths.CONTACT}`}
+                path={`/${locale}${LocalPaths.CONTACT}`}
               >
                 {ctas?.cta1.text}
               </Button>

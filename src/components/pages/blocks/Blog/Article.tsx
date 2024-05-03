@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./Article.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
@@ -6,15 +7,15 @@ import { IArticle, LocalPaths } from "../../../../data.d";
 import { Paragraph } from "../../../reuse/Paragraph";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../../helpers/useWindowResize";
-import { Link } from "../../../reuse/Link";
-import { useAtom } from "jotai";
-import { langData } from "../../../navbar/LangSwitcher/LangSwitcher";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
+import Link from "next/link";
 
 export const Article: React.FC<IArticle> = (article) => {
   const { isMobileOrTablet } = useWindowResize();
-  const [lang] = useAtom(langData);
+  const locale = useLocale() as LangType;
   return (
-    <Link path={`/${lang}${LocalPaths.BLOG}/${article.slug.current}`}>
+    <Link href={`/${locale}${LocalPaths.BLOG}/${article.path}`}>
       <FlexDiv
         flex={{
           direction: isMobileOrTablet ? "column" : "row",

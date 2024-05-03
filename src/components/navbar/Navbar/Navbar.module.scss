@@ -1,0 +1,62 @@
+@import "../../../styles/mixins.scss";
+
+@mixin vars() {
+  --logo-size: 40px;
+  --sidebar-width: 100%;
+
+  @media (min-width: $tablet) {
+    --logo-size: 48px;
+  }
+
+  @media (min-width: $laptop) {
+    --logo-size: 56px;
+  }
+
+  @media (min-width: $desktop) {
+    --logo-size: 64px;
+  }
+}
+
+.logo {
+  @include vars;
+  height: var(--logo-size);
+
+  transition: 200ms;
+  cursor: pointer;
+  svg {
+    height: 100%;
+    width: auto;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.navbarWrapper {
+  @include vars;
+  @include flex;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: var(--navbar-height);
+  z-index: 10;
+  transition: 500ms;
+  background: var(--white, #fff);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+
+  .navbar {
+    width: var(--screen-width-large);
+    position: relative;
+  }
+}
+
+.scrolled {
+  padding: 0;
+}
+
+.burger {
+  @include flex;
+
+  position: absolute;
+  left: var(--pad-3);
+}

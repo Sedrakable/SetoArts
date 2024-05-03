@@ -1,23 +1,20 @@
+"use client";
 import React from "react";
 import { Variants, motion } from "framer-motion";
 import { Backdrop } from "./Backdrop";
 import styles from "./Modal.module.scss";
-import { atom, useAtom } from "jotai";
 import { Paragraph } from "./Paragraph";
 import { IconButton } from "./IconButton";
-import { Button } from "./Button";
-import { ICta, IWork, LocalPaths } from "../../data.d";
+import { ICta, IWork } from "@/data.d";
 import FlexDiv from "./FlexDiv";
 import { Title } from "./Title/Title";
-import { langData } from "../navbar/LangSwitcher/LangSwitcher";
-import { useNavigate } from "react-router-dom";
 import { ImageGrid } from "../pages/blocks/ImageGrid/ImageGrid";
+import { usePathname, useRouter } from "next/navigation";
+import { Button } from "./Button";
 
 export interface ModalProps extends IWork {
   handleClose: () => void;
 }
-
-export const modalData = atom<ModalProps | null>(null);
 
 const dropIn: Variants = {
   hidden: {
@@ -40,8 +37,7 @@ const dropIn: Variants = {
   },
 };
 
-export const Modal: React.FC<ModalProps> = ({
-  handleClose,
+export const Modal: React.FC<IWork> = ({
   title,
   desc,
   customImages,
@@ -51,17 +47,18 @@ export const Modal: React.FC<ModalProps> = ({
   kickstarterProjectlink,
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
-  const [lang] = useAtom(langData);
-  const navigate = useNavigate();
 
-  const handleModalClose = () => {
-    handleClose();
-    const newPath = `/${lang}${LocalPaths.ABOUT}`;
-    navigate(newPath);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleClose = () => {
+    // Navigate back to the parent path
+    const parentPath = pathname!.split("/").slice(0, -1).join("/");
+    router.push(parentPath);
   };
 
   return (
-    <Backdrop onClick={() => handleModalClose()}>
+    <Backdrop onClick={() => handleClose()}>
       <motion.div
         onClick={(e) => e.stopPropagation()}
         className={styles.modal}
@@ -87,14 +84,14 @@ export const Modal: React.FC<ModalProps> = ({
             wrap
             width100
           >
-            <Button variant="primary" href={primaryLink?.link} target="_blank">
+            <Button variant="primary" path={primaryLink?.link} target="_blank">
               {primaryLink?.text}
             </Button>
             {secondaryLinks?.map((cta: ICta, key: number) => {
               return (
                 <Button
                   variant="secondary"
-                  href={cta?.link}
+                  path={cta?.link}
                   key={key}
                   target="_blank"
                 >
@@ -131,7 +128,7 @@ export const Modal: React.FC<ModalProps> = ({
           <ImageGrid customImages={customImages} version={2} />
           <FlexDiv className={styles.close} padding={{ all: [2, 3, 3, 4] }}>
             <IconButton
-              onClick={handleModalClose}
+              onClick={() => handleClose()}
               iconProps={{ icon: "close", size: "regular" }}
             />
           </FlexDiv>

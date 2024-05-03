@@ -1,22 +1,23 @@
+"use client";
 import React from "react";
 import styles from "./Footer.module.scss";
 import { Paragraph } from "../reuse/Paragraph";
 
-import { Link } from "../reuse/Link";
 import FlexDiv from "../reuse/FlexDiv";
-import { ReactComponent as LogoHori } from "../../assets/illu/LogoHorizontal.svg";
+import LogoHori from "@/assets/vector/LogoHorizontal.svg";
 import { useWindowResize } from "../../helpers/useWindowResize";
 import { IFooter, INavBar, LocalPaths } from "../../data.d";
-import { isCta } from "../navbar/Navbar";
+import { isCta } from "../navbar/Navbar/Navbar";
 import { Socials } from "./Socials";
-import { useAtom } from "jotai";
-import { langData } from "../navbar/LangSwitcher/LangSwitcher";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
+import Link from "next/link";
 
 const Line: React.FC = () => {
   return <div className={styles.line} />;
 };
 const Nav: React.FC<INavBar> = ({ links }) => {
-  const [lang] = useAtom(langData);
+  const locale = useLocale() as LangType;
 
   return (
     <FlexDiv
@@ -29,7 +30,7 @@ const Nav: React.FC<INavBar> = ({ links }) => {
       {links?.map((link, key) => {
         if (isCta(link)) {
           return (
-            <Link path={`/${lang}${link?.link}`} key={key}>
+            <Link href={`/${locale}${link?.link}`} key={key}>
               <Paragraph level="regular" weight="regular" capitalise clickable>
                 {link?.text}
               </Paragraph>
@@ -39,7 +40,7 @@ const Nav: React.FC<INavBar> = ({ links }) => {
           const subLinks = link.ctaArray?.map((link, key) => {
             return (
               <Link
-                path={`/${lang}${LocalPaths.SERVICE}${link?.link}`}
+                href={`/${locale}${LocalPaths.SERVICE}${link?.link}`}
                 key={key}
               >
                 <Paragraph
@@ -79,7 +80,7 @@ const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
 const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
   legals,
 }) => {
-  const [lang] = useAtom(langData);
+  const locale = useLocale() as LangType;
   return (
     <FlexDiv
       className={styles.legal}
@@ -89,7 +90,7 @@ const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
     >
       {legals?.map((cta, key) => {
         return (
-          <Link path={`/${lang}${cta?.path!}`} key={key}>
+          <Link href={`/${locale}${LocalPaths.LEGAL}${cta?.path!}`} key={key}>
             <Paragraph level="small" weight="weak" color="grey" clickable>
               {cta?.title}
             </Paragraph>
