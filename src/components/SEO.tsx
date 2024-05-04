@@ -7,7 +7,7 @@ interface SEOProps {
   imgUrl: string;
 }
 
-//FIX SEO
+//FIX SEO, for vercel deployment
 export const SEO: FC<SEOProps> = ({ title, description, url, imgUrl }) => {
   return (
     <>
