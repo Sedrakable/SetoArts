@@ -27,8 +27,10 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: LangType };
 }>) {
-  const navbarQuery = `*[_type == 'navbar' && lang == '${locale}'][0]`;
-  const footerQuery = `*[_type == 'footer' && lang == '${locale}'][0]{
+  const navType = "navbar";
+  const footerType = "footer";
+  const navbarQuery = `*[_type == '${navType}' && lang == '${locale}'][0]`;
+  const footerQuery = `*[_type == '${footerType}' && lang == '${locale}'][0]{
       ...,
       legals[]->{
         title,
@@ -39,8 +41,8 @@ export default async function LocaleLayout({
         links[],
       },
     }`;
-  const navbarData: INavBar = await useFetchPage(navbarQuery, "navbar");
-  const footerData: IFooter = await useFetchPage(footerQuery, "footer");
+  const navbarData: INavBar = await useFetchPage(navbarQuery, navType);
+  const footerData: IFooter = await useFetchPage(footerQuery, footerType);
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale}>

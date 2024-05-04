@@ -6,8 +6,8 @@ export const useFetchPage = async (query: string, destName: string) => {
     const data = await client.fetch(query);
     return data;
   } catch (error) {
-    const data = require(`./backups/en/backup-${destName}.json`);
+    // const data = require(`./backups/en/backup-${destName}.json`);
     console.error("Error:", error);
-    return data;
+    // return data;
   }
 };
