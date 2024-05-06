@@ -2,6 +2,12 @@ import { FancyTextProps } from "./components/reuse/FancyText";
 // @ts-ignore
 import { ICustomImage } from "./components/reuse/SanityImage/SanityImage";
 
+export interface ISeo {
+  metaTitle: string;
+  metaDesc: string;
+  metaKeywords: string[];
+}
+
 export interface ICta {
   text: string;
   link?: string;
@@ -109,7 +115,6 @@ export interface IArticle {
 }
 
 export interface IWork {
-  _id: string;
   slug: ISlug;
   thumbnailImage: ICustomImage;
   customImages: ICustomImage[];
@@ -167,7 +172,6 @@ export enum LocalPaths {
   HOME = "/home",
   ABOUT = "/about-work",
   BLOG = "/blog",
-  WORK = "/work",
   CONTACT = "/contact",
   LEGAL = "/legal",
   SERVICE = "/service",

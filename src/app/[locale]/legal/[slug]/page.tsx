@@ -16,45 +16,39 @@ export default async function LegalPage({
   const legalPageData: ILegalPage = await useFetchPage(legalQuery, slug);
   return (
     legalPageData && (
-      <>
-        {/* FIX */}
-        {/* <Helmet>
-          <meta name="robots" content="noindex, nofollow" />
-        </Helmet> */}
-        <Block title={legalPageData.title} variant="dark">
-          <FlexDiv flex={{ direction: "column", x: "flex-start" }}>
-            {legalPageData?.data?.map((block) => {
-              return (
-                <div key={block._key}>
-                  {block.children?.map((child) =>
-                    child.marks[0] === "strong" ? (
-                      <Heading
-                        font="Seto"
-                        key={child._key}
-                        as="h5"
-                        level="5"
-                        color="yellow"
-                        paddingBottomArray={[1, 2, 2, 3]}
-                      >
-                        {child.text}
-                      </Heading>
-                    ) : (
-                      <Paragraph
-                        key={child._key}
-                        level="regular"
-                        color="white"
-                        paddingBottomArray={[2, 3, 3, 4]}
-                      >
-                        {child.text}
-                      </Paragraph>
-                    )
-                  )}
-                </div>
-              );
-            })}
-          </FlexDiv>
-        </Block>
-      </>
+      <Block title={legalPageData.title} variant="dark">
+        <FlexDiv flex={{ direction: "column", x: "flex-start" }}>
+          {legalPageData?.data?.map((block) => {
+            return (
+              <div key={block._key}>
+                {block.children?.map((child) =>
+                  child.marks[0] === "strong" ? (
+                    <Heading
+                      font="Seto"
+                      key={child._key}
+                      as="h5"
+                      level="5"
+                      color="yellow"
+                      paddingBottomArray={[1, 2, 2, 3]}
+                    >
+                      {child.text}
+                    </Heading>
+                  ) : (
+                    <Paragraph
+                      key={child._key}
+                      level="regular"
+                      color="white"
+                      paddingBottomArray={[2, 3, 3, 4]}
+                    >
+                      {child.text}
+                    </Paragraph>
+                  )
+                )}
+              </div>
+            );
+          })}
+        </FlexDiv>
+      </Block>
     )
   );
 }

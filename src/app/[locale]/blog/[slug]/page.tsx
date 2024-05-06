@@ -6,8 +6,51 @@ import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Heading";
 import { Paragraph } from "@/components/reuse/Paragraph";
 import { SanityImage } from "@/components/reuse/SanityImage/SanityImage";
-import { IArticle, IBlock } from "@/data.d";
+import { IArticle, IBlock, ISeo, LocalPaths } from "@/data.d";
 import { LangType } from "@/i18n";
+import { Metadata } from "next";
+import { setMetadata } from "@/components/SEO";
+
+interface ArticlePageProps extends IArticle {
+  meta: ISeo;
+}
+const getArticlePageData = async (locale: LangType, slug: string) => {
+  const type = "articlePage";
+  const articleQuery = `*[_type == '${type}' && lang == '${locale}' && path == '${slug}'][0]{
+    ...,
+    meta,
+  }`;
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const articleData: ArticlePageProps = await useFetchPage(
+    articleQuery,
+    `${type}-${slug}`
+  );
+
+  return articleData;
+};
+
+export async function generateMetadata({
+  params: { locale, slug },
+}: {
+  params: { locale: LangType; slug: string };
+}): Promise<Metadata> {
+  const articlePageData: ArticlePageProps = await getArticlePageData(
+    locale,
+    slug
+  );
+  const { metaTitle, metaDesc, metaKeywords } = articlePageData.meta;
+  const path = `${LocalPaths.BLOG}/${slug}`;
+  const crawl = true;
+
+  return setMetadata({
+    locale,
+    metaTitle,
+    metaDesc,
+    metaKeywords,
+    path,
+    crawl,
+  });
+}
 
 const blocks = (block: IBlock) => {
   switch (block.style) {
@@ -56,63 +99,46 @@ export default async function ArticlePage({
 }: {
   params: { locale: LangType; slug: string };
 }) {
-  const articleQuery = `*[_type == 'articlePage' && lang == '${locale}' && path == '${slug}'][0]`;
-  const articleData: IArticle = await useFetchPage(articleQuery, slug);
+  const articleData: ArticlePageProps = await getArticlePageData(locale, slug);
   return (
     articleData && (
-      <>
-        {/* FIX <SEO
-          title={props.title}
-          description={props.metaDesc}
-          imgUrl="https://i.imgur.com/u9EH6vH.png"
-          url="https://www.setoxarts.com/en/blog"
-        /> */}
-        <Block title="Article" variant="grid">
-          <FlexDiv
-            flex={{
-              direction: "column",
-            }}
-            className={styles.article}
-            gapArray={[2, 2, 3, 4]}
-            padding={{ all: [2, 3, 3, 4] }}
-            as="article"
+      <Block title="Article" variant="grid">
+        <FlexDiv
+          flex={{
+            direction: "column",
+          }}
+          className={styles.article}
+          gapArray={[2, 2, 3, 4]}
+          padding={{ all: [2, 3, 3, 4] }}
+          as="article"
+        >
+          <Paragraph level="big" color="yellow" weight="regular">
+            {articleData.date}
+          </Paragraph>
+          <Heading
+            level="3"
+            as="h1"
+            font="Seto"
+            color="black"
+            paddingBottomArray={[1, 0]}
           >
-            <Paragraph level="big" color="yellow" weight="regular">
-              {articleData.date}
-            </Paragraph>
-            <Heading
-              level="3"
-              as="h1"
-              font="Seto"
-              color="black"
-              paddingBottomArray={[1, 0]}
-            >
-              {articleData.title}
-            </Heading>
+            {articleData.title}
+          </Heading>
 
-            <SanityImage {...articleData.customImage} />
+          <SanityImage {...articleData.customImage} />
 
-            <FlexDiv
-              flex={{ direction: "column", x: "flex-start" }}
-              className={styles.text}
-              height100
-              as="section"
-            >
-              {articleData.content?.map((block) => {
-                return blocks(block);
-              })}
-            </FlexDiv>
+          <FlexDiv
+            flex={{ direction: "column", x: "flex-start" }}
+            className={styles.text}
+            height100
+            as="section"
+          >
+            {articleData.content?.map((block) => {
+              return blocks(block);
+            })}
           </FlexDiv>
-        </Block>
-      </>
+        </FlexDiv>
+      </Block>
     )
   );
 }
-
-// export default async function ArticlePage({
-//   params: { locale, slug },
-// }: {
-//   params: { locale: string; slug: string };
-// }) {
-//   return <h1>{locale}</h1>;
-// }

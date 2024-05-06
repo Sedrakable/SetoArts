@@ -1,34 +1,104 @@
-import React, { FC } from "react";
+import { Metadata } from "next";
+import { LangType } from "@/i18n";
+import dynamic from "next/dynamic";
+import { ISeo } from "@/data.d";
 
-interface SEOProps {
-  title: string;
-  description: string;
-  url: string;
-  imgUrl: string;
+interface SEOProps extends ISeo {
+  locale: LangType;
+  path: string;
+  crawl?: boolean;
 }
+// Dynamic import for the BreadcrumbJsonLd component
+const DynamicBreadcrumbJsonLd = dynamic(
+  () => import("next-seo").then((mod) => mod.BreadcrumbJsonLd),
+  { ssr: false }
+);
+export const setMetadata = ({
+  locale,
+  metaTitle,
+  metaDesc,
+  metaKeywords,
+  path,
+  crawl,
+}: SEOProps): Metadata => {
+  const metadata: Metadata = {
+    title: metaTitle,
+    description: metaDesc,
+    keywords: metaKeywords,
+    authors: [
+      {
+        name: "Sedrak Nadzharyan",
+        url: "https://www.linkedin.com/in/sedrak-n/",
+      },
+    ],
+    robots: {
+      index: crawl,
+      follow: crawl,
+    },
+    openGraph: {
+      url: `https://www.setoxarts.com/${locale}${path}`,
+      type: "website",
+      title: metaTitle,
+      description: metaDesc,
+      locale: locale,
+      images: [
+        {
+          url: "https://i.imgur.com/u9EH6vH.png",
+          width: 1200,
+          height: 630,
+          alt: "Seto X Arts",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaTitle,
+      description: metaDesc,
+      site: "@SetoXArts",
+      images: [
+        {
+          url: "https://i.imgur.com/u9EH6vH.png",
+          width: 1200,
+          height: 630,
+          alt: "Seto X Arts",
+        },
+      ],
+    },
+    alternates: {
+      canonical: `https://www.setoxarts.com/${locale}${path}`,
+      languages: {
+        en: `https://www.setoxarts.com/en${path}`,
+        fr: `https://www.setoxarts.com/fr${path}`,
+      },
+    },
+  };
 
-//FIX SEO, for vercel deployment
-export const SEO: FC<SEOProps> = ({ title, description, url, imgUrl }) => {
-  return (
-    <>
-      {/* Standard metadata tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      {/* End standard metadata tags */}
-      {/* Facebook tags */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={title} />
-      <meta property="og:url" content={url} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={imgUrl} />
-      {/* End Facebook tags */}
-      {/* Twitter tags */}
-      <meta name="twitter:creator" content="Seto X Arts" />
-      <meta name="twitter:card" content="website" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={imgUrl} />
-      {/* End Twitter tags */}
-    </>
-  );
+  return metadata;
 };
+
+export const JsonLD = () => (
+  <DynamicBreadcrumbJsonLd
+    itemListElements={[
+      {
+        position: 1,
+        name: "Home",
+        item: "https://setoxarts.com",
+      },
+      {
+        position: 2,
+        name: "Branding",
+        item: "https://setoxarts.com/en/service/branding",
+      },
+      {
+        position: 3,
+        name: "Web Design",
+        item: "https://setoxarts.com/en/service/web-design",
+      },
+      {
+        position: 4,
+        name: "Contact",
+        item: "https://setoxarts.com/en/contact",
+      },
+    ]}
+  />
+);
