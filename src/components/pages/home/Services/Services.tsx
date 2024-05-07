@@ -63,7 +63,7 @@ const Service: React.FC<ServiceProps> = ({
         padding={{ horizontal: [4], vertical: [2] }}
       >
         <Icon icon={icons[number]} size="regular" />
-        <Heading font="Seto" level="5" as="h5">
+        <Heading font="Seto" level="5" as="h4">
           {title}
         </Heading>
       </FlexDiv>

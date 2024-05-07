@@ -6,7 +6,7 @@ import FlexDiv from "../../../reuse/FlexDiv";
 import { LocalPaths } from "../../../../data.d";
 import { Button } from "../../../reuse/Button";
 import { getTranslations } from "../../../../helpers/langUtils";
-import stroke from "/public/photos/BigStroke.png";
+import stroke from "/public/photos/BigStroke.webp";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import Image from "next/image";
@@ -27,9 +27,9 @@ export const Inspired: React.FC = () => {
         flex={{ direction: "column" }}
         gapArray={[4, 5, 5, 5]}
       >
-        <Image src={stroke.src} alt="stroke" fill />
+        <Image src={stroke.src} alt="stroke" width={800} height={200} />
         <FlexDiv className={styles.title}>
-          <Heading font="Seto" as="h1" level="1">
+          <Heading font="Seto" as="h2" level="2">
             {translations.blockTitles.inspired}
           </Heading>
           <Heading

@@ -1,15 +1,10 @@
-import React from "react";
-import { Inspired } from "@/components/pages/blocks/Inspired/Inspired";
-import { PriceBlock } from "@/components/pages/blocks/PriceBlock/PriceBlock";
-import { WorkSlider } from "@/components/pages/blocks/WorkSlider/WorkSlider";
-import { Hero } from "@/components/reuse/Hero/Hero";
 import { IService, IHero, IWorkBlock, ISeo, LocalPaths } from "@/data.d";
-import { Processes } from "@/components/services/Processes/Processes";
-import { Features } from "@/components/services/Features/Features";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
+import { servicePageQuery } from "@/app/api/generateSanityQueries";
+import dynamic from "next/dynamic";
 
 export interface ServicePageProps extends IService {
   meta: ISeo;
@@ -17,35 +12,66 @@ export interface ServicePageProps extends IService {
   work: IWorkBlock;
 }
 
+const Hero = dynamic(
+  () => import("@/components/reuse/Hero/Hero").then((module) => module.Hero),
+  {
+    ssr: false,
+  }
+);
+
+const Features = dynamic(
+  () =>
+    import("@/components/services/Features/Features").then(
+      (module) => module.Features
+    ),
+  {
+    ssr: false,
+  }
+);
+
+const PriceBlock = dynamic(
+  () =>
+    import("@/components/pages/blocks/PriceBlock/PriceBlock").then(
+      (module) => module.PriceBlock
+    ),
+  {
+    ssr: false,
+  }
+);
+
+const Processes = dynamic(
+  () =>
+    import("@/components/services/Processes/Processes").then(
+      (module) => module.Processes
+    ),
+  {
+    ssr: false,
+  }
+);
+
+const WorkSlider = dynamic(
+  () =>
+    import("@/components/pages/blocks/WorkSlider/WorkSlider").then(
+      (module) => module.WorkSlider
+    ),
+  {
+    ssr: false,
+  }
+);
+
+const Inspired = dynamic(
+  () =>
+    import("@/components/pages/blocks/Inspired/Inspired").then(
+      (module) => module.Inspired
+    ),
+  {
+    ssr: false,
+  }
+);
+
 const getServicePageData = async (locale: LangType, slug: string) => {
   const type = "servicePage";
-  const serviceQuery = `*[_type == '${type}' && lang == '${locale}' && path == '/${slug}'][0] {
-    meta,
-    hero{
-      ...,
-      quote->,
-    },
-    features->{
-      features[]->,
-    },
-    processes->{
-      processes[]->{
-        ...,
-        features[]->,
-      },
-    },
-    work->{
-      title,
-      works[]->{
-        slug,
-        customImages,
-        thumbnailImage,
-        title,
-        desc,
-        primaryLink,
-      }
-    },
-  }`;
+  const serviceQuery = servicePageQuery(locale, slug);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const servicePageData: ServicePageProps = await useFetchPage(
     serviceQuery,
@@ -60,13 +86,22 @@ export async function generateMetadata({
 }: {
   params: { locale: LangType; slug: string };
 }): Promise<Metadata> {
+  const path = `${LocalPaths.SERVICE}/${slug}`;
+  const crawl = true;
   const servicePageData: ServicePageProps = await getServicePageData(
     locale,
     slug
   );
+  if (!servicePageData.meta)
+    return setMetadata({
+      locale,
+      metaTitle: "temp title",
+      metaDesc: "temp desc",
+      metaKeywords: ["temp keywords"],
+      path,
+      crawl,
+    });
   const { metaTitle, metaDesc, metaKeywords } = servicePageData.meta;
-  const path = `${LocalPaths.SERVICE}/${slug}`;
-  const crawl = true;
 
   return setMetadata({
     locale,

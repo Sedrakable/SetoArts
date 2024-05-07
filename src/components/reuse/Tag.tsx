@@ -24,6 +24,7 @@ export const Tag: React.FC<PropsWithChildren<TagProps>> = ({
         level="small"
         weight="regular"
         color={chosen ? "yellow" : "grey"}
+        aria-label={children}
       >
         {children}
       </Paragraph>

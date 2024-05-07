@@ -101,10 +101,10 @@ export const Processes: React.FC<IProcesses> = ({ processes }) => {
         >
           {processes?.map((process: IProcess, key) => {
             return (
-              <>
-                {key % 2 === 1 && isMobile && svgArray[(key - 1) / 2]}
-                <Process {...process} number={key} key={process.title} />
-              </>
+              <React.Fragment key={process.title}>
+                <li>{key % 2 === 1 && isMobile && svgArray[(key - 1) / 2]}</li>
+                <Process {...process} number={key} />
+              </React.Fragment>
             );
           })}
         </FlexDiv>

@@ -1,4 +1,4 @@
-@import "../../../../styles/mixins.scss";
+@import "../../../styles/mixins.scss";
 
 @mixin vars() {
   --ratio: 4/3;
@@ -8,18 +8,14 @@
   @include vars;
 
   background-color: var(--white);
+
   background-image: url("/photos/Textures/FabricTexture.webp");
   background-repeat: repeat-x;
   background-position: bottom;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: var(--pad-1);
   figure {
-    width: 100%;
-    // padding-top: var(--img-pad-top);
+    padding-bottom: var(--pad-5);
     aspect-ratio: var(--ratio);
-    flex: 1;
-  }
-  .text {
-    flex: 1;
   }
 }

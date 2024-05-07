@@ -1,6 +1,6 @@
 import { client } from "./client";
 
-export const useFetchPage = async (query: string, destName: string) => {
+export const useFetchPage = async (query: string) => {
   try {
     // const data = null; // This is to test
     const data = await client.fetch(query);

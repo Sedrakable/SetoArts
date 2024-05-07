@@ -55,13 +55,15 @@ export const DropDown: React.FC<DropDownProps> = ({
         padding={{ vertical: [3], horizontal: [3] }}
         className={styles.dropdown}
         ref={dropdownRef}
+        as="ul"
       >
         {dropdown?.map((cta, index) => {
           return (
-            <FlexDiv key={index} flex={{ x: "space-between" }} width100>
+            <FlexDiv key={index} flex={{ x: "space-between" }} width100 as="li">
               <Link
                 href={`${parentPath}${cta.link!}`}
                 onClick={() => setSidebar(false)}
+                aria-label={cta.text}
               >
                 <Paragraph level="regular">{cta.text}</Paragraph>
               </Link>

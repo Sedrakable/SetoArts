@@ -3,7 +3,7 @@
 .app {
   @include flexColumn(flex-start, flex-start);
 
-  min-height: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
   position: relative;
   background-color: var(--black);
@@ -12,6 +12,7 @@
 
     background-color: var(--black);
     padding-top: var(--navbar-height);
+    min-height: 100vh;
     width: 100%;
     flex: 1;
   }

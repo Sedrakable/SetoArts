@@ -4,7 +4,7 @@ import styles from "./Title.module.scss";
 import FlexDiv from "../../reuse/FlexDiv";
 import { ColorType, Heading } from "../../reuse/Heading";
 import Image from "next/image";
-import stroke from "../../../../public/photos/TitleStroke.png";
+import stroke from "../../../../public/photos/TitleStroke.webp";
 
 interface TitleProps {
   title: string;

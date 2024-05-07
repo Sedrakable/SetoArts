@@ -52,6 +52,10 @@
   position: relative;
   overflow: hidden;
   flex: 1;
+  &.hero {
+    min-height: 100vh;
+    max-height: var(--max-height) !important;
+  }
   &.light {
     box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15) inset;
   }
@@ -59,7 +63,7 @@
     background: var(--black);
   }
   &.grid {
-    background-image: url("/photos/Textures/GridTexture.png");
+    background-image: url("/photos/Textures/GridTexture.webp");
   }
   &.fabric,
   &.fabric-hori {
@@ -71,7 +75,7 @@
       height: 100%;
       content: "";
       background-position: bottom;
-      background-image: url("/photos/Textures/FabricTexture.png");
+      background-image: url("/photos/Textures/FabricTexture.webp");
       background-repeat: repeat-x;
       aspect-ratio: 1;
       width: 100%;
@@ -85,7 +89,7 @@
   }
   .strokes {
     @include absoluteFill;
-
+    // position: absolute;
     img {
       position: absolute;
 
@@ -95,17 +99,17 @@
       transform: rotate(240deg);
       inset: unset !important;
       &:nth-child(1) {
-        top: var(--big-stroke-1-y);
-        left: var(--big-stroke-1-x);
+        top: var(--big-stroke-1-y) !important;
+        left: var(--big-stroke-1-x) !important;
       }
       &:nth-child(2) {
-        top: var(--big-stroke-2-y);
-        right: var(--big-stroke-2-x);
+        top: var(--big-stroke-2-y) !important;
+        right: var(--big-stroke-2-x) !important;
       }
       &:nth-child(3) {
-        bottom: var(--big-stroke-3-y);
-        right: var(--big-stroke-3-x);
-        transform: rotate(60deg);
+        bottom: var(--big-stroke-3-y) !important;
+        right: var(--big-stroke-3-x) !important;
+        transform: rotate(60deg) !important;
       }
     }
   }

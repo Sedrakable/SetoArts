@@ -74,14 +74,14 @@ const TabButton: FC<TabButtonProps> = ({
   };
 
   return (
-    <li
+    <div
       onClick={() => onTabClick()}
       className={cn(styles.tabButton, className)}
     >
       {dropdown ? (
         <TabContent />
       ) : (
-        <Link href={path}>
+        <Link href={path} aria-label={path}>
           <TabContent />
         </Link>
       )}
@@ -94,7 +94,7 @@ const TabButton: FC<TabButtonProps> = ({
           onClose={() => setDropDownOpen(false)}
         />
       )}
-    </li>
+    </div>
   );
 };
 

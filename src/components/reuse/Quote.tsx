@@ -27,7 +27,7 @@ export const Quote: React.FC<QuoteProps> = ({
         height100
         padding={{ right: [4, 6, 6, 7] }}
       >
-        <Heading font="Seto" as="h3" level="3">
+        <Heading font="Seto" as="h2" level="3">
           {leftText}
         </Heading>
         <X className={styles.x} />
@@ -39,7 +39,7 @@ export const Quote: React.FC<QuoteProps> = ({
         height100
         padding={{ left: [4, 5, 5, 6], right: [1, 8] }}
       >
-        <Heading font="Cursive" as="h3" level="3" color="yellow">
+        <Heading font="Cursive" as="h2" level="3" color="yellow">
           {rightText}
         </Heading>
       </FlexDiv>

@@ -1,14 +1,12 @@
 import { getAllWorkImages } from "@/helpers/functions";
-import { About } from "@/components/pages/blocks/About/About";
-import { ImageGrid } from "@/components/pages/blocks/ImageGrid/ImageGrid";
-import { Inspired } from "@/components/pages/blocks/Inspired/Inspired";
-import { WorkBlock } from "@/components/pages/blocks/WorkBlock/WorkBlock";
-import { Values } from "@/components/pages/home/Values/Values";
+
 import { IAbout, IValues, IWorkBlock, IWork, ISeo, LocalPaths } from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
+import { aboutPageQuery } from "@/app/api/generateSanityQueries";
+import dynamic from "next/dynamic";
 
 export interface AboutPageProps {
   meta: ISeo;
@@ -17,16 +15,57 @@ export interface AboutPageProps {
   work: IWorkBlock;
 }
 
+const ImageGrid = dynamic(
+  () =>
+    import("@/components/pages/blocks/ImageGrid/ImageGrid").then(
+      (module) => module.ImageGrid
+    ),
+  {
+    ssr: false,
+  }
+);
+const WorkBlock = dynamic(
+  () =>
+    import("@/components/pages/blocks/WorkBlock/WorkBlock").then(
+      (module) => module.WorkBlock
+    ),
+  {
+    ssr: false,
+  }
+);
+
+const About = dynamic(
+  () =>
+    import("@/components/pages/blocks/About/About").then(
+      (module) => module.About
+    ),
+  {
+    ssr: false,
+  }
+);
+
+const Values = dynamic(
+  () =>
+    import("@/components/pages/home/Values/Values").then(
+      (module) => module.Values
+    ),
+  {
+    ssr: false,
+  }
+);
+const Inspired = dynamic(
+  () =>
+    import("@/components/pages/blocks/Inspired/Inspired").then(
+      (module) => module.Inspired
+    ),
+  {
+    ssr: false,
+  }
+);
+
 const getAboutPageData = async (locale: LangType) => {
   const type = "aboutPage";
-  const aboutQuery = `*[_type == '${type}' && lang == '${locale}'][0] {
-    meta,
-    about->,
-    values->,
-    work->{
-      works[]->,
-    },
-  }`;
+  const aboutQuery = aboutPageQuery(locale);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const aboutPageData: AboutPageProps = await useFetchPage(aboutQuery, type);
   return aboutPageData;

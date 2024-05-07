@@ -130,6 +130,7 @@ export const Modal: React.FC<IWork> = ({
             <IconButton
               onClick={() => handleClose()}
               iconProps={{ icon: "close", size: "regular" }}
+              aria-label="open modal"
             />
           </FlexDiv>
         </FlexDiv>

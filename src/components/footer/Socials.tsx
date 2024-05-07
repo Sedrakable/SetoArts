@@ -25,6 +25,7 @@ export const Socials: React.FC<ISocials> = ({ title, links }) => {
                   size: "regular",
                 }}
                 target="_blank"
+                aria-label={link.text}
               />
             )
           );

@@ -1,10 +1,3 @@
-import { About } from "@/components/pages/blocks/About/About";
-import { Inspired } from "@/components/pages/blocks/Inspired/Inspired";
-import { Reviews } from "@/components/pages/blocks/Reviews/Reviews";
-import { WorkSlider } from "@/components/pages/blocks/WorkSlider/WorkSlider";
-import { Services } from "@/components/pages/home/Services/Services";
-import { Values } from "@/components/pages/home/Values/Values";
-import { Hero } from "@/components/reuse/Hero/Hero";
 import {
   IHero,
   IServices,
@@ -18,6 +11,60 @@ import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
+import dynamic from "next/dynamic";
+import { homePageQuery } from "@/app/api/generateSanityQueries";
+
+const Hero = dynamic(
+  () => import("@/components/reuse/Hero/Hero").then((module) => module.Hero),
+  {
+    ssr: false,
+  }
+);
+const WorkSlider = dynamic(
+  () =>
+    import("@/components/pages/blocks/WorkSlider/WorkSlider").then(
+      (module) => module.WorkSlider
+    ),
+  {
+    ssr: false,
+  }
+);
+const Services = dynamic(
+  () =>
+    import("@/components/pages/home/Services/Services").then(
+      (module) => module.Services
+    ),
+  {
+    ssr: false,
+  }
+);
+const Values = dynamic(
+  () =>
+    import("@/components/pages/home/Values/Values").then(
+      (module) => module.Values
+    ),
+  {
+    ssr: false,
+  }
+);
+const Inspired = dynamic(
+  () =>
+    import("@/components/pages/blocks/Inspired/Inspired").then(
+      (module) => module.Inspired
+    ),
+  {
+    ssr: false,
+  }
+);
+const About = dynamic(
+  () =>
+    import("@/components/pages/blocks/About/About").then(
+      (module) => module.About
+    ),
+  {
+    ssr: false,
+  }
+);
 
 export interface HomePageProps {
   meta: ISeo;
@@ -30,39 +77,7 @@ export interface HomePageProps {
 
 export const getHomePageData = async (locale: LangType) => {
   const type = "homePage";
-  const homeQuery = `*[_type == '${type}' && lang == '${locale}'][0] {
-    meta,
-    hero{
-      ...,
-      quote->,
-    },
-    services-> {
-      services[]->{
-        path,
-        title,
-        features->{
-          features[]->{
-            title,
-            customImage,
-          }
-        },
-        processes,
-        price
-      },
-    },
-    values->,
-    about->,
-    work->{
-      works[]->{
-        slug,
-        thumbnailImage,
-        customImages,
-        title,
-        desc,
-        primaryLink,
-      },
-    },
-  }`;
+  const homeQuery = homePageQuery(locale);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const homePageData: HomePageProps = await useFetchPage(homeQuery, type);
   return homePageData;
@@ -95,16 +110,13 @@ export default async function HomePage({
 }) {
   const homePageData = await getHomePageData(locale);
   return (
-    homePageData && (
-      <>
-        <Hero {...homePageData?.hero} />
-        <WorkSlider {...homePageData?.work} />
-        <Services {...homePageData.services} />
-        <Values {...homePageData.values} />
-        <About content={{ ...homePageData?.about?.content, cta: true }} />
-        <Reviews />
-        <Inspired />
-      </>
-    )
+    <>
+      <Hero {...homePageData?.hero} />
+      <WorkSlider {...homePageData?.work} />
+      <Services {...homePageData.services} />
+      <Values {...homePageData.values} />
+      <About content={{ ...homePageData?.about?.content, cta: true }} />
+      <Inspired />
+    </>
   );
 }

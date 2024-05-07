@@ -65,22 +65,26 @@
   --navbar-height: 64px;
   --screen-width-large: calc(100vw - var(--pad-6));
   --screen-width-small: calc(100vw - var(--pad-6));
+  --max-height: 1600px;
 
   @media (min-width: $tablet) {
     --navbar-height: 80px;
     --screen-width-small: calc(100vw - var(--pad-9));
     --screen-width-large: calc(100vw - var(--pad-7));
+    --max-height: 1600px;
   }
 
   @media (min-width: $laptop) {
     --screen-width-small: calc(100vw - (var(--pad-10) * 2));
     --screen-width-large: calc(100vw - var(--pad-10));
+    --max-height: 1920px;
   }
 
   @media (min-width: $desktop) {
     --navbar-height: 96px;
     --screen-width-small: calc(var(--desktop) - (var(--pad-9) * 2));
     --screen-width-large: calc(var(--desktop) - var(--pad-6));
+    --max-height: 2160px !important;
   }
 }
 

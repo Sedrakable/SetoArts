@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/en/legal/"],
     },
-    sitemap: "https://setoxarts.com/sitemap.xml",
+    sitemap: `${process.env.BASE_NAME}/sitemap.xml`,
   };
 }

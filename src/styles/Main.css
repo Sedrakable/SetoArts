@@ -9,6 +9,14 @@ cite {
   font-style: normal;
 }
 
+q:after {
+  content: " ";
+}
+
+q:before {
+  content: " ";
+}
+
 ul {
   list-style-type: none;
   margin: 0;

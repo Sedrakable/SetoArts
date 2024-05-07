@@ -57,7 +57,14 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
       )}
       <FlexDiv className={styles.right}>
-        <SanityImage image={customImage?.image} alt={customImage?.alt} />
+        <SanityImage
+          image={customImage?.image}
+          alt={customImage?.alt}
+          loading="eager"
+          fetchPriority="high"
+          rel="preload"
+          sizes="(max-width: 1200px) 100vw, 60vw"
+        />
         <FlexDiv
           className={styles.container}
           flex={{ direction: "column", x: "flex-start", y: "flex-start" }}

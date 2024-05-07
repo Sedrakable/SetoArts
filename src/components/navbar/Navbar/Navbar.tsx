@@ -12,10 +12,18 @@ import { ICta, INavBar, INavLink, LocalPaths } from "../../../data.d";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 import { useAtom } from "jotai";
 import { getTranslations } from "../../../helpers/langUtils";
-import { Sidebar, sidebarData } from "../Sidebar/Sidebar";
+import { sidebarData } from "../Sidebar/Sidebar";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
+import dynamic from "next/dynamic";
+
+const Sidebar = dynamic(
+  () => import("../Sidebar/Sidebar").then((module) => module.Sidebar),
+  {
+    ssr: false,
+  }
+);
 
 export const isCta = (link: INavLink | ICta): link is ICta => {
   return (link as ICta).link !== undefined;
@@ -63,28 +71,30 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
                 {links?.map((link: INavLink | ICta, key) => {
                   if (key === links.length - 1 && isCta(link)) {
                     return (
-                      <Button
-                        variant="fancy"
-                        small={isMobile}
-                        path={`/${locale}${LocalPaths.CONTACT}`}
-                        key={key}
-                      >
-                        {link.text}
-                      </Button>
+                      <li key={key}>
+                        <Button
+                          variant="fancy"
+                          small={isMobile}
+                          path={`/${locale}${LocalPaths.CONTACT}`}
+                        >
+                          {link.text}
+                        </Button>
+                      </li>
                     );
                   }
                   return (
                     !isMobileOrTablet &&
                     (isCta(link) ? (
-                      <TabButton
-                        key={key}
-                        className={styles.tab}
-                        path={`/${locale}${link.link!}`}
-                      >
-                        {link.text}
-                      </TabButton>
+                      <li key={key}>
+                        <TabButton
+                          className={styles.tab}
+                          path={`/${locale}${link.link!}`}
+                        >
+                          {link.text}
+                        </TabButton>
+                      </li>
                     ) : (
-                      dropDown(link, locale, key)
+                      <li key={key}>{dropDown(link, locale, key)}</li>
                     ))
                   );
                 })}
@@ -96,6 +106,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
                 onClick={() => setSidebar(true)}
                 iconProps={{ icon: "burger", size: "regular" }}
                 background="white"
+                aria-label="burger menu"
               />
             )}
           </FlexDiv>

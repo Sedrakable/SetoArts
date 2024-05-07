@@ -12,12 +12,18 @@ import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import Link from "next/link";
 
-const Work: FC<IWork> = (props) => {
+const Work: FC<IWork> = (work) => {
+  const locale = useLocale() as LangType;
+
   return (
-    <FlexDiv width100 className={styles.container}>
-      <div className={styles.imgWrapper}>
-        <SanityImage {...props?.thumbnailImage} />
-      </div>
+    <Link
+      href={`/${locale}${LocalPaths.ABOUT}/${work?.slug.current}`}
+      key={work?.slug.current}
+      className={styles.container}
+      aria-label={work.title}
+    >
+      <SanityImage {...work?.thumbnailImage} />
+
       <FlexDiv
         width100
         height100
@@ -34,10 +40,10 @@ const Work: FC<IWork> = (props) => {
           textAlign="center"
           className={styles.title}
         >
-          {props.title}
+          {work.title}
         </Heading>
       </FlexDiv>
-    </FlexDiv>
+    </Link>
   );
 };
 
@@ -55,14 +61,7 @@ export const WorkBlock: React.FC<IWorkBlock> = ({ works }) => {
         wrap
       >
         {works?.map((work: IWork) => {
-          return (
-            <Link
-              href={`/${locale}${LocalPaths.ABOUT}/${work?.slug.current}`}
-              key={work?.slug.current}
-            >
-              <Work {...work} />
-            </Link>
-          );
+          return <Work {...work} key={work.slug.current} />;
         })}
       </FlexDiv>
     </Block>

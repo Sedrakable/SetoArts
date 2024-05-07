@@ -30,7 +30,7 @@ export const Button: FC<PropsWithChildren<
     <Heading
       font="Seto"
       level={small ? "5" : "5"}
-      as="h5"
+      as="span"
       color={variant === "secondary" ? "yellow" : "white"}
       className={className}
     >
@@ -49,6 +49,7 @@ export const Button: FC<PropsWithChildren<
           })}
           style={{ width: fit === "grow" ? "100%" : "auto" }}
           target={target}
+          aria-label={children as string}
         >
           <ButtonHeading />
         </Link>

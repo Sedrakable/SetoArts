@@ -51,7 +51,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
     );
   };
   return (
-    <Block title={translations.blockTitles.aboutMe} variant="fabric">
+    <Block title={translations.blockTitles.aboutMe} variant="fabric" hero>
       <FlexDiv width100 flex={{ direction: "column" }} gapArray={[2, 3, 3, 4]}>
         <FlexDiv
           width100
@@ -61,7 +61,21 @@ export const About: React.FC<IAbout> = ({ content }) => {
         >
           {customImage && (
             <div className={styles.imgWrapper}>
-              <SanityImage image={customImage?.image} alt={customImage?.alt} />
+              {desc2 ? (
+                <SanityImage
+                  image={customImage?.image}
+                  alt={customImage?.alt}
+                  loading="eager"
+                  fetchPriority="high"
+                  rel="preload"
+                  sizes="(max-width: 640px) 60vw, (max-width: 1200px) 30vw, (max-width: 1680px) 20vw, 20vw"
+                />
+              ) : (
+                <SanityImage
+                  image={customImage?.image}
+                  alt={customImage?.alt}
+                />
+              )}
             </div>
           )}
           <header className={styles.text}>

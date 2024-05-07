@@ -30,19 +30,8 @@ const Nav: React.FC<INavBar> = ({ links }) => {
       {links?.map((link, key) => {
         if (isCta(link)) {
           return (
-            <Link href={`/${locale}${link?.link}`} key={key}>
-              <Paragraph level="regular" weight="regular" capitalise clickable>
-                {link?.text}
-              </Paragraph>
-            </Link>
-          );
-        } else {
-          const subLinks = link.ctaArray?.map((link, key) => {
-            return (
-              <Link
-                href={`/${locale}${LocalPaths.SERVICE}${link?.link}`}
-                key={key}
-              >
+            <li key={key}>
+              <Link href={`/${locale}${link?.link}`} aria-label={link?.text}>
                 <Paragraph
                   level="regular"
                   weight="regular"
@@ -52,6 +41,26 @@ const Nav: React.FC<INavBar> = ({ links }) => {
                   {link?.text}
                 </Paragraph>
               </Link>
+            </li>
+          );
+        } else {
+          const subLinks = link.ctaArray?.map((link, key) => {
+            return (
+              <li key={key}>
+                <Link
+                  href={`/${locale}${LocalPaths.SERVICE}${link?.link}`}
+                  aria-label={link?.link}
+                >
+                  <Paragraph
+                    level="regular"
+                    weight="regular"
+                    capitalise
+                    clickable
+                  >
+                    {link?.text}
+                  </Paragraph>
+                </Link>
+              </li>
             );
           });
           return subLinks;
@@ -90,7 +99,11 @@ const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
     >
       {legals?.map((cta, key) => {
         return (
-          <Link href={`/${locale}${LocalPaths.LEGAL}${cta?.path!}`} key={key}>
+          <Link
+            href={`/${locale}${LocalPaths.LEGAL}${cta?.path!}`}
+            key={key}
+            aria-label={cta?.title}
+          >
             <Paragraph level="small" weight="weak" color="grey" clickable>
               {cta?.title}
             </Paragraph>

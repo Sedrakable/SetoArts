@@ -35,7 +35,7 @@ export const SideContainer: React.FC<SideContainerProps> = ({
           gapArray={[2, 3]}
           as="header"
         >
-          <Heading font="Cursive" as="h4" level="4" color="yellow">
+          <Heading font="Cursive" as="h3" level="4" color="yellow">
             {title}
           </Heading>
 

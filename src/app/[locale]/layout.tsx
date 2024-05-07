@@ -2,19 +2,33 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import styles from "./layout.module.scss";
-import { Navbar } from "@/components/navbar/Navbar/Navbar";
 import "@/styles/Main.css";
 import "@/styles/ScrollBar.scss";
 import "@/styles/index.scss";
 import { NextIntlClientProvider } from "next-intl";
-import { Footer } from "@/components/footer/Footer";
 import { IFooter, INavBar, LocalPaths } from "@/data.d";
 import { useFetchPage } from "../api/useFetchPage";
 import { LangType } from "@/i18n";
 import { getHomePageData } from "./home/page";
 import { setMetadata } from "@/components/SEO";
+import dynamic from "next/dynamic";
+import { navbarPageQuery, footerPageQuery } from "../api/generateSanityQueries";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const Footer = dynamic(
+  () => import("@/components/footer/Footer").then((module) => module.Footer),
+  {
+    ssr: false,
+  }
+);
+const Navbar = dynamic(
+  () =>
+    import("@/components/navbar/Navbar/Navbar").then((module) => module.Navbar),
+  {
+    ssr: false,
+  }
+);
 
 export async function generateMetadata({
   params: { locale },
@@ -45,18 +59,8 @@ export default async function LocaleLayout({
 }>) {
   const navType = "navbar";
   const footerType = "footer";
-  const navbarQuery = `*[_type == '${navType}' && lang == '${locale}'][0]`;
-  const footerQuery = `*[_type == '${footerType}' && lang == '${locale}'][0]{
-      ...,
-      legals[]->{
-        title,
-        path,
-      },
-      socials->{
-        ...,
-        links[],
-      },
-    }`;
+  const navbarQuery = navbarPageQuery(locale);
+  const footerQuery = footerPageQuery(locale);
   const navbarData: INavBar = await useFetchPage(navbarQuery, navType);
   const footerData: IFooter = await useFetchPage(footerQuery, footerType);
   return (

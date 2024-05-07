@@ -1,11 +1,20 @@
+import { blogPageQuery } from "@/app/api/generateSanityQueries";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { setMetadata } from "@/components/SEO";
-import { Blog } from "@/components/pages/blocks/Blog/Blog";
+
 import { IBlog, ISeo, LocalPaths } from "@/data.d";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import React from "react";
 
+const Blog = dynamic(
+  () =>
+    import("@/components/pages/blocks/Blog/Blog").then((module) => module.Blog),
+  {
+    ssr: false,
+  }
+);
 export interface BlogPageProps {
   meta: ISeo;
   blog: IBlog;
@@ -13,18 +22,7 @@ export interface BlogPageProps {
 
 const getBlogPageData = async (locale: LangType) => {
   const type = "blogPage";
-  const blogQuery = `*[_type == '${type}' && lang == '${locale}'][0]{
-    meta,
-    blog ->{
-      articles[]->{
-        path,
-        title,
-        desc,
-        date,
-        customImage
-      }
-    }
-}`;
+  const blogQuery = blogPageQuery(locale);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const blogPageData: BlogPageProps = await useFetchPage(blogQuery, type);
   return blogPageData;

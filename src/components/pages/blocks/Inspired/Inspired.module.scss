@@ -1,7 +1,7 @@
 @import "../../../../styles/mixins.scss";
 
 @mixin vars() {
-  --stroke-width: 400px;
+  --stroke-width: 300px;
   --border-width: 4px;
   @media (min-width: $tablet) {
   }
@@ -37,7 +37,7 @@
       width: var(--stroke-width) !important;
       height: 10000px !important;
       object-fit: scale-down !important;
-      transform: rotate(60deg) translateX(-1%);
+      transform: rotate(60deg) translateX(-1%) !important;
       inset: unset !important;
     }
   }

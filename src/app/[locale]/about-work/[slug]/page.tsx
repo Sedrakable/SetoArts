@@ -1,20 +1,25 @@
+import { workPageQuery } from "@/app/api/generateSanityQueries";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { setMetadata } from "@/components/SEO";
-import { Modal } from "@/components/reuse/Modal";
 import { ISeo, IWork, LocalPaths } from "@/data.d";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 export interface WorkProps extends IWork {
   meta: ISeo;
 }
 
+const Modal = dynamic(
+  () => import("@/components/reuse/Modal").then((module) => module.Modal),
+  {
+    ssr: false,
+  }
+);
+
 const getWorkPageData = async (slug: string) => {
   const type = "work";
-  const workQuery = `*[_type == '${type}' && slug.current == '${slug}'][0]{
-    ...,
-    meta,
-  }`;
+  const workQuery = workPageQuery(slug);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const workData: WorkProps = await useFetchPage(workQuery, `${type}-${slug}`);
 
@@ -47,5 +52,5 @@ export default async function WorkModal({
 }) {
   const workPageData: WorkProps = await getWorkPageData(slug);
 
-  return <Modal {...workPageData} />;
+  return workPageData && <Modal {...workPageData} />;
 }

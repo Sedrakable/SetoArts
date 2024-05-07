@@ -1,20 +1,20 @@
 @import "../../../../styles/mixins.scss";
 
 @mixin vars() {
-  --image-width: 100%;
+  --image-width: 200px;
   --img-pad-top: 0;
   @media (min-width: $tablet) {
-    --image-width: 240px;
+    --image-width: 400px;
     --img-pad-top: 10px;
   }
 
   @media (min-width: $laptop) {
-    --image-width: 240px;
+    --image-width: 300px;
     --img-pad-top: 12px;
   }
 
   @media (min-width: $desktop) {
-    --image-width: 300px;
+    --image-width: 400px;
     --img-pad-top: 10px;
   }
 }
@@ -30,6 +30,11 @@
     height: 100%;
     // padding-top: var(--img-pad-top);
     grid-column: 1;
+    width: 100%;
+    min-height: var(--image-width);
+    figure {
+      aspect-ratio: 1;
+    }
   }
   .text {
     grid-column: 2 /4;

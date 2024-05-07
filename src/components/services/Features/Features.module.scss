@@ -2,7 +2,7 @@
 
 @mixin vars() {
   --ratio: 16/9;
-  --columns: 2;
+  --columns: 1;
   @media (min-width: $tablet) {
     --ratio: 4/3;
     --columns: 2;
@@ -35,7 +35,7 @@
     }
     .content {
       background: var(--white);
-      background-image: url("/photos/Textures/FabricTexture.png");
+      background-image: url("/photos/Textures/FabricTexture.webp");
 
       flex: 1;
       p {

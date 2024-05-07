@@ -1,7 +1,5 @@
 import createNextIntlPlugin from "next-intl/plugin";
-
 const withNextIntl = createNextIntlPlugin();
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack(config) {
@@ -25,9 +23,20 @@ const nextConfig = {
   },
   images: {
     domains: ["cdn.sanity.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
     deviceSizes: [640, 1200, 1680],
   },
+  // images: {
+  //   
+  //   
+  // },
   // output: "export",  // <=== enables static exports
   // distDir: "dist",  // <=== change the build directory
 };
+// export default withNextIntl(nextConfig);
 export default withNextIntl(nextConfig);

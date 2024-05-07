@@ -57,9 +57,10 @@ export const Sidebar: React.FC<{
         <IconButton
           onClick={() => setSidebar(false)}
           iconProps={{ icon: "close", size: "regular" }}
+          aria-label="close sidebar"
         />
       </FlexDiv>
-
+      <div className={styles.overlay} onClick={() => setSidebar(false)} />
       <FlexDiv
         className={styles.tabs}
         flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
@@ -86,7 +87,7 @@ export const Sidebar: React.FC<{
           return null;
         })}
         {langSwitcherWrapper}
-        <div className={styles.overlay} onClick={() => setSidebar(false)} />
+
         {tabWrapper(
           <Button variant="fancy" path={`/${locale}${LocalPaths.CONTACT}`}>
             {translations.buttons.workWithMe}

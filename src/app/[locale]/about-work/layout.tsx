@@ -1,6 +1,10 @@
 import { LangType } from "@/i18n";
+import dynamic from "next/dynamic";
 import AboutPage from "./page";
-import FlexDiv from "@/components/reuse/FlexDiv";
+
+const FlexDiv = dynamic(() => import("@/components/reuse/FlexDiv"), {
+  ssr: false,
+});
 
 export default function AboutWorkLayout({
   children,
@@ -10,7 +14,7 @@ export default function AboutWorkLayout({
   locale: LangType;
 }) {
   return (
-    <FlexDiv flex={{ direction: "column" }} width100>
+    <FlexDiv flex={{ direction: "column" }} width100 height100>
       <AboutPage params={{ locale }} />
       {children}
     </FlexDiv>

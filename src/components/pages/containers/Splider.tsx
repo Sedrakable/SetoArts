@@ -147,6 +147,8 @@ export const Splider: React.FC<SpliderContainerProps> = ({
         <SplideSlide
           key={key}
           className={cn({ [styles.content]: splider?.content })}
+          role={undefined}
+          aria-label="slide"
         >
           {!isMobileOrTablet && text && splider?.content && (
             <SideContainer {...splider.content} />

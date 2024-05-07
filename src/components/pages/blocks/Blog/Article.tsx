@@ -15,7 +15,10 @@ export const Article: React.FC<IArticle> = (article) => {
   const { isMobileOrTablet } = useWindowResize();
   const locale = useLocale() as LangType;
   return (
-    <Link href={`/${locale}${LocalPaths.BLOG}/${article.path}`}>
+    <Link
+      href={`/${locale}${LocalPaths.BLOG}/${article.path}`}
+      aria-label={article.path}
+    >
       <FlexDiv
         flex={{
           direction: isMobileOrTablet ? "column" : "row",
@@ -26,9 +29,8 @@ export const Article: React.FC<IArticle> = (article) => {
         padding={{ all: [2, 3, 3, 4] }}
         as="article"
       >
-        <div className={styles.imgWrapper}>
-          <SanityImage {...article.customImage} />
-        </div>
+        <SanityImage {...article.customImage} />
+
         <FlexDiv
           flex={{ direction: "column" }}
           className={styles.text}

@@ -1,5 +1,15 @@
 @import "../../../styles/mixins.scss";
 
+.overlay {
+  position: absolute;
+  content: "";
+  width: 100%;
+
+  background-color: var(--black);
+  opacity: 0.95;
+  height: 100vh;
+  z-index: -1;
+}
 .sidebar {
   @include flexColumn(flex-start, flex-start);
 
@@ -45,17 +55,6 @@
       &:nth-last-child(2) {
         border-bottom-color: var(--white);
       }
-    }
-
-    .overlay {
-      position: absolute;
-      content: "";
-      width: 100%;
-
-      background-color: var(--black);
-      opacity: 0.95;
-      height: 100vh;
-      z-index: -1;
     }
   }
 }

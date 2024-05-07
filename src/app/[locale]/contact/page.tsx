@@ -1,23 +1,28 @@
-import { IFancyText, ISeo, LocalPaths } from "@/data.d";
+import { IForm, ISeo, LocalPaths } from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
-import { Form } from "@/components/pages/contact page/Form";
-import { Block } from "@/components/pages/containers/Block";
-import { getTranslations } from "@/helpers/langUtils";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
+import { contactPageQuery } from "@/app/api/generateSanityQueries";
+import dynamic from "next/dynamic";
 
-export interface ContactPageProps {
+export interface ContactPageProps extends IForm {
   meta: ISeo;
-  desc: IFancyText;
 }
+
+const ContactBlock = dynamic(
+  () =>
+    import("@/components/pages/contact page/ContactBlock").then(
+      (module) => module.ContactBlock
+    ),
+  {
+    ssr: false,
+  }
+);
 
 const getContactPageData = async (locale: LangType) => {
   const type = "contactPage";
-  const contactQuery = `*[_type == '${type}' && lang == '${locale}'][0] {
-    meta,
-    desc,
-  }`;
+  const contactQuery = contactPageQuery(locale);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const contactPageData: ContactPageProps = await useFetchPage(
     contactQuery,
@@ -51,13 +56,6 @@ export default async function Contact({
 }: {
   params: { locale: LangType };
 }) {
-  const translations = getTranslations(locale);
-  const contactPageData = await getContactPageData(locale);
-  return (
-    contactPageData && (
-      <Block variant="dark" strokes title={translations.blockTitles.contact}>
-        <Form desc={contactPageData.desc} />
-      </Block>
-    )
-  );
+  const contactPageData: ContactPageProps = await getContactPageData(locale);
+  return contactPageData && <ContactBlock {...contactPageData} />;
 }
