@@ -17,10 +17,17 @@ q:before {
   content: " ";
 }
 
-ul {
+ul,
+ol {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  list-style: none; /* Remove default list styles */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+li {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 button {

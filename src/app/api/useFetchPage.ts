@@ -1,5 +1,6 @@
 import { client } from "./client";
 
+// eslint-disable-next-line no-unused-vars
 export const useFetchPage = async (query: string, destName: string) => {
   try {
     // const data = null; // This is to test
