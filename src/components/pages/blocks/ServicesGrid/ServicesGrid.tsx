@@ -50,7 +50,7 @@ export const ServicesGrid: React.FC<{ services: IService[] }> = ({
                     <Heading
                       level="5"
                       color="white"
-                      as="h6"
+                      as="h5"
                       font="Seto"
                       paddingBottomArray={[2]}
                     >

@@ -47,6 +47,7 @@ export const Hero: React.FC<HeroProps> = ({
             vertical: [0, 5, 0],
           }}
           id="hero-left"
+          rel="preload"
         >
           <Logo />
         </FlexDiv>
@@ -63,7 +64,7 @@ export const Hero: React.FC<HeroProps> = ({
           loading="eager"
           fetchPriority="high"
           rel="preload"
-          sizes="(max-width: 1200px) 100vw, 60vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1200px) 100vw, (max-width: 1680px) 66vw"
         />
         <FlexDiv
           className={styles.container}

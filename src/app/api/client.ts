@@ -1,5 +1,7 @@
 import imageUrlBuilder from "@sanity/image-url";
 import { createClient } from "@sanity/client";
+import sanityImage from "@sanity/image-url";
+import { SanityImageSource } from "@sanity/asset-utils";
 
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -14,6 +16,6 @@ const builder = imageUrlBuilder(client);
 // Then we like to make a simple function like this that gives the
 // builder an image and returns the builder for you to specify additional
 // parameters:
-export const urlFor = (source: any) => {
+export const urlFor = (source: SanityImageSource) => {
   return builder.image(source).auto("format");
 };
