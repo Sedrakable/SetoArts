@@ -92,15 +92,6 @@ export async function generateMetadata({
     locale,
     slug
   );
-  if (!servicePageData.meta)
-    return setMetadata({
-      locale,
-      metaTitle: "temp title",
-      metaDesc: "temp desc",
-      metaKeywords: ["temp keywords"],
-      path,
-      crawl,
-    });
   const { metaTitle, metaDesc, metaKeywords } = servicePageData.meta;
 
   return setMetadata({

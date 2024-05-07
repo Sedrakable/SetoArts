@@ -70,6 +70,7 @@ export const servicePageQuery = (locale: LangType, slug: string): string => {
         features[]->,
       },
     },
+    price,
     work->{
       title,
       works[]->{
