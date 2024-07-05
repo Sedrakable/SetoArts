@@ -4,7 +4,7 @@
   --image-width: 200px;
   --img-pad-top: 0;
   @media (min-width: $tablet) {
-    --image-width: 400px;
+    --image-width: 100%;
     --img-pad-top: 10px;
   }
 
@@ -27,6 +27,7 @@
 .container {
   @include vars;
   .imgWrapper {
+    position: relative;
     height: 100%;
     // padding-top: var(--img-pad-top);
     grid-column: 1;
@@ -36,15 +37,28 @@
       aspect-ratio: 1;
     }
   }
-  .text {
-    grid-column: 2 /4;
-  }
 
   @media (min-width: $tablet) {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
+    .text {
+      grid-column: 2;
+    }
+    .imgWrapper {
+      figure {
+        aspect-ratio: unset;
+      }
+    }
   }
   @media (min-width: $laptop) {
     grid-template-columns: repeat(3, 1fr);
+    .text {
+      grid-column: 2 / 4;
+    }
+    .imgWrapper {
+      figure {
+        aspect-ratio: 1;
+      }
+    }
   }
 }
