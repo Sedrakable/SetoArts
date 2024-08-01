@@ -42,7 +42,12 @@ export const ImageGrid: React.FC<ImageGridProps> = ({
           return (
             image && (
               <div key={key} className={styles.imgWrapper}>
-                <SanityImage {...image} res={30} key={key} />
+                <SanityImage
+                  {...image}
+                  key={key}
+                  sizes="(max-width: 640px) 90vw, (max-width: 1200px) 80vw, (max-width: 1680px) 50vw"
+                  // quality={5}
+                />
               </div>
             )
           );

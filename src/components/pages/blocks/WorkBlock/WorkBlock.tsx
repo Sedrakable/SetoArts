@@ -22,7 +22,11 @@ const Work: FC<IWork> = (work) => {
       className={styles.container}
       aria-label={work.title}
     >
-      <SanityImage {...work?.thumbnailImage} />
+      <SanityImage
+        {...work?.thumbnailImage}
+        quality={50}
+        sizes="(max-width: 640px) 60vw"
+      />
 
       <FlexDiv
         width100
