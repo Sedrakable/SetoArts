@@ -1,21 +1,14 @@
 import { workPageQuery } from "@/app/api/generateSanityQueries";
 import { useFetchPage } from "@/app/api/useFetchPage";
+import { Modal } from "@/components/reuse/Modal";
 import { setMetadata } from "@/components/SEO";
 import { ISeo, IWork, LocalPaths } from "@/data.d";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
 
 export interface WorkProps extends IWork {
   meta: ISeo;
 }
-
-const Modal = dynamic(
-  () => import("@/components/reuse/Modal").then((module) => module.Modal),
-  {
-    ssr: false,
-  }
-);
 
 const getWorkPageData = async (slug: string) => {
   const type = "work";

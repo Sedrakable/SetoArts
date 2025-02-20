@@ -73,7 +73,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
                     return (
                       <li key={key}>
                         <Button
-                          variant="fancy"
+                          variant="primary"
                           small={isMobile}
                           path={`/${locale}${LocalPaths.CONTACT}`}
                         >

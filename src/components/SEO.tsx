@@ -1,18 +1,11 @@
 import { Metadata } from "next";
 import { LangType } from "@/i18n";
-import dynamic from "next/dynamic";
 import { ISeo } from "@/data.d";
-
 interface SEOProps extends ISeo {
   locale: LangType;
   path: string;
   crawl?: boolean;
 }
-// Dynamic import for the BreadcrumbJsonLd component
-const DynamicBreadcrumbJsonLd = dynamic(
-  () => import("next-seo").then((mod) => mod.BreadcrumbJsonLd),
-  { ssr: false }
-);
 export const setMetadata = ({
   locale,
   metaTitle,
@@ -76,29 +69,29 @@ export const setMetadata = ({
   return metadata;
 };
 
-export const JsonLD = () => (
-  <DynamicBreadcrumbJsonLd
-    itemListElements={[
-      {
-        position: 1,
-        name: "Home",
-        item: "https://setoxarts.com",
-      },
-      {
-        position: 2,
-        name: "Branding",
-        item: "https://setoxarts.com/en/service/branding",
-      },
-      {
-        position: 3,
-        name: "Web Design",
-        item: "https://setoxarts.com/en/service/web-design",
-      },
-      {
-        position: 4,
-        name: "Contact",
-        item: "https://setoxarts.com/en/contact",
-      },
-    ]}
-  />
-);
+// export const JsonLD = () => (
+//   <DynamicBreadcrumbJsonLd
+//     itemListElements={[
+//       {
+//         position: 1,
+//         name: "Home",
+//         item: "https://setoxarts.com",
+//       },
+//       {
+//         position: 2,
+//         name: "Branding",
+//         item: "https://setoxarts.com/en/service/branding",
+//       },
+//       {
+//         position: 3,
+//         name: "Web Design",
+//         item: "https://setoxarts.com/en/service/web-design",
+//       },
+//       {
+//         position: 4,
+//         name: "Contact",
+//         item: "https://setoxarts.com/en/contact",
+//       },
+//     ]}
+//   />
+// );

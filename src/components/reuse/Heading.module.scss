@@ -30,36 +30,38 @@
   }
 }
 
-.seto {
-  @include fontHeaderSeto;
+.outfit {
+  font-family: var(--font-outfit);
+
+  font-weight: 900;
 
   @for $i from 1 through 3 {
     &.level#{$i} {
-      @include level(-seto, $i, $i + 1, $i + 1, $i + 2);
+      @include level(-outfit, $i, $i + 1, $i + 1, $i + 2);
     }
   }
   &.level4 {
-    @include level(-seto, 4, 4, 4, 5);
+    @include level(-outfit, 4, 4, 4, 5);
   }
   &.level5 {
-    @include level(-seto, 5, 5, 5, 5);
+    @include level(-outfit, 5, 5, 5, 5);
   }
 }
 
 .cursive {
-  font-family: var(--font-caveat);
+  font-family: var(--font-finger-paint);
 
-  font-weight: 600;
+  font-weight: 400;
   @for $i from 1 through 3 {
     &.level#{$i} {
-      @include level(-caveat, $i, $i + 1, $i + 1, $i + 2);
+      @include level(-finger-paint, $i, $i + 1, $i + 1, $i + 2);
     }
   }
   &.level4 {
-    @include level(-caveat, 4, 4, 4, 5);
+    @include level(-finger-paint, 4, 4, 4, 5);
   }
   &.level5 {
-    @include level(-caveat, 5, 5, 5, 5);
+    @include level(-finger-paint, 5, 5, 5, 5);
   }
 }
 

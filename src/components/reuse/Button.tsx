@@ -5,9 +5,10 @@ import cn from "classnames";
 import { Heading } from "./Heading";
 import ButtonStroke from "@/assets/vector/ButtonStroke.svg";
 import Link, { LinkProps } from "next/link";
+import { Paragraph } from "./Paragraph";
 
 export interface ButtonProps {
-  variant: "fancy" | "primary" | "secondary";
+  variant: "fancy" | "primary" | "black" | "white";
   small?: boolean;
   fit?: "grow" | "shrink";
   onClick?: () => void;
@@ -27,46 +28,47 @@ export const Button: FC<PropsWithChildren<
   };
 
   const ButtonHeading: React.FC<{ className?: string }> = ({ className }) => (
-    <Heading
-      font="Seto"
-      level={small ? "5" : "5"}
-      as="span"
-      color={variant === "secondary" ? "yellow" : "white"}
+    <Paragraph
+      level="regular"
+      color={variant === "black" ? "white" : "black"}
       className={className}
+      textAlign="center"
     >
       {children as string}
-    </Heading>
+    </Paragraph>
   );
-
-  return (
+  const buttonContent = path ? (
+    <Link
+      href={path}
+      className={cn(styles.button, styles[variant], {
+        [styles.small]: small,
+      })}
+      style={{ width: fit === "grow" ? "100%" : "auto" }}
+      target={target}
+      aria-label={children as string}
+    >
+      <ButtonHeading />
+    </Link>
+  ) : (
+    <button
+      className={cn(styles.button, styles[variant], {
+        [styles.small]: small,
+      })}
+      style={{ width: fit === "grow" ? "100%" : "auto" }}
+      onClick={() => onClick()}
+      disabled={disabled}
+      aria-label={children as string}
+    >
+      <ButtonHeading />
+    </button>
+  );
+  return variant === "fancy" ? (
     <div className={styles.container}>
-      {variant === "fancy" && <ButtonStroke className={styles.stroke} />}
-      {path ? (
-        <Link
-          href={path}
-          className={cn(styles.button, styles[variant], {
-            [styles.small]: small,
-          })}
-          style={{ width: fit === "grow" ? "100%" : "auto" }}
-          target={target}
-          aria-label={children as string}
-        >
-          <ButtonHeading />
-        </Link>
-      ) : (
-        <button
-          className={cn(styles.button, styles[variant], {
-            [styles.small]: small,
-          })}
-          style={{ width: fit === "grow" ? "100%" : "auto" }}
-          onClick={() => onClick()}
-          disabled={disabled}
-          aria-label={children as string}
-        >
-          <ButtonHeading />
-        </button>
-      )}
-      {variant === "fancy" && <ButtonHeading className={styles.hoverText} />}
+      {<ButtonStroke className={styles.stroke} />}
+      {buttonContent}
+      {<ButtonHeading className={styles.hoverText} />}
     </div>
+  ) : (
+    buttonContent
   );
 };

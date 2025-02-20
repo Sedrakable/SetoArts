@@ -1,10 +1,6 @@
 import { LangType } from "@/i18n";
-import dynamic from "next/dynamic";
 import AboutPage from "./page";
-
-const FlexDiv = dynamic(() => import("@/components/reuse/FlexDiv"), {
-  ssr: false,
-});
+import FlexDiv from "@/components/reuse/FlexDiv";
 
 export default function AboutWorkLayout({
   children,

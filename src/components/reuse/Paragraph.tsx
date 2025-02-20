@@ -6,10 +6,10 @@ import {
   SpacingArrayType,
   useSpacingGenerator,
 } from "../../helpers/SpacingGenerator";
-import { Anek_Gurmukhi } from "next/font/google";
+import { Outfit } from "next/font/google";
 
-const anek = Anek_Gurmukhi({
-  variable: "--font-anek",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
@@ -47,7 +47,7 @@ export const Paragraph: React.FC<ParagraphProps> = ({
   children,
   level = "regular",
   textAlign,
-  weight = "weak",
+  weight = "regular",
   paddingBottomArray,
   color = "white",
   clickable,
@@ -59,7 +59,7 @@ export const Paragraph: React.FC<ParagraphProps> = ({
     <p
       className={cn(
         styles.paragraph,
-        anek.variable,
+        outfit.className,
         styles[level],
         {
           [styles.clickable]: clickable,

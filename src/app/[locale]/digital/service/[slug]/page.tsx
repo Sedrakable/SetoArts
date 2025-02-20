@@ -4,70 +4,18 @@ import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { servicePageQuery } from "@/app/api/generateSanityQueries";
-import dynamic from "next/dynamic";
+import { Inspired } from "@/components/pages/blocks/Inspired/Inspired";
+import { PriceBlock } from "@/components/pages/blocks/PriceBlock/PriceBlock";
+import { WorkSlider } from "@/components/pages/blocks/WorkSlider/WorkSlider";
+import { Hero } from "@/components/reuse/Hero/Hero";
+import { Features } from "@/components/services/Features/Features";
+import { Processes } from "@/components/services/Processes/Processes";
 
 export interface ServicePageProps extends IService {
   meta: ISeo;
   hero: IHero;
   work: IWorkBlock;
 }
-
-const Hero = dynamic(
-  () => import("@/components/reuse/Hero/Hero").then((module) => module.Hero),
-  {
-    ssr: false,
-  }
-);
-
-const Features = dynamic(
-  () =>
-    import("@/components/services/Features/Features").then(
-      (module) => module.Features
-    ),
-  {
-    ssr: false,
-  }
-);
-
-const PriceBlock = dynamic(
-  () =>
-    import("@/components/pages/blocks/PriceBlock/PriceBlock").then(
-      (module) => module.PriceBlock
-    ),
-  {
-    ssr: false,
-  }
-);
-
-const Processes = dynamic(
-  () =>
-    import("@/components/services/Processes/Processes").then(
-      (module) => module.Processes
-    ),
-  {
-    ssr: false,
-  }
-);
-
-const WorkSlider = dynamic(
-  () =>
-    import("@/components/pages/blocks/WorkSlider/WorkSlider").then(
-      (module) => module.WorkSlider
-    ),
-  {
-    ssr: false,
-  }
-);
-
-const Inspired = dynamic(
-  () =>
-    import("@/components/pages/blocks/Inspired/Inspired").then(
-      (module) => module.Inspired
-    ),
-  {
-    ssr: false,
-  }
-);
 
 const getServicePageData = async (locale: LangType, slug: string) => {
   const type = "servicePage";

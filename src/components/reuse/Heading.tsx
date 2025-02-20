@@ -1,16 +1,23 @@
 "use client";
-import React from "react";
+import React, { CSSProperties } from "react";
 import styles from "./Heading.module.scss";
 import cn from "classnames";
 import {
   SpacingArrayType,
   useSpacingGenerator,
 } from "../../helpers/SpacingGenerator";
-import { Caveat } from "next/font/google";
+import { Finger_Paint, Outfit } from "next/font/google";
 
-const caveat = Caveat({
-  variable: "--font-caveat",
+const fingerPaint = Finger_Paint({
+  variable: "--font-finger-paint",
   subsets: ["latin"],
+  weight: "400",
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export type ColorType = "white" | "black" | "yellow" | "grey";
@@ -31,21 +38,12 @@ export const HeadingAsArray = [
 
 type HeadingAsType = typeof HeadingAsArray[number];
 
-type textAlign =
-  | "start"
-  | "end"
-  | "left"
-  | "right"
-  | "center"
-  | "justify"
-  | "match-parent";
-
 export interface HeadingProps {
-  font: "Seto" | "Cursive";
+  font: "Outfit" | "Cursive";
   children: string | JSX.Element;
   level: HeadingLevelType;
   as: HeadingAsType;
-  textAlign?: textAlign;
+  textAlign?: CSSProperties["textAlign"];
   paddingBottomArray?: SpacingArrayType;
   color?: ColorType;
   upperCase?: boolean;
@@ -59,7 +57,7 @@ export const capitalizeString = (str: string): string => {
 };
 
 export const Heading: React.FC<HeadingProps> = ({
-  font = "Seto",
+  font = "Outfit",
   children,
   level,
   as,
@@ -90,9 +88,10 @@ export const Heading: React.FC<HeadingProps> = ({
         {
           [styles.gradient]: color.includes("grad"),
           [styles.clickable]: clickable,
-          [styles.seto]: font === "Seto",
+          [styles.outfit]: font === "Outfit",
           [styles.cursive]: font === "Cursive",
-          [caveat.variable]: font === "Cursive",
+          [fingerPaint.className]: font === "Cursive",
+          [outfit.className]: font === "Outfit",
         },
         className
       )}

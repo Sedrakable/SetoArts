@@ -11,60 +11,14 @@ import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
-import dynamic from "next/dynamic";
 import { homePageQuery } from "@/app/api/generateSanityQueries";
 
-const Hero = dynamic(
-  () => import("@/components/reuse/Hero/Hero").then((module) => module.Hero),
-  {
-    ssr: false,
-  }
-);
-const WorkSlider = dynamic(
-  () =>
-    import("@/components/pages/blocks/WorkSlider/WorkSlider").then(
-      (module) => module.WorkSlider
-    ),
-  {
-    ssr: false,
-  }
-);
-const Services = dynamic(
-  () =>
-    import("@/components/pages/home/Services/Services").then(
-      (module) => module.Services
-    ),
-  {
-    ssr: false,
-  }
-);
-const Values = dynamic(
-  () =>
-    import("@/components/pages/home/Values/Values").then(
-      (module) => module.Values
-    ),
-  {
-    ssr: false,
-  }
-);
-const Inspired = dynamic(
-  () =>
-    import("@/components/pages/blocks/Inspired/Inspired").then(
-      (module) => module.Inspired
-    ),
-  {
-    ssr: false,
-  }
-);
-const About = dynamic(
-  () =>
-    import("@/components/pages/blocks/About/About").then(
-      (module) => module.About
-    ),
-  {
-    ssr: false,
-  }
-);
+import { Hero } from "@/components/reuse/Hero/Hero";
+import { About } from "@/components/pages/blocks/About/About";
+import { Inspired } from "@/components/pages/blocks/Inspired/Inspired";
+import { WorkSlider } from "@/components/pages/blocks/WorkSlider/WorkSlider";
+import { Services } from "@/components/pages/home/Services/Services";
+import { Values } from "@/components/pages/home/Values/Values";
 
 export interface HomePageProps {
   meta: ISeo;

@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
@@ -8,61 +7,27 @@ import "@/styles/Main.css";
 import "@/styles/ScrollBar.scss";
 import "@/styles/index.scss";
 import { NextIntlClientProvider } from "next-intl";
-import { IFooter, INavBar, LocalPaths } from "@/data.d";
+import { IFooter, INavBar } from "@/data.d";
 import { useFetchPage } from "../api/useFetchPage";
 import { LangType } from "@/i18n";
-import { getHomePageData } from "./home/page";
-import { setMetadata } from "@/components/SEO";
-import dynamic from "next/dynamic";
 import { navbarPageQuery, footerPageQuery } from "../api/generateSanityQueries";
 import bigStroke from "/public/photos/BigStroke.webp";
 import titleStroke from "/public/photos/TitleStroke.webp";
 import fabricTexture from "/public/photos/Textures/FabricTexture.webp";
 import gridTexture from "/public/photos/Textures/GridTexture.webp";
+import { Navbar } from "@/components/navbar/Navbar/Navbar";
+import { Footer } from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const Footer = dynamic(
-  () => import("@/components/footer/Footer").then((module) => module.Footer),
-  {
-    ssr: false,
-  }
-);
-const Navbar = dynamic(
-  () =>
-    import("@/components/navbar/Navbar/Navbar").then((module) => module.Navbar),
-  {
-    ssr: false,
-  }
-);
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: LangType };
-}): Promise<Metadata> {
-  const homePageData = await getHomePageData(locale);
-  const { metaTitle, metaDesc, metaKeywords } = homePageData.meta;
-  const path = LocalPaths.HOME;
-  const crawl = true;
-
-  return setMetadata({
-    locale,
-    metaTitle,
-    metaDesc,
-    metaKeywords,
-    path,
-    crawl,
-  });
-}
-
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: LangType };
+  params: Promise<{ locale: LangType }>;
 }>) {
+  const { locale } = await params;
   const navType = "navbar";
   const footerType = "footer";
   const navbarQuery = navbarPageQuery(locale);

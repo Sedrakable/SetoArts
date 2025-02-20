@@ -29,7 +29,7 @@ export const LangSwitcher: React.FC<{ onClick?: Function }> = ({ onClick }) => {
   };
 
   return (
-    <FlexDiv gapArray={[2]} className={styles.langWrapper} onClick={langClick}>
+    <FlexDiv gapArray={[3]} className={styles.langWrapper} onClick={langClick}>
       <Paragraph level="big" color="yellow">
         {locale?.toUpperCase()}
       </Paragraph>

@@ -4,21 +4,11 @@ import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { contactPageQuery } from "@/app/api/generateSanityQueries";
-import dynamic from "next/dynamic";
+import { ContactBlock } from "@/components/pages/contact page/ContactBlock";
 
 export interface ContactPageProps extends IForm {
   meta: ISeo;
 }
-
-const ContactBlock = dynamic(
-  () =>
-    import("@/components/pages/contact page/ContactBlock").then(
-      (module) => module.ContactBlock
-    ),
-  {
-    ssr: false,
-  }
-);
 
 const getContactPageData = async (locale: LangType) => {
   const type = "contactPage";

@@ -1,15 +1,7 @@
 import { INotFound } from "@/data.d";
 import { useFetchPage } from "../api/useFetchPage";
 import { notFoundPageQuery } from "../api/generateSanityQueries";
-import dynamic from "next/dynamic";
-
-const NotFoundComp = dynamic(
-  () =>
-    import("@/components/pages/NotFound").then((module) => module.NotFoundComp),
-  {
-    ssr: false,
-  }
-);
+import { NotFoundComp } from "@/components/pages/NotFound";
 
 export default async function NotFound() {
   const type = "notFoundPage";
