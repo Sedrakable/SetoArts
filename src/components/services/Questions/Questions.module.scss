@@ -1,0 +1,41 @@
+@import "@/styles/mixins.scss";
+
+@mixin vars() {
+  --columns: 1;
+  @media (min-width: $tablet) {
+    // --ratio: 4/3;
+    --columns: 1;
+  }
+
+  @media (min-width: $laptop) {
+    --columns: 3;
+  }
+
+  @media (min-width: $desktop) {
+    --columns: 3;
+  }
+}
+
+.questions {
+  @include vars;
+  display: grid !important;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  align-items: stretch !important;
+  .titleContainer {
+    background: var(--grad);
+    border-radius: var(--border-radius);
+    position: relative;
+    z-index: 0;
+    .extraNote {
+      background: var(--white);
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      width: 80%;
+      transform: rotate(-10deg) translateX(var(--pad-6));
+    }
+  }
+  .desc {
+    z-index: 1;
+  }
+}

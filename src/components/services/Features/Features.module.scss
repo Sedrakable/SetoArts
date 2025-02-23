@@ -1,19 +1,19 @@
-@import "../../../styles/mixins.scss";
+@import "@/styles/mixins.scss";
 
 @mixin vars() {
-  --ratio: 16/9;
+  --ratio: 1/1;
   --columns: 1;
   @media (min-width: $tablet) {
-    --ratio: 4/3;
+    // --ratio: 4/3;
     --columns: 2;
   }
 
   @media (min-width: $laptop) {
-    --columns: 4;
+    --columns: 3;
   }
 
   @media (min-width: $desktop) {
-    --columns: 5;
+    --columns: 4;
   }
 }
 
@@ -25,21 +25,23 @@
 
   .container {
     @include flexColumn(flex-start, flex-start);
-    overflow: hidden;
-    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    // overflow: hidden;
     .imgWrapper {
       aspect-ratio: var(--ratio);
       flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      border: 1px solid red;
       width: 100%;
       max-width: 100%;
+      svg {
+        height: 100%;
+      }
     }
     .content {
-      background: var(--white);
-      background-image: url("/photos/Textures/FabricTexture.webp");
-
       flex: 1;
       p {
-        @include paragraphMaxLines(3);
+        @include paragraphMaxLines(5);
       }
     }
   }

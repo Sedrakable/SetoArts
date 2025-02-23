@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ServicesGrid.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { IService, LocalPaths } from "../../../../data.d";
-import { Paragraph } from "../../../reuse/Paragraph";
+import { Paragraph } from "../../../reuse/Paragraph/Paragraph";
 import { Heading } from "../../../reuse/Heading";
 import { Button } from "../../../reuse/Button";
 import { getTranslations } from "../../../../helpers/langUtils";

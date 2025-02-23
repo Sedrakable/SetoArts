@@ -1,7 +1,7 @@
 import React from "react";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Heading";
-import { Paragraph } from "@/components/reuse/Paragraph";
+import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
 import { ILegalPage } from "@/data.d";
 import { Block } from "../containers/Block";
 

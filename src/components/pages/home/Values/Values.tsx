@@ -4,7 +4,7 @@ import styles from "./Values.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
-import { Paragraph } from "../../../reuse/Paragraph";
+import { Paragraph } from "../../../reuse/Paragraph/Paragraph";
 import { IValue, IValues } from "../../../../data.d";
 import { getTranslations } from "../../../../helpers/langUtils";
 import { useLocale } from "next-intl";

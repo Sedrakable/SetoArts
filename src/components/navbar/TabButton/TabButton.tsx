@@ -11,7 +11,7 @@ import { ICta } from "../../../data.d";
 // import { FancyText } from "../../reuse/FancyText";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Paragraph } from "@/components/reuse/Paragraph";
+import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
 
 export interface TabButtonProps {
   children: string;

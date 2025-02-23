@@ -6,19 +6,24 @@ import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { FancyText } from "../../../reuse/FancyText";
 import { IAbout } from "../../../../data.d";
-import { Paragraph } from "../../../reuse/Paragraph";
+import { Paragraph } from "../../../reuse/Paragraph/Paragraph";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../../helpers/useWindowResize";
 import { getTranslations } from "../../../../helpers/langUtils";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 
-export const About: React.FC<IAbout> = ({ content }) => {
+export const About: React.FC<IAbout> = ({
+  customImage,
+  name,
+  title1,
+  desc1,
+  title2,
+  desc2,
+}) => {
   const { isMobileOrTablet } = useWindowResize();
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
-
-  const { customImage, name, title1, desc1, title2, desc2 } = content || {};
 
   const SecondText = () => {
     return (
@@ -81,7 +86,7 @@ export const About: React.FC<IAbout> = ({ content }) => {
           <header className={styles.text}>
             {name && (
               <Heading
-                font="Seto"
+                font="Outfit"
                 as="h2"
                 level="2"
                 color="black"

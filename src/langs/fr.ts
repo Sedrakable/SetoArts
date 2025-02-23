@@ -2,10 +2,13 @@ import { Translations } from "./langTypes";
 
 export const frTranslations: Translations = {
   blockTitles: {
+    whatYouGet: "Ce que vous obtenez",
     services: "Services",
     values: "Valeurs",
     process: "Processus",
     features: "Fonctionnalités",
+    questionTitle1: "Arrêtez de vous fondre dans la masse",
+    questionTitle2: "Commencez à vous démarquer",
     inspired: "Inspiré",
     aboutMe: "À propos de moi",
     work: "Travail",

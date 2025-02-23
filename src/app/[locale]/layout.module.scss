@@ -6,14 +6,5 @@
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
-  background-color: var(--black);
-  .page {
-    @include flexColumn(flex-start, flex-start);
-
-    background-color: var(--black);
-    padding-top: var(--navbar-height);
-    min-height: 100vh;
-    width: 100%;
-    flex: 1;
-  }
+  background-color: var(--white);
 }

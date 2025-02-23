@@ -1,7 +1,7 @@
 import { LangType } from "@/i18n";
 
-export const navbarPageQuery = (locale: LangType): string => {
-  return `*[_type == 'navbar' && lang == '${locale}'][0]`;
+export const navbarPageQuery = (locale: LangType, type: string): string => {
+  return `*[_type == 'navbar' && lang == '${locale}' && type == '${type}'][0]`;
 };
 
 export const footerPageQuery = (locale: LangType): string => {
@@ -53,6 +53,21 @@ export const homePageQuery = (locale: LangType): string => {
         },
       }`;
 };
+
+export const woodPageQuery = (locale: LangType): string => {
+  return `*[_type == 'woodPage' && lang == '${locale}'][0] {
+        meta,
+        hero,
+        features[]->,
+        questions[]->,
+      }`;
+};
+
+export const carouselQuery = `
+  *[_type == "woodWork"] {
+    customImages[]
+  }
+`;
 
 export const servicePageQuery = (locale: LangType, slug: string): string => {
   return `*[_type == 'servicePage' && lang == '${locale}' && path == '/${slug}'][0] {

@@ -1,5 +1,8 @@
 interface Titles {
   services: string;
+  whatYouGet: string;
+  questionTitle1: string;
+  questionTitle2: string;
   values: string;
   process: string;
   features: string;

@@ -1,5 +1,3 @@
-import { FancyTextProps } from "./components/reuse/FancyText";
-// @ts-ignore
 import { ICustomImage } from "./components/reuse/SanityImage/SanityImage";
 
 export interface ISeo {
@@ -17,10 +15,9 @@ export interface ISlug {
   current: string;
   _type: string;
 }
+
 export interface IFancyText {
-  part1: string;
-  part2: string;
-  part3?: string;
+  value: any; // Will store the PortableText content
 }
 
 export interface IHero {
@@ -28,11 +25,17 @@ export interface IHero {
   title: IFancyText;
   desc: string;
   customImage: ICustomImage;
-  ctas?: {
-    cta1: ICta;
-    cta2?: ICta;
-  };
+  cta1: ICta;
+  cta2?: ICta;
   quote: IQuote;
+}
+
+export interface IHeroV2 {
+  backgroundImage: ICustomImage;
+  foregroundImage: ICustomImage;
+  subTitle?: string;
+  cta: ICta;
+  message?: string;
 }
 
 export interface IQuote {
@@ -48,19 +51,22 @@ export interface IService {
   title: string;
   metaTitle: string;
   path: string;
-  features: IFeatures;
+  features: IFeature[];
   processes: IProcesses;
   price?: string;
 }
 
-export interface IFeatures {
-  features: IFeature[];
-}
-
 export interface IFeature {
-  customImage: ICustomImage;
+  customImage?: ICustomImage; // Optional image field
+  svgName?: string; // Optional SVG name
   title: string;
   desc: string;
+}
+
+export interface IQuestion {
+  title: string;
+  extraNote?: string;
+  desc: any;
 }
 
 export interface IProcesses {
@@ -82,18 +88,14 @@ export interface IValue {
   desc: string;
 }
 
-export interface IAboutContent {
+export interface IAbout {
   customImage: ICustomImage;
   name?: string;
-  title1: FancyTextProps;
+
   desc1: string;
   title2?: string;
   desc2?: string;
   cta?: boolean;
-}
-
-export interface IAbout {
-  content: IAboutContent;
 }
 
 export interface IWorkBlock {
@@ -124,6 +126,14 @@ export interface IWork {
   secondaryLinks?: ICta[];
   behanceProjectId?: string;
   kickstarterProjectlink?: string;
+}
+
+export interface IWoodWork {
+  slug: ISlug;
+  thumbnailImage: ICustomImage;
+  customImages: ICustomImage[];
+  title: string;
+  desc: string;
 }
 
 export interface INavLink {
@@ -170,6 +180,7 @@ export interface INotFound {
 /* eslint-disable */
 export enum LocalPaths {
   HOME = "/home",
+  WOOD = "/wood",
   ABOUT = "/about-work",
   BLOG = "/blog",
   CONTACT = "/contact",

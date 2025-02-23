@@ -2,10 +2,13 @@
 import React from "react";
 import styles from "./Hero.module.scss";
 import cn from "classnames";
-import { Paragraph } from "../Paragraph";
-import { IHero, LocalPaths } from "../../../data.d";
+import Image from "next/image";
+
+import { Paragraph } from "../Paragraph/Paragraph";
+import { IHero, IHeroV2, LocalPaths } from "../../../data.d";
 import FlexDiv from "../FlexDiv";
 import Logo from "@/assets/vector/LogoBig.svg";
+import bigStroke from "/public/photos/test.png";
 import { FancyText } from "../FancyText";
 import { Button } from "../Button";
 import { Quote } from "../Quote";
@@ -13,6 +16,8 @@ import { SanityImage } from "../SanityImage/SanityImage";
 import { useWindowResize } from "../../../helpers/useWindowResize";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
+import LogoHori from "@/assets/vector/LogoHorizontal.svg";
+import { Heading } from "../Heading";
 
 export type VersionType = 1 | 2;
 
@@ -20,11 +25,104 @@ interface HeroProps extends IHero {
   version?: VersionType;
 }
 
+export const HeroV3: React.FC<IHeroV2> = ({
+  backgroundImage,
+  foregroundImage,
+  subTitle,
+  cta,
+  message,
+}) => {
+  const { isMobileOrTablet } = useWindowResize();
+  const locale = useLocale() as LangType;
+  return (
+    <FlexDiv
+      className={cn(styles.heroV2)}
+      flex={{ x: "space-between" }}
+      as={"header"}
+      width100
+    >
+      {/* Background Image Wrapper */}
+      <div className={styles.backgroundContainer}>
+        <SanityImage
+          className={styles.backgroundImage}
+          {...backgroundImage}
+          loading="eager"
+          fetchPriority="high"
+          rel="preload"
+          width={1100}
+          quality={90}
+        />
+        {message && (
+          <Heading
+            font="Cursive"
+            level="5"
+            as="h4"
+            color="white"
+            className={styles.message}
+            textAlign="center"
+          >
+            {message}
+          </Heading>
+        )}
+      </div>
+      <FlexDiv
+        padding={{
+          left: [6, 8, 8, 10],
+          bottom: [8, 10, 10, 12],
+          top: [7, 9, 9, 11],
+        }}
+        gapArray={[4]}
+        flex={{ direction: "column", x: "flex-start", y: "center" }}
+        height100
+        customStyle={{ zIndex: 1 }}
+        width100
+      >
+        <LogoHori className={styles.logo} />
+        <FlexDiv
+          padding={{ left: [4, 6, 6, 8] }}
+          flex={{ direction: "column", x: "flex-start" }}
+          gapArray={[4]}
+          className={styles.titles}
+        >
+          {subTitle && (
+            <Heading font="Outfit" level="4" as="h3" color="black">
+              {subTitle}
+            </Heading>
+          )}
+          {cta && (
+            <Button variant="fancy" path={`/${locale}${LocalPaths.CONTACT}`}>
+              {cta.text}
+            </Button>
+          )}
+        </FlexDiv>
+      </FlexDiv>
+      <SanityImage
+        className={styles.foregroundImage}
+        {...foregroundImage}
+        loading="eager"
+        fetchPriority="high"
+        rel="preload"
+        width={1100}
+        quality={90}
+        // sizes="(max-width: 640px) 100vw, (max-width: 1200px) 100vw, (max-width: 1680px) 66vw"
+      />
+      <Image
+        src={bigStroke.src}
+        alt="stroke"
+        width={2400}
+        height={200}
+        className={styles.stroke}
+      />
+    </FlexDiv>
+  );
+};
+
 export const Hero: React.FC<HeroProps> = ({
   customImage,
   desc,
   title,
-  ctas,
+  cta1,
+  cta2,
   subTitle,
   quote,
   version = 1,
@@ -88,18 +186,18 @@ export const Hero: React.FC<HeroProps> = ({
               {desc}
             </Paragraph>
           </FlexDiv>
-          {ctas && (
+          {cta1 && (
             <FlexDiv gapArray={[4]} flex={{ x: "flex-start" }} width100 wrap>
               <Button
                 variant="fancy"
                 id="primary"
                 path={`/${locale}${LocalPaths.CONTACT}`}
               >
-                {ctas?.cta1.text}
+                {cta1.text}
               </Button>
-              {ctas?.cta2 && (
-                <Button variant="secondary" id="secondary">
-                  {ctas?.cta1.text}
+              {cta2 && (
+                <Button variant="black" id="secondary">
+                  {cta2.text}
                 </Button>
               )}
             </FlexDiv>

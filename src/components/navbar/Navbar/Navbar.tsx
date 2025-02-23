@@ -35,6 +35,7 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
   const navRef = useRef<HTMLDivElement>(null);
   const locale = useLocale() as LangType;
   const [, setSidebar] = useAtom(sidebarData);
+  console.log(process.env.NEXT_PUBLIC_SANITY_DATASET);
 
   useEffect(() => {
     const handleScroll = () => {

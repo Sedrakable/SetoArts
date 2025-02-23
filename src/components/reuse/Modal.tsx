@@ -3,7 +3,7 @@ import React from "react";
 import { Variants, motion } from "framer-motion";
 import { Backdrop } from "./Backdrop";
 import styles from "./Modal.module.scss";
-import { Paragraph } from "./Paragraph";
+import { Paragraph } from "./Paragraph/Paragraph";
 import { IconButton } from "./IconButton";
 import { ICta, IWork } from "@/data.d";
 import FlexDiv from "./FlexDiv";

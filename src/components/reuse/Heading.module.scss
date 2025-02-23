@@ -1,4 +1,4 @@
-@import "../../styles/mixins.scss";
+@import "@/styles/mixins.scss";
 
 @mixin sizing($font, $size) {
   font-size: var(--heading#{$font}-h#{$size});
@@ -35,23 +35,24 @@
 
   font-weight: 900;
 
-  @for $i from 1 through 3 {
+  @for $i from 1 through 5 {
     &.level#{$i} {
       @include level(-outfit, $i, $i + 1, $i + 1, $i + 2);
     }
   }
-  &.level4 {
-    @include level(-outfit, 4, 4, 4, 5);
-  }
-  &.level5 {
-    @include level(-outfit, 5, 5, 5, 5);
-  }
+  // &.level4 {
+  //   @include level(-outfit, 4, 4, 4, 5);
+  // }
+  // &.level5 {
+  //   @include level(-outfit, 5, 5, 5, 5);
+  // }
 }
 
 .cursive {
   font-family: var(--font-finger-paint);
-
+  position: relative;
   font-weight: 400;
+  text-shadow: var(--text-shadow);
   @for $i from 1 through 3 {
     &.level#{$i} {
       @include level(-finger-paint, $i, $i + 1, $i + 1, $i + 2);
@@ -63,13 +64,17 @@
   &.level5 {
     @include level(-finger-paint, 5, 5, 5, 5);
   }
-}
 
-@keyframes moveGradient {
-  0% {
-    background-position: -100% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
+  // &:before {
+  //   content: attr(data-text); // Duplicate text
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  //   color: black; // Shadow color
+  //   filter: blur(3px); // Blurred shadow effect
+  //   mix-blend-mode: multiply; // Makes it blend inside the text
+  //   -webkit-background-clip: text; // ✅ Clips shadow inside the text
+  //   background-clip: text;
+  //   z-index: -1;
+  // }
 }

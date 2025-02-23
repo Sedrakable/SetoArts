@@ -5,7 +5,7 @@ import cn from "classnames";
 import { Heading } from "./Heading";
 import ButtonStroke from "@/assets/vector/ButtonStroke.svg";
 import Link, { LinkProps } from "next/link";
-import { Paragraph } from "./Paragraph";
+import { Paragraph } from "./Paragraph/Paragraph";
 
 export interface ButtonProps {
   variant: "fancy" | "primary" | "black" | "white";
@@ -66,7 +66,7 @@ export const Button: FC<PropsWithChildren<
     <div className={styles.container}>
       {<ButtonStroke className={styles.stroke} />}
       {buttonContent}
-      {<ButtonHeading className={styles.hoverText} />}
+      {/* {<ButtonHeading className={styles.hoverText} />} */}
     </div>
   ) : (
     buttonContent

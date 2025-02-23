@@ -4,7 +4,7 @@ import styles from "./Processes.module.scss";
 
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Heading";
-import { Paragraph } from "@/components/reuse/Paragraph";
+import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
 import { Tag } from "@/components/reuse/Tag";
 import { IProcess, IFeature, IProcesses } from "@/data.d";
 import { useWindowResize } from "@/helpers/useWindowResize";

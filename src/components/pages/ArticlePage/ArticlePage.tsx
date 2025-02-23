@@ -1,7 +1,7 @@
 "use client";
 import styles from "./ArticlePage.module.scss";
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { Paragraph } from "@/components/reuse/Paragraph";
+import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
 import { Block } from "@/components/pages/containers/Block";
 import { IArticle, IBlock } from "@/data.d";
 import { Heading } from "@/components/reuse/Heading";

@@ -3,7 +3,22 @@ import { useEffect, useState } from "react";
 import { useWindowResize } from "./useWindowResize";
 
 //Creating a type for Spacing array
-const spacingArrayConst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] as const;
+const spacingArrayConst = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+] as const;
 
 export type SpacingType = typeof spacingArrayConst[number];
 

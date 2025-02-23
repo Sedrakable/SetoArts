@@ -2,10 +2,13 @@ import { Translations } from "./langTypes";
 
 export const enTranslations: Translations = {
   blockTitles: {
+    whatYouGet: "What you get",
     services: "Services",
     values: "Values",
     process: "Process",
     features: "Features",
+    questionTitle1: "Stop Blending In",
+    questionTitle2: "Start Standing Out",
     inspired: "Inspired",
     aboutMe: "About Me",
     work: "Work",

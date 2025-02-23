@@ -69,7 +69,7 @@ export default async function HomePage({
       <WorkSlider {...homePageData?.work} />
       <Services {...homePageData.services} />
       <Values {...homePageData.values} />
-      <About content={{ ...homePageData?.about?.content, cta: true }} />
+      <About {...homePageData?.about} cta={true} />
       <Inspired />
     </>
   );

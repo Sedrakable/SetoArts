@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./Footer.module.scss";
-import { Paragraph } from "../reuse/Paragraph";
+import { Paragraph } from "../reuse/Paragraph/Paragraph";
 
 import FlexDiv from "../reuse/FlexDiv";
 import LogoHori from "@/assets/vector/LogoHorizontal.svg";

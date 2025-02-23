@@ -1,4 +1,4 @@
-@import "../../../styles/mixins.scss";
+@import "@/styles/mixins.scss";
 
 @mixin vars() {
   --ratio: 3/4;
@@ -8,11 +8,13 @@
   --right-flex: 1;
   --logo-offset: 0px;
   --bg-size: 350%;
+  --image-width: 100vw;
   @media (min-width: $tablet) {
     --ratio: 1;
     --logo-width: 90%;
     // --left-height: auto;
     --bg-size: 150%;
+    --image-width: 55vw;
   }
 
   @media (min-width: $laptop) {
@@ -29,6 +31,87 @@
     --desc-width: 50%;
     --logo-offset: 70px;
     --bg-size: 200%;
+  }
+}
+
+.heroV2 {
+  @include vars;
+  min-height: fit-content;
+  height: 100vh;
+  max-height: 56.25vw;
+  background-color: var(--white);
+  position: relative;
+
+  .backgroundContainer {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: var(--image-width); // Matches foreground width
+    height: 100%;
+
+    .backgroundImage {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .message {
+      position: absolute;
+      top: 20%;
+      right: 12vw;
+      transform: translate(50%, 50%) rotate(-10deg);
+      width: 18vw;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        100deg,
+        white 45%,
+        rgba(255, 255, 255, 0) 45%
+      );
+      z-index: 2;
+      pointer-events: none; // Prevents interactions from being blocked
+    }
+  }
+
+  .backgroundImage,
+  .foregroundImage {
+    width: var(--image-width); // ✅ Ensures both images match in width
+    height: auto;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    object-fit: cover;
+  }
+
+  .foregroundImage {
+    z-index: 1; // Foreground image should be on top
+  }
+
+  .logo {
+    width: var(--image-width);
+  }
+
+  .titles {
+    width: 50%;
+  }
+
+  .stroke {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(5deg);
+    width: 120%;
+    height: auto;
+    z-index: 1;
   }
 }
 

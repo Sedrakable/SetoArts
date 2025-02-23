@@ -4,7 +4,7 @@ import styles from "./Article.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { IArticle, LocalPaths } from "../../../../data.d";
-import { Paragraph } from "../../../reuse/Paragraph";
+import { Paragraph } from "../../../reuse/Paragraph/Paragraph";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../../helpers/useWindowResize";
 import { useLocale } from "next-intl";

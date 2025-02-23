@@ -1,89 +1,31 @@
 import React, { CSSProperties } from "react";
 import cn from "classnames";
 import styles from "./FancyText.module.scss";
-import { Heading } from "./Heading";
-import { Paragraph } from "./Paragraph";
+import { fingerPaint, Heading, HeadingProps } from "./Heading";
+import { Paragraph } from "./Paragraph/Paragraph";
 import { IFancyText } from "../../data.d";
 import FlexDiv from "./FlexDiv";
 import { Caveat } from "next/font/google";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 
-const caveat = Caveat({
-  variable: "--font-caveat",
-  subsets: ["latin"],
-});
-
-export interface FancyTextProps extends IFancyText {
-  mode: "paragraph" | "heading" | "tab";
-  dark?: boolean;
-  textAlign?: CSSProperties["textAlign"];
+interface FancyTextProps extends Omit<HeadingProps, "children" | "font"> {
+  value: any; // Comes from Sanity
 }
-export const FancyText: React.FC<FancyTextProps> = ({
-  part1,
-  part2,
-  part3,
-  mode,
-  textAlign,
-  dark = false,
-}) => {
-  const CursiveText = () => {
-    return <span className={styles.cursive}>{part2}</span>;
+export const FancyText: React.FC<FancyTextProps> = ({ value, ...props }) => {
+  const customComponents: PortableTextComponents = {
+    block: {
+      normal: ({ children }) => (
+        <Heading font="Outfit" {...props}>
+          {children as string | JSX.Element}
+        </Heading>
+      ),
+    },
+    marks: {
+      strong: ({ children }) => (
+        <strong className={fingerPaint.variable}>{children}</strong>
+      ),
+    },
   };
-  const colorChoose = dark ? "black" : "white";
-  switch (mode) {
-    case "paragraph":
-      return (
-        <FlexDiv
-          gapArray={[3]}
-          flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
-          className={cn(styles.fancyParagraph, caveat.variable)}
-          width100
-          wrap
-        >
-          <Paragraph
-            level="big"
-            color={colorChoose}
-            weight="regular"
-            textAlign={textAlign}
-          >
-            <>
-              {part1} <CursiveText /> {part3}
-            </>
-          </Paragraph>
-        </FlexDiv>
-      );
-    case "heading":
-      return (
-        <FlexDiv
-          gapArray={[4]}
-          flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
-          className={cn(styles.fancyHeading, caveat.variable)}
-          width100
-          wrap
-        >
-          <Heading font="Seto" as="h1" level="2" color={colorChoose}>
-            <>
-              {part1} <CursiveText /> {part3}
-            </>
-          </Heading>
-        </FlexDiv>
-      );
-    case "tab":
-      return (
-        <FlexDiv
-          gapArray={[4]}
-          flex={{ direction: "row", x: "flex-start", y: "flex-start" }}
-          className={cn(styles.fancyTab, caveat.variable)}
-          width100
-          wrap
-        >
-          <Heading font="Seto" as="h5" level="5" color={colorChoose}>
-            <>
-              {part1} <CursiveText /> {part3}
-            </>
-          </Heading>
-        </FlexDiv>
-      );
-    default:
-      return "broken";
-  }
+
+  return <PortableText value={value} components={customComponents} />;
 };

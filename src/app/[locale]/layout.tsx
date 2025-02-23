@@ -7,16 +7,11 @@ import "@/styles/Main.css";
 import "@/styles/ScrollBar.scss";
 import "@/styles/index.scss";
 import { NextIntlClientProvider } from "next-intl";
-import { IFooter, INavBar } from "@/data.d";
-import { useFetchPage } from "../api/useFetchPage";
 import { LangType } from "@/i18n";
-import { navbarPageQuery, footerPageQuery } from "../api/generateSanityQueries";
 import bigStroke from "/public/photos/BigStroke.webp";
 import titleStroke from "/public/photos/TitleStroke.webp";
 import fabricTexture from "/public/photos/Textures/FabricTexture.webp";
 import gridTexture from "/public/photos/Textures/GridTexture.webp";
-import { Navbar } from "@/components/navbar/Navbar/Navbar";
-import { Footer } from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,12 +23,6 @@ export default async function LocaleLayout({
   params: Promise<{ locale: LangType }>;
 }>) {
   const { locale } = await params;
-  const navType = "navbar";
-  const footerType = "footer";
-  const navbarQuery = navbarPageQuery(locale);
-  const footerQuery = footerPageQuery(locale);
-  const navbarData: INavBar = await useFetchPage(navbarQuery, navType);
-  const footerData: IFooter = await useFetchPage(footerQuery, footerType);
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale}>
@@ -77,16 +66,7 @@ export default async function LocaleLayout({
         </head>
         <body className={inter.className}>
           <div id="root">
-            <div className={styles.app}>
-              <Navbar {...navbarData} />
-              <div className={styles.page}>{children}</div>
-              <Footer
-                legals={footerData?.legals}
-                trademark={footerData?.trademark}
-                links={navbarData?.links}
-                socials={{ links: footerData?.socials?.links }}
-              />
-            </div>
+            <div className={styles.app}>{children}</div>
           </div>
         </body>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID!} />

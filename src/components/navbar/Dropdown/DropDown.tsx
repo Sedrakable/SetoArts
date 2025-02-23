@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styles from "./DropDown.module.scss";
 import FlexDiv from "../../reuse/FlexDiv";
 import { ICta } from "../../../data.d";
-import { Paragraph } from "../../reuse/Paragraph";
+import { Paragraph } from "../../reuse/Paragraph/Paragraph";
 import { useAtom } from "jotai";
 import { sidebarData } from "../Sidebar/Sidebar";
 import Link from "next/link";

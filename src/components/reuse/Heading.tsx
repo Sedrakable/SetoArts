@@ -8,16 +8,16 @@ import {
 } from "../../helpers/SpacingGenerator";
 import { Finger_Paint, Outfit } from "next/font/google";
 
-const fingerPaint = Finger_Paint({
+export const fingerPaint = Finger_Paint({
   variable: "--font-finger-paint",
   subsets: ["latin"],
   weight: "400",
 });
 
-const outfit = Outfit({
+export const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export type ColorType = "white" | "black" | "yellow" | "grey";
@@ -43,6 +43,7 @@ export interface HeadingProps {
   children: string | JSX.Element;
   level: HeadingLevelType;
   as: HeadingAsType;
+  weight?: CSSProperties["fontWeight"];
   textAlign?: CSSProperties["textAlign"];
   paddingBottomArray?: SpacingArrayType;
   color?: ColorType;
@@ -61,6 +62,7 @@ export const Heading: React.FC<HeadingProps> = ({
   children,
   level,
   as,
+  weight = "400",
   textAlign,
   paddingBottomArray,
   color = "white",
@@ -99,7 +101,9 @@ export const Heading: React.FC<HeadingProps> = ({
         color: `var(--${color})`,
         textAlign,
         paddingBottom: spacingNum && `var(--pad-${spacingNum})`,
+        fontWeight: weight,
       }}
+      data-text={finalString}
     >
       {finalString}
     </CustomHeading>

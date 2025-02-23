@@ -1,73 +1,101 @@
-import { IService, IHero, IWorkBlock, ISeo, LocalPaths } from "@/data.d";
+import {
+  IHero,
+  IWorkBlock,
+  ISeo,
+  LocalPaths,
+  IHeroV2,
+  IFeature,
+  IQuestion,
+} from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
-import { servicePageQuery } from "@/app/api/generateSanityQueries";
-import { Hero } from "@/components/reuse/Hero/Hero";
+import { woodPageQuery } from "@/app/api/generateSanityQueries";
+import { HeroV3 } from "@/components/reuse/Hero/Hero";
+import { getCarouselImages } from "@/components/reuse/Carousel/getCarouselData";
+import { Carousel } from "@/components/reuse/Carousel/Carousel";
+import { ICustomImage } from "@/components/reuse/SanityImage/SanityImage";
+import {
+  Features,
+  FeaturesProps,
+} from "@/components/services/Features/Features";
+import { ClientLogger } from "@/helpers/clientLogger";
+import { Questions } from "@/components/services/Questions/Questions";
+import {
+  WoodBlock,
+  WoodBlockProps,
+} from "@/components/pages/blocks/WoodBlock/WoodBlock";
 
-export interface ServicePageProps extends IService {
+export interface WoodPageProps {
   meta: ISeo;
-  hero: IHero;
-  work: IWorkBlock;
+  hero: IHeroV2;
+  features: IFeature[];
+  questions: IQuestion[];
+  woodBlock: WoodBlockProps;
 }
 
-const getServicePageData = async (locale: LangType, slug: string) => {
-  const type = "servicePage";
-  const serviceQuery = servicePageQuery(locale, slug);
+const getWoodPageData = async (locale: LangType) => {
+  const type = "woodPage";
+  const woodQuery = woodPageQuery(locale);
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const servicePageData: ServicePageProps = await useFetchPage(
-    serviceQuery,
-    `${type}-${slug}`
-  );
+  const woodPageData: WoodPageProps = await useFetchPage(woodQuery, `${type}`);
 
-  return servicePageData;
+  return woodPageData;
 };
 
-export async function generateMetadata({
-  params: { locale, slug },
-}: {
-  params: { locale: LangType; slug: string };
-}): Promise<Metadata> {
-  const path = `${LocalPaths.SERVICE}/${slug}`;
-  const crawl = true;
-  const servicePageData: ServicePageProps = await getServicePageData(
-    locale,
-    slug
-  );
-  const { metaTitle, metaDesc, metaKeywords } = servicePageData.meta;
+// export async function generateMetadata({
+//   params: { locale },
+// }: {
+//   params: { locale: LangType };
+// }): Promise<Metadata> {
+//   const path = `${LocalPaths.WOOD}`;
+//   const crawl = true;
+//   const woodPageData: WoodPageProps = await getWoodPageData(locale);
+//   const { metaTitle, metaDesc, metaKeywords } = woodPageData.meta;
 
-  return setMetadata({
-    locale,
-    metaTitle,
-    metaDesc,
-    metaKeywords,
-    path,
-    crawl,
-  });
-}
+//   return setMetadata({
+//     locale,
+//     metaTitle,
+//     metaDesc,
+//     metaKeywords,
+//     path,
+//     crawl,
+//   });
+// }
 
-export default async function ServicePage({
-  params: { locale, slug },
+export default async function WoodPage({
+  params: { locale },
 }: {
-  params: { locale: LangType; slug: string };
+  params: { locale: LangType };
 }) {
-  const servicePageData = await getServicePageData(locale, slug);
+  const woodPageData = await getWoodPageData(locale);
+  const carouselImages: ICustomImage[] = await getCarouselImages();
+  const { hero, features, questions, woodBlock } = woodPageData;
+
   return (
-    servicePageData && (
+    woodPageData && (
       <>
-        <Hero {...servicePageData?.hero} version={2} />
-        {/* <Features
-          {...servicePageData?.features}
-          variant={servicePageData?.processes ? "dark" : "grid"}
-        />
-        {servicePageData?.price && (
-          <PriceBlock price={servicePageData?.price} />
+        <HeroV3 {...hero} />
+        {carouselImages && (
+          <Carousel
+            images={carouselImages}
+            cta={{
+              text: "View my Insta",
+              link: "https://www.instagram.com/seto.arts",
+            }}
+          />
         )}
-        {servicePageData?.processes && (
-          <Processes {...servicePageData?.processes} />
+        {features && <Features features={features} variant="light" />}
+        {questions && <Questions questions={questions} variant="light" />}
+        {woodBlock && <WoodBlock {...woodBlock} />}
+        {/* {woodPageData?.price && (
+          <PriceBlock price={woodPageData?.price} />
         )}
-        {servicePageData?.work && <WorkSlider {...servicePageData?.work} />}
+        {woodPageData?.processes && (
+          <Processes {...woodPageData?.processes} />
+        )}
+        {woodPageData?.work && <WorkSlider {...woodPageData?.work} />}
         <Inspired /> */}
       </>
     )

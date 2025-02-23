@@ -87,6 +87,28 @@
     }
   }
 
+  &.black {
+    min-height: var(--button-height);
+    height: var(--button-height);
+
+    background: var(--black);
+    border-radius: calc(var(--button-height) / 2);
+    outline: 2px solid var(--black);
+    outline-offset: -2px;
+
+    &:hover {
+      // background: var(--white);
+      background: var(--white);
+      transition: 200ms;
+
+      p {
+        transition: 200ms;
+        // font-weight: 900 !important;
+        color: var(--black) !important;
+      }
+    }
+  }
+
   &.small {
     min-width: auto !important;
     min-height: var(--button-height-small) !important;

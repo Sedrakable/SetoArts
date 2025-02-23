@@ -7,12 +7,34 @@ export interface ICustomImage extends Omit<ImageProps, "src"> {
   image: SanityImageSource;
   width?: number;
   quality?: number;
+  figureclassname?: string;
 }
 
 export const SanityImage: React.FC<ICustomImage> = (props) => {
   const { quality = 30 } = props;
-  return (
+
+  return props.width ? (
+    <Img
+      src={urlFor(props.image)
+        .format("webp")
+        .quality(quality)
+        .width(props.width)
+        .url()}
+      width={props.width} // ✅ Set width explicitly
+      height={0} // ✅ Let height be auto (needed for Next.js)
+      style={{
+        objectFit: "cover",
+        height: "auto", // ✅ Maintain aspect ratio
+      }}
+      placeholder="blur"
+      blurDataURL={urlFor(props.image).width(24).height(24).blur(10).url()}
+      // sizes="(max-width: 640px) 90vw, (max-width: 1200px) 80vw, (max-width: 1680px) 50vw, 33vw"
+      priority={props.priority}
+      {...props}
+    />
+  ) : (
     <figure
+      className={props.figureclassname}
       style={{
         position: "relative",
         width: "100%", // Ensure the container fills its parent width
