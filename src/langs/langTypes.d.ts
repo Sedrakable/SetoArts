@@ -3,6 +3,9 @@ interface Titles {
   whatYouGet: string;
   questionTitle1: string;
   questionTitle2: string;
+  questionTitle3: string;
+  realTitle1: string;
+  realTitle2: string;
   values: string;
   process: string;
   features: string;

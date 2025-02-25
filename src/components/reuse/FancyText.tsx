@@ -22,7 +22,9 @@ export const FancyText: React.FC<FancyTextProps> = ({ value, ...props }) => {
     },
     marks: {
       strong: ({ children }) => (
-        <strong className={fingerPaint.variable}>{children}</strong>
+        <strong className={cn(styles.strong, fingerPaint.variable)}>
+          {children}
+        </strong>
       ),
     },
   };

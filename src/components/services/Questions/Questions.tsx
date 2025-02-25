@@ -109,7 +109,7 @@ export const Questions: React.FC<QuestionsProps> = ({
           upperCase={false}
           weight={400}
         >
-          {"Does this apply to your business?"}
+          {translations.blockTitles.questionTitle3}
         </Heading>
       </FlexDiv>
       <FlexDiv

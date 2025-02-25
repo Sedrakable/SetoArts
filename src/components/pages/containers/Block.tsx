@@ -35,7 +35,7 @@ export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
       gapArray={[5, 6, 6, 7]}
       padding={{
         top: [4, 5, 5, 6],
-        bottom: [8, 9, 9, 10],
+        bottom: variant === "wood" ? [0] : [8, 9, 9, 10],
         horizontal: contentSize === "default" ? [6, 8, 9, 10] : [6, 9, 10, 12],
       }}
       width100

@@ -60,6 +60,8 @@ export const woodPageQuery = (locale: LangType): string => {
         hero,
         features[]->,
         questions[]->,
+        woodBlock->,
+        testimonials[]->,
       }`;
 };
 

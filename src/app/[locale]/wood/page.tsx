@@ -6,6 +6,7 @@ import {
   IHeroV2,
   IFeature,
   IQuestion,
+  ITestimonial,
 } from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
@@ -26,6 +27,7 @@ import {
   WoodBlock,
   WoodBlockProps,
 } from "@/components/pages/blocks/WoodBlock/WoodBlock";
+import { Testimonials } from "@/components/services/Testimonials/Testimonials";
 
 export interface WoodPageProps {
   meta: ISeo;
@@ -33,6 +35,7 @@ export interface WoodPageProps {
   features: IFeature[];
   questions: IQuestion[];
   woodBlock: WoodBlockProps;
+  testimonials: ITestimonial[];
 }
 
 const getWoodPageData = async (locale: LangType) => {
@@ -71,7 +74,7 @@ export default async function WoodPage({
 }) {
   const woodPageData = await getWoodPageData(locale);
   const carouselImages: ICustomImage[] = await getCarouselImages();
-  const { hero, features, questions, woodBlock } = woodPageData;
+  const { hero, features, questions, woodBlock, testimonials } = woodPageData;
 
   return (
     woodPageData && (
@@ -89,14 +92,9 @@ export default async function WoodPage({
         {features && <Features features={features} variant="light" />}
         {questions && <Questions questions={questions} variant="light" />}
         {woodBlock && <WoodBlock {...woodBlock} />}
-        {/* {woodPageData?.price && (
-          <PriceBlock price={woodPageData?.price} />
+        {testimonials && (
+          <Testimonials testimonials={testimonials} variant="light" />
         )}
-        {woodPageData?.processes && (
-          <Processes {...woodPageData?.processes} />
-        )}
-        {woodPageData?.work && <WorkSlider {...woodPageData?.work} />}
-        <Inspired /> */}
       </>
     )
   );

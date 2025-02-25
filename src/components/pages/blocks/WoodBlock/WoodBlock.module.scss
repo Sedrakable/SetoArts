@@ -2,7 +2,6 @@
 
 @mixin vars() {
   --stroke-width: 300px;
-  --border-width: 8px;
   @media (min-width: $tablet) {
   }
 
@@ -15,25 +14,16 @@
   }
 }
 
-.customBlock {
-  // .wrapper {
-  //   width: var(--screen-width-large);
-  //   .title {
-  //     position: relative;
-  //     z-index: 2;
-  //     .question {
-  //       position: absolute;
-  //       right: -10%;
-  //     }
-  //   }
-  //   img {
-  //     position: absolute;
-  //     filter: grayscale(100%) brightness(0%);
-  //     width: var(--stroke-width) !important;
-  //     height: 10000px !important;
-  //     object-fit: scale-down !important;
-  //     transform: rotate(60deg) translateX(-1%) !important;
-  //     inset: unset !important;
-  //   }
-  // }
+.stroke {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(185deg);
+  width: 120%;
+  height: auto;
+  z-index: 1;
+}
+
+.headings {
+  z-index: 2;
 }

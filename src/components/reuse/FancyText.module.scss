@@ -20,33 +20,8 @@
   }
 }
 
-.cursive {
+.strong {
   font-family: var(--font-finger-paint);
-
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 10px;
   color: var(--yellow);
-}
-
-.fancyParagraph {
-  @include vars;
-
-  .cursive {
-    font-size: var(--paragraph-font-size);
-    line-height: var(--paragraph-font-size);
-  }
-}
-
-.fancyHeading {
-  @include vars;
-  white-space: wrap;
-  row-gap: var(--pad-1) !important;
-  position: relative;
-  .cursive {
-    position: relative;
-    font-size: var(--heading-font-size);
-    text-transform: uppercase;
-    top: var(--top-span);
-  }
+  font-weight: 400 !important;
 }

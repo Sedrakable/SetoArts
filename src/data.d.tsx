@@ -69,6 +69,15 @@ export interface IQuestion {
   desc: any;
 }
 
+export interface ITestimonial {
+  beforeImage: ICustomImage;
+  afterImage: ICustomImage;
+  name: string;
+  profileImage?: ICustomImage;
+  title?: string;
+  review: any;
+}
+
 export interface IProcesses {
   processes: IProcess[];
 }

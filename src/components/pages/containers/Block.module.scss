@@ -34,7 +34,7 @@
     background-position: 50%;
     background-size: 100%;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     border-top: var(--border-width) solid var(--yellow);
     &::before {
       content: "";

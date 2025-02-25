@@ -16,9 +16,17 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
   differentColorForStrongText = true,
   className,
 }) => {
-  const contastColor = differentColorForStrongText ? `var(--burgundy)` : color;
+  const contastColor = differentColorForStrongText ? `var(--black)` : color;
   const quote = (
-    <strong style={{ fontWeight: 500, color: contastColor }}>"</strong>
+    <strong
+      style={{
+        fontWeight: 900,
+        color: contastColor,
+      }}
+    >
+      {" "}
+      |{" "}
+    </strong>
   );
   const myComponents: PortableTextComponents = {
     block: {
@@ -41,11 +49,9 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
           textAlign={textAlign}
           className={className}
         >
-          <em>
-            {quote}
-            {children}
-            {quote}
-          </em>
+          {quote}
+          {children}
+          {quote}
         </Paragraph>
       ),
     },

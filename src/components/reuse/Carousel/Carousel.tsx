@@ -74,7 +74,7 @@ export const Carousel: FC<ICarouselProps> = ({ images, cta }) => {
                     image={image?.image}
                     alt={image?.alt}
                     figureclassname={cn(styles.image)}
-                    quality={100}
+                    quality={80}
                   />
                 </div>
               )
