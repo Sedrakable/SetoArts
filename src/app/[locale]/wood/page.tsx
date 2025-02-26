@@ -7,6 +7,8 @@ import {
   IFeature,
   IQuestion,
   ITestimonial,
+  ICollapsible,
+  IProcessStep,
 } from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
@@ -31,6 +33,11 @@ import { Testimonials } from "@/components/services/Testimonials/Testimonials";
 import { WoodQuote } from "@/components/pages/woodpage/WoodQuote";
 import { FormTitleProps } from "@/components/reuse/Form/Form";
 import { getFormData } from "@/components/reuse/Form/getFormData";
+import { Collapsible } from "@/components/reuse/Collapsible/Collapsible";
+import {
+  Process,
+  ProcessProps,
+} from "@/components/services/Processes/Processes";
 
 export interface WoodPageProps {
   meta: ISeo;
@@ -38,7 +45,9 @@ export interface WoodPageProps {
   features: IFeature[];
   questions: IQuestion[];
   woodBlock: WoodBlockProps;
+  processBlock: { processes: IProcessStep[] };
   testimonials: ITestimonial[];
+  collapsible: ICollapsible;
 }
 
 const getWoodPageData = async (locale: LangType) => {
@@ -78,7 +87,15 @@ export default async function WoodPage({
   const woodPageData = await getWoodPageData(locale);
   const carouselImages: ICustomImage[] = await getCarouselImages();
   const formData: FormTitleProps = await getFormData("wood", locale);
-  const { hero, features, questions, woodBlock, testimonials } = woodPageData;
+  const {
+    hero,
+    features,
+    questions,
+    woodBlock,
+    testimonials,
+    processBlock,
+    collapsible,
+  } = woodPageData;
 
   return (
     woodPageData && (
@@ -99,7 +116,15 @@ export default async function WoodPage({
         {testimonials && (
           <Testimonials testimonials={testimonials} variant="light" />
         )}
+        {processBlock && (
+          <Process
+            processSteps={processBlock.processes}
+            side="left"
+            media="images"
+          />
+        )}
         {formData && <WoodQuote {...formData} />}
+        {collapsible && <Collapsible {...collapsible} />}
       </>
     )
   );

@@ -52,7 +52,7 @@
   font-family: var(--font-finger-paint);
   position: relative;
   font-weight: 400;
-  text-shadow: var(--text-shadow);
+  // text-shadow: var(--text-shadow);
   @for $i from 1 through 3 {
     &.level#{$i} {
       @include level(-finger-paint, $i, $i + 1, $i + 1, $i + 2);

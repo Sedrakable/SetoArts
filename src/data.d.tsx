@@ -52,7 +52,7 @@ export interface IService {
   metaTitle: string;
   path: string;
   features: IFeature[];
-  processes: IProcesses;
+  // processes: IProcess;
   price?: string;
 }
 
@@ -78,14 +78,9 @@ export interface ITestimonial {
   review: any;
 }
 
-export interface IProcesses {
-  processes: IProcess[];
-}
-
-export interface IProcess {
+export interface IProcessStep {
   title: string;
-  desc: string;
-  features: IFeature[];
+  desc: any;
 }
 
 export interface IValues {
@@ -177,8 +172,12 @@ export interface IFooter {
   socials: ISocials;
 }
 
-export interface IForm {
-  desc: IFancyText;
+export interface ICollapsible {
+  title?: string;
+  questions: {
+    question: string;
+    answer: any;
+  }[];
 }
 
 export interface INotFound {

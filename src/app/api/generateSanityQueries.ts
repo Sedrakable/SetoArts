@@ -62,6 +62,8 @@ export const woodPageQuery = (locale: LangType): string => {
         questions[]->,
         woodBlock->,
         testimonials[]->,
+        processBlock->,
+        collapsible->,
       }`;
 };
 

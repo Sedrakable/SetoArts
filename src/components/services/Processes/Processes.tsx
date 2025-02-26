@@ -4,9 +4,7 @@ import styles from "./Processes.module.scss";
 
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Heading";
-import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
-import { Tag } from "@/components/reuse/Tag";
-import { IProcess, IFeature, IProcesses } from "@/data.d";
+import { IProcessStep } from "@/data.d";
 import { useWindowResize } from "@/helpers/useWindowResize";
 import { LangType } from "@/i18n";
 import { useLocale } from "next-intl";
@@ -16,8 +14,9 @@ import { Block } from "@/components/pages/containers/Block";
 import Analysis from "@/assets/vector/Analysis.svg";
 import Developer from "@/assets/vector/Developer.svg";
 import Draw from "@/assets/vector/Draw.svg";
+import { PortableTextContent } from "@/components/reuse/Paragraph/PortableTextContent";
 
-interface IProcessProps extends IProcess {
+interface ProcessStepProps extends IProcessStep {
   number: number;
 }
 
@@ -27,12 +26,7 @@ const svgArray: any[] = [
   <Draw className={styles.three} key="three" />,
 ];
 
-const Process: React.FC<IProcessProps> = ({
-  title,
-  desc,
-  features,
-  number,
-}) => {
+const ProcessStep: React.FC<ProcessStepProps> = ({ title, desc, number }) => {
   const { isTablet } = useWindowResize();
   return (
     <FlexDiv
@@ -42,7 +36,7 @@ const Process: React.FC<IProcessProps> = ({
       as="li"
     >
       <FlexDiv className={styles.number}>
-        <Heading font="Seto" level="2" as="h2" color="yellow">
+        <Heading font="Outfit" level="2" as="h4" color="yellow">
           {(number + 1).toString()}
         </Heading>
       </FlexDiv>
@@ -53,44 +47,51 @@ const Process: React.FC<IProcessProps> = ({
         gapArray={[2]}
       >
         <Heading
-          font="Seto"
+          font="Outfit"
           level="3"
           as="h3"
           color="black"
+          weight={900}
           className={styles.title}
         >
           {title}
         </Heading>
-        <Paragraph level="small" color="black">
-          {desc}
-        </Paragraph>
-        <FlexDiv className={styles.tags} flex={{ x: "flex-start" }} wrap>
-          {features?.map((feature: IFeature) => {
-            return (
-              <Tag chosen key={feature.title}>
-                {feature.title}
-              </Tag>
-            );
-          })}
-        </FlexDiv>
+        <PortableTextContent
+          level="regular"
+          value={desc}
+          color="black"
+          weight={400}
+        />
       </FlexDiv>
       {number % 2 === 0 && isTablet && svgArray[number / 2]}
     </FlexDiv>
   );
 };
 
-export const Processes: React.FC<IProcesses> = ({ processes }) => {
+export interface ProcessProps {
+  processSteps: IProcessStep[];
+  side: "left" | "right";
+  media: "images" | "video-3D";
+}
+export const Process: React.FC<ProcessProps> = ({
+  processSteps,
+  side = "left",
+  media,
+}) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
 
   return (
-    <Block title={translations.blockTitles.process} variant="fabric-hori">
+    <Block title={translations.blockTitles.process} variant="light">
       <FlexDiv
         gapArray={[0, 0, 5, 7]}
         width100
         className={styles.wrapper}
-        flex={{ y: "stretch" }}
+        flex={{
+          direction: side === "left" ? "row" : "row-reverse",
+          y: "stretch",
+        }}
       >
         <FlexDiv
           gapArray={[7]}
@@ -99,20 +100,20 @@ export const Processes: React.FC<IProcesses> = ({ processes }) => {
           className={styles.processes}
           as="ol"
         >
-          {processes?.map((process: IProcess, key) => {
+          {processSteps?.map((processStep: IProcessStep, key) => {
             return (
               <React.Fragment key={process.title}>
                 {key % 2 === 1 && isMobile && (
                   <li>{svgArray[(key - 1) / 2]}</li>
                 )}
-                <Process {...process} number={key} />
+                <ProcessStep {...processStep} number={key} />
               </React.Fragment>
             );
           })}
         </FlexDiv>
         {!isMobileOrTablet && (
           <div className={styles.svgs}>
-            {processes?.map((_process: IProcess, key) => {
+            {processSteps?.map((_process: IProcessStep, key) => {
               return <>{key % 2 !== 0 && svgArray[(key - 1) / 2]}</>;
             })}
           </div>

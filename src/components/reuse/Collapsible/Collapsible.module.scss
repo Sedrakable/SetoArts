@@ -1,0 +1,52 @@
+@import "@/styles/mixins.scss";
+
+.questionToggle {
+  @include flex(space-between, center);
+  width: 100%;
+  gap: var(--pad-3);
+  height: fit-content;
+}
+
+// .answer {
+//   p {
+//     font-style: italic;
+//   }
+// }
+
+.questionToggle:hover .plus {
+  transform: rotate(90deg);
+}
+
+.question {
+  border-bottom: 1px solid var(--grey);
+
+  &:has(.minus) {
+    background: var(--grad);
+    border-radius: var(--border-radius);
+    border-bottom: unset;
+  }
+
+  /* Unset border-bottom for the previous question if the next one is open */
+  &:has(+ .question .minus) {
+    border-bottom: unset;
+  }
+
+  /* Remove border-bottom for the last item */
+  &:last-child {
+    border-bottom: unset;
+  }
+}
+
+.plus {
+  transition: transform var(--transition-time) ease;
+  animation: rotateIcon var(--transition-time) ease;
+}
+
+@keyframes rotateIcon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
