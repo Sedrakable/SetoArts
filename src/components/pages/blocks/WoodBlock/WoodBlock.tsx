@@ -27,7 +27,7 @@ export const WoodBlock: React.FC<WoodBlockProps> = ({ fancyText }) => {
         flex={{ direction: "column", x: "center" }}
         gapArray={[4]}
         width100
-        padding={{ bottom: [4,6,6, 8] }}
+        padding={{ bottom: [4, 6, 6, 8] }}
       >
         <FancyText value={fancyText} as="h3" level="3" textAlign="center" />
         <Icon icon={"arrow"} size="big" rotate={90} />
@@ -65,30 +65,6 @@ export const WoodBlock: React.FC<WoodBlockProps> = ({ fancyText }) => {
         height={200}
         className={styles.stroke}
       />
-      {/* <FlexDiv
-        className={styles.wrapper}
-        flex={{ direction: "column" }}
-        gapArray={[4, 5, 5, 5]}
-      >
-        <Image src={stroke.src} alt="stroke" width={800} height={200} />
-        <FlexDiv className={styles.title}>
-          <Heading font="Seto" as="h2" level="2">
-            {translations.blockTitles.inspired}
-          </Heading>
-          <Heading
-            font="Cursive"
-            as="h1"
-            level="1"
-            color="yellow"
-            className={styles.question}
-          >
-            ?
-          </Heading>
-        </FlexDiv>
-        <Button variant="fancy" path={`/${locale}${LocalPaths.CONTACT}`}>
-          {translations.buttons.workWithMe}
-        </Button>
-      </FlexDiv> */}
     </Block>
   );
 };

@@ -1,0 +1,126 @@
+@import "@/styles/mixins.scss";
+
+@mixin vars() {
+  --min-width: auto;
+  --original-max-width: 100%;
+  --width: 100%;
+  --dropdown-max-height: 300px;
+  @media (min-width: $tablet) {
+    --width: auto;
+    --original-max-width: 120px;
+    --max-width: 125px;
+    --dropdown-max-height: 300px;
+  }
+
+  @media (min-width: $laptop) {
+    --dropdown-max-height: 250px;
+  }
+
+  @media (min-width: $desktop) {
+    --dropdown-max-height: 300px;
+  }
+}
+
+.container {
+  @include vars;
+  position: relative;
+  width: var(--width);
+  &:has(.original) {
+    width: 100%;
+    min-width: fit-content;
+    flex: 1;
+  }
+  .invalid {
+    outline: 2px solid var(--error);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+  .select {
+    cursor: pointer;
+    padding: 4px 16px 4px !important;
+    border-radius: var(--border-radius-small);
+    background-color: var(--white);
+    min-width: var(--min-width);
+    flex: 1;
+    width: var(--width);
+    box-shadow: var(--drop-shadow);
+    &.original {
+      padding: 15px 16px 13px 16px !important;
+      width: 100% !important;
+    }
+    p {
+      padding-top: 4px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .dropdown {
+    z-index: 2;
+    background: var(--white);
+    position: absolute;
+    min-width: 100%;
+    width: fit-content;
+    bottom: 0;
+    left: 0;
+    transform: translateY(calc(100% + var(--pad-3)));
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--light-shadow);
+
+    // Set a maximum height and enable scrolling
+    max-height: var(--dropdown-max-height); // Adjust this value as needed
+    overflow-y: auto;
+
+    scroll-behavior: smooth;
+    .selected {
+      background: var(--light-burgundy-30);
+      border-top: 1px solid var(--light-burgundy);
+      border-bottom: 1px solid var(--light-burgundy);
+    }
+
+    .check {
+      @include flex;
+      $check-width: 20px;
+      min-width: $check-width;
+      min-height: $check-width;
+      max-width: $check-width;
+      max-height: $check-width;
+      box-sizing: border-box;
+      padding: var(--pad-2, 4px);
+      border-radius: var(--border-radius-small);
+
+      border: 1px solid var(--light-burgundy);
+    }
+    .checked {
+      .check {
+        background: var(--cream-white);
+      }
+    }
+    .tab {
+      &:hover {
+        background: var(--cream-white);
+      }
+      p {
+        text-wrap: nowrap;
+      }
+    }
+    .highlighted {
+      background: var(--light-burgundy-30);
+    }
+  }
+
+  .checkmark {
+    margin-left: 10px;
+  }
+}
+
+.disabled {
+  opacity: 0.5; /* Example styles for a disabled state */
+  .select {
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}

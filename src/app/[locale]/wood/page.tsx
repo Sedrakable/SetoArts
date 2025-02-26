@@ -28,6 +28,9 @@ import {
   WoodBlockProps,
 } from "@/components/pages/blocks/WoodBlock/WoodBlock";
 import { Testimonials } from "@/components/services/Testimonials/Testimonials";
+import { WoodQuote } from "@/components/pages/woodpage/WoodQuote";
+import { FormTitleProps } from "@/components/reuse/Form/Form";
+import { getFormData } from "@/components/reuse/Form/getFormData";
 
 export interface WoodPageProps {
   meta: ISeo;
@@ -74,6 +77,7 @@ export default async function WoodPage({
 }) {
   const woodPageData = await getWoodPageData(locale);
   const carouselImages: ICustomImage[] = await getCarouselImages();
+  const formData: FormTitleProps = await getFormData("wood", locale);
   const { hero, features, questions, woodBlock, testimonials } = woodPageData;
 
   return (
@@ -95,6 +99,7 @@ export default async function WoodPage({
         {testimonials && (
           <Testimonials testimonials={testimonials} variant="light" />
         )}
+        {formData && <WoodQuote {...formData} />}
       </>
     )
   );

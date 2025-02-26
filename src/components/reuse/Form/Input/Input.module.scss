@@ -1,0 +1,77 @@
+@import "@/styles/mixins.scss";
+
+@mixin vars() {
+  --min-height-textarea: 200px;
+  --max-height-textarea: 400px;
+  @media (min-width: $tablet) {
+    --min-height-textarea: 100px;
+    --max-height-textarea: 300px;
+  }
+
+  @media (min-width: $laptop) {
+    --min-height-textarea: 150px;
+    --max-height-textarea: 350px;
+  }
+
+  @media (min-width: $desktop) {
+  }
+}
+
+.input,
+.textarea {
+  position: relative;
+  font-size: var(--paragraph-regular);
+  line-height: 1.25em;
+  font-weight: 400;
+  color: var(--black);
+  padding: 15px 16px 13px 16px;
+  text-decoration: none !important;
+  box-sizing: border-box;
+
+  width: 100%;
+  border: none;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--hard-shadow), inset -16px 0px 0 var(--yellow);
+  border: 2px solid var(--grey, #c4c4cc);
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   height: 100%;
+  //   background: red;
+  //   width: 12px;
+  //   z-index: 2;
+  // }
+  &::placeholder {
+    color: var(--black);
+    opacity: 0.5;
+  }
+  &:focus-visible {
+    border: 2px solid var(--yellow);
+    box-shadow: unset;
+    color: var(--black);
+  }
+
+  &:is(:-webkit-autofill, :autofill) {
+    -webkit-box-shadow: 0 0 0 1000px var(--white) inset !important;
+    box-shadow: 0 0 0 1000px var(--white) inset !important;
+
+    color: var(--burgundy) !important;
+    -webkit-text-fill-color: var(--burgundy) !important;
+  }
+}
+.textarea {
+  @include vars;
+  min-height: var(--min-height-textarea); /* Minimum height */
+  max-height: var(--max-height-textarea); /* Optional: Max height */
+  overflow-y: hidden; /* Prevent scrollbars */
+  resize: none; /* Disable manual resizing */
+}
+
+.invalid {
+  border: 2px solid var(--error);
+  box-shadow: inset -16px 0px 0 var(--error);
+}

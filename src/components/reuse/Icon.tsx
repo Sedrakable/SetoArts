@@ -12,6 +12,7 @@ import Layout from "@/assets/vector/Layout.svg";
 import Palette from "@/assets/vector/ColorPalette.svg";
 import Package from "@/assets/vector/Package.svg";
 import Internet from "@/assets/vector/Internet.svg";
+import Upload from "@/assets/vector/Upload.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
@@ -42,6 +43,7 @@ const icons: {
   palette: <Palette />,
   package: <Package />,
   internet: <Internet />,
+  upload: <Upload />,
 };
 
 export const IconTypeArray = Object.keys(icons) as Array<keyof typeof icons>;

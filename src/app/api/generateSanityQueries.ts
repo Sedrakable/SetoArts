@@ -149,6 +149,10 @@ export const contactPageQuery = (locale: LangType): string => {
   }`;
 };
 
+export const formQuery = (slug: string, locale: LangType): string => {
+  return `*[_type == '${slug}Form' && lang == '${locale}'][0]`;
+};
+
 export const legalPageQuery = (locale: LangType, slug: string): string => {
   return `*[_type == 'legalPage' && lang == '${locale}' && path == '/${slug}'][0]`;
 };

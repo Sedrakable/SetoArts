@@ -1,0 +1,118 @@
+@import "@/styles/mixins.scss";
+
+@mixin vars() {
+  --height: 48px;
+  --pad-top: 3px;
+  --pad-right: 0;
+
+  @media (min-width: $laptop) {
+    --height: 40px;
+    --pad-top: 2px;
+    --pad-right: 1px;
+  }
+
+  @media (min-width: $desktop) {
+    --height: 48px;
+    --pad-top: 3px;
+    --pad-right: 0;
+  }
+}
+
+@mixin side() {
+}
+.wrapper {
+  $size: 10px;
+  position: relative;
+  // opacity: 0;
+  // transform: translateY(20px);
+  // animation: slideIn 0.5s ease-in-out forwards;
+
+  // @keyframes slideIn {
+  //   0% {
+  //     opacity: 0;
+  //     transform: translateY(20px);
+  //   }
+  //   100% {
+  //     opacity: 1;
+  //     transform: translateY(0);
+  //   }
+  // }
+
+  .alert {
+    @include vars;
+    height: var(--height);
+    background: var(--light-burgundy-30);
+    border-radius: var(--border-radius);
+    white-space: nowrap;
+  }
+  &:has(.arrow) {
+    position: absolute;
+    .alert {
+      background: var(--white);
+      box-shadow: var(--light-shadow);
+      z-index: 0;
+    }
+    &::before,
+    &::after {
+      content: " ";
+      position: absolute;
+      rotate: 45deg;
+      width: $size;
+      height: $size;
+      background: var(--white);
+    }
+    &::before {
+      box-shadow: var(--light-shadow);
+      z-index: -1;
+    }
+    &::after {
+      z-index: 1;
+    }
+  }
+  &:has(.arrow_left) {
+    right: calc($size * -1.5);
+    top: 50%;
+    transform: translate(100%, -50%);
+    &::before,
+    &::after {
+      left: 0;
+      top: 50%;
+      translate: calc($size / -2) -50%;
+    }
+  }
+  &:has(.arrow_right) {
+    left: calc($size * -1.5);
+    top: 50%;
+    transform: translate(-100%, -50%);
+    &::before,
+    &::after {
+      right: 0;
+      top: 50%;
+      translate: calc($size / 2) -50%;
+    }
+  }
+
+  &:has(.arrow_bottom) {
+    top: calc(100% + $size);
+    left: 50%;
+    transform: translateX(-50%);
+    &::before,
+    &::after {
+      top: 0;
+      left: 50%;
+      translate: -50% calc($size / -2);
+    }
+  }
+
+  &:has(.arrow_top) {
+    bottom: calc(100% + $size);
+    left: 50%;
+    transform: translateX(-50%);
+    &::before,
+    &::after {
+      bottom: 0;
+      left: 50%;
+      translate: -50% calc($size / 2);
+    }
+  }
+}

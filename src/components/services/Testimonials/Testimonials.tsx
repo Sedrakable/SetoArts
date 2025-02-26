@@ -105,7 +105,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
         gapArray={[6, 7, 7, 8]}
         flex={{ y: "flex-start" }}
         width100
-        padding={{ top: [4, 5, 5, 6] }}
+        padding={{ top: [5, 6, 6, 7] }}
         className={cn(styles.testimonials, styles[variant])}
         as="ul"
       >

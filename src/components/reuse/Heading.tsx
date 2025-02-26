@@ -20,7 +20,7 @@ export const outfit = Outfit({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-export type ColorType = "white" | "black" | "yellow" | "grey";
+export type ColorType = "white" | "black" | "yellow" | "grey" | "error";
 
 export const HeadingLevelArray = ["1", "2", "3", "4", "5"] as const;
 

@@ -38,4 +38,16 @@
   .desc {
     z-index: 1;
   }
+  ul,
+  ol {
+    padding-left: 1.5rem;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
 }

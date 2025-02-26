@@ -22,15 +22,46 @@ interface Buttons {
   view: string;
   contact: string;
   send: string;
+  buildSign: string;
 }
 
 interface Form {
-  name: string;
-  email: string;
-  companyName: string;
-  budget: string;
-  message: string;
-  sent: string;
+  general: {
+    firstName: string;
+    firstNamePlaceholder: string;
+    lastName: string;
+    lastNamePlaceholder: string;
+    email: string;
+    emailPlaceholder: string;
+    requiredAlert: string;
+    emailSent: string;
+    emailNotSent: string;
+    additionalInfo: string;
+    details: string;
+    detailsPlaceholder: string;
+    referanceImage: string;
+    upload: string;
+  };
+  cart: {
+    province: string;
+    city: string;
+    postalCode: string;
+    postalCodePlaceholder: string;
+    delivery: string;
+    addressLine: string;
+  };
+  flash: {
+    selectedFlash: string;
+    bodyPosition: string;
+    bodyPositionPlaceholder: string;
+  };
+  wood: {
+    width: string;
+    height: string;
+    unit: string;
+    budget: string;
+    currency: string;
+  };
 }
 
 interface Nav {

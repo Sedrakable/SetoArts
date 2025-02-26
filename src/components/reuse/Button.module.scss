@@ -53,20 +53,41 @@
     background: var(--grey) !important;
   }
 
-  // &.secondary {
-  //   min-height: var(--button-height);
-  //   height: var(--button-height);
-  //   transition: 300ms;
-  //   background: var(--white);
-  //   border-radius: calc(var(--button-height) / 2);
-  //   border: 2px solid var(--yellow);
-  //   &:hover {
-  //     background: var(--yellow);
-  //     > * {
-  //       color: var(--white) !important;
-  //     }
-  //   }
-  // }
+  &.onlyIcon {
+    min-width: var(--button-height) !important;
+    height: var(--button-height);
+    width: var(--button-height) !important;
+    box-sizing: content-box;
+    &.small {
+      height: var(--button-height-small) !important;
+      width: var(--button-height-small) !important;
+      box-sizing: border-box;
+    }
+  }
+
+  &.withIcon {
+    gap: var(--pad-3);
+    &.iconRight {
+      > * {
+        &:first-child {
+          padding-right: 0px;
+        }
+        &:last-child {
+          padding-right: var(--pad-1);
+        }
+      }
+    }
+    &.iconLeft {
+      > * {
+        &:first-child {
+          padding-left: 0px;
+        }
+        &:last-child {
+          padding-left: var(--pad-1);
+        }
+      }
+    }
+  }
 
   &.primary {
     min-height: var(--button-height);
@@ -74,7 +95,11 @@
 
     background: var(--grad);
     border-radius: calc(var(--button-height) / 2);
-
+    svg,
+    path,
+    polygon {
+      fill: var(--black) !important;
+    }
     &:hover {
       // background: var(--white);
       box-shadow: 0px 0px 8px 0px #feb201, 0px 0px 16px 0px var(--yellow);
@@ -83,6 +108,11 @@
         transition: 200ms;
         font-weight: 900 !important;
         color: var(--white) !important;
+      }
+      svg,
+      path,
+      polygon {
+        fill: var(--white) !important;
       }
     }
   }
@@ -96,6 +126,11 @@
     outline: 2px solid var(--black);
     outline-offset: -2px;
 
+    svg,
+    path,
+    polygon {
+      fill: var(--white) !important;
+    }
     &:hover {
       // background: var(--white);
       background: var(--white);
@@ -105,6 +140,12 @@
         transition: 200ms;
         // font-weight: 900 !important;
         color: var(--black) !important;
+      }
+
+      svg,
+      path,
+      polygon {
+        fill: var(--black) !important;
       }
     }
   }
