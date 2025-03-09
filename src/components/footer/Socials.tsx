@@ -13,7 +13,7 @@ export const Socials: React.FC<ISocials> = ({ title, links }) => {
           {title}
         </Heading>
       )}
-      <FlexDiv gapArray={[3]} wrap flex={{ x: "flex-start" }}>
+      <FlexDiv gapArray={[4]} wrap flex={{ x: "flex-start" }}>
         {links?.map((link: ICta, key) => {
           return (
             true && (

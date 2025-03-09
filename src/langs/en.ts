@@ -24,7 +24,8 @@ export const enTranslations: Translations = {
     view: "View",
     contact: "Contact",
     send: "Send",
-    buildSign: "Let's build your sign",
+    buildSign: "Let's Build Your Sign",
+    buildBrand: "Let’s Build Your Brand",
   },
   form: {
     general: {

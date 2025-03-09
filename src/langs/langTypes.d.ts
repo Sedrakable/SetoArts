@@ -23,6 +23,7 @@ interface Buttons {
   contact: string;
   send: string;
   buildSign: string;
+  buildBrand: string;
 }
 
 interface Form {

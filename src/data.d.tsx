@@ -38,6 +38,13 @@ export interface IHeroV2 {
   message?: string;
 }
 
+export interface ILandingSide {
+  title: string;
+  desc: any;
+  backgroundImage: ICustomImage;
+  tags: string[];
+}
+
 export interface IQuote {
   leftText: string;
   rightText: string;
@@ -187,8 +194,9 @@ export interface INotFound {
 
 /* eslint-disable */
 export enum LocalPaths {
-  HOME = "/home",
+  HOME = "/",
   WOOD = "/wood",
+  DIGITAL = "/digital",
   ABOUT = "/about-work",
   BLOG = "/blog",
   CONTACT = "/contact",

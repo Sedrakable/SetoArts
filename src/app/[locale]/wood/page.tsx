@@ -34,10 +34,7 @@ import { WoodQuote } from "@/components/pages/woodpage/WoodQuote";
 import { FormTitleProps } from "@/components/reuse/Form/Form";
 import { getFormData } from "@/components/reuse/Form/getFormData";
 import { Collapsible } from "@/components/reuse/Collapsible/Collapsible";
-import {
-  Process,
-  ProcessProps,
-} from "@/components/services/Processes/Processes";
+import { Process, ProcessProps } from "@/components/services/Process/Process";
 
 export interface WoodPageProps {
   meta: ISeo;
@@ -119,8 +116,8 @@ export default async function WoodPage({
         {processBlock && (
           <Process
             processSteps={processBlock.processes}
-            side="left"
-            media="images"
+            side="right"
+            media="video-3D"
           />
         )}
         {formData && <WoodQuote {...formData} />}

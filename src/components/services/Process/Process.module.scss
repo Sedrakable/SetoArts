@@ -1,0 +1,161 @@
+@import "@/styles/mixins.scss";
+
+// Define responsive design variables
+@mixin vars() {
+  --ratio: 4/3;
+  --circle-size: 72px;
+  --circle-border-width: 4px;
+  --paragraph-max-lines: 8;
+  --svg-height: auto;
+  --container-height: calc(100vh - 100px);
+  --video-width: 400px;
+
+  @media (min-width: $laptop) {
+    --svg-height: 380px;
+  }
+
+  @media (min-width: $desktop) {
+    --circle-border-width: 6px;
+    --circle-size: 128px;
+    --paragraph-max-lines: 12;
+    --svg-height: 420px;
+    --video-width: 600px;
+  }
+}
+
+// Process steps container
+.process {
+  position: relative;
+  flex: 3;
+  // overflow-y: auto; // Enable vertical scrolling
+  scroll-snap-type: y mandatory; // Enables snapping
+  // height: 100vh; // Full height to allow scrolling
+
+  &::-webkit-scrollbar {
+    display: none; // Optional: Hide scrollbar for a cleaner look
+  }
+}
+
+// Individual slide styling
+.slide {
+  $padding-top: 128px;
+  position: relative;
+  z-index: 1;
+  height: var(--container-height);
+  scroll-snap-align: start; // Ensures each slide snaps into place
+  padding-top: $padding-top !important;
+
+  &:last-child {
+    height: calc(var(--container-height) / 2);
+  }
+  // Yellow vertical line connecting steps
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc((var(--circle-size) - var(--circle-border-width)) / 2);
+    width: var(--circle-border-width);
+    height: 100%;
+    background: var(--yellow);
+    z-index: -1;
+  }
+
+  // Adjustments for first and last steps
+  &:first-child::before {
+    bottom: 0;
+    top: $padding-top;
+    height: auto;
+  }
+
+  &:last-child::before {
+    bottom: auto;
+    top: 0;
+    height: $padding-top;
+  }
+
+  // Numbered circle
+  .number {
+    width: var(--circle-size);
+    height: var(--circle-size);
+    min-width: var(--circle-size);
+    border: var(--circle-border-width) solid var(--yellow);
+    border-radius: 50%;
+    background-color: var(--white);
+  }
+
+  // Text content
+  p {
+    @include paragraphMaxLines(var(--paragraph-max-lines));
+  }
+
+  .title {
+    word-wrap: break-word;
+  }
+
+  .tags {
+    gap: var(--pad-3);
+  }
+
+  .imgWrapper {
+    aspect-ratio: var(--ratio);
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+// Video container
+.video {
+  width: var(--video-width);
+  height: var(--video-width);
+  position: sticky;
+  top: calc(50% - (var(--video-width) / 2));
+
+  background: var(--yellow);
+
+  .canvas {
+    width: 100%;
+    height: 100%;
+    outline: 2px solid red;
+  }
+}
+
+// Container for SVGs in desktop view
+.svgs {
+  flex: 1;
+  position: relative;
+  min-height: 100%;
+
+  .one {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+
+  .two {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .three {
+    position: absolute;
+    left: 40px;
+    bottom: 0;
+  }
+}
+
+.wrapper {
+  @include vars;
+  width: 100%;
+
+  // Step container styling
+
+  //   // SVG illustrations
+  //   svg {
+  //     height: var(--svg-height);
+  //     z-index: 1;
+  //     align-self: center;
+  //   }
+}

@@ -6,7 +6,6 @@ import FlexDiv from "../../reuse/FlexDiv";
 import cn from "classnames";
 import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../Paragraph/Paragraph";
-import { Icon } from "../Icon";
 import { PortableTextContent } from "../Paragraph/PortableTextContent";
 import { ICollapsible } from "@/data.d";
 import { Block } from "@/components/pages/containers/Block";
@@ -59,7 +58,7 @@ export const Collapsible: React.FC<ICollapsible> = ({ title, questions }) => {
 
                 <Heading
                   font="Cursive"
-                  level="5"
+                  level={openQuestions.includes(index) ? "4" : "5"}
                   as="span"
                   color={openQuestions.includes(index) ? "black" : "yellow"}
                   weight={700}
@@ -68,7 +67,7 @@ export const Collapsible: React.FC<ICollapsible> = ({ title, questions }) => {
                     openQuestions.includes(index) ? styles.minus : styles.plus
                   )}
                 >
-                  {openQuestions.includes(index) ? "−" : "+"}
+                  {openQuestions.includes(index) ? "-" : "+"}
                 </Heading>
               </button>
               {openQuestions.includes(index) && (

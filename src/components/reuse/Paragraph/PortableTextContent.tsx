@@ -13,8 +13,10 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
   textAlign = "left",
   weight = 300,
   level = "regular",
+
   differentColorForStrongText = true,
   className,
+  paddingBottomArray,
 }) => {
   const contastColor = differentColorForStrongText ? `var(--black)` : color;
   const quote = (
@@ -36,6 +38,7 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
           weight={weight}
           color={color}
           textAlign={textAlign}
+          paddingBottomArray={paddingBottomArray}
           className={className}
         >
           {children}
@@ -47,6 +50,7 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
           weight={weight}
           color={color}
           textAlign={textAlign}
+          paddingBottomArray={paddingBottomArray}
           className={className}
         >
           {quote}
@@ -82,12 +86,24 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
     },
     listItem: {
       bullet: ({ children }) => (
-        <Paragraph as="li" level={level} weight={weight} color={color}>
+        <Paragraph
+          as="li"
+          level={level}
+          weight={weight}
+          color={color}
+          paddingBottomArray={paddingBottomArray}
+        >
           {children}
         </Paragraph>
       ),
       number: ({ children }) => (
-        <Paragraph as="li" level={level} weight={weight} color={color}>
+        <Paragraph
+          as="li"
+          level={level}
+          weight={weight}
+          color={color}
+          paddingBottomArray={paddingBottomArray}
+        >
           {children}
         </Paragraph>
       ),

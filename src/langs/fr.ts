@@ -25,6 +25,7 @@ export const frTranslations: Translations = {
     contact: "Contact",
     send: "Envoyer",
     buildSign: "Faites votre signe",
+    buildBrand: "Faites votre marque",
   },
   form: {
     general: {

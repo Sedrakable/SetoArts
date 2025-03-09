@@ -32,12 +32,7 @@ const Nav: React.FC<INavBar> = ({ links }) => {
           return (
             <li key={key}>
               <Link href={`/${locale}${link?.link}`} aria-label={link?.text}>
-                <Paragraph
-                  level="regular"
-                  weight="regular"
-                  capitalise
-                  clickable
-                >
+                <Paragraph level="regular" capitalise clickable>
                   {link?.text}
                 </Paragraph>
               </Link>
@@ -51,12 +46,7 @@ const Nav: React.FC<INavBar> = ({ links }) => {
                   href={`/${locale}${LocalPaths.SERVICE}${link?.link}`}
                   aria-label={link?.link}
                 >
-                  <Paragraph
-                    level="regular"
-                    weight="regular"
-                    capitalise
-                    clickable
-                  >
+                  <Paragraph level="regular" capitalise clickable>
                     {link?.text}
                   </Paragraph>
                 </Link>
@@ -79,7 +69,7 @@ const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
       padding={{ bottom: [0, 0, 2] }}
     >
       <LogoHori />
-      <Paragraph level="small" weight="weak" color="grey" textAlign="center">
+      <Paragraph level="small" color="grey" textAlign="center">
         {trademark}
       </Paragraph>
     </FlexDiv>
@@ -104,7 +94,7 @@ const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
             key={key}
             aria-label={cta?.title}
           >
-            <Paragraph level="small" weight="weak" color="grey" clickable>
+            <Paragraph level="small" color="grey" clickable>
               {cta?.title}
             </Paragraph>
           </Link>
@@ -131,10 +121,10 @@ const DesktopFooter: React.FC<FooterProps> = ({
       <Logo trademark={trademark} />
       <Line />
       <FlexDiv
-        flex={{ direction: "column", y: "space-between", x: "flex-start" }}
+        flex={{ direction: "column", y: "center", x: "flex-start" }}
         customStyle={{ flex: 1, minHeight: "100%" }}
         padding={{ vertical: [4] }}
-        gapArray={[4]}
+        gapArray={[5]}
       >
         <Legal legals={legals} />
         <Socials {...socials} />

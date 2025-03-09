@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useWindowResize } from "./useWindowResize";
 
-//Creating a type for Spacing array
 const spacingArrayConst = [
   0,
   1,
@@ -22,17 +21,6 @@ const spacingArrayConst = [
 
 export type SpacingType = typeof spacingArrayConst[number];
 
-/**
- *
- * Optional, padding under text, its an array that takes up to 4 string/number values,
- *    those values represent spacing levels, a,b,c and 1 to 14, example: '12' would represent var(--u9-spacing-level-12).
- * The value go in order of Mobile, Tablet, Laptop, Desktop.
- * Example: ["a",12,"c","1"], this transltes to Mobile: var(--u9-spacing-level-a) , Tablet: var(--u9-spacing-level-12) and etc...
- * Example with 3 values: ["a",12,"c"] in this case, its mobile, tablet, laptop.
- *    The desktop value will be the same as the last value of the array, which in this case is Laptop
- * Example with 1 value: [4] this is simple, all sizes of screen will have the padding bottom var(--u9-spacing-level-4)
- * @type {SpacingArrayType}
- */
 export type SpacingArrayType = [
   SpacingType,
   SpacingType?,
@@ -44,32 +32,31 @@ export const useSpacingGenerator = (spacingArray?: SpacingArrayType) => {
   const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
   const [spacingNum, setSpacingNum] = useState<SpacingType>();
 
+  // Memoize the normalized spacing array
+  const normalizedSpacingArray = useMemo(() => {
+    if (!spacingArray) return undefined;
+
+    const normalized = [...spacingArray];
+    if (normalized.length === 1) normalized[1] = normalized[0];
+    if (normalized.length === 2) normalized[2] = normalized[1];
+    if (normalized.length === 3) normalized[3] = normalized[2];
+
+    return normalized as [SpacingType, SpacingType, SpacingType, SpacingType];
+  }, [spacingArray]);
+
   useEffect(() => {
-    //Only run function of spacingArray is set
-    if (!spacingArray) {
-      return;
-    }
+    if (!normalizedSpacingArray) return;
 
-    if (spacingArray.length === 1) {
-      spacingArray[1] = spacingArray[0];
-    }
-    if (spacingArray.length === 2) {
-      spacingArray[2] = spacingArray[1];
-    }
-    if (spacingArray.length === 3) {
-      spacingArray[3] = spacingArray[2];
-    }
-
-    //Depending on screen size set the proper Spacing size from array
-    setSpacingNum(spacingArray[0]);
-
-    if (isTablet) {
-      setSpacingNum(spacingArray[1]);
+    if (isDesktop) {
+      setSpacingNum(normalizedSpacingArray[3]);
     } else if (isLaptop) {
-      setSpacingNum(spacingArray[2]);
-    } else if (isDesktop) {
-      setSpacingNum(spacingArray[3]);
+      setSpacingNum(normalizedSpacingArray[2]);
+    } else if (isTablet) {
+      setSpacingNum(normalizedSpacingArray[1]);
+    } else {
+      setSpacingNum(normalizedSpacingArray[0]);
     }
-  }, [isMobile, isTablet, isLaptop, isDesktop, spacingArray]);
+  }, [isMobile, isTablet, isLaptop, isDesktop, normalizedSpacingArray]);
+
   return { spacingNum };
 };

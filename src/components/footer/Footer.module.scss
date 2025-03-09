@@ -55,6 +55,9 @@
     .logo {
       position: relative;
       width: var(--logo-width);
+      path:nth-last-child(1) {
+        fill: var(--white);
+      }
     }
 
     .links {

@@ -1,12 +1,12 @@
 @import "@/styles/mixins.scss";
 
 @mixin vars() {
-  --button-height-fancy: 48px;
-  --button-height: 48px;
-  --button-height-small: 32px;
+  --button-height-fancy: 42px;
+  --button-height: 42px;
+  --button-height-small: 26px;
   --button-width: 100%;
-  --button-padding: var(--pad-4);
-  --button-padding-fancy: var(--pad-5);
+  --button-padding: var(--pad-3);
+  --button-padding-fancy: var(--pad-4);
   --transition-time: 0.7s;
 
   @media (min-width: $tablet) {
@@ -17,6 +17,11 @@
   }
 
   @media (min-width: $desktop) {
+    --button-height-fancy: 48px;
+    --button-height: 48px;
+    --button-height-small: 32px;
+    --button-padding: var(--pad-4);
+    --button-padding-fancy: var(--pad-5);
   }
 }
 

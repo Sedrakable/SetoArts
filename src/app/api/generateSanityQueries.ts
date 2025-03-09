@@ -18,6 +18,14 @@ export const footerPageQuery = (locale: LangType): string => {
   }`;
 };
 
+export const landingPageQuery = (locale: LangType): string => {
+  return `*[_type == 'landingPage' && lang == '${locale}'][0] {
+    meta,
+    leftSide->,
+    rightSide->,
+  }`;
+};
+
 export const homePageQuery = (locale: LangType): string => {
   return `*[_type == 'homePage' && lang == '${locale}'][0] {
         meta,
