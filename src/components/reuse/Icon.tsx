@@ -5,7 +5,6 @@ import { ColorType } from "./Heading";
 
 import Burger from "@/assets/vector/Burger.svg";
 import Close from "@/assets/vector/X.svg";
-import Diamond from "@/assets/vector/Diamond.svg";
 import Arrow from "@/assets/vector/Arrow.svg";
 import Bulb from "@/assets/vector/Bulb.svg";
 import Layout from "@/assets/vector/Layout.svg";
@@ -35,7 +34,6 @@ const icons: {
   behance: faBehance,
   linkedin: faLinkedin,
   burger: <Burger />,
-  diamond: <Diamond />,
   close: <Close />,
   arrow: <Arrow />,
   bulb: <Bulb />,

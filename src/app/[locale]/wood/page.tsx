@@ -1,8 +1,5 @@
 import {
-  IHero,
-  IWorkBlock,
   ISeo,
-  LocalPaths,
   IHeroV2,
   IFeature,
   IQuestion,
@@ -12,29 +9,24 @@ import {
 } from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
-import { Metadata } from "next";
-import { setMetadata } from "@/components/SEO";
 import { woodPageQuery } from "@/app/api/generateSanityQueries";
 import { HeroV3 } from "@/components/reuse/Hero/Hero";
 import { getCarouselImages } from "@/components/reuse/Carousel/getCarouselData";
 import { Carousel } from "@/components/reuse/Carousel/Carousel";
 import { ICustomImage } from "@/components/reuse/SanityImage/SanityImage";
-import {
-  Features,
-  FeaturesProps,
-} from "@/components/services/Features/Features";
-import { ClientLogger } from "@/helpers/clientLogger";
+import { Features } from "@/components/services/Features/Features";
 import { Questions } from "@/components/services/Questions/Questions";
 import {
   WoodBlock,
   WoodBlockProps,
 } from "@/components/pages/blocks/WoodBlock/WoodBlock";
 import { Testimonials } from "@/components/services/Testimonials/Testimonials";
-import { WoodQuote } from "@/components/pages/woodpage/WoodQuote";
+
 import { FormTitleProps } from "@/components/reuse/Form/Form";
 import { getFormData } from "@/components/reuse/Form/getFormData";
 import { Collapsible } from "@/components/reuse/Collapsible/Collapsible";
-import { Process, ProcessProps } from "@/components/services/Process/Process";
+import { ProcessAndQuote } from "@/components/pages/woodpage/ProcessAndQuote";
+import { getTranslations } from "@/helpers/langUtils";
 
 export interface WoodPageProps {
   meta: ISeo;
@@ -48,12 +40,11 @@ export interface WoodPageProps {
 }
 
 const getWoodPageData = async (locale: LangType) => {
-  const type = "woodPage";
   const woodQuery = woodPageQuery(locale);
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const woodPageData: WoodPageProps = await useFetchPage(woodQuery, `${type}`);
+  const data: WoodPageProps = await useFetchPage(woodQuery);
 
-  return woodPageData;
+  return data;
 };
 
 // export async function generateMetadata({
@@ -63,8 +54,8 @@ const getWoodPageData = async (locale: LangType) => {
 // }): Promise<Metadata> {
 //   const path = `${LocalPaths.WOOD}`;
 //   const crawl = true;
-//   const woodPageData: WoodPageProps = await getWoodPageData(locale);
-//   const { metaTitle, metaDesc, metaKeywords } = woodPageData.meta;
+//   const data: WoodPageProps = await getWoodPageData(locale);
+//   const { metaTitle, metaDesc, metaKeywords } = data.meta;
 
 //   return setMetadata({
 //     locale,
@@ -77,27 +68,21 @@ const getWoodPageData = async (locale: LangType) => {
 // }
 
 export default async function WoodPage({
-  params: { locale },
+  params,
 }: {
-  params: { locale: LangType };
+  params: Promise<{ locale: LangType }>;
 }) {
-  const woodPageData = await getWoodPageData(locale);
+  // const translations = getTranslations(locale);
+  const { locale } = await params;
+  const translations = getTranslations(locale);
+  const data = await getWoodPageData(locale);
   const carouselImages: ICustomImage[] = await getCarouselImages();
   const formData: FormTitleProps = await getFormData("wood", locale);
-  const {
-    hero,
-    features,
-    questions,
-    woodBlock,
-    testimonials,
-    processBlock,
-    collapsible,
-  } = woodPageData;
 
   return (
-    woodPageData && (
+    data && (
       <>
-        <HeroV3 {...hero} />
+        <HeroV3 {...data.hero} cta={{ text: translations.buttons.buildSign }} />
         {carouselImages && (
           <Carousel
             images={carouselImages}
@@ -107,21 +92,21 @@ export default async function WoodPage({
             }}
           />
         )}
-        {features && <Features features={features} variant="light" />}
-        {questions && <Questions questions={questions} variant="light" />}
-        {woodBlock && <WoodBlock {...woodBlock} />}
-        {testimonials && (
-          <Testimonials testimonials={testimonials} variant="light" />
+        {data.features && <Features features={data.features} variant="light" />}
+        {data.questions && (
+          <Questions questions={data.questions} variant="light" />
         )}
-        {processBlock && (
-          <Process
-            processSteps={processBlock.processes}
-            side="right"
-            media="video-3D"
+        {data.woodBlock && <WoodBlock {...data.woodBlock} />}
+        {data.testimonials && (
+          <Testimonials testimonials={data.testimonials} variant="light" />
+        )}
+        {data.processBlock && (
+          <ProcessAndQuote
+            processes={data.processBlock.processes}
+            {...formData}
           />
         )}
-        {formData && <WoodQuote {...formData} />}
-        {collapsible && <Collapsible {...collapsible} />}
+        {data.collapsible && <Collapsible {...data.collapsible} />}
       </>
     )
   );

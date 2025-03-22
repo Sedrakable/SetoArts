@@ -1,5 +1,4 @@
-@import-normalise;
-@import "./vars.scss";
+@use "@/styles/mixins.scss" as *;
 
 :root {
   --tablet: 640px;
@@ -62,39 +61,32 @@
   --heading-finger-paint-h4-line: 1.2em;
   --heading-finger-paint-h5-line: 1.2em;
 
-  --paragraph-big: 24px;
-  --paragraph-regular: 20px;
+  --paragraph-big: 32px;
+  --paragraph-regular: 22px;
   --paragraph-small: 16px;
 
-  --navbar-height: 64px;
+  --navbar-height: 96px;
   --screen-width-small: 100%;
   --screen-width-large: 100%;
   --max-height: 1600px;
+  --screen-width-large: calc(100vw - var(--pad-6));
 
   @media (min-width: $tablet) {
     --navbar-height: 80px;
 
     --max-height: 1600px;
+    --screen-width-large: calc(100vw - var(--pad-9));
   }
 
   @media (min-width: $laptop) {
     --max-height: 1920px;
+    --screen-width-large: calc(100vw - var(--pad-10));
   }
 
   @media (min-width: $desktop) {
     --navbar-height: 96px;
-    --screen-width-small: calc(var(--laptop));
-    --screen-width-large: calc(var(--desktop));
+    --screen-width-small: var(--laptop);
+    --screen-width-large: calc(var(--desktop) - var(--pad-11));
     --max-height: 2160px !important;
   }
-}
-
-html,
-body,
-#root {
-  height: 100%;
-}
-
-img {
-  margin: 0;
 }

@@ -1,4 +1,4 @@
-@import "@/styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
 @mixin vars() {
   --heading-font-size: 42px;

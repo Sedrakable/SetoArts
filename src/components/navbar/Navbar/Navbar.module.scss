@@ -1,4 +1,4 @@
-@import "@/styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
 @mixin vars() {
   --logo-size: 40px;
@@ -20,7 +20,7 @@
 .logo {
   @include vars;
   height: var(--logo-size);
-
+  opacity: 0;
   transition: 200ms;
   cursor: pointer;
   svg {
@@ -52,6 +52,9 @@
   padding: 0;
   background: var(--white, #fff);
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+  .logo {
+    opacity: 1;
+  }
 }
 
 .burger {

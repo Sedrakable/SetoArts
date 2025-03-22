@@ -24,7 +24,9 @@ const Question: React.FC<IQuestion> = ({ title, desc, extraNote }) => {
     >
       <FlexDiv
         padding={{ left: [3], bottom: [4], right: [4] }}
+        flex={{ y: "flex-start" }}
         className={styles.titleContainer}
+        width100
       >
         <Heading
           font="Outfit"

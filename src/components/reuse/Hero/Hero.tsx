@@ -18,6 +18,7 @@ import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import LogoHori from "@/assets/vector/LogoHorizontal.svg";
 import { Heading } from "../Heading";
+import GlowingSign from "@/assets/vector/GlowingSignGraphic.svg";
 
 export type VersionType = 1 | 2;
 
@@ -32,12 +33,12 @@ export const HeroV3: React.FC<IHeroV2> = ({
   cta,
   message,
 }) => {
-  const { isMobileOrTablet } = useWindowResize();
+  const { isMobile, isMobileOrTablet } = useWindowResize();
   const locale = useLocale() as LangType;
   return (
     <FlexDiv
-      className={cn(styles.heroV2)}
-      flex={{ x: "space-between" }}
+      className={cn(styles.heroV3)}
+      flex={{ direction: "column-reverse", x: "flex-start", y: "flex-start" }}
       as={"header"}
       width100
     >
@@ -60,52 +61,65 @@ export const HeroV3: React.FC<IHeroV2> = ({
             color="white"
             className={styles.message}
             textAlign="center"
+            upperCase={false}
           >
             {message}
           </Heading>
         )}
+        <SanityImage
+          className={styles.foregroundImage}
+          {...foregroundImage}
+          loading="eager"
+          fetchPriority="high"
+          rel="preload"
+          width={1100}
+          quality={90}
+          // sizes="(max-width: 640px) 100vw, (max-width: 1200px) 100vw, (max-width: 1680px) 66vw"
+        />
       </div>
       <FlexDiv
         padding={{
-          left: [6, 8, 8, 10],
-          bottom: [8, 10, 10, 12],
-          top: [7, 9, 9, 11],
+          left: [6, 7, 8, 10],
+          right: [6, 0],
+
+          top: [8, 10, 11, 12],
         }}
-        gapArray={[4]}
-        flex={{ direction: "column", x: "flex-start", y: "center" }}
-        height100
+        gapArray={[5, 4, 6, 7]}
+        flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
         customStyle={{ zIndex: 1 }}
         width100
       >
-        <LogoHori className={styles.logo} />
+        {isMobile ? (
+          <Logo className={styles.logo} />
+        ) : (
+          <LogoHori className={styles.logo} />
+        )}
         <FlexDiv
-          padding={{ left: [4, 6, 6, 8] }}
-          flex={{ direction: "column", x: "flex-start" }}
-          gapArray={[4]}
+          padding={{ left: [0, 5, 6, 8] }}
+          flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
+          gapArray={[3, 3, 3, 4]}
           className={styles.titles}
         >
           {subTitle && (
-            <Heading font="Outfit" level="4" as="h3" color="black">
+            <Paragraph
+              level="big"
+              color="black"
+              textAlign={isMobile ? "center" : "left"}
+            >
               {subTitle}
-            </Heading>
+            </Paragraph>
           )}
           {cta && (
-            <Button variant="fancy" path={`/${locale}${LocalPaths.CONTACT}`}>
+            <Button
+              variant={isMobile ? "primary" : "fancy"}
+              path={`/${locale}${LocalPaths.CONTACT}`}
+            >
               {cta.text}
             </Button>
           )}
         </FlexDiv>
       </FlexDiv>
-      <SanityImage
-        className={styles.foregroundImage}
-        {...foregroundImage}
-        loading="eager"
-        fetchPriority="high"
-        rel="preload"
-        width={1100}
-        quality={90}
-        // sizes="(max-width: 640px) 100vw, (max-width: 1200px) 100vw, (max-width: 1680px) 66vw"
-      />
+
       <Image
         src={bigStroke.src}
         alt="stroke"
@@ -113,6 +127,7 @@ export const HeroV3: React.FC<IHeroV2> = ({
         height={200}
         className={styles.stroke}
       />
+      {!isMobileOrTablet && <GlowingSign className={styles.graphic} />}
     </FlexDiv>
   );
 };

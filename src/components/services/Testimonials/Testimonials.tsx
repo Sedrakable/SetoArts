@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Testimonials.module.scss";
 import cn from "classnames";
 import { BlockVariantType, Block } from "@/components/pages/containers/Block";
@@ -8,6 +8,9 @@ import { SanityImage } from "@/components/reuse/SanityImage/SanityImage";
 import { ITestimonial } from "@/data.d";
 import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
 import { PortableTextContent } from "@/components/reuse/Paragraph/PortableTextContent";
+import { useWindowResize } from "@/helpers/useWindowResize";
+import useEmblaCarousel from "embla-carousel-react";
+import { DotButton, useDotButton } from "@/components/reuse/Carousel/DotButton";
 
 const Testimonial: React.FC<ITestimonial> = ({
   beforeImage,
@@ -48,7 +51,7 @@ const Testimonial: React.FC<ITestimonial> = ({
       >
         <FlexDiv
           padding={{ left: [4] }}
-          gapArray={[4]}
+          gapArray={[2, 3, 3, 3]}
           flex={{ x: "flex-start", y: "flex-end" }}
           width100
         >
@@ -64,11 +67,16 @@ const Testimonial: React.FC<ITestimonial> = ({
             flex={{ direction: "column", x: "flex-start" }}
             padding={{ bottom: [3] }}
           >
-            <Paragraph level="big" color="black" textAlign="left" weight={600}>
+            <Paragraph
+              level="regular"
+              color="black"
+              textAlign="left"
+              weight={600}
+            >
               {name.toUpperCase()}
             </Paragraph>
             <Paragraph
-              level="regular"
+              level="small"
               color="black"
               textAlign="left"
               weight={400}
@@ -99,20 +107,70 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
   testimonials,
   variant = "dark",
 }) => {
+  const { isMobileOrTablet } = useWindowResize();
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start", // Align slides to the start
+    startIndex: 0, // Start at the first slide
+    containScroll: "trimSnaps", // Ensure snapping works cleanly
+  });
+  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
+    emblaApi
+  );
+
+  // // Force scroll to slide 0 on mount and log for debugging
+  // useEffect(() => {
+  //   if (emblaApi) {
+  //     emblaApi.reInit();
+  //     emblaApi.scrollTo(0);
+  //     console.log("Scroll snaps:", emblaApi.scrollSnapList());
+  //     console.log("Selected index:", emblaApi.selectedScrollSnap());
+  //   }
+  // }, [emblaApi]);
+
+  // Force scroll to slide 0 on mount
   return (
-    <Block variant={variant}>
-      <FlexDiv
-        gapArray={[6, 7, 7, 8]}
-        flex={{ y: "flex-start" }}
-        width100
-        padding={{ top: [5, 6, 6, 7] }}
-        className={cn(styles.testimonials, styles[variant])}
-        as="ul"
-      >
-        {testimonials?.map((testimonial: ITestimonial, key) => {
-          return <Testimonial {...testimonial} key={key} />;
-        })}
-      </FlexDiv>
-    </Block>
+    <>
+      {isMobileOrTablet ? (
+        <div
+          className={cn(styles.testimonials, styles[variant], styles.carousel)}
+        >
+          <div className={styles.emblaViewport} ref={emblaRef}>
+            <div className={styles.emblaContainer}>
+              {testimonials?.map((testimonial, key) => (
+                <div className={styles.emblaSlide} key={key}>
+                  <Testimonial {...testimonial} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={styles.emblaDots}>
+            {scrollSnaps.map((_, index) => (
+              <DotButton
+                key={index}
+                onClick={() => onDotButtonClick(index)}
+                className={cn(styles.emblaDot, {
+                  [styles.emblaDotSelected]: index === selectedIndex,
+                })}
+              />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <Block variant={variant}>
+          <FlexDiv
+            gapArray={[6, 7, 7, 8]}
+            flex={{ y: "flex-start" }}
+            width100
+            padding={{ top: [6, 8, 7, 8] }}
+            className={cn(styles.testimonials, styles[variant])}
+            as="ul"
+          >
+            {testimonials?.map((testimonial: ITestimonial, key) => {
+              return <Testimonial {...testimonial} key={key} />;
+            })}
+          </FlexDiv>
+        </Block>
+      )}
+    </>
   );
 };

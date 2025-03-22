@@ -1,4 +1,4 @@
-@import "@/styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
 @mixin sizing($font, $size) {
   font-size: var(--heading#{$font}-h#{$size});
@@ -40,12 +40,12 @@
       @include level(-outfit, $i, $i + 1, $i + 1, $i + 2);
     }
   }
-  // &.level4 {
-  //   @include level(-outfit, 4, 4, 4, 5);
-  // }
-  // &.level5 {
-  //   @include level(-outfit, 5, 5, 5, 5);
-  // }
+  &.level4 {
+    @include level(-outfit, 4, 4, 4, 5);
+  }
+  &.level5 {
+    @include level(-outfit, 5, 5, 5, 5);
+  }
 }
 
 .cursive {

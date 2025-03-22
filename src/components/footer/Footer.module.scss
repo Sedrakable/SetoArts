@@ -1,4 +1,4 @@
-@import "@/styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
 @mixin vars() {
   --top-gap: var(--pad-6);

@@ -1,4 +1,4 @@
-@import "@/styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
 @mixin vars() {
   --wrapper-padding-bottom: var(--pad-5);

@@ -1,26 +1,14 @@
-@import "@/styles/mixins.scss";
-
-@mixin vars() {
-  --stroke-width: 300px;
-  @media (min-width: $tablet) {
-  }
-
-  @media (min-width: $laptop) {
-    --stroke-width: 450px;
-  }
-
-  @media (min-width: $desktop) {
-    --stroke-width: 600px;
-  }
-}
+@use "@/styles/mixins.scss" as *;
 
 .stroke {
+  @include vari(--trans-y, 45%, 25%, 25%, 25%);
+  @include vari(height, 100px, 160px, 200px, 300px);
   position: absolute;
-  bottom: 50px;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, 50%) rotate(185deg);
+  transform: translate(-50%, var(--trans-y)) rotate(183deg);
   width: 120%;
-  height: auto;
+  min-width: $laptop;
   z-index: 1;
 }
 

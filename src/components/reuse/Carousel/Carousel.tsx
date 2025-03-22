@@ -61,7 +61,7 @@ export const Carousel: FC<ICarouselProps> = ({ images, cta }) => {
     <FlexDiv
       flex={{ direction: "column", x: "center" }}
       width100
-      padding={{ vertical: [4, 5, 5, 6] }}
+      padding={{ top: [2, 3, 5, 6], bottom: [7, 7, 7, 8] }}
       customStyle={{ zIndex: 1 }}
     >
       <div className={styles.embla} ref={emblaRef}>
@@ -81,10 +81,17 @@ export const Carousel: FC<ICarouselProps> = ({ images, cta }) => {
           )}
         </div>
       </div>
+
       {cta && (
-        <Button variant="black" path={cta?.link} target="_blank">
-          {cta?.text}
-        </Button>
+        <FlexDiv
+          flex={{ x: "center" }}
+          width100
+          padding={{ horizontal: [6, 0] }}
+        >
+          <Button variant="black" path={cta?.link} target="_blank">
+            {cta?.text}
+          </Button>
+        </FlexDiv>
       )}
     </FlexDiv>
   );

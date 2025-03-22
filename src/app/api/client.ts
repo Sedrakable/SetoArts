@@ -6,7 +6,7 @@ export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET, // Usually 'production'
   useCdn: false, // Set to true for production
-  apiVersion: "2025-02-20",
+  apiVersion: "2025-03-18",
 });
 
 // Get a pre-configured url-builder from your sanity client

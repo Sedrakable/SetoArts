@@ -16,17 +16,23 @@ import { getTranslations } from "@/helpers/langUtils";
 const Feature: React.FC<IFeature> = ({ title, customImage, svgName, desc }) => {
   const { isMobile } = useWindowResize();
   const [SvgComponent, setSvgComponent] = useState<React.FC | null>(null);
-
-  // Dynamically import SVG when svgName is provided
-  useEffect(() => {
-    if (svgName) {
-      import(`@/assets/vector/${svgName}.svg`)
-        .then((module) => setSvgComponent(() => module.default))
-        .catch(() =>
-          console.error(`SVG '${svgName}' not found in /assets/vector/`)
+  const fallbackSvg = "Bulb";
+  if (svgName) {
+    import(`@/assets/vector/${svgName}.svg`)
+      .then((module) => setSvgComponent(() => module.default))
+      .catch(() => {
+        console.error(
+          `SVG '${svgName}' not found in /assets/vector/. Falling back to 'bulb'.`
         );
-    }
-  }, [svgName]);
+        import(`@/assets/vector/${fallbackSvg}.svg`)
+          .then((fallbackModule) =>
+            setSvgComponent(() => fallbackModule.default)
+          )
+          .catch(() =>
+            console.error(`Fallback SVG 'bulb' also failed to load.`)
+          );
+      });
+  }
 
   return (
     <FlexDiv
@@ -34,6 +40,7 @@ const Feature: React.FC<IFeature> = ({ title, customImage, svgName, desc }) => {
       width100
       className={styles.container}
       as="li"
+      gapArray={[3, 4, 4, 5]}
     >
       <div className={styles.imgWrapper}>
         {customImage ? (
@@ -48,11 +55,11 @@ const Feature: React.FC<IFeature> = ({ title, customImage, svgName, desc }) => {
         flex={{ direction: "column", y: "flex-start" }}
         width100
         className={styles.content}
-        gapArray={[1]}
+        gapArray={[2]}
       >
         <Heading
           font="Outfit"
-          level="4"
+          level="5"
           as="h3"
           color="black"
           weight={700}
@@ -61,7 +68,7 @@ const Feature: React.FC<IFeature> = ({ title, customImage, svgName, desc }) => {
           {title}
         </Heading>
 
-        <Paragraph level="big" color="black" textAlign="center">
+        <Paragraph level="regular" color="black" textAlign="center">
           {desc}
         </Paragraph>
       </FlexDiv>
@@ -81,9 +88,17 @@ export const Features: React.FC<FeaturesProps> = ({
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
   return (
-    <Block title={translations.blockTitles.whatYouGet} variant={variant}>
+    <Block
+      title={{
+        children: translations.blockTitles.whatYouGet,
+        font: "Outfit",
+        color: "black",
+        weight: 900,
+      }}
+      variant={variant}
+    >
       <FlexDiv
-        gapArray={[6, 7, 7, 8]}
+        gapArray={[8, 8, 8, 9]}
         flex={{ y: "flex-start" }}
         width100
         className={cn(styles.features, styles[variant])}

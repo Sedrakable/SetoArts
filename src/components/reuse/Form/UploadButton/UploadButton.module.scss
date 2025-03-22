@@ -1,4 +1,4 @@
-@import "@/styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 @mixin vars() {
   --icon-height: 32px;
   --image-size: 120px;

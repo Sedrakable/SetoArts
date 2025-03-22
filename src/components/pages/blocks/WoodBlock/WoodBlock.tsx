@@ -12,6 +12,7 @@ import { FancyText } from "@/components/reuse/FancyText";
 import { Icon } from "@/components/reuse/Icon";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Heading";
+import { useWindowResize } from "@/helpers/useWindowResize";
 
 export interface WoodBlockProps {
   fancyText: any;
@@ -20,6 +21,7 @@ export interface WoodBlockProps {
 export const WoodBlock: React.FC<WoodBlockProps> = ({ fancyText }) => {
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
+  const { isMobileOrTablet } = useWindowResize();
 
   return (
     <Block variant="wood">
@@ -40,7 +42,7 @@ export const WoodBlock: React.FC<WoodBlockProps> = ({ fancyText }) => {
         <Heading
           font="Outfit"
           as="h2"
-          level="1"
+          level={isMobileOrTablet ? "2" : "1"}
           color="white"
           textAlign="left"
           weight={900}
@@ -50,7 +52,7 @@ export const WoodBlock: React.FC<WoodBlockProps> = ({ fancyText }) => {
         <Heading
           font="Cursive"
           as="h2"
-          level="1"
+          level={isMobileOrTablet ? "2" : "1"}
           color="black"
           textAlign="right"
           weight={400}
