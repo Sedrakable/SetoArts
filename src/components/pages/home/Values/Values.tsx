@@ -48,7 +48,7 @@ export const Values: React.FC<IValues> = ({ values }) => {
   const translations = getTranslations(locale);
 
   return (
-    <Block title={translations.blockTitles.values} variant="dark">
+    <Block title={translations.blockTitles.values} theme="dark">
       <FlexDiv
         gapArray={[6]}
         flex={{ x: "flex-start", y: "space-between" }}

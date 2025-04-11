@@ -1,20 +1,23 @@
 "use client";
-import React, { Suspense, useEffect, useState } from "react";
+import React from "react";
 import styles from "./Questions.module.scss";
 import cn from "classnames";
-import { BlockVariantType, Block } from "@/components/pages/containers/Block";
+import { Block } from "@/components/pages/containers/Block";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Heading";
 import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
-import { SanityImage } from "@/components/reuse/SanityImage/SanityImage";
-import { IQuestion } from "@/data.d";
-import { useWindowResize } from "@/helpers/useWindowResize";
+import { IQuestion, ITheme } from "@/data.d";
 import { LangType } from "@/i18n";
 import { useLocale } from "next-intl";
 import { getTranslations } from "@/helpers/langUtils";
 import { PortableTextContent } from "@/components/reuse/Paragraph/PortableTextContent";
 
-const Question: React.FC<IQuestion> = ({ title, desc, extraNote }) => {
+const Question: React.FC<IQuestion> = ({
+  title,
+  desc,
+  extraNote,
+  theme = "light",
+}) => {
   return (
     <FlexDiv
       flex={{ direction: "column", y: "flex-start" }}
@@ -43,7 +46,11 @@ const Question: React.FC<IQuestion> = ({ title, desc, extraNote }) => {
             padding={{ vertical: [2], right: [5] }}
             className={styles.extraNote}
           >
-            <Paragraph level="regular" color="black" textAlign="right">
+            <Paragraph
+              level="regular"
+              color={theme === "dark" ? "white" : "black"}
+              textAlign="right"
+            >
               {extraNote}
             </Paragraph>
           </FlexDiv>
@@ -54,35 +61,37 @@ const Question: React.FC<IQuestion> = ({ title, desc, extraNote }) => {
         level="regular"
         value={desc}
         className={styles.desc}
+        differentColorForStrongText={false}
+        color={theme === "dark" ? "white" : "black"}
       />
     </FlexDiv>
   );
 };
 
 export interface QuestionsProps {
-  variant: BlockVariantType;
+  theme: ITheme;
   questions: IQuestion[];
 }
 
 export const Questions: React.FC<QuestionsProps> = ({
   questions,
-  variant = "dark",
+  theme = "dark",
 }) => {
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
 
   return (
-    <Block variant={variant}>
+    <Block theme={theme} className={styles.block}>
       <FlexDiv
         flex={{ direction: "column", x: "stretch" }}
         width100
-        padding={{ bottom: [4, 5, 5, 6] }}
+        padding={{ bottom: [4, 5, 5, 6], top: [7, 8, 8, 9] }}
       >
         <Heading
           font="Outfit"
           as="h3"
           level="2"
-          color="black"
+          color={theme === "dark" ? "white" : "black"}
           className={styles.heading}
           textAlign="left"
           weight={400}
@@ -105,7 +114,7 @@ export const Questions: React.FC<QuestionsProps> = ({
           font="Outfit"
           as="h3"
           level="4"
-          color="black"
+          color={theme === "dark" ? "white" : "black"}
           className={styles.heading}
           textAlign="center"
           upperCase={false}
@@ -118,11 +127,11 @@ export const Questions: React.FC<QuestionsProps> = ({
         gapArray={[6, 7, 7, 8]}
         flex={{ y: "flex-start" }}
         width100
-        className={cn(styles.questions, styles[variant])}
+        className={cn(styles.questions, styles[theme])}
         as="ul"
       >
         {questions?.map((question: IQuestion, key) => {
-          return <Question {...question} key={key} />;
+          return <Question {...question} key={key} theme={theme} />;
         })}
       </FlexDiv>
     </Block>

@@ -7,7 +7,7 @@ import { Block } from "../containers/Block";
 
 export const LegalPageComp: React.FC<ILegalPage> = ({ title, data }) => {
   return (
-    <Block title={title} variant="dark">
+    <Block title={title} theme="dark">
       <FlexDiv flex={{ direction: "column", x: "flex-start" }}>
         {data?.map((block) => {
           return (

@@ -1,5 +1,8 @@
 import { ICustomImage } from "./components/reuse/SanityImage/SanityImage";
 
+export type ServiceType = "wood" | "digital";
+export type DigitalServiceType = "branding" | "web-design";
+
 export interface ISeo {
   metaTitle: string;
   metaDesc: string;
@@ -8,7 +11,8 @@ export interface ISeo {
 
 export interface ICta {
   text: string;
-  link?: string;
+  path?: string;
+  scrollTarget?: LocalTargets;
 }
 
 export interface ISlug {
@@ -20,22 +24,25 @@ export interface IFancyText {
   value: any; // Will store the PortableText content
 }
 
-export interface IHero {
-  subTitle?: IFancyText;
-  title: IFancyText;
-  desc: string;
-  customImage: ICustomImage;
+export interface IHeroV2 {
+  title: string;
+  subTitle?: string;
+  desc: any;
+  backgroundImage: ICustomImage;
   cta1: ICta;
   cta2?: ICta;
   quote: IQuote;
 }
 
-export interface IHeroV2 {
+export type ITheme = "light" | "dark" | "wood";
+
+export interface IHero {
   backgroundImage: ICustomImage;
   foregroundImage: ICustomImage;
   subTitle?: string;
   cta: ICta;
   message?: string;
+  theme?: ITheme;
 }
 
 export interface ILandingSide {
@@ -56,11 +63,9 @@ export interface IServices {
 
 export interface IService {
   title: string;
-  metaTitle: string;
-  path: string;
-  features: IFeature[];
-  // processes: IProcess;
-  price?: string;
+  svgName: string;
+  path?: string;
+  featureBlock: { features: IFeature[] };
 }
 
 export interface IFeature {
@@ -74,12 +79,14 @@ export interface IQuestion {
   title: string;
   extraNote?: string;
   desc: any;
+  theme?: ITheme;
 }
 
 export interface ITestimonial {
   beforeImage: ICustomImage;
   afterImage: ICustomImage;
   name: string;
+  company: string;
   profileImage?: ICustomImage;
   title?: string;
   review: any;
@@ -88,6 +95,13 @@ export interface ITestimonial {
 export interface IProcessStep {
   title: string;
   desc: any;
+}
+
+export interface IFrameVideo {
+  format: "png" | "webp" | "jpg";
+  folder: string;
+  firstIndex: number;
+  lastIndex: number;
 }
 
 export interface IValues {
@@ -149,13 +163,15 @@ export interface IWoodWork {
 
 export interface INavLink {
   title: string;
+  path: string;
   ctaArray: ICta[];
 }
 
 export interface INavBar {
+  navButton: ICta;
   links: (INavLink | ICta)[];
+  theme?: ITheme;
 }
-
 export interface ISocials {
   title?: string;
   links: ICta[];
@@ -192,7 +208,6 @@ export interface INotFound {
   desc: string;
 }
 
-/* eslint-disable */
 export enum LocalPaths {
   HOME = "/",
   WOOD = "/wood",
@@ -201,10 +216,16 @@ export enum LocalPaths {
   BLOG = "/blog",
   CONTACT = "/contact",
   LEGAL = "/legal",
-  SERVICE = "/service",
   BRANDING = "/branding",
   WEB = "/web-design",
   PACKAGE = "/total-package",
   CUSTOM = "/custom-work",
 }
-/* eslint-enable */
+
+export enum LocalTargets {
+  WOODFORM = "#wood-form",
+  DIGITALFORM = "#digital-form",
+  BRANDINGFORM = "#branding-form",
+  WEBFORM = "#web-form",
+  WORK = "#work-block",
+}

@@ -4,20 +4,8 @@ import cn from "classnames";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Heading";
 import { PortableTextContent } from "@/components/reuse/Paragraph/PortableTextContent";
-import { useWindowResize } from "@/helpers/useWindowResize";
 
-// Import SVG components
-import Analysis from "@/assets/vector/Analysis.svg";
-import Developer from "@/assets/vector/Developer.svg";
-import Draw from "@/assets/vector/Draw.svg";
 import { IProcessStep } from "@/data.d";
-
-// Array of SVG components to be used for illustrations
-const svgArray = [
-  <Analysis className={styles.one} key="one" />,
-  <Developer className={styles.two} key="two" />,
-  <Draw className={styles.three} key="three" />,
-];
 
 interface ProcessStepProps extends IProcessStep {
   number: number;
@@ -28,8 +16,6 @@ interface ProcessStepProps extends IProcessStep {
  */
 export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
   ({ title, desc, number }, ref) => {
-    const { isTablet } = useWindowResize();
-
     return (
       <FlexDiv
         className={cn(styles.slide)}
@@ -50,6 +36,7 @@ export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
           flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
           width100
           gapArray={[2]}
+          className={styles.content}
         >
           <Heading
             font="Outfit"
@@ -68,9 +55,6 @@ export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
             weight={400}
           />
         </FlexDiv>
-
-        {/* Display SVG illustration for even numbered steps on tablet view */}
-        {number % 2 === 0 && isTablet && svgArray[number / 2]}
       </FlexDiv>
     );
   }

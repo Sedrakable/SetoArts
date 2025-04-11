@@ -2,7 +2,6 @@
 
 @mixin vars() {
   --ratio: 4/3;
-  --circle-size: 72px;
   --circle-border-width: 4px;
   --paragraph-max-lines: 8;
 
@@ -13,70 +12,30 @@
 
   @media (min-width: $desktop) {
     --circle-border-width: 6px;
-    --circle-size: 128px;
+
     --paragraph-max-lines: 12;
   }
 }
 
 .container {
+  @include vari(--circle-size, 56px, 96px, 96px, 128px);
   position: relative;
+  height: auto;
+
   .right {
     flex: 1;
     .process {
       @include vars;
       position: relative;
-      $padding-top: 128px;
       scroll-snap-type: y mandatory; // Enables snapping
 
       &::-webkit-scrollbar {
         display: none; // Optional: Hide scrollbar for a cleaner look
       }
-      &:last-child {
-        height: calc(var(--container-height) / 2);
-      }
-      // Yellow vertical line connecting steps
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: calc((var(--circle-size) - var(--circle-border-width)) / 2);
-        width: var(--circle-border-width);
-        height: 100%;
-        background: var(--yellow);
-        z-index: -1;
-      }
-
-      // Adjustments for first and last steps
-      &:first-child::before {
-        bottom: 0;
-        top: $padding-top;
-        height: auto;
-      }
-
-      &:last-child::before {
-        bottom: auto;
-        top: 0;
-        height: $padding-top;
-      }
-
-      // Numbered circle
-      .number {
-        width: var(--circle-size);
-        height: var(--circle-size);
-        min-width: var(--circle-size);
-        border: var(--circle-border-width) solid var(--yellow);
-        border-radius: 50%;
-        background-color: var(--white);
-      }
-
-      // Text content
-      p {
-        @include paragraphMaxLines(var(--paragraph-max-lines));
-      }
-
-      .title {
-        word-wrap: break-word;
-      }
     }
+  }
+  @media (min-width: $laptop) {
+    flex-direction: row !important;
+    align-items: flex-start !important;
   }
 }

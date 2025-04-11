@@ -8,19 +8,24 @@ import styles from "./Carousel.module.scss";
 import cn from "classnames";
 
 import { ICustomImage, SanityImage } from "../SanityImage/SanityImage";
-import { ICta } from "@/data.d";
+import { ICta, LocalPaths, LocalTargets } from "@/data.d";
 import FlexDiv from "../FlexDiv";
 import { Button } from "../Button";
 import { useShuffleArray } from "@/helpers/useShuffleArray";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
+import { getTranslations } from "@/helpers/langUtils";
 
 const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
 
 interface ICarouselProps {
   images: ICustomImage[];
-  cta?: ICta;
 }
 
-export const Carousel: FC<ICarouselProps> = ({ images, cta }) => {
+export const Carousel: FC<ICarouselProps> = ({ images }) => {
+  const locale = useLocale() as LangType;
+  const translate = getTranslations(locale);
+
   const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS, [
     AutoScroll({ playOnInit: true }),
   ]);
@@ -62,7 +67,7 @@ export const Carousel: FC<ICarouselProps> = ({ images, cta }) => {
       flex={{ direction: "column", x: "center" }}
       width100
       padding={{ top: [2, 3, 5, 6], bottom: [7, 7, 7, 8] }}
-      customStyle={{ zIndex: 1 }}
+      customStyle={{ zIndex: 4 }}
     >
       <div className={styles.embla} ref={emblaRef}>
         <div className={styles.embla__container}>
@@ -82,17 +87,27 @@ export const Carousel: FC<ICarouselProps> = ({ images, cta }) => {
         </div>
       </div>
 
-      {cta && (
-        <FlexDiv
-          flex={{ x: "center" }}
-          width100
-          padding={{ horizontal: [6, 0] }}
+      <FlexDiv
+        flex={{ x: "center" }}
+        width100
+        padding={{ horizontal: [6, 0] }}
+        gapArray={[2, 3, 3, 4]}
+      >
+        <Button
+          variant="primary"
+          path={`/${locale}${LocalPaths.ABOUT}${LocalTargets.WORK}`}
+          target="_blank"
         >
-          <Button variant="black" path={cta?.link} target="_blank">
-            {cta?.text}
-          </Button>
-        </FlexDiv>
-      )}
+          {translate.buttons.viewMyWork}
+        </Button>
+        <Button
+          variant="black"
+          path={"https://www.instagram.com/seto.arts"}
+          target="_blank"
+        >
+          {translate.buttons.viewInstagram}
+        </Button>
+      </FlexDiv>
     </FlexDiv>
   );
 };

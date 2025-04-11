@@ -18,6 +18,13 @@ export interface WoodFormData extends BaseFormData {
   uploads: EncodedFileType[];
 }
 
+export interface DigitalFormData extends BaseFormData {
+  details: string;
+  budgetMin: number;
+  budgetMax: number;
+  uploads: EncodedFileType[];
+}
+
 export interface FormErrorData {
   [key: string]: boolean;
 }

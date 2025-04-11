@@ -24,7 +24,7 @@ export const WoodBlock: React.FC<WoodBlockProps> = ({ fancyText }) => {
   const { isMobileOrTablet } = useWindowResize();
 
   return (
-    <Block variant="wood">
+    <Block theme="wood">
       <FlexDiv
         flex={{ direction: "column", x: "center" }}
         gapArray={[4]}

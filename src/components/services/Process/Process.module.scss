@@ -1,27 +1,6 @@
 @use "@/styles/mixins.scss" as *;
 
 // Define responsive design variables
-@mixin vars() {
-  --ratio: 4/3;
-  --circle-size: 72px;
-  --circle-border-width: 4px;
-  --paragraph-max-lines: 8;
-  --svg-height: auto;
-  --container-height: calc(100vh - 100px);
-  --video-width: 400px;
-
-  @media (min-width: $laptop) {
-    --svg-height: 380px;
-  }
-
-  @media (min-width: $desktop) {
-    --circle-border-width: 6px;
-    --circle-size: 128px;
-    --paragraph-max-lines: 12;
-    --svg-height: 420px;
-    --video-width: 630px;
-  }
-}
 
 // Process steps container
 .process {
@@ -38,17 +17,44 @@
 
 // Individual slide styling
 .slide {
-  $padding-top: 128px;
+  @include vari(--circle-size, 72px, 72px, 72px, 128px);
+  @include vari(--circle-border-width, 4px, 4px, 4px, 6px);
+  @include vari(
+    --container-height,
+    66vh,
+    66vh,
+    calc(100vh - 160px),
+    calc(100vh - 200px)
+  );
+  // $padding-top: 128px;
   position: relative;
   z-index: 1;
   height: var(--container-height);
   scroll-snap-align: start; // Ensures each slide snaps into place
-  padding-top: $padding-top !important;
 
-  &:last-child {
-    height: calc(var(--container-height) / 2);
+  .content {
+    // background-color: red;
+
+    position: relative;
+    > * {
+      z-index: 1;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: calc(var(--pad-5) * -1);
+      background: white;
+      filter: blur(var(--pad-4));
+      z-index: 0;
+    }
   }
-  // Yellow vertical line connecting steps
+  &:last-child {
+    height: fit-content;
+    &::before {
+      content: none !important;
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -63,14 +69,14 @@
   // Adjustments for first and last steps
   &:first-child::before {
     bottom: 0;
-    top: $padding-top;
+    // top: $padding-top;
     height: auto;
   }
 
   &:last-child::before {
     bottom: auto;
     top: 0;
-    height: $padding-top;
+    // height: $padding-top;
   }
 
   // Numbered circle
@@ -81,44 +87,70 @@
     border: var(--circle-border-width) solid var(--yellow);
     border-radius: 50%;
     background-color: var(--white);
+    z-index: 1;
   }
 
-  // Text content
-  p {
-    @include paragraphMaxLines(var(--paragraph-max-lines));
-  }
+  // // Text content
+  // p {
+  //   @include paragraphMaxLines(var(--paragraph-max-lines));
+  // }
 
   .title {
     word-wrap: break-word;
-  }
-
-  .tags {
-    gap: var(--pad-3);
-  }
-
-  .imgWrapper {
-    aspect-ratio: var(--ratio);
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 100%;
   }
 }
 
 // Video container
 .video {
-  @include vars;
-  width: var(--video-width);
-  aspect-ratio: 9/16;
   position: sticky;
+  --ratio: 9 / 16;
+  @include flex;
+
+  @include vari(--video-width, 65vw, 65vw, 500px, 640px);
+  @include vari(margin-top, 0, 0, -300px, -400px);
+  @include vari(
+    margin-bottom,
+    calc(-1 * var(--video-width) / (var(--ratio))),
+    calc(-1 * var(--video-width) / (var(--ratio))),
+    0
+  );
+  // top: 0;
+  bottom: unset;
+  right: 0;
+  width: var(--video-width);
+  aspect-ratio: var(--ratio);
+
   // transform: translateY(-50%);
-  top: -200px;
-  margin-bottom: 100px;
-  // background: var(--yellow);
+  // transform: translateY(var(--y-offset));
+  @include vari(z-index, 0, 0, 2, 2);
+  @include vari(--trad-stop, 140px, 280px, 120px, 180px);
+  background: linear-gradient(
+    0deg,
+    transparent 0%,
+    var(--white) var(--trad-stop)
+  );
   .frame {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: var(100%) !important;
+    height: 100% !important;
+    object-fit: contain !important;
     pointer-events: none; /* Prevents interaction */
+  }
+
+  &.branding {
+    @include vari(top, 0, -200px, -200px, -240px);
+  }
+
+  &.web-design {
+    @include vari(top, 0, -300px, -200px, -240px);
+  }
+
+  &.wood {
+    @include vari(top, 200px, -200px, -160px, -200px);
   }
 }
 
@@ -146,18 +178,4 @@
     left: 40px;
     bottom: 0;
   }
-}
-
-.wrapper {
-  @include vars;
-  width: 100%;
-
-  // Step container styling
-
-  //   // SVG illustrations
-  //   svg {
-  //     height: var(--svg-height);
-  //     z-index: 1;
-  //     align-self: center;
-  //   }
 }

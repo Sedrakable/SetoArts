@@ -8,7 +8,7 @@ import cn from "classnames";
 import FlexDiv from "../../reuse/FlexDiv";
 import Logo from "@/assets/vector/LogoSmall.svg";
 import { Button } from "../../reuse/Button";
-import { ICta, INavBar, INavLink, LocalPaths } from "../../../data.d";
+import { ICta, INavBar, INavLink, ITheme } from "../../../data.d";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 import { useAtom } from "jotai";
 import { getTranslations } from "../../../helpers/langUtils";
@@ -17,6 +17,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import dynamic from "next/dynamic";
+import { usePathname, useRouter } from "@/navigation";
 
 const Sidebar = dynamic(
   () => import("../Sidebar/Sidebar").then((module) => module.Sidebar),
@@ -25,17 +26,20 @@ const Sidebar = dynamic(
   }
 );
 
-export const isCta = (link: INavLink | ICta): link is ICta => {
-  return (link as ICta).link !== undefined;
+export const isDropDown = (link: INavLink | ICta): link is INavLink => {
+  return (link as INavLink).ctaArray !== undefined;
 };
 
-export const Navbar: React.FC<INavBar> = ({ links }) => {
-  const { isMobile, isTablet, isMobileOrTablet } = useWindowResize();
+export const Navbar: React.FC<INavBar> = ({
+  links,
+  navButton,
+  theme = "light",
+}) => {
+  const { isMobile, isMobileOrTablet } = useWindowResize();
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const locale = useLocale() as LangType;
   const [, setSidebar] = useAtom(sidebarData);
-  // console.log(links.length);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +57,9 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
   return (
     <>
       <nav
-        className={cn(styles.navbarWrapper, { [styles.scrolled]: scrolled })}
+        className={cn(styles.navbarWrapper, styles[theme], {
+          [styles.scrolled]: scrolled,
+        })}
         ref={navRef}
       >
         <FlexDiv
@@ -66,39 +72,31 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
           <FlexDiv
             flex={{ x: "space-between", y: "center" }}
             gapArray={[3, 5, 6, 7]}
+            height100
           >
             {!isMobile && (
-              <FlexDiv gapArray={[5, 4, 5, 6]} as="ul">
+              <FlexDiv gapArray={[5, 4, 6, 7]} as="ul" height100>
                 {links?.map((link: INavLink | ICta, key) => {
-                  if (key === links.length - 1 && isCta(link)) {
-                    return (
-                      <li key={key}>
-                        <Button
-                          variant="primary"
-                          small={isMobile}
-                          path={`/${locale}${LocalPaths.CONTACT}`}
-                        >
-                          {link.text}
-                        </Button>
-                      </li>
-                    );
-                  }
                   return (
                     !isMobileOrTablet &&
-                    (isCta(link) ? (
+                    (!isDropDown(link) ? (
                       <li key={key}>
                         <TabButton
                           className={styles.tab}
-                          path={`/${locale}${link.link!}`}
+                          path={`/${locale}${link.path!}`}
+                          theme={theme}
                         >
                           {link.text}
                         </TabButton>
                       </li>
                     ) : (
-                      <li key={key}>{dropDown(link, locale, key)}</li>
+                      <li key={key}>{dropDown(link, locale, theme, key)}</li>
                     ))
                   );
                 })}
+                <li>
+                  <NavButton {...navButton} />
+                </li>
               </FlexDiv>
             )}
             {!isMobile && <LangSwitcher />}
@@ -134,13 +132,35 @@ export const LogoLink: React.FC<{ locale: LangType }> = ({ locale }) => {
   );
 };
 
-export const dropDown = (navLink: INavLink, locale: LangType, key?: number) => (
+export const dropDown = (
+  navLink: INavLink,
+  locale: LangType,
+  theme: ITheme = "light",
+  key?: number
+) => (
   <TabButton
     key={key}
     className={styles.tab}
-    path={`/${locale}${LocalPaths.SERVICE}`}
+    path={`/${locale}${navLink.path}`}
     dropdown={navLink.ctaArray}
+    theme={theme}
   >
     {navLink.title}
   </TabButton>
 );
+
+// Helper components
+export const NavButton: React.FC<ICta> = ({ text, path, scrollTarget }) => {
+  const { isMobile } = useWindowResize();
+
+  return (
+    <Button
+      variant="primary"
+      small={isMobile}
+      path={path}
+      scrollTarget={scrollTarget}
+    >
+      {text}
+    </Button>
+  );
+};

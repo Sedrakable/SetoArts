@@ -7,18 +7,20 @@ import Line from "@/assets/vector/Line.svg";
 import FlexDiv from "../../reuse/FlexDiv";
 import { Icon } from "../../reuse/Icon";
 import { DropDown } from "../Dropdown/DropDown";
-import { ICta } from "../../../data.d";
+import { ICta, ITheme } from "../../../data.d";
 // import { FancyText } from "../../reuse/FancyText";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
+import { useWindowResize } from "@/helpers/useWindowResize";
 
 export interface TabButtonProps {
   children: string;
   path: string;
   className?: string;
-  onClick?: Function;
+  onClick?: () => void;
   dropdown?: ICta[];
+  theme?: ITheme;
 }
 
 // const FancyHeadingComponent: FC<{ text: string }> = ({ text }) => {
@@ -49,15 +51,36 @@ const TabButton: FC<TabButtonProps> = ({
   dropdown,
   onClick,
   className,
+  theme = "light",
 }) => {
   const pathname = usePathname();
   const [dropDownOpen, setDropDownOpen] = useState(false);
+  const { isMobileOrTablet } = useWindowResize();
 
-  const onTabClick = () => {
+  const handleDropdownToggle = () => {
     if (dropdown) {
-      setDropDownOpen((prevState) => !prevState);
-    } else {
-      onClick && onClick();
+      setDropDownOpen(!dropDownOpen);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    if (!isMobileOrTablet && dropdown) {
+      setDropDownOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobileOrTablet && dropdown) {
+      setDropDownOpen(false);
+    }
+  };
+
+  const handleClick = () => {
+    if (isMobileOrTablet) {
+      handleDropdownToggle();
+    }
+    if (onClick) {
+      onClick();
     }
   };
 
@@ -68,36 +91,38 @@ const TabButton: FC<TabButtonProps> = ({
         gapArray={[3]}
         className={styles.textWrapper}
       >
-        <Paragraph level="regular" color="black">
+        <Paragraph
+          level="regular"
+          color={theme === "light" ? "black" : "white"}
+        >
           {children}
         </Paragraph>
-        {dropdown && <Icon icon="arrow" size="small" rotate={90} />}
+        {dropdown && <Icon icon="arrow" size="extra-small" rotate={90} />}
       </FlexDiv>
     );
   };
 
   return (
-    <div
-      onClick={() => onTabClick()}
+    <FlexDiv
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
+      flex={{ direction: "column", x: "flex-start" }}
       className={cn(styles.tabButton, className)}
+      height100
     >
-      {dropdown ? (
+      <Link href={path} aria-label={path}>
         <TabContent />
-      ) : (
-        <Link href={path} aria-label={path}>
-          <TabContent />
-        </Link>
+      </Link>
+
+      {pathname.includes(path) && !dropDownOpen && (
+        <Line className={styles.line} />
       )}
-      {path === pathname && <Line className={styles.line} />}
+
       {dropDownOpen && dropdown && (
-        <DropDown
-          dropdown={dropdown}
-          parentPath={path}
-          isOpen={dropDownOpen}
-          onClose={() => setDropDownOpen(false)}
-        />
+        <DropDown dropdown={dropdown} parentPath={path} isOpen={dropDownOpen} />
       )}
-    </div>
+    </FlexDiv>
   );
 };
 

@@ -2,10 +2,10 @@
 import React, { useEffect } from "react";
 import styles from "./Testimonials.module.scss";
 import cn from "classnames";
-import { BlockVariantType, Block } from "@/components/pages/containers/Block";
+import { Block } from "@/components/pages/containers/Block";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { SanityImage } from "@/components/reuse/SanityImage/SanityImage";
-import { ITestimonial } from "@/data.d";
+import { ITestimonial, ITheme } from "@/data.d";
 import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
 import { PortableTextContent } from "@/components/reuse/Paragraph/PortableTextContent";
 import { useWindowResize } from "@/helpers/useWindowResize";
@@ -19,6 +19,7 @@ const Testimonial: React.FC<ITestimonial> = ({
   profileImage,
   review,
   title,
+  company,
 }) => {
   return (
     <FlexDiv
@@ -50,7 +51,7 @@ const Testimonial: React.FC<ITestimonial> = ({
         width100
       >
         <FlexDiv
-          padding={{ left: [4] }}
+          // padding={{ left: [4] }}
           gapArray={[2, 3, 3, 3]}
           flex={{ x: "flex-start", y: "flex-end" }}
           width100
@@ -65,15 +66,18 @@ const Testimonial: React.FC<ITestimonial> = ({
 
           <FlexDiv
             flex={{ direction: "column", x: "flex-start" }}
-            padding={{ bottom: [3] }}
+            padding={{ top: [5], bottom: [3] }}
           >
+            <Paragraph level="big" color="black" textAlign="left" weight={600}>
+              {name.toUpperCase()}
+            </Paragraph>
             <Paragraph
               level="regular"
               color="black"
               textAlign="left"
               weight={600}
             >
-              {name.toUpperCase()}
+              {company}
             </Paragraph>
             <Paragraph
               level="small"
@@ -99,13 +103,13 @@ const Testimonial: React.FC<ITestimonial> = ({
 };
 
 export interface TestimonialsProps {
-  variant: BlockVariantType;
+  theme: ITheme;
   testimonials: ITestimonial[];
 }
 
 export const Testimonials: React.FC<TestimonialsProps> = ({
   testimonials,
-  variant = "dark",
+  theme = "dark",
 }) => {
   const { isMobileOrTablet } = useWindowResize();
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -117,22 +121,11 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
     emblaApi
   );
 
-  // // Force scroll to slide 0 on mount and log for debugging
-  // useEffect(() => {
-  //   if (emblaApi) {
-  //     emblaApi.reInit();
-  //     emblaApi.scrollTo(0);
-  //     console.log("Scroll snaps:", emblaApi.scrollSnapList());
-  //     console.log("Selected index:", emblaApi.selectedScrollSnap());
-  //   }
-  // }, [emblaApi]);
-
-  // Force scroll to slide 0 on mount
   return (
     <>
       {isMobileOrTablet ? (
         <div
-          className={cn(styles.testimonials, styles[variant], styles.carousel)}
+          className={cn(styles.testimonials, styles[theme], styles.carousel)}
         >
           <div className={styles.emblaViewport} ref={emblaRef}>
             <div className={styles.emblaContainer}>
@@ -156,13 +149,13 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
           </div>
         </div>
       ) : (
-        <Block variant={variant}>
+        <Block theme="light" className={styles.block}>
           <FlexDiv
             gapArray={[6, 7, 7, 8]}
             flex={{ y: "flex-start" }}
             width100
             padding={{ top: [6, 8, 7, 8] }}
-            className={cn(styles.testimonials, styles[variant])}
+            className={cn(styles.testimonials, styles[theme])}
             as="ul"
           >
             {testimonials?.map((testimonial: ITestimonial, key) => {

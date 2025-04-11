@@ -94,12 +94,23 @@
     }
   }
 
+  &.black,
+  &.white,
   &.primary {
     min-height: var(--button-height);
     height: var(--button-height);
-
-    background: var(--grad);
     border-radius: calc(var(--button-height) / 2);
+    &:hover {
+      // background: var(--white);
+      transition: 200ms;
+      p {
+        transition: 200ms;
+      }
+    }
+  }
+  &.primary {
+    background: var(--grad);
+
     svg,
     path,
     polygon {
@@ -108,11 +119,9 @@
     &:hover {
       // background: var(--white);
       box-shadow: 0px 0px 8px 0px #feb201, 0px 0px 16px 0px var(--yellow);
-      transition: 200ms;
       p {
-        transition: 200ms;
-        font-weight: 900 !important;
         color: var(--white) !important;
+        // font-weight: 900 !important;
       }
       svg,
       path,
@@ -123,11 +132,7 @@
   }
 
   &.black {
-    min-height: var(--button-height);
-    height: var(--button-height);
-
     background: var(--black);
-    border-radius: calc(var(--button-height) / 2);
     outline: 2px solid var(--black);
     outline-offset: -2px;
 
@@ -137,20 +142,41 @@
       fill: var(--white) !important;
     }
     &:hover {
-      // background: var(--white);
       background: var(--white);
-      transition: 200ms;
+      p {
+        color: var(--black) !important;
+      }
+      svg,
+      path,
+      polygon {
+        fill: var(--black) !important;
+      }
+    }
+  }
+
+  &.white {
+    background: var(--white);
+
+    outline: 2px solid var(--black);
+    outline-offset: -2px;
+
+    svg,
+    path,
+    polygon {
+      fill: var(--black) !important;
+    }
+    &:hover {
+      // background: var(--white);
+      background: var(--black);
 
       p {
-        transition: 200ms;
-        // font-weight: 900 !important;
-        color: var(--black) !important;
+        color: var(--white) !important;
       }
 
       svg,
       path,
       polygon {
-        fill: var(--black) !important;
+        fill: var(--white) !important;
       }
     }
   }
@@ -178,63 +204,49 @@
   position: relative;
 
   .fancy {
-    @include button(
-      var(--yellow),
-      "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
-      3000%,
-      100%,
-      none,
-      none
-    );
-    overflow: visible;
-    transition: 100ms;
-    height: var(--button-height-fancy);
-    // padding: 0 var(--button-padding-fancy);
-
-    p {
-      padding: 0 var(--button-padding-fancy);
-      width: auto !important;
+    &:first-child {
+      z-index: 1;
+      @include button(
+        var(--yellow),
+        "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+        3000%,
+        100%,
+        none,
+        none
+      );
+      overflow: visible;
+      transition: 100ms;
+      height: var(--button-height-fancy);
     }
-
-    span {
-      visibility: hidden;
-      cursor: pointer;
+    &:last-child {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      @include button(
+        var(--black),
+        "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+        3000%,
+        100%,
+        none,
+        none
+      );
+      overflow: visible;
+      transition: 100ms;
+      height: var(--button-height-fancy);
+      p {
+        color: var(--white) !important;
+      }
     }
-
     -webkit-animation: ani2 var(--transition-time) steps(29) forwards;
     animation: ani2 var(--transition-time) steps(29) forwards;
   }
-  .stroke,
-  .hoverText {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .stroke {
-    height: 101%;
-    width: 101%;
 
-    path {
-      fill: var(--grey);
-    }
-  }
-  .hoverText {
-    text-wrap: nowrap;
-    opacity: 1;
-    z-index: 2;
-    cursor: pointer;
-    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
-    transition: var(--transition-time);
-    pointer-events: none;
-  }
   &:hover {
-    .hoverText {
-      transform: translate(-50%, -50%) scale(1.1);
-    }
     .fancy {
-      -webkit-animation: ani var(--transition-time) steps(29) forwards;
-      animation: ani var(--transition-time) steps(29) forwards;
+      &:first-child {
+        -webkit-animation: ani var(--transition-time) steps(29) forwards;
+        animation: ani var(--transition-time) steps(29) forwards;
+      }
     }
   }
 }

@@ -11,6 +11,7 @@ import { ImageGrid } from "@/components/pages/blocks/ImageGrid/ImageGrid";
 import { Inspired } from "@/components/pages/blocks/Inspired/Inspired";
 import { WorkBlock } from "@/components/pages/blocks/WorkBlock/WorkBlock";
 import { Values } from "@/components/pages/home/Values/Values";
+import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
 
 export interface AboutPageProps {
   meta: ISeo;
@@ -56,14 +57,16 @@ export default async function AboutPage({
   const workImages = getAllWorkImages(aboutPageData?.work?.works as IWork[]);
 
   return (
-    aboutPageData && (
-      <>
-        <About {...aboutPageData.about} />
-        <WorkBlock {...aboutPageData.work} />
-        <Values {...aboutPageData.values} />
-        <ImageGrid customImages={workImages} maxImages={24} randomize />
-        <Inspired />
-      </>
-    )
+    <NavWrapperServer locale={locale}>
+      {aboutPageData && (
+        <>
+          <About {...aboutPageData.about} />
+          <WorkBlock {...aboutPageData.work} />
+          <Values {...aboutPageData.values} />
+          <ImageGrid customImages={workImages} maxImages={24} randomize />
+          <Inspired />
+        </>
+      )}
+    </NavWrapperServer>
   );
 }

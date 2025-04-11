@@ -4,6 +4,7 @@
   // overflow: hidden;
   padding: var(--pad-6) 0;
   width: 100%;
+  overflow-x: clip;
 }
 .embla__container {
   display: flex;

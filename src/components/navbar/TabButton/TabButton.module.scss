@@ -15,7 +15,8 @@
   }
   .line {
     position: absolute;
-    bottom: 0;
+    bottom: var(--pad-5);
+
     max-width: 100%;
     width: 100%;
     path {

@@ -14,19 +14,18 @@
 }
 
 .dropdown {
-  @include vars;
-  background: var(--yellow);
+  background: var(--grad);
   width: 100vw;
   position: relative;
-  margin-top: var(--pad-2);
+
   box-sizing: content-box !important;
 
   @media (min-width: $laptop) {
     width: fit-content;
     position: absolute;
-    margin-top: 0;
-    top: 0;
-    transform: translateY(var(--translate-y));
+
+    bottom: 0;
+    transform: translate(calc(var(--pad-4) * -1), calc(100%));
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1),
       inset 0 2px 6px 0px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 5px 5px;

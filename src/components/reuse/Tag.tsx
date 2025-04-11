@@ -9,6 +9,7 @@ interface TagProps {
   children: string;
   onClick?: () => void;
 }
+
 export const Tag: React.FC<PropsWithChildren<TagProps>> = ({
   chosen,
   children,
@@ -17,15 +18,10 @@ export const Tag: React.FC<PropsWithChildren<TagProps>> = ({
   return (
     <FlexDiv
       className={cn(styles.tag, { [styles.chosen]: chosen })}
-      padding={{ horizontal: [3], top: [2], bottom: [1] }}
+      padding={{ horizontal: [4], top: [2], bottom: [2] }}
       onClick={onClick}
     >
-      <Paragraph
-        level="small"
-        weight="regular"
-        color={chosen ? "yellow" : "grey"}
-        aria-label={children}
-      >
+      <Paragraph level="small" color="black" aria-label={children} weight={600}>
         {children}
       </Paragraph>
     </FlexDiv>

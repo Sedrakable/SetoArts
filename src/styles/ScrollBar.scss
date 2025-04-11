@@ -22,7 +22,9 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gold-grad);
+  @include vars;
+  background: var(--yellow);
+  border-radius: calc(var(--scrollbar-width) / 2);
 }
 
 ::-webkit-scrollbar-track {

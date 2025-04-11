@@ -20,11 +20,26 @@
 .input,
 .textarea {
   position: relative;
-  font-size: var(--paragraph-regular);
+  @include vari(
+    font-size,
+    var(--paragraph-regular),
+    var(--paragraph-regular),
+    var(--paragraph-small),
+    var(--paragraph-regular)
+  );
+
   line-height: 1.25em;
   font-weight: 400;
   color: var(--black);
-  padding: 15px 16px 13px 16px;
+  $padding-big: 15px 16px 13px 16px;
+  $padding-small: 10px 11px 8px 11px;
+  @include vari(
+    padding,
+    $padding-big,
+    $padding-big,
+    $padding-small,
+    $padding-big
+  );
   text-decoration: none !important;
   box-sizing: border-box;
 

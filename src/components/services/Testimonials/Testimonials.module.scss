@@ -1,20 +1,27 @@
 @use "@/styles/mixins.scss" as *;
 
+.block {
+  z-index: 2;
+}
 .testimonials {
   @include vari(--columns, 1, 1, 3, 3);
   max-width: 100vw;
+  position: relative; // Contain its layout
+  z-index: 1; // Lower than .video’s z-index: 2
 
   &.carousel {
     z-index: 2;
     @include vari(padding-top, var(--pad-7), var(--pad-8));
     // Carousel-specific styles for mobile/tablet
+    overflow: hidden; // Ensure no bleed
     .emblaViewport {
       width: 100%;
+      // overflow: hidden; // Ensure no bleed
     }
     .emblaContainer {
       display: flex;
       flex-direction: row;
-      height: auto;
+      height: fit-content;
       touch-action: pan-y pinch-zoom;
       // padding-top: var(--pad-6); // Moved from FlexDiv
       // padding-left: var(--pad-6); // Adjust as needed
@@ -28,6 +35,7 @@
       flex: 0 0 100%; // Full viewport width per slide
       min-width: 0; // Prevent flex shrinkage
       box-sizing: border-box;
+      height: fit-content;
       @include vari(padding-left, var(--pad-6), var(--pad-8));
       @include vari(padding-right, var(--pad-6), var(--pad-8));
     }
@@ -80,7 +88,7 @@
     }
   }
   .bottom {
-    margin-top: -40px;
+    margin-top: calc(var(--pad-5) * -1);
     .profileImage {
       width: 96px !important;
       height: auto !important;

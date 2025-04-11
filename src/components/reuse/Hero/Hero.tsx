@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import styles from "./Hero.module.scss";
 import cn from "classnames";
 import Image from "next/image";
 
 import { Paragraph } from "../Paragraph/Paragraph";
-import { IHero, IHeroV2, LocalPaths } from "../../../data.d";
+import { IHero, IHeroV2, ITheme, LocalPaths } from "../../../data.d";
 import FlexDiv from "../FlexDiv";
 import Logo from "@/assets/vector/LogoBig.svg";
 import bigStroke from "/public/photos/test.png";
@@ -18,26 +18,29 @@ import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import LogoHori from "@/assets/vector/LogoHorizontal.svg";
 import { Heading } from "../Heading";
+
 import GlowingSign from "@/assets/vector/GlowingSignGraphic.svg";
+import DigitalDesign from "@/assets/vector/DigitalDesignGraphic.svg";
+import { getTranslations } from "@/helpers/langUtils";
+import { PortableTextContent } from "../Paragraph/PortableTextContent";
 
-export type VersionType = 1 | 2;
-
-interface HeroProps extends IHero {
-  version?: VersionType;
-}
-
-export const HeroV3: React.FC<IHeroV2> = ({
+const graphic: Record<ITheme, ReactNode> = {
+  light: <GlowingSign className={styles.graphic} />,
+  dark: <DigitalDesign className={styles.graphic} />,
+  wood: <GlowingSign className={styles.graphic} />,
+};
+export const Hero: React.FC<IHero> = ({
   backgroundImage,
   foregroundImage,
   subTitle,
   cta,
   message,
+  theme = "light",
 }) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
-  const locale = useLocale() as LangType;
   return (
     <FlexDiv
-      className={cn(styles.heroV3)}
+      className={cn(styles.hero, styles[theme])}
       flex={{ direction: "column-reverse", x: "flex-start", y: "flex-start" }}
       as={"header"}
       width100
@@ -58,7 +61,7 @@ export const HeroV3: React.FC<IHeroV2> = ({
             font="Cursive"
             level="5"
             as="h4"
-            color="white"
+            color={theme === "light" ? "white" : "black"}
             className={styles.message}
             textAlign="center"
             upperCase={false}
@@ -86,7 +89,7 @@ export const HeroV3: React.FC<IHeroV2> = ({
         }}
         gapArray={[5, 4, 6, 7]}
         flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-        customStyle={{ zIndex: 1 }}
+        customStyle={{ zIndex: 3 }}
         width100
       >
         {isMobile ? (
@@ -102,8 +105,8 @@ export const HeroV3: React.FC<IHeroV2> = ({
         >
           {subTitle && (
             <Paragraph
-              level="big"
-              color="black"
+              level={isMobileOrTablet ? "regular" : "big"}
+              color={theme === "light" ? "black" : "white"}
               textAlign={isMobile ? "center" : "left"}
             >
               {subTitle}
@@ -112,7 +115,8 @@ export const HeroV3: React.FC<IHeroV2> = ({
           {cta && (
             <Button
               variant={isMobile ? "primary" : "fancy"}
-              path={`/${locale}${LocalPaths.CONTACT}`}
+              path={cta.path}
+              scrollTarget={cta.scrollTarget}
             >
               {cta.text}
             </Button>
@@ -127,103 +131,140 @@ export const HeroV3: React.FC<IHeroV2> = ({
         height={200}
         className={styles.stroke}
       />
-      {!isMobileOrTablet && <GlowingSign className={styles.graphic} />}
+      {!isMobileOrTablet && graphic[theme]}
     </FlexDiv>
   );
 };
 
-export const Hero: React.FC<HeroProps> = ({
-  customImage,
-  desc,
+export const HeroV2: React.FC<IHeroV2> = ({
+  backgroundImage,
   title,
+  subTitle,
+  desc,
   cta1,
   cta2,
-  subTitle,
   quote,
-  version = 1,
 }) => {
-  const { isMobileOrTablet } = useWindowResize();
-  const locale = useLocale() as LangType;
+  const { isMobile, isMobileOrTablet } = useWindowResize();
+  const trans = getTranslations(useLocale() as LangType);
   return (
-    <header className={cn(styles.hero)}>
-      {!isMobileOrTablet && (
-        <div className={styles.quote}>
-          <Quote {...quote} version={version} />
-        </div>
-      )}
-
-      {version === 1 && (
-        <FlexDiv
-          className={styles.left}
-          padding={{
-            horizontal: [3, 8, 0],
-            vertical: [0, 5, 0],
-          }}
-          id="hero-left"
-          rel="preload"
-        >
-          <Logo />
-        </FlexDiv>
-      )}
-      {isMobileOrTablet && version === 1 && (
-        <div className={styles.quote}>
-          <Quote {...quote} version={version} />
-        </div>
-      )}
-      <FlexDiv className={styles.right}>
+    <FlexDiv
+      className={cn(styles.heroV2)}
+      flex={{ direction: "column-reverse", x: "flex-start", y: "flex-start" }}
+      as={"header"}
+      width100
+    >
+      {/* Background Image Wrapper */}
+      <div className={styles.backgroundContainer}>
         <SanityImage
-          image={customImage?.image}
-          alt={customImage?.alt}
+          className={styles.backgroundImage}
+          {...backgroundImage}
           loading="eager"
           fetchPriority="high"
           rel="preload"
-          sizes="(max-width: 640px) 100vw, (max-width: 1200px) 100vw, (max-width: 1680px) 66vw"
+          width={1100}
+          quality={90}
         />
-        <FlexDiv
-          className={styles.container}
-          flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-          padding={{ vertical: [6, 8, 9, 11], horizontal: [5, 7, 8, 10] }}
-          gapArray={[3, 4, 4, 5]}
-        >
-          <FlexDiv
-            flex={{ direction: "column", x: "flex-start" }}
-            gapArray={[3]}
-            customStyle={{ zIndex: 1 }}
-            as="header"
+        {/* {message && (
+          <Heading
+            font="Cursive"
+            level="5"
+            as="h4"
+            color={theme === "light" ? "white" : "black"}
+            className={styles.message}
+            textAlign="center"
+            upperCase={false}
           >
-            {subTitle && <FancyText {...subTitle} mode="paragraph" />}
-            {title && <FancyText mode="heading" {...title} />}
-            <Paragraph
-              level="small"
-              weight="weak"
-              className={styles.description}
+            {message}
+          </Heading>
+        )} */}
+      </div>
+      <FlexDiv
+        padding={{
+          left: [6, 7, 8, 10],
+          right: [6, 0],
+          bottom: [7, 11, 11, 12],
+          top: [9, 9, 9, 11],
+        }}
+        gapArray={[5, 4, 6, 7]}
+        flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
+        className={styles.content}
+        width100
+      >
+        <FlexDiv
+          padding={{ left: [0, 5, 6, 8] }}
+          flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
+          className={styles.titles}
+        >
+          <Heading
+            as="h1"
+            level="1"
+            weight={900}
+            font="Cursive"
+            color="yellow"
+            textAlign={isMobile ? "center" : "left"}
+            paddingBottomArray={[2, 0]}
+          >
+            {title}
+          </Heading>
+
+          {subTitle && (
+            <Heading
+              as="h3"
+              level="4"
+              weight={900}
+              font="Outfit"
+              color="black"
+              textAlign={isMobile ? "center" : "left"}
+              paddingBottomArray={[2, 2, 2, 2]}
+              className={styles.subTitle}
             >
-              {desc}
-            </Paragraph>
-          </FlexDiv>
-          {cta1 && (
-            <FlexDiv gapArray={[4]} flex={{ x: "flex-start" }} width100 wrap>
-              <Button
-                variant="fancy"
-                id="primary"
-                path={`/${locale}${LocalPaths.CONTACT}`}
-              >
-                {cta1.text}
-              </Button>
-              {cta2 && (
-                <Button variant="black" id="secondary">
-                  {cta2.text}
-                </Button>
-              )}
-            </FlexDiv>
+              {subTitle}
+            </Heading>
           )}
+          {desc && (
+            <PortableTextContent
+              value={desc}
+              color="black"
+              level="regular"
+              className={styles.desc}
+              textAlign={isMobile ? "center" : "left"}
+              paddingBottomArray={[5, 4, 4, 5]}
+            />
+          )}
+          <FlexDiv
+            gapArray={[2, 3, 3, 4]}
+            flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
+            className={styles.ctas}
+            width100
+          >
+            <Button
+              variant={isMobile ? "primary" : "fancy"}
+              path={cta1.path}
+              scrollTarget={cta1.scrollTarget}
+            >
+              {cta1.text}
+            </Button>
+            {cta2 && (
+              <Button
+                variant="white"
+                path={cta2.path}
+                scrollTarget={cta2.scrollTarget}
+              >
+                {cta2.text}
+              </Button>
+            )}
+          </FlexDiv>
         </FlexDiv>
       </FlexDiv>
-      {isMobileOrTablet && version === 2 && (
-        <q className={styles.quote}>
-          <Quote {...quote} version={version} />
-        </q>
-      )}
-    </header>
+
+      <Image
+        src={bigStroke.src}
+        alt="stroke"
+        width={2400}
+        height={200}
+        className={styles.stroke}
+      />
+    </FlexDiv>
   );
 };

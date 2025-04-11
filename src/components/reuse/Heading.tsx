@@ -75,18 +75,36 @@ export const Heading: React.FC<HeadingProps> = ({
 
   const CustomHeading = as as keyof JSX.IntrinsicElements;
 
-  const finalString =
+  let finalString =
     typeof children === "string" && upperCase
       ? children?.toUpperCase()
       : capitalise
       ? capitalizeString(children as string)
       : children;
 
+  // Handle the special "x" case when font is Outfit
+  if (font === "Outfit" && typeof finalString === "string") {
+    const xMatch = finalString.match(/\s[xX]\s/);
+    if (xMatch) {
+      const xChar = xMatch[0].trim(); // Gets "x" or "X"
+      const parts = finalString.split(xMatch[0]);
+      finalString = (
+        <>
+          {parts[0]}
+          <span className={cn(fingerPaint.className, styles.cursiveX)}>
+            {` ${xChar} `}
+          </span>
+          {parts[1]}
+        </>
+      );
+    }
+  }
   return (
     <CustomHeading
       className={cn(
         styles.heading,
         styles[`level${level}`],
+        styles[color],
         {
           [styles.gradient]: color.includes("grad"),
           [styles.clickable]: clickable,
@@ -103,7 +121,7 @@ export const Heading: React.FC<HeadingProps> = ({
         paddingBottom: spacingNum && `var(--pad-${spacingNum})`,
         fontWeight: weight,
       }}
-      data-text={finalString}
+      data-text={typeof finalString === "string" ? finalString : undefined}
     >
       {finalString}
     </CustomHeading>

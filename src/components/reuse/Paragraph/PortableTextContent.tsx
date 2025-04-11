@@ -13,7 +13,6 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
   textAlign = "left",
   weight = 300,
   level = "regular",
-
   differentColorForStrongText = true,
   className,
   paddingBottomArray,

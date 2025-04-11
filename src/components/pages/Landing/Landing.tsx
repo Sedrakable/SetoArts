@@ -82,7 +82,7 @@ const LandingSide: React.FC<{
           className={styles.desc}
           // paddingBottomArray={[3, 3, 3, 4]}
         />
-        <Button variant="primary" path={cta.link}>
+        <Button variant="primary" path={cta.path}>
           {cta.text}
         </Button>
         {!isMobile && <Tags tags={side.tags} color={color} />}
@@ -118,7 +118,7 @@ export const Landing: React.FC<LandingProps> = ({ left, right, locale }) => {
         isLeft
         cta={{
           text: translations.buttons.buildSign,
-          link: `/${locale}${LocalPaths.WOOD}`,
+          path: `/${locale}${LocalPaths.WOOD}`,
         }}
         color="black"
         onHover={(isHovered) => {
@@ -130,7 +130,7 @@ export const Landing: React.FC<LandingProps> = ({ left, right, locale }) => {
         image={right.backgroundImage}
         cta={{
           text: translations.buttons.buildBrand,
-          link: `/${locale}${LocalPaths.DIGITAL}`,
+          path: `/${locale}${LocalPaths.DIGITAL}`,
         }}
         color="white"
         onHover={(isHovered) => {

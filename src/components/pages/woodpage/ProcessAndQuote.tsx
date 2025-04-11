@@ -5,48 +5,77 @@ import FlexDiv from "@/components/reuse/FlexDiv";
 import styles from "./ProcessAndQuote.module.scss";
 import cn from "classnames";
 
-import { IProcessStep } from "@/data.d";
+import { IFrameVideo, IProcessStep, ServiceType } from "@/data.d";
 import { Block } from "../containers/Block";
-import { WoodFormProps, WoodForm } from "./WoodForm";
+import { WoodForm } from "./WoodForm";
 import { ProcessVideo } from "@/components/services/Process/Process";
-import { useScroll } from "framer-motion";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import { ProcessStep } from "@/components/services/Process/ProcessStep";
+import { useWindowResize } from "@/helpers/useWindowResize";
+import { DigitalForm } from "../DigitalPage/DigitalForm";
+import { FormTitleProps } from "@/components/reuse/Form/Form";
 
-interface ProcessAndQuoteProps extends WoodFormProps {
+interface ProcessAndQuoteProps extends FormTitleProps {
   processes: IProcessStep[];
+  video: IFrameVideo;
+  form: ServiceType;
 }
+
 export const ProcessAndQuote: FC<ProcessAndQuoteProps> = ({
   processes,
   title,
   subTitle,
+  video,
+  form,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { isMobileOrTablet } = useWindowResize();
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["100px 0", "1 1000px"],
+    offset: isMobileOrTablet ? ["0 0", "1 800px"] : ["-440px 0", "1 1600px"],
   });
+  // // const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const video = containerRef.current?.children[0];
+    if (video) {
+      const rect = video.getBoundingClientRect();
+    }
+  });
+  const process = (
+    <div className={cn(styles.process)}>
+      {processes?.map((processStep: IProcessStep, key) => (
+        <ProcessStep {...processStep} number={key} key={key} />
+      ))}
+    </div>
+  );
+
+  const forms: { [key in ServiceType]: React.ReactNode } = {
+    wood: <WoodForm title={title} subTitle={subTitle} />,
+    digital: <DigitalForm title={title} subTitle={subTitle} />,
+  };
   return (
-    <Block variant="light">
+    <Block theme="light">
       <FlexDiv
-        gapArray={[7, 8, 8, 9]}
+        gapArray={[0, 0, 8, 9]}
         width100
-        flex={{ y: "flex-start" }}
+        flex={{ direction: "column", x: "flex-end", y: "flex-start" }}
         className={cn(styles.container)}
+        ref={containerRef}
+        padding={{ bottom: [9, 10, 0, 0] }}
       >
-        <ProcessVideo containerYProgress={scrollYProgress} />
+        <ProcessVideo {...video} containerYProgress={scrollYProgress} />
+
         <FlexDiv
-          gapArray={[8, 9, 9, 10]}
+          gapArray={[8, 9, 10, 11]}
           className={cn(styles.right)}
           flex={{ direction: "column" }}
         >
-          <div className={cn(styles.process)} ref={containerRef}>
-            {processes?.map((processStep: IProcessStep, key) => (
-              <ProcessStep {...processStep} number={key} key={key} />
-            ))}
-          </div>
-          <WoodForm title={title} subTitle={subTitle} />
+          {process}
+          {!isMobileOrTablet && forms[form]}
         </FlexDiv>
       </FlexDiv>
+      {isMobileOrTablet && forms[form]}
     </Block>
   );
 };

@@ -101,13 +101,14 @@ export const FormSubmitButton: FC<{
   submitText: string | false;
   translations: Translations;
   loading: boolean;
-}> = ({ isValid, translations, submitText, loading = true }) => {
+  title: string;
+}> = ({ isValid, translations, submitText, loading = true, title }) => {
   const { isMobile } = useWindowResize();
 
   return (
     <FlexDiv className={styles.submitWrapper} gapArray={[2]}>
       <Button type="submit" variant="primary">
-        {translations.buttons.buildSign}
+        {title}
       </Button>
       {!isValid && (
         <Alert arrow={isMobile ? "bottom" : "left"}>

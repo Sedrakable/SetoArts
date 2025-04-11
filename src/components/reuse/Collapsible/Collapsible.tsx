@@ -11,15 +11,13 @@ import { ICollapsible } from "@/data.d";
 import { Block } from "@/components/pages/containers/Block";
 
 export const Collapsible: React.FC<ICollapsible> = ({ title, questions }) => {
-  const [openQuestions, setOpenQuestions] = useState<number[]>([]);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleQuestion = (index: number) => {
-    setOpenQuestions((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
+    setOpenIndex((prev) => (prev === index ? null : index));
   };
   return (
-    <Block variant="light" contentSize="small">
+    <Block theme="light" contentSize="small">
       <FlexDiv
         flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
         width100
@@ -41,7 +39,7 @@ export const Collapsible: React.FC<ICollapsible> = ({ title, questions }) => {
               width100
               flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
               className={styles.question}
-              padding={{ horizontal: [4], vertical: [4] }}
+              padding={{ horizontal: [4], vertical: [5, 5, 5, 6] }}
             >
               <button
                 className={styles.questionToggle}
@@ -51,26 +49,26 @@ export const Collapsible: React.FC<ICollapsible> = ({ title, questions }) => {
                   level="big"
                   color="black"
                   textAlign="left"
-                  weight={openQuestions.includes(index) ? 600 : 400}
+                  weight={openIndex === index ? 600 : 400}
                 >
                   {q.question}
                 </Paragraph>
 
                 <Heading
                   font="Cursive"
-                  level={openQuestions.includes(index) ? "4" : "5"}
+                  level={openIndex === index ? "4" : "5"}
                   as="span"
-                  color={openQuestions.includes(index) ? "black" : "yellow"}
+                  color={openIndex === index ? "black" : "yellow"}
                   weight={700}
                   className={cn(
                     styles.toggleIcon,
-                    openQuestions.includes(index) ? styles.minus : styles.plus
+                    openIndex === index ? styles.minus : styles.plus
                   )}
                 >
-                  {openQuestions.includes(index) ? "-" : "+"}
+                  {openIndex === index ? "-" : "+"}
                 </Heading>
               </button>
-              {openQuestions.includes(index) && (
+              {openIndex === index && (
                 <FlexDiv
                   className={styles.answer}
                   padding={{ top: [3], left: [4], right: [8] }}

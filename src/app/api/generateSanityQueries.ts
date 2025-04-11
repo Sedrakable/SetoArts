@@ -26,38 +26,21 @@ export const landingPageQuery = (locale: LangType): string => {
   }`;
 };
 
-export const homePageQuery = (locale: LangType): string => {
-  return `*[_type == 'homePage' && lang == '${locale}'][0] {
+export const digitalPageQuery = (locale: LangType): string => {
+  return `*[_type == 'digitalPage' && lang == '${locale}'][0] {
         meta,
-        hero{
-          ...,
-          quote->,
-        },
-        services-> {
-          services[]->{
-            path,
-            title,
-            features->{
-              features[]->{
-                title,
-                customImage,
-              }
-            },
-            processes,
-            price
-          },
-        },
-        values->,
-        about->,
+        hero,
         work->{
-          works[]->{
-            slug,
-            thumbnailImage,
-            customImages,
-            title,
-            desc,
-            primaryLink,
-          },
+          works[]->,
+        },
+        questions[]->,
+        solutionBlock->,
+        testimonials[]->,
+        services[]-> {
+          ...,
+          featureBlock->{
+            features[]->,
+          }
         },
       }`;
 };
@@ -66,9 +49,11 @@ export const woodPageQuery = (locale: LangType): string => {
   return `*[_type == 'woodPage' && lang == '${locale}'][0] {
         meta,
         hero,
-        features[]->,
+        featureBlock->{
+          features[]->,
+        },
         questions[]->,
-        woodBlock->,
+        solutionBlock->,
         testimonials[]->,
         processBlock->,
         collapsible->,
@@ -84,31 +69,12 @@ export const carouselQuery = `
 export const servicePageQuery = (locale: LangType, slug: string): string => {
   return `*[_type == 'servicePage' && lang == '${locale}' && path == '/${slug}'][0] {
     meta,
-    hero{
-      ...,
-      quote->,
-    },
-    features->{
+    hero,
+    featureBlock->{
       features[]->,
     },
-    processes->{
-      processes[]->{
-        ...,
-        features[]->,
-      },
-    },
-    price,
-    work->{
-      title,
-      works[]->{
-        slug,
-        customImages,
-        thumbnailImage,
-        title,
-        desc,
-        primaryLink,
-      }
-    },
+    processBlock->,
+    collapsible->,
   }`;
 };
 

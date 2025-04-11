@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier-plugin-svg"],
+  "plugins": ["@svgr/plugin-prettier"],
   "overrides": [
     {
       "files": "*.svg",
@@ -27,5 +27,3 @@
     }
   ]
 }
-
-

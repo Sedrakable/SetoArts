@@ -23,6 +23,7 @@ import { Slider } from "@/components/reuse/Form/Slider/Slider";
 import { UploadButton } from "@/components/reuse/Form/UploadButton/UploadButton";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { LangType } from "@/i18n";
+import { LocalTargets } from "@/data.d";
 
 export interface WoodFormProps extends FormTitleProps {}
 
@@ -94,7 +95,6 @@ export const WoodForm: FC<WoodFormProps> = ({ title, subTitle }) => {
           uploads: encodedFiles,
         }));
         setUploadedFiles(files);
-        console.log("Uploaded files:", encodedFiles);
       });
     } else {
       setFormData((prev: WoodFormData) => ({ ...prev, uploads: [] }));
@@ -226,7 +226,7 @@ export const WoodForm: FC<WoodFormProps> = ({ title, subTitle }) => {
   ];
 
   return (
-    <FlexDiv width100>
+    <FlexDiv width100 id={LocalTargets.WOODFORM} className={styles.container}>
       {submit === translations.form.general.emailSent ? (
         <FormSubmitMessage locale={locale} translations={translations} />
       ) : (
@@ -234,6 +234,7 @@ export const WoodForm: FC<WoodFormProps> = ({ title, subTitle }) => {
           <FormTitles title={title} subTitle={subTitle} alignText="left" />
           <FormSteps steps={Steps} />
           <FormSubmitButton
+            title={translations.buttons.buildSign}
             isValid={!Object.values(errors).some(Boolean)}
             translations={translations}
             submitText={submit}

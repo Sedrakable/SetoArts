@@ -6,8 +6,8 @@ import { Paragraph } from "../reuse/Paragraph/Paragraph";
 import FlexDiv from "../reuse/FlexDiv";
 import LogoHori from "@/assets/vector/LogoHorizontal.svg";
 import { useWindowResize } from "../../helpers/useWindowResize";
-import { IFooter, INavBar, LocalPaths } from "../../data.d";
-import { isCta } from "../navbar/Navbar/Navbar";
+import { ICta, IFooter, INavBar, LocalPaths } from "../../data.d";
+import { isDropDown, NavButton } from "../navbar/Navbar/Navbar";
 import { Socials } from "./Socials";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
@@ -16,7 +16,27 @@ import Link from "next/link";
 const Line: React.FC = () => {
   return <div className={styles.line} />;
 };
-const Nav: React.FC<INavBar> = ({ links }) => {
+
+const linkComp = (
+  locale: LangType,
+  cta: ICta,
+  key: number,
+  linkPath?: string
+) => {
+  return (
+    <li key={key}>
+      <Link
+        href={`/${locale}${linkPath ? linkPath : ""}${cta.path}`}
+        aria-label={cta.path}
+      >
+        <Paragraph level="regular" capitalise clickable>
+          {cta?.text}
+        </Paragraph>
+      </Link>
+    </li>
+  );
+};
+const Nav: React.FC<INavBar> = ({ links, navButton }) => {
   const locale = useLocale() as LangType;
 
   return (
@@ -28,34 +48,18 @@ const Nav: React.FC<INavBar> = ({ links }) => {
       as="ul"
     >
       {links?.map((link, key) => {
-        if (isCta(link)) {
-          return (
-            <li key={key}>
-              <Link href={`/${locale}${link?.link}`} aria-label={link?.text}>
-                <Paragraph level="regular" capitalise clickable>
-                  {link?.text}
-                </Paragraph>
-              </Link>
-            </li>
-          );
+        if (!isDropDown(link)) {
+          return linkComp(locale, link as ICta, key);
         } else {
-          const subLinks = link.ctaArray?.map((link, key) => {
-            return (
-              <li key={key}>
-                <Link
-                  href={`/${locale}${LocalPaths.SERVICE}${link?.link}`}
-                  aria-label={link?.link}
-                >
-                  <Paragraph level="regular" capitalise clickable>
-                    {link?.text}
-                  </Paragraph>
-                </Link>
-              </li>
-            );
+          const subLinks = link.ctaArray?.map((cta, key) => {
+            return linkComp(locale, cta, key, link.path);
           });
           return subLinks;
         }
       })}
+      <li key="button">
+        <NavButton {...navButton} />
+      </li>
     </FlexDiv>
   );
 };
@@ -109,6 +113,7 @@ const DesktopFooter: React.FC<FooterProps> = ({
   legals,
   trademark,
   socials,
+  navButton,
 }) => {
   return (
     <FlexDiv
@@ -116,7 +121,7 @@ const DesktopFooter: React.FC<FooterProps> = ({
       flex={{ y: "stretch" }}
       padding={{ vertical: [7] }}
     >
-      <Nav links={links} />
+      <Nav links={links} navButton={navButton} />
       <Line />
       <Logo trademark={trademark} />
       <Line />
@@ -138,6 +143,7 @@ const TabletFooter: React.FC<FooterProps> = ({
   legals,
   trademark,
   socials,
+  navButton,
 }) => {
   return (
     <FlexDiv
@@ -148,7 +154,7 @@ const TabletFooter: React.FC<FooterProps> = ({
       <Logo trademark={trademark} />
       <Line />
       <FlexDiv flex={{ direction: "column" }} gapArray={[4]}>
-        <Nav links={links} />
+        <Nav links={links} navButton={navButton} />
         <FlexDiv flex={{ x: "center" }} gapArray={[4]} wrap width100>
           <Legal legals={legals} />
           <Socials {...socials} />
@@ -162,6 +168,7 @@ const MobileFooter: React.FC<FooterProps> = ({
   legals,
   trademark,
   socials,
+  navButton,
 }) => {
   return (
     <FlexDiv
@@ -171,7 +178,7 @@ const MobileFooter: React.FC<FooterProps> = ({
       gapArray={[6]}
     >
       <Socials {...socials} />
-      <Nav links={links} />
+      <Nav links={links} navButton={navButton} />
       <Logo trademark={trademark} />
       <Legal legals={legals} />
     </FlexDiv>

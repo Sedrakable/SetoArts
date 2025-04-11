@@ -1,13 +1,20 @@
 "use client";
-import React, { PropsWithChildren, ButtonHTMLAttributes, FC } from "react";
+import React, {
+  PropsWithChildren,
+  ButtonHTMLAttributes,
+  FC,
+  MouseEvent,
+} from "react";
 import styles from "./Button.module.scss";
 import cn from "classnames";
-import { Heading } from "./Heading";
-import ButtonStroke from "@/assets/vector/ButtonStroke.svg";
+
 import Link, { LinkProps } from "next/link";
 import { Paragraph } from "./Paragraph/Paragraph";
 import { Icon, IconProps } from "./Icon";
 import { useWindowResize } from "@/helpers/useWindowResize";
+import { LocalTargets } from "@/data.d";
+import { usePathname, useRouter } from "@/navigation";
+import { useScrollToTarget } from "@/helpers/useScrollToTarget";
 
 interface ButtonIconProps extends IconProps {
   side?: "left" | "right";
@@ -18,12 +25,13 @@ export interface ButtonProps {
   small?: boolean;
   fit?: "grow" | "shrink";
   iconProps?: ButtonIconProps;
-  onClick?: (() => void) | ((event: MouseEvent) => void);
   path?: string;
+  scrollTarget?: LocalTargets; // Use enum for type safety
+  target?: React.HTMLAttributeAnchorTarget; // For <a> target (_blank, etc.)
   href?: string;
   disabled?: boolean;
   className?: string;
-  target?: React.HTMLAttributeAnchorTarget;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Button: FC<PropsWithChildren<
@@ -37,22 +45,30 @@ export const Button: FC<PropsWithChildren<
   disabled,
   small,
   fit,
+  scrollTarget,
   target,
   onClick,
   ...props
 }) => {
   const { isMobile } = useWindowResize();
+  const { scrollToTarget } = useScrollToTarget();
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (onClick) {
-      if (onClick.length === 0) {
-        (onClick as () => void)();
-      } else {
-        // eslint-disable-next-line no-unused-vars
-        (onClick as (event: React.MouseEvent<HTMLButtonElement>) => void)(
-          event
-        );
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    console.log(`Button clicked: path=${path}, scrollTarget=${scrollTarget}`);
+    if (disabled) return;
+
+    if (scrollTarget) {
+      const scrolled = scrollToTarget(scrollTarget, path);
+      if (scrolled) {
+        event.preventDefault();
+        return;
       }
+    }
+
+    if (onClick) {
+      onClick(event as React.MouseEvent<HTMLButtonElement>);
     }
   };
 
@@ -97,7 +113,7 @@ export const Button: FC<PropsWithChildren<
     "aria-label": children ? (children as string) : props["aria-label"],
   };
   const buttonComp = path ? (
-    <Link href={path} {...buttonProps} target={target}>
+    <Link href={path} {...buttonProps} onClick={handleClick}>
       {buttonContent}
     </Link>
   ) : href ? (
@@ -113,7 +129,7 @@ export const Button: FC<PropsWithChildren<
     <button
       {...buttonProps}
       onClick={handleClick}
-      // disabled={disabled}
+      disabled={disabled}
       {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
     >
       {buttonContent}
@@ -121,9 +137,8 @@ export const Button: FC<PropsWithChildren<
   );
   return variant === "fancy" ? (
     <div className={styles.container}>
-      {<ButtonStroke className={styles.stroke} />}
       {buttonComp}
-      {/* {<ButtonHeading className={styles.hoverText} />} */}
+      {buttonComp}
     </div>
   ) : (
     buttonComp

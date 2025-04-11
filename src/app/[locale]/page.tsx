@@ -3,6 +3,7 @@ import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { landingPageQuery } from "@/app/api/generateSanityQueries";
 import { Landing, LandingProps } from "@/components/pages/Landing/Landing";
+import { ClientLogger } from "@/helpers/clientLogger";
 
 export interface LandingPageProps {
   meta: ISeo;
@@ -10,13 +11,9 @@ export interface LandingPageProps {
   rightSide: ILandingSide;
 }
 const getLandingPageData = async (locale: LangType) => {
-  const type = "woodPage";
   const woodQuery = landingPageQuery(locale);
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const woodPageData: LandingPageProps = await useFetchPage(
-    woodQuery,
-    `${type}`
-  );
+  const woodPageData: LandingPageProps = await useFetchPage(woodQuery);
 
   return woodPageData;
 };
@@ -42,15 +39,17 @@ const getLandingPageData = async (locale: LangType) => {
 // }
 
 export default async function HomePage({
-  params: { locale },
+  params,
 }: {
-  params: { locale: LangType };
+  params: Promise<{ locale: LangType }>;
 }) {
+  const { locale } = await params;
   const landingPageData = await getLandingPageData(locale);
 
   return (
     landingPageData && (
       <>
+        <ClientLogger slug={landingPageData} />
         <Landing
           left={landingPageData.leftSide}
           right={landingPageData.rightSide}

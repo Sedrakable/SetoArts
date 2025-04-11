@@ -8,7 +8,7 @@ import { ICta, INavLink, LocalPaths } from "../../../data.d";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 import { atom, useAtom } from "jotai";
 import { getTranslations } from "../../../helpers/langUtils";
-import { LogoLink, dropDown, isCta } from "../Navbar/Navbar";
+import { LogoLink, dropDown, isDropDown } from "../Navbar/Navbar";
 import TabButton from "../TabButton/TabButton";
 import { LangType } from "@/i18n";
 import { useLocale } from "next-intl";
@@ -69,12 +69,12 @@ export const Sidebar: React.FC<{
       >
         {links?.map((link: INavLink | ICta, key) => {
           if (key !== links.length - 1) {
-            return isCta(link)
+            return !isDropDown(link)
               ? tabWrapper(
                   <TabButton
                     key={key}
                     className={styles.tab}
-                    path={`/${locale}${link.link!}`}
+                    path={`/${locale}${link.path!}`}
                     onClick={() => setSidebar(false)}
                   >
                     {link.text}

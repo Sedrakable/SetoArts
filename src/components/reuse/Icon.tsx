@@ -7,10 +7,6 @@ import Burger from "@/assets/vector/Burger.svg";
 import Close from "@/assets/vector/X.svg";
 import Arrow from "@/assets/vector/Arrow.svg";
 import Bulb from "@/assets/vector/Bulb.svg";
-import Layout from "@/assets/vector/Layout.svg";
-import Palette from "@/assets/vector/ColorPalette.svg";
-import Package from "@/assets/vector/Package.svg";
-import Internet from "@/assets/vector/Internet.svg";
 import Upload from "@/assets/vector/Upload.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -37,10 +33,6 @@ const icons: {
   close: <Close />,
   arrow: <Arrow />,
   bulb: <Bulb />,
-  layout: <Layout />,
-  palette: <Palette />,
-  package: <Package />,
-  internet: <Internet />,
   upload: <Upload />,
 };
 

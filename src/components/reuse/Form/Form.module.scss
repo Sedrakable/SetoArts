@@ -1,5 +1,20 @@
 @use "@/styles/mixins.scss" as *;
 
+.container {
+  z-index: 1;
+  position: relative;
+  > * {
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: calc(var(--pad-6) * -1);
+    background: white;
+    filter: blur(var(--pad-4));
+    z-index: 0;
+  }
+}
 .form {
   @include flexColumn(flex-start, flex-start);
 

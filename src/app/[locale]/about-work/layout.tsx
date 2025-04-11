@@ -11,7 +11,7 @@ export default function AboutWorkLayout({
 }) {
   return (
     <FlexDiv flex={{ direction: "column" }} width100 height100>
-      <AboutPage params={{ locale }} />
+      {/* <AboutPage params={{ locale }} /> */}
       {children}
     </FlexDiv>
   );

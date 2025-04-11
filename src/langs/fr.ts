@@ -24,8 +24,11 @@ export const frTranslations: Translations = {
     view: "Voir",
     contact: "Contact",
     send: "Envoyer",
+    getQuote: "Obtenez votre devis",
     buildSign: "Faites votre signe",
     buildBrand: "Faites votre marque",
+    viewInstagram: "Voir mon Insta",
+    viewMyWork: "Voir mon travail",
   },
   form: {
     general: {
@@ -68,7 +71,10 @@ export const frTranslations: Translations = {
   nav: {
     home: "Accueil",
     about: "À propos+Travail",
-    services: "Services",
+    branding: "Marque",
+    web: "Design Web",
+    digital: "Numérique",
+    wood: "Bois",
   },
   other: {
     startAt: "À partir de",

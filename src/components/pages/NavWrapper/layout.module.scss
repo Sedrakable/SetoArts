@@ -1,0 +1,11 @@
+@use "@/styles/mixins.scss" as *;
+
+.page {
+  @include flexColumn(flex-start, flex-start);
+
+  min-height: 100vh;
+  width: 100%;
+  // background: var(--white);
+  // overflow-y: hidden;
+  // flex: 1;
+}

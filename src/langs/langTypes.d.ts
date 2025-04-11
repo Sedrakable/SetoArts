@@ -22,8 +22,11 @@ interface Buttons {
   view: string;
   contact: string;
   send: string;
+  getQuote: string;
   buildSign: string;
   buildBrand: string;
+  viewInstagram: string;
+  viewMyWork: string;
 }
 
 interface Form {
@@ -67,8 +70,11 @@ interface Form {
 
 interface Nav {
   home: string;
+  wood: string;
+  digital: string;
+  branding: string;
+  web: string;
   about: string;
-  services: string;
 }
 
 interface Other {

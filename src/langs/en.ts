@@ -24,8 +24,11 @@ export const enTranslations: Translations = {
     view: "View",
     contact: "Contact",
     send: "Send",
+    getQuote: "Get Your Quote",
     buildSign: "Let's Build Your Sign",
     buildBrand: "Let’s Build Your Brand",
+    viewInstagram: "View my Insta",
+    viewMyWork: "View my work",
   },
   form: {
     general: {
@@ -40,7 +43,7 @@ export const enTranslations: Translations = {
       emailNotSent: "Email not sent",
       additionalInfo: "Additional Information",
       details: "Details",
-      detailsPlaceholder: "I need a cool sign for my business...",
+      detailsPlaceholder: "I am looking for...",
       referanceImage: "Image de référence",
       upload: "Télécharger des images",
     },
@@ -67,8 +70,11 @@ export const enTranslations: Translations = {
   },
   nav: {
     home: "Home",
-    about: "About+Work",
-    services: "Services",
+    about: "About + Work",
+    branding: "Branding",
+    web: "Web Design",
+    digital: "Digital",
+    wood: "Wood",
   },
   other: {
     startAt: "Starting at",

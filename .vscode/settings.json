@@ -4,8 +4,10 @@
     "*.xml": "html",
     "*.svg": "html"
   },
+  "editor.formatOnSave": true,
   "[svg]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "svipas.prettier-plus",
+    "editor.formatOnSave": true
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "svipas.prettier-plus"

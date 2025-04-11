@@ -1,123 +1,96 @@
 "use client";
 import React from "react";
 import styles from "./Services.module.scss";
+import inverseStyles from "@/styles/inverseWrapper.module.scss";
+import cn from "classnames";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
 import { IService, IServices, LocalPaths } from "../../../../data.d";
-import { Icon, IconType } from "../../../reuse/Icon";
 import { Tag } from "../../../reuse/Tag";
 import { Button } from "../../../reuse/Button";
-import { Splider, SpliderProps } from "../../containers/Splider";
-import { ServicesGrid } from "../../blocks/ServicesGrid/ServicesGrid";
 import { getTranslations } from "../../../../helpers/langUtils";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
+import { useSvgComponent } from "@/helpers/useSvgComponent";
 
-const icons: IconType[] = ["bulb", "layout", "package", "palette"];
-
-export interface ServiceProps extends IService {
-  cta2?: boolean;
-  number: number;
-}
-const Service: React.FC<ServiceProps> = ({
-  number,
+const Service: React.FC<IService> = ({
   title,
-  features,
+  svgName,
+  featureBlock,
   path,
-  cta2,
 }) => {
+  const SvgComponent = useSvgComponent(svgName || "Bulb");
   const locale = useLocale() as LangType;
-  const [tagIndex, setTagIndex] = React.useState(0);
   const translations = getTranslations(locale);
   const numberOfTags = 5;
-  const updateChildState = (newState: number) => {
-    setTagIndex(newState);
-  };
-
-  const splides: SpliderProps[] = features?.features
-    ?.slice(0, numberOfTags)
-    .map((feature) => {
-      return {
-        customImages: [
-          {
-            image: feature.customImage.image,
-            alt: feature.customImage.alt,
-          },
-        ],
-      };
-    });
 
   return (
     <FlexDiv
-      flex={{ direction: "column", x: "flex-start" }}
+      flex={{ direction: "column", x: "center", y: "flex-start" }}
       width100
-      className={styles.container}
+      className={cn(styles.container)}
       as="li"
+      gapArray={[3]}
     >
-      <FlexDiv
-        gapArray={[4]}
-        width100
-        flex={{ x: "flex-start" }}
-        className={styles.top}
-        padding={{ horizontal: [4], vertical: [2] }}
+      <div className={styles.assetWrapper}>
+        {SvgComponent && <SvgComponent />}
+      </div>
+      <Heading
+        font="Cursive"
+        level="3"
+        as="h2"
+        color="black"
+        weight={900}
+        textAlign="center"
+        className={styles.title}
       >
-        <Icon icon={icons[number]} size="regular" />
-        <Heading font="Seto" level="5" as="h4">
-          {title}
-        </Heading>
-      </FlexDiv>
-      <FlexDiv width100 className={styles.middle}>
-        <Splider
-          slides={splides}
-          splideProgress={tagIndex}
-          setSplideProgress={updateChildState}
-        />
-      </FlexDiv>
+        {title}
+      </Heading>
 
       <FlexDiv
         gapArray={[5]}
         width100
-        flex={{ direction: "column", x: "flex-start", y: "space-between" }}
-        padding={{ horizontal: [4], vertical: [3] }}
+        flex={{ direction: "column", x: "flex-start" }}
         className={styles.content}
       >
+        {featureBlock && (
+          <FlexDiv
+            className={styles.tags}
+            gapArray={[3]}
+            flex={{ x: "center", y: "flex-start" }}
+            wrap
+          >
+            {featureBlock.features
+              .slice(0, numberOfTags)
+              ?.map((feature, key) => {
+                return <Tag key={key}>{feature.title}</Tag>;
+              })}
+          </FlexDiv>
+        )}
         <FlexDiv
-          className={styles.tags}
-          gapArray={[1]}
-          flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-        >
-          {features.features.slice(0, numberOfTags)?.map((feature, key) => {
-            return (
-              <Tag
-                chosen={tagIndex === key}
-                key={key}
-                onClick={() => setTagIndex(key)}
-              >
-                {feature.title}
-              </Tag>
-            );
-          })}
-          {
-            features.features.length > 5 && <Tag>...</Tag> // Check if there are more than 5 tags
-          }
-        </FlexDiv>
-        <FlexDiv
-          gapArray={[2]}
+          gapArray={[3]}
           width100
           flex={{ direction: "column", x: "flex-start" }}
           className={styles.bottom}
+          padding={{ horizontal: [4] }}
+          // wrap
         >
+          {/* TODO SET THE RIGHT PATHS */}
           <Button
-            variant="primary"
+            variant="black"
             fit="grow"
-            path={`/${locale}${LocalPaths.SERVICE}${path}`}
+            path={
+              path
+                ? `/${locale}${LocalPaths.DIGITAL}${path}`
+                : `/${locale}${LocalPaths.ABOUT}`
+            }
           >
-            {translations.buttons.view}
+            {path ? translations.buttons.view : translations.buttons.viewMyWork}
           </Button>
-          {cta2 && (
+          {!path && (
             <Button
-              variant="secondary"
+              variant="primary"
               fit="grow"
               path={`/${locale}${LocalPaths.CONTACT}`}
             >
@@ -136,28 +109,26 @@ export const Services: React.FC<IServices> = ({ services }) => {
   const translations = getTranslations(locale);
 
   return (
-    <Block title={translations.blockTitles.services} variant="grid">
-      <FlexDiv flex={{ direction: "column" }} gapArray={[6, 7, 7, 8]} width100>
-        <FlexDiv
-          gapArray={[4]}
-          flex={{ y: "flex-start" }}
-          width100
-          className={styles.services}
-          as="ul"
-        >
-          {services?.map((service: IService, key) => {
-            service.processes && serviceGridServices.push(service);
-            return (
-              <Service
-                {...service}
-                cta2={!service.processes}
-                key={key}
-                number={key}
-              />
-            );
-          })}
-        </FlexDiv>
-        <ServicesGrid services={serviceGridServices} />
+    <Block
+      title={{
+        children: translations.blockTitles.services,
+        font: "Outfit",
+        color: "black",
+        weight: 900,
+      }}
+      theme="light"
+    >
+      <FlexDiv
+        gapArray={[5, 6, 6, 7]}
+        flex={{ y: "flex-start" }}
+        width100
+        className={styles.services}
+        as="ul"
+      >
+        {services?.map((service: IService, key) => {
+          serviceGridServices.push(service);
+          return <Service {...service} key={key} />;
+        })}
       </FlexDiv>
     </Block>
   );

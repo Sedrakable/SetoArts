@@ -1,40 +1,48 @@
 import {
   IHero,
-  IServices,
-  IValues,
-  IAbout,
   IWorkBlock,
   LocalPaths,
   ISeo,
+  IQuestion,
+  IService,
+  ITestimonial,
 } from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
-import { homePageQuery } from "@/app/api/generateSanityQueries";
+import { digitalPageQuery } from "@/app/api/generateSanityQueries";
 
 import { Hero } from "@/components/reuse/Hero/Hero";
-import { About } from "@/components/pages/blocks/About/About";
-import { Inspired } from "@/components/pages/blocks/Inspired/Inspired";
 import { WorkSlider } from "@/components/pages/blocks/WorkSlider/WorkSlider";
 import { Services } from "@/components/pages/home/Services/Services";
-import { Values } from "@/components/pages/home/Values/Values";
+import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
+import { getTranslations } from "@/helpers/langUtils";
+import { Questions } from "@/components/services/Questions/Questions";
+import {
+  SolutionBlock,
+  SolutionBlockProps,
+} from "@/components/pages/blocks/SolutionBlock/SolutionBlock";
+import { getFormData } from "@/components/reuse/Form/getFormData";
+import { FormTitleProps } from "@/components/reuse/Form/Form";
+import { ImageAndQuote } from "@/components/pages/DigitalPage/ImageAndQuote";
+import { Testimonials } from "@/components/services/Testimonials/Testimonials";
 
-export interface HomePageProps {
+export interface DigitalPageProps {
   meta: ISeo;
   hero: IHero;
-  services: IServices;
-  values: IValues;
-  about: IAbout;
+  questions: IQuestion[];
+  solutionBlock: SolutionBlockProps;
+  testimonials: ITestimonial[];
+  services: IService[];
   work: IWorkBlock;
 }
 
-export const getHomePageData = async (locale: LangType) => {
-  const type = "homePage";
-  const homeQuery = homePageQuery(locale);
+export const getDigitalPageData = async (locale: LangType) => {
+  const digitalQuery = digitalPageQuery(locale);
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const homePageData: HomePageProps = await useFetchPage(homeQuery, type);
-  return homePageData;
+  const digitalPageData: DigitalPageProps = await useFetchPage(digitalQuery);
+  return digitalPageData;
 };
 
 export async function generateMetadata({
@@ -42,8 +50,8 @@ export async function generateMetadata({
 }: {
   params: { locale: LangType };
 }): Promise<Metadata> {
-  const homePageData = await getHomePageData(locale);
-  const { metaTitle, metaDesc, metaKeywords } = homePageData.meta;
+  const digitalPageData = await getDigitalPageData(locale);
+  const { metaTitle, metaDesc, metaKeywords } = digitalPageData.meta;
   const path = LocalPaths.HOME;
   const crawl = true;
 
@@ -57,20 +65,35 @@ export async function generateMetadata({
   });
 }
 
-export default async function HomePage({
+export default async function DigitalPage({
   params: { locale },
 }: {
   params: { locale: LangType };
 }) {
-  const homePageData = await getHomePageData(locale);
+  const data = await getDigitalPageData(locale);
+  const translations = getTranslations(locale);
+
+  const formData: FormTitleProps = await getFormData("digital", locale);
+
   return (
-    <>
-      <Hero {...homePageData?.hero} />
-      <WorkSlider {...homePageData?.work} />
-      <Services {...homePageData.services} />
-      <Values {...homePageData.values} />
-      <About {...homePageData?.about} cta={true} />
-      <Inspired />
-    </>
+    <NavWrapperServer locale={locale} theme="dark">
+      {data && (
+        <Hero
+          {...data.hero}
+          cta={{ text: translations.buttons.buildBrand }}
+          theme="dark"
+        />
+      )}
+      {data.work && <WorkSlider {...data?.work} />}
+      {data.questions && <Questions questions={data.questions} theme="dark" />}
+      {data.solutionBlock && (
+        <SolutionBlock {...data.solutionBlock} theme="wood" />
+      )}
+      {data.testimonials && (
+        <Testimonials testimonials={data.testimonials} theme="light" />
+      )}
+      {data.services && <Services services={data.services} />}
+      {formData && <ImageAndQuote {...formData} />}
+    </NavWrapperServer>
   );
 }
