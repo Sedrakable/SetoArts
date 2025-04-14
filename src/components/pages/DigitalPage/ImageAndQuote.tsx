@@ -8,6 +8,7 @@ import cn from "classnames";
 import { Block } from "../containers/Block";
 import { DigitalFormProps, DigitalForm } from "./DigitalForm";
 import Image from "next/image";
+import { ContactForm } from "../ContactPage/ContactForm";
 
 export const ImageAndQuote: FC<DigitalFormProps> = ({ title, subTitle }) => {
   return (
@@ -23,7 +24,7 @@ export const ImageAndQuote: FC<DigitalFormProps> = ({ title, subTitle }) => {
           width={500}
           height={500}
         />
-        <DigitalForm title={title} subTitle={subTitle} />
+        <ContactForm title={title} subTitle={subTitle} />
       </FlexDiv>
     </Block>
   );

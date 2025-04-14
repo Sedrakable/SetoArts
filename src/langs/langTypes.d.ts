@@ -31,6 +31,9 @@ interface Buttons {
 
 interface Form {
   general: {
+    select: string;
+    service: string;
+    servicePlaceholder: string;
     firstName: string;
     firstNamePlaceholder: string;
     lastName: string;
@@ -46,19 +49,7 @@ interface Form {
     referanceImage: string;
     upload: string;
   };
-  cart: {
-    province: string;
-    city: string;
-    postalCode: string;
-    postalCodePlaceholder: string;
-    delivery: string;
-    addressLine: string;
-  };
-  flash: {
-    selectedFlash: string;
-    bodyPosition: string;
-    bodyPositionPlaceholder: string;
-  };
+
   wood: {
     width: string;
     height: string;
@@ -81,10 +72,19 @@ interface Other {
   startAt: string;
 }
 
+interface Work {
+  wood: string;
+  branding: string;
+  web: string;
+  cards: string;
+  gallery: string;
+}
+
 export interface Translations {
   buttons: Buttons;
   blockTitles: Titles;
   form: Form;
   nav: Nav;
+  work: Work;
   other: Other;
 }

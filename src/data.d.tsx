@@ -29,12 +29,12 @@ export interface IHeroV2 {
   subTitle?: string;
   desc: any;
   backgroundImage: ICustomImage;
-  cta1: ICta;
+  cta1?: ICta;
   cta2?: ICta;
   quote: IQuote;
 }
 
-export type ITheme = "light" | "dark" | "wood";
+export type ITheme = "light" | "dark" | "yellow" | "wood";
 
 export interface IHero {
   backgroundImage: ICustomImage;
@@ -114,17 +114,10 @@ export interface IValue {
 }
 
 export interface IAbout {
-  customImage: ICustomImage;
-  name?: string;
-
-  desc1: string;
-  title2?: string;
-  desc2?: string;
-  cta?: boolean;
-}
-
-export interface IWorkBlock {
-  works: IWork[];
+  profileImage: ICustomImage;
+  title: string;
+  subTitle: string;
+  desc: any;
 }
 
 export interface IBlog {
@@ -141,16 +134,22 @@ export interface IArticle {
   content: IBlock[];
 }
 
-export interface IWork {
-  slug: ISlug;
-  thumbnailImage: ICustomImage;
-  customImages: ICustomImage[];
+export type workType = "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
+
+export interface IWorkBlock {
   title: string;
-  desc: string;
-  primaryLink: ICta;
-  secondaryLinks?: ICta[];
-  behanceProjectId?: string;
-  kickstarterProjectlink?: string;
+  works: IWork[];
+  id: LocalTargets; // For anchor scrolling
+}
+
+export interface IWork {
+  title?: string; // Optional for gallery
+  thumbnailImage: ICustomImage; // Sanity image asset
+  slug?: ISlug; // Optional for internal links
+  workType: "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
+  link?: string; // External URL (e.g., Behance, Kickstarter)
+  images?: ICustomImage[]; // For modal slider (Wood Signs)
+  isFullWidth?: boolean; // For Branding
 }
 
 export interface IWoodWork {
@@ -228,4 +227,9 @@ export enum LocalTargets {
   BRANDINGFORM = "#branding-form",
   WEBFORM = "#web-form",
   WORK = "#work-block",
+  WOODSIGNWORK = "#wood-work-block",
+  BRANDINGWORK = "#branding-work-block",
+  WEBWORK = "#website-work-block",
+  CARDSWORK = "#cards-work-block",
+  GALLERYWORK = "#gallery-work-block",
 }

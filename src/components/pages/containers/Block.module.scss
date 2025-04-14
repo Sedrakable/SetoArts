@@ -1,22 +1,7 @@
 @use "@/styles/mixins.scss" as *;
 
-@mixin vars() {
-  --border-width: 8px;
-  @media (min-width: $tablet) {
-  }
-
-  @media (min-width: $laptop) {
-  }
-
-  @media (min-width: $desktop) {
-  }
-}
-
 .block {
-  @include vars;
-  // background: var(--white);
   position: relative;
-  // overflow: hidden;
   flex: 1;
   .content {
     z-index: 1;
@@ -27,7 +12,11 @@
   &.dark {
     background: var(--black);
   }
+  &.yellow {
+    background: var(--yellow) !important;
+  }
   &.wood {
+    --border-width: 8px;
     position: relative;
     background: linear-gradient(180deg, transparent 0%, var(--black) 100%),
       url("/photos/textures/darkwood.webp") !important;

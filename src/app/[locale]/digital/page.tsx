@@ -23,9 +23,6 @@ import {
   SolutionBlock,
   SolutionBlockProps,
 } from "@/components/pages/blocks/SolutionBlock/SolutionBlock";
-import { getFormData } from "@/components/reuse/Form/getFormData";
-import { FormTitleProps } from "@/components/reuse/Form/Form";
-import { ImageAndQuote } from "@/components/pages/DigitalPage/ImageAndQuote";
 import { Testimonials } from "@/components/services/Testimonials/Testimonials";
 
 export interface DigitalPageProps {
@@ -73,8 +70,6 @@ export default async function DigitalPage({
   const data = await getDigitalPageData(locale);
   const translations = getTranslations(locale);
 
-  const formData: FormTitleProps = await getFormData("digital", locale);
-
   return (
     <NavWrapperServer locale={locale} theme="dark">
       {data && (
@@ -93,7 +88,6 @@ export default async function DigitalPage({
         <Testimonials testimonials={data.testimonials} theme="light" />
       )}
       {data.services && <Services services={data.services} />}
-      {formData && <ImageAndQuote {...formData} />}
     </NavWrapperServer>
   );
 }

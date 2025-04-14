@@ -83,8 +83,9 @@ export const aboutPageQuery = (locale: LangType): string => {
     meta,
     about->,
     values->,
-    work->{
-      works[]->,
+    workBlocks[]->{
+    ...,
+    works[]->,
     },
   }`;
 };
@@ -96,32 +97,11 @@ export const workPageQuery = (slug: string): string => {
   }`;
 };
 
-export const blogPageQuery = (locale: LangType): string => {
-  return `*[_type == 'blogPage' && lang == '${locale}'][0]{
-    meta,
-    blog ->{
-      articles[]->{
-        path,
-        title,
-        desc,
-        date,
-        customImage
-      }
-    }
-}`;
-};
-
-export const articlePageQuery = (locale: LangType, slug: string): string => {
-  return `*[_type == 'articlePage' && lang == '${locale}' && path == '${slug}'][0]{
-    ...,
-    meta,
-  }`;
-};
-
 export const contactPageQuery = (locale: LangType): string => {
   return `*[_type == 'contactPage' && lang == '${locale}'][0] {
     meta,
-    desc,
+    hero,
+    collapsibles[]->,
   }`;
 };
 

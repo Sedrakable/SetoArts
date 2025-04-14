@@ -27,19 +27,11 @@
     var(--paragraph-small),
     var(--paragraph-regular)
   );
-
+  padding: 0 var(--pad-4);
   line-height: 1.25em;
   font-weight: 400;
   color: var(--black);
-  $padding-big: 15px 16px 13px 16px;
-  $padding-small: 10px 11px 8px 11px;
-  @include vari(
-    padding,
-    $padding-big,
-    $padding-big,
-    $padding-small,
-    $padding-big
-  );
+  @include vari(height, 60px, 60px, 48px, 60px);
   text-decoration: none !important;
   box-sizing: border-box;
 
@@ -84,6 +76,7 @@
   max-height: var(--max-height-textarea); /* Optional: Max height */
   overflow-y: hidden; /* Prevent scrollbars */
   resize: none; /* Disable manual resizing */
+  padding-top: var(--pad-3);
 }
 
 .invalid {

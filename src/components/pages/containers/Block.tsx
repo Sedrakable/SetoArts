@@ -11,6 +11,7 @@ interface BlockProps {
   shadow?: boolean;
   contentSize?: "small" | "default";
   className?: string;
+  id?: string;
 }
 
 // ✅ Add forwardRef to support refs
@@ -22,6 +23,7 @@ export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
       shadow = false,
       children,
       contentSize = "default",
+      id,
       className,
     },
     ref
@@ -48,6 +50,7 @@ export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
         }}
         width100
         as="article"
+        id={id}
       >
         {title && (
           <Heading {...title} as="h2" level="2" textAlign="center">

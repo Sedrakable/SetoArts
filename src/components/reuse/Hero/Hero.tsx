@@ -232,29 +232,31 @@ export const HeroV2: React.FC<IHeroV2> = ({
               paddingBottomArray={[5, 4, 4, 5]}
             />
           )}
-          <FlexDiv
-            gapArray={[2, 3, 3, 4]}
-            flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-            className={styles.ctas}
-            width100
-          >
-            <Button
-              variant={isMobile ? "primary" : "fancy"}
-              path={cta1.path}
-              scrollTarget={cta1.scrollTarget}
+          {cta1 && (
+            <FlexDiv
+              gapArray={[2, 3, 3, 4]}
+              flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
+              className={styles.ctas}
+              width100
             >
-              {cta1.text}
-            </Button>
-            {cta2 && (
               <Button
-                variant="white"
-                path={cta2.path}
-                scrollTarget={cta2.scrollTarget}
+                variant={isMobile ? "primary" : "fancy"}
+                path={cta1.path}
+                scrollTarget={cta1.scrollTarget}
               >
-                {cta2.text}
+                {cta1.text}
               </Button>
-            )}
-          </FlexDiv>
+              {cta2 && (
+                <Button
+                  variant="white"
+                  path={cta2.path}
+                  scrollTarget={cta2.scrollTarget}
+                >
+                  {cta2.text}
+                </Button>
+              )}
+            </FlexDiv>
+          )}
         </FlexDiv>
       </FlexDiv>
 

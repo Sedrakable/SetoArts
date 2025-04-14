@@ -1,14 +1,22 @@
-import { ISeo, LocalPaths } from "@/data.d";
+import { ICollapsible, IHeroV2, ISeo, LocalPaths } from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { contactPageQuery } from "@/app/api/generateSanityQueries";
-import { ContactBlock } from "@/components/pages/ContactPage/ContactBlock";
+
 import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
+import { getTranslations } from "@/helpers/langUtils";
+import { FormTitleProps } from "@/components/reuse/Form/Form";
+import { getFormData } from "@/components/reuse/Form/getFormData";
+import { ImageAndQuote } from "@/components/pages/DigitalPage/ImageAndQuote";
+import { HeroV2 } from "@/components/reuse/Hero/Hero";
+import { Collapsible } from "@/components/reuse/Collapsible/Collapsible";
 
 export interface ContactPageProps {
   meta: ISeo;
+  hero: IHeroV2;
+  collapsibles: ICollapsible[];
 }
 
 const getContactPageData = async (locale: LangType) => {
@@ -47,10 +55,17 @@ export default async function Contact({
 }: {
   params: { locale: LangType };
 }) {
-  const contactPageData: ContactPageProps = await getContactPageData(locale);
+  const translations = getTranslations(locale);
+  const data = await getContactPageData(locale);
+  const formData: FormTitleProps = await getFormData("digital", locale);
   return (
-    <NavWrapperServer locale={locale} theme="light">
-      {/* {contactPageData && <ContactBlock {...contactPageData} />} */}
+    <NavWrapperServer locale={locale} theme="dark">
+      {data.hero && <HeroV2 {...data.hero} />}
+      {formData && <ImageAndQuote {...formData} />}
+
+      {data.collapsibles?.map((collapsible: ICollapsible, key) => {
+        return <Collapsible {...collapsible} key={key} />;
+      })}
     </NavWrapperServer>
   );
 }

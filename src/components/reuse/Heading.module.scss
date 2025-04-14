@@ -48,9 +48,6 @@
   }
 }
 
-.yellow {
-  text-shadow: 3px 4px 0px hsl(from var(--black) h s l / 0.6);
-}
 .cursive {
   font-family: var(--font-finger-paint);
   position: relative;
@@ -67,6 +64,10 @@
     @include level(-finger-paint, 5, 5, 5, 5);
   }
 
+  &.yellow {
+    @include vari(--shadow-size, 2px 2px, 3px 3px, 3px 3px, 4px 4px);
+    text-shadow: var(--shadow-size) 0px hsl(from var(--black) h s l / 0.6);
+  }
   // &:before {
   //   content: attr(data-text); // Duplicate text
   //   position: absolute;

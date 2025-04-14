@@ -1,22 +1,22 @@
+"use client";
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./Select.module.scss";
 import cn from "classnames";
-import FlexDiv from "../FlexDiv";
-import { Paragraph } from "../Paragraph/Paragraph";
-import { Icon } from "../Icon";
 import { getTranslations } from "@/helpers/langUtils";
-import { LangType } from "@/i18n/request";
+import { LangType } from "@/i18n";
 import { useLocale } from "next-intl";
-import { InputWrapper } from "./InputWrapper/InputWrapper";
+import FlexDiv from "../../FlexDiv";
+import { Icon } from "../../Icon";
+import { Paragraph } from "../../Paragraph/Paragraph";
+import { InputWrapper } from "../InputWrapper/InputWrapper";
 
 export interface OptionType {
   value: string;
   label: string;
 }
 
-interface SelectProps {
+export interface SelectProps {
   options: OptionType[];
-  // eslint-disable-next-line no-unused-vars
   onChange: (selected: string) => void;
   placeholder?: string;
   disabled?: boolean;
@@ -46,10 +46,12 @@ export const Select: React.FC<SelectProps> = ({
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
 
+  // Sync selected value with defaultValue changes
   useEffect(() => {
     setSelected(defaultValue);
   }, [defaultValue]);
 
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -59,13 +61,11 @@ export const Select: React.FC<SelectProps> = ({
         setIsOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Reset highlight and search when dropdown closes
   useEffect(() => {
     if (!isOpen) {
       setHighlightedIndex(-1);
@@ -76,22 +76,13 @@ export const Select: React.FC<SelectProps> = ({
   const scrollOptionIntoView = (index: number) => {
     if (listRef.current && index >= 0) {
       const optionElement = listRef.current.children[index] as HTMLElement;
-      if (optionElement) {
-        optionElement.scrollIntoView({
-          block: "nearest",
-          behavior: "smooth",
-        });
-      }
+      optionElement?.scrollIntoView({ block: "nearest", behavior: "smooth" });
     }
   };
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (!isOpen) {
-      if (
-        event.key === "Enter" ||
-        event.key === " " ||
-        event.key === "ArrowDown"
-      ) {
+      if (["Enter", " ", "ArrowDown"].includes(event.key)) {
         event.preventDefault();
         setIsOpen(true);
       }
@@ -126,26 +117,19 @@ export const Select: React.FC<SelectProps> = ({
         setIsOpen(false);
         break;
       default:
-        // Handle letter key presses
-        if (event.key.length === 1 && event.key.match(/[a-z0-9]/i)) {
+        if (event.key.length === 1 && /[a-z0-9]/i.test(event.key)) {
           const newSearchString = searchString + event.key.toLowerCase();
           setSearchString(newSearchString);
 
-          // Clear the previous timeout
-          if (searchTimeoutRef.current) {
-            clearTimeout(searchTimeoutRef.current);
-          }
+          if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
+          searchTimeoutRef.current = setTimeout(
+            () => setSearchString(""),
+            1000
+          );
 
-          // Set a new timeout to clear the search string after 1 second
-          searchTimeoutRef.current = setTimeout(() => {
-            setSearchString("");
-          }, 1000);
-
-          // Find the first option that starts with the search string
           const matchingIndex = options.findIndex((option) =>
             option.label.toLowerCase().startsWith(newSearchString)
           );
-
           if (matchingIndex >= 0) {
             setHighlightedIndex(matchingIndex);
             scrollOptionIntoView(matchingIndex);
@@ -155,9 +139,7 @@ export const Select: React.FC<SelectProps> = ({
   };
 
   const handleToggle = () => {
-    if (!disabled) {
-      setIsOpen(!isOpen);
-    }
+    if (!disabled) setIsOpen((prev) => !prev);
   };
 
   const handleOptionClick = (value: string) => {
@@ -168,11 +150,17 @@ export const Select: React.FC<SelectProps> = ({
     }
   };
 
+  const selectedLabel =
+    options.find((opt) => opt.value === selected)?.label ||
+    placeholder ||
+    translations.form.general.select;
+
   return (
     <FlexDiv
       flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
       className={cn(styles.container, { [styles.disabled]: disabled })}
       ref={selectRef}
+      width100
       gapArray={[2]}
       onKeyDown={handleKeyDown}
       tabIndex={0}
@@ -183,33 +171,27 @@ export const Select: React.FC<SelectProps> = ({
     >
       <InputWrapper label={label!} required={required} isInvalid={isInvalid}>
         <FlexDiv
-          className={cn(styles.select, styles.original, {
-            [styles.invalid]: isInvalid,
-          })}
+          className={cn(styles.select, { [styles.invalid]: isInvalid })}
           onClick={handleToggle}
           flex={{ x: "space-between" }}
           gapArray={[5]}
+          width100
+          padding={{ left: [4], right: [5] }}
         >
-          <Paragraph
-            level="regular"
-            color={selected !== "" ? "burgundy" : "light-burgundy"}
-          >
-            {selected !== ""
-              ? options.find((opt) => opt.value === selected)?.label
-              : placeholder || translations.select.select}
+          <Paragraph level="regular" color={selected ? "black" : "yellow"}>
+            {selectedLabel}
           </Paragraph>
           <Icon
             icon="arrow"
-            color="burgundy"
-            size="small"
-            rotate={isOpen ? 180 : undefined}
+            color="black"
+            size="extra-small"
+            rotate={isOpen ? 270 : 90}
           />
         </FlexDiv>
       </InputWrapper>
       {isOpen && !disabled && (
         <FlexDiv
           flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-          padding={{ vertical: [0, 0, 3, 3] }}
           className={styles.dropdown}
           as="ul"
           ref={listRef}
@@ -218,12 +200,11 @@ export const Select: React.FC<SelectProps> = ({
         >
           {options.map((option, index) => (
             <FlexDiv
-              flex={{ x: "space-between" }}
               width100
               as="li"
-              gapArray={[5]}
               padding={{ vertical: [4, 4, 3], horizontal: [4] }}
               className={cn(styles.tab, {
+                [styles.selected]: option.value === selected,
                 [styles.highlighted]: index === highlightedIndex,
               })}
               onClick={() => handleOptionClick(option.value)}
@@ -231,7 +212,7 @@ export const Select: React.FC<SelectProps> = ({
               role="option"
               aria-selected={option.value === selected}
             >
-              <Paragraph level="regular" color="burgundy">
+              <Paragraph level="regular" color="black">
                 {option.label}
               </Paragraph>
             </FlexDiv>

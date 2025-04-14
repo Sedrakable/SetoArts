@@ -101,7 +101,9 @@ export default async function WoodPage({
             <Questions questions={data.questions} theme="light" />
           )}
 
-          {data.solutionBlock && <SolutionBlock {...data.solutionBlock} />}
+          {data.solutionBlock && (
+            <SolutionBlock {...data.solutionBlock} theme="wood" />
+          )}
           {data.testimonials && (
             <Testimonials testimonials={data.testimonials} theme="light" />
           )}

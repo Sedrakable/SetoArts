@@ -1,6 +1,14 @@
 import { getAllWorkImages } from "@/helpers/functions";
 
-import { IAbout, IValues, IWorkBlock, IWork, ISeo, LocalPaths } from "@/data.d";
+import {
+  IAbout,
+  IValues,
+  IWorkBlock,
+  IWork,
+  ISeo,
+  LocalPaths,
+  LocalTargets,
+} from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
@@ -12,12 +20,12 @@ import { Inspired } from "@/components/pages/blocks/Inspired/Inspired";
 import { WorkBlock } from "@/components/pages/blocks/WorkBlock/WorkBlock";
 import { Values } from "@/components/pages/home/Values/Values";
 import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
+import { WorkTypeNav } from "@/components/pages/blocks/WorkBlock/WorkTypeNav";
 
 export interface AboutPageProps {
   meta: ISeo;
   about: IAbout;
-  values: IValues;
-  work: IWorkBlock;
+  workBlocks: IWorkBlock[];
 }
 
 const getAboutPageData = async (locale: LangType) => {
@@ -47,24 +55,37 @@ export async function generateMetadata({
     crawl,
   });
 }
-
+const workTypeTotarget: Record<string, LocalPaths> = {};
 export default async function AboutPage({
   params: { locale },
 }: {
   params: { locale: LangType };
 }) {
-  const aboutPageData = await getAboutPageData(locale);
-  const workImages = getAllWorkImages(aboutPageData?.work?.works as IWork[]);
+  const data = await getAboutPageData(locale);
+  // const workImages = getAllWorkImages(aboutPageData?.work?.works as IWork[]);
 
   return (
-    <NavWrapperServer locale={locale}>
-      {aboutPageData && (
+    <NavWrapperServer locale={locale} theme="light">
+      {data && (
         <>
-          <About {...aboutPageData.about} />
-          <WorkBlock {...aboutPageData.work} />
-          <Values {...aboutPageData.values} />
+          {data.about && <About {...data.about} />}
+          <WorkTypeNav />
+          {data.workBlocks?.map((workBlock: IWorkBlock, key) => {
+            return (
+              <WorkBlock
+                {...workBlock}
+                id={
+                  `#${workBlock.works[0].workType}-work-block` as LocalTargets
+                }
+                theme={key % 2 === 0 ? "light" : "yellow"}
+                key={key}
+              />
+            );
+          })}
+
+          {/* <Values {...aboutPageData.values} />
           <ImageGrid customImages={workImages} maxImages={24} randomize />
-          <Inspired />
+          <Inspired /> */}
         </>
       )}
     </NavWrapperServer>

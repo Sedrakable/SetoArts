@@ -1,50 +1,52 @@
 @use "@/styles/mixins.scss" as *;
 
-@mixin vars() {
-  --image-width: 200px;
-  --img-pad-top: 0;
-  @media (min-width: $tablet) {
-    --image-width: 400px;
-    --img-pad-top: 10px;
-  }
-
-  @media (min-width: $laptop) {
-    --image-width: 300px;
-    --img-pad-top: 12px;
-  }
-
-  @media (min-width: $desktop) {
-    --image-width: 400px;
-    --img-pad-top: 10px;
-  }
-}
-
-.secondText {
-  @media (min-width: $laptop) {
-    align-items: flex-start !important;
-  }
-}
 .container {
-  @include vars;
-  .imgWrapper {
-    height: 100%;
-    // padding-top: var(--img-pad-top);
-    grid-column: 1;
-    width: 100%;
-    min-height: var(--image-width);
-    figure {
+  position: relative;
+
+  .image {
+    aspect-ratio: 1; /* Square container */
+    border-radius: 50%;
+    background: linear-gradient(-60deg, var(--yellow) 57%, var(--white) 57%);
+    overflow: hidden; /* Ensure image respects border-radius */
+    flex: 2;
+
+    /* Decorative circle */
+    &:after {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 33%;
       aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--black);
+    }
+
+    /* Decorative shape */
+    &:before {
+      content: "";
+      position: absolute;
+      top: 15%;
+      left: 25%;
+      transform: translateY(-50%) rotate(-20deg);
+      width: 10%;
+      aspect-ratio: 1;
+      background: var(--white);
+      border: 6px solid var(--black);
     }
   }
-  .text {
-    grid-column: 2 /4;
+
+  .textContainer {
+    flex: 3;
   }
 
   @media (min-width: $tablet) {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: $laptop) {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row !important;
+
+    .image {
+      position: sticky !important;
+      top: calc(var(--navbar-height) + var(--pad-5));
+    }
   }
 }

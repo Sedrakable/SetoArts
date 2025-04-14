@@ -32,6 +32,9 @@ export const enTranslations: Translations = {
   },
   form: {
     general: {
+      select: "Select",
+      service: "Service",
+      servicePlaceholder: "Select a service",
       firstName: "First Name",
       firstNamePlaceholder: "Joe",
       lastName: "Last Name",
@@ -47,19 +50,7 @@ export const enTranslations: Translations = {
       referanceImage: "Image de référence",
       upload: "Télécharger des images",
     },
-    cart: {
-      province: "Province",
-      city: "Ville",
-      postalCode: "Code postal",
-      postalCodePlaceholder: "A1A 1A1",
-      delivery: "Méthode de livraison",
-      addressLine: "Adresse",
-    },
-    flash: {
-      bodyPosition: "Position du corps",
-      bodyPositionPlaceholder: "Je voudrais une le long de ma jambe...",
-      selectedFlash: "Flash sélectionné",
-    },
+
     wood: {
       currency: "CAD",
       height: "Height",
@@ -74,7 +65,14 @@ export const enTranslations: Translations = {
     branding: "Branding",
     web: "Web Design",
     digital: "Digital",
+    wood: "Custom Signs",
+  },
+  work: {
     wood: "Wood",
+    branding: "Branding",
+    web: "Web Design",
+    cards: "Cards",
+    gallery: "Gallery",
   },
   other: {
     startAt: "Starting at",

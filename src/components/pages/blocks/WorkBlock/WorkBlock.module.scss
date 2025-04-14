@@ -1,69 +1,95 @@
 @use "@/styles/mixins.scss" as *;
 
-@mixin vars() {
-  --transition: 200ms;
-  --container-min-width: 100%;
-  --container-height: 400px;
-  @media (min-width: $tablet) {
-  }
-
-  @media (min-width: $laptop) {
-    --container-min-width: 400px;
-  }
-
-  @media (min-width: $desktop) {
-  }
-}
-
 .workBlock {
+  --main-color: var(--white);
   align-items: stretch !important;
   row-gap: var(--pad-5) !important;
-}
 
-.container {
-  @include vars;
+  .card {
+    --transition: 200ms;
+    --box-shadow: 0 0 10px rgb(0, 0, 0, 0.4);
+    @include vari(height, auto, auto, 300px, 400px);
+    @include vari(aspect-ratio, 4/3, 4/3, unset);
+    position: relative;
+    overflow: visible;
+    overflow-x: clip;
+    border-radius: var(--border-radius);
 
-  position: relative;
-  overflow: hidden;
-  min-width: var(--container-min-width);
-  min-height: var(--container-height);
-  cursor: pointer;
-  flex: 1;
-
-  .content {
-    background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 0;
-    flex: 1;
-    h3 {
-      font-size: var(--heading-outfit-h4) !important;
-      line-height: var(--heading-outfit-h4-line) !important;
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      height: 16px;
+      width: 100%;
+      left: 0;
+      transform: translateY(100%);
+      background-color: var(--main-color);
+      z-index: 2;
     }
-  }
 
-  &:hover {
-    .imgWrapper {
+    cursor: default;
+
+    .image {
+      min-height: 100% !important;
+      border-radius: var(--border-radius);
+
       img {
         transition: var(--transition);
-        transform: scale(1.1);
       }
-    }
-    .content {
-      transition: var(--transition);
-      background-color: rgba(0, 0, 0, 0.1);
-      .title {
+      &:after {
         transition: var(--transition);
-        opacity: 0;
+        position: absolute;
+        content: "";
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 1) 0%,
+          transparent 35%
+        );
+        mix-blend-mode: overlay;
+        box-shadow: inset var(--box-shadow);
+        opacity: 1;
       }
     }
+
+    .title {
+      position: absolute !important;
+      left: 0.2em;
+      bottom: -0.15em;
+      transition: calc(var(--transition) * 2);
+      z-index: 1;
+      max-width: 75%;
+      text-shadow: var(--box-shadow);
+      color: var(--main-color) !important;
+    }
+
+    &:hover {
+      .image {
+        img {
+          transform: scale(1.1);
+        }
+        &:after {
+          opacity: 0;
+        }
+      }
+      .title {
+        transform: translateX(-120%);
+      }
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.yellow {
+    --main-color: var(--yellow);
   }
 }
 
-.grid {
-  .content {
-    background-color: var(--black);
-    > * {
-      color: var(--white) !important;
-    }
+.link {
+  display: block;
+  cursor: pointer;
+
+  .card {
+    cursor: pointer;
   }
 }
