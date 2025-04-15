@@ -3,7 +3,7 @@ import styles from "./Sidebar.module.scss";
 import { IconButton } from "../../reuse/IconButton";
 import cn from "classnames";
 import FlexDiv from "../../reuse/FlexDiv";
-import { Button } from "../../reuse/Button";
+import { Button } from "../../reuse/Button/Button";
 import { ICta, INavLink, LocalPaths } from "../../../data.d";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 import { atom, useAtom } from "jotai";

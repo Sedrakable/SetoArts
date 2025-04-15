@@ -144,12 +144,12 @@ export interface IWorkBlock {
 
 export interface IWork {
   title?: string; // Optional for gallery
+  desc?: string;
   thumbnailImage: ICustomImage; // Sanity image asset
   slug?: ISlug; // Optional for internal links
   workType: "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
   link?: string; // External URL (e.g., Behance, Kickstarter)
   images?: ICustomImage[]; // For modal slider (Wood Signs)
-  isFullWidth?: boolean; // For Branding
 }
 
 export interface IWoodWork {

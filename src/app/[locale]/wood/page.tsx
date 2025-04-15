@@ -121,7 +121,7 @@ export default async function WoodPage({
             />
           )}
           {data.featureBlock && (
-            <Features features={data.featureBlock.features} theme="light" />
+            <Features features={data.featureBlock.features} />
           )}
           {data.collapsible && <Collapsible {...data.collapsible} />}
         </>

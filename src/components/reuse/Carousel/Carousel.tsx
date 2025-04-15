@@ -10,7 +10,7 @@ import cn from "classnames";
 import { ICustomImage, SanityImage } from "../SanityImage/SanityImage";
 import { ICta, LocalPaths, LocalTargets } from "@/data.d";
 import FlexDiv from "../FlexDiv";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { useShuffleArray } from "@/helpers/useShuffleArray";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";

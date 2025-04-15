@@ -3,41 +3,52 @@ import React, { useState, useEffect } from "react";
 import styles from "./WorkBlock.module.scss";
 import cn from "classnames";
 import FlexDiv from "../../../reuse/FlexDiv";
-import { Heading } from "../../../reuse/Heading";
+import { Heading, HeadingLevelType } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
-import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
+import { SanityImage, SizesType } from "../../../reuse/SanityImage/SanityImage";
 import { useScrollToTarget } from "@/helpers/useScrollToTarget";
-import { ITheme, IWork, IWorkBlock, LocalTargets } from "../../../../data.d";
-import { useWindowResize } from "@/helpers/useWindowResize";
+import {
+  ITheme,
+  IWork,
+  IWorkBlock,
+  LocalPaths,
+  LocalTargets,
+} from "../../../../data.d";
 import Link from "next/link";
-import { getOptimalColumnCount } from "@/helpers/getOptimalColumnCount";
+import GridDiv from "@/components/reuse/GridDiv";
+import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n";
 // import { ImageSlider } from "@/components/reuse/ImageSlider";
 
 // Define image widths for each column count at each breakpoint
-const imageWidthsByColumns = {
-  1: { mobile: "100vw", tablet: 600, laptop: 800, desktop: 1000 }, // Full-width
-  2: { mobile: "50vw", tablet: 300, laptop: 400, desktop: 600 },
-  3: { mobile: "33vw", tablet: 200, laptop: 300, desktop: 400 },
-  4: { mobile: "25vw", tablet: 150, laptop: 250, desktop: 350 },
-  5: { mobile: "20vw", tablet: 120, laptop: 200, desktop: 300 },
+const imageWidthsByColumns: Record<number, SizesType> = {
+  1: ["100vw", 600, 1200, 1600], // Full-width
+  2: ["50vw", 300, 400, 600],
+  3: ["33vw", 200, 300, 400],
+  4: ["25vw", 150, 250, 350],
+  5: ["20vw", 120, 200, 300],
 };
 
-const getImageSizes = (columnCount: number) => {
-  const widths =
-    imageWidthsByColumns[columnCount as keyof typeof imageWidthsByColumns] ||
-    imageWidthsByColumns[1];
-  return `(max-width: 640px) ${widths.mobile}, (max-width: 1200px) ${widths.tablet}px, (max-width: 1680px) ${widths.laptop}px, ${widths.desktop}px`;
+const headingLevelByColumns: Record<number, HeadingLevelType> = {
+  1: "2", // Full-width
+  2: "3",
+  3: "4",
+  4: "4",
+  5: "5",
 };
 
 const Work: React.FC<IWork & { columnCount: number }> = ({
   title,
+  desc,
   thumbnailImage,
   link,
   images,
   workType,
   columnCount,
+  slug,
 }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const locale = useLocale() as LangType;
 
   const inferAction = (): "link" | "modal" | "none" => {
     switch (workType) {
@@ -55,48 +66,73 @@ const Work: React.FC<IWork & { columnCount: number }> = ({
   };
 
   const action = inferAction();
-  const handleClick = () => {
-    if (action === "modal" && images) setIsModalOpen(true);
-  };
 
   const content = (
     <FlexDiv
       width100
-      className={styles.card}
-      onClick={action === "modal" ? handleClick : undefined}
+      gapArray={[2, 3, 3, 3]}
+      flex={{ x: "flex-start", direction: "column" }}
     >
-      <SanityImage
-        {...thumbnailImage}
-        quality={90}
-        sizes={getImageSizes(columnCount)}
-        figureclassname={styles.image} // Note: Kept your prop name as-is
-      />
-      {title && (
-        <Heading
-          font="Outfit"
-          level="3"
-          as="h3"
-          color="white"
-          textAlign="start"
-          className={styles.title}
-          weight={800}
-        >
-          {title}
-        </Heading>
-      )}
-      {/* {action === "modal" && images && isModalOpen && (
+      <FlexDiv
+        width100
+        className={styles.card}
+        as={action === "link" ? "a" : action === "modal" ? "button" : "article"}
+      >
+        <SanityImage
+          {...thumbnailImage}
+          quality={100}
+          sizes={imageWidthsByColumns[columnCount]}
+          figureclassname={styles.image} // Note: Kept your prop name as-is
+        />
+        {title && (
+          <Heading
+            font="Outfit"
+            level={headingLevelByColumns[columnCount]}
+            as="h3"
+            color="white"
+            textAlign="start"
+            className={styles.title}
+            weight={700}
+          >
+            {title}
+          </Heading>
+        )}
+
+        {/* {action === "modal" && images && isModalOpen && (
         <ImageSlider images={images} onClose={() => setIsModalOpen(false)} />
       )} */}
+      </FlexDiv>
+
+      <Paragraph level="regular" color="black" className={styles.desc}>
+        {desc}
+      </Paragraph>
     </FlexDiv>
   );
 
-  return action === "link" && link ? (
-    <Link href={link} className={styles.link}>
-      {content}
-    </Link>
-  ) : (
-    content
-  );
+  if (action === "link" && link) {
+    return (
+      <Link
+        href={link}
+        className={styles.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={title}
+      >
+        {content}
+      </Link>
+    );
+  } else if (action === "modal" && locale && slug && images) {
+    return (
+      <Link
+        href={`/${locale}${LocalPaths.ABOUT}/${slug.current}`}
+        className={styles.link}
+        aria-label={title}
+      >
+        {content}
+      </Link>
+    );
+  }
+  return content;
 };
 
 interface WorkBlockProps extends IWorkBlock {
@@ -108,7 +144,7 @@ export const WorkBlock: React.FC<WorkBlockProps> = ({
   id,
   theme,
 }) => {
-  const { isMobile, isTablet, isLaptop } = useWindowResize();
+  const [columnCount, setColumnCount] = useState(1);
   const { scrollToTarget } = useScrollToTarget();
 
   useEffect(() => {
@@ -117,45 +153,31 @@ export const WorkBlock: React.FC<WorkBlockProps> = ({
     }
   }, [id, scrollToTarget]);
 
-  const getColumnRange = () => {
-    if (isMobile) return { min: 1, max: 1 };
-    if (isTablet) return { min: 2, max: 3 };
-    if (isLaptop) return { min: 3, max: 4 };
-    return { min: 4, max: 5 }; // Desktop
-  };
-
-  const { min, max } = getColumnRange();
-  const columnCount =
-    works.length === 1
-      ? 1 // Full-width for single item (e.g., Branding)
-      : getOptimalColumnCount(works.length, min, max);
-
   return (
     <Block
       title={{ font: "Outfit", children: title, color: "black", weight: 900 }}
       theme={theme}
       id={id}
     >
-      <FlexDiv
-        id={id}
-        gapArray={[4]}
-        flex={{ y: "flex-start" }}
-        width100
+      <GridDiv
+        gapArray={[4, 4, 5, 5]}
+        rowGapArray={[6, 6, 5, 5]}
+        columns={[
+          [1, 1],
+          [1, 2],
+          [3, 3],
+          [3, 3],
+        ]}
         className={cn(styles.workBlock, styles[theme])}
-        wrap
-        customStyle={{ ["--columns" as any]: columnCount }}
+        width100
+        fill
+        as="nav"
+        onColumnCountChange={(count) => setColumnCount(count)} // Capture column count
       >
-        {works.map((work, index) => (
-          <FlexDiv
-            key={index}
-            style={{
-              flex: `1 1 ${works.length === 1 ? 100 : 100 / columnCount}%`,
-            }}
-          >
-            <Work {...work} columnCount={columnCount} />
-          </FlexDiv>
+        {works.map((work, key) => (
+          <Work {...work} columnCount={columnCount} key={key} />
         ))}
-      </FlexDiv>
+      </GridDiv>
     </Block>
   );
 };

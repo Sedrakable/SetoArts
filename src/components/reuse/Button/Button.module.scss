@@ -199,8 +199,8 @@
 .container:has(.fancy) {
   @include vars;
 
-  -webkit-mask: url("../../assets/vector/ButtonStroke.svg");
-  mask: url("../../assets/vector/ButtonStroke.svg");
+  -webkit-mask: url("../../../assets/vector/ButtonStroke.svg");
+  mask: url("../../../assets/vector/ButtonStroke.svg");
   position: relative;
 
   .fancy {

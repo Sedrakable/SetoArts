@@ -9,8 +9,8 @@ import styles from "./Button.module.scss";
 import cn from "classnames";
 
 import Link, { LinkProps } from "next/link";
-import { Paragraph } from "./Paragraph/Paragraph";
-import { Icon, IconProps } from "./Icon";
+import { Paragraph } from "../Paragraph/Paragraph";
+import { Icon, IconProps } from "../Icon";
 import { useWindowResize } from "@/helpers/useWindowResize";
 import { LocalTargets } from "@/data.d";
 import { usePathname, useRouter } from "@/navigation";

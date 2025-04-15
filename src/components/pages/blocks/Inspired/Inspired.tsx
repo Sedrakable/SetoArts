@@ -4,7 +4,7 @@ import styles from "./Inspired.module.scss";
 import { Heading } from "../../../reuse/Heading";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { LocalPaths } from "../../../../data.d";
-import { Button } from "../../../reuse/Button";
+import { Button } from "../../../reuse/Button/Button";
 import { getTranslations } from "../../../../helpers/langUtils";
 import stroke from "/public/photos/BigStroke.webp";
 import { useLocale } from "next-intl";

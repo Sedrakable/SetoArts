@@ -124,7 +124,7 @@ export default async function ServicePage({
           <ClientLogger slug={slug} />
           {data.hero && <HeroV2 {...data.hero} cta1={heroCTAdata[slug]} />}
           {data.featureBlock && (
-            <Features features={data.featureBlock.features} theme="light" />
+            <Features features={data.featureBlock.features} />
           )}
           {data.processBlock && slug && (
             <ProcessAndQuote

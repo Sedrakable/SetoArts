@@ -46,7 +46,6 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
   return (
     <FlexDiv
       flex={{ direction: "column", x: "center" }}
-      width100
       className={styles.embla}
       gapArray={[3, 4]}
     >
@@ -64,19 +63,15 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
           ))}
         </div>
       </div>
-      <FlexDiv width100 className={styles.thumbs}>
-        <div className={styles.viewport} ref={emblaThumbsRef}>
-          <FlexDiv className={styles.container} gapArray={[3, 4]}>
-            {images.map((image, index) => (
-              <Thumb
-                key={index}
-                onClick={() => onThumbClick(index)}
-                selected={index === selectedIndex}
-                image={image}
-              />
-            ))}
-          </FlexDiv>
-        </div>
+      <FlexDiv className={styles.thumbs} ref={emblaThumbsRef} gapArray={[3, 4]}>
+        {images.map((image, index) => (
+          <Thumb
+            key={index}
+            onClick={() => onThumbClick(index)}
+            selected={index === selectedIndex}
+            image={image}
+          />
+        ))}
       </FlexDiv>
     </FlexDiv>
   );
@@ -92,16 +87,14 @@ export const Thumb: React.FC<ThumbProps> = ({ selected, image, onClick }) => {
   return (
     <div
       className={cn(styles.thumb, selected && styles.selected)}
-      //   className={"embla-thumbs__slide".concat(
-      //     selected ? " embla-thumbs__slide--selected" : ""
-      //   )}
       onClick={onClick}
     >
       <SanityImage
         image={image?.image}
         alt={image?.alt}
         figureclassname={cn(styles.image)}
-        quality={50}
+        quality={5}
+        sizes={[80, 120, 100, 100]}
       />
     </div>
   );

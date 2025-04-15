@@ -1,18 +1,17 @@
 "use client";
 import React from "react";
 import styles from "./Services.module.scss";
-import inverseStyles from "@/styles/inverseWrapper.module.scss";
 import cn from "classnames";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { Heading } from "../../../reuse/Heading";
 import { Block } from "../../containers/Block";
 import { IService, IServices, LocalPaths } from "../../../../data.d";
-import { Tag } from "../../../reuse/Tag";
-import { Button } from "../../../reuse/Button";
+import { Button } from "../../../reuse/Button/Button";
 import { getTranslations } from "../../../../helpers/langUtils";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import { useSvgComponent } from "@/helpers/useSvgComponent";
+import { Tag } from "@/components/reuse/Tag/Tag";
 
 const Service: React.FC<IService> = ({
   title,

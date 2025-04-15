@@ -1,24 +1,13 @@
 import { getAllWorkImages } from "@/helpers/functions";
 
-import {
-  IAbout,
-  IValues,
-  IWorkBlock,
-  IWork,
-  ISeo,
-  LocalPaths,
-  LocalTargets,
-} from "@/data.d";
+import { IAbout, IWorkBlock, ISeo, LocalPaths, LocalTargets } from "@/data.d";
 import { useFetchPage } from "@/app/api/useFetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { aboutPageQuery } from "@/app/api/generateSanityQueries";
 import { About } from "@/components/pages/blocks/About/About";
-import { ImageGrid } from "@/components/pages/blocks/ImageGrid/ImageGrid";
-import { Inspired } from "@/components/pages/blocks/Inspired/Inspired";
 import { WorkBlock } from "@/components/pages/blocks/WorkBlock/WorkBlock";
-import { Values } from "@/components/pages/home/Values/Values";
 import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
 import { WorkTypeNav } from "@/components/pages/blocks/WorkBlock/WorkTypeNav";
 
@@ -55,12 +44,13 @@ export async function generateMetadata({
     crawl,
   });
 }
-const workTypeTotarget: Record<string, LocalPaths> = {};
+
 export default async function AboutPage({
-  params: { locale },
+  params,
 }: {
-  params: { locale: LangType };
+  params: Promise<{ locale: LangType }>;
 }) {
+  const { locale } = await params;
   const data = await getAboutPageData(locale);
   // const workImages = getAllWorkImages(aboutPageData?.work?.works as IWork[]);
 
@@ -77,7 +67,7 @@ export default async function AboutPage({
                 id={
                   `#${workBlock.works[0].workType}-work-block` as LocalTargets
                 }
-                theme={key % 2 === 0 ? "light" : "yellow"}
+                theme={key % 2 === 1 ? "light" : "yellow"}
                 key={key}
               />
             );

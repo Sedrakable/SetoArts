@@ -5,13 +5,12 @@ import { Block } from "@/components/pages/containers/Block";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Heading";
 import { useSvgComponent } from "@/helpers/useSvgComponent";
-import { useWindowResize } from "@/helpers/useWindowResize";
-import { getOptimalColumnCount } from "@/helpers/getOptimalColumnCount";
 import { useScrollToTarget } from "@/helpers/useScrollToTarget";
 import { LocalTargets } from "@/data.d";
 import { getTranslations } from "@/helpers/langUtils";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
+import GridDiv from "@/components/reuse/GridDiv";
 
 interface WorkTypeItemProps {
   title: string;
@@ -64,7 +63,6 @@ export interface WorkTypeNavProps {
 export const WorkTypeNav: React.FC<WorkTypeNavProps> = ({
   theme = "light",
 }) => {
-  const { isMobile, isTablet, isLaptop } = useWindowResize();
   const locale = useLocale() as LangType;
   const trans = getTranslations(locale);
 
@@ -86,7 +84,7 @@ export const WorkTypeNav: React.FC<WorkTypeNavProps> = ({
     },
     {
       title: trans.work.cards,
-      svgName: "Cards",
+      svgName: "cards",
       targetId: LocalTargets.CARDSWORK,
     },
     {
@@ -95,16 +93,6 @@ export const WorkTypeNav: React.FC<WorkTypeNavProps> = ({
       targetId: LocalTargets.GALLERYWORK,
     },
   ];
-
-  const getColumnRange = () => {
-    if (isMobile) return { min: 1, max: 1 };
-    if (isTablet) return { min: 2, max: 3 };
-    if (isLaptop) return { min: 3, max: 4 };
-    return { min: 4, max: 5 }; // Desktop
-  };
-
-  const { min, max } = getColumnRange();
-  const columnCount = getOptimalColumnCount(items.length, min, max);
 
   return (
     <Block
@@ -117,19 +105,21 @@ export const WorkTypeNav: React.FC<WorkTypeNavProps> = ({
       theme={theme}
       className={styles.block}
     >
-      <FlexDiv
-        customStyle={{ ["--columns" as any]: columnCount }}
-        gapArray={[2, 3, 3, 4]}
-        flex={{ y: "flex-start" }}
+      <GridDiv
+        gapArray={[6, 4, 4, 4]}
+        columns={[
+          [1, 1],
+          [2, 2],
+          [4, 5],
+          [4, 5],
+        ]}
         width100
-        className={styles.nav}
         as="nav"
-        wrap
       >
         {items.map((item, index) => (
           <WorkTypeItem {...item} key={index} />
         ))}
-      </FlexDiv>
+      </GridDiv>
     </Block>
   );
 };

@@ -68,18 +68,6 @@
     @include vari(--shadow-size, 2px 2px, 3px 3px, 3px 3px, 4px 4px);
     text-shadow: var(--shadow-size) 0px hsl(from var(--black) h s l / 0.6);
   }
-  // &:before {
-  //   content: attr(data-text); // Duplicate text
-  //   position: absolute;
-  //   right: 0;
-  //   top: 0;
-  //   color: black; // Shadow color
-  //   filter: blur(3px); // Blurred shadow effect
-  //   mix-blend-mode: multiply; // Makes it blend inside the text
-  //   -webkit-background-clip: text; // ✅ Clips shadow inside the text
-  //   background-clip: text;
-  //   z-index: -1;
-  // }
 }
 
 .cursiveX {
@@ -87,4 +75,11 @@
   font-weight: 700 !important;
   color: var(--grey) !important;
   // Add any additional styling for the "x" if needed
+}
+
+.svgText {
+  // Ensure SVG inherits parent font size and line height
+  font-size: inherit;
+  line-height: inherit;
+  paint-order: stroke fill;
 }

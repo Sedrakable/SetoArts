@@ -3,7 +3,7 @@ import styles from "./SideContainer.module.scss";
 import cn from "classnames";
 import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../../reuse/Paragraph/Paragraph";
-import { Button } from "../../reuse/Button";
+import { Button } from "../../reuse/Button/Button";
 import FlexDiv from "../../reuse/FlexDiv";
 import { ICta } from "../../../data.d";
 

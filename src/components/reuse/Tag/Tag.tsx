@@ -1,8 +1,8 @@
 import React, { PropsWithChildren } from "react";
 import styles from "./Tag.module.scss";
 import cn from "classnames";
-import FlexDiv from "./FlexDiv";
-import { Paragraph } from "./Paragraph/Paragraph";
+import { Paragraph } from "../Paragraph/Paragraph";
+import FlexDiv from "../FlexDiv";
 
 interface TagProps {
   chosen?: boolean;

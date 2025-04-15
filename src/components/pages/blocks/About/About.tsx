@@ -18,10 +18,6 @@ export const About: React.FC<IAbout> = ({
   subTitle,
   desc,
 }) => {
-  const { isMobileOrTablet } = useWindowResize();
-  const locale = useLocale() as LangType;
-  const translations = getTranslations(locale);
-
   return (
     <Block theme="light">
       <FlexDiv
@@ -38,7 +34,7 @@ export const About: React.FC<IAbout> = ({
           loading="eager"
           fetchPriority="high"
           rel="preload"
-          sizes="(max-width: 640px) 90vw, (max-width: 1200px) 70vw, (max-width: 1680px) 40vw, 40vw"
+          sizes={["90vw", "70vw", "40vw", "40vw"]}
         />
 
         <FlexDiv

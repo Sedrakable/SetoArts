@@ -1,15 +1,17 @@
-import WorkModal from "./page";
+import { LangType } from "@/i18n";
+import AboutPage from "../page";
 
 export default function ModalLayout({
   children,
-  slug,
+
+  locale,
 }: {
   children: React.ReactNode;
-  slug: string;
+  locale: LangType;
 }) {
   return (
     <div>
-      <WorkModal params={{ slug }} />
+      <AboutPage params={Promise.resolve({ locale })} />
       {children}
     </div>
   );

@@ -27,7 +27,7 @@ export interface FlexDivProps<T extends ElementType = "div"> {
   as?: T; // Add the 'as' prop
 }
 
-interface PaddingProps {
+export interface PaddingProps {
   all?: SpacingArrayType;
   horizontal?: SpacingArrayType;
   vertical?: SpacingArrayType;

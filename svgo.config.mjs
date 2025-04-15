@@ -14,11 +14,11 @@ export default {
       name: "removeXMLProcInst", // Removes: <?xml version="1.0" encoding="UTF-8"?>
       active: true,
     },
-    {
-      name: "removeAttrs", // Removes unwanted attributes
-      params: {
-        attrs: ["id", "data-name", "xmlns"],
-      },
-    },
+    // {
+    //   name: "removeAttrs", // Removes unwanted attributes
+    //   // params: {
+    //   //   attrs: ["id", "data-name", "xmlns"],
+    //   // },
+    // },
   ],
 };

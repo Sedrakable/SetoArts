@@ -79,7 +79,7 @@ export default async function DigitalPage({
           theme="dark"
         />
       )}
-      {data.work && <WorkSlider {...data?.work} />}
+      {/* {data.work && <WorkSlider {...data?.work} />} */}
       {data.questions && <Questions questions={data.questions} theme="dark" />}
       {data.solutionBlock && (
         <SolutionBlock {...data.solutionBlock} theme="wood" />

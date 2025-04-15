@@ -10,7 +10,7 @@ import FlexDiv from "../FlexDiv";
 import Logo from "@/assets/vector/LogoBig.svg";
 import bigStroke from "/public/photos/test.png";
 import { FancyText } from "../FancyText";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { Quote } from "../Quote";
 import { SanityImage } from "../SanityImage/SanityImage";
 import { useWindowResize } from "../../../helpers/useWindowResize";

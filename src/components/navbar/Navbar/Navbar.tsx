@@ -7,7 +7,7 @@ import { IconButton } from "../../reuse/IconButton";
 import cn from "classnames";
 import FlexDiv from "../../reuse/FlexDiv";
 import Logo from "@/assets/vector/LogoSmall.svg";
-import { Button } from "../../reuse/Button";
+import { Button } from "../../reuse/Button/Button";
 import { ICta, INavBar, INavLink, ITheme } from "../../../data.d";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 import { useAtom } from "jotai";

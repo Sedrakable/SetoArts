@@ -4,7 +4,7 @@ import FlexDiv from "../../../reuse/FlexDiv";
 import { IService, LocalPaths } from "../../../../data.d";
 import { Paragraph } from "../../../reuse/Paragraph/Paragraph";
 import { Heading } from "../../../reuse/Heading";
-import { Button } from "../../../reuse/Button";
+import { Button } from "../../../reuse/Button/Button";
 import { getTranslations } from "../../../../helpers/langUtils";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";

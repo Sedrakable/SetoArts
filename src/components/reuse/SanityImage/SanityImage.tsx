@@ -1,17 +1,33 @@
 import { SanityImageSource } from "@sanity/asset-utils";
 import { urlFor } from "@/app/api/client";
 import Img, { ImageProps } from "next/image";
+"";
 
-export interface ICustomImage extends Omit<ImageProps, "src"> {
+export type SizesType = [
+  number | string,
+  number | string,
+  number | string,
+  number | string
+];
+export interface ICustomImage extends Omit<ImageProps, "src" | "sizes"> {
   alt: string;
   image: SanityImageSource;
   width?: number;
   quality?: number;
   figureclassname?: string;
+  sizes?: SizesType; // Optional sizes prop
 }
 
+const generateSizes = (sizes?: SizesType): string => {
+  if (!sizes) {
+    return "(max-width: 640px) 90vw, (max-width: 1200px) 80vw, (max-width: 1680px) 50vw, 33vw";
+  }
+  const [mobile, tablet, laptop, desktop] = sizes;
+  return `(max-width: 640px) ${mobile}px, (max-width: 1200px) ${tablet}px, (max-width: 1680px) ${laptop}px, ${desktop}px`;
+};
+
 export const SanityImage: React.FC<ICustomImage> = (props) => {
-  const { quality = 30 } = props;
+  const { quality = 30, sizes, ...restProps } = props;
 
   return props.width
     ? props.image && (
@@ -29,9 +45,9 @@ export const SanityImage: React.FC<ICustomImage> = (props) => {
           }}
           placeholder="blur"
           blurDataURL={urlFor(props.image).width(24).height(24).blur(10).url()}
-          // sizes="(max-width: 640px) 90vw, (max-width: 1200px) 80vw, (max-width: 1680px) 50vw, 33vw"
+          sizes={sizes ? generateSizes(sizes) : undefined} // Dynamic sizes
           priority={props.priority}
-          {...props}
+          {...restProps}
         />
       )
     : props.image && (
@@ -54,9 +70,9 @@ export const SanityImage: React.FC<ICustomImage> = (props) => {
               .blur(10)
               .url()}
             style={{ objectFit: "cover" }}
-            sizes="(max-width: 640px) 90vw, (max-width: 1200px) 80vw, (max-width: 1680px) 50vw, 33vw"
+            sizes={generateSizes(sizes)} // Dynamic sizes
             priority={props.priority}
-            {...props}
+            {...restProps}
           />
         </figure>
       );

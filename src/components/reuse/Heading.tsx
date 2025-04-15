@@ -24,7 +24,7 @@ export type ColorType = "white" | "black" | "yellow" | "grey" | "error";
 
 export const HeadingLevelArray = ["1", "2", "3", "4", "5"] as const;
 
-type HeadingLevelType = typeof HeadingLevelArray[number];
+export type HeadingLevelType = typeof HeadingLevelArray[number];
 
 export const HeadingAsArray = [
   "h1",
@@ -51,6 +51,10 @@ export interface HeadingProps {
   capitalise?: boolean;
   clickable?: boolean;
   className?: string;
+  svgText?: {
+    width: number;
+    color: ColorType;
+  };
 }
 
 export const capitalizeString = (str: string): string => {
@@ -70,6 +74,7 @@ export const Heading: React.FC<HeadingProps> = ({
   capitalise,
   clickable,
   className,
+  svgText,
 }) => {
   const { spacingNum } = useSpacingGenerator(paddingBottomArray);
 
@@ -99,6 +104,38 @@ export const Heading: React.FC<HeadingProps> = ({
       );
     }
   }
+  // SVG wrapper for svgText
+  const content = svgText ? (
+    <svg
+      className={cn(
+        styles.svgText,
+        font === "Cursive" ? fingerPaint.className : outfit.className
+      )}
+      style={{
+        display: "inline-block",
+        verticalAlign: textAlign,
+        height: "1em", // Match text size
+        overflow: "visible", // Ensure stroke isn’t clipped
+      }}
+    >
+      <text
+        x="50%"
+        y="50%"
+        dominantBaseline="middle"
+        textAnchor="middle"
+        stroke={svgText.color}
+        strokeWidth={svgText.width}
+        strokeLinejoin="miter"
+        strokeMiterlimit="2"
+        fill={`var(--${color})`}
+        style={{ fontWeight: weight }}
+      >
+        {typeof finalString === "string" ? finalString : children}
+      </text>
+    </svg>
+  ) : (
+    finalString
+  );
   return (
     <CustomHeading
       className={cn(
@@ -123,7 +160,7 @@ export const Heading: React.FC<HeadingProps> = ({
       }}
       data-text={typeof finalString === "string" ? finalString : undefined}
     >
-      {finalString}
+      {content}
     </CustomHeading>
   );
 };

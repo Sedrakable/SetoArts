@@ -8,7 +8,7 @@ import { Icon } from "../../Icon";
 import FlexDiv from "../../FlexDiv";
 import Image from "next/image";
 import { IconButton } from "../../IconButton";
-import { Button } from "../../Button";
+import { Button } from "../../Button/Button";
 import { LangType } from "@/i18n";
 
 interface UploadButtonProps {

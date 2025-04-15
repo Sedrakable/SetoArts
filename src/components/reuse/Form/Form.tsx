@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, FC, ReactNode } from "react";
 
 import styles from "./Form.module.scss";
-import { Button } from "@/components/reuse/Button";
+import { Button } from "@/components/reuse/Button/Button";
 import FlexDiv from "../FlexDiv";
 import { Heading } from "../Heading";
 import { Alert } from "../Alert/Alert";

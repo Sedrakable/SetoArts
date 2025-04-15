@@ -7,31 +7,21 @@ import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Heading";
 import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
 import { SanityImage } from "@/components/reuse/SanityImage/SanityImage";
-import { IFeature, ITheme } from "@/data.d";
+import { IFeature } from "@/data.d";
 import { LangType } from "@/i18n";
 import { useLocale } from "next-intl";
 import { getTranslations } from "@/helpers/langUtils";
 import { useSvgComponent } from "@/helpers/useSvgComponent";
-import { useWindowResize } from "@/helpers/useWindowResize";
-import { getOptimalColumnCount } from "@/helpers/getOptimalColumnCount";
+import GridDiv from "@/components/reuse/GridDiv";
 
-interface FeatureProps extends IFeature {
-  className?: string;
-}
-const Feature: React.FC<FeatureProps> = ({
-  title,
-  customImage,
-  svgName,
-  desc,
-  className,
-}) => {
+const Feature: React.FC<IFeature> = ({ title, customImage, svgName, desc }) => {
   const SvgComponent = useSvgComponent(svgName || "Bulb");
 
   return (
     <FlexDiv
       flex={{ direction: "column", x: "flex-start" }}
       width100
-      className={cn(styles.container, className)}
+      className={cn(styles.container)}
       as="li"
       gapArray={[3, 4, 4, 5]}
     >
@@ -50,16 +40,15 @@ const Feature: React.FC<FeatureProps> = ({
         className={styles.content}
         gapArray={[2]}
       >
-        <Heading
-          font="Outfit"
-          level="5"
-          as="h3"
+        <Paragraph
+          level="big"
           color="black"
-          weight={700}
           textAlign="center"
+          weight={600}
+          className={styles.title}
         >
           {title}
-        </Heading>
+        </Paragraph>
         <Paragraph level="small" color="black" textAlign="center">
           {desc}
         </Paragraph>
@@ -69,35 +58,13 @@ const Feature: React.FC<FeatureProps> = ({
 };
 
 export interface FeaturesProps {
-  theme: ITheme;
   features: IFeature[];
 }
 
-export const Features: React.FC<FeaturesProps> = ({
-  features,
-  theme = "dark",
-}) => {
-  const { isMobile, isTablet, isLaptop } = useWindowResize();
+export const Features: React.FC<FeaturesProps> = ({ features }) => {
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
 
-  const getColumnRange = () => {
-    if (isMobile) {
-      return { min: 1, max: 1 };
-    } else if (isTablet) {
-      return { min: 2, max: 3 };
-    } else if (isLaptop) {
-      // Assuming laptop breakpoint at 1280px
-      return { min: 3, max: 4 };
-    } else {
-      return { min: 4, max: 5 }; // Desktop
-    }
-  };
-  const { min, max } = getColumnRange();
-  const columnCount = getOptimalColumnCount(features.length, min, max); // returns 4
-  const remainder = features.length % columnCount;
-
-  const firstOfLastRowIndex = features.length - remainder;
   return (
     <Block
       title={{
@@ -106,30 +73,24 @@ export const Features: React.FC<FeaturesProps> = ({
         color: "black",
         weight: 900,
       }}
-      theme={theme}
+      theme="light"
       className={styles.block}
     >
-      <FlexDiv
-        customStyle={{
-          ["--columns" as any]: columnCount,
-        }}
+      <GridDiv
         gapArray={[7, 8, 8, 8]}
-        flex={{ y: "flex-start" }}
+        columns={[
+          [1, 1],
+          [2, 3],
+          [3, 4],
+          [4, 5],
+        ]}
         width100
-        className={cn(styles.features, styles[theme])}
         as="ul"
       >
         {features?.map((feature: IFeature, key) => {
-          const isFirstOfLastRow = key === firstOfLastRowIndex;
-          return (
-            <Feature
-              {...feature}
-              key={key}
-              className={cn({ [styles.lastRowItem]: isFirstOfLastRow })}
-            />
-          );
+          return <Feature {...feature} key={key} />;
         })}
-      </FlexDiv>
+      </GridDiv>
     </Block>
   );
 };

@@ -9,7 +9,7 @@ import { getTranslations } from "@/helpers/langUtils";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading, ColorType } from "@/components/reuse/Heading";
 import { PortableTextContent } from "@/components/reuse/Paragraph/PortableTextContent";
-import { Button } from "@/components/reuse/Button";
+import { Button } from "@/components/reuse/Button/Button";
 
 import Logo from "@/assets/vector/LogoSmall.svg";
 import GlowingSign from "@/assets/vector/GlowingSignGraphic.svg";
