@@ -1,0 +1,66 @@
+@use "@/styles/mixins.scss" as *;
+
+.embla {
+  width: 100%;
+
+  .viewport {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-height: 100% !important;
+    aspect-ratio: 1;
+
+    .container {
+      display: flex;
+      touch-action: pan-y pinch-zoom;
+      gap: var(--pad-4);
+      .slide {
+        transform: translate3d(0, 0, 0);
+        flex: 0 0 100%;
+
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        aspect-ratio: 1;
+        .image {
+          width: 100% !important;
+
+          max-height: 100% !important;
+          box-shadow: var(--light-shadow);
+          overflow: hidden !important;
+        }
+      }
+    }
+  }
+}
+
+.thumbs {
+  @include vari(--thumb-height, 80px, 120px, 100px, 120px);
+  max-height: var(--thumb-height) !important;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.thumb {
+  height: 100%;
+  aspect-ratio: 1;
+  cursor: pointer;
+  .image {
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--light-shadow);
+    img {
+      position: relative !important;
+    }
+  }
+  &.selected {
+    .image {
+      border-radius: unset;
+      img {
+        filter: grayscale(0.5) brightness(0.5);
+        outline: 4px solid var(--black) !important;
+        outline-offset: -4px;
+      }
+    }
+  }
+}

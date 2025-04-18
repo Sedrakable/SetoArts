@@ -68,3 +68,10 @@ $desktop: 1680px;
   -webkit-line-clamp: $n;
   -webkit-box-orient: vertical;
 }
+
+@mixin borderStyling() {
+  $width: 4px;
+  outline: $width solid var(--black);
+  outline-offset: -$width;
+  box-shadow: var(--black-shadow);
+}

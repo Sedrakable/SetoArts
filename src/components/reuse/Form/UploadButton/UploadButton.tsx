@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./UploadButton.module.scss";
-import { Paragraph } from "../../Paragraph/Paragraph";
+import { Paragraph } from "../../Text/Paragraph/Paragraph";
 import { useLocale } from "next-intl";
 import { getTranslations } from "@/helpers/langUtils";
 
-import { Icon } from "../../Icon";
+import { Icon } from "../../Icon/Icon";
 import FlexDiv from "../../FlexDiv";
 import Image from "next/image";
-import { IconButton } from "../../IconButton";
 import { Button } from "../../Button/Button";
 import { LangType } from "@/i18n";
 
@@ -126,6 +125,7 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
           padding={{ horizontal: [7], vertical: [5] }}
         >
           <input
+            id="file-upload"
             ref={fileInputRef}
             type="file"
             onChange={handleChange}

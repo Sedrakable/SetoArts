@@ -10,11 +10,11 @@ interface SiteMapEntry {
     };
   };
 }
-
+//TODO
 const baseUrls = [
   "/",
   "/service/branding",
-  "/service/web-design",
+  "/service/se",
   "/service/total-package",
   "/service/custom-work",
   "/about-work",

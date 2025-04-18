@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./WorkBlock.module.scss";
 import cn from "classnames";
 import FlexDiv from "../../../reuse/FlexDiv";
-import { Heading, HeadingLevelType } from "../../../reuse/Heading";
+import { Heading, HeadingLevelType } from "../../../reuse/Text/Heading/Heading";
 import { Block } from "../../containers/Block";
 import { SanityImage, SizesType } from "../../../reuse/SanityImage/SanityImage";
 import { useScrollToTarget } from "@/helpers/useScrollToTarget";
@@ -16,9 +16,10 @@ import {
 } from "../../../../data.d";
 import Link from "next/link";
 import GridDiv from "@/components/reuse/GridDiv";
-import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
+import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
+import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 // import { ImageSlider } from "@/components/reuse/ImageSlider";
 
 // Define image widths for each column count at each breakpoint
@@ -40,7 +41,8 @@ const headingLevelByColumns: Record<number, HeadingLevelType> = {
 
 const Work: React.FC<IWork & { columnCount: number }> = ({
   title,
-  desc,
+  descEN,
+  descFR,
   thumbnailImage,
   link,
   images,
@@ -70,14 +72,10 @@ const Work: React.FC<IWork & { columnCount: number }> = ({
   const content = (
     <FlexDiv
       width100
-      gapArray={[2, 3, 3, 3]}
+      gapArray={[4, 4, 4, 5]}
       flex={{ x: "flex-start", direction: "column" }}
     >
-      <FlexDiv
-        width100
-        className={styles.card}
-        as={action === "link" ? "a" : action === "modal" ? "button" : "article"}
-      >
+      <FlexDiv width100 className={styles.card}>
         <SanityImage
           {...thumbnailImage}
           quality={100}
@@ -97,14 +95,10 @@ const Work: React.FC<IWork & { columnCount: number }> = ({
             {title}
           </Heading>
         )}
-
-        {/* {action === "modal" && images && isModalOpen && (
-        <ImageSlider images={images} onClose={() => setIsModalOpen(false)} />
-      )} */}
       </FlexDiv>
 
       <Paragraph level="regular" color="black" className={styles.desc}>
-        {desc}
+        {locale === "fr" ? descFR : descEN}
       </Paragraph>
     </FlexDiv>
   );
@@ -159,25 +153,27 @@ export const WorkBlock: React.FC<WorkBlockProps> = ({
       theme={theme}
       id={id}
     >
-      <GridDiv
-        gapArray={[4, 4, 5, 5]}
-        rowGapArray={[6, 6, 5, 5]}
-        columns={[
-          [1, 1],
-          [1, 2],
-          [3, 3],
-          [3, 3],
-        ]}
-        className={cn(styles.workBlock, styles[theme])}
-        width100
-        fill
-        as="nav"
-        onColumnCountChange={(count) => setColumnCount(count)} // Capture column count
-      >
-        {works.map((work, key) => (
-          <Work {...work} columnCount={columnCount} key={key} />
-        ))}
-      </GridDiv>
+      <AnimatedWrapper from={theme === "light" ? "right" : "left"}>
+        <GridDiv
+          gapArray={[4, 4, 5, 5]}
+          rowGapArray={[6, 6, 5, 5]}
+          columns={[
+            [1, 1],
+            [1, 2],
+            [3, 3],
+            [3, 3],
+          ]}
+          className={cn(styles.workBlock, styles[theme])}
+          width100
+          fill
+          as="nav"
+          onColumnCountChange={(count) => setColumnCount(count)} // Capture column count
+        >
+          {works.map((work, key) => (
+            <Work {...work} columnCount={columnCount} key={key} />
+          ))}
+        </GridDiv>
+      </AnimatedWrapper>
     </Block>
   );
 };

@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 
 import styles from "./InputWrapper.module.scss";
 
-import { Paragraph } from "../../Paragraph/Paragraph";
+import { Paragraph } from "../../Text/Paragraph/Paragraph";
 import FlexDiv from "../../FlexDiv";
 
 export interface InputWrapperProps {

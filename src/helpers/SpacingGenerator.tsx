@@ -2,7 +2,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { useWindowResize } from "./useWindowResize";
 
-const spacingArrayConst = [
+const _SPACINGARRAYCONST = [
   0,
   1,
   2,
@@ -19,7 +19,7 @@ const spacingArrayConst = [
   13,
 ] as const;
 
-export type SpacingType = typeof spacingArrayConst[number];
+export type SpacingType = typeof _SPACINGARRAYCONST[number];
 
 export type SpacingArrayType = [
   SpacingType,

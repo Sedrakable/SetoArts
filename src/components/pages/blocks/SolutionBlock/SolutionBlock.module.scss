@@ -4,12 +4,12 @@
   overflow-x: clip !important;
 }
 .stroke {
-  @include vari(--trans-y, 45%, 25%, 25%, 25%);
-  @include vari(height, 100px, 160px, 200px, 300px);
+  @include vari(--trans-y, 25%, 25%, 18%, 15%);
+  @include vari(height, 100px, 160px, 180px, 280px);
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, var(--trans-y)) rotate(183deg);
+  transform: translate(-50%, var(--trans-y)) rotate(182deg);
   width: 120%;
   min-width: $laptop;
   z-index: 1;
@@ -17,4 +17,7 @@
 
 .headings {
   z-index: 2;
+  .heading {
+    width: 100%;
+  }
 }

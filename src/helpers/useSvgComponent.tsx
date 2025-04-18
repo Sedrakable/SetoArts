@@ -11,8 +11,8 @@ export const useSvgComponent = (svgName: string) => {
 
     const loadSvg = async () => {
       try {
-        const module = await import(`@/assets/vector/${svgName}.svg`);
-        const Component = module.default as FC<SVGProps<SVGSVGElement>>;
+        const modulee = await import(`@/assets/vector/${svgName}.svg`);
+        const Component = modulee.default as FC<SVGProps<SVGSVGElement>>;
         if (isMounted) setSvgComponent(() => Component);
       } catch {
         console.error(`SVG '${svgName}' not found. Falling back to 'Bulb'.`);

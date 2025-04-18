@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.scss";
 import TabButton from "../TabButton/TabButton";
 import { useWindowResize } from "../../../helpers/useWindowResize";
-import { IconButton } from "../../reuse/IconButton";
+import { IconButton } from "../../reuse/IconButton/IconButton";
 import cn from "classnames";
 import FlexDiv from "../../reuse/FlexDiv";
 import Logo from "@/assets/vector/LogoSmall.svg";
@@ -17,7 +17,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import dynamic from "next/dynamic";
-import { usePathname, useRouter } from "@/navigation";
+import { Socials } from "@/components/reuse/Socials/Socials";
 
 const Sidebar = dynamic(
   () => import("../Sidebar/Sidebar").then((module) => module.Sidebar),
@@ -34,6 +34,8 @@ export const Navbar: React.FC<INavBar> = ({
   links,
   navButton,
   theme = "light",
+  hideLogo = false,
+  socials,
 }) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
   const [scrolled, setScrolled] = useState(false);
@@ -59,6 +61,7 @@ export const Navbar: React.FC<INavBar> = ({
       <nav
         className={cn(styles.navbarWrapper, styles[theme], {
           [styles.scrolled]: scrolled,
+          [styles.hideLogo]: hideLogo,
         })}
         ref={navRef}
       >
@@ -108,10 +111,12 @@ export const Navbar: React.FC<INavBar> = ({
                 aria-label="burger menu"
               />
             )}
+
+            {!isMobileOrTablet && socials && <Socials {...socials} />}
           </FlexDiv>
         </FlexDiv>
       </nav>
-      {isMobileOrTablet && <Sidebar links={links} lang={locale} />}
+      {isMobileOrTablet && <Sidebar links={links} socials={socials!} />}
     </>
   );
 };
@@ -156,7 +161,7 @@ export const NavButton: React.FC<ICta> = ({ text, path, scrollTarget }) => {
   return (
     <Button
       variant="primary"
-      small={isMobile}
+      // small={isMobile}
       path={path}
       scrollTarget={scrollTarget}
     >

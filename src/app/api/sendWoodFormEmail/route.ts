@@ -1,3 +1,4 @@
+// app/api/sendWoodFormEmail/route.ts
 import {
   EncodedFileType,
   WoodFormData,
@@ -6,18 +7,17 @@ import { LangType } from "@/i18n";
 import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { emailTranslations } from "@/langs/emailTranslations";
+import { getTransporter } from "@/helpers/getTransporter";
 
-// Prepare images as attachments and link them via CID
 const prepareAttachments = (attachments: EncodedFileType[]) => {
   return attachments.map((attach) => ({
     filename: attach.name,
     content: Buffer.from(attach.data, "base64"),
-    contentType: attach.type, // Use the file name as the CID for each image
+    contentType: attach.type,
   }));
 };
 
-// Fixed template loading function
 const loadTemplate = (filename: string) => {
   const templatePath = path.join(
     process.cwd(),
@@ -35,36 +35,15 @@ const loadTemplate = (filename: string) => {
   }
 };
 
-const emailTranslations = {
-  en: {
-    subject: "Seto x Arts | Your Custom LED Wood Sign Inquiry 💡",
-    title: "Your Custom LED Wood Sign Inquiry",
-    greeting: (name: string) => `Hey ${name},`,
-    thankYouMessage: (name: string) =>
-      `Appreciate you reaching out! I’m Seto, the guy behind Seto x Arts. I’ll be checking out your request and hitting you up soon to go over the details, pricing, and what’s possible. Keep an eye on your inbox (and maybe your spam folder, just in case).`,
-    signDetails: "Project Breakdown:",
-    dimensions: "Size:",
-    budget: "Your Budget Range:",
-    additionalInfo: "Extra Details:",
-    regards: "Catch you soon,",
-    team: "Seto – Seto x Arts",
-  },
-};
-
-// 2. Adjust the client email template to match your WoodFormData
 const generateClientEmailTemplate = (
   formData: WoodFormData,
   locale: LangType
 ): string => {
-  const t = emailTranslations[locale]; // e.g. 'en'
+  const t = emailTranslations[locale]["wood-sign"];
   let html = loadTemplate("woodClientEmail.html");
 
-  // Replace placeholders dynamically
   html = html
-    // Replace locale
     .replaceAll("${locale}", locale)
-
-    // Replace translation placeholders
     .replaceAll("${t.title}", t.title)
     .replaceAll(
       "${t.greeting(formData.firstName)}",
@@ -80,8 +59,6 @@ const generateClientEmailTemplate = (
     .replaceAll("${t.additionalInfo}", t.additionalInfo)
     .replaceAll("${t.regards}", t.regards)
     .replaceAll("${t.team}", t.team)
-
-    // Replace form data placeholders
     .replaceAll("${formData.details}", formData.details)
     .replaceAll("${formData.width}", formData.width.toString())
     .replaceAll("${formData.height}", formData.height.toString())
@@ -94,7 +71,6 @@ const generateClientEmailTemplate = (
 const businessEmailTemplate = (formData: WoodFormData, locale: LangType) => {
   let html = loadTemplate("woodBusinessEmail.html");
 
-  // Replace placeholders dynamically
   html = html
     .replaceAll("${locale}", locale.toUpperCase())
     .replaceAll("${formData.firstName}", formData.firstName)
@@ -109,46 +85,31 @@ const businessEmailTemplate = (formData: WoodFormData, locale: LangType) => {
   return html;
 };
 
-// 4. Final POST function changes
 export async function POST(request: Request) {
   try {
     const {
       formData,
       locale,
     }: { formData: WoodFormData; locale: LangType } = await request.json();
-
     const attachments = prepareAttachments(formData.uploads);
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_BUSINESS,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    const transporter = getTransporter();
 
-    // Client email
     const clientEmail = generateClientEmailTemplate(formData, locale);
-
-    // Business email
     const businessEmail = businessEmailTemplate(formData, locale);
 
-    // Send to client
     await transporter.sendMail({
       from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
       to: formData.email,
-      subject: emailTranslations[locale].subject,
+      subject: emailTranslations[locale]["wood-sign"].subject,
       html: clientEmail,
       attachments,
     });
 
-    // Send to business
     await transporter.sendMail({
       from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
       to: process.env.EMAIL_BUSINESS,
-      subject: `💡💡New Wood Sign Inquiry - ${formData.firstName} ${formData.lastName}💡💡`,
+      subject: `💡 New Wood Sign Inquiry - ${formData.firstName} ${formData.lastName}`,
       html: businessEmail,
       attachments,
     });

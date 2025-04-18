@@ -1,17 +1,16 @@
 import { ICollapsible, IHeroV2, ISeo, LocalPaths } from "@/data.d";
-import { useFetchPage } from "@/app/api/useFetchPage";
+import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { contactPageQuery } from "@/app/api/generateSanityQueries";
 
-import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
-import { getTranslations } from "@/helpers/langUtils";
+import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
 import { FormTitleProps } from "@/components/reuse/Form/Form";
 import { getFormData } from "@/components/reuse/Form/getFormData";
-import { ImageAndQuote } from "@/components/pages/DigitalPage/ImageAndQuote";
-import { HeroV2 } from "@/components/reuse/Hero/Hero";
-import { Collapsible } from "@/components/reuse/Collapsible/Collapsible";
+import { ImageAndForm } from "@/components/pages/blocks/ImageAndForm/ImageAndForm";
+import { Collapsible } from "@/components/pages/blocks/Collapsible/Collapsible";
+import { HeroV2 } from "@/components/pages/blocks/Hero/Hero";
 
 export interface ContactPageProps {
   meta: ISeo;
@@ -20,13 +19,9 @@ export interface ContactPageProps {
 }
 
 const getContactPageData = async (locale: LangType) => {
-  const type = "contactPage";
   const contactQuery = contactPageQuery(locale);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const contactPageData: ContactPageProps = await useFetchPage(
-    contactQuery,
-    type
-  );
+
+  const contactPageData: ContactPageProps = await fetchPage(contactQuery);
   return contactPageData;
 };
 
@@ -55,13 +50,12 @@ export default async function Contact({
 }: {
   params: { locale: LangType };
 }) {
-  const translations = getTranslations(locale);
   const data = await getContactPageData(locale);
   const formData: FormTitleProps = await getFormData("digital", locale);
   return (
     <NavWrapperServer locale={locale} theme="dark">
       {data.hero && <HeroV2 {...data.hero} />}
-      {formData && <ImageAndQuote {...formData} />}
+      {formData && <ImageAndForm {...formData} />}
 
       {data.collapsibles?.map((collapsible: ICollapsible, key) => {
         return <Collapsible {...collapsible} key={key} />;

@@ -1,14 +1,20 @@
 "use client";
 import React from "react";
 import styles from "./Footer.module.scss";
-import { Paragraph } from "../reuse/Paragraph/Paragraph";
+import { Paragraph } from "../reuse/Text/Paragraph/Paragraph";
 
 import FlexDiv from "../reuse/FlexDiv";
 import LogoHori from "@/assets/vector/LogoHorizontal.svg";
 import { useWindowResize } from "../../helpers/useWindowResize";
-import { ICta, IFooter, INavBar, LocalPaths } from "../../data.d";
+import {
+  ICta,
+  IFooter,
+  IFooterFAQLinks,
+  INavBar,
+  LocalPaths,
+} from "../../data.d";
 import { isDropDown, NavButton } from "../navbar/Navbar/Navbar";
-import { Socials } from "./Socials";
+import { Socials } from "../reuse/Socials/Socials";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import Link from "next/link";
@@ -80,9 +86,10 @@ const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
   );
 };
 
-const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
-  legals,
-}) => {
+const LegalAndFaq: React.FC<{
+  legals: { title: string; path: string }[];
+  faqs?: IFooterFAQLinks[];
+}> = ({ legals, faqs }) => {
   const locale = useLocale() as LangType;
   return (
     <FlexDiv
@@ -104,6 +111,19 @@ const Legal: React.FC<{ legals: { title: string; path: string }[] }> = ({
           </Link>
         );
       })}
+      {faqs?.map((faq, key) => {
+        return (
+          <Link
+            href={`/${locale}${LocalPaths.CONTACT}${faq.id}`}
+            key={key}
+            aria-label={faq?.title}
+          >
+            <Paragraph level="small" color="grey" clickable>
+              {faq?.title}
+            </Paragraph>
+          </Link>
+        );
+      })}
     </FlexDiv>
   );
 };
@@ -114,11 +134,12 @@ const DesktopFooter: React.FC<FooterProps> = ({
   trademark,
   socials,
   navButton,
+  faqs,
 }) => {
   return (
     <FlexDiv
       className={styles.container}
-      flex={{ y: "stretch" }}
+      flex={{ y: "center" }}
       padding={{ vertical: [7] }}
     >
       <Nav links={links} navButton={navButton} />
@@ -131,7 +152,7 @@ const DesktopFooter: React.FC<FooterProps> = ({
         padding={{ vertical: [4] }}
         gapArray={[5]}
       >
-        <Legal legals={legals} />
+        <LegalAndFaq legals={legals} faqs={faqs} />
         <Socials {...socials} />
       </FlexDiv>
     </FlexDiv>
@@ -144,6 +165,7 @@ const TabletFooter: React.FC<FooterProps> = ({
   trademark,
   socials,
   navButton,
+  faqs,
 }) => {
   return (
     <FlexDiv
@@ -156,7 +178,7 @@ const TabletFooter: React.FC<FooterProps> = ({
       <FlexDiv flex={{ direction: "column" }} gapArray={[4]}>
         <Nav links={links} navButton={navButton} />
         <FlexDiv flex={{ x: "center" }} gapArray={[4]} wrap width100>
-          <Legal legals={legals} />
+          <LegalAndFaq legals={legals} faqs={faqs} />
           <Socials {...socials} />
         </FlexDiv>
       </FlexDiv>
@@ -169,6 +191,7 @@ const MobileFooter: React.FC<FooterProps> = ({
   trademark,
   socials,
   navButton,
+  faqs,
 }) => {
   return (
     <FlexDiv
@@ -180,7 +203,7 @@ const MobileFooter: React.FC<FooterProps> = ({
       <Socials {...socials} />
       <Nav links={links} navButton={navButton} />
       <Logo trademark={trademark} />
-      <Legal legals={legals} />
+      <LegalAndFaq legals={legals} faqs={faqs} />
     </FlexDiv>
   );
 };

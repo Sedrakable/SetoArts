@@ -31,6 +31,8 @@
     @include vari(height, 60px, 60px, 48px, 60px);
     border-radius: var(--border-radius-small);
     background: var(--grad);
+    box-shadow: var(--black-shadow);
+    border: 2px solid var(--black);
     &.invalid {
       outline: 2px solid var(--error);
     }
@@ -56,12 +58,12 @@
     width: 100%;
     background: var(--white);
     border-radius: var(--border-radius-small);
-    box-shadow: var(--grey-shadow);
-    border: 2px solid var(--grey, #c4c4cc);
+    box-shadow: var(--black-shadow);
+    border: 2px solid var(--black);
     max-height: var(--dropdown-max-height);
     overflow-y: auto;
     scroll-behavior: smooth;
-    margin-top: var(--pad-2);
+    margin-top: var(--pad-3);
 
     .tab {
       cursor: pointer;

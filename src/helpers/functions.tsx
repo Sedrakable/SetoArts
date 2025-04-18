@@ -21,7 +21,8 @@ export const shuffleArray = (array: any[]) => {
 
 export const getAllWorkImages = (works: IWork[]) => {
   const customImages: ICustomImage[] = works?.flatMap((work) => {
-    return work.customImages;
+    if (!work.images) return [];
+    return work.images;
   });
 
   return customImages;

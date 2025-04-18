@@ -1,29 +1,28 @@
 import {
   IHero,
-  IWorkBlock,
   LocalPaths,
   ISeo,
   IQuestion,
   IService,
   ITestimonial,
+  LocalTargets,
 } from "@/data.d";
-import { useFetchPage } from "@/app/api/useFetchPage";
+import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { digitalPageQuery } from "@/app/api/generateSanityQueries";
 
-import { Hero } from "@/components/reuse/Hero/Hero";
-import { WorkSlider } from "@/components/pages/blocks/WorkSlider/WorkSlider";
-import { Services } from "@/components/pages/home/Services/Services";
-import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
+import { Services } from "@/components/pages/blocks/Services/Services";
+import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
 import { getTranslations } from "@/helpers/langUtils";
-import { Questions } from "@/components/services/Questions/Questions";
+import { Questions } from "@/components/pages/blocks/Questions/Questions";
 import {
   SolutionBlock,
   SolutionBlockProps,
 } from "@/components/pages/blocks/SolutionBlock/SolutionBlock";
-import { Testimonials } from "@/components/services/Testimonials/Testimonials";
+import { Testimonials } from "@/components/pages/blocks/Testimonials/Testimonials";
+import { Hero } from "@/components/pages/blocks/Hero/Hero";
 
 export interface DigitalPageProps {
   meta: ISeo;
@@ -32,13 +31,12 @@ export interface DigitalPageProps {
   solutionBlock: SolutionBlockProps;
   testimonials: ITestimonial[];
   services: IService[];
-  work: IWorkBlock;
 }
 
 export const getDigitalPageData = async (locale: LangType) => {
   const digitalQuery = digitalPageQuery(locale);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const digitalPageData: DigitalPageProps = await useFetchPage(digitalQuery);
+
+  const digitalPageData: DigitalPageProps = await fetchPage(digitalQuery);
   return digitalPageData;
 };
 
@@ -68,18 +66,29 @@ export default async function DigitalPage({
   params: { locale: LangType };
 }) {
   const data = await getDigitalPageData(locale);
+  // const workData: IWork[] = await fetchPage(worksQuery);
   const translations = getTranslations(locale);
 
   return (
-    <NavWrapperServer locale={locale} theme="dark">
+    <NavWrapperServer locale={locale} theme="dark" hideLogo>
       {data && (
         <Hero
           {...data.hero}
-          cta={{ text: translations.buttons.buildBrand }}
+          cta1={{
+            text: translations.buttons.buildBrand,
+            path: LocalPaths.DIGITAL,
+            scrollTarget: LocalTargets.SERVICESBLOCK,
+          }}
+          cta2={{
+            text: translations.buttons.viewMyWork,
+            // path: `/${locale}${LocalPaths.ABOUT}`,
+            path: LocalPaths.ABOUT,
+            scrollTarget: LocalTargets.BRANDINGWORK,
+          }}
           theme="dark"
         />
       )}
-      {/* {data.work && <WorkSlider {...data?.work} />} */}
+      {/* {workData && <WorkSlider works={workData} />} */}
       {data.questions && <Questions questions={data.questions} theme="dark" />}
       {data.solutionBlock && (
         <SolutionBlock {...data.solutionBlock} theme="wood" />

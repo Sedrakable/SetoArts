@@ -25,9 +25,11 @@ export interface DigitalFormData extends BaseFormData {
   uploads: EncodedFileType[];
 }
 
+export type FormServiceType = "wood-sign" | "branding" | "website";
+
 export interface ContactFormData extends BaseFormData {
   details: string;
-  service: "wood-sign" | "branding" | "web-design"; // Dropdown options
+  service: FormServiceType; // Dropdown options
   budgetMin: number;
   budgetMax: number;
   width?: number; // Optional, only for wood-sign

@@ -1,9 +1,9 @@
 "use client";
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import styles from "./WorkSlider.module.scss";
 
 import FlexDiv from "../../../reuse/FlexDiv";
-import { IWork, IWorkBlock, LocalPaths } from "../../../../data.d";
+import { IWork, LocalPaths } from "../../../../data.d";
 import { getTranslations } from "../../../../helpers/langUtils";
 import { LangType } from "@/i18n";
 import { useLocale } from "next-intl";
@@ -12,24 +12,25 @@ import {
   ProjectSliderProps,
 } from "../../containers/ProjectSlider";
 
-export const WorkSlider: React.FC<PropsWithChildren<IWorkBlock>> = ({
-  works,
-}) => {
+export const WorkSlider: React.FC<{ works: IWork[] }> = ({ works }) => {
+  console.log("works", works);
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
-  const slides: ProjectSliderProps[] = works!?.map(
+  const slides: ProjectSliderProps[] = works?.map(
     (work: IWork): ProjectSliderProps => {
       return {
-        customImages: work?.customImages,
         thumbnailImage: work?.thumbnailImage,
         content: {
           title: work.title,
-          desc: work.desc,
+          desc: locale === "fr" ? work.descFR : work.descEN,
           primaryCta: {
-            text: translations.buttons.view,
-            path: `/${locale}${LocalPaths.ABOUT}/${work.slug.current}`,
+            text: translations.buttons.viewMyWork,
+            path: `/${locale}${LocalPaths.ABOUT}`,
           },
-          seconadryCta: work.primaryLink,
+          seconadryCta: {
+            text: translations.buttons.view,
+            path: work.link,
+          },
         },
       };
     }

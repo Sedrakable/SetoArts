@@ -4,16 +4,17 @@ import Image from "next/image";
 
 import styles from "./SolutionBlock.module.scss";
 import { getTranslations } from "../../../../helpers/langUtils";
-import bigStroke from "/public/photos/test.png";
+import bigStroke from "/public/photos/BigStroke.webp";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import { Block } from "../../containers/Block";
-import { FancyText } from "@/components/reuse/FancyText";
-import { Icon } from "@/components/reuse/Icon";
+import { FancyText } from "@/components/reuse/Text/FancyText/FancyText";
+import { Icon } from "@/components/reuse/Icon/Icon";
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { Heading } from "@/components/reuse/Heading";
+import { Heading } from "@/components/reuse/Text/Heading/Heading";
 import { useWindowResize } from "@/helpers/useWindowResize";
 import { ITheme } from "@/data.d";
+import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 
 export interface SolutionBlockProps {
   fancyText: any;
@@ -30,40 +31,48 @@ export const SolutionBlock: React.FC<SolutionBlockProps> = ({
 
   return (
     <Block theme={theme} className={styles.block}>
-      <FlexDiv
-        flex={{ direction: "column", x: "center" }}
-        gapArray={[4]}
-        width100
-        padding={{ bottom: [4, 6, 6, 8] }}
-      >
-        <FancyText value={fancyText} as="h3" level="3" textAlign="center" />
-        <Icon icon={"arrow"} size="big" rotate={90} />
-      </FlexDiv>
+      <AnimatedWrapper from="inside">
+        <FlexDiv
+          flex={{ direction: "column", x: "center" }}
+          gapArray={[4]}
+          width100
+          padding={{ bottom: [4, 6, 6, 8] }}
+        >
+          <FancyText value={fancyText} as="h3" level="3" textAlign="center" />
+          <Icon icon={"arrow"} size="big" rotate={90} />
+        </FlexDiv>
+      </AnimatedWrapper>
       <FlexDiv
         flex={{ direction: "column", x: "stretch" }}
         width100
         className={styles.headings}
       >
-        <Heading
-          font="Outfit"
-          as="h2"
-          level={isMobileOrTablet ? "2" : "1"}
-          color="white"
-          textAlign="left"
-          weight={900}
-        >
-          {translations.blockTitles.realTitle1}
-        </Heading>
-        <Heading
-          font="Cursive"
-          as="h2"
-          level={isMobileOrTablet ? "2" : "1"}
-          color="black"
-          textAlign="right"
-          weight={400}
-        >
-          {translations.blockTitles.realTitle2}
-        </Heading>
+        <AnimatedWrapper from="left">
+          <Heading
+            font="Outfit"
+            as="h2"
+            level={isMobileOrTablet ? "2" : "1"}
+            color="white"
+            textAlign="left"
+            weight={900}
+            className={styles.heading}
+          >
+            {translations.titles.realTitle1}
+          </Heading>
+        </AnimatedWrapper>
+        <AnimatedWrapper from="right">
+          <Heading
+            font="Cursive"
+            as="h2"
+            level={isMobileOrTablet ? "2" : "1"}
+            color="black"
+            textAlign="right"
+            weight={400}
+            className={styles.heading}
+          >
+            {translations.titles.realTitle2}
+          </Heading>
+        </AnimatedWrapper>
       </FlexDiv>
       <Image
         src={bigStroke.src}

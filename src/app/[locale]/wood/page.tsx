@@ -10,27 +10,30 @@ import {
   LocalTargets,
   ServiceType,
 } from "@/data.d";
-import { useFetchPage } from "@/app/api/useFetchPage";
+import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n";
 import { woodPageQuery } from "@/app/api/generateSanityQueries";
-import { Hero } from "@/components/reuse/Hero/Hero";
-import { getCarouselImages } from "@/components/reuse/Carousel/getCarouselData";
-import { Carousel } from "@/components/reuse/Carousel/Carousel";
+
 import { ICustomImage } from "@/components/reuse/SanityImage/SanityImage";
-import { Features } from "@/components/services/Features/Features";
-import { Questions } from "@/components/services/Questions/Questions";
+import { Features } from "@/components/pages/blocks/Features/Features";
+import { Questions } from "@/components/pages/blocks/Questions/Questions";
 import {
   SolutionBlock,
   SolutionBlockProps,
 } from "@/components/pages/blocks/SolutionBlock/SolutionBlock";
-import { Testimonials } from "@/components/services/Testimonials/Testimonials";
+import { Testimonials } from "@/components/pages/blocks/Testimonials/Testimonials";
 
 import { FormTitleProps } from "@/components/reuse/Form/Form";
 import { getFormData } from "@/components/reuse/Form/getFormData";
-import { Collapsible } from "@/components/reuse/Collapsible/Collapsible";
-import { ProcessAndQuote } from "@/components/pages/Woodpage/ProcessAndQuote";
+import { Collapsible } from "@/components/pages/blocks/Collapsible/Collapsible";
+
 import { getTranslations } from "@/helpers/langUtils";
-import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
+import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
+import { getCarouselImages } from "@/components/pages/blocks/Carousel/getCarouselData";
+import { Hero } from "@/components/pages/blocks/Hero/Hero";
+
+import { ProcessAndForm } from "@/components/pages/blocks/ProcessAndForm/ProcessAndForm";
+import { Carousel } from "@/components/pages/blocks/Carousel/Carousel";
 
 export interface WoodPageProps {
   meta: ISeo;
@@ -45,8 +48,8 @@ export interface WoodPageProps {
 
 const getWoodPageData = async (locale: LangType) => {
   const woodQuery = woodPageQuery(locale);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const data: WoodPageProps = await useFetchPage(woodQuery);
+
+  const data: WoodPageProps = await fetchPage(woodQuery);
 
   return data;
 };
@@ -85,12 +88,12 @@ export default async function WoodPage({
   const formData: FormTitleProps = await getFormData(form, locale);
 
   return (
-    <NavWrapperServer locale={locale} theme="light">
+    <NavWrapperServer locale={locale} theme="light" hideLogo={true}>
       {data && (
         <>
           <Hero
             {...data.hero}
-            cta={{
+            cta1={{
               text: translations.buttons.buildSign,
               path: `/${locale}${LocalPaths.WOOD}`,
               scrollTarget: LocalTargets.WOODFORM,
@@ -108,7 +111,7 @@ export default async function WoodPage({
             <Testimonials testimonials={data.testimonials} theme="light" />
           )}
           {data.processBlock && (
-            <ProcessAndQuote
+            <ProcessAndForm
               processes={data.processBlock.processes}
               {...formData}
               form={form}

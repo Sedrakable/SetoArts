@@ -1,23 +1,16 @@
 import { Translations } from "./langTypes";
 
 export const frTranslations: Translations = {
-  blockTitles: {
+  titles: {
     whatYouGet: "Ce que vous obtenez",
     services: "Services",
-    values: "Valeurs",
     process: "Processus",
-    features: "Fonctionnalités",
     questionTitle1: "Arrêtez de vous fondre dans la masse",
     questionTitle2: "Commencez à vous démarquer",
     questionTitle3: "Est-ce que cela s'applique à votre entreprise?",
     realTitle1: "Entreprises reelles",
     realTitle2: "Résultats réels",
-    inspired: "Inspiré",
-    aboutMe: "À propos de moi",
-    work: "Travail",
-    contact: "Contact",
-    reviews: "Avis",
-    blog: "Blog",
+    quote: "Organisé x Chaos",
   },
   buttons: {
     workWithMe: "Travail avec moi",
@@ -73,8 +66,5 @@ export const frTranslations: Translations = {
     web: "Site Web",
     cards: "Cartes",
     gallery: "Galerie",
-  },
-  other: {
-    startAt: "À partir de",
   },
 };

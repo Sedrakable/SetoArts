@@ -1,0 +1,12 @@
+@use "@/styles/mixins.scss" as *;
+
+.block {
+  @include vari(
+    --padding-top,
+    var(--pad-8),
+    var(--pad-9),
+    var(--pad-9),
+    var(--pad-10)
+  );
+  padding-top: var(--padding-top) !important;
+}

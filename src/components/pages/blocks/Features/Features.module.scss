@@ -1,0 +1,44 @@
+@use "@/styles/mixins.scss" as *;
+
+.block {
+  z-index: 2;
+}
+
+.container {
+  @include flexColumn(flex-start, flex-start);
+
+  .imgWrapper {
+    @include flex(center, flex-end);
+    @include vari(aspect-ratio, unset, 1);
+
+    width: 100%;
+    max-width: 100%;
+    svg {
+      @include vari(width, 90%, 90%);
+      // width: 90%;
+      max-height: 100%;
+      path {
+        &:nth-child(1) {
+          fill: var(--black);
+        }
+        &:nth-child(2) {
+          fill: var(--yellow);
+        }
+      }
+    }
+  }
+  .content {
+    flex: 1;
+    .title {
+      line-height: 1.15em !important;
+      text-transform: uppercase !important;
+      font-weight: 700 !important;
+      @media (max-width: #{$tablet}) {
+        font-size: var(--paragraph-big);
+      }
+    }
+    p {
+      @include paragraphMaxLines(5);
+    }
+  }
+}

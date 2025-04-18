@@ -1,9 +1,10 @@
 import React, { PropsWithChildren, forwardRef } from "react";
 import styles from "./Block.module.scss";
-import FlexDiv from "../../reuse/FlexDiv";
+
 import cn from "classnames";
-import { Heading, HeadingProps } from "@/components/reuse/Heading";
+import { Heading, HeadingProps } from "@/components/reuse/Text/Heading/Heading";
 import { ITheme } from "@/data.d";
+import FlexDiv from "@/components/reuse/FlexDiv";
 
 interface BlockProps {
   title?: Omit<HeadingProps, "level" | "as">;
@@ -43,7 +44,7 @@ export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
         )}
         gapArray={[7, 7, 7, 8]}
         padding={{
-          top: [6, 5, 5, 6],
+          top: [7, 5, 5, 6],
           bottom: theme === "wood" ? [0] : [8, 9, 9, 10],
           horizontal:
             contentSize === "default" ? [6, 8, 9, 10] : [6, 9, 10, 12],

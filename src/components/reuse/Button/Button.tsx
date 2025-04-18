@@ -9,11 +9,10 @@ import styles from "./Button.module.scss";
 import cn from "classnames";
 
 import Link, { LinkProps } from "next/link";
-import { Paragraph } from "../Paragraph/Paragraph";
-import { Icon, IconProps } from "../Icon";
+import { Paragraph } from "../Text/Paragraph/Paragraph";
+import { Icon, IconProps } from "../Icon/Icon";
 import { useWindowResize } from "@/helpers/useWindowResize";
 import { LocalTargets } from "@/data.d";
-import { usePathname, useRouter } from "@/navigation";
 import { useScrollToTarget } from "@/helpers/useScrollToTarget";
 
 interface ButtonIconProps extends IconProps {
@@ -51,27 +50,24 @@ export const Button: FC<PropsWithChildren<
   ...props
 }) => {
   const { isMobile } = useWindowResize();
-  const { scrollToTarget } = useScrollToTarget();
+  const { scrollToTarget: scrollToTargetFn } = useScrollToTarget();
 
   const handleClick = (
     event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => {
-    console.log(`Button clicked: path=${path}, scrollTarget=${scrollTarget}`);
     if (disabled) return;
 
-    if (scrollTarget) {
-      const scrolled = scrollToTarget(scrollTarget, path);
-      if (scrolled) {
-        event.preventDefault();
-        return;
-      }
+    // Handle scroll target if available
+    if (scrollTarget && scrollToTargetFn(scrollTarget, path)) {
+      event.preventDefault();
+      return;
     }
 
+    // Execute onClick handler if provided
     if (onClick) {
       onClick(event as React.MouseEvent<HTMLButtonElement>);
     }
   };
-
   const ButtonHeading: React.FC<{ className?: string }> = ({ className }) => (
     <Paragraph
       level="regular"

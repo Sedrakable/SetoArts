@@ -3,11 +3,11 @@ import React, { PropsWithChildren, FC, ReactNode } from "react";
 import styles from "./Form.module.scss";
 import { Button } from "@/components/reuse/Button/Button";
 import FlexDiv from "../FlexDiv";
-import { Heading } from "../Heading";
+import { Heading } from "../Text/Heading/Heading";
 import { Alert } from "../Alert/Alert";
 import { useWindowResize } from "@/helpers/useWindowResize";
 import { StepProps } from "./formTypes";
-import { Paragraph } from "../Paragraph/Paragraph";
+import { Paragraph } from "../Text/Paragraph/Paragraph";
 import { Translations } from "@/langs/langTypes";
 import { LocalPaths } from "@/data.d";
 import { LangType } from "@/i18n";
@@ -107,7 +107,7 @@ export const FormSubmitButton: FC<{
 
   return (
     <FlexDiv className={styles.submitWrapper} gapArray={[2]}>
-      <Button type="submit" variant="primary">
+      <Button type="submit" variant="black">
         {title}
       </Button>
       {!isValid && (
@@ -129,7 +129,7 @@ export const FormSteps: FC<{
 }> = ({ steps, stepNumbers = false }) => {
   return (
     <FlexDiv
-      gapArray={[5, 5, 5, 5]}
+      gapArray={[5]}
       width100
       flex={{ direction: "column", x: "stretch", y: "flex-start" }}
     >
@@ -147,17 +147,17 @@ export const FormSubmitMessage: FC<{
   translations: Translations;
 }> = ({ locale, translations }) => {
   return (
-    <FlexDiv flex={{ direction: "column" }}>
+    <FlexDiv flex={{ direction: "column" }} gapArray={[3, 3, 3, 4]}>
       <Heading
-        font="Outfit"
+        font="Cursive"
         as="h3"
-        level="4"
-        color="black"
+        level="2"
+        color="yellow"
         weight={500}
         textAlign="center"
       >
         {translations.form.general.emailSent}
-      </Heading>{" "}
+      </Heading>
       <Button variant="black" path={`/${locale}${LocalPaths.HOME}`}>
         {translations.nav.home}
       </Button>

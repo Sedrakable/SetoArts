@@ -6,8 +6,8 @@ import { getTranslations } from "@/helpers/langUtils";
 import { LangType } from "@/i18n";
 import { useLocale } from "next-intl";
 import FlexDiv from "../../FlexDiv";
-import { Icon } from "../../Icon";
-import { Paragraph } from "../../Paragraph/Paragraph";
+import { Icon } from "../../Icon/Icon";
+import { Paragraph } from "../../Text/Paragraph/Paragraph";
 import { InputWrapper } from "../InputWrapper/InputWrapper";
 
 export interface OptionType {

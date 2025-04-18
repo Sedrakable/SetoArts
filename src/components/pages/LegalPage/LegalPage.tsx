@@ -1,13 +1,18 @@
 import React from "react";
+import styles from "./LegalPage.module.scss";
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { Heading } from "@/components/reuse/Heading";
-import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
+import { Heading } from "@/components/reuse/Text/Heading/Heading";
+import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { ILegalPage } from "@/data.d";
 import { Block } from "../containers/Block";
 
 export const LegalPageComp: React.FC<ILegalPage> = ({ title, data }) => {
   return (
-    <Block title={title} theme="dark">
+    <Block
+      title={{ font: "Cursive", children: title, color: "yellow" }}
+      theme="light"
+      className={styles.block}
+    >
       <FlexDiv flex={{ direction: "column", x: "flex-start" }}>
         {data?.map((block) => {
           return (
@@ -15,11 +20,11 @@ export const LegalPageComp: React.FC<ILegalPage> = ({ title, data }) => {
               {block.children?.map((child) =>
                 child.marks[0] === "strong" ? (
                   <Heading
-                    font="Seto"
+                    font="Outfit"
                     key={child._key}
                     as="h5"
                     level="5"
-                    color="yellow"
+                    color="black"
                     paddingBottomArray={[1, 2, 2, 3]}
                   >
                     {child.text}
@@ -28,7 +33,7 @@ export const LegalPageComp: React.FC<ILegalPage> = ({ title, data }) => {
                   <Paragraph
                     key={child._key}
                     level="regular"
-                    color="white"
+                    color="black"
                     paddingBottomArray={[2, 3, 3, 4]}
                   >
                     {child.text}

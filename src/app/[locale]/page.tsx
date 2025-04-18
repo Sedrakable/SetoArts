@@ -1,8 +1,8 @@
 import { ILandingSide, ISeo } from "@/data.d";
-import { useFetchPage } from "@/app/api/useFetchPage";
+import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n";
 import { landingPageQuery } from "@/app/api/generateSanityQueries";
-import { Landing, LandingProps } from "@/components/pages/Landing/Landing";
+import { Landing } from "@/components/pages/Landing/Landing";
 import { ClientLogger } from "@/helpers/clientLogger";
 
 export interface LandingPageProps {
@@ -12,8 +12,8 @@ export interface LandingPageProps {
 }
 const getLandingPageData = async (locale: LangType) => {
   const woodQuery = landingPageQuery(locale);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const woodPageData: LandingPageProps = await useFetchPage(woodQuery);
+   
+  const woodPageData: LandingPageProps = await fetchPage(woodQuery);
 
   return woodPageData;
 };

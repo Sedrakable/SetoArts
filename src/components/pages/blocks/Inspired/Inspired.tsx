@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./Inspired.module.scss";
-import { Heading } from "../../../reuse/Heading";
+import { Heading } from "../../../reuse/Text/Heading/Heading";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { LocalPaths } from "../../../../data.d";
 import { Button } from "../../../reuse/Button/Button";
@@ -29,8 +29,9 @@ export const Inspired: React.FC = () => {
       >
         <Image src={stroke.src} alt="stroke" width={800} height={200} />
         <FlexDiv className={styles.title}>
-          <Heading font="Seto" as="h2" level="2">
-            {translations.blockTitles.inspired}
+          <Heading font="Outfit" as="h2" level="2">
+            {/* {translations.titles.inspired} */}
+            ree
           </Heading>
           <Heading
             font="Cursive"

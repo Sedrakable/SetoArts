@@ -18,7 +18,7 @@ export const useShuffleArray = (array: any[]) => {
 
       setShuffledArray(newArray);
     }
-  }, []); // Re-run the effect if the input array changes
+  }, [array]); // Re-run the effect if the input array changes
 
   return shuffledArray;
 };

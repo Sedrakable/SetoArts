@@ -8,7 +8,6 @@
     border-radius: 50%;
     background: linear-gradient(-60deg, var(--yellow) 57%, var(--white) 57%);
     overflow: hidden; /* Ensure image respects border-radius */
-    flex: 2;
 
     /* Decorative circle */
     &:after {
@@ -37,16 +36,16 @@
     }
   }
 
+  .imgContainer {
+    flex: 2;
+    position: sticky !important;
+    top: calc(var(--navbar-height) + var(--pad-5));
+  }
   .textContainer {
     flex: 3;
   }
 
   @media (min-width: $tablet) {
     flex-direction: row !important;
-
-    .image {
-      position: sticky !important;
-      top: calc(var(--navbar-height) + var(--pad-5));
-    }
   }
 }

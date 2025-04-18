@@ -1,0 +1,44 @@
+@use "@/styles/mixins.scss" as *;
+
+.embla {
+  // overflow: hidden;
+  padding: var(--pad-6) 0;
+  width: 100%;
+  overflow-x: clip;
+}
+.embla__container {
+  display: flex;
+
+  @include vari(height, 90vw, 280px, 340px, 400px);
+  gap: var(--pad-4);
+}
+.embla__slide {
+  min-width: fit-content;
+  &:last-child {
+    margin-right: var(--pad-4);
+  }
+}
+
+.image {
+  height: 100% !important;
+  aspect-ratio: 1;
+  border-radius: var(--border-radius);
+  box-shadow: var(--light-shadow);
+
+  // pointer-events: auto;
+  transition: 1.2s ease;
+  &:hover {
+    transform: scale(1.05);
+    transition: var(--transition-time) ease;
+  }
+  img {
+    position: relative !important;
+    // height: 100% !important;
+    // width: 100% !important;
+  }
+}
+
+.buttons {
+  @include vari(--flex-direction, "column", "row");
+  flex-direction: var(--flex-direction) !important;
+}

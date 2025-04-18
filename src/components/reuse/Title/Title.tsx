@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 import styles from "./Title.module.scss";
 
 import FlexDiv from "../../reuse/FlexDiv";
-import { ColorType, Heading } from "../../reuse/Heading";
+import { ColorType, Heading } from "../Text/Heading/Heading";
 
 interface TitleProps {
   title: string;

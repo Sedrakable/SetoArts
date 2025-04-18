@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useState } from "react"; // Add useState
+import React, { useEffect, useState } from "react"; // Add useState
 import styles from "./Landing.module.scss";
 import cn from "classnames";
 import { ICta, ILandingSide, LocalPaths } from "@/data.d";
@@ -7,8 +7,8 @@ import { LangType } from "@/i18n";
 import { getTranslations } from "@/helpers/langUtils";
 
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { Heading, ColorType } from "@/components/reuse/Heading";
-import { PortableTextContent } from "@/components/reuse/Paragraph/PortableTextContent";
+import { Heading, ColorType } from "@/components/reuse/Text/Heading/Heading";
+import { PortableTextContent } from "@/components/reuse/Text/Paragraph/PortableTextContent";
 import { Button } from "@/components/reuse/Button/Button";
 
 import Logo from "@/assets/vector/LogoSmall.svg";
@@ -57,6 +57,7 @@ const LandingSide: React.FC<{
         {...image}
         figureclassname={styles.backgroundImage}
         quality={100}
+        sizes={["30vw", "30vw", "50vw", "50vw"]}
       />
       <FlexDiv
         className={styles.content}

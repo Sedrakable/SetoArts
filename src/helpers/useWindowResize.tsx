@@ -35,7 +35,7 @@ export function useWindowResize() {
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
-  }, [hasWindow]);
+  }, []);
 
   return responsiveView;
 }

@@ -3,10 +3,9 @@ import React, { useEffect, useRef } from "react";
 import styles from "./Input.module.scss";
 import cn from "classnames";
 import { InputWrapper, InputWrapperProps } from "../InputWrapper/InputWrapper";
-import { outfit } from "../../Heading";
+import { outfit } from "../../Text/Heading/Heading";
 
 export interface BaseInputProps {
-  // eslint-disable-next-line no-unused-vars
   onChange: (value: string | number) => void;
   placeholder?: string;
   value: string | number;
@@ -30,7 +29,7 @@ export const Input: React.FC<InputProps> = ({
       <input
         type={type}
         value={value}
-        id={type}
+        id={label}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         className={cn(styles.input, outfit.className, {
@@ -42,7 +41,6 @@ export const Input: React.FC<InputProps> = ({
 };
 
 interface TextAreaProps extends InputWrapperProps, BaseInputProps {
-  // eslint-disable-next-line no-unused-vars
   onChange: (value: string) => void;
   placeholder?: string;
   value: string;
@@ -74,6 +72,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
   return (
     <InputWrapper label={label} required={required} isInvalid={isInvalid}>
       <textarea
+        id={label}
         ref={textareaRef}
         value={value}
         onChange={(e) => onChange(e.target.value)}

@@ -18,10 +18,11 @@
   &.wood {
     --border-width: 8px;
     position: relative;
-    background: linear-gradient(180deg, transparent 0%, var(--black) 100%),
-      url("/photos/textures/darkwood.webp") !important;
-    background-position: 50%;
-    background-size: 100%;
+    background-image: url("/photos/darkwood.webp"),
+      linear-gradient(180deg, transparent 0%, var(--black) 100%);
+    background-position: 50% 50%, 0 0; /* Image: center, Gradient: top-left */
+    background-size: 100% auto, auto; /* Image: 50% width/height, Gradient: default */
+    background-repeat: no-repeat, no-repeat; /* Prevent tiling for both */
     position: relative;
     overflow: visible;
     border-top: var(--border-width) solid var(--yellow);

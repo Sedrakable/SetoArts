@@ -40,6 +40,7 @@ export const digitalPageQuery = (locale: LangType): string => {
           ...,
           featureBlock->{
             features[]->,
+            featureStrings[],
           }
         },
       }`;
@@ -61,8 +62,8 @@ export const woodPageQuery = (locale: LangType): string => {
 };
 
 export const carouselQuery = `
-  *[_type == "woodWork"] {
-    customImages[]
+  *[_type == "work" && workType == "wood"] {
+    images[]
   }
 `;
 
@@ -97,11 +98,23 @@ export const workPageQuery = (slug: string): string => {
   }`;
 };
 
+export const worksQuery = `*[_type == 'work' && workType in ['branding', 'website', 'cards']]{
+    ...,
+    meta,
+  }`;
+
 export const contactPageQuery = (locale: LangType): string => {
   return `*[_type == 'contactPage' && lang == '${locale}'][0] {
     meta,
     hero,
     collapsibles[]->,
+  }`;
+};
+
+export const coollapsibleFaqQuery = (locale: LangType): string => {
+  return `*[_type == 'collapsible' && lang == '${locale}'] {
+    id,
+    title,
   }`;
 };
 

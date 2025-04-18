@@ -1,17 +1,8 @@
-import React, {
-  useState,
-  FC,
-  PropsWithChildren,
-  ChangeEvent,
-  KeyboardEvent,
-  ReactNode,
-} from "react";
+import React, { FC, PropsWithChildren, ReactNode } from "react";
 import styles from "./Alert.module.scss";
 import cn from "classnames";
-import { Icon } from "../Icon";
 import FlexDiv from "../FlexDiv";
-import { josefin } from "../Heading";
-import { Paragraph } from "../Paragraph/Paragraph";
+import { Paragraph } from "../Text/Paragraph/Paragraph";
 
 export interface AlertProps {
   children: ReactNode;
@@ -37,7 +28,7 @@ export const Alert: FC<PropsWithChildren<AlertProps>> = ({
         })}
         width100={width100}
       >
-        <Paragraph level="regular" color="burgundy" textAlign="center">
+        <Paragraph level="regular" color="black" textAlign="center">
           {children}
         </Paragraph>
       </FlexDiv>

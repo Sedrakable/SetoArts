@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
@@ -9,9 +8,8 @@ import "@/styles/index.scss";
 import { NextIntlClientProvider } from "next-intl";
 import { LangType } from "@/i18n";
 import bigStroke from "/public/photos/BigStroke.webp";
-import titleStroke from "/public/photos/TitleStroke.webp";
-import fabricTexture from "/public/photos/Textures/FabricTexture.webp";
-import gridTexture from "/public/photos/Textures/GridTexture.webp";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,9 +26,6 @@ export default async function LocaleLayout({
       <NextIntlClientProvider locale={locale}>
         <head>
           <link rel="preload" href={bigStroke.src} as="image" />
-          <link rel="preload" href={titleStroke.src} as="image" />
-          <link rel="preload" href={fabricTexture.src} as="image" />
-          <link rel="preload" href={gridTexture.src} as="image" />
           <meta name="theme-color" content="#fec301" />
           <meta
             name="facebook-domain-verification"
@@ -66,7 +61,9 @@ export default async function LocaleLayout({
         </head>
         <body className={inter.className}>
           <div id="root">
-            <div className={styles.app}>{children}</div>
+            <Suspense fallback={<Loading />}>
+              <div className={styles.app}>{children}</div>
+            </Suspense>
           </div>
         </body>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID!} />

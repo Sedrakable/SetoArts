@@ -1,7 +1,7 @@
 import { ICustomImage } from "./components/reuse/SanityImage/SanityImage";
 
 export type ServiceType = "wood" | "digital";
-export type DigitalServiceType = "branding" | "web-design";
+export type DigitalServiceType = "branding" | "website";
 
 export interface ISeo {
   metaTitle: string;
@@ -13,6 +13,11 @@ export interface ICta {
   text: string;
   path?: string;
   scrollTarget?: LocalTargets;
+}
+
+export interface IExternalLink {
+  text: string;
+  link: string;
 }
 
 export interface ISlug {
@@ -40,7 +45,8 @@ export interface IHero {
   backgroundImage: ICustomImage;
   foregroundImage: ICustomImage;
   subTitle?: string;
-  cta: ICta;
+  cta1: ICta;
+  cta2?: ICta;
   message?: string;
   theme?: ITheme;
 }
@@ -65,7 +71,12 @@ export interface IService {
   title: string;
   svgName: string;
   path?: string;
-  featureBlock: { features: IFeature[] };
+  featureBlock: IFeatureBlock;
+}
+
+export interface IFeatureBlock {
+  features: IFeature[];
+  featureStrings?: string[]; // For the feature block Custom Work in the service page
 }
 
 export interface IFeature {
@@ -144,20 +155,13 @@ export interface IWorkBlock {
 
 export interface IWork {
   title?: string; // Optional for gallery
-  desc?: string;
+  descEN?: string;
+  descFR?: string;
   thumbnailImage: ICustomImage; // Sanity image asset
   slug?: ISlug; // Optional for internal links
   workType: "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
   link?: string; // External URL (e.g., Behance, Kickstarter)
   images?: ICustomImage[]; // For modal slider (Wood Signs)
-}
-
-export interface IWoodWork {
-  slug: ISlug;
-  thumbnailImage: ICustomImage;
-  customImages: ICustomImage[];
-  title: string;
-  desc: string;
 }
 
 export interface INavLink {
@@ -170,9 +174,22 @@ export interface INavBar {
   navButton: ICta;
   links: (INavLink | ICta)[];
   theme?: ITheme;
+  hideLogo?: boolean;
+  socials?: ISocials;
+}
+
+export interface IFooterFAQLinks {
+  title: string;
+  id: string;
+}
+
+export interface IFooter {
+  legals: { title: string; path: string }[];
+  faqs?: IFooterFAQLinks[];
+  trademark: string;
+  socials: ISocials;
 }
 export interface ISocials {
-  title?: string;
   links: ICta[];
 }
 
@@ -188,14 +205,10 @@ export interface ILegalPage {
   title: string;
   data: IBlock[];
 }
-export interface IFooter {
-  legals: { title: string; path: string }[];
-  trademark: string;
-  socials: ISocials;
-}
 
 export interface ICollapsible {
   title?: string;
+  id?: string;
   questions: {
     question: string;
     answer: any;
@@ -212,24 +225,23 @@ export enum LocalPaths {
   WOOD = "/wood",
   DIGITAL = "/digital",
   ABOUT = "/about-work",
-  BLOG = "/blog",
   CONTACT = "/contact",
-  LEGAL = "/legal",
   BRANDING = "/branding",
-  WEB = "/web-design",
-  PACKAGE = "/total-package",
-  CUSTOM = "/custom-work",
+  WEB = "/website",
+  LEGAL = "/legal",
 }
 
 export enum LocalTargets {
   WOODFORM = "#wood-form",
   DIGITALFORM = "#digital-form",
-  BRANDINGFORM = "#branding-form",
-  WEBFORM = "#web-form",
   WORK = "#work-block",
   WOODSIGNWORK = "#wood-work-block",
   BRANDINGWORK = "#branding-work-block",
   WEBWORK = "#website-work-block",
   CARDSWORK = "#cards-work-block",
   GALLERYWORK = "#gallery-work-block",
+  SERVICESBLOCK = "#services-block",
+  BRANDINGFAQ = "#branding-faq",
+  WEBFAQ = "#web-faq",
+  WOODFAQ = "#wood-faq",
 }

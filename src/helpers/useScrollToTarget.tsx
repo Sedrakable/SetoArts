@@ -1,43 +1,46 @@
 // helpers/useScrollToTarget.ts
 "use client";
-import { useEffect } from "react";
 import { usePathname, useRouter } from "@/navigation";
 import { LocalTargets } from "@/data.d";
+import { useEffect } from "react";
 
 export const useScrollToTarget = () => {
   const pathname = usePathname();
   const router = useRouter();
 
   const scrollToTarget = (scrollTarget: LocalTargets, path?: string) => {
-    const element = document.getElementById(scrollTarget);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
-      const fullUrl = `${window.location.pathname}${scrollTarget}`;
-      window.history.replaceState(null, "", fullUrl);
-      return true;
+    //In-page scroll
+    if (path || path === pathname) {
+      const element = document.getElementById(scrollTarget);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+        const fullUrl = `${window.location.pathname}${scrollTarget}`;
+        window.history.replaceState(null, "", fullUrl);
+        return true;
+      }
     }
 
+    //Cross-page scroll
     if (path && path !== pathname) {
-      //@ts-expect-error
-      router.push(`${path}${scrollTarget}`);
+      const finalPath = `${path}${scrollTarget}`;
+      // @ts-ignore: Unreachable code error
+      router.push(finalPath);
+      return true;
     }
     return false;
   };
 
-  // Handle URL hash on page load
+  // Handle hash on page load
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash && Object.values(LocalTargets).includes(hash as LocalTargets)) {
-      // Delay to ensure DOM is ready
+    const hash = window.location.hash as LocalTargets;
+
+    if (hash) {
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "center" });
-        } else {
-          const cleanUrl = window.location.pathname;
-          window.history.replaceState(null, "", cleanUrl);
         }
-      }, 100); // Adjust delay if needed
+      }, 100);
     }
   }, [pathname]);
 

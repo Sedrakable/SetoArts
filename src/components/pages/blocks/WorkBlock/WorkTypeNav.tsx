@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./WorkTypeNav.module.scss";
 import { Block } from "@/components/pages/containers/Block";
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { Heading } from "@/components/reuse/Heading";
+import { Heading } from "@/components/reuse/Text/Heading/Heading";
 import { useSvgComponent } from "@/helpers/useSvgComponent";
 import { useScrollToTarget } from "@/helpers/useScrollToTarget";
 import { LocalTargets } from "@/data.d";
@@ -11,6 +11,7 @@ import { getTranslations } from "@/helpers/langUtils";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 import GridDiv from "@/components/reuse/GridDiv";
+import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 
 interface WorkTypeItemProps {
   title: string;
@@ -117,7 +118,9 @@ export const WorkTypeNav: React.FC<WorkTypeNavProps> = ({
         as="nav"
       >
         {items.map((item, index) => (
-          <WorkTypeItem {...item} key={index} />
+          <AnimatedWrapper from="inside" key={index}>
+            <WorkTypeItem {...item} />
+          </AnimatedWrapper>
         ))}
       </GridDiv>
     </Block>

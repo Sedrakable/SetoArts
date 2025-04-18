@@ -1,7 +1,6 @@
 import { SanityImageSource } from "@sanity/asset-utils";
 import { urlFor } from "@/app/api/client";
 import Img, { ImageProps } from "next/image";
-"";
 
 export type SizesType = [
   number | string,

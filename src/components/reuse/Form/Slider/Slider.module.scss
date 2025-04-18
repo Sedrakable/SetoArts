@@ -26,56 +26,6 @@
   }
 }
 
-// .slider {
-//   @include flex(center, center);
-//   width: 100%;
-//   appearance: none; // Reset default styling for cross-browser consistency
-//   background: transparent;
-
-//   /* Styling for the slider */
-//   &::-webkit-slider-runnable-track {
-//     background: linear-gradient(
-//       to right,
-//       var(--yellow) 0%,
-//       var(--yellow) var(--progress-percent, 50%),
-//       var(--grey) var(--progress-percent, 50%),
-//       var(--grey) 100%
-//     ); // Background color of the track
-//     // background: var(--grey);
-//     height: var(--pad-3);
-//     border-radius: calc(var(--pad-3) / 2);
-//   }
-
-//   &::-webkit-slider-thumb {
-//     -webkit-appearance: none;
-//     appearance: none;
-//     background-color: var(--yellow); // Change the thumb color
-//     width: var(--pad-4);
-//     height: var(--pad-4);
-//     transform: translateY(calc(-0.5 * var(--pad-3)));
-//     border-radius: 50%; // Make it round
-//     outline: 4px solid var(--white); // Add a border
-//     cursor: pointer;
-//   }
-
-//   &:focus::-webkit-slider-thumb {
-//     background-color: var(--black); // Change the thumb color on focus
-//   }
-
-//   /* For other browsers like Firefox */
-//   &::-moz-range-thumb {
-//     background-color: var(--black);
-//     width: var(--pad-4);
-//     height: var(--pad-4);
-//     border-radius: 50%;
-//     cursor: pointer;
-//   }
-
-//   &.invalid {
-//     border-color: var(--error); // Style if invalid
-//   }
-// }
-
 .slider {
   width: 100%;
   height: var(--pad-3);
@@ -91,13 +41,13 @@
 
 .track {
   &:nth-child(1) {
-    background: var(--yellow);
+    background: var(--black);
   }
 }
 
 .rangeTrack {
   &:nth-child(2) {
-    background: var(--yellow);
+    background: var(--black);
   }
 }
 
@@ -107,6 +57,6 @@
   background: var(--yellow);
   border-radius: 50%;
   cursor: pointer;
-  outline: 4px solid var(--white);
+  outline: 2px solid var(--black);
   transform: translateY(calc(-50% + var(--pad-2)));
 }

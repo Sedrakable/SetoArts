@@ -6,15 +6,8 @@ interface Titles {
   questionTitle3: string;
   realTitle1: string;
   realTitle2: string;
-  values: string;
   process: string;
-  features: string;
-  inspired: string;
-  aboutMe: string;
-  work: string;
-  contact: string;
-  reviews: string;
-  blog: string;
+  quote: string;
 }
 
 interface Buttons {
@@ -68,10 +61,6 @@ interface Nav {
   about: string;
 }
 
-interface Other {
-  startAt: string;
-}
-
 interface Work {
   wood: string;
   branding: string;
@@ -82,9 +71,8 @@ interface Work {
 
 export interface Translations {
   buttons: Buttons;
-  blockTitles: Titles;
+  titles: Titles;
   form: Form;
   nav: Nav;
   work: Work;
-  other: Other;
 }

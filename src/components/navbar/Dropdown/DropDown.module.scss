@@ -1,18 +1,5 @@
 @use "@/styles/mixins.scss" as *;
 
-@mixin vars() {
-  @media (min-width: $tablet) {
-  }
-
-  @media (min-width: $laptop) {
-    --translate-y: 56.5px;
-  }
-
-  @media (min-width: $desktop) {
-    --translate-y: 64.5px;
-  }
-}
-
 .dropdown {
   background: var(--grad);
   width: 100vw;
@@ -23,20 +10,27 @@
   @media (min-width: $laptop) {
     width: fit-content;
     position: absolute;
-
-    bottom: 0;
+    bottom: 0px;
     transform: translate(calc(var(--pad-4) * -1), calc(100%));
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1),
       inset 0 2px 6px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 4px 4px;
+    border: 2px solid var(--black);
+    border-top: none;
   }
   nav path {
     fill: var(--black) !important;
   }
-  p:hover {
-    color: var(--black) !important;
-  }
-  p {
-    text-wrap: nowrap;
+  .link {
+    width: 100%;
+    p {
+      text-wrap: nowrap;
+    }
+    &:hover {
+      background: var(--black);
+      p {
+        color: var(--yellow) !important;
+      }
+    }
   }
 }

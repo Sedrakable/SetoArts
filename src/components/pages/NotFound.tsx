@@ -1,7 +1,7 @@
 import React from "react";
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { Heading } from "@/components/reuse/Heading";
-import { Paragraph } from "@/components/reuse/Paragraph/Paragraph";
+import { Heading } from "@/components/reuse/Text/Heading/Heading";
+import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { Button } from "../reuse/Button/Button";
 import { getTranslations } from "@/helpers/langUtils";
 import { LangType } from "@/i18n";
@@ -16,7 +16,7 @@ export const NotFoundComp: React.FC<{ data: INotFound; locale: LangType }> = ({
   return (
     data && (
       <>
-        <Block title="404" variant="grid">
+        <Block theme="light">
           <FlexDiv flex={{ direction: "column" }} gapArray={[3, 4, 4, 5]}>
             <Heading
               as="h1"

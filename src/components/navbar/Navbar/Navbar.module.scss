@@ -2,7 +2,6 @@
 
 .logo {
   @include vari(height, 48px, 48px, 48px, 64px);
-  opacity: 0;
   transition: 200ms;
   cursor: pointer;
   svg {
@@ -31,6 +30,12 @@
       height: 100%;
     }
   }
+
+  &.hideLogo {
+    .logo {
+      opacity: 0;
+    }
+  }
   &.scrolled {
     padding: 0;
     .logo {
@@ -45,14 +50,10 @@
   }
   &.dark {
     &.scrolled {
-      background: var(--black);
+      background: var(--white, #fff);
       box-shadow: var(--drop-shadow);
-    }
-    .logo {
-      path {
-        &:nth-child(2) {
-          fill: var(--white);
-        }
+      p {
+        color: var(--black) !important;
       }
     }
   }

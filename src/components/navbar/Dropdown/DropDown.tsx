@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./DropDown.module.scss";
 import cn from "classnames";
 import FlexDiv from "../../reuse/FlexDiv";
 import { ICta } from "../../../data.d";
-import { Paragraph } from "../../reuse/Paragraph/Paragraph";
+import { Paragraph } from "../../reuse/Text/Paragraph/Paragraph";
 import { useAtom } from "jotai";
 import { sidebarData } from "../Sidebar/Sidebar";
 import Link from "next/link";
@@ -46,6 +46,7 @@ export const DropDown: React.FC<DropDownProps> = ({
               onClick={() => setSidebar(false)}
               aria-label={cta.text}
               key={index}
+              className={styles.link}
             >
               <FlexDiv
                 flex={{ x: "space-between" }}

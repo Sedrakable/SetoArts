@@ -1,14 +1,12 @@
-import { getAllWorkImages } from "@/helpers/functions";
-
 import { IAbout, IWorkBlock, ISeo, LocalPaths, LocalTargets } from "@/data.d";
-import { useFetchPage } from "@/app/api/useFetchPage";
+import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { aboutPageQuery } from "@/app/api/generateSanityQueries";
 import { About } from "@/components/pages/blocks/About/About";
 import { WorkBlock } from "@/components/pages/blocks/WorkBlock/WorkBlock";
-import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
+import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
 import { WorkTypeNav } from "@/components/pages/blocks/WorkBlock/WorkTypeNav";
 
 export interface AboutPageProps {
@@ -18,10 +16,9 @@ export interface AboutPageProps {
 }
 
 const getAboutPageData = async (locale: LangType) => {
-  const type = "aboutPage";
   const aboutQuery = aboutPageQuery(locale);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const aboutPageData: AboutPageProps = await useFetchPage(aboutQuery, type);
+
+  const aboutPageData: AboutPageProps = await fetchPage(aboutQuery);
   return aboutPageData;
 };
 
@@ -72,10 +69,6 @@ export default async function AboutPage({
               />
             );
           })}
-
-          {/* <Values {...aboutPageData.values} />
-          <ImageGrid customImages={workImages} maxImages={24} randomize />
-          <Inspired /> */}
         </>
       )}
     </NavWrapperServer>

@@ -1,4 +1,4 @@
-import { LocalPaths, ICta, INavLink, LocalTargets } from "@/data.d";
+import { LocalPaths, ICta, INavLink } from "@/data.d";
 import { LangType } from "@/i18n";
 import { Translations } from "@/langs/langTypes";
 
@@ -63,6 +63,7 @@ export const chooseNavButtonData = (
 
 export const navLinkData = (trans: Translations): (INavLink | ICta)[] => {
   return [
+    { text: trans.nav.wood, path: LocalPaths.WOOD } as ICta,
     {
       title: trans.nav.digital,
       path: LocalPaths.DIGITAL,
@@ -77,7 +78,7 @@ export const navLinkData = (trans: Translations): (INavLink | ICta)[] => {
         } as ICta,
       ],
     } as INavLink,
-    { text: trans.nav.wood, path: LocalPaths.WOOD } as ICta,
+
     { text: trans.nav.about, path: LocalPaths.ABOUT } as ICta,
   ];
 };

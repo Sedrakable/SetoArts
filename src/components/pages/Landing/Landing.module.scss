@@ -243,7 +243,7 @@
       fill: var(--yellow);
     }
     path:nth-child(2) {
-      fill: var(--white);
+      fill: var(--grey);
     }
     path:nth-child(3) {
       fill: var(--yellow);
@@ -308,7 +308,9 @@
       path:nth-child(1) {
         fill: var(--black);
       }
-      path:nth-child(2),
+      path:nth-child(2) {
+        fill: var(--grey);
+      }
       path:nth-child(3) {
         fill: var(--white);
       }

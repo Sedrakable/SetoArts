@@ -2,7 +2,7 @@
 
 .workBlock {
   --main-color: var(--white);
-  align-items: stretch !important;
+  align-items: flex-start !important;
 
   .card {
     --transition: 200ms;
@@ -92,4 +92,11 @@
   .card {
     cursor: pointer;
   }
+}
+
+.desc {
+  border-left: 4px solid var(--black);
+  padding: 0 var(--pad-4);
+
+  box-sizing: border-box;
 }

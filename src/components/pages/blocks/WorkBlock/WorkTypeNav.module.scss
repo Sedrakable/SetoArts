@@ -8,9 +8,9 @@
   cursor: pointer;
   transition: transform 0.2s;
   border: 4px solid var(--black);
+  box-shadow: var(--black-shadow);
   height: auto !important;
   aspect-ratio: 1;
-  box-shadow: var(--black-shadow);
 
   &:hover {
     background: var(--yellow);

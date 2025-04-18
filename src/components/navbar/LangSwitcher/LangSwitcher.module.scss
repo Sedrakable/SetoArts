@@ -2,13 +2,9 @@
 
 .langWrapper {
   cursor: pointer;
-
-  &:hover {
-    p {
+  span {
+    &:hover {
       color: var(--black) !important;
-    }
-    path {
-      fill: var(--black) !important;
     }
   }
 }

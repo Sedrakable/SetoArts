@@ -1,24 +1,19 @@
 "use client";
 
 import React from "react";
-import { useLocale } from "next-intl";
 import styles from "./WorkModalContent.module.scss";
 
-import { getTranslations } from "@/helpers/langUtils";
-import { ThumbCarousel } from "@/components/reuse/Carousel/ThumbCarousel";
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { Heading } from "@/components/reuse/Heading";
-import {
-  ParagraphProps,
-  Paragraph,
-} from "@/components/reuse/Paragraph/Paragraph";
+import { Heading } from "@/components/reuse/Text/Heading/Heading";
+import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { IWork } from "@/data.d";
+import { ThumbCarousel } from "../Carousel/ThumbCarousel";
+import { useLocale } from "next-intl";
 import { LangType } from "@/i18n";
 
 export const WorkModalContent: React.FC<IWork> = (props) => {
-  const { images, title, desc, slug, thumbnailImage } = props;
-  const locale = useLocale() as LangType;
-  const translations = getTranslations(locale);
+  const { images, title, descEN, descFR } = props;
+  const locale = useLocale() as LangType; // Replace with actual locale logic
 
   return (
     <FlexDiv
@@ -52,7 +47,7 @@ export const WorkModalContent: React.FC<IWork> = (props) => {
           paddingBottomArray={[3, 4, 4, 5]}
           className={styles.desc}
         >
-          {desc}
+          {locale === "en" ? descEN : descFR}
         </Paragraph>
       </FlexDiv>
 

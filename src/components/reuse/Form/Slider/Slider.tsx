@@ -1,12 +1,10 @@
-import React, { use, useEffect, useState } from "react";
+import React from "react";
 import styles from "./Slider.module.scss";
-import cn from "classnames";
 import FlexDiv from "../../FlexDiv";
 import { InputWrapper, InputWrapperProps } from "../InputWrapper/InputWrapper";
 import { BaseInputProps } from "../Input/Input";
-import { Paragraph } from "../../Paragraph/Paragraph";
-import { outfit } from "../../Heading";
-import ReactSlider, { ReactSliderProps } from "react-slider";
+import { Paragraph } from "../../Text/Paragraph/Paragraph";
+import ReactSlider from "react-slider";
 
 interface SliderProps
   extends InputWrapperProps,

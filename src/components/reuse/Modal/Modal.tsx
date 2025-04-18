@@ -1,15 +1,14 @@
 "use client";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 import styles from "./Modal.module.scss";
 import cn from "classnames";
 import { Variants, motion } from "framer-motion";
 
-import { Backdrop } from "../Backdrop";
+import { Backdrop } from "./Backdrop";
 import FlexDiv from "../FlexDiv";
-import { Button } from "../Button/Button";
-import { IconButton } from "../IconButton";
+import { IconButton } from "../IconButton/IconButton";
 
 export interface ModalProps {
   children: ReactNode;
@@ -48,6 +47,14 @@ export const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
     const parentPath = pathname!.split("/").slice(0, -1).join("/");
     router.push(parentPath);
   };
+
+  useEffect(() => {
+    document.body.classList.add("modal-open");
+
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
+  }, []);
 
   const close = onClose ? onClose : handleClose;
 

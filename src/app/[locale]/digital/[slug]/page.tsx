@@ -12,19 +12,20 @@ import {
   ServiceType,
   DigitalServiceType,
 } from "@/data.d";
-import { useFetchPage } from "@/app/api/useFetchPage";
+import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n";
 import { servicePageQuery } from "@/app/api/generateSanityQueries";
-import { HeroV2 } from "@/components/reuse/Hero/Hero";
-import { Features } from "@/components/services/Features/Features";
-import NavWrapperServer from "@/components/pages/NavWrapper/NavWrapperServer";
+import { Features } from "@/components/pages/blocks/Features/Features";
+import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
 import { ClientLogger } from "@/helpers/clientLogger";
-import { ProcessAndQuote } from "@/components/pages/Woodpage/ProcessAndQuote";
 import { getFormData } from "@/components/reuse/Form/getFormData";
 import { FormTitleProps } from "@/components/reuse/Form/Form";
-import { Collapsible } from "@/components/reuse/Collapsible/Collapsible";
+import { Collapsible } from "@/components/pages/blocks/Collapsible/Collapsible";
 import { getTranslations } from "@/helpers/langUtils";
-// import { Processes } from "@/components/services/Processes/Processes";
+import { ProcessAndForm } from "@/components/pages/blocks/ProcessAndForm/ProcessAndForm";
+import { HeroV2 } from "@/components/pages/blocks/Hero/Hero";
+import { redirect } from "next/navigation";
+// import { Processes } from "@/components/blocks/Processes/Processes";
 
 export interface ServicePageProps {
   meta: ISeo;
@@ -38,7 +39,7 @@ export interface ServicePageProps {
 const getServicePageData = async (locale: LangType, slug: string) => {
   try {
     const serviceQuery = servicePageQuery(locale, slug);
-    const servicePageData: ServicePageProps = await useFetchPage(serviceQuery);
+    const servicePageData: ServicePageProps = await fetchPage(serviceQuery);
     return servicePageData;
   } catch (error) {
     console.error(`Error fetching service page data for slug ${slug}:`, error);
@@ -76,10 +77,10 @@ const videoData: Record<DigitalServiceType, IFrameVideo> = {
     folder: "branding",
     format: "webp",
   },
-  "web-design": {
+  website: {
     firstIndex: 11,
     lastIndex: 400,
-    folder: "web-design",
+    folder: "website",
     format: "webp",
   },
 };
@@ -101,7 +102,7 @@ export default async function ServicePage({
       path: `/${locale}${LocalPaths.DIGITAL}/${slug}`,
       scrollTarget: LocalTargets.DIGITALFORM,
     },
-    "web-design": {
+    website: {
       text: translations.buttons.getQuote,
       path: `/${locale}${LocalPaths.DIGITAL}/${slug}`,
       scrollTarget: LocalTargets.DIGITALFORM,
@@ -110,24 +111,26 @@ export default async function ServicePage({
 
   // TODO: Add error handling for data fetching
   if (!data) {
-    return (
-      <NavWrapperServer locale={locale} theme="dark">
-        <div>Error loading page data</div>
-      </NavWrapperServer>
-    );
+    redirect(`/${locale}${LocalPaths.DIGITAL}`);
   }
 
   return (
-    <NavWrapperServer locale={locale} theme="dark">
+    <NavWrapperServer locale={locale} theme="light">
       {data && (
         <>
           <ClientLogger slug={slug} />
-          {data.hero && <HeroV2 {...data.hero} cta1={heroCTAdata[slug]} />}
+          {data.hero && (
+            <HeroV2
+              {...data.hero}
+              cta1={heroCTAdata[slug]}
+              cta2={{ text: translations.buttons.viewMyWork }}
+            />
+          )}
           {data.featureBlock && (
             <Features features={data.featureBlock.features} />
           )}
           {data.processBlock && slug && (
-            <ProcessAndQuote
+            <ProcessAndForm
               processes={data.processBlock.processes}
               {...formData}
               form="digital"

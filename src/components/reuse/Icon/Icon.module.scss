@@ -1,0 +1,50 @@
+@use 'sass:map';
+@use "@/styles/mixins.scss" as *;
+
+$rotations: (90deg, 180deg, 270deg);
+$icon-sizes: (
+  extra-small: 12px,
+  small: 24px,
+  regular: 32px,
+  big: 48px,
+);
+$colors: (
+  white: var(--white),
+  black: var(--black),
+  yellow: var(--yellow),
+);
+
+@each $rotation in $rotations {
+  .rotate_#{$rotation} {
+    svg {
+      transform: rotate($rotation);
+    }
+  }
+}
+
+@each $name, $color in $colors {
+  .icon_#{$name} {
+    svg,
+    path,
+    polygon {
+      fill: $color !important;
+    }
+  }
+}
+
+@each $name, $size in $icon-sizes {
+  .#{$name} {
+    @include flex(flex-start, flex-start);
+
+    height: map.get($icon-sizes, $name);
+  }
+}
+
+.icon {
+  position: relative;
+  svg {
+    @include flex;
+
+    height: 100%;
+  }
+}
