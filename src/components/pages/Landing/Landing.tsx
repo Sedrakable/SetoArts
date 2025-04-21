@@ -56,7 +56,6 @@ const LandingSide: React.FC<{
       <SanityImage
         {...image}
         figureclassname={styles.backgroundImage}
-        quality={100}
         sizes={["30vw", "30vw", "50vw", "50vw"]}
       />
       <FlexDiv

@@ -60,12 +60,9 @@ export const Hero: React.FC<IHero> = ({
     >
       <div className={styles.backgroundContainer}>
         <SanityImage
-          className={styles.backgroundImage}
+          figureclassname={styles.backgroundImage}
           {...backgroundImage}
-          loading="eager"
-          fetchPriority="high"
-          rel="preload"
-          width={1100}
+          priority={true}
           quality={90}
           sizes={["50vw", "30vw", "30vw", "30vw"]}
         />
@@ -83,13 +80,9 @@ export const Hero: React.FC<IHero> = ({
           </Heading>
         )}
         <SanityImage
-          className={styles.foregroundImage}
+          figureclassname={styles.foregroundImage}
           {...foregroundImage}
-          loading="eager"
-          fetchPriority="high"
-          rel="preload"
-          // width={1100}
-          quality={100}
+          priority={true}
           sizes={["70vw", "60vw", "60vw", "70vw"]}
         />
       </div>
@@ -97,8 +90,6 @@ export const Hero: React.FC<IHero> = ({
         padding={{
           left: [6, 7, 8, 10],
           right: [6, 0],
-
-          // top: [8, 10, 11, 12],
         }}
         gapArray={[5, 4, 6, 7]}
         flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
@@ -202,13 +193,10 @@ export const HeroV2: React.FC<IHeroV2> = ({
       {/* Background Image Wrapper */}
       <div className={styles.backgroundContainer}>
         <SanityImage
-          className={styles.backgroundImage}
+          figureclassname={styles.backgroundImage}
           {...backgroundImage}
-          loading="eager"
-          fetchPriority="high"
-          rel="preload"
-          width={1100}
-          quality={90}
+          priority={true}
+          sizes={["90vw", "60vw", "45vw", "60vw"]}
         />
       </div>
       <FlexDiv

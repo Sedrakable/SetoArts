@@ -29,10 +29,9 @@ export const About: React.FC<IAbout> = ({
             figureclassname={styles.image}
             image={profileImage?.image}
             alt={profileImage?.alt}
-            loading="eager"
-            fetchPriority="high"
-            rel="preload"
-            sizes={["90vw", "70vw", "40vw", "40vw"]}
+            priority={true}
+            quality={90}
+            sizes={["90vw", "25vw", "40vw", "30vw"]}
           />
         </AnimatedWrapper>
         <AnimatedWrapper from="right" className={styles.textContainer}>

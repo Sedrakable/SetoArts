@@ -73,15 +73,15 @@ const ProjectSlide = ({
       {hasCustomImages ? (
         <div className={styles.imgGridWrapper}>
           <div className={styles.imgGrid}>
-            {gridImages!.map((image, idx) => (
+            {gridImages!.map((image, id) => (
               <SanityImage
-                key={idx}
+                key={id}
                 image={image.image}
                 alt={image.alt}
                 quality={
-                  idx === THUMBNAIL_INDEX ? QUALITY.thumbnail : QUALITY.grid
+                  id === THUMBNAIL_INDEX ? QUALITY.thumbnail : QUALITY.grid
                 }
-                className={idx !== THUMBNAIL_INDEX ? styles.blur : ""}
+                className={id !== THUMBNAIL_INDEX ? styles.blur : ""}
               />
             ))}
           </div>

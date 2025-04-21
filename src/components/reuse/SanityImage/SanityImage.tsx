@@ -1,78 +1,65 @@
 import { SanityImageSource } from "@sanity/asset-utils";
 import { urlFor } from "@/app/api/client";
-import Img, { ImageProps } from "next/image";
+import Img from "next/image";
 
+type SizeUnit = `${number}px` | `${number}vw` | `${number}%`;
 export type SizesType = [
-  number | string,
-  number | string,
-  number | string,
-  number | string
+  number | SizeUnit,
+  number | SizeUnit,
+  number | SizeUnit,
+  number | SizeUnit
 ];
-export interface ICustomImage extends Omit<ImageProps, "src" | "sizes"> {
+
+export interface ICustomImage {
   alt: string;
   image: SanityImageSource;
-  width?: number;
   quality?: number;
   figureclassname?: string;
-  sizes?: SizesType; // Optional sizes prop
+  sizes?: SizesType;
+  priority?: boolean;
 }
 
 const generateSizes = (sizes?: SizesType): string => {
   if (!sizes) {
-    return "(max-width: 640px) 90vw, (max-width: 1200px) 80vw, (max-width: 1680px) 50vw, 33vw";
+    return "(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw";
   }
   const [mobile, tablet, laptop, desktop] = sizes;
-  return `(max-width: 640px) ${mobile}px, (max-width: 1200px) ${tablet}px, (max-width: 1680px) ${laptop}px, ${desktop}px`;
+  const processSize = (size: number | SizeUnit): string => {
+    return typeof size === "number" ? `${size}px` : size;
+  };
+  return `(max-width: 640px) ${processSize(mobile)}, (max-width: 1200px) ${processSize(tablet)}, (max-width: 1680px) ${processSize(laptop)}, ${processSize(desktop)}`;
 };
 
-export const SanityImage: React.FC<ICustomImage> = (props) => {
-  const { quality = 30, sizes, ...restProps } = props;
+export const SanityImage: React.FC<ICustomImage> = ({
+  quality = 75,
+  sizes,
+  image,
+  alt,
+  figureclassname,
+  priority,
+}) => {
+  if (!image) return null;
 
-  return props.width
-    ? props.image && (
-        <Img
-          src={urlFor(props.image)
-            .format("webp")
-            .quality(quality)
-            .width(props.width)
-            .url()}
-          width={props.width} // ✅ Set width explicitly
-          height={0} // ✅ Let height be auto (needed for Next.js)
-          style={{
-            objectFit: "cover",
-            height: "auto", // ✅ Maintain aspect ratio
-          }}
-          placeholder="blur"
-          blurDataURL={urlFor(props.image).width(24).height(24).blur(10).url()}
-          sizes={sizes ? generateSizes(sizes) : undefined} // Dynamic sizes
-          priority={props.priority}
-          {...restProps}
-        />
-      )
-    : props.image && (
-        <figure
-          className={props.figureclassname}
-          style={{
-            position: "relative",
-            width: "100%", // Ensure the container fills its parent width
-            height: "100%", // Ensure the container fills its parent height
-            overflow: "hidden", // Hide any overflow from the image
-          }}
-        >
-          <Img
-            src={urlFor(props.image).format("webp").quality(quality).url()}
-            fill
-            placeholder="blur"
-            blurDataURL={urlFor(props.image)
-              .width(24)
-              .height(24)
-              .blur(10)
-              .url()}
-            style={{ objectFit: "cover" }}
-            sizes={generateSizes(sizes)} // Dynamic sizes
-            priority={props.priority}
-            {...restProps}
-          />
-        </figure>
-      );
+  return (
+    <figure
+      className={figureclassname}
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        overflow: "hidden",
+      }}
+    >
+      <Img
+        src={urlFor(image).format("webp").quality(quality).url()}
+        fill
+        placeholder="blur"
+        blurDataURL={urlFor(image).width(24).height(24).blur(10).url()}
+        style={{ objectFit: "cover" }}
+        sizes={generateSizes(sizes)}
+        priority={priority}
+        alt={alt}
+      />
+    </figure>
+  );
 };

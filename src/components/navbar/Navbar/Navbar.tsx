@@ -156,15 +156,8 @@ export const dropDown = (
 
 // Helper components
 export const NavButton: React.FC<ICta> = ({ text, path, scrollTarget }) => {
-  const { isMobile } = useWindowResize();
-
   return (
-    <Button
-      variant="primary"
-      // small={isMobile}
-      path={path}
-      scrollTarget={scrollTarget}
-    >
+    <Button variant="primary" path={path} scrollTarget={scrollTarget}>
       {text}
     </Button>
   );

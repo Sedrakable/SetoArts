@@ -45,11 +45,10 @@
     margin: 0 auto;
     position: relative;
     .legal {
+      @include vari(--justify-content, "center", "flex-start");
+      justify-content: var(--justify-content) !important;
       p {
         text-decoration: underline;
-        // &:hover {
-        //   color: var(--yellow);
-        // }
       }
     }
     .logo {

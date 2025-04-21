@@ -49,7 +49,7 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
     <FlexDiv
       flex={{ direction: "column", x: "center" }}
       className={styles.embla}
-      gapArray={[3, 4]}
+      gapArray={[3, 3, 3, 4]}
     >
       <div className={styles.viewport} ref={emblaMainRef}>
         <div className={styles.container}>
@@ -60,12 +60,17 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
                 alt={image?.alt}
                 figureclassname={cn(styles.image)}
                 quality={90}
+                sizes={["80vw", "75vw", "30vw", "30vw"]}
               />
             </div>
           ))}
         </div>
       </div>
-      <FlexDiv className={styles.thumbs} ref={emblaThumbsRef} gapArray={[3, 4]}>
+      <FlexDiv
+        className={styles.thumbs}
+        ref={emblaThumbsRef}
+        gapArray={[3, 3, 3, 4]}
+      >
         {images.map((image, index) => (
           <Thumb
             key={index}
@@ -95,7 +100,7 @@ export const Thumb: React.FC<ThumbProps> = ({ selected, image, onClick }) => {
         image={image?.image}
         alt={image?.alt}
         figureclassname={cn(styles.image)}
-        quality={5}
+        quality={30}
         sizes={[80, 120, 100, 100]}
       />
     </div>

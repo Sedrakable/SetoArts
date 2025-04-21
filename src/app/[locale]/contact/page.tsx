@@ -53,7 +53,7 @@ export default async function Contact({
   const data = await getContactPageData(locale);
   const formData: FormTitleProps = await getFormData("digital", locale);
   return (
-    <NavWrapperServer locale={locale} theme="dark">
+    <NavWrapperServer locale={locale} theme="light">
       {data.hero && <HeroV2 {...data.hero} />}
       {formData && <ImageAndForm {...formData} />}
 

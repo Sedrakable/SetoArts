@@ -24,11 +24,11 @@ import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrappe
 
 // Define image widths for each column count at each breakpoint
 const imageWidthsByColumns: Record<number, SizesType> = {
-  1: ["100vw", 600, 1200, 1600], // Full-width
-  2: ["50vw", 300, 400, 600],
-  3: ["33vw", 200, 300, 400],
-  4: ["25vw", 150, 250, 350],
-  5: ["20vw", 120, 200, 300],
+  1: ["100%", "100%", "100%", "100vw"], // Full-width
+  2: ["50%", "50%", "50%", "50%"],
+  3: ["35%", "35%", "35%", "35%"],
+  4: ["27.5%", "27.5%", "27.5%", "27.5%"],
+  5: ["20%", "20%", "20%", "20%"],
 };
 
 const headingLevelByColumns: Record<number, HeadingLevelType> = {
@@ -68,7 +68,7 @@ const Work: React.FC<IWork & { columnCount: number }> = ({
   };
 
   const action = inferAction();
-
+  console.log(title, columnCount, imageWidthsByColumns[columnCount]);
   const content = (
     <FlexDiv
       width100

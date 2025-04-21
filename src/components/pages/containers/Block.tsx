@@ -44,7 +44,7 @@ export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
         )}
         gapArray={[7, 7, 7, 8]}
         padding={{
-          top: [7, 5, 5, 6],
+          top: title ? [7, 5, 5, 6] : [7, 7, 7, 8],
           bottom: theme === "wood" ? [0] : [8, 9, 9, 10],
           horizontal:
             contentSize === "default" ? [6, 8, 9, 10] : [6, 9, 10, 12],

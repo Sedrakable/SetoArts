@@ -42,7 +42,6 @@ const Testimonial: React.FC<ITestimonial> = ({
           <SanityImage
             {...afterImage}
             figureclassname={styles.afterImage}
-            quality={100}
             sizes={["90vw", "90vw", "25vw", "25vw"]}
           />
         )}

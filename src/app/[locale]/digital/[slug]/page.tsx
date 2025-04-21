@@ -78,7 +78,7 @@ const videoData: Record<DigitalServiceType, IFrameVideo> = {
     format: "webp",
   },
   website: {
-    firstIndex: 11,
+    firstIndex: 10,
     lastIndex: 400,
     folder: "website",
     format: "webp",
@@ -123,7 +123,11 @@ export default async function ServicePage({
             <HeroV2
               {...data.hero}
               cta1={heroCTAdata[slug]}
-              cta2={{ text: translations.buttons.viewMyWork }}
+              cta2={{
+                text: translations.buttons.viewMyWork,
+                path: `/${locale}${LocalPaths.ABOUT}`,
+                scrollTarget: LocalTargets.BRANDINGWORK,
+              }}
             />
           )}
           {data.featureBlock && (

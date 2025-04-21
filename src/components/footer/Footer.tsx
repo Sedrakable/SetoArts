@@ -92,12 +92,7 @@ const LegalAndFaq: React.FC<{
 }> = ({ legals, faqs }) => {
   const locale = useLocale() as LangType;
   return (
-    <FlexDiv
-      className={styles.legal}
-      gapArray={[5]}
-      wrap
-      flex={{ x: "flex-start" }}
-    >
+    <FlexDiv className={styles.legal} gapArray={[5]} wrap>
       {legals?.map((cta, key) => {
         return (
           <Link

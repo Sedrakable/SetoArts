@@ -5,7 +5,7 @@
 
   .viewport {
     overflow: hidden;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-small);
     width: 100%;
     max-height: 100% !important;
     aspect-ratio: 1;
@@ -18,7 +18,7 @@
         transform: translate3d(0, 0, 0);
         flex: 0 0 100%;
 
-        border-radius: var(--border-radius);
+        border-radius: var(--border-radius-small);
         overflow: hidden;
         aspect-ratio: 1;
         .image {
