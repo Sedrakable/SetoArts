@@ -20,26 +20,26 @@ export interface ContactPageProps {
 
 const getContactPageData = async (locale: LangType) => {
   const contactQuery = contactPageQuery(locale);
-
   const contactPageData: ContactPageProps = await fetchPage(contactQuery);
+
   return contactPageData;
 };
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: LangType };
+  params: Promise<{ locale: LangType }>;
 }): Promise<Metadata> {
-  const contactPageData = await getContactPageData(locale);
-  const { metaTitle, metaDesc, metaKeywords } = contactPageData.meta;
+  const { locale } = await params;
   const path = LocalPaths.CONTACT;
   const crawl = true;
+  const contactPageData = await getContactPageData(locale);
+  const { metaTitle, metaDesc } = contactPageData.meta;
 
   return setMetadata({
     locale,
     metaTitle,
     metaDesc,
-    metaKeywords,
     path,
     crawl,
   });

@@ -8,7 +8,7 @@
   box-sizing: content-box !important;
 
   @media (min-width: $laptop) {
-    width: fit-content;
+    width: calc(100% + var(--pad-4) * 2);
     position: absolute;
     bottom: 0px;
     transform: translate(calc(var(--pad-4) * -1), calc(100%));

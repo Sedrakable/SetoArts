@@ -3,42 +3,51 @@ import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n";
 import { landingPageQuery } from "@/app/api/generateSanityQueries";
 import { Landing } from "@/components/pages/Landing/Landing";
-import { ClientLogger } from "@/helpers/clientLogger";
+import { setMetadata } from "@/components/SEO";
+import { Metadata } from "next";
 
 export interface LandingPageProps {
   meta: ISeo;
   leftSide: ILandingSide;
   rightSide: ILandingSide;
 }
-const getLandingPageData = async (locale: LangType) => {
-  const woodQuery = landingPageQuery(locale);
-   
-  const woodPageData: LandingPageProps = await fetchPage(woodQuery);
 
-  return woodPageData;
+const getLandingPageData = async (locale: LangType) => {
+  try {
+    const landingQuery = landingPageQuery(locale);
+    const landingPageData: LandingPageProps = await fetchPage(landingQuery);
+    return landingPageData;
+  } catch (error) {
+    console.error("Failed to fetch landing page data:", error);
+    return null;
+  }
 };
 
-// export async function generateMetadata({
-//   params: { locale },
-// }: {
-//   params: { locale: LangType };
-// }): Promise<Metadata> {
-//   const path = `${LocalPaths.WOOD}`;
-//   const crawl = true;
-//   const woodPageData: WoodPageProps = await getWoodPageData(locale);
-//   const { metaTitle, metaDesc, metaKeywords } = woodPageData.meta;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: LangType }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const path = "";
+  const crawl = true;
+  const landingPageData = await getLandingPageData(locale);
 
-//   return setMetadata({
-//     locale,
-//     metaTitle,
-//     metaDesc,
-//     metaKeywords,
-//     path,
-//     crawl,
-//   });
-// }
+  // Add fallback values in case landingPageData is null
+  const metaTitle = landingPageData?.meta?.metaTitle || "Seto X Arts";
+  const metaDesc =
+    landingPageData?.meta?.metaDesc || "Explore creative work by Seto X Arts";
 
-export default async function HomePage({
+  return setMetadata({
+    locale,
+    metaTitle,
+    metaDesc,
+    path,
+    crawl,
+  });
+}
+
+export default async function LandingPage({
   params,
 }: {
   params: Promise<{ locale: LangType }>;
@@ -48,14 +57,11 @@ export default async function HomePage({
 
   return (
     landingPageData && (
-      <>
-        <ClientLogger slug={landingPageData} />
-        <Landing
-          left={landingPageData.leftSide}
-          right={landingPageData.rightSide}
-          locale={locale}
-        />
-      </>
+      <Landing
+        left={landingPageData.leftSide}
+        right={landingPageData.rightSide}
+        locale={locale}
+      />
     )
   );
 }

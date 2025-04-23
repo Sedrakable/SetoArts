@@ -41,20 +41,20 @@ export const getDigitalPageData = async (locale: LangType) => {
 };
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: LangType };
+  params: Promise<{ locale: LangType }>;
 }): Promise<Metadata> {
-  const digitalPageData = await getDigitalPageData(locale);
-  const { metaTitle, metaDesc, metaKeywords } = digitalPageData.meta;
-  const path = LocalPaths.HOME;
+  const { locale } = await params;
+  const path = `${LocalPaths.DIGITAL}`;
   const crawl = true;
+  const digitalPageData: DigitalPageProps = await getDigitalPageData(locale);
+  const { metaTitle, metaDesc } = digitalPageData.meta;
 
   return setMetadata({
     locale,
     metaTitle,
     metaDesc,
-    metaKeywords,
     path,
     crawl,
   });

@@ -25,6 +25,8 @@ import { getTranslations } from "@/helpers/langUtils";
 import { ProcessAndForm } from "@/components/pages/blocks/ProcessAndForm/ProcessAndForm";
 import { HeroV2 } from "@/components/pages/blocks/Hero/Hero";
 import { redirect } from "next/navigation";
+import { setMetadata } from "@/components/SEO";
+import { Metadata } from "next";
 // import { Processes } from "@/components/blocks/Processes/Processes";
 
 export interface ServicePageProps {
@@ -37,38 +39,33 @@ export interface ServicePageProps {
 }
 
 const getServicePageData = async (locale: LangType, slug: string) => {
-  try {
-    const serviceQuery = servicePageQuery(locale, slug);
-    const servicePageData: ServicePageProps = await fetchPage(serviceQuery);
-    return servicePageData;
-  } catch (error) {
-    console.error(`Error fetching service page data for slug ${slug}:`, error);
-    return null;
-  }
+  const serviceQuery = servicePageQuery(locale, slug);
+  const servicePageData: ServicePageProps = await fetchPage(serviceQuery);
+  return servicePageData;
 };
 
-// export async function generateMetadata({
-//   params: { locale, slug },
-// }: {
-//   params: { locale: LangType; slug: string };
-// }): Promise<Metadata> {
-//   const path = `${LocalPaths.DIGITAL}/${slug}`;
-//   const crawl = true;
-//   const servicePageData: ServicePageProps = await getServicePageData(
-//     locale,
-//     slug
-//   );
-//   const { metaTitle, metaDesc, metaKeywords } = servicePageData.meta;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: LangType; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const path = `${LocalPaths.DIGITAL}/${slug}`;
+  const crawl = true;
+  const servicePageData: ServicePageProps = await getServicePageData(
+    locale,
+    slug
+  );
+  const { metaTitle, metaDesc } = servicePageData.meta;
 
-//   return setMetadata({
-//     locale,
-//     metaTitle,
-//     metaDesc,
-//     metaKeywords,
-//     path,
-//     crawl,
-//   });
-// }
+  return setMetadata({
+    locale,
+    metaTitle,
+    metaDesc,
+    path,
+    crawl,
+  });
+}
 
 const videoData: Record<DigitalServiceType, IFrameVideo> = {
   branding: {

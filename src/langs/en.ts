@@ -15,7 +15,7 @@ export const enTranslations: Translations = {
   buttons: {
     workWithMe: "Work with me",
     view: "View",
-    contact: "Contact",
+    contact: "Let’s Talk",
     send: "Send",
     getQuote: "Get Your Quote",
     buildSign: "Let's Build Your Sign",
@@ -56,8 +56,8 @@ export const enTranslations: Translations = {
     home: "Home",
     about: "About + Work",
     branding: "Branding",
-    web: "Web Design",
-    digital: "Digital",
+    web: "Website",
+    digital: "Design Services",
     wood: "Custom Signs",
   },
   work: {

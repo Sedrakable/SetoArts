@@ -57,6 +57,7 @@ const LandingSide: React.FC<{
         {...image}
         figureclassname={styles.backgroundImage}
         sizes={["30vw", "30vw", "50vw", "50vw"]}
+        priority={true}
       />
       <FlexDiv
         className={styles.content}

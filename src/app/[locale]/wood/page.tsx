@@ -34,6 +34,8 @@ import { Hero } from "@/components/pages/blocks/Hero/Hero";
 
 import { ProcessAndForm } from "@/components/pages/blocks/ProcessAndForm/ProcessAndForm";
 import { Carousel } from "@/components/pages/blocks/Carousel/Carousel";
+import { setMetadata } from "@/components/SEO";
+import { Metadata } from "next";
 
 export interface WoodPageProps {
   meta: ISeo;
@@ -54,32 +56,39 @@ const getWoodPageData = async (locale: LangType) => {
   return data;
 };
 
-// export async function generateMetadata({
-//   params: { locale },
-// }: {
-//   params: { locale: LangType };
-// }): Promise<Metadata> {
-//   const path = `${LocalPaths.WOOD}`;
-//   const crawl = true;
-//   const data: WoodPageProps = await getWoodPageData(locale);
-//   const { metaTitle, metaDesc, metaKeywords } = data.meta;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: LangType }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const path = LocalPaths.WOOD;
+  const crawl = true;
+  const data: WoodPageProps = await getWoodPageData(locale);
+  if (!data?.meta) {
+    console.error("Metadata missing for WoodPage:", { locale, path });
+    return {
+      title: "Seto X Arts",
+      description: "Explore creative work by Seto X Arts.",
+    };
+  }
+  const { metaTitle, metaDesc } = data.meta;
 
-//   return setMetadata({
-//     locale,
-//     metaTitle,
-//     metaDesc,
-//     metaKeywords,
-//     path,
-//     crawl,
-//   });
-// }
+  return setMetadata({
+    locale,
+    metaTitle,
+    metaDesc,
+    path,
+    crawl,
+  });
+}
 
 export default async function WoodPage({
   params,
 }: {
   params: Promise<{ locale: LangType }>;
 }) {
-  // const translations = getTranslations(locale);
+  // const translations = getTranslations(locale );
   const { locale } = await params;
   const translations = getTranslations(locale);
   const data = await getWoodPageData(locale);

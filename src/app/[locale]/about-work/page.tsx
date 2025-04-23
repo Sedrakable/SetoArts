@@ -23,20 +23,20 @@ const getAboutPageData = async (locale: LangType) => {
 };
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: LangType };
+  params: Promise<{ locale: LangType }>;
 }): Promise<Metadata> {
-  const aboutPageData = await getAboutPageData(locale);
-  const { metaTitle, metaDesc, metaKeywords } = aboutPageData.meta;
+  const { locale } = await params;
   const path = LocalPaths.ABOUT;
   const crawl = true;
+  const aboutPageData = await getAboutPageData(locale);
+  const { metaTitle, metaDesc } = aboutPageData.meta;
 
   return setMetadata({
     locale,
     metaTitle,
     metaDesc,
-    metaKeywords,
     path,
     crawl,
   });

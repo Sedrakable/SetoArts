@@ -1,3 +1,4 @@
+"use client";
 import { Spinner } from "@/components/reuse/Spinner/Spinner";
 
 export default function Loading() {

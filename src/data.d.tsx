@@ -6,7 +6,7 @@ export type DigitalServiceType = "branding" | "website";
 export interface ISeo {
   metaTitle: string;
   metaDesc: string;
-  metaKeywords: string[];
+  metaImage?: string;
 }
 
 export interface ICta {
