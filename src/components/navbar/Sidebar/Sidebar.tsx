@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import cn from "classnames";
 import { atom, useAtom } from "jotai";
 import { useLocale } from "next-intl";
@@ -13,7 +13,7 @@ import { IconButton } from "../../reuse/IconButton/IconButton";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 import { LogoLink, isDropDown } from "../Navbar/Navbar";
 
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { usePathname, useRouter } from "@/navigation";
 import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { Socials } from "@/components/reuse/Socials/Socials";
@@ -32,6 +32,18 @@ export const Sidebar: React.FC<SidebarProps> = ({ links, socials }) => {
   const [isOpen, setIsOpen] = useAtom(sidebarData); // Cleanup: Renamed `sidebar` to `isOpen` for clarity
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
+  }, [isOpen]);
 
   // Cleanup: Simplified tabWrapper to a reusable function with consistent props
   const renderTabWrapper = (
@@ -105,7 +117,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ links, socials }) => {
         as="ul"
       >
         {/* Cleanup: Streamlined link rendering with early return for last link */}
-        {links.slice(0, -1).map((link, key) =>
+        {links.map((link, key) =>
           !isDropDown(link) ? (
             renderLink(link.path!, link.text, key)
           ) : (

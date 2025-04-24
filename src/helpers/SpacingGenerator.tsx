@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useMemo } from "react";
+import { useMemo } from "react";
 import { useWindowResize } from "./useWindowResize";
 
 const _SPACINGARRAYCONST = [
@@ -29,10 +29,8 @@ export type SpacingArrayType = [
 ];
 
 export const useSpacingGenerator = (spacingArray?: SpacingArrayType) => {
-  const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
-  const [spacingNum, setSpacingNum] = useState<SpacingType>();
+  const { isTablet, isLaptop, isDesktop } = useWindowResize();
 
-  // Memoize the normalized spacing array
   const normalizedSpacingArray = useMemo(() => {
     if (!spacingArray) return undefined;
 
@@ -44,19 +42,14 @@ export const useSpacingGenerator = (spacingArray?: SpacingArrayType) => {
     return normalized as [SpacingType, SpacingType, SpacingType, SpacingType];
   }, [spacingArray]);
 
-  useEffect(() => {
-    if (!normalizedSpacingArray) return;
-
-    if (isDesktop) {
-      setSpacingNum(normalizedSpacingArray[3]);
-    } else if (isLaptop) {
-      setSpacingNum(normalizedSpacingArray[2]);
-    } else if (isTablet) {
-      setSpacingNum(normalizedSpacingArray[1]);
-    } else {
-      setSpacingNum(normalizedSpacingArray[0]);
-    }
-  }, [isMobile, isTablet, isLaptop, isDesktop, normalizedSpacingArray]);
+  // Instead of useState + useEffect — calculate directly
+  const spacingNum = useMemo(() => {
+    if (!normalizedSpacingArray) return undefined;
+    if (isDesktop) return normalizedSpacingArray[3];
+    if (isLaptop) return normalizedSpacingArray[2];
+    if (isTablet) return normalizedSpacingArray[1];
+    return normalizedSpacingArray[0];
+  }, [isTablet, isLaptop, isDesktop, normalizedSpacingArray]);
 
   return { spacingNum };
 };

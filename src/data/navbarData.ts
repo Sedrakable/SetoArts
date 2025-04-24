@@ -1,5 +1,5 @@
 import { LocalPaths, ICta, INavLink } from "@/data.d";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { Translations } from "@/langs/langTypes";
 
 export const navContactButtonData = (

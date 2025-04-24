@@ -8,7 +8,7 @@ import { Button } from "../../../reuse/Button/Button";
 import { getTranslations } from "../../../../helpers/langUtils";
 import stroke from "/public/photos/BigStroke.webp";
 import { useLocale } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import Image from "next/image";
 
 export const Inspired: React.FC = () => {

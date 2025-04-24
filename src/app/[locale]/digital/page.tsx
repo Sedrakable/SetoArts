@@ -8,7 +8,7 @@ import {
   LocalTargets,
 } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { digitalPageQuery } from "@/app/api/generateSanityQueries";
@@ -60,11 +60,13 @@ export async function generateMetadata({
   });
 }
 
-export default async function DigitalPage({
-  params: { locale },
-}: {
-  params: { locale: LangType };
+export default async function DigitalPage(props: {
+  params: Promise<{ locale: LangType }>;
 }) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const data = await getDigitalPageData(locale);
   // const workData: IWork[] = await fetchPage(worksQuery);
   const translations = getTranslations(locale);

@@ -4,7 +4,7 @@ import {
   ContactFormData,
   FormServiceType,
 } from "@/components/reuse/Form/formTypes";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";

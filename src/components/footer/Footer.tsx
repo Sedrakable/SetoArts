@@ -16,7 +16,7 @@ import {
 import { isDropDown, NavButton } from "../navbar/Navbar/Navbar";
 import { Socials } from "../reuse/Socials/Socials";
 import { useLocale } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import Link from "next/link";
 
 const Line: React.FC = () => {

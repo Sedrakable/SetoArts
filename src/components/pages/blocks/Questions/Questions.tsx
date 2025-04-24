@@ -7,7 +7,7 @@ import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Text/Heading/Heading";
 import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { IQuestion, ITheme } from "@/data.d";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { useLocale } from "next-intl";
 import { getTranslations } from "@/helpers/langUtils";
 import { PortableTextContent } from "@/components/reuse/Text/Paragraph/PortableTextContent";
@@ -25,7 +25,6 @@ const Question: React.FC<IQuestion> = ({
       flex={{ direction: "column", y: "flex-start" }}
       width100
       gapArray={[1]}
-      as="li"
     >
       <FlexDiv
         padding={{ left: [3], bottom: [4], right: [4] }}
@@ -139,7 +138,7 @@ export const Questions: React.FC<QuestionsProps> = ({
       >
         {questions?.map((question: IQuestion, key) => {
           return (
-            <AnimatedWrapper from="inside" key={key}>
+            <AnimatedWrapper from="inside" key={key} as="li">
               <Question {...question} theme={theme} />
             </AnimatedWrapper>
           );

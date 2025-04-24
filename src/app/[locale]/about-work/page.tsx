@@ -1,6 +1,6 @@
 import { IAbout, IWorkBlock, ISeo, LocalPaths, LocalTargets } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { aboutPageQuery } from "@/app/api/generateSanityQueries";

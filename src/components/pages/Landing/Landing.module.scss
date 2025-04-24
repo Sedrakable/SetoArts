@@ -39,8 +39,10 @@
 }
 
 @mixin transition($properties...) {
-  transition: var(--trans-time) ease-in-out;
-  transition-property: $properties;
+  & {
+    transition: var(--trans-time) ease-in-out;
+    transition-property: $properties;
+  }
 }
 
 @mixin vertTriangle($deg: 80deg, $flip: false, $color: var(--white)) {
@@ -72,20 +74,26 @@
 
 .landingContainer {
   @include vars;
-  height: 100vh;
-  position: relative;
-  background: var(--yellow);
+  & {
+    height: 100vh;
+    position: relative;
+    background: var(--yellow);
+  }
 
   .landingSide {
-    position: relative;
-    overflow: hidden;
-    width: 100vw;
     @include transition(width); // Only transition width here
+    & {
+      position: relative;
+      overflow: hidden;
+      width: 100vw;
+    }
 
     .content {
-      z-index: 1;
-      max-width: var(--content-width);
       @include transition(max-width, opacity); // For hover moves
+      & {
+        z-index: 1;
+        max-width: var(--content-width);
+      }
 
       .desc {
         display: -webkit-box;
@@ -156,9 +164,9 @@
       }
     }
     &::before {
-      @include horiTriangle(80deg, false, var(--black));
       bottom: calc(-1 * var(--gapfill));
       left: calc(-1 * var(--gapfill));
+      @include horiTriangle(80deg, false, var(--black));
     }
     .tags {
       transform: rotate(90deg);
@@ -191,9 +199,9 @@
       }
     }
     &::before {
-      @include horiTriangle(80deg, true, var(--white));
       top: calc(-1 * var(--gapfill));
       right: calc(-1 * var(--gapfill));
+      @include horiTriangle(80deg, true, var(--white));
     }
     .tags {
       transform: rotate(-90deg);
@@ -265,15 +273,15 @@
     }
     .left {
       &::before {
-        @include vertTriangle(80deg, false, var(--black));
         bottom: calc(-1 * var(--gapfill));
         right: calc(-1 * var(--gapfill));
         left: unset !important;
+        @include vertTriangle(80deg, false, var(--black));
       }
       .backgroundImage {
         &:before {
-          @include vertTriangle(80deg, false, var(--white));
           right: -1px;
+          @include vertTriangle(80deg, false, var(--white));
         }
       }
       .graphic {
@@ -285,15 +293,15 @@
     }
     .right {
       &::before {
-        @include vertTriangle(80deg, true, var(--white));
         top: calc(-1 * var(--gapfill));
         left: calc(-1 * var(--gapfill));
         right: unset !important;
+        @include vertTriangle(80deg, true, var(--white));
       }
       .backgroundImage {
         &:before {
-          @include vertTriangle(80deg, true, var(--black));
           left: -1px;
+          @include vertTriangle(80deg, true, var(--black));
         }
       }
       .graphic {

@@ -6,7 +6,7 @@ import styles from "./SolutionBlock.module.scss";
 import { getTranslations } from "../../../../helpers/langUtils";
 import bigStroke from "/public/photos/BigStroke.webp";
 import { useLocale } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { Block } from "../../containers/Block";
 import { FancyText } from "@/components/reuse/Text/FancyText/FancyText";
 import { Icon } from "@/components/reuse/Icon/Icon";

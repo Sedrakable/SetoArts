@@ -11,7 +11,7 @@ import { LocalPaths, LocalTargets } from "@/data.d";
 
 import { useShuffleArray } from "@/helpers/useShuffleArray";
 import { useLocale } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { getTranslations } from "@/helpers/langUtils";
 import { Button } from "@/components/reuse/Button/Button";
 import FlexDiv from "@/components/reuse/FlexDiv";

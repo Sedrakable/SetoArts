@@ -8,7 +8,7 @@ import { Icon } from "../../Icon/Icon";
 import FlexDiv from "../../FlexDiv";
 import Image from "next/image";
 import { Button } from "../../Button/Button";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 
 interface UploadButtonProps {
   onFilesSelect: (files: File[]) => void;

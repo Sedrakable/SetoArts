@@ -49,7 +49,7 @@ type DotButtonProps = ComponentPropsWithRef<"button">;
 export const DotButton: React.FC<DotButtonProps> = (props) => {
   const { children, ...restProps } = props;
   return (
-    <button type="button" {...restProps}>
+    <button type="button" aria-label="Go to slide" {...restProps}>
       {children}
     </button>
   );

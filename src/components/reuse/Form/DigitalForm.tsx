@@ -21,7 +21,7 @@ import {
 import { Slider } from "@/components/reuse/Form/Slider/Slider";
 import { UploadButton } from "@/components/reuse/Form/UploadButton/UploadButton";
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { LocalTargets } from "@/data.d";
 
 export interface DigitalFormProps extends FormTitleProps {}

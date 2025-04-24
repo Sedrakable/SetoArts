@@ -4,7 +4,7 @@ import { WorkModalContent } from "@/components/pages/blocks/WorkBlock/WorkModalC
 import { Modal } from "@/components/reuse/Modal/Modal";
 import { ISeo, IWork, LocalPaths } from "@/data.d";
 import { redirect } from "next/navigation";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 

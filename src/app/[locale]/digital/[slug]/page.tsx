@@ -13,7 +13,7 @@ import {
   DigitalServiceType,
 } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { servicePageQuery } from "@/app/api/generateSanityQueries";
 import { Features } from "@/components/pages/blocks/Features/Features";
 import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";

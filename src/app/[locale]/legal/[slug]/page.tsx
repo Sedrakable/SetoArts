@@ -1,7 +1,7 @@
 import React from "react";
 import { ILegalPage, LocalPaths } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { legalPageQuery } from "@/app/api/generateSanityQueries";
 import { LegalPageComp } from "@/components/pages/LegalPage/LegalPage";
 import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";

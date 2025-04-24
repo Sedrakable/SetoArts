@@ -6,6 +6,7 @@ import { Heading } from "@/components/reuse/Text/Heading/Heading";
 import { PortableTextContent } from "@/components/reuse/Text/Paragraph/PortableTextContent";
 
 import { IProcessStep } from "@/data.d";
+import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 
 interface ProcessStepProps extends IProcessStep {
   number: number;
@@ -17,45 +18,51 @@ interface ProcessStepProps extends IProcessStep {
 export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
   ({ title, desc, number }, ref) => {
     return (
-      <FlexDiv
-        className={cn(styles.slide)}
-        flex={{ y: "flex-start" }}
-        gapArray={[4, 5, 5, 6]}
-        as="li"
-        ref={ref} // Forward the ref to the root element
-      >
-        {/* Step number circle */}
-        <FlexDiv className={cn(styles.number)}>
-          <Heading font="Outfit" level="2" as="h4" color="yellow" weight={900}>
-            {(number + 1).toString()}
-          </Heading>
-        </FlexDiv>
-
-        {/* Step content */}
+      <AnimatedWrapper from="right" as="li" className={cn(styles.slide)}>
         <FlexDiv
-          flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-          width100
-          gapArray={[2]}
-          className={styles.content}
+          flex={{ y: "flex-start" }}
+          gapArray={[4, 5, 5, 6]}
+          ref={ref} // Forward the ref to the root element
         >
-          <Heading
-            font="Outfit"
-            level="3"
-            as="h3"
-            color="black"
-            weight={900}
-            className={styles.title}
+          {/* Step number circle */}
+          <FlexDiv className={cn(styles.number)}>
+            <Heading
+              font="Outfit"
+              level="2"
+              as="span"
+              color="yellow"
+              weight={900}
+            >
+              {(number + 1).toString()}
+            </Heading>
+          </FlexDiv>
+
+          {/* Step content */}
+          <FlexDiv
+            flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
+            width100
+            gapArray={[2]}
+            className={styles.content}
           >
-            {title}
-          </Heading>
-          <PortableTextContent
-            level="regular"
-            value={desc}
-            color="black"
-            weight={400}
-          />
+            <Heading
+              font="Outfit"
+              level="3"
+              as="h3"
+              color="black"
+              weight={900}
+              className={styles.title}
+            >
+              {title}
+            </Heading>
+            <PortableTextContent
+              level="regular"
+              value={desc}
+              color="black"
+              weight={400}
+            />
+          </FlexDiv>
         </FlexDiv>
-      </FlexDiv>
+      </AnimatedWrapper>
     );
   }
 );

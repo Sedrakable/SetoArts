@@ -1,4 +1,4 @@
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 
 export const navbarPageQuery = (locale: LangType, type: string): string => {
   return `*[_type == 'navbar' && lang == '${locale}' && type == '${type}'][0]`;

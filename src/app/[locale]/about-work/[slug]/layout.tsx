@@ -1,4 +1,4 @@
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import AboutPage from "../page";
 
 export default function ModalLayout({

@@ -18,7 +18,7 @@ import Link from "next/link";
 import GridDiv from "@/components/reuse/GridDiv";
 import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { useLocale } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 // import { ImageSlider } from "@/components/reuse/ImageSlider";
 
@@ -68,7 +68,6 @@ const Work: React.FC<IWork & { columnCount: number }> = ({
   };
 
   const action = inferAction();
-  console.log(title, columnCount, imageWidthsByColumns[columnCount]);
   const content = (
     <FlexDiv
       width100

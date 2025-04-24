@@ -39,21 +39,22 @@
 .button {
   @include vars;
   @include flex;
-
-  position: relative;
-
-  min-width: var(--button-width);
-  width: fit-content;
-  text-decoration: none;
-  box-sizing: border-box;
-  padding: 12px;
-  transition: var(--transition-time-backoff);
-
-  p {
-    padding: 0 var(--button-padding);
-    @include vari(padding-bottom, 0px, 0px, 1px, 1px);
-    width: auto !important;
+  & {
+    position: relative;
+    min-width: var(--button-width);
+    width: fit-content;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 12px;
     transition: var(--transition-time-backoff);
+  }
+  p {
+    @include vari(padding-bottom, 0px, 0px, 1px, 1px);
+    & {
+      padding: 0 var(--button-padding);
+      width: auto !important;
+      transition: var(--transition-time-backoff);
+    }
   }
   &:disabled {
     cursor: not-allowed;
@@ -202,13 +203,13 @@
 .container:has(.fancy) {
   @include vars;
 
-  -webkit-mask: url("../../../assets/vector/ButtonStroke.svg");
-  mask: url("../../../assets/vector/ButtonStroke.svg");
-  position: relative;
-
+  & {
+    -webkit-mask: url("../../../assets/vector/ButtonStroke.svg");
+    mask: url("../../../assets/vector/ButtonStroke.svg");
+    position: relative;
+  }
   .fancy {
     &:first-child {
-      z-index: 1;
       @include button(
         var(--yellow),
         "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
@@ -217,27 +218,32 @@
         none,
         none
       );
-      overflow: visible;
-      transition: 100ms;
-      height: var(--button-height-fancy);
+      & {
+        z-index: 1;
+        overflow: visible;
+        transition: 100ms;
+        height: var(--button-height-fancy);
+      }
     }
     &:last-child {
       position: absolute;
       inset: 0;
       z-index: 0;
-      @include button(
-        var(--black),
-        "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
-        3000%,
-        100%,
-        none,
-        none
-      );
       overflow: visible;
       transition: 100ms;
       height: var(--button-height-fancy);
       p {
         color: var(--white) !important;
+      }
+      & {
+        @include button(
+          var(--black),
+          "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+          3000%,
+          100%,
+          none,
+          none
+        );
       }
     }
     -webkit-animation: ani2 var(--transition-time) steps(29) forwards;

@@ -19,7 +19,6 @@
 
 .input,
 .textarea {
-  position: relative;
   @include vari(
     font-size,
     var(--paragraph-regular),
@@ -27,20 +26,23 @@
     var(--paragraph-small),
     var(--paragraph-regular)
   );
-  padding: 0 var(--pad-4);
-  line-height: 1.25em;
-  font-weight: 400;
-  color: var(--black);
   @include vari(height, 60px, 60px, 48px, 60px);
-  text-decoration: none !important;
-  box-sizing: border-box;
+  & {
+    position: relative;
+    padding: 0 var(--pad-4);
+    line-height: 1.25em;
+    font-weight: 400;
+    color: var(--black);
+    text-decoration: none !important;
+    box-sizing: border-box;
 
-  width: 100%;
-  border: none;
-  border-radius: var(--border-radius-small);
-  box-shadow: var(--black-shadow), inset -16px 0px 0 var(--yellow);
-  border: 2px solid var(--black, #c4c4cc);
-  outline: none !important;
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--black-shadow), inset -16px 0px 0 var(--yellow);
+    border: 2px solid var(--black, #c4c4cc);
+    outline: none !important;
+  }
   &::placeholder {
     color: var(--black);
     opacity: 0.5;
@@ -52,12 +54,13 @@
   }
 }
 .textarea {
-  @include vars;
-  min-height: var(--min-height-textarea); /* Minimum height */
-  max-height: var(--max-height-textarea); /* Optional: Max height */
-  overflow-y: hidden; /* Prevent scrollbars */
-  resize: none; /* Disable manual resizing */
-  padding-top: var(--pad-3);
+  @include vari(min-height, 200px, 150px, 150px, 200px);
+  @include vari(max-height, 400px, 300px, 350px, 400px);
+  & {
+    overflow-y: hidden; /* Prevent scrollbars */
+    resize: none; /* Disable manual resizing */
+    padding-top: var(--pad-3);
+  }
 }
 
 .invalid {

@@ -7,7 +7,7 @@ import FlexDiv from "@/components/reuse/FlexDiv";
 import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { SanityImage } from "@/components/reuse/SanityImage/SanityImage";
 import { IFeature } from "@/data.d";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { useLocale } from "next-intl";
 import { getTranslations } from "@/helpers/langUtils";
 import { useSvgComponent } from "@/helpers/useSvgComponent";
@@ -22,7 +22,6 @@ const Feature: React.FC<IFeature> = ({ title, customImage, svgName, desc }) => {
       flex={{ direction: "column", x: "flex-start" }}
       width100
       className={cn(styles.container)}
-      as="li"
       gapArray={[5, 4, 4, 5]}
     >
       <div className={styles.imgWrapper}>
@@ -89,7 +88,7 @@ export const Features: React.FC<FeaturesProps> = ({ features }) => {
       >
         {features?.map((feature: IFeature, key) => {
           return (
-            <AnimatedWrapper from="inside" key={key}>
+            <AnimatedWrapper from="inside" key={key} as="li">
               <Feature {...feature} />
             </AnimatedWrapper>
           );

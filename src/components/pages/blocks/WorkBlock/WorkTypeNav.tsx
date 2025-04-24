@@ -9,7 +9,7 @@ import { useScrollToTarget } from "@/helpers/useScrollToTarget";
 import { LocalTargets } from "@/data.d";
 import { getTranslations } from "@/helpers/langUtils";
 import { useLocale } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import GridDiv from "@/components/reuse/GridDiv";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 

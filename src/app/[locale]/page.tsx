@@ -1,6 +1,6 @@
 import { ILandingSide, ISeo } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { landingPageQuery } from "@/app/api/generateSanityQueries";
 import { Landing } from "@/components/pages/Landing/Landing";
 import { setMetadata } from "@/components/SEO";

@@ -63,6 +63,11 @@ export const Slider: React.FC<SliderProps> = ({
             withTracks
             pearling
             value={values}
+            ariaLabel={
+              isRange
+                ? [`Minimum ${label} slider`, `Maximum ${label} slider`]
+                : [`${label} slider`]
+            }
           />
         </div>
 

@@ -37,11 +37,11 @@ export const ProcessAndForm: FC<ProcessAndFormProps> = ({
   });
 
   const process = (
-    <div className={cn(styles.process)}>
+    <ul className={cn(styles.process)}>
       {processes?.map((processStep: IProcessStep, key) => (
         <ProcessStep {...processStep} number={key} key={key} />
       ))}
-    </div>
+    </ul>
   );
 
   const forms: { [key in ServiceType]: React.ReactNode } = {

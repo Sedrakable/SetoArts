@@ -5,7 +5,7 @@ import styles from "./WorkSlider.module.scss";
 import FlexDiv from "../../../reuse/FlexDiv";
 import { IWork, LocalPaths } from "../../../../data.d";
 import { getTranslations } from "../../../../helpers/langUtils";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { useLocale } from "next-intl";
 import {
   ProjectSlider,
@@ -13,7 +13,6 @@ import {
 } from "../../containers/ProjectSlider";
 
 export const WorkSlider: React.FC<{ works: IWork[] }> = ({ works }) => {
-  console.log("works", works);
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
   const slides: ProjectSliderProps[] = works?.map(

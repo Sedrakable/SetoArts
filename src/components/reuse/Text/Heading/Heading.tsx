@@ -12,12 +12,16 @@ export const fingerPaint = Finger_Paint({
   variable: "--font-finger-paint",
   subsets: ["latin"],
   weight: "400",
+  display: "swap", // optional, but default
+  fallback: ["system-ui", "Helvetica", "Arial"],
 });
 
 export const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap", // optional, but default
+  fallback: ["system-ui", "Helvetica", "Arial"],
 });
 
 export type ColorType = "white" | "black" | "yellow" | "grey" | "error";

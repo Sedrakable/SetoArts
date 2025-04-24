@@ -27,7 +27,6 @@ const Testimonial: React.FC<ITestimonial> = ({
       flex={{ direction: "column", y: "flex-start" }}
       width100
       gapArray={[3, 3, 3, 3]}
-      as="li"
     >
       <FlexDiv className={styles.images} width100>
         {beforeImage && (
@@ -159,7 +158,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
           >
             {testimonials?.map((testimonial: ITestimonial, key) => {
               return (
-                <AnimatedWrapper from="inside" key={key}>
+                <AnimatedWrapper from="inside" key={key} as="li">
                   <Testimonial {...testimonial} />
                 </AnimatedWrapper>
               );

@@ -6,6 +6,8 @@ import styles from "./NavWrapperClient.module.scss";
 import { INavBar, IFooter } from "@/data.d";
 import { getTranslations } from "@/helpers/langUtils";
 import { NavWrapperProps } from "./NavWrapperServer";
+import { Suspense } from "react";
+import { Spinner } from "@/components/reuse/Spinner/Spinner";
 
 export default function NavWrapperClient({
   children,
@@ -20,7 +22,7 @@ export default function NavWrapperClient({
     links: navLinkData(trans),
   };
   return (
-    <>
+    <Suspense fallback={<Spinner />}>
       <Navbar
         {...navbarData}
         theme={theme}
@@ -35,6 +37,6 @@ export default function NavWrapperClient({
         trademark={footerData?.trademark}
         socials={{ links: footerData?.socials?.links }}
       />
-    </>
+    </Suspense>
   );
 }

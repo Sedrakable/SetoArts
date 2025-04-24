@@ -1,6 +1,6 @@
 import { ICollapsible, IHeroV2, ISeo, LocalPaths } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { contactPageQuery } from "@/app/api/generateSanityQueries";
@@ -45,11 +45,13 @@ export async function generateMetadata({
   });
 }
 
-export default async function Contact({
-  params: { locale },
-}: {
-  params: { locale: LangType };
+export default async function Contact(props: {
+  params: Promise<{ locale: LangType }>;
 }) {
+  const params = await props.params;
+
+  const { locale } = params;
+
   const data = await getContactPageData(locale);
   const formData: FormTitleProps = await getFormData("digital", locale);
   return (

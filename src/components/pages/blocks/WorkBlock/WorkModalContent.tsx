@@ -9,7 +9,7 @@ import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { IWork } from "@/data.d";
 import { ThumbCarousel } from "../Carousel/ThumbCarousel";
 import { useLocale } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 
 export const WorkModalContent: React.FC<IWork> = (props) => {
   const { images, title, descEN, descFR } = props;

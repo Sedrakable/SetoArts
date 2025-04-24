@@ -14,7 +14,7 @@ import {
 import { Button } from "../../../reuse/Button/Button";
 import { getTranslations } from "../../../../helpers/langUtils";
 import { useLocale } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { useSvgComponent } from "@/helpers/useSvgComponent";
 import { Tag } from "@/components/reuse/Tag/Tag";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
@@ -35,7 +35,6 @@ const Service: React.FC<IService> = ({
       flex={{ direction: "column", x: "center", y: "flex-start" }}
       width100
       className={cn(styles.container)}
-      as="li"
       gapArray={[3]}
     >
       <div className={styles.assetWrapper}>
@@ -141,7 +140,7 @@ export const Services: React.FC<IServices> = ({ services }) => {
         {services?.map((service: IService, key) => {
           serviceGridServices.push(service);
           return (
-            <AnimatedWrapper from="inside" key={key}>
+            <AnimatedWrapper from="inside" key={key} as="li">
               <Service {...service} />
             </AnimatedWrapper>
           );

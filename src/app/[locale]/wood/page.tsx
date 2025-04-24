@@ -11,7 +11,7 @@ import {
   ServiceType,
 } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { woodPageQuery } from "@/app/api/generateSanityQueries";
 
 import { ICustomImage } from "@/components/reuse/SanityImage/SanityImage";
@@ -65,13 +65,6 @@ export async function generateMetadata({
   const path = LocalPaths.WOOD;
   const crawl = true;
   const data: WoodPageProps = await getWoodPageData(locale);
-  if (!data?.meta) {
-    console.error("Metadata missing for WoodPage:", { locale, path });
-    return {
-      title: "Seto X Arts",
-      description: "Explore creative work by Seto X Arts.",
-    };
-  }
   const { metaTitle, metaDesc } = data.meta;
 
   return setMetadata({
@@ -88,7 +81,7 @@ export default async function WoodPage({
 }: {
   params: Promise<{ locale: LangType }>;
 }) {
-  // const translations = getTranslations(locale );
+  // const translations = getTranslations(locale);
   const { locale } = await params;
   const translations = getTranslations(locale);
   const data = await getWoodPageData(locale);

@@ -4,7 +4,7 @@ import {
 } from "@/app/api/generateSanityQueries";
 import { fetchPage } from "@/app/api/fetchPage";
 import { IFooter, IFooterFAQLinks, ITheme } from "@/data.d";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import NavWrapperClient from "./NavWrapperClient";
 
 export interface NavWrapperProps {

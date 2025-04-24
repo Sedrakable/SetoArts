@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./Process.module.scss";
 import cn from "classnames";
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { useLocale } from "next-intl";
 import { getTranslations } from "@/helpers/langUtils";
 import { Block } from "@/components/pages/containers/Block";

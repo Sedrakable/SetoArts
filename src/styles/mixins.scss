@@ -9,25 +9,35 @@ $desktop: 1680px;
   $laptop-val: $tablet-val,
   $desktop-val: $laptop-val
 ) {
-  #{$property}: #{$mobile}; // Mobile (base value, applies below $tablet)
+  & {
+    #{$property}: #{$mobile}; // Mobile (base value, applies below $tablet)
+  }
 
   @media (min-width: #{$tablet}) {
-    #{$property}: #{$tablet-val}; // Tablet size
+    & {
+      #{$property}: #{$tablet-val}; // Tablet size
+    }
   }
 
   @media (min-width: #{$laptop}) {
-    #{$property}: #{$laptop-val}; // Laptop size
+    & {
+      #{$property}: #{$laptop-val}; // Laptop size
+    }
   }
 
   @media (min-width: #{$desktop}) {
-    #{$property}: #{$desktop-val}; // Desktop size
+    & {
+      #{$property}: #{$desktop-val}; // Desktop size
+    }
   }
 }
 
 @mixin flex($x: center, $y: center) {
-  display: flex;
-  justify-content: $x;
-  align-items: $y;
+  & {
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+  }
 }
 
 @mixin flexColumn($x: center, $y: center) {

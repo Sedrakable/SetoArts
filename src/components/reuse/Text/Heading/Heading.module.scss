@@ -6,18 +6,25 @@
 }
 
 @mixin level($font, $desk, $lap, $tab, $mob) {
-  @include sizing($font, $mob);
-
+  & {
+    @include sizing($font, $mob);
+  }
   @media (min-width: $tablet) {
-    @include sizing($font, $tab);
+    & {
+      @include sizing($font, $tab);
+    }
   }
 
   @media (min-width: $laptop) {
-    @include sizing($font, $lap);
+    & {
+      @include sizing($font, $lap);
+    }
   }
 
   @media (min-width: $desktop) {
-    @include sizing($font, $desk);
+    & {
+      @include sizing($font, $desk);
+    }
   }
 }
 
@@ -50,9 +57,8 @@
 
 .outfit {
   font-family: var(--font-outfit);
-  @include leveling(-outfit);
-
   font-weight: 900;
+  @include leveling(-outfit);
 
   &.white {
     text-shadow: 0px 0px 12px hsl(from var(--black) h s l / 0.6);
@@ -60,10 +66,9 @@
 }
 
 .cursive {
+  position: relative;
   font-family: var(--font-finger-paint);
   @include leveling(-finger-paint);
-
-  position: relative;
 
   &.yellow {
     text-shadow: var(--shadow-size) 0px hsl(from var(--black) h s l / 0.6);

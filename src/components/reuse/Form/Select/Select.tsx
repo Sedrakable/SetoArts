@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./Select.module.scss";
 import cn from "classnames";
 import { getTranslations } from "@/helpers/langUtils";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { useLocale } from "next-intl";
 import FlexDiv from "../../FlexDiv";
 import { Icon } from "../../Icon/Icon";

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"; // Add useState
 import styles from "./Landing.module.scss";
 import cn from "classnames";
 import { ICta, ILandingSide, LocalPaths } from "@/data.d";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { getTranslations } from "@/helpers/langUtils";
 
 import FlexDiv from "@/components/reuse/FlexDiv";

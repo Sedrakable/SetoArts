@@ -250,8 +250,11 @@
   }
 
   .content {
+    @include vari(min-height, 50vh, 85vh, 85vh, 85vh);
     z-index: 3;
+
     .titles {
+      @include vari(min-height, 300px, 350px, 250px, 400px);
       @include vari(--x, center, flex-start);
       align-items: var(--x) !important;
       width: 100%;

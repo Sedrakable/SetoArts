@@ -19,8 +19,8 @@ import GlowingSign from "@/assets/vector/GlowingSignGraphic.svg";
 import DigitalDesign from "@/assets/vector/DigitalDesignGraphic.svg";
 import { PortableTextContent } from "../../../reuse/Text/Paragraph/PortableTextContent";
 import { useParallaxScroll } from "@/helpers/useParallaxScroll";
-import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
-import { LangType } from "@/i18n";
+// import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
+import { LangType } from "@/i18n/request";
 import { useLocale } from "next-intl";
 import { getTranslations } from "@/helpers/langUtils";
 
@@ -196,18 +196,19 @@ export const HeroV2: React.FC<IHeroV2> = ({
           figureclassname={styles.backgroundImage}
           {...backgroundImage}
           priority={true}
-          sizes={["90vw", "60vw", "45vw", "60vw"]}
+          sizes={["80vw", "60vw", "45vw", "60vw"]}
         />
       </div>
       <FlexDiv
         padding={{
           left: [6, 7, 8, 10],
           right: [6, 0],
+          // bottom: [6, 9, 9, 9],
           bottom: [7, 11, 11, 12],
           top: [9, 9, 9, 11],
         }}
         gapArray={[5, 4, 6, 7]}
-        flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
+        flex={{ direction: "column", x: "flex-start", y: "center" }}
         className={styles.content}
         width100
       >
@@ -216,22 +217,22 @@ export const HeroV2: React.FC<IHeroV2> = ({
           flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
           className={styles.titles}
         >
-          <AnimatedWrapper from="left">
-            <Heading
-              as="h1"
-              level="1"
-              weight={900}
-              font="Cursive"
-              color="yellow"
-              textAlign={isMobile ? "center" : "left"}
-              paddingBottomArray={[2, 0]}
-            >
-              {title}
-            </Heading>
-          </AnimatedWrapper>
+          {/* <AnimatedWrapper from="left"> */}
+          <Heading
+            as="h1"
+            level="1"
+            weight={900}
+            font="Cursive"
+            color="yellow"
+            textAlign={isMobile ? "center" : "left"}
+            paddingBottomArray={[2, 0]}
+          >
+            {title}
+          </Heading>
+          {/* </AnimatedWrapper> */}
           {subTitle && (
             <Heading
-              as="h3"
+              as="h2"
               level="4"
               weight={900}
               font="Outfit"

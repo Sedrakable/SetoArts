@@ -10,7 +10,7 @@ import { StepProps } from "./formTypes";
 import { Paragraph } from "../Text/Paragraph/Paragraph";
 import { Translations } from "@/langs/langTypes";
 import { LocalPaths } from "@/data.d";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 
 export interface FormTitleProps {
   title: string;

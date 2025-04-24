@@ -1,6 +1,6 @@
 // helpers/emailTranslations.ts
 import { FormServiceType } from "@/components/reuse/Form/formTypes";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 
 export const emailTranslations: Record<
   LangType,

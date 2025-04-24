@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import { ISeo } from "@/data.d";
 
 interface SEOProps extends ISeo {
@@ -16,6 +16,8 @@ export const setMetadata = ({
   path,
   crawl = true,
 }: SEOProps): Metadata => {
+  const baseUrl = process.env.BASE_NAME;
+  const canonicalUrl = `${baseUrl}/${locale}${path}`;
   return {
     title: metaTitle || "Seto X Arts",
     description: metaDesc || "Explore creative work by Seto X Arts.",
@@ -27,7 +29,7 @@ export const setMetadata = ({
     ],
     robots: { index: crawl, follow: crawl },
     openGraph: {
-      url: `https://www.setoxarts.com/${locale}${path}`,
+      url: canonicalUrl,
       type: "website",
       title: metaTitle || "Seto X Arts",
       description: metaDesc || "Explore creative work by Seto X Arts.",
@@ -46,7 +48,7 @@ export const setMetadata = ({
       ],
     },
     alternates: {
-      canonical: `https://www.setoxarts.com/${locale}${path}`,
+      canonical: canonicalUrl,
       languages: {
         en: `https://www.setoxarts.com/en${path}`,
         fr: `https://www.setoxarts.com/fr${path}`,

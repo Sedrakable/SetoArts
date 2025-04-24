@@ -1,15 +1,13 @@
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import Script from "next/script";
+// import Script from "next/script";
 import styles from "./layout.module.scss";
 import "@/styles/Main.css";
 import "@/styles/ScrollBar.scss";
 import "@/styles/index.scss";
 import { NextIntlClientProvider } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import bigStroke from "/public/photos/BigStroke.webp";
-import { Suspense } from "react";
-import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,7 +35,7 @@ export default async function LocaleLayout({
               name="facebook-domain-verification"
               content="z6nna7jlyl6ehzowkxc3qp1oha3wb6"
             />
-            <Script
+            {/* <Script
               id="facebook-pixel"
               strategy="afterInteractive"
               dangerouslySetInnerHTML={{
@@ -54,7 +52,7 @@ export default async function LocaleLayout({
             fbq('track', 'PageView');
             `,
               }}
-            />
+            /> */}
             <noscript>
               <img
                 alt="facebook-pixel"
@@ -67,9 +65,7 @@ export default async function LocaleLayout({
           </head>
           <body className={inter.className}>
             <div id="root">
-              <Suspense fallback={<Loading />}>
-                <div className={styles.app}>{children}</div>
-              </Suspense>
+              <div className={styles.app}>{children}</div>
             </div>
           </body>
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID!} />
