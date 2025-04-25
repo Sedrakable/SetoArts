@@ -8,18 +8,21 @@ interface Titles {
   realTitle2: string;
   process: string;
   quote: string;
+  explore: string;
 }
 
 interface Buttons {
   workWithMe: string;
-  view: string;
   contact: string;
   send: string;
   getQuote: string;
   buildSign: string;
   buildBrand: string;
+  design: string;
+  view: string;
   viewInstagram: string;
   viewMyWork: string;
+  viewService: string;
 }
 
 interface Form {

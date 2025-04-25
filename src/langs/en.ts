@@ -11,6 +11,7 @@ export const enTranslations: Translations = {
     realTitle1: "Real Businesses",
     realTitle2: "Real Results",
     quote: "Organized x Chaos",
+    explore: "Explore my Work",
   },
   buttons: {
     workWithMe: "Work with me",
@@ -20,8 +21,10 @@ export const enTranslations: Translations = {
     getQuote: "Get Your Quote",
     buildSign: "Let's Build Your Sign",
     buildBrand: "Let’s Build Your Brand",
+    design: "Let’s Design",
     viewInstagram: "View my Insta",
     viewMyWork: "View my work",
+    viewService: "View Service",
   },
   form: {
     general: {
@@ -61,7 +64,7 @@ export const enTranslations: Translations = {
     wood: "Custom Signs",
   },
   work: {
-    wood: "Wood",
+    wood: "Signs",
     branding: "Branding",
     web: "Web Design",
     cards: "Cards",

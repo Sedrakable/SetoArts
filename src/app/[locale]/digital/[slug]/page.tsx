@@ -122,7 +122,7 @@ export default async function ServicePage({
               cta1={heroCTAdata[slug]}
               cta2={{
                 text: translations.buttons.viewMyWork,
-                path: `/${locale}${LocalPaths.ABOUT}`,
+                path: LocalPaths.ABOUT,
                 scrollTarget: LocalTargets.BRANDINGWORK,
               }}
             />

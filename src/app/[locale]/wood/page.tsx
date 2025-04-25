@@ -60,11 +60,12 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: LangType }>;
-}): Promise<Metadata> {
+}): Promise<Metadata | null> {
   const { locale } = await params;
   const path = LocalPaths.WOOD;
   const crawl = true;
   const data: WoodPageProps = await getWoodPageData(locale);
+  if (!data?.meta) return null;
   const { metaTitle, metaDesc } = data.meta;
 
   return setMetadata({

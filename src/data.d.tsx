@@ -39,7 +39,7 @@ export interface IHeroV2 {
   quote: IQuote;
 }
 
-export type ITheme = "light" | "dark" | "yellow" | "wood";
+export type ITheme = "light" | "dark" | "yellow" | "dash" | "wood";
 
 export interface IHero {
   backgroundImage: ICustomImage;
@@ -69,6 +69,7 @@ export interface IServices {
 
 export interface IService {
   title: string;
+  titleFR?: string;
   svgName: string;
   path?: string;
   featureBlock: IFeatureBlock;
@@ -84,6 +85,8 @@ export interface IFeature {
   svgName?: string; // Optional SVG name
   title: string;
   desc: string;
+  titleFR: string; // Optional French title
+  descFR: string; // Optional French description
 }
 
 export interface IQuestion {
@@ -94,18 +97,22 @@ export interface IQuestion {
 }
 
 export interface ITestimonial {
-  beforeImage: ICustomImage;
+  beforeImage?: ICustomImage;
   afterImage: ICustomImage;
   name: string;
   company: string;
   profileImage?: ICustomImage;
   title?: string;
   review: any;
+  titleFR?: string;
+  reviewFR: any;
 }
 
 export interface IProcessStep {
   title: string;
   desc: any;
+  titleFR?: string;
+  descFR?: any;
 }
 
 export interface IFrameVideo {
@@ -149,6 +156,7 @@ export type workType = "wood" | "branding" | "website" | "cards" | "gallery"; //
 
 export interface IWorkBlock {
   title: string;
+  titleFR?: string;
   works: IWork[];
   id: LocalTargets; // For anchor scrolling
 }

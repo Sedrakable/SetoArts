@@ -12,6 +12,8 @@ import { useWindowResize } from "@/helpers/useWindowResize";
 import useEmblaCarousel from "embla-carousel-react";
 import { DotButton, useDotButton } from "../Carousel/DotButton";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n/request";
 
 const Testimonial: React.FC<ITestimonial> = ({
   beforeImage,
@@ -21,7 +23,10 @@ const Testimonial: React.FC<ITestimonial> = ({
   review,
   title,
   company,
+  titleFR,
+  reviewFR,
 }) => {
+  const locale = useLocale() as LangType;
   return (
     <FlexDiv
       flex={{ direction: "column", y: "flex-start" }}
@@ -77,20 +82,22 @@ const Testimonial: React.FC<ITestimonial> = ({
             >
               {company}
             </Paragraph>
-            <Paragraph
-              level="small"
-              color="black"
-              textAlign="left"
-              weight={400}
-            >
-              {title}
-            </Paragraph>
+            {title && (
+              <Paragraph
+                level="small"
+                color="black"
+                textAlign="left"
+                weight={400}
+              >
+                {locale === "fr" && titleFR ? titleFR : title}
+              </Paragraph>
+            )}
           </FlexDiv>
         </FlexDiv>
         <FlexDiv padding={{ horizontal: [4] }} width100>
           <PortableTextContent
             level="regular"
-            value={review}
+            value={locale === "fr" && reviewFR ? reviewFR : review}
             textAlign="justify"
             className={styles.desc}
           />

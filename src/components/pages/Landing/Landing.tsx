@@ -56,7 +56,8 @@ const LandingSide: React.FC<{
       <SanityImage
         {...image}
         figureclassname={styles.backgroundImage}
-        sizes={["30vw", "30vw", "50vw", "50vw"]}
+        quality={100}
+        sizes={["30vw", "30vw", "60vw", "60vw"]}
         priority={true}
       />
       <FlexDiv
@@ -130,7 +131,7 @@ export const Landing: React.FC<LandingProps> = ({ left, right, locale }) => {
         side={right}
         image={right.backgroundImage}
         cta={{
-          text: translations.buttons.buildBrand,
+          text: translations.buttons.design,
           path: `/${locale}${LocalPaths.DIGITAL}`,
         }}
         color="white"

@@ -10,7 +10,7 @@ export const useScrollToTarget = () => {
 
   const scrollToTarget = (scrollTarget: LocalTargets, path?: string) => {
     //In-page scroll
-    if (path || path === pathname) {
+    if (path || path === pathname || !path) {
       const element = document.getElementById(scrollTarget);
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "center" });

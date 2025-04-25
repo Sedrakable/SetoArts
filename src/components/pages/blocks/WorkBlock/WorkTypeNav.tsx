@@ -88,17 +88,17 @@ export const WorkTypeNav: React.FC<WorkTypeNavProps> = ({
       svgName: "cards",
       targetId: LocalTargets.CARDSWORK,
     },
-    {
-      title: trans.work.gallery,
-      svgName: "branding-moodboard",
-      targetId: LocalTargets.GALLERYWORK,
-    },
+    // {
+    //   title: trans.work.gallery,
+    //   svgName: "branding-moodboard",
+    //   targetId: LocalTargets.GALLERYWORK,
+    // },
   ];
 
   return (
     <Block
       title={{
-        children: "Explore My Work",
+        children: trans.titles.explore,
         font: "Outfit",
         color: "black",
         weight: 900,

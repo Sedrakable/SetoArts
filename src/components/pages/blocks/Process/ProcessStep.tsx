@@ -7,6 +7,8 @@ import { PortableTextContent } from "@/components/reuse/Text/Paragraph/PortableT
 
 import { IProcessStep } from "@/data.d";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n/request";
 
 interface ProcessStepProps extends IProcessStep {
   number: number;
@@ -16,7 +18,8 @@ interface ProcessStepProps extends IProcessStep {
  * ProcessStep - Renders an individual process step with number, title, description, and optional SVG
  */
 export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
-  ({ title, desc, number }, ref) => {
+  ({ title, desc, titleFR, descFR, number }, ref) => {
+    const locale = useLocale() as LangType;
     return (
       <AnimatedWrapper from="right" as="li" className={cn(styles.slide)}>
         <FlexDiv
@@ -52,11 +55,11 @@ export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
               weight={900}
               className={styles.title}
             >
-              {title}
+              {locale === "fr" && titleFR ? titleFR : title}
             </Heading>
             <PortableTextContent
               level="regular"
-              value={desc}
+              value={locale === "fr" && descFR ? descFR : desc}
               color="black"
               weight={400}
             />

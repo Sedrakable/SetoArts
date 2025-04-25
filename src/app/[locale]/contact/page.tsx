@@ -49,16 +49,14 @@ export default async function Contact(props: {
   params: Promise<{ locale: LangType }>;
 }) {
   const params = await props.params;
-
   const { locale } = params;
-
   const data = await getContactPageData(locale);
-  const formData: FormTitleProps = await getFormData("digital", locale);
+  const formData: FormTitleProps = await getFormData("contact", locale);
+
   return (
     <NavWrapperServer locale={locale} theme="light">
       {data.hero && <HeroV2 {...data.hero} />}
       {formData && <ImageAndForm {...formData} />}
-
       {data.collapsibles?.map((collapsible: ICollapsible, key) => {
         return <Collapsible {...collapsible} key={key} />;
       })}

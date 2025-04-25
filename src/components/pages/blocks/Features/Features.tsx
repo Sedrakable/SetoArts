@@ -5,7 +5,6 @@ import cn from "classnames";
 import { Block } from "@/components/pages/containers/Block";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
-import { SanityImage } from "@/components/reuse/SanityImage/SanityImage";
 import { IFeature } from "@/data.d";
 import { LangType } from "@/i18n/request";
 import { useLocale } from "next-intl";
@@ -14,8 +13,16 @@ import { useSvgComponent } from "@/helpers/useSvgComponent";
 import GridDiv from "@/components/reuse/GridDiv";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 
-const Feature: React.FC<IFeature> = ({ title, customImage, svgName, desc }) => {
+const Feature: React.FC<IFeature> = ({
+  title,
+  titleFR,
+  desc,
+  descFR,
+  svgName,
+}) => {
   const SvgComponent = useSvgComponent(svgName || "Bulb");
+
+  const locale = useLocale() as LangType;
 
   return (
     <FlexDiv
@@ -25,9 +32,7 @@ const Feature: React.FC<IFeature> = ({ title, customImage, svgName, desc }) => {
       gapArray={[5, 4, 4, 5]}
     >
       <div className={styles.imgWrapper}>
-        {customImage ? (
-          <SanityImage {...customImage} />
-        ) : SvgComponent ? (
+        {SvgComponent ? (
           <SvgComponent />
         ) : (
           <div>Loading...</div> // You could replace this with a spinner or placeholder
@@ -46,10 +51,10 @@ const Feature: React.FC<IFeature> = ({ title, customImage, svgName, desc }) => {
           weight={600}
           className={styles.title}
         >
-          {title}
+          {locale === "fr" && titleFR ? titleFR : title}
         </Paragraph>
         <Paragraph level="small" color="black" textAlign="center">
-          {desc}
+          {locale === "fr" && descFR ? descFR : desc}
         </Paragraph>
       </FlexDiv>
     </FlexDiv>

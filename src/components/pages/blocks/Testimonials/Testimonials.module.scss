@@ -72,6 +72,22 @@
     $width: 33%;
     $offset: 5%;
 
+    &:has(.beforeImage) {
+      .afterImage {
+        &:after {
+          content: "";
+          width: $width !important;
+          height: auto !important;
+          aspect-ratio: 1;
+          position: absolute !important;
+          top: -$offset;
+          left: -$offset;
+          border-radius: 12px;
+          background: var(--white);
+          border: $outline-stroke solid var(--black);
+        }
+      }
+    }
     .afterImage {
       width: 100%;
       aspect-ratio: 1;
@@ -79,21 +95,9 @@
         outline: $outline-stroke solid var(--black);
         outline-offset: -$outline-stroke;
       }
-
-      &:after {
-        content: "";
-        width: $width !important;
-        height: auto !important;
-        aspect-ratio: 1;
-        position: absolute !important;
-        top: -$offset;
-        left: -$offset;
-        border-radius: 12px;
-        background: var(--white);
-        border: $outline-stroke solid var(--black);
-      }
     }
     .beforeImage {
+      background: var(--black);
       width: $width !important;
       height: auto !important;
       aspect-ratio: 1;

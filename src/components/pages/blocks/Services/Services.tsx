@@ -21,6 +21,7 @@ import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrappe
 
 const Service: React.FC<IService> = ({
   title,
+  titleFR,
   svgName,
   featureBlock,
   path,
@@ -49,7 +50,7 @@ const Service: React.FC<IService> = ({
         textAlign="center"
         className={styles.title}
       >
-        {title}
+        {locale === "fr" && titleFR ? titleFR : title}
       </Heading>
 
       <FlexDiv
@@ -69,7 +70,11 @@ const Service: React.FC<IService> = ({
               featureBlock.features
                 .slice(0, numberOfTags)
                 ?.map((feature, key) => {
-                  return <Tag key={key}>{feature.title}</Tag>;
+                  return (
+                    <Tag key={key}>
+                      {locale === "en" ? feature.title : feature.titleFR}
+                    </Tag>
+                  );
                 })}
             {featureBlock?.featureStrings &&
               featureBlock.featureStrings
@@ -89,25 +94,33 @@ const Service: React.FC<IService> = ({
         >
           {/* TODO SET THE RIGHT PATHS */}
           <Button
-            variant="black"
+            variant="primary"
             fit="grow"
             path={
               path
                 ? `/${locale}${LocalPaths.DIGITAL}${path}`
-                : `/${locale}${LocalPaths.ABOUT}`
+                : `/${locale}${LocalPaths.CONTACT}`
             }
           >
-            {path ? translations.buttons.view : translations.buttons.viewMyWork}
+            {path
+              ? translations.buttons.viewService
+              : translations.buttons.contact}
           </Button>
-          {!path && (
-            <Button
-              variant="primary"
-              fit="grow"
-              path={`/${locale}${LocalPaths.CONTACT}`}
-            >
-              {translations.buttons.contact}
-            </Button>
-          )}
+
+          <Button
+            variant="black"
+            fit="grow"
+            path={`${LocalPaths.ABOUT}`}
+            scrollTarget={
+              path === LocalPaths.BRANDING
+                ? LocalTargets.BRANDINGWORK
+                : path === LocalPaths.WEB
+                ? LocalTargets.WEBWORK
+                : undefined
+            }
+          >
+            {translations.buttons.viewMyWork}
+          </Button>
         </FlexDiv>
       </FlexDiv>
     </FlexDiv>

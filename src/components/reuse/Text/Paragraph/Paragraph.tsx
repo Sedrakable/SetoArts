@@ -6,7 +6,7 @@ import {
   SpacingArrayType,
   useSpacingGenerator,
 } from "@/helpers/SpacingGenerator";
-import { ColorType, outfit } from "../Heading/Heading";
+import { ColorType, fingerPaint, outfit } from "../Heading/Heading";
 
 export interface ParagraphProps {
   as?: "p" | "li" | "span"; // ✅ Allow different HTML elements
@@ -37,6 +37,22 @@ export const Paragraph: React.FC<ParagraphProps> = ({
 
   const CustomTag = as as keyof JSX.IntrinsicElements; // ✅ Dynamic HTML tag
 
+  if (typeof children === "string") {
+    const xMatch = children.match(/\s[+-]\s/);
+    if (xMatch) {
+      const xChar = xMatch[0].trim(); // Gets "+" or "-"
+      const parts = children.split(xMatch[0]);
+      children = (
+        <>
+          {parts[0]}
+          <span className={cn(fingerPaint.className, styles.cursivePlus)}>
+            {` ${xChar} `}
+          </span>
+          {parts[1]}
+        </>
+      );
+    }
+  }
   return (
     <CustomTag
       className={cn(

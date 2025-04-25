@@ -73,6 +73,7 @@ const Work: React.FC<IWork & { columnCount: number }> = ({
       width100
       gapArray={[4, 4, 4, 5]}
       flex={{ x: "flex-start", direction: "column" }}
+      className={styles.wrapper}
     >
       <FlexDiv width100 className={styles.card}>
         <SanityImage
@@ -97,7 +98,7 @@ const Work: React.FC<IWork & { columnCount: number }> = ({
       </FlexDiv>
 
       <Paragraph level="regular" color="black" className={styles.desc}>
-        {locale === "fr" ? descFR : descEN}
+        {locale === "fr" && descFR ? descFR : descEN}
       </Paragraph>
     </FlexDiv>
   );
@@ -134,9 +135,11 @@ interface WorkBlockProps extends IWorkBlock {
 export const WorkBlock: React.FC<WorkBlockProps> = ({
   works,
   title,
+  titleFR,
   id,
   theme,
 }) => {
+  const locale = useLocale() as LangType;
   const [columnCount, setColumnCount] = useState(1);
   const { scrollToTarget } = useScrollToTarget();
 
@@ -148,7 +151,12 @@ export const WorkBlock: React.FC<WorkBlockProps> = ({
 
   return (
     <Block
-      title={{ font: "Outfit", children: title, color: "black", weight: 900 }}
+      title={{
+        font: "Outfit",
+        children: locale === "fr" && titleFR ? titleFR : title,
+        color: "black",
+        weight: 900,
+      }}
       theme={theme}
       id={id}
     >
@@ -165,7 +173,6 @@ export const WorkBlock: React.FC<WorkBlockProps> = ({
           className={cn(styles.workBlock, styles[theme])}
           width100
           fill
-          as="nav"
           onColumnCountChange={(count) => setColumnCount(count)} // Capture column count
         >
           {works.map((work, key) => (

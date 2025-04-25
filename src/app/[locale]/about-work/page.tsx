@@ -64,7 +64,7 @@ export default async function AboutPage({
                 id={
                   `#${workBlock.works[0].workType}-work-block` as LocalTargets
                 }
-                theme={key % 2 === 1 ? "light" : "yellow"}
+                theme={key % 2 === 1 ? "light" : "dash"}
                 key={key}
               />
             );

@@ -34,8 +34,12 @@ export const About: React.FC<IAbout> = ({
           sizes={["90vw", "25vw", "40vw", "30vw"]}
         />
         {/* </AnimatedWrapper> */}
-        {/* <AnimatedWrapper from="right" className={styles.textContainer}> */}
-        <FlexDiv width100 flex={{ direction: "column", x: "flex-start" }}>
+        {/* <AnimatedWrapper from="right"  */}
+        <FlexDiv
+          width100
+          flex={{ direction: "column", x: "flex-start" }}
+          className={styles.textContainer}
+        >
           <Heading
             font="Cursive"
             as="h1"

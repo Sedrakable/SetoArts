@@ -29,6 +29,7 @@ const graphic: Record<ITheme, ReactNode> = {
   dark: <DigitalDesign className={styles.graphic} />,
   wood: <GlowingSign className={styles.graphic} />,
   yellow: "",
+  dash: "",
 };
 export const Hero: React.FC<IHero> = ({
   backgroundImage,

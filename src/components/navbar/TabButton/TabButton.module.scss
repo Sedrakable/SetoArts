@@ -12,9 +12,9 @@
 }
 
 .line {
+  @include vari(height, 0px, 0px, 4px, 6px);
+  @include vari(bottom, 0px, 0px, 20px, 22px);
   position: absolute;
-  bottom: var(--pad-5);
-  height: 6px;
   width: 100%; // Cleanup: Removed redundant max-width since width is sufficient
   path {
     fill: var(--yellow);
