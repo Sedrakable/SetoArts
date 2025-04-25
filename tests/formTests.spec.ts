@@ -5,7 +5,7 @@ const baseUrl = "http://localhost:3000";
 const locales: ("en" | "fr")[] = ["en", "fr"];
 const services = ["wood-sign", "branding", "website"];
 const LocalTargets = {
-  WOODFORM: "woodForm",
+  SIGNSFORM: "woodForm",
   DIGITALFORM: "digitalForm",
 };
 
@@ -109,7 +109,7 @@ test.describe("Form Submission Tests", () => {
     const translations = getTranslations(locale);
     test(`WoodForm submission in ${locale}`, async ({ page }) => {
       await page.goto(`${baseUrl}/${locale}/wood`);
-      const formId = `#${LocalTargets.WOODFORM}`;
+      const formId = `#${LocalTargets.SIGNSFORM}`;
 
       await fillCommonFields(page, formId, locale);
       // Width and height sliders

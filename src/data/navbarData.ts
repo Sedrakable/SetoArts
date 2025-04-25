@@ -13,8 +13,8 @@ export const navContactButtonData = (
 };
 // export const navWoodButtonData = (trans: Translations): ICta => {
 //   return {
-//     path: LocalPaths.WOOD,
-//     scrollTarget: LocalTargets.WOODFORM,
+//     path: LocalPaths.SIGNS,
+//     scrollTarget: LocalTargets.SIGNSFORM,
 //     text: trans.buttons.getQuote,
 //   };
 // };
@@ -50,7 +50,7 @@ export const chooseNavButtonData = (
   // path: LocalPaths
 ): ICta => {
   // const NavButtonDataObject = {
-  //   [LocalPaths.WOOD]: navContactButtonData(trans),
+  //   [LocalPaths.SIGNS]: navContactButtonData(trans),
   //   [LocalPaths.DIGITAL]: navContactButtonData,
   //   [LocalPaths.BRANDING]: navContactButtonData,
   //   [LocalPaths.WEB]: navContactButtonData,
@@ -63,7 +63,7 @@ export const chooseNavButtonData = (
 
 export const navLinkData = (trans: Translations): (INavLink | ICta)[] => {
   return [
-    { text: trans.nav.wood, path: LocalPaths.WOOD } as ICta,
+    { text: trans.nav.wood, path: LocalPaths.SIGNS } as ICta,
     {
       title: trans.nav.digital,
       path: LocalPaths.DIGITAL,

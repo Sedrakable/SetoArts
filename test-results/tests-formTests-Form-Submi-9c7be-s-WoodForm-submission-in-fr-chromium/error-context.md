@@ -24,7 +24,7 @@ Call log:
    5 | const locales: ("en" | "fr")[] = ["en", "fr"];
    6 | const services = ["wood-sign", "branding", "web-design"];
    7 | const LocalTargets = {
-   8 |   WOODFORM: "woodForm",
+   8 |   SIGNSFORM: "woodForm",
    9 |   DIGITALFORM: "digitalForm",
    10 | };
    11 |
@@ -129,7 +129,7 @@ Call log:
   109 |     const translations = getTranslations(locale);
   110 |     test(`WoodForm submission in ${locale}`, async ({ page }) => {
   111 |       await page.goto(`${baseUrl}/${locale}/wood`);
-  112 |       const formId = `#${LocalTargets.WOODFORM}`;
+  112 |       const formId = `#${LocalTargets.SIGNSFORM}`;
   113 |
   114 |       await fillCommonFields(page, formId, locale);
   115 |       // Width and height sliders

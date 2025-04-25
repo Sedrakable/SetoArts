@@ -90,9 +90,7 @@ const Service: React.FC<IService> = ({
           flex={{ direction: "column", x: "flex-start" }}
           className={styles.bottom}
           padding={{ horizontal: [4] }}
-          // wrap
         >
-          {/* TODO SET THE RIGHT PATHS */}
           <Button
             variant="primary"
             fit="grow"

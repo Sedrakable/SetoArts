@@ -224,7 +224,7 @@ export const WoodForm: FC<WoodFormProps> = ({ title, subTitle }) => {
   ];
 
   return (
-    <FlexDiv width100 id={LocalTargets.WOODFORM} className={styles.container}>
+    <FlexDiv width100 id={LocalTargets.SIGNSFORM} className={styles.container}>
       {submit === translations.form.general.emailSent ? (
         <FormSubmitMessage locale={locale} translations={translations} />
       ) : (

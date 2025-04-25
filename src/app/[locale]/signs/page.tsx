@@ -62,7 +62,7 @@ export async function generateMetadata({
   params: Promise<{ locale: LangType }>;
 }): Promise<Metadata | null> {
   const { locale } = await params;
-  const path = LocalPaths.WOOD;
+  const path = LocalPaths.SIGNS;
   const crawl = true;
   const data: WoodPageProps = await getWoodPageData(locale);
   if (!data?.meta) return null;
@@ -77,7 +77,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function WoodPage({
+export default async function SignsPage({
   params,
 }: {
   params: Promise<{ locale: LangType }>;
@@ -98,8 +98,8 @@ export default async function WoodPage({
             {...data.hero}
             cta1={{
               text: translations.buttons.buildSign,
-              path: `/${locale}${LocalPaths.WOOD}`,
-              scrollTarget: LocalTargets.WOODFORM,
+              path: `/${locale}${LocalPaths.SIGNS}`,
+              scrollTarget: LocalTargets.SIGNSFORM,
             }}
           />
           {carouselImages && <Carousel images={carouselImages} />}

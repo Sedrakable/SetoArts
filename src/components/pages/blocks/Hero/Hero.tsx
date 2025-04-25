@@ -180,7 +180,7 @@ export const HeroV2: React.FC<IHeroV2> = ({
   subTitle,
   desc,
   cta1,
-  cta2, //TO DO ADD Quote
+  cta2,
 }) => {
   const { isMobile } = useWindowResize();
 

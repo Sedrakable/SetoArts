@@ -230,7 +230,7 @@ export interface INotFound {
 
 export enum LocalPaths {
   HOME = "/",
-  WOOD = "/wood",
+  SIGNS = "/signs",
   DIGITAL = "/digital",
   ABOUT = "/about-work",
   CONTACT = "/contact",
@@ -240,10 +240,10 @@ export enum LocalPaths {
 }
 
 export enum LocalTargets {
-  WOODFORM = "#wood-form",
+  SIGNSFORM = "#wood-form",
   DIGITALFORM = "#digital-form",
   WORK = "#work-block",
-  WOODSIGNWORK = "#wood-work-block",
+  SIGNSSIGNWORK = "#wood-work-block",
   BRANDINGWORK = "#branding-work-block",
   WEBWORK = "#website-work-block",
   CARDSWORK = "#cards-work-block",
@@ -251,5 +251,5 @@ export enum LocalTargets {
   SERVICESBLOCK = "#services-block",
   BRANDINGFAQ = "#branding-faq",
   WEBFAQ = "#web-faq",
-  WOODFAQ = "#wood-faq",
+  SIGNSFAQ = "#wood-faq",
 }

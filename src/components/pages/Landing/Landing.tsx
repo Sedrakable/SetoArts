@@ -120,7 +120,7 @@ export const Landing: React.FC<LandingProps> = ({ left, right, locale }) => {
         isLeft
         cta={{
           text: translations.buttons.buildSign,
-          path: `/${locale}${LocalPaths.WOOD}`,
+          path: `/${locale}${LocalPaths.SIGNS}`,
         }}
         color="black"
         onHover={(isHovered) => {

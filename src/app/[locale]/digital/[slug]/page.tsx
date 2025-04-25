@@ -106,7 +106,6 @@ export default async function ServicePage({
     },
   };
 
-  // TODO: Add error handling for data fetching
   if (!data) {
     redirect(`/${locale}${LocalPaths.DIGITAL}`);
   }

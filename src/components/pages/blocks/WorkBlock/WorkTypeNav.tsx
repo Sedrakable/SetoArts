@@ -81,7 +81,7 @@ export const WorkTypeNav: React.FC<WorkTypeNavProps> = ({
     {
       title: trans.work.wood,
       svgName: "wood-magnetic-lid",
-      targetId: LocalTargets.WOODSIGNWORK,
+      targetId: LocalTargets.SIGNSSIGNWORK,
     },
     {
       title: trans.work.cards,
