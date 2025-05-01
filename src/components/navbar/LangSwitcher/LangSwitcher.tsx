@@ -30,7 +30,7 @@ export const LangSwitcher: React.FC<{ onClick?: Function }> = ({ onClick }) => {
   return (
     <FlexDiv gapArray={[3]} className={styles.langWrapper} onClick={langClick}>
       <Heading as="span" level="4" font="Cursive" color="yellow" weight={500}>
-        {locale?.toUpperCase()}
+        {locale === "en" ? "FR" : "EN"}
       </Heading>
       {/* <Paragraph level="big" color="yellow">
         {locale?.toUpperCase()}

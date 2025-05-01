@@ -1,22 +1,5 @@
 @use "@/styles/mixins.scss" as *;
 
-@mixin vars() {
-  --min-height-textarea: 200px;
-  --max-height-textarea: 400px;
-  @media (min-width: $tablet) {
-    --min-height-textarea: 100px;
-    --max-height-textarea: 300px;
-  }
-
-  @media (min-width: $laptop) {
-    --min-height-textarea: 150px;
-    --max-height-textarea: 350px;
-  }
-
-  @media (min-width: $desktop) {
-  }
-}
-
 .input,
 .textarea {
   @include vari(

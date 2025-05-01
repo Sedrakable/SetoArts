@@ -326,113 +326,113 @@
   }
 }
 
-@mixin hover-side(
-  $width,
-  $padding-side,
-  $graphic-pos,
-  $bg-gradient,
-  $graphic-color
-) {
-  width: $width;
-  padding-#{$padding-side}: 64px !important; // Matches your hardcoded value
-  .backgroundImage {
-    opacity: 1;
-    img {
-      filter: grayscale(0);
-    }
-    &:after {
-      opacity: 0;
-    }
-  }
+// @mixin hover-side(
+//   $width,
+//   $padding-side,
+//   $graphic-pos,
+//   $bg-gradient,
+//   $graphic-color
+// ) {
+//   width: $width;
+//   padding-#{$padding-side}: 64px !important; // Matches your hardcoded value
+//   .backgroundImage {
+//     opacity: 1;
+//     img {
+//       filter: grayscale(0);
+//     }
+//     &:after {
+//       opacity: 0;
+//     }
+//   }
 
-  .graphic {
-    opacity: 1;
-    mix-blend-mode: normal;
-    #{$graphic-pos}: 45%;
-    path {
-      &:nth-last-child(2) {
-        fill: $graphic-color;
-      }
-    }
-  }
-}
+//   .graphic {
+//     opacity: 1;
+//     mix-blend-mode: normal;
+//     #{$graphic-pos}: 45%;
+//     path {
+//       &:nth-last-child(2) {
+//         fill: $graphic-color;
+//       }
+//     }
+//   }
+// }
 
-.leftHover {
-  @include vars;
-  .left {
-    @include hover-side(
-      75vw,
-      right,
-      left,
-      linear-gradient(-90deg, transparent 70%, var(--black) 100%),
-      var(--white)
-    );
-  }
-  .left .graphic {
-    opacity: 1;
-    mix-blend-mode: normal;
-    left: 45%;
-    right: auto;
-    top: auto;
-    bottom: -5%; // Keep it consistent or adjust
-  }
+// .leftHover {
+//   @include vars;
+//   .left {
+//     @include hover-side(
+//       75vw,
+//       right,
+//       left,
+//       linear-gradient(-90deg, transparent 70%, var(--black) 100%),
+//       var(--white)
+//     );
+//   }
+//   .left .graphic {
+//     opacity: 1;
+//     mix-blend-mode: normal;
+//     left: 45%;
+//     right: auto;
+//     top: auto;
+//     bottom: -5%; // Keep it consistent or adjust
+//   }
 
-  .right {
-    width: 25vw;
-    padding-left: 64px !important; //set vlaue
-    .backgroundImage {
-      opacity: 0;
-    }
-    .content {
-      opacity: 0;
-      transition-duration: calc(var(--trans-time) / 2);
-    }
-    .graphic {
-      top: 30%;
-      right: 10%;
-      bottom: auto;
-      left: auto;
-      scale: 0.75;
-    }
-  }
-  .logo {
-    left: 75%;
-  }
-  .tag {
-    color: var(--white) !important;
-  }
-}
+//   .right {
+//     width: 25vw;
+//     padding-left: 64px !important; //set vlaue
+//     .backgroundImage {
+//       opacity: 0;
+//     }
+//     .content {
+//       opacity: 0;
+//       transition-duration: calc(var(--trans-time) / 2);
+//     }
+//     .graphic {
+//       top: 30%;
+//       right: 10%;
+//       bottom: auto;
+//       left: auto;
+//       scale: 0.75;
+//     }
+//   }
+//   .logo {
+//     left: 75%;
+//   }
+//   .tag {
+//     color: var(--white) !important;
+//   }
+// }
 
-.rightHover {
-  @include vars;
-  .right {
-    @include hover-side(
-      75vw,
-      left,
-      right,
-      linear-gradient(90deg, transparent 70%, var(--black) 100%),
-      var(--black)
-    );
-  }
-  .left {
-    width: 25vw;
-    padding-right: 64px !important; //set vlaue
-    .content {
-      opacity: 0;
-      transition-duration: calc(var(--trans-time) / 2);
-    }
-    .backgroundImage {
-      opacity: 0;
-    }
-    .graphic {
-      bottom: 30%;
-      left: 5%;
-      top: auto; // Clear top to avoid conflict
-      right: auto; // Clear right to avoid conflict
-      scale: 0.75;
-    }
-  }
-  .logo {
-    left: 25%;
-  }
-}
+// .rightHover {
+//   @include vars;
+//   .right {
+//     @include hover-side(
+//       75vw,
+//       left,
+//       right,
+//       linear-gradient(90deg, transparent 70%, var(--black) 100%),
+//       var(--black)
+//     );
+//   }
+//   .left {
+//     width: 25vw;
+//     padding-right: 64px !important; //set vlaue
+//     .content {
+//       opacity: 0;
+//       transition-duration: calc(var(--trans-time) / 2);
+//     }
+//     .backgroundImage {
+//       opacity: 0;
+//     }
+//     .graphic {
+//       bottom: 30%;
+//       left: 5%;
+//       top: auto; // Clear top to avoid conflict
+//       right: auto; // Clear right to avoid conflict
+//       scale: 0.75;
+//     }
+//   }
+//   .logo {
+//     left: 25%;
+//   }
+// }
