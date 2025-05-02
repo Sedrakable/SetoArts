@@ -1,35 +1,77 @@
 import { MetadataRoute } from "next";
+import { sitemapWoodWorkQuery } from "./api/generateSanityQueries";
+import { fetchPage } from "@/app/api/fetchPage";
+import { ISlug, LocalPaths } from "@/data.d";
+import { ICustomImage } from "@/components/reuse/SanityImage/SanityImage";
+import { SanityDocument } from "@sanity/client";
+import { urlFor } from "./api/client";
 
-interface SiteMapEntry {
-  url: string;
-  lastModified: Date;
-  alternates: {
-    languages: {
-      en: string;
-      fr: string;
-    };
-  };
-}
-//TODO
-const baseUrls = [
-  "/",
-  "/service/branding",
-  "/service/se",
-  "/service/total-package",
-  "/service/custom-work",
-  "/about-work",
-  "/blog",
-  "/contact",
-];
+const BASE_URL = process.env.BASE_NAME || "https://setoxarts.com";
 
-const generateSiteMapEntry = (baseUrl: string): SiteMapEntry => {
-  const url = `https://setoxarts.com/en${baseUrl}`;
-  const enUrl = url;
-  const frUrl = `https://setoxarts.com/fr${baseUrl}`;
+const staticUrls: Record<string, string[]> = {
+  base: [LocalPaths.HOME, LocalPaths.SIGNS, LocalPaths.CONTACT],
+  service: [
+    LocalPaths.DIGITAL,
+    `${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`,
+    `${LocalPaths.DIGITAL}${LocalPaths.WEB}`,
+  ],
+  work: [LocalPaths.ABOUT],
+};
+const allUrls: string[] = Object.values(staticUrls).flat();
+
+const priorityMap: Record<string, number> = {
+  [LocalPaths.HOME]: 0.9,
+  [LocalPaths.SIGNS]: 1.0,
+  [LocalPaths.CONTACT]: 0.9,
+  [LocalPaths.DIGITAL]: 0.9,
+  [`${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`]: 1.0,
+  [`${LocalPaths.DIGITAL}${LocalPaths.WEB}`]: 1.0,
+  [LocalPaths.ABOUT]: 0.8,
+};
+
+const changeFrequencyMap: Record<
+  string,
+  MetadataRoute.Sitemap[number]["changeFrequency"]
+> = {
+  [LocalPaths.HOME]: "monthly",
+  [LocalPaths.SIGNS]: "monthly",
+  [LocalPaths.CONTACT]: "monthly",
+  [LocalPaths.DIGITAL]: "monthly",
+  [`${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`]: "monthly",
+  [`${LocalPaths.DIGITAL}${LocalPaths.WEB}`]: "monthly",
+  [LocalPaths.ABOUT]: "weekly",
+};
+
+// const staticUrls: Record<string, string[]> = {
+//   base: [LocalPaths.HOME, LocalPaths.SIGNS, LocalPaths.CONTACT],
+//   service: [
+//     LocalPaths.DIGITAL,
+//     `${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`,
+//     `${LocalPaths.DIGITAL}${LocalPaths.WEB}`,
+//   ],
+//   work: [
+//     LocalPaths.ABOUT,
+//     `${LocalPaths.ABOUT}${LocalTargets.SIGNSSIGNWORK}`,
+//     `${LocalPaths.ABOUT}${LocalTargets.BRANDINGWORK}`,
+//     `${LocalPaths.ABOUT}${LocalTargets.WEBWORK}`,
+//     `${LocalPaths.ABOUT}${LocalTargets.CARDSWORK}`,
+//   ],
+//   legal: [
+//     `${LocalPaths.LEGAL}${LocalPaths.TERMS}`,
+//     `${LocalPaths.LEGAL}${LocalPaths.POLICIES}`,
+//   ],
+// };
+
+// Generate static entries for portfolio routes
+const generateStaticEntries: MetadataRoute.Sitemap = allUrls.map((baseUrl) => {
+  const enUrl = `${BASE_URL}/en${baseUrl}`;
+  const frUrl = `${BASE_URL}/fr${baseUrl}`;
 
   return {
-    url,
-    lastModified: new Date(),
+    url: enUrl,
+    lastModified: new Date().toISOString(),
+    changeFrequency: changeFrequencyMap[baseUrl] || "monthly",
+    priority: priorityMap[baseUrl] || 0.9,
     alternates: {
       languages: {
         en: enUrl,
@@ -37,10 +79,60 @@ const generateSiteMapEntry = (baseUrl: string): SiteMapEntry => {
       },
     },
   };
+});
+
+export interface SitemapWorkQueryType extends SanityDocument {
+  slug: ISlug; // Optional for internal links
+  workType: "wood"; // From Sanity// External URL (e.g., Behance, Kickstarter)
+  images: ICustomImage[]; // For modal slider (Wood Signs)
+}
+
+async function getWoodWorkData() {
+  try {
+    const query = sitemapWoodWorkQuery;
+    const data: SitemapWorkQueryType[] = await fetchPage(query);
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch woodwork data:", error);
+    return [];
+  }
+}
+
+//NED english and French
+const generateDynamicEntries = async (): Promise<MetadataRoute.Sitemap> => {
+  const workData: SitemapWorkQueryType[] = await getWoodWorkData();
+
+  const productEntries: MetadataRoute.Sitemap = workData.map(
+    (work: SitemapWorkQueryType) => {
+      const enUrl = `${BASE_URL}/en${LocalPaths.ABOUT}${work.slug.current}`;
+      const frUrl = `${BASE_URL}/fr${LocalPaths.ABOUT}${work.slug.current}`;
+      return {
+        url: enUrl,
+        lastModified:
+          work._updatedAt && !isNaN(new Date(work._updatedAt).getTime())
+            ? new Date(work._updatedAt).toISOString()
+            : new Date().toISOString(),
+        changeFrequency: "weekly",
+        priority: 0.7,
+        images:
+          work.images
+            ?.filter((image) => image.image) // Ensure image exists
+            .map((image) => urlFor(image.image).url()) || [],
+        alternates: {
+          languages: {
+            en: enUrl,
+            fr: frUrl,
+          },
+        },
+      };
+    }
+  );
+
+  return productEntries;
 };
 
-const siteMapEntries: SiteMapEntry[] = baseUrls.map(generateSiteMapEntry);
-
-export default function sitemap(): MetadataRoute.Sitemap {
-  return siteMapEntries;
+// Adapt the output to match the Next.js expected structure
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const dynamicEntries = await generateDynamicEntries();
+  return [...generateStaticEntries, ...dynamicEntries];
 }

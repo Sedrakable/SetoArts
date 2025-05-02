@@ -237,6 +237,8 @@ export enum LocalPaths {
   BRANDING = "/branding",
   WEB = "/website",
   LEGAL = "/legal",
+  TERMS = "/terms-and-conditions",
+  POLICIES = "/privacy-policy",
 }
 
 export enum LocalTargets {
