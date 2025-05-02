@@ -129,3 +129,9 @@ export const legalPageQuery = (locale: LangType, slug: string): string => {
 export const notFoundPageQuery = (locale: LangType): string => {
   return `*[_type == 'notFoundPage' && lang == '${locale}'][0]`;
 };
+
+export const sitemapWoodWorkQuery: string = `*[_type == 'work' && workType == 'wood']{
+  images,
+  slug,
+  _updatedAt,
+  }`;
