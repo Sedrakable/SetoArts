@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 // import Script from "next/script";
 import styles from "./layout.module.scss";
 import "@/styles/Main.css";
@@ -11,10 +12,10 @@ import bigStroke from "/public/photos/BigStroke.webp";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const viewport = {
-//   width: "device-width",
-//   initialScale: 1,
-// };
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export default async function LocaleLayout({
   children,
@@ -31,28 +32,7 @@ export default async function LocaleLayout({
           <head>
             <link rel="preload" href={bigStroke.src} as="image" />
             <meta name="theme-color" content="#fec301" />
-            <meta
-              name="facebook-domain-verification"
-              content="z6nna7jlyl6ehzowkxc3qp1oha3wb6"
-            />
-            {/* <Script
-              id="facebook-pixel"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '764726835805460');
-            fbq('track', 'PageView');
-            `,
-              }}
-            /> */}
+
             <noscript>
               <img
                 alt="facebook-pixel"
@@ -69,6 +49,7 @@ export default async function LocaleLayout({
             </div>
           </body>
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID!} />
+          <Analytics />
         </NextIntlClientProvider>
       </html>
     )
