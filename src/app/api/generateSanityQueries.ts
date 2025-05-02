@@ -1,7 +1,7 @@
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 
-export const navbarPageQuery = (locale: LangType): string => {
-  return `*[_type == 'navbar' && lang == '${locale}'][0]`;
+export const navbarPageQuery = (locale: LangType, type: string): string => {
+  return `*[_type == 'navbar' && lang == '${locale}' && type == '${type}'][0]`;
 };
 
 export const footerPageQuery = (locale: LangType): string => {
@@ -18,70 +18,64 @@ export const footerPageQuery = (locale: LangType): string => {
   }`;
 };
 
-export const homePageQuery = (locale: LangType): string => {
-  return `*[_type == 'homePage' && lang == '${locale}'][0] {
+export const landingPageQuery = (locale: LangType): string => {
+  return `*[_type == 'landingPage' && lang == '${locale}'][0] {
+    meta,
+    leftSide->,
+    rightSide->,
+  }`;
+};
+
+export const digitalPageQuery = (locale: LangType): string => {
+  return `*[_type == 'digitalPage' && lang == '${locale}'][0] {
         meta,
-        hero{
-          ...,
-          quote->,
-        },
-        services-> {
-          services[]->{
-            path,
-            title,
-            features->{
-              features[]->{
-                title,
-                customImage,
-              }
-            },
-            processes,
-            price
-          },
-        },
-        values->,
-        about->,
+        hero,
         work->{
-          works[]->{
-            slug,
-            thumbnailImage,
-            customImages,
-            title,
-            desc,
-            primaryLink,
-          },
+          works[]->,
+        },
+        questions[]->,
+        solutionBlock->,
+        testimonials[]->,
+        services[]-> {
+          ...,
+          featureBlock->{
+            features[]->,
+            featureStrings[],
+          }
         },
       }`;
 };
 
+export const woodPageQuery = (locale: LangType): string => {
+  return `*[_type == 'woodPage' && lang == '${locale}'][0] {
+        meta,
+        hero,
+        featureBlock->{
+          features[]->,
+        },
+        questions[]->,
+        solutionBlock->,
+        testimonials[]->,
+        processBlock->,
+        collapsible->,
+      }`;
+};
+
+export const carouselQuery = `
+  *[_type == "work" && workType == "wood"] {
+    images[]
+  }
+`;
+
 export const servicePageQuery = (locale: LangType, slug: string): string => {
   return `*[_type == 'servicePage' && lang == '${locale}' && path == '/${slug}'][0] {
     meta,
-    hero{
-      ...,
-      quote->,
-    },
-    features->{
+    hero,
+    featureBlock->{
       features[]->,
     },
-    processes->{
-      processes[]->{
-        ...,
-        features[]->,
-      },
-    },
-    price,
-    work->{
-      title,
-      works[]->{
-        slug,
-        customImages,
-        thumbnailImage,
-        title,
-        desc,
-        primaryLink,
-      }
-    },
+    processBlock->,
+    collapsible->,
   }`;
 };
 
@@ -90,8 +84,9 @@ export const aboutPageQuery = (locale: LangType): string => {
     meta,
     about->,
     values->,
-    work->{
-      works[]->,
+    workBlocks[]->{
+    ...,
+    works[]->,
     },
   }`;
 };
@@ -103,33 +98,28 @@ export const workPageQuery = (slug: string): string => {
   }`;
 };
 
-export const blogPageQuery = (locale: LangType): string => {
-  return `*[_type == 'blogPage' && lang == '${locale}'][0]{
-    meta,
-    blog ->{
-      articles[]->{
-        path,
-        title,
-        desc,
-        date,
-        customImage
-      }
-    }
-}`;
-};
-
-export const articlePageQuery = (locale: LangType, slug: string): string => {
-  return `*[_type == 'articlePage' && lang == '${locale}' && path == '${slug}'][0]{
+export const worksQuery = `*[_type == 'work' && workType in ['branding', 'website', 'cards']]{
     ...,
     meta,
   }`;
-};
 
 export const contactPageQuery = (locale: LangType): string => {
   return `*[_type == 'contactPage' && lang == '${locale}'][0] {
     meta,
-    desc,
+    hero,
+    collapsibles[]->,
   }`;
+};
+
+export const coollapsibleFaqQuery = (locale: LangType): string => {
+  return `*[_type == 'collapsible' && lang == '${locale}'] {
+    id,
+    title,
+  }`;
+};
+
+export const formQuery = (slug: string, locale: LangType): string => {
+  return `*[_type == '${slug}Form' && lang == '${locale}'][0]`;
 };
 
 export const legalPageQuery = (locale: LangType, slug: string): string => {

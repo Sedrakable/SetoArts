@@ -1,0 +1,30 @@
+@use "@/styles/mixins.scss" as *;
+
+.button {
+  svg {
+    position: relative;
+    overflow: hidden;
+    transition: 200ms;
+  }
+
+  &:hover {
+    scale: 1.1;
+    svg,
+    path,
+    polygon {
+      fill: var(--button-hover-color) !important;
+    }
+  }
+
+  &.black {
+    &:hover {
+      --button-hover-color: var(--white);
+    }
+  }
+
+  &.white {
+    &:hover {
+      --button-hover-color: var(--black);
+    }
+  }
+}

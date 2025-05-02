@@ -1,38 +1,61 @@
-import { FancyTextProps } from "./components/reuse/FancyText";
-// @ts-ignore
 import { ICustomImage } from "./components/reuse/SanityImage/SanityImage";
+
+export type ServiceType = "wood" | "digital";
+export type DigitalServiceType = "branding" | "website";
 
 export interface ISeo {
   metaTitle: string;
   metaDesc: string;
-  metaKeywords: string[];
+  metaImage?: string;
 }
 
 export interface ICta {
   text: string;
-  link?: string;
+  path?: string;
+  scrollTarget?: LocalTargets;
+}
+
+export interface IExternalLink {
+  text: string;
+  link: string;
 }
 
 export interface ISlug {
   current: string;
   _type: string;
 }
+
 export interface IFancyText {
-  part1: string;
-  part2: string;
-  part3?: string;
+  value: any; // Will store the PortableText content
 }
 
-export interface IHero {
-  subTitle?: IFancyText;
-  title: IFancyText;
-  desc: string;
-  customImage: ICustomImage;
-  ctas?: {
-    cta1: ICta;
-    cta2?: ICta;
-  };
+export interface IHeroV2 {
+  title: string;
+  subTitle?: string;
+  desc: any;
+  backgroundImage: ICustomImage;
+  cta1?: ICta;
+  cta2?: ICta;
   quote: IQuote;
+}
+
+export type ITheme = "light" | "dark" | "yellow" | "dash" | "wood";
+
+export interface IHero {
+  backgroundImage: ICustomImage;
+  foregroundImage: ICustomImage;
+  subTitle?: string;
+  cta1: ICta;
+  cta2?: ICta;
+  message?: string;
+  theme?: ITheme;
+}
+
+export interface ILandingSide {
+  title: string;
+  desc: any;
+  backgroundImage: ICustomImage;
+  tags: string[];
 }
 
 export interface IQuote {
@@ -46,31 +69,57 @@ export interface IServices {
 
 export interface IService {
   title: string;
-  metaTitle: string;
-  path: string;
-  features: IFeatures;
-  processes: IProcesses;
-  price?: string;
+  titleFR?: string;
+  svgName: string;
+  path?: string;
+  featureBlock: IFeatureBlock;
 }
 
-export interface IFeatures {
+export interface IFeatureBlock {
   features: IFeature[];
+  featureStrings?: string[]; // For the feature block Custom Work in the service page
 }
 
 export interface IFeature {
-  customImage: ICustomImage;
+  customImage?: ICustomImage; // Optional image field
+  svgName?: string; // Optional SVG name
   title: string;
   desc: string;
+  titleFR: string; // Optional French title
+  descFR: string; // Optional French description
 }
 
-export interface IProcesses {
-  processes: IProcess[];
-}
-
-export interface IProcess {
+export interface IQuestion {
   title: string;
-  desc: string;
-  features: IFeature[];
+  extraNote?: string;
+  desc: any;
+  theme?: ITheme;
+}
+
+export interface ITestimonial {
+  beforeImage?: ICustomImage;
+  afterImage: ICustomImage;
+  name: string;
+  company: string;
+  profileImage?: ICustomImage;
+  title?: string;
+  review: any;
+  titleFR?: string;
+  reviewFR: any;
+}
+
+export interface IProcessStep {
+  title: string;
+  desc: any;
+  titleFR?: string;
+  descFR?: any;
+}
+
+export interface IFrameVideo {
+  format: "png" | "webp" | "jpg";
+  folder: string;
+  firstIndex: number;
+  lastIndex: number;
 }
 
 export interface IValues {
@@ -82,22 +131,11 @@ export interface IValue {
   desc: string;
 }
 
-export interface IAboutContent {
-  customImage: ICustomImage;
-  name?: string;
-  title1: FancyTextProps;
-  desc1: string;
-  title2?: string;
-  desc2?: string;
-  cta?: boolean;
-}
-
 export interface IAbout {
-  content: IAboutContent;
-}
-
-export interface IWorkBlock {
-  works: IWork[];
+  profileImage: ICustomImage;
+  title: string;
+  subTitle: string;
+  desc: any;
 }
 
 export interface IBlog {
@@ -114,29 +152,52 @@ export interface IArticle {
   content: IBlock[];
 }
 
-export interface IWork {
-  slug: ISlug;
-  thumbnailImage: ICustomImage;
-  customImages: ICustomImage[];
+export type workType = "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
+
+export interface IWorkBlock {
   title: string;
-  desc: string;
-  primaryLink: ICta;
-  secondaryLinks?: ICta[];
-  behanceProjectId?: string;
-  kickstarterProjectlink?: string;
+  titleFR?: string;
+  works: IWork[];
+  id: LocalTargets; // For anchor scrolling
+}
+
+export interface IWork {
+  title?: string; // Optional for gallery
+  descEN?: string;
+  descFR?: string;
+  thumbnailImage: ICustomImage; // Sanity image asset
+  slug?: ISlug; // Optional for internal links
+  workType: "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
+  link?: string; // External URL (e.g., Behance, Kickstarter)
+  images?: ICustomImage[]; // For modal slider (Wood Signs)
 }
 
 export interface INavLink {
   title: string;
+  path: string;
   ctaArray: ICta[];
 }
 
 export interface INavBar {
+  navButton: ICta;
   links: (INavLink | ICta)[];
+  theme?: ITheme;
+  hideLogo?: boolean;
+  socials?: ISocials;
 }
 
+export interface IFooterFAQLinks {
+  title: string;
+  id: string;
+}
+
+export interface IFooter {
+  legals: { title: string; path: string }[];
+  faqs?: IFooterFAQLinks[];
+  trademark: string;
+  socials: ISocials;
+}
 export interface ISocials {
-  title?: string;
   links: ICta[];
 }
 
@@ -152,14 +213,14 @@ export interface ILegalPage {
   title: string;
   data: IBlock[];
 }
-export interface IFooter {
-  legals: { title: string; path: string }[];
-  trademark: string;
-  socials: ISocials;
-}
 
-export interface IForm {
-  desc: IFancyText;
+export interface ICollapsible {
+  title?: string;
+  id?: string;
+  questions: {
+    question: string;
+    answer: any;
+  }[];
 }
 
 export interface INotFound {
@@ -167,17 +228,28 @@ export interface INotFound {
   desc: string;
 }
 
-/* eslint-disable */
 export enum LocalPaths {
-  HOME = "/home",
+  HOME = "/",
+  SIGNS = "/signs",
+  DIGITAL = "/digital",
   ABOUT = "/about-work",
-  BLOG = "/blog",
   CONTACT = "/contact",
-  LEGAL = "/legal",
-  SERVICE = "/service",
   BRANDING = "/branding",
-  WEB = "/web-design",
-  PACKAGE = "/total-package",
-  CUSTOM = "/custom-work",
+  WEB = "/website",
+  LEGAL = "/legal",
 }
-/* eslint-enable */
+
+export enum LocalTargets {
+  SIGNSFORM = "#wood-form",
+  DIGITALFORM = "#digital-form",
+  WORK = "#work-block",
+  SIGNSSIGNWORK = "#wood-work-block",
+  BRANDINGWORK = "#branding-work-block",
+  WEBWORK = "#website-work-block",
+  CARDSWORK = "#cards-work-block",
+  GALLERYWORK = "#gallery-work-block",
+  SERVICESBLOCK = "#services-block",
+  BRANDINGFAQ = "#branding-faq",
+  WEBFAQ = "#web-faq",
+  SIGNSFAQ = "#wood-faq",
+}

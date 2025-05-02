@@ -1,56 +1,61 @@
 import { workPageQuery } from "@/app/api/generateSanityQueries";
-import { useFetchPage } from "@/app/api/useFetchPage";
-import { setMetadata } from "@/components/SEO";
+import { fetchPage } from "@/app/api/fetchPage";
+import { WorkModalContent } from "@/components/pages/blocks/WorkBlock/WorkModalContent";
+import { Modal } from "@/components/reuse/Modal/Modal";
 import { ISeo, IWork, LocalPaths } from "@/data.d";
-import { LangType } from "@/i18n";
+import { redirect } from "next/navigation";
+import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import { setMetadata } from "@/components/SEO";
 
 export interface WorkProps extends IWork {
   meta: ISeo;
 }
 
-const Modal = dynamic(
-  () => import("@/components/reuse/Modal").then((module) => module.Modal),
-  {
-    ssr: false,
+const getWorkPageData = async (slug: string): Promise<WorkProps | null> => {
+  try {
+    const workQuery = workPageQuery(slug);
+    return await fetchPage(workQuery);
+  } catch {
+    return null;
   }
-);
-
-const getWorkPageData = async (slug: string) => {
-  const type = "work";
-  const workQuery = workPageQuery(slug);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const workData: WorkProps = await useFetchPage(workQuery, `${type}-${slug}`);
-
-  return workData;
 };
 
 export async function generateMetadata({
-  params: { locale, slug },
+  params,
 }: {
-  params: { locale: LangType; slug: string };
+  params: Promise<{ locale: LangType; slug: string }>;
 }): Promise<Metadata> {
-  const workPageData: WorkProps = await getWorkPageData(slug);
+  const { locale, slug } = await params;
   const path = `${LocalPaths.ABOUT}/${slug}`;
-  const crawl = true;
+  const workPageData = await getWorkPageData(slug);
 
   return setMetadata({
     locale,
-    metaTitle: workPageData.meta.metaTitle,
-    metaDesc: workPageData.meta.metaDesc,
-    metaKeywords: workPageData.meta.metaKeywords,
+    metaTitle: workPageData?.meta.metaTitle || "Work | Seto X Arts",
+    metaDesc: workPageData?.meta.metaDesc || "Explore our creative work.",
     path,
-    crawl,
+    crawl: true,
   });
 }
 
 export default async function WorkModal({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string; locale: LangType }>;
 }) {
-  const workPageData: WorkProps = await getWorkPageData(slug);
+  const { slug, locale } = await params;
+  const workPageData = await getWorkPageData(slug);
 
-  return workPageData && <Modal {...workPageData} />;
+  if (!workPageData) {
+    redirect(`/${locale}${LocalPaths.ABOUT}`);
+  }
+
+  return (
+    workPageData && (
+      <Modal>
+        <WorkModalContent {...workPageData} />
+      </Modal>
+    )
+  );
 }

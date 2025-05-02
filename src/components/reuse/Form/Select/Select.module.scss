@@ -1,0 +1,84 @@
+@use "@/styles/mixins.scss" as *;
+
+@mixin vars() {
+  --width: 100%;
+  --dropdown-max-height: 300px;
+  @media (min-width: $tablet) {
+    --width: auto;
+  }
+  @media (min-width: $laptop) {
+    --dropdown-max-height: 250px;
+  }
+  @media (min-width: $desktop) {
+    --dropdown-max-height: 300px;
+  }
+}
+
+.container {
+  @include vars;
+  position: relative;
+
+  &.disabled {
+    opacity: 0.5;
+    .select {
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+
+  .select {
+    cursor: pointer;
+    @include vari(height, 60px, 60px, 48px, 60px);
+    border-radius: var(--border-radius-small);
+    background: var(--grad);
+    box-shadow: var(--black-shadow);
+    border: 2px solid var(--black);
+    &.invalid {
+      outline: 2px solid var(--error);
+    }
+    p {
+      @include vari(
+        font-size,
+        var(--paragraph-regular),
+        var(--paragraph-regular),
+        var(--paragraph-small),
+        var(--paragraph-regular)
+      );
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--black-shadow);
+    border: 2px solid var(--black);
+    max-height: var(--dropdown-max-height);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    margin-top: var(--pad-3);
+
+    .tab {
+      cursor: pointer;
+      &:hover {
+        background: var(--grey);
+      }
+      &.selected {
+        background: var(--grad); // Visual cue for selected option
+      }
+      &.highlighted {
+        background: var(--grey); // Distinct from selected
+      }
+      p {
+        text-wrap: nowrap;
+      }
+    }
+  }
+}

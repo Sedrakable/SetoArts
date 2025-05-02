@@ -1,6 +1,5 @@
 import { Metadata } from "next";
-import { LangType } from "@/i18n";
-import dynamic from "next/dynamic";
+import { LangType } from "@/i18n/request";
 import { ISeo } from "@/data.d";
 
 interface SEOProps extends ISeo {
@@ -8,97 +7,52 @@ interface SEOProps extends ISeo {
   path: string;
   crawl?: boolean;
 }
-// Dynamic import for the BreadcrumbJsonLd component
-const DynamicBreadcrumbJsonLd = dynamic(
-  () => import("next-seo").then((mod) => mod.BreadcrumbJsonLd),
-  { ssr: false }
-);
+
 export const setMetadata = ({
   locale,
   metaTitle,
   metaDesc,
-  metaKeywords,
+  metaImage = "https://i.imgur.com/u9EH6vH.png",
   path,
-  crawl,
+  crawl = true,
 }: SEOProps): Metadata => {
-  const metadata: Metadata = {
-    title: metaTitle,
-    description: metaDesc,
-    keywords: metaKeywords,
+  const baseUrl = process.env.BASE_NAME;
+  const canonicalUrl = `${baseUrl}/${locale}${path}`;
+  return {
+    title: metaTitle || "Seto X Arts",
+    description: metaDesc || "Explore creative work by Seto X Arts.",
     authors: [
       {
         name: "Sedrak Nadzharyan",
         url: "https://www.linkedin.com/in/sedrak-n/",
       },
     ],
-    robots: {
-      index: crawl,
-      follow: crawl,
-    },
+    robots: { index: crawl, follow: crawl },
     openGraph: {
-      url: `https://www.setoxarts.com/${locale}${path}`,
+      url: canonicalUrl,
       type: "website",
-      title: metaTitle,
-      description: metaDesc,
-      locale: locale,
+      title: metaTitle || "Seto X Arts",
+      description: metaDesc || "Explore creative work by Seto X Arts.",
+      locale,
       images: [
-        {
-          url: "https://i.imgur.com/u9EH6vH.png",
-          width: 1200,
-          height: 630,
-          alt: "Seto X Arts",
-        },
+        { url: metaImage, width: 1200, height: 630, alt: "Seto X Arts" },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: metaTitle,
-      description: metaDesc,
+      title: metaTitle || "Seto X Arts",
+      description: metaDesc || "Explore creative work by Seto X Arts.",
       site: "@SetoXArts",
       images: [
-        {
-          url: "https://i.imgur.com/u9EH6vH.png",
-          width: 1200,
-          height: 630,
-          alt: "Seto X Arts",
-        },
+        { url: metaImage, width: 1200, height: 630, alt: "Seto X Arts" },
       ],
     },
     alternates: {
-      canonical: `https://www.setoxarts.com/${locale}${path}`,
+      canonical: canonicalUrl,
       languages: {
         en: `https://www.setoxarts.com/en${path}`,
         fr: `https://www.setoxarts.com/fr${path}`,
       },
     },
   };
-
-  return metadata;
 };
-
-export const JsonLD = () => (
-  <DynamicBreadcrumbJsonLd
-    itemListElements={[
-      {
-        position: 1,
-        name: "Home",
-        item: "https://setoxarts.com",
-      },
-      {
-        position: 2,
-        name: "Branding",
-        item: "https://setoxarts.com/en/service/branding",
-      },
-      {
-        position: 3,
-        name: "Web Design",
-        item: "https://setoxarts.com/en/service/web-design",
-      },
-      {
-        position: 4,
-        name: "Contact",
-        item: "https://setoxarts.com/en/contact",
-      },
-    ]}
-  />
-);

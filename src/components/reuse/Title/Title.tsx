@@ -2,9 +2,7 @@ import React, { PropsWithChildren } from "react";
 import styles from "./Title.module.scss";
 
 import FlexDiv from "../../reuse/FlexDiv";
-import { ColorType, Heading } from "../../reuse/Heading";
-import Image from "next/image";
-import stroke from "../../../../public/photos/TitleStroke.webp";
+import { ColorType, Heading } from "../Text/Heading/Heading";
 
 interface TitleProps {
   title: string;
@@ -17,21 +15,22 @@ export const Title: React.FC<PropsWithChildren<TitleProps>> = ({
   return (
     <FlexDiv className={styles.title} padding={{ horizontal: [5, 6, 6, 7] }}>
       <Heading
-        font="Seto"
+        font="Outfit"
         as="h2"
         level="2"
         color={color}
         className={styles.heading}
         textAlign="center"
+        weight={900}
       >
         {title}
       </Heading>
-      <Image
+      {/* <Image
         src={stroke.src}
         width={stroke.width}
         height={stroke.height}
         alt="stroke"
-      />
+      /> */}
     </FlexDiv>
   );
 };

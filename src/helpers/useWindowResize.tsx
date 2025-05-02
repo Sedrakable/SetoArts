@@ -1,47 +1,72 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useWindowDimensions } from "./useWindowDimensions";
 
-export const DESKTOP_BREAKPOINT_WIDTH = 1680;
-export const LAPTOP_BREAKPOINT_WIDTH = 1200;
-export const TABLET_BREAKPOINT_WIDTH = 640;
+export const BREAKPOINTS = {
+  DESKTOP: 1680,
+  LAPTOP: 1200,
+  TABLET_PLUS: 900,
+  TABLET: 640,
+} as const;
 
-export function useWindowResize() {
-  const { width } = useWindowDimensions();
+export type ResponsiveView = {
+  isMobile: boolean;
+  isTablet: boolean;
+  isLaptop: boolean;
+  isDesktop: boolean;
+  isMobileOrTablet: boolean;
+  screenWidth: number;
+};
 
-  const [responsiveView, setResponsiveView] = useState<{
-    isMobile: boolean;
-    isTablet: boolean;
-    isLaptop: boolean;
-    isDesktop: boolean;
-    isMobileOrTablet: boolean;
-  }>(() => calculateResponsiveView(width));
+export function useWindowResize(): ResponsiveView {
+  // Start with default mobile view
+  const [state, setState] = useState<ResponsiveView>({
+    isMobile: true,
+    isTablet: false,
+    isLaptop: false,
+    isDesktop: false,
+    isMobileOrTablet: true,
+    screenWidth: typeof window !== "undefined" ? window.innerWidth : 0,
+  });
 
   useEffect(() => {
-    function handleResize() {
-      setResponsiveView(calculateResponsiveView(window.innerWidth));
-    }
+    // Calculate responsive view based on width
+    const calculate = (width: number) => {
+      const isMobile = width < BREAKPOINTS.TABLET;
+      const isTablet =
+        width >= BREAKPOINTS.TABLET && width < BREAKPOINTS.LAPTOP;
+      const isLaptop =
+        width >= BREAKPOINTS.LAPTOP && width < BREAKPOINTS.DESKTOP;
+      const isDesktop = width >= BREAKPOINTS.DESKTOP;
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+      return {
+        isMobile,
+        isTablet,
+        isLaptop,
+        isDesktop,
+        isMobileOrTablet: isMobile || isTablet,
+        screenWidth: width,
+      };
+    };
+
+    // Initial calculation
+    setState(calculate(window.innerWidth));
+
+    // Efficient resize handler with debounce
+    let timeout: ReturnType<typeof setTimeout>;
+    const handleResize = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setState(calculate(window.innerWidth));
+      }, 100);
+    };
+
+    window.addEventListener("resize", handleResize, { passive: true });
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
-  return responsiveView;
-}
-
-function calculateResponsiveView(width: number | null) {
-  const isMobile = width! < TABLET_BREAKPOINT_WIDTH;
-  const isTablet =
-    width! >= TABLET_BREAKPOINT_WIDTH && width! < LAPTOP_BREAKPOINT_WIDTH;
-  const isLaptop =
-    width! >= LAPTOP_BREAKPOINT_WIDTH && width! < DESKTOP_BREAKPOINT_WIDTH;
-  const isDesktop = width! >= DESKTOP_BREAKPOINT_WIDTH;
-
-  return {
-    isMobile,
-    isTablet,
-    isLaptop,
-    isDesktop,
-    isMobileOrTablet: isMobile || isTablet,
-  };
+  return state;
 }

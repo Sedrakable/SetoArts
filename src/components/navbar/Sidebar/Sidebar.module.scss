@@ -1,60 +1,74 @@
-@import "../../../styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
-.overlay {
-  position: absolute;
-  content: "";
-  width: 100%;
-
-  background-color: var(--black);
-  opacity: 0.95;
-  height: 100vh;
-  z-index: -1;
-}
 .sidebar {
   @include flexColumn(flex-start, flex-start);
-
   position: fixed;
-  width: 100%;
-  height: 100%;
-  transform: translateX(100%);
   top: 0;
-  right: 0;
-  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  transform: translateX(100vw);
   z-index: 12;
   transition: transform 200ms ease;
 
   &.isOpen {
     transform: translateX(0);
   }
+}
 
-  .closeTab {
-    height: var(--navbar-height);
-    background-color: var(--black);
-    path:global(.x) {
-      fill: var(--white);
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--black);
+  opacity: 0.95;
+  z-index: -1;
+}
+
+.closeTab {
+  height: var(--navbar-height);
+  background-color: var(--black);
+
+  path:nth-child(2) {
+    fill: var(--white);
+  }
+}
+
+.tabs {
+  overflow: hidden;
+  max-width: 100%;
+  .tabWrapper {
+    background-color: var(--white);
+    width: 100%;
+    max-height: var(--navbar-height);
+    height: fit-content;
+    border-bottom: 2px solid hsl(from var(--black) h s l / 1);
+    z-index: 1;
+    &.selected {
+      background: var(--grad) !important;
+      // border-bottom: unset;
+    }
+    // Cleanup: Consolidated last-child and nth-last-child styles
+    &:nth-last-child(2) {
+      border-bottom: unset;
+      background: var(--black);
+      z-index: 0;
+    }
+
+    &:last-child {
+      background-color: transparent;
+      padding: var(--pad-3) var(--pad-4);
+      height: fit-content;
+      border-bottom: none;
+
+      @media (min-width: $tablet) {
+        display: none;
+      }
     }
   }
 
-  .tabs {
-    .tabWrapper {
-      background-color: var(--white);
-      width: 100%;
-      min-height: var(--navbar-height);
-      height: fit-content;
-      border-bottom: 1px solid var(--grey);
-
-      &:last-child {
-        background-color: transparent;
-        padding: var(--pad-3) var(--pad-4) !important;
-        height: fit-content !important;
-        border-bottom: none;
-        @media (min-width: $tablet) {
-          display: none !important;
-        }
-      }
-      &:nth-last-child(2) {
-        border-bottom-color: var(--white);
-      }
-    }
+  .subTab {
+    padding-left: var(--pad-4) !important;
   }
 }

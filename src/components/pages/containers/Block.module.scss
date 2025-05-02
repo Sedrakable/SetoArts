@@ -1,119 +1,72 @@
-@import "../../../styles/mixins.scss";
-
-@mixin vars() {
-  --stroke-height: 32px;
-  --big-stoke-width: 160px;
-
-  --big-stroke-1-x: 100px;
-  --big-stroke-1-y: -600px;
-  --big-stroke-2-x: 0px;
-  --big-stroke-2-y: -200px;
-  --big-stroke-3-x: 400px;
-  --big-stroke-3-y: -700px;
-  @media (min-width: $tablet) {
-    --stroke-height: 48px;
-    --big-stoke-width: 180px;
-
-    --big-stroke-1-x: 100px;
-    --big-stroke-1-y: -600px;
-    --big-stroke-2-x: 0px;
-    --big-stroke-2-y: -500px;
-    --big-stroke-3-x: 500px;
-    --big-stroke-3-y: -700px;
-  }
-
-  @media (min-width: $laptop) {
-    --big-stoke-width: 180px;
-
-    --big-stroke-1-x: 100px;
-    --big-stroke-1-y: -500px;
-    --big-stroke-2-x: 100px;
-    --big-stroke-2-y: -600px;
-    --big-stroke-3-x: 600px;
-    --big-stroke-3-y: -700px;
-  }
-
-  @media (min-width: $desktop) {
-    --stroke-height: 64px;
-    --big-stoke-width: 200px;
-
-    --big-stroke-1-x: 200px;
-    --big-stroke-1-y: -500px;
-    --big-stroke-2-x: 300px;
-    --big-stroke-2-y: -600px;
-    --big-stroke-3-x: 700px;
-    --big-stroke-3-y: -800px;
-  }
-}
+@use "@/styles/mixins.scss" as *;
 
 .block {
-  @include vars;
-  background: var(--white);
   position: relative;
-  overflow: hidden;
   flex: 1;
-  &.hero {
-    min-height: 100vh;
-    max-height: var(--max-height) !important;
+  .content {
+    z-index: 1;
   }
-  &.light {
+  &.shadow {
     box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15) inset;
   }
   &.dark {
     background: var(--black);
   }
-  &.grid {
-    background-image: url("/photos/Textures/GridTexture.webp");
+  &.yellow {
+    background: var(--yellow) !important;
   }
-  &.fabric,
-  &.fabric-hori {
+  &.dash {
+    $stripe-gap: 2px;
+    outline: 4px solid var(--black) !important;
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--grey) 0px,
+      var(--grey) $stripe-gap,
+      var(--white) $stripe-gap,
+      var(--white) calc($stripe-gap * 6)
+    );
+  }
+  &.wood {
+    --border-width: 8px;
     position: relative;
-    &:before {
+    background-image: url("/photos/darkwood.webp"),
+      linear-gradient(180deg, transparent 0%, var(--black) 100%);
+    background-position: 50% 50%, 0 0; /* Image: center, Gradient: top-left */
+    background-size: 100% auto, auto; /* Image: 50% width/height, Gradient: default */
+    background-repeat: no-repeat, no-repeat; /* Prevent tiling for both */
+    position: relative;
+    overflow: visible;
+    border-top: var(--border-width) solid var(--yellow);
+    &::before {
+      content: "";
       position: absolute;
       top: 0;
-      left: 0;
-      height: 100%;
-      content: "";
-      background-position: bottom;
-      background-image: url("/photos/Textures/FabricTexture.webp");
-      background-repeat: repeat-x;
-      aspect-ratio: 1;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
-    }
-  }
-  &.fabric-hori {
-    &:before {
-      transform: rotate(90deg);
-      width: auto;
-    }
-  }
-  .strokes {
-    @include absoluteFill;
-    // position: absolute;
-    img {
-      position: absolute;
-
-      width: var(--big-stoke-width);
-      height: auto !important;
-      object-fit: contain !important;
-      transform: rotate(240deg);
-      inset: unset !important;
-      &:nth-child(1) {
-        top: var(--big-stroke-1-y) !important;
-        left: var(--big-stroke-1-x) !important;
-      }
-      &:nth-child(2) {
-        top: var(--big-stroke-2-y) !important;
-        right: var(--big-stroke-2-x) !important;
-      }
-      &:nth-child(3) {
-        bottom: var(--big-stroke-3-y) !important;
-        right: var(--big-stroke-3-x) !important;
-        transform: rotate(60deg) !important;
-      }
+      height: 33%; // Controls how much the glow spreads downward
+      background: linear-gradient(
+        to bottom,
+        hsl(from var(--yellow) h s l / 0.75) 0%,
+        hsl(from var(--yellow) h s l / 0.5) 20%,
+        hsl(from var(--yellow) h s l / 0) 100% // Fully fades out
+      );
+      filter: blur(32px); // ✅ Softens the glow
+      z-index: 1; // Keeps glow behind the content
     }
   }
 
+  &.size_small {
+    .content {
+      max-width: var(--screen-width-small);
+    }
+  }
+
+  &.size_default {
+    .content {
+      max-width: var(--screen-width-large);
+    }
+  }
   .title {
     position: relative;
     box-sizing: content-box;
@@ -130,9 +83,5 @@
       height: var(--stroke-height);
       object-fit: fill !important;
     }
-  }
-  .content {
-    max-width: var(--screen-width-small);
-    z-index: 1;
   }
 }

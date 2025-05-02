@@ -1,99 +1,93 @@
-@import-normalise;
-@import "./vars.scss";
+@use "@/styles/mixins.scss" as *;
 
 :root {
   --tablet: 640px;
   --laptop: 1200px;
   --desktop: 1680px;
 
+  --transition-time-backoff: 100ms;
   --transition-time: 200ms;
+
+  --border-radius: 8px;
+  --border-radius-large: calc(var(--border-radius) * 2);
+  --border-radius-small: calc(var(--border-radius) / 2);
 
   --white: #ffffff;
   --black: #0f0f0f;
   --grey: #bcbcbc;
   --yellow: #fec301;
-  --gold-grad: linear-gradient(
-    90deg,
-    var(--yellow) 0%,
-    #febb01 50%,
-    var(--yellow) 100%
-  );
+  --grad: linear-gradient(90deg, #feb201 0%, #fecb01 100%);
+  --error: #ca3207;
+
+  --text-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 1);
+  --grey-shadow: 2px 2px 0px 0px var(--grey);
+  --black-shadow: 4px 4px 0px 0px var(--black);
+  --drop-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+
   --pad-0: 0px;
-  --pad-1: 5px;
-  --pad-2: 10px;
-  --pad-3: 15px;
-  --pad-4: 20px;
-  --pad-5: 30px;
-  --pad-6: 45px;
-  --pad-7: 60px;
-  --pad-8: 90px;
-  --pad-9: 120px;
-  --pad-10: 180px;
-  --pad-11: 240px;
+  --pad-1: 2px;
+  --pad-2: 4px;
+  --pad-3: 8px;
+  --pad-4: 16px;
+  --pad-5: 24px;
+  --pad-6: 32px;
+  --pad-7: 48px;
+  --pad-8: 64px;
+  --pad-9: 96px;
+  --pad-10: 128px;
+  --pad-11: 192px;
+  --pad-12: 256px;
+  --pad-13: 320px;
 
-  --heading-seto-h1: 80px;
-  --heading-seto-h2: 64px;
-  --heading-seto-h3: 48px;
-  --heading-seto-h4: 32px;
-  --heading-seto-h5: 20px;
+  --heading-outfit-h1: 160px;
+  --heading-outfit-h2: 96px;
+  --heading-outfit-h3: 64px;
+  --heading-outfit-h4: 40px;
+  --heading-outfit-h5: 32px;
 
-  --heading-seto-h1-line: 128px;
-  --heading-seto-h2-line: 80px;
-  --heading-seto-h3-line: 64px;
-  --heading-seto-h4-line: 48px;
-  --heading-seto-h5-line: 24px;
+  --heading-outfit-h1-line: 1em;
+  --heading-outfit-h2-line: 1em;
+  --heading-outfit-h3-line: 1em;
+  --heading-outfit-h4-line: 1em;
+  --heading-outfit-h5-line: 1em;
 
-  --heading-caveat-h1: 128px;
-  --heading-caveat-h2: 80px;
-  --heading-caveat-h3: 64px;
-  --heading-caveat-h4: 48px;
-  --heading-caveat-h5: 30px;
+  --heading-finger-paint-h1: 160px;
+  --heading-finger-paint-h2: 96px;
+  --heading-finger-paint-h3: 64px;
+  --heading-finger-paint-h4: 40px;
+  --heading-finger-paint-h5: 32px;
 
-  --heading-caveat-h1-line: 128px;
-  --heading-caveat-h2-line: 80px;
-  --heading-caveat-h3-line: 64px;
-  --heading-caveat-h4-line: 48px;
-  --heading-caveat-h5-line: 30px;
+  --heading-finger-paint-h1-line: 1.2em;
+  --heading-finger-paint-h2-line: 1.2em;
+  --heading-finger-paint-h3-line: 1.2em;
+  --heading-finger-paint-h4-line: 1.2em;
+  --heading-finger-paint-h5-line: 1.2em;
 
   --paragraph-big: 32px;
-  --paragraph-regular: 24px;
-  --paragraph-small: 20px;
-  --paragraph-big-line: 34px;
-  --paragraph-regular-line: 28px;
-  --paragraph-small-line: 22px;
+  --paragraph-regular: 22px;
+  --paragraph-small: 16px;
 
-  --navbar-height: 64px;
-  --screen-width-large: calc(100vw - var(--pad-6));
-  --screen-width-small: calc(100vw - var(--pad-6));
+  --navbar-height: 96px;
+  --screen-width-small: 100%;
+  --screen-width-large: 100%;
   --max-height: 1600px;
+  --screen-width-large: calc(100vw - var(--pad-8));
 
   @media (min-width: $tablet) {
-    --navbar-height: 80px;
-    --screen-width-small: calc(100vw - var(--pad-9));
-    --screen-width-large: calc(100vw - var(--pad-7));
     --max-height: 1600px;
+    --screen-width-large: calc(100vw - var(--pad-10));
   }
 
   @media (min-width: $laptop) {
-    --screen-width-small: calc(100vw - (var(--pad-10) * 2));
-    --screen-width-large: calc(100vw - var(--pad-10));
+    --navbar-height: 80px;
     --max-height: 1920px;
+    --screen-width-large: calc(100vw - var(--pad-11));
   }
 
   @media (min-width: $desktop) {
     --navbar-height: 96px;
-    --screen-width-small: calc(var(--desktop) - (var(--pad-9) * 2));
-    --screen-width-large: calc(var(--desktop) - var(--pad-6));
+    --screen-width-small: var(--laptop);
+    --screen-width-large: calc(var(--desktop) - var(--pad-11));
     --max-height: 2160px !important;
   }
-}
-
-html,
-body,
-#root {
-  height: 100%;
-}
-
-img {
-  margin: 0;
 }

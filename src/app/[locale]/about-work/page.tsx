@@ -1,113 +1,76 @@
-import { getAllWorkImages } from "@/helpers/functions";
-
-import { IAbout, IValues, IWorkBlock, IWork, ISeo, LocalPaths } from "@/data.d";
-import { useFetchPage } from "@/app/api/useFetchPage";
-import { LangType } from "@/i18n";
+import { IAbout, IWorkBlock, ISeo, LocalPaths, LocalTargets } from "@/data.d";
+import { fetchPage } from "@/app/api/fetchPage";
+import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { aboutPageQuery } from "@/app/api/generateSanityQueries";
-import dynamic from "next/dynamic";
+import { About } from "@/components/pages/blocks/About/About";
+import { WorkBlock } from "@/components/pages/blocks/WorkBlock/WorkBlock";
+import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
+import { WorkTypeNav } from "@/components/pages/blocks/WorkBlock/WorkTypeNav";
 
 export interface AboutPageProps {
   meta: ISeo;
   about: IAbout;
-  values: IValues;
-  work: IWorkBlock;
+  workBlocks: IWorkBlock[];
 }
 
-const ImageGrid = dynamic(
-  () =>
-    import("@/components/pages/blocks/ImageGrid/ImageGrid").then(
-      (module) => module.ImageGrid
-    ),
-  {
-    ssr: false,
-  }
-);
-const WorkBlock = dynamic(
-  () =>
-    import("@/components/pages/blocks/WorkBlock/WorkBlock").then(
-      (module) => module.WorkBlock
-    ),
-  {
-    ssr: false,
-  }
-);
-
-const About = dynamic(
-  () =>
-    import("@/components/pages/blocks/About/About").then(
-      (module) => module.About
-    ),
-  {
-    ssr: false,
-  }
-);
-
-const Values = dynamic(
-  () =>
-    import("@/components/pages/home/Values/Values").then(
-      (module) => module.Values
-    ),
-  {
-    ssr: false,
-  }
-);
-const Inspired = dynamic(
-  () =>
-    import("@/components/pages/blocks/Inspired/Inspired").then(
-      (module) => module.Inspired
-    ),
-  {
-    ssr: false,
-  }
-);
-
 const getAboutPageData = async (locale: LangType) => {
-  const type = "aboutPage";
   const aboutQuery = aboutPageQuery(locale);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const aboutPageData: AboutPageProps = await useFetchPage(aboutQuery, type);
+
+  const aboutPageData: AboutPageProps = await fetchPage(aboutQuery);
   return aboutPageData;
 };
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: LangType };
+  params: Promise<{ locale: LangType }>;
 }): Promise<Metadata> {
-  const aboutPageData = await getAboutPageData(locale);
-  const { metaTitle, metaDesc, metaKeywords } = aboutPageData.meta;
+  const { locale } = await params;
   const path = LocalPaths.ABOUT;
   const crawl = true;
+  const aboutPageData = await getAboutPageData(locale);
+  const { metaTitle, metaDesc } = aboutPageData.meta;
 
   return setMetadata({
     locale,
     metaTitle,
     metaDesc,
-    metaKeywords,
     path,
     crawl,
   });
 }
 
 export default async function AboutPage({
-  params: { locale },
+  params,
 }: {
-  params: { locale: LangType };
+  params: Promise<{ locale: LangType }>;
 }) {
-  const aboutPageData = await getAboutPageData(locale);
-  const workImages = getAllWorkImages(aboutPageData?.work?.works as IWork[]);
+  const { locale } = await params;
+  const data = await getAboutPageData(locale);
+  // const workImages = getAllWorkImages(aboutPageData?.work?.works as IWork[]);
 
   return (
-    aboutPageData && (
-      <>
-        <About {...aboutPageData.about} />
-        <WorkBlock {...aboutPageData.work} />
-        <Values {...aboutPageData.values} />
-        <ImageGrid customImages={workImages} maxImages={24} randomize />
-        <Inspired />
-      </>
-    )
+    <NavWrapperServer locale={locale} theme="light">
+      {data && (
+        <>
+          {data.about && <About {...data.about} />}
+          <WorkTypeNav />
+          {data.workBlocks?.map((workBlock: IWorkBlock, key) => {
+            return (
+              <WorkBlock
+                {...workBlock}
+                id={
+                  `#${workBlock.works[0].workType}-work-block` as LocalTargets
+                }
+                theme={key % 2 === 1 ? "light" : "dash"}
+                key={key}
+              />
+            );
+          })}
+        </>
+      )}
+    </NavWrapperServer>
   );
 }

@@ -1,0 +1,309 @@
+@use "@/styles/mixins.scss" as *;
+
+@mixin vars() {
+  --button-height-fancy: 42px;
+  --button-height: 42px;
+  --button-height-small: 26px;
+  --button-width: 100%;
+  --button-padding: var(--pad-3);
+  --button-padding-fancy: var(--pad-4);
+  --transition-time: 0.7s;
+
+  @media (min-width: $tablet) {
+    --button-width: 112px;
+    --button-padding: 12px;
+  }
+
+  @media (min-width: $laptop) {
+  }
+
+  @media (min-width: $desktop) {
+    --button-height-fancy: 48px;
+    --button-height: 48px;
+    --button-height-small: 32px;
+    --button-padding: var(--pad-4);
+    --button-padding-fancy: var(--pad-5);
+  }
+}
+
+@mixin button($bcolor, $url, $x1, $y1, $bor, $col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
+}
+
+.button {
+  @include vars;
+  @include flex;
+  & {
+    position: relative;
+    min-width: var(--button-width);
+    width: fit-content;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 12px;
+    transition: var(--transition-time-backoff);
+  }
+  p {
+    @include vari(padding-bottom, 0px, 0px, 1px, 1px);
+    & {
+      padding: 0 var(--button-padding);
+      width: auto !important;
+      transition: var(--transition-time-backoff);
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--grey) !important;
+  }
+
+  &.onlyIcon {
+    min-width: var(--button-height) !important;
+    height: var(--button-height);
+    width: var(--button-height) !important;
+    box-sizing: content-box;
+    &.small {
+      height: var(--button-height-small) !important;
+      width: var(--button-height-small) !important;
+      box-sizing: border-box;
+    }
+  }
+
+  &.withIcon {
+    gap: var(--pad-3);
+    &.iconRight {
+      > * {
+        &:first-child {
+          padding-right: 0px;
+        }
+        &:last-child {
+          padding-right: var(--pad-1);
+        }
+      }
+    }
+    &.iconLeft {
+      > * {
+        &:first-child {
+          padding-left: 0px;
+        }
+        &:last-child {
+          padding-left: var(--pad-1);
+        }
+      }
+    }
+  }
+
+  &.black,
+  &.white,
+  &.primary {
+    min-height: var(--button-height);
+    height: var(--button-height);
+    border-radius: calc(var(--button-height) / 2);
+    &:hover {
+      // background: var(--white);
+      transition: 200ms;
+      p {
+        transition: 200ms;
+      }
+    }
+  }
+  &.primary {
+    background: var(--grad);
+
+    svg,
+    path,
+    polygon {
+      fill: var(--black) !important;
+    }
+    &:hover {
+      // background: var(--white);
+
+      box-shadow: 0px 0px 8px 0px #feb201, 0px 0px 16px 0px var(--yellow);
+      p {
+        color: var(--white) !important;
+        // font-weight: 900 !important;
+      }
+      svg,
+      path,
+      polygon {
+        fill: var(--white) !important;
+      }
+    }
+  }
+
+  &.black {
+    background: var(--black);
+    outline: 2px solid var(--black);
+    outline-offset: -2px;
+
+    svg,
+    path,
+    polygon {
+      fill: var(--white) !important;
+    }
+    &:hover {
+      background: var(--white);
+      p {
+        color: var(--black) !important;
+      }
+      svg,
+      path,
+      polygon {
+        fill: var(--black) !important;
+      }
+    }
+  }
+
+  &.white {
+    background: var(--white);
+
+    outline: 2px solid var(--black);
+    outline-offset: -2px;
+
+    svg,
+    path,
+    polygon {
+      fill: var(--black) !important;
+    }
+    &:hover {
+      // background: var(--white);
+      background: var(--black);
+
+      p {
+        color: var(--white) !important;
+      }
+
+      svg,
+      path,
+      polygon {
+        fill: var(--white) !important;
+      }
+    }
+  }
+
+  &.small {
+    min-width: auto !important;
+    min-height: var(--button-height-small) !important;
+    height: var(--button-height-small) !important;
+    transition: 100ms;
+  }
+}
+
+.container {
+  width: 100%;
+  @media (min-width: $tablet) {
+    width: auto;
+  }
+}
+
+.container:has(.fancy) {
+  @include vars;
+
+  & {
+    -webkit-mask: url("../../../assets/vector/ButtonStroke.svg");
+    mask: url("../../../assets/vector/ButtonStroke.svg");
+    position: relative;
+  }
+  .fancy {
+    &:first-child {
+      @include button(
+        var(--yellow),
+        "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+        3000%,
+        100%,
+        none,
+        none
+      );
+      & {
+        z-index: 1;
+        overflow: visible;
+        transition: 100ms;
+        height: var(--button-height-fancy);
+      }
+    }
+    &:last-child {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: visible;
+      transition: 100ms;
+      height: var(--button-height-fancy);
+      p {
+        color: var(--white) !important;
+      }
+      & {
+        @include button(
+          var(--black),
+          "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+          3000%,
+          100%,
+          none,
+          none
+        );
+      }
+    }
+    -webkit-animation: ani2 var(--transition-time) steps(29) forwards;
+    animation: ani2 var(--transition-time) steps(29) forwards;
+  }
+
+  &:hover {
+    .fancy {
+      &:first-child {
+        -webkit-animation: ani var(--transition-time) steps(29) forwards;
+        animation: ani var(--transition-time) steps(29) forwards;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}

@@ -1,0 +1,14 @@
+<svg width="0" height="0">
+    <filter id="inner-shadow">
+        <feComponentTransfer in="SourceAlpha">
+            <feFuncA type="table" tableValues="1 0" />
+        </feComponentTransfer>
+        <feGaussianBlur stdDeviation="3" />
+        <feOffset dx="2" dy="2" result="offsetblur" />
+        <feComposite operator="out" in="SourceAlpha" in2="offsetblur" />
+        <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode />
+        </feMerge>
+    </filter>
+</svg>

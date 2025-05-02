@@ -1,25 +1,30 @@
 import React from "react";
-import { ILegalPage } from "@/data.d";
-import { useFetchPage } from "@/app/api/useFetchPage";
-import { LangType } from "@/i18n";
+import { ILegalPage, LocalPaths } from "@/data.d";
+import { fetchPage } from "@/app/api/fetchPage";
+import { LangType } from "@/i18n/request";
 import { legalPageQuery } from "@/app/api/generateSanityQueries";
-import dynamic from "next/dynamic";
+import { LegalPageComp } from "@/components/pages/LegalPage/LegalPage";
+import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
+import { redirect } from "next/navigation";
 
-const LegalPageComp = dynamic(
-  () =>
-    import("@/components/pages/LegalPage/LegalPage").then(
-      (module) => module.LegalPageComp
-    ),
-  {
-    ssr: false,
-  }
-);
 export default async function LegalPage({
-  params: { locale, slug },
+  params,
 }: {
-  params: { locale: LangType; slug: string };
+  params: Promise<{ locale: LangType; slug: string }>;
 }) {
+  const { locale, slug } = await params;
   const legalQuery = legalPageQuery(locale, slug);
-  const legalPageData: ILegalPage = await useFetchPage(legalQuery, slug);
-  return legalPageData && <LegalPageComp {...legalPageData} />;
+  const legalPageData: ILegalPage = await fetchPage(legalQuery);
+
+  if (!legalPageData) {
+    redirect(`/${locale}${LocalPaths.HOME}`);
+  }
+
+  return (
+    legalPageData && (
+      <NavWrapperServer locale={locale} theme="light">
+        <LegalPageComp {...legalPageData} />
+      </NavWrapperServer>
+    )
+  );
 }

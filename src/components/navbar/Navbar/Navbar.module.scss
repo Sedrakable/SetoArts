@@ -1,26 +1,7 @@
-@import "../../../styles/mixins.scss";
-
-@mixin vars() {
-  --logo-size: 40px;
-  --sidebar-width: 100%;
-
-  @media (min-width: $tablet) {
-    --logo-size: 48px;
-  }
-
-  @media (min-width: $laptop) {
-    --logo-size: 56px;
-  }
-
-  @media (min-width: $desktop) {
-    --logo-size: 64px;
-  }
-}
+@use "@/styles/mixins.scss" as *;
 
 .logo {
-  @include vars;
-  height: var(--logo-size);
-
+  @include vari(height, 48px, 48px, 48px, 64px);
   transition: 200ms;
   cursor: pointer;
   svg {
@@ -33,7 +14,6 @@
 }
 
 .navbarWrapper {
-  @include vars;
   @include flex;
   position: fixed;
   top: 0;
@@ -41,17 +21,42 @@
   height: var(--navbar-height);
   z-index: 10;
   transition: 500ms;
-  background: var(--white, #fff);
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
 
   .navbar {
     width: var(--screen-width-large);
     position: relative;
+    li {
+      @include flex;
+      height: 100%;
+    }
   }
-}
 
-.scrolled {
-  padding: 0;
+  &.hideLogo {
+    .logo {
+      opacity: 0;
+    }
+  }
+  &.scrolled {
+    padding: 0;
+    .logo {
+      opacity: 1;
+    }
+  }
+  &.light {
+    &.scrolled {
+      background: var(--white, #fff);
+      box-shadow: var(--drop-shadow);
+    }
+  }
+  &.dark {
+    &.scrolled {
+      background: var(--white, #fff);
+      box-shadow: var(--drop-shadow);
+      p {
+        color: var(--black) !important;
+      }
+    }
+  }
 }
 
 .burger {

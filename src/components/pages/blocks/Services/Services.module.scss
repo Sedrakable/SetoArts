@@ -1,0 +1,31 @@
+@use "@/styles/mixins.scss" as *;
+
+.services {
+  @include vari(--columns, 1, 2, 3, 3);
+  display: grid !important;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  align-items: stretch !important;
+  row-gap: var(--pad-9) !important;
+}
+
+.container {
+  .assetWrapper {
+    aspect-ratio: 1;
+
+    width: 100%;
+    max-width: 90%;
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .title {
+    @include vari(font-size, 48px, 42px, 52px, 56px);
+    // font-size: 56px;
+  }
+  .bottom {
+    @media (min-width: $laptop) {
+      flex-direction: row !important;
+    }
+  }
+}

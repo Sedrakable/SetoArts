@@ -1,0 +1,61 @@
+@use "@/styles/mixins.scss" as *;
+
+.container {
+  z-index: 1;
+  position: relative;
+  > * {
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: calc(var(--pad-6) * -1);
+    background: white;
+    filter: blur(var(--pad-4));
+    z-index: 0;
+  }
+}
+.form {
+  @include flexColumn(flex-start, flex-start);
+
+  gap: var(--pad-6);
+  width: 100%;
+
+  .submitWrapper {
+    position: relative;
+    width: 100%;
+    @media (min-width: $tablet) {
+      width: auto;
+    }
+  }
+}
+
+.step {
+  .number {
+    font-size: var(--heading-h5) !important;
+    line-height: var(--heading-h5-line) !important;
+    min-width: 32px;
+  }
+  .stepContent {
+    flex: 1 1 auto;
+  }
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--yellow);
+  border-top: 2px solid var(--white);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 10px; // Adjust to align as desired
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

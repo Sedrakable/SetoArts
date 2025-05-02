@@ -1,34 +1,64 @@
 import { SanityImageSource } from "@sanity/asset-utils";
 import { urlFor } from "@/app/api/client";
-import Img, { ImageProps } from "next/image";
+import Img from "next/image";
 
-export interface ICustomImage extends Omit<ImageProps, "src"> {
+type SizeUnit = `${number}px` | `${number}vw` | `${number}%`;
+export type SizesType = [
+  number | SizeUnit,
+  number | SizeUnit,
+  number | SizeUnit,
+  number | SizeUnit
+];
+
+export interface ICustomImage {
   alt: string;
   image: SanityImageSource;
-  width?: number;
   quality?: number;
+  figureclassname?: string;
+  sizes?: SizesType;
+  priority?: boolean;
 }
 
-export const SanityImage: React.FC<ICustomImage> = (props) => {
-  const { quality = 30 } = props;
+const generateSizes = (sizes?: SizesType): string => {
+  if (!sizes) {
+    return "(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw";
+  }
+  const [mobile, tablet, laptop, desktop] = sizes;
+  const processSize = (size: number | SizeUnit): string => {
+    return typeof size === "number" ? `${size}px` : size;
+  };
+  return `(max-width: 640px) ${processSize(mobile)}, (max-width: 1200px) ${processSize(tablet)}, (max-width: 1680px) ${processSize(laptop)}, ${processSize(desktop)}`;
+};
+
+export const SanityImage: React.FC<ICustomImage> = ({
+  quality = 75,
+  sizes,
+  image,
+  alt,
+  figureclassname,
+  priority,
+}) => {
+  if (!image) return null;
+
   return (
     <figure
+      className={figureclassname}
       style={{
         position: "relative",
-        width: "100%", // Ensure the container fills its parent width
-        height: "100%", // Ensure the container fills its parent height
-        overflow: "hidden", // Hide any overflow from the image
+        width: "100%",
+        height: "100%",
+        overflow: "hidden",
       }}
     >
       <Img
-        src={urlFor(props.image).format("webp").quality(quality).url()}
+        src={urlFor(image).format("webp").quality(quality).url()}
         fill
         placeholder="blur"
-        blurDataURL={urlFor(props.image).width(24).height(24).blur(10).url()}
+        blurDataURL={urlFor(image).width(24).height(24).blur(10).url()}
         style={{ objectFit: "cover" }}
-        sizes="(max-width: 640px) 90vw, (max-width: 1200px) 80vw, (max-width: 1680px) 50vw, 33vw"
-        priority={props.priority}
-        {...props}
+        sizes={generateSizes(sizes)}
+        priority={priority}
+        alt={alt}
       />
     </figure>
   );

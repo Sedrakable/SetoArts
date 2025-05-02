@@ -1,0 +1,71 @@
+@use "@/styles/mixins.scss" as *;
+
+@mixin sizing($level) {
+  font-size: var(--paragraph-p#{$level});
+  line-height: var(--paragraph-line-p#{$level});
+}
+
+@mixin level($desk, $lap, $tab, $mob) {
+  @include sizing($mob);
+
+  @media (min-width: $tablet) {
+    @include sizing($tab);
+  }
+
+  @media (min-width: $laptop) {
+    @include sizing($lap);
+  }
+
+  @media (min-width: $desktop) {
+    @include sizing($desk);
+  }
+}
+
+.small {
+  // @include level(1, 1, 1, 2);
+  font-size: var(--paragraph-small);
+  line-height: var(--paragraph-small-line);
+}
+
+.regular {
+  font-size: var(--paragraph-small);
+  line-height: var(--paragraph-small-line);
+  @media (min-width: $desktop) {
+    font-size: var(--paragraph-regular);
+    line-height: var(--paragraph-regular-line);
+  }
+}
+
+.big {
+  font-size: var(--paragraph-regular);
+  line-height: var(--paragraph-regular-line);
+
+  @media (min-width: $desktop) {
+    font-size: var(--paragraph-big);
+    line-height: var(--paragraph-big-line);
+  }
+}
+
+.paragraph {
+  // font-family: var(--font-outfit);
+  width: 100%;
+  line-height: 1.25em;
+}
+
+li.paragraph {
+  display: list-item;
+  margin-top: 0.5em;
+  list-style-type: disc !important;
+}
+
+.clickable {
+  &:hover {
+    color: var(--yellow) !important;
+  }
+}
+
+.cursivePlus {
+  font-weight: 500 !important;
+  color: var(--yellow) !important;
+  // Add any additional styling for the "x" if needed
+}

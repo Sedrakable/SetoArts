@@ -1,0 +1,22 @@
+@use "@/styles/mixins.scss" as *;
+
+.container {
+  position: relative;
+  height: auto;
+
+  .right {
+    flex: 1;
+    .process {
+      position: relative;
+      scroll-snap-type: y mandatory; // Enables snapping
+
+      &::-webkit-scrollbar {
+        display: none; // Optional: Hide scrollbar for a cleaner look
+      }
+    }
+  }
+  @media (min-width: $laptop) {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+  }
+}

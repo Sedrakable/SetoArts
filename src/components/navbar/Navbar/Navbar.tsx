@@ -3,20 +3,21 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.scss";
 import TabButton from "../TabButton/TabButton";
 import { useWindowResize } from "../../../helpers/useWindowResize";
-import { IconButton } from "../../reuse/IconButton";
+import { IconButton } from "../../reuse/IconButton/IconButton";
 import cn from "classnames";
 import FlexDiv from "../../reuse/FlexDiv";
 import Logo from "@/assets/vector/LogoSmall.svg";
-import { Button } from "../../reuse/Button";
-import { ICta, INavBar, INavLink, LocalPaths } from "../../../data.d";
+import { Button } from "../../reuse/Button/Button";
+import { ICta, INavBar, INavLink, ITheme } from "../../../data.d";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 import { useAtom } from "jotai";
 import { getTranslations } from "../../../helpers/langUtils";
 import { sidebarData } from "../Sidebar/Sidebar";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { LangType } from "@/i18n";
+import { LangType } from "@/i18n/request";
 import dynamic from "next/dynamic";
+import { Socials } from "@/components/reuse/Socials/Socials";
 
 const Sidebar = dynamic(
   () => import("../Sidebar/Sidebar").then((module) => module.Sidebar),
@@ -25,11 +26,17 @@ const Sidebar = dynamic(
   }
 );
 
-export const isCta = (link: INavLink | ICta): link is ICta => {
-  return (link as ICta).link !== undefined;
+export const isDropDown = (link: INavLink | ICta): link is INavLink => {
+  return (link as INavLink).ctaArray !== undefined;
 };
 
-export const Navbar: React.FC<INavBar> = ({ links }) => {
+export const Navbar: React.FC<INavBar> = ({
+  links,
+  navButton,
+  theme = "light",
+  hideLogo = false,
+  socials,
+}) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
@@ -52,7 +59,10 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
   return (
     <>
       <nav
-        className={cn(styles.navbarWrapper, { [styles.scrolled]: scrolled })}
+        className={cn(styles.navbarWrapper, styles[theme], {
+          [styles.scrolled]: scrolled,
+          [styles.hideLogo]: hideLogo,
+        })}
         ref={navRef}
       >
         <FlexDiv
@@ -65,39 +75,31 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
           <FlexDiv
             flex={{ x: "space-between", y: "center" }}
             gapArray={[3, 5, 6, 7]}
+            height100
           >
             {!isMobile && (
-              <FlexDiv gapArray={[5, 4, 5, 6]} as="ul">
+              <FlexDiv gapArray={[5, 4, 6, 7]} as="ul" height100>
                 {links?.map((link: INavLink | ICta, key) => {
-                  if (key === links.length - 1 && isCta(link)) {
-                    return (
-                      <li key={key}>
-                        <Button
-                          variant="fancy"
-                          small={isMobile}
-                          path={`/${locale}${LocalPaths.CONTACT}`}
-                        >
-                          {link.text}
-                        </Button>
-                      </li>
-                    );
-                  }
                   return (
                     !isMobileOrTablet &&
-                    (isCta(link) ? (
+                    (!isDropDown(link) ? (
                       <li key={key}>
                         <TabButton
                           className={styles.tab}
-                          path={`/${locale}${link.link!}`}
+                          path={`/${locale}${link.path!}`}
+                          theme={theme}
                         >
                           {link.text}
                         </TabButton>
                       </li>
                     ) : (
-                      <li key={key}>{dropDown(link, locale, key)}</li>
+                      <li key={key}>{dropDown(link, locale, theme, key)}</li>
                     ))
                   );
                 })}
+                <li>
+                  <NavButton {...navButton} />
+                </li>
               </FlexDiv>
             )}
             {!isMobile && <LangSwitcher />}
@@ -109,10 +111,12 @@ export const Navbar: React.FC<INavBar> = ({ links }) => {
                 aria-label="burger menu"
               />
             )}
+
+            {!isMobileOrTablet && socials && <Socials {...socials} />}
           </FlexDiv>
         </FlexDiv>
       </nav>
-      {isMobileOrTablet && <Sidebar links={links} lang={locale} />}
+      {isMobileOrTablet && <Sidebar links={links} socials={socials!} />}
     </>
   );
 };
@@ -123,7 +127,7 @@ export const LogoLink: React.FC<{ locale: LangType }> = ({ locale }) => {
   const [, setSidebar] = useAtom(sidebarData);
   return (
     <Link
-      href={`/${locale}${LocalPaths.HOME}`}
+      href={`/${locale}`}
       className={styles.logo}
       aria-label={translations.nav.home}
       onClick={() => setSidebar(false)}
@@ -133,13 +137,28 @@ export const LogoLink: React.FC<{ locale: LangType }> = ({ locale }) => {
   );
 };
 
-export const dropDown = (navLink: INavLink, locale: LangType, key?: number) => (
+export const dropDown = (
+  navLink: INavLink,
+  locale: LangType,
+  theme: ITheme = "light",
+  key?: number
+) => (
   <TabButton
     key={key}
     className={styles.tab}
-    path={`/${locale}${LocalPaths.SERVICE}`}
+    path={`/${locale}${navLink.path}`}
     dropdown={navLink.ctaArray}
+    theme={theme}
   >
     {navLink.title}
   </TabButton>
 );
+
+// Helper components
+export const NavButton: React.FC<ICta> = ({ text, path, scrollTarget }) => {
+  return (
+    <Button variant="primary" path={path} scrollTarget={scrollTarget}>
+      {text}
+    </Button>
+  );
+};

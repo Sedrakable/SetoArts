@@ -1,19 +1,10 @@
 import { INotFound } from "@/data.d";
-import { useFetchPage } from "../api/useFetchPage";
+import { fetchPage } from "../api/fetchPage";
 import { notFoundPageQuery } from "../api/generateSanityQueries";
-import dynamic from "next/dynamic";
-
-const NotFoundComp = dynamic(
-  () =>
-    import("@/components/pages/NotFound").then((module) => module.NotFoundComp),
-  {
-    ssr: false,
-  }
-);
+import { NotFoundComp } from "@/components/pages/NotFound";
 
 export default async function NotFound() {
-  const type = "notFoundPage";
   const notFoundQuery = notFoundPageQuery("en");
-  const notFoundPageData: INotFound = await useFetchPage(notFoundQuery, type);
+  const notFoundPageData: INotFound = await fetchPage(notFoundQuery);
   return <NotFoundComp data={notFoundPageData} locale={"en"} />;
 }

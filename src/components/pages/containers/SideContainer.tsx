@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./SideContainer.module.scss";
 import cn from "classnames";
-import { Heading } from "../../reuse/Heading";
-import { Paragraph } from "../../reuse/Paragraph";
-import { Button } from "../../reuse/Button";
+import { Heading } from "../../reuse/Text/Heading/Heading";
+import { Paragraph } from "../../reuse/Text/Paragraph/Paragraph";
+import { Button } from "../../reuse/Button/Button";
 import FlexDiv from "../../reuse/FlexDiv";
 import { ICta } from "../../../data.d";
 
 export interface SideContainerProps {
-  title: string;
-  desc: string;
+  title?: string;
+  desc?: string;
   primaryCta?: ICta;
   seconadryCta?: ICta;
 }
@@ -35,9 +35,11 @@ export const SideContainer: React.FC<SideContainerProps> = ({
           gapArray={[2, 3]}
           as="header"
         >
-          <Heading font="Cursive" as="h3" level="4" color="yellow">
-            {title}
-          </Heading>
+          {title && (
+            <Heading font="Cursive" as="h3" level="4" color="yellow">
+              {title}
+            </Heading>
+          )}
 
           <Paragraph
             level="regular"
@@ -49,14 +51,14 @@ export const SideContainer: React.FC<SideContainerProps> = ({
         </FlexDiv>
         <FlexDiv gapArray={[4]} wrap width100 flex={{ x: "flex-start" }}>
           {primaryCta && (
-            <Button variant="primary" path={primaryCta?.link}>
+            <Button variant="primary" path={primaryCta?.path}>
               {primaryCta?.text!}
             </Button>
           )}
           {seconadryCta && (
             <Button
-              variant="secondary"
-              href={seconadryCta?.link!}
+              variant="primary"
+              href={seconadryCta?.path!}
               target="_blank"
             >
               {seconadryCta?.text!}

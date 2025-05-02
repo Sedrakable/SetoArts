@@ -1,0 +1,83 @@
+@use "@/styles/mixins.scss" as *;
+@mixin vars() {
+  --icon-height: 32px;
+  --image-size: 120px;
+
+  @media (min-width: $tablet) {
+    --icon-height: 48px;
+    --image-size: 160px;
+  }
+
+  @media (min-width: $laptop) {
+  }
+
+  @media (min-width: $desktop) {
+    --icon-height: 64px;
+    --image-size: 200px;
+  }
+}
+
+.container {
+  @include vars;
+  .uploadButton {
+    position: relative;
+    background: var(--grad);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    box-shadow: var(--black-shadow);
+    border: 2px solid var(--black);
+    transition: all var(--transition-time) ease;
+
+    .icon {
+      height: var(--icon-height);
+    }
+
+    &:hover,
+    &.dragActive,
+    &.uploaded {
+      background: var(--white);
+      border-color: var(--yellow);
+      box-shadow: unset;
+      * {
+        color: var(--yellow) !important;
+        fill: var(--yellow) !important;
+      }
+    }
+
+    &.uploaded {
+      width: auto !important;
+      border-radius: var(--border-radius);
+    }
+  }
+  .closeButtonWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+  .imageWrapper {
+    position: relative;
+    aspect-ratio: 1;
+    height: var(--image-size) !important;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .invalid {
+    border: 2px solid var(--error);
+    .required {
+      color: var(--error) !important;
+    }
+  }
+
+  .required {
+    position: absolute;
+    top: var(--pad-3);
+    right: var(--pad-3);
+    z-index: 2;
+    width: auto !important;
+  }
+}

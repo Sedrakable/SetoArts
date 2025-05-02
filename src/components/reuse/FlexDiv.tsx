@@ -1,23 +1,20 @@
 "use client";
-import React, { ElementType, HTMLAttributes, PropsWithChildren } from "react";
+import React, {
+  CSSProperties,
+  ElementType,
+  HTMLAttributes,
+  PropsWithChildren,
+} from "react";
 import {
   useSpacingGenerator,
   SpacingArrayType,
   SpacingType,
 } from "../../helpers/SpacingGenerator";
 
-type Justify =
-  | "center"
-  | "flex-start"
-  | "flex-end"
-  | "space-between"
-  | "space-around"
-  | "space-evenly"
-  | "stretch";
 interface FlexProps {
-  direction?: "row" | "column";
-  x?: Justify;
-  y?: Justify;
+  direction?: CSSProperties["flexDirection"];
+  x?: CSSProperties["justifyContent"];
+  y?: CSSProperties["justifyContent"];
 }
 export interface FlexDivProps<T extends ElementType = "div"> {
   gapArray?: SpacingArrayType;
@@ -30,7 +27,7 @@ export interface FlexDivProps<T extends ElementType = "div"> {
   as?: T; // Add the 'as' prop
 }
 
-interface PaddingProps {
+export interface PaddingProps {
   all?: SpacingArrayType;
   horizontal?: SpacingArrayType;
   vertical?: SpacingArrayType;

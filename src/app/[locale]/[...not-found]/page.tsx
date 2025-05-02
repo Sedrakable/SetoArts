@@ -1,19 +1,21 @@
 import { notFoundPageQuery } from "@/app/api/generateSanityQueries";
-import { useFetchPage } from "@/app/api/useFetchPage";
+import { fetchPage } from "@/app/api/fetchPage";
+import { NotFoundComp } from "@/components/pages/NotFound";
 import { INotFound } from "@/data.d";
-import dynamic from "next/dynamic";
+import { LangType } from "@/i18n/request";
+import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
 
-const NotFoundComp = dynamic(
-  () =>
-    import("@/components/pages/NotFound").then((module) => module.NotFoundComp),
-  {
-    ssr: false,
-  }
-);
-
-export default async function NotFound() {
-  const type = "notFoundPage";
+export default async function NotFound({
+  params,
+}: {
+  params: Promise<{ locale: LangType }>;
+}) {
+  const { locale } = await params;
   const notFoundQuery = notFoundPageQuery("en");
-  const notFoundPageData: INotFound = await useFetchPage(notFoundQuery, type);
-  return <NotFoundComp data={notFoundPageData} locale={"en"} />;
+  const notFoundPageData: INotFound = await fetchPage(notFoundQuery);
+  return (
+    <NavWrapperServer locale={locale} theme="light">
+      <NotFoundComp data={notFoundPageData} locale={"en"} />
+    </NavWrapperServer>
+  );
 }

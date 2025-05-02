@@ -1,4 +1,4 @@
-@import "../../styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
 @mixin vars() {
   --top-gap: var(--pad-6);
@@ -45,21 +45,38 @@
     margin: 0 auto;
     position: relative;
     .legal {
+      @include vari(--justify-content, "center", "flex-start");
+      justify-content: var(--justify-content) !important;
       p {
         text-decoration: underline;
-        // &:hover {
-        //   color: var(--yellow);
-        // }
       }
     }
     .logo {
       position: relative;
       width: var(--logo-width);
+      path:nth-last-child(1) {
+        fill: var(--white);
+      }
     }
 
     .links {
+      @include vari(
+        --row-gap,
+        var(--pad-4),
+        var(--pad-4),
+        var(--pad-4),
+        var(--pad-5)
+      );
       flex: 1;
-      row-gap: var(--pad-2) !important;
+      row-gap: var(--row-gap) !important;
+      li:last-child {
+        width: 100%;
+      }
+      @media (min-width: $tablet) {
+        li:last-child {
+          width: auto;
+        }
+      }
       @media (min-width: $laptop) {
         justify-content: flex-end !important;
       }

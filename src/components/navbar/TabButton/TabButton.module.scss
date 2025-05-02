@@ -1,39 +1,32 @@
-@import "../../../styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
 .tabButton {
   @include flexColumn(flex-start);
   position: relative;
   cursor: pointer;
+  // Cleanup: Simplified hover styles by removing nested selectors
+  &:hover .textWrapper p {
+    transition: color 100ms;
+    color: var(--yellow) !important;
+  }
+}
 
-  &:hover {
-    .textWrapper {
-      h5 {
-        transition: 100ms;
-        color: var(--yellow) !important;
-      }
-    }
+.line {
+  @include vari(height, 0px, 0px, 4px, 6px);
+  @include vari(bottom, 0px, 0px, 20px, 22px);
+  position: absolute;
+  width: 100%; // Cleanup: Removed redundant max-width since width is sufficient
+  path {
+    fill: var(--yellow);
   }
-  .line {
-    position: absolute;
-    bottom: 0;
-    max-width: 100%;
-    width: 100%;
-    path {
-      fill: var(--yellow);
-    }
-  }
-  .dropdown {
-    background: var(--yellow);
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    transform: translateY(110%);
-    box-sizing: content-box !important;
-    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1),
-      inset 0 2px 6px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 5px 5px;
-    button:hover > * {
-      color: var(--black) !important;
-    }
-  }
+}
+
+.dropdown {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--yellow);
+  transform: translateY(110%);
+
+  border-radius: 0 0 4px 4px;
 }

@@ -1,100 +1,88 @@
 "use client";
 import React, { FC, useState } from "react";
-import { Heading } from "../../reuse/Heading";
-import styles from "./TabButton.module.scss";
 import cn from "classnames";
-import Line from "@/assets/vector/Line.svg";
-import FlexDiv from "../../reuse/FlexDiv";
-import { Icon } from "../../reuse/Icon";
-import { DropDown } from "../Dropdown/DropDown";
-import { ICta } from "../../../data.d";
-import { FancyText } from "../../reuse/FancyText";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+
+import styles from "./TabButton.module.scss";
+import Line from "@/assets/vector/Line.svg";
+import { ICta, ITheme } from "../../../data.d";
+import FlexDiv from "../../reuse/FlexDiv";
+import { Icon } from "../../reuse/Icon/Icon";
+import { Paragraph } from "../../reuse/Text/Paragraph/Paragraph";
+import { DropDown } from "../Dropdown/DropDown";
 
 export interface TabButtonProps {
   children: string;
   path: string;
   className?: string;
-  onClick?: Function;
+  onClick?: () => void;
   dropdown?: ICta[];
+  theme?: ITheme;
 }
 
-const FancyHeadingComponent: FC<{ text: string }> = ({ text }) => {
-  const [hasFancyText, part1, part2, part3] = useFancyText(text);
-
-  return hasFancyText ? (
-    <FancyText mode="tab" part1={part1} part2={part2} part3={part3} dark />
-  ) : (
-    <Heading font="Seto" level="5" as="h5" color="black">
-      {text}
-    </Heading>
-  );
-};
-
-const useFancyText = (text: string) => {
-  const parts = text.split("+");
-  type FancyTextPartsType = [boolean, string, string, string];
-  if (parts.length === 1) {
-    return [false, text, "", ""] as FancyTextPartsType;
-  } else {
-    return [true, parts[0], "+ ", parts[1]] as FancyTextPartsType;
-  }
-};
-
-const TabButton: FC<TabButtonProps> = ({
+export const TabButton: FC<TabButtonProps> = ({
   children,
   path,
   dropdown,
   onClick,
   className,
+  theme = "light",
 }) => {
   const pathname = usePathname();
-  const [dropDownOpen, setDropDownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Cleanup: Renamed for clarity
 
-  const onTabClick = () => {
-    if (dropdown) {
-      setDropDownOpen((prevState) => !prevState);
-    } else {
-      onClick && onClick();
-    }
+  // Cleanup: Consolidated dropdown toggle logic
+  const toggleDropdown = () => dropdown && setIsDropdownOpen(!isDropdownOpen);
+
+  // Cleanup: Simplified event handlers
+  const handleMouseEnter = () => dropdown && setIsDropdownOpen(true);
+  const handleMouseLeave = () => dropdown && setIsDropdownOpen(false);
+  const handleClick = () => {
+    toggleDropdown();
+    onClick?.();
   };
 
-  const TabContent = () => {
-    return (
-      <FlexDiv
-        padding={{ bottom: [1], top: [1] }}
-        gapArray={[2]}
-        className={styles.textWrapper}
-      >
-        <FancyHeadingComponent text={children} />
-        {dropdown && <Icon icon="arrow" size="small" rotate={90} />}
-      </FlexDiv>
-    );
-  };
+  // Cleanup: Extracted TabContent for reusability
+  const TabContent = () => (
+    <FlexDiv
+      padding={{ bottom: [1], top: [1] }}
+      gapArray={[4]}
+      className={styles.textWrapper}
+    >
+      <Paragraph level="regular" color={theme === "light" ? "black" : "white"}>
+        {children}
+      </Paragraph>
+      {dropdown && <Icon icon="arrow" size="extra-small" rotate={90} />}
+    </FlexDiv>
+  );
 
   return (
-    <div
-      onClick={() => onTabClick()}
+    <FlexDiv
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
+      flex={{ direction: "column", x: "flex-start" }}
       className={cn(styles.tabButton, className)}
+      height100
     >
-      {dropdown ? (
+      <Link href={path} aria-label={children}>
         <TabContent />
-      ) : (
-        <Link href={path} aria-label={path}>
-          <TabContent />
-        </Link>
+      </Link>
+
+      {/* Cleanup: Simplified condition for line display */}
+      {pathname.includes(path) && !isDropdownOpen && (
+        <Line className={styles.line} />
       )}
-      {path === pathname && <Line className={styles.line} />}
-      {dropDownOpen && dropdown && (
+
+      {isDropdownOpen && dropdown && (
         <DropDown
           dropdown={dropdown}
           parentPath={path}
-          isOpen={dropDownOpen}
-          onClose={() => setDropDownOpen(false)}
+          isOpen={isDropdownOpen}
         />
       )}
-    </div>
+    </FlexDiv>
   );
 };
 

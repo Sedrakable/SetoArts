@@ -1,0 +1,62 @@
+@use "@/styles/mixins.scss" as *;
+
+.value,
+.marker {
+  width: auto !important;
+}
+
+.sliderWrapper {
+  position: relative;
+
+  .sliderContainer {
+    position: relative;
+    width: 100%;
+    height: var(--pad-4);
+  }
+  .marker {
+    position: absolute;
+    transform: translateY(calc(-50% + var(--pad-6)));
+
+    &:first-child {
+      left: 5px;
+    }
+    &:last-child {
+      right: 0;
+    }
+  }
+}
+
+.slider {
+  width: 100%;
+  height: var(--pad-3);
+  position: relative;
+}
+
+.track,
+.rangeTrack {
+  height: var(--pad-3);
+  border-radius: var(--pad-3);
+  background: var(--grey);
+}
+
+.track {
+  &:nth-child(1) {
+    background: var(--black);
+  }
+}
+
+.rangeTrack {
+  &:nth-child(2) {
+    background: var(--black);
+  }
+}
+
+.thumb {
+  width: var(--pad-4);
+  height: var(--pad-4);
+  background: var(--yellow);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: 2px solid var(--black);
+  transform: translateY(calc(-50% + var(--pad-2)));
+}

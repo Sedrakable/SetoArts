@@ -1,57 +1,74 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, forwardRef } from "react";
 import styles from "./Block.module.scss";
-import FlexDiv from "../../reuse/FlexDiv";
-import Image from "next/image";
+
 import cn from "classnames";
-import { Title } from "../../reuse/Title/Title";
-import bigStroke from "/public/photos/BigStroke.webp";
-
-export const BlockVariants = ["grid", "dark", "fabric", "fabric-hori"] as const;
-
-export type BlockVariantType = typeof BlockVariants[number];
+import { Heading, HeadingProps } from "@/components/reuse/Text/Heading/Heading";
+import { ITheme } from "@/data.d";
+import FlexDiv from "@/components/reuse/FlexDiv";
 
 interface BlockProps {
-  title: string;
-  variant: BlockVariantType;
-  strokes?: boolean;
+  title?: Omit<HeadingProps, "level" | "as">;
+  theme: ITheme;
   shadow?: boolean;
-  hero?: boolean;
+  contentSize?: "small" | "default";
+  className?: string;
+  id?: string;
 }
-export const Block: React.FC<PropsWithChildren<BlockProps>> = ({
-  title,
-  variant = "dark",
-  shadow = true,
-  hero = false,
-  strokes,
-  children,
-}) => {
-  return (
-    <FlexDiv
-      flex={{ direction: "column" }}
-      className={cn(styles.block, styles[variant], {
-        [styles.light]: variant !== "dark" && shadow,
-        [styles.hero]: hero,
-      })}
-      gapArray={[5, 6, 6, 7]}
-      padding={{ top: [6, 7, 7, 8], bottom: [8, 8, 8, 9] }}
-      width100
-      as="article"
-    >
-      <Title title={title} color={variant === "dark" ? "white" : "black"} />
-      {strokes && variant === "dark" && (
-        <div className={styles.strokes}>
-          <Image src={bigStroke.src} alt="stroke" width={800} height={200} />
-          <Image src={bigStroke.src} alt="stroke" width={800} height={200} />
-          <Image src={bigStroke.src} alt="stroke" width={800} height={200} />
-        </div>
-      )}
+
+// ✅ Add forwardRef to support refs
+export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
+  (
+    {
+      title,
+      theme = "dark",
+      shadow = false,
+      children,
+      contentSize = "default",
+      id,
+      className,
+    },
+    ref
+  ) => {
+    return (
       <FlexDiv
-        className={styles.content}
-        width100
+        ref={ref}
         flex={{ direction: "column" }}
+        className={cn(
+          styles.block,
+          styles[theme],
+          styles[`size_${contentSize}`],
+          {
+            [styles.shadow]: shadow,
+          },
+          className
+        )}
+        gapArray={[7, 7, 7, 8]}
+        padding={{
+          top: title ? [7, 5, 5, 6] : [7, 7, 7, 8],
+          bottom: theme === "wood" ? [0] : [8, 9, 9, 10],
+          horizontal:
+            contentSize === "default" ? [6, 8, 9, 10] : [6, 9, 10, 12],
+        }}
+        width100
+        as="article"
+        id={id}
       >
-        {children}
+        {title && (
+          <Heading {...title} as="h2" level="2" textAlign="center">
+            {title.children}
+          </Heading>
+        )}
+
+        <FlexDiv
+          className={styles.content}
+          width100
+          flex={{ direction: "column" }}
+        >
+          {children}
+        </FlexDiv>
       </FlexDiv>
-    </FlexDiv>
-  );
-};
+    );
+  }
+);
+
+Block.displayName = "Block"; // Required for debugging with forwardRef

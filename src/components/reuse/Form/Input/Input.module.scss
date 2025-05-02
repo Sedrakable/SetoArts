@@ -1,0 +1,52 @@
+@use "@/styles/mixins.scss" as *;
+
+.input,
+.textarea {
+  @include vari(
+    font-size,
+    var(--paragraph-regular),
+    var(--paragraph-regular),
+    var(--paragraph-small),
+    var(--paragraph-regular)
+  );
+  @include vari(height, 60px, 60px, 48px, 60px);
+  & {
+    position: relative;
+    padding: 0 var(--pad-4);
+    line-height: 1.25em;
+    font-weight: 400;
+    color: var(--black);
+    text-decoration: none !important;
+    box-sizing: border-box;
+
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--black-shadow), inset -16px 0px 0 var(--yellow);
+    border: 2px solid var(--black, #c4c4cc);
+    outline: none !important;
+  }
+  &::placeholder {
+    color: var(--black);
+    opacity: 0.5;
+  }
+  &:focus-visible {
+    border: 2px solid var(--yellow);
+    box-shadow: unset;
+    color: var(--black);
+  }
+}
+.textarea {
+  @include vari(min-height, 200px, 150px, 150px, 200px);
+  @include vari(max-height, 400px, 300px, 350px, 400px);
+  & {
+    overflow-y: hidden; /* Prevent scrollbars */
+    resize: none; /* Disable manual resizing */
+    padding-top: var(--pad-3);
+  }
+}
+
+.invalid {
+  border: 2px solid var(--error);
+  box-shadow: inset -16px 0px 0 var(--error);
+}

@@ -1,16 +1,10 @@
-@import "../../../styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
 .langWrapper {
   cursor: pointer;
-  p {
-    margin-top: 10px;
-  }
-  &:hover {
-    p {
+  span {
+    &:hover {
       color: var(--black) !important;
-    }
-    path {
-      fill: var(--black) !important;
     }
   }
 }
