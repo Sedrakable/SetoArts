@@ -2,6 +2,7 @@
 import React, { forwardRef, ReactNode, ElementType } from "react";
 import { motion, useInView, MotionProps } from "framer-motion";
 import cn from "classnames";
+import { useWindowResize } from "@/helpers/useWindowResize";
 // import styles from "./AnimatedWrapper.module.scss";
 
 export interface AnimatedWrapperProps<T extends ElementType = "div"> {
@@ -36,6 +37,7 @@ export const AnimatedWrapper = forwardRef(
     }: AnimatedWrapperProps<T> & Omit<MotionProps, "as">,
     ref: React.Ref<RefType<T>>
   ) => {
+    const { isMobile } = useWindowResize();
     const Component = as
       ? (motion[as as keyof typeof motion] as any)
       : motion.div;
@@ -48,23 +50,31 @@ export const AnimatedWrapper = forwardRef(
     });
 
     // Define animation variants based on `from` prop
-    const variants = {
-      hidden: {
-        opacity: 0,
-        x: from === "left" ? -150 : from === "right" ? 150 : 0,
-        scale: from === "inside" ? 0.6 : 1,
-      },
-      visible: {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        transition: {
-          duration,
-          delay,
-          ease: from === "inside" ? [0.4, 0, 0.2, 1] : "easeOut",
-        },
-      },
-    };
+    const variants = isMobile
+      ? {
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { duration: 0.2, delay }, // Fast opacity only
+          },
+        }
+      : {
+          hidden: {
+            opacity: 0,
+            x: from === "left" ? -50 : from === "right" ? 50 : 0, // Reduced shift
+            scale: from === "inside" ? 0.8 : 1, // Reduced scale
+          },
+          visible: {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            transition: {
+              duration,
+              delay,
+              ease: from === "inside" ? "easeOut" : "easeOut", // Simplified easing
+            },
+          },
+        };
 
     // Fixed ref handling with useCallback
     const setRefs = React.useCallback(
