@@ -25,6 +25,7 @@ export const enTranslations: Translations = {
     viewInstagram: "View My Insta",
     viewMyWork: "View My Work",
     viewService: "View Service",
+    viewCaseStudy: "View Case Study",
   },
   form: {
     general: {

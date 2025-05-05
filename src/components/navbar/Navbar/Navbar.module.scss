@@ -31,17 +31,17 @@
     }
   }
 
-  &.hideLogo {
-    .logo {
-      opacity: 0;
-    }
-  }
-  &.scrolled {
-    padding: 0;
-    .logo {
-      opacity: 1;
-    }
-  }
+  // &.hideLogo {
+  //   .logo {
+  //     opacity: 0;
+  //   }
+  // }
+  // &.scrolled {
+  //   padding: 0;
+  //   .logo {
+  //     opacity: 1;
+  //   }
+  // }
   &.light {
     &.scrolled {
       background: var(--white, #fff);
@@ -49,11 +49,19 @@
     }
   }
   &.dark {
+    .logo {
+      svg {
+        path:nth-child(2) {
+          fill: var(--white, #fff);
+        }
+      }
+    }
+
     &.scrolled {
-      background: var(--white, #fff);
+      background: var(--black, #fff);
       box-shadow: var(--drop-shadow);
       p {
-        color: var(--black) !important;
+        color: var(--white) !important;
       }
     }
   }

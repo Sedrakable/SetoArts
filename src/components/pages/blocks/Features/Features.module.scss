@@ -15,8 +15,8 @@
     width: 100%;
     max-width: 100%;
     svg {
-      width: 90%;
-
+      @include vari(max-width, 60%, 80%, 90%);
+      aspect-ratio: 1;
       max-height: 100%;
       path {
         &:nth-child(1) {

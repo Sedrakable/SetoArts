@@ -84,28 +84,40 @@
   }
 
   .content {
-    @include vari(--padding-top, var(--pad-8), 112px, 160px, var(--pad-11));
+    @include vari(
+      --padding-top,
+      var(--navbar-height),
+      112px,
+      160px,
+      var(--pad-11)
+    );
     padding-top: var(--padding-top) !important;
+
     .logo {
-      @include vari(
-        width,
-        var(--image-width),
-        calc(100vw - var(--image-width))
-      );
+      @include vari(width, var(--image-width), 40vw);
     }
 
     .quote {
       @include vari(width, 100%, 60%, 50%, 50%);
-
-      @media (max-width: #{$tablet}) {
-        font-size: var(--heading-outfit-h4);
-        & > span {
-          display: block; /* Forces the span to take its own line */
-        }
-      }
+      position: absolute;
+      left: 0;
+      top: var(--navbar-height);
+      transform: rotate(90deg);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: flex-end;
+      gap: var(--pad-4);
+      z-index: 0;
     }
-    .subTitle {
-      @include vari(width, 100%, 50%, 35%, 35%);
+    .titles {
+      .title {
+        @include vari(width, 100%, 70%, 55%, 65%);
+        z-index: 1;
+      }
+      .desc {
+        @include vari(width, 100%, 50%, 35%, 35%);
+        z-index: 1;
+      }
     }
   }
 
@@ -121,16 +133,17 @@
 
   .graphic {
     position: absolute;
-    left: 45%;
 
-    @include vari(--scroll-multiplier, 80px, 80px, -100px, -120px);
+    @include vari(left, 0, 40%, 45%);
+    @include vari(bottom, 0, 0, 2%);
+    @include vari(--scroll-multiplier, 0, -100px, -100px, -120px);
     transform: translate(
         calc(-50% + (var(--scroll-progress) * var(--scroll-multiplier))),
         0px
       )
       rotate(45deg) !important;
     width: var(--graphic-width);
-    bottom: calc(var(--graphic-width) / 8);
+
     path {
       &:nth-last-child(1) {
         fill: var(--black);

@@ -34,7 +34,7 @@
     --desc-padding-bottom: var(--pad-4);
     --left-graphic-width: 400px;
     --logo-width: 100px;
-    --content-width: 25vw;
+    --content-width: 30vw;
   }
 }
 
@@ -150,6 +150,20 @@
         }
       }
     }
+
+    .exampleImages {
+      position: absolute;
+
+      // @include vari(--gap, -16px, -24px, -24px, -32px);
+
+      .floatingImage {
+        @include vari(--image-width, 200px, 220px, 140px, 160px);
+        width: var(--image-width) !important;
+        height: var(--image-width) !important;
+        border-radius: 50%;
+        filter: grayscale(1);
+      }
+    }
   }
 
   .left {
@@ -159,7 +173,7 @@
       left: 0 !important;
       right: unset !important;
       &:after {
-        background: linear-gradient(90deg, transparent 0%, var(--white) 66%);
+        background: linear-gradient(90deg, transparent 0%, var(--white) 80%);
         left: 0;
       }
     }
@@ -185,6 +199,11 @@
         }
       }
     }
+    .exampleImages {
+      flex-direction: row-reverse !important;
+      right: 0;
+      bottom: 0;
+    }
   }
 
   .right {
@@ -194,7 +213,7 @@
       left: unset !important;
       right: 0;
       &:after {
-        background: linear-gradient(-90deg, transparent 0%, var(--black) 66%);
+        background: linear-gradient(-90deg, transparent 0%, var(--black) 80%);
         right: 0;
       }
     }
@@ -217,6 +236,13 @@
         &:nth-last-child(1) {
           fill: var(--white);
         }
+      }
+    }
+    .exampleImages {
+      left: 0;
+      top: 0;
+      .floatingImage {
+        margin-left: var(--gap) !important;
       }
     }
   }

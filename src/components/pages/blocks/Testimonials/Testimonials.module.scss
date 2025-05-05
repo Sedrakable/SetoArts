@@ -10,6 +10,7 @@
   z-index: 1; // Lower than .video’s z-index: 2
 
   &.carousel {
+    background: var(--white);
     z-index: 2;
     @include vari(padding-top, var(--pad-7), var(--pad-9));
     // Carousel-specific styles for mobile/tablet
@@ -116,6 +117,35 @@
       height: auto !important;
       aspect-ratio: 1;
       border-radius: 50%;
+    }
+  }
+}
+
+.dark {
+  &.carousel {
+    background: var(--black);
+    .emblaDot {
+      &.emblaDotSelected {
+        background-color: var(--yellow);
+      }
+    }
+  }
+  .images {
+    &:has(.beforeImage) {
+      .afterImage {
+        &:after {
+          background: var(--black);
+          border-color: var(--white);
+        }
+      }
+    }
+    .afterImage {
+      img {
+        outline-color: var(--white);
+      }
+    }
+    .beforeImage {
+      background: var(--black);
     }
   }
 }

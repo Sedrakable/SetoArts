@@ -11,7 +11,6 @@ import { LangType } from "@/i18n/request";
 import { useLocale } from "next-intl";
 import { getTranslations } from "@/helpers/langUtils";
 import { PortableTextContent } from "@/components/reuse/Text/Paragraph/PortableTextContent";
-import { useWindowResize } from "@/helpers/useWindowResize";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 
 const Question: React.FC<IQuestion> = ({
@@ -78,7 +77,6 @@ export const Questions: React.FC<QuestionsProps> = ({
   questions,
   theme = "dark",
 }) => {
-  const { isMobile } = useWindowResize();
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
 
@@ -87,7 +85,8 @@ export const Questions: React.FC<QuestionsProps> = ({
       <FlexDiv
         flex={{ direction: "column", x: "stretch" }}
         width100
-        padding={{ bottom: [4, 5, 5, 6], top: [5, 8, 8, 9] }}
+        padding={{ bottom: [4, 5, 5, 6] }}
+        gapArray={[2, 3, 3, 4]}
       >
         <AnimatedWrapper from="left">
           <Heading
@@ -96,7 +95,7 @@ export const Questions: React.FC<QuestionsProps> = ({
             level="2"
             color={theme === "dark" ? "white" : "black"}
             className={styles.heading}
-            textAlign={isMobile ? "center" : "left"}
+            textAlign={"center"}
             weight={400}
           >
             {translations.titles.questionTitle1}
@@ -109,7 +108,7 @@ export const Questions: React.FC<QuestionsProps> = ({
             level="2"
             color="yellow"
             className={styles.heading}
-            textAlign={isMobile ? "center" : "right"}
+            textAlign={"center"}
             weight={400}
             paddingBottomArray={[4, 5, 5, 6]}
           >

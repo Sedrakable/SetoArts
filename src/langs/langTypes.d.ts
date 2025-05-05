@@ -23,6 +23,7 @@ interface Buttons {
   viewInstagram: string;
   viewMyWork: string;
   viewService: string;
+  viewCaseStudy: string;
 }
 
 interface Form {
