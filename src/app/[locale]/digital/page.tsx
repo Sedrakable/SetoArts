@@ -90,14 +90,15 @@ export default async function DigitalPage(props: {
           theme="dark"
         />
       )}
+      {data.testimonials && (
+        <Testimonials testimonials={data.testimonials} theme="dark" />
+      )}
       {/* {workData && <WorkSlider works={workData} />} */}
       {data.questions && <Questions questions={data.questions} theme="dark" />}
       {data.solutionBlock && (
         <SolutionBlock {...data.solutionBlock} theme="wood" />
       )}
-      {data.testimonials && (
-        <Testimonials testimonials={data.testimonials} theme="light" />
-      )}
+
       {data.services && <Services services={data.services} />}
     </NavWrapperServer>
   );

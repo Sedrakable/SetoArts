@@ -4,7 +4,6 @@ import styles from "./Hero.module.scss";
 import cn from "classnames";
 import Image from "next/image";
 
-import { Paragraph } from "../../../reuse/Text/Paragraph/Paragraph";
 import { IHero, IHeroV2, ITheme } from "../../../../data.d";
 import FlexDiv from "../../../reuse/FlexDiv";
 import Logo from "@/assets/vector/LogoBig.svg";
@@ -12,7 +11,7 @@ import bigStroke from "/public/photos/BigStroke.webp";
 import { Button } from "../../../reuse/Button/Button";
 import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../../helpers/useWindowResize";
-import LogoHori from "@/assets/vector/LogoHorizontal.svg";
+// import LogoHori from "@/assets/vector/LogoHorizontal.svg";
 import { Heading } from "../../../reuse/Text/Heading/Heading";
 
 import GlowingSign from "@/assets/vector/GlowingSignGraphic.svg";
@@ -34,7 +33,8 @@ const graphic: Record<ITheme, ReactNode> = {
 export const Hero: React.FC<IHero> = ({
   backgroundImage,
   foregroundImage,
-  subTitle,
+  title,
+  desc,
   cta1,
   cta2,
   message,
@@ -98,41 +98,54 @@ export const Hero: React.FC<IHero> = ({
         width100
         className={styles.content}
       >
-        {isMobile ? (
-          <Logo className={styles.logo} />
-        ) : (
-          <LogoHori className={styles.logo} />
-        )}
         <FlexDiv
           padding={{ left: [0, 5, 6, 8] }}
           flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-          // gapArray={[3, 3, 3, 0]}
+          gapArray={[4, 0]}
           className={styles.titles}
           width100
         >
-          <Heading
-            font="Outfit"
-            level={isMobileOrTablet ? "5" : "3"}
-            as="h4"
-            color={theme === "light" ? "black" : "white"}
-            className={styles.quote}
-            textAlign={isMobile ? "center" : "left"}
-            weight={700}
-            paddingBottomArray={[3, 2, 1, 1]}
-          >
-            {translations.titles.quote}
-          </Heading>
-          {subTitle && (
-            <Paragraph
-              level="regular"
+          {isMobile ? (
+            <Logo className={styles.logo} />
+          ) : (
+            <></>
+            // <LogoHori className={styles.logo} />
+          )}
+          {!isMobile && (
+            <Heading
+              font="Outfit"
+              level={isMobileOrTablet ? "5" : "3"}
+              as="h4"
               color={theme === "light" ? "black" : "white"}
+              className={styles.quote}
               textAlign={isMobile ? "center" : "left"}
-              weight={400}
-              className={styles.subTitle}
-              paddingBottomArray={[4, 4, 4, 5]}
+              weight={700}
             >
-              {subTitle}
-            </Paragraph>
+              {translations.titles.quote}
+            </Heading>
+          )}
+          <Heading
+            font="Cursive"
+            level={isMobileOrTablet ? "3" : "2"}
+            as="h4"
+            color={"yellow"}
+            className={styles.title}
+            textAlign={isMobile ? "center" : "left"}
+            weight={900}
+            paddingBottomArray={[0, 2, 2, 3]}
+          >
+            {title}
+          </Heading>
+          {desc && (
+            <PortableTextContent
+              value={desc}
+              color={theme === "light" ? "black" : "white"}
+              differentColorForStrongText={false}
+              level="regular"
+              className={styles.desc}
+              textAlign={isMobile ? "center" : "left"}
+              paddingBottomArray={[5, 4, 4, 5]}
+            />
           )}
           {cta1 && (
             <FlexDiv
@@ -151,6 +164,7 @@ export const Hero: React.FC<IHero> = ({
               {cta2 && (
                 <Button
                   variant="white"
+                  // outline
                   path={cta2.path}
                   scrollTarget={cta2.scrollTarget}
                 >
@@ -169,7 +183,7 @@ export const Hero: React.FC<IHero> = ({
         height={200}
         className={styles.stroke}
       />
-      {!isMobileOrTablet && graphic[theme]}
+      {!isMobile && graphic[theme]}
     </FlexDiv>
   );
 };
@@ -271,7 +285,7 @@ export const HeroV2: React.FC<IHeroV2> = ({
               </Button>
               {cta2 && (
                 <Button
-                  variant="white"
+                  variant="black"
                   path={cta2.path}
                   scrollTarget={cta2.scrollTarget}
                 >

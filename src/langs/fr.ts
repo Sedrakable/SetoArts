@@ -25,6 +25,7 @@ export const frTranslations: Translations = {
     viewInstagram: "Check mon Insta",
     viewMyWork: "Voir mon travail",
     viewService: "Voir le service",
+    viewCaseStudy: "Voir l'étude de cas",
   },
   form: {
     general: {

@@ -17,7 +17,8 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
   className,
   paddingBottomArray,
 }) => {
-  const contastColor = differentColorForStrongText ? `var(--black)` : color;
+  const contastColor =
+    differentColorForStrongText && color === "white" ? `var(--yellow)` : color;
   const quote = (
     <strong
       style={{

@@ -137,7 +137,7 @@
 
   &.black {
     background: var(--black);
-    outline: 2px solid var(--black);
+    outline: 2px solid transparent;
     outline-offset: -2px;
 
     svg,
@@ -147,6 +147,7 @@
     }
     &:hover {
       background: var(--white);
+      outline-color: var(--black);
       p {
         color: var(--black) !important;
       }
@@ -156,12 +157,18 @@
         fill: var(--black) !important;
       }
     }
+    &.outline {
+      outline-color: var(--white);
+      &:hover {
+        outline-color: transparent;
+      }
+    }
   }
 
   &.white {
     background: var(--white);
 
-    outline: 2px solid var(--black);
+    outline: 2px solid transparent;
     outline-offset: -2px;
 
     svg,
@@ -172,7 +179,7 @@
     &:hover {
       // background: var(--white);
       background: var(--black);
-
+      outline-color: var(--white);
       p {
         color: var(--white) !important;
       }
@@ -181,6 +188,12 @@
       path,
       polygon {
         fill: var(--white) !important;
+      }
+    }
+    &.outline {
+      outline-color: var(--black);
+      &:hover {
+        outline-color: transparent;
       }
     }
   }

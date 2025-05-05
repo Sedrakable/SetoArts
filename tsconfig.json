@@ -31,8 +31,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "./dist/types/**/*.ts",
-    "src/app/api/generateSanityQueries.js",
-    "src/app/api/dataBackup.js"
+    "src/app/api/generateSanityQueries.js"
   ],
   "exclude": ["node_modules"]
 }

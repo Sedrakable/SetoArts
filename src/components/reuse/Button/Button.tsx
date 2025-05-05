@@ -21,6 +21,7 @@ interface ButtonIconProps extends IconProps {
 
 export interface ButtonProps {
   variant: "fancy" | "primary" | "black" | "white";
+  outline?: boolean;
   small?: boolean;
   fit?: "grow" | "shrink";
   iconProps?: ButtonIconProps;
@@ -38,6 +39,7 @@ export const Button: FC<PropsWithChildren<
 >> = ({
   children,
   variant,
+  outline,
   iconProps,
   path,
   href,
@@ -88,6 +90,7 @@ export const Button: FC<PropsWithChildren<
   );
 
   const buttonStyles = cn(styles.button, styles[variant], {
+    [styles.outline]: outline,
     [styles.small]: small,
     [styles.onlyIcon]: iconProps && !children,
     [styles.withIcon]: iconProps && children,

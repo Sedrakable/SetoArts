@@ -107,7 +107,8 @@ export const Carousel: FC<ICarouselProps> = ({ images }) => {
           {translate.buttons.viewMyWork}
         </Button>
         <Button
-          variant="black"
+          variant="white"
+          outline
           path={"https://www.instagram.com/seto.arts"}
           target="_blank"
         >

@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react"; // Add useState
+import React from "react"; // Add useState
 import styles from "./Landing.module.scss";
 import cn from "classnames";
-import { ICta, ILandingSide, LocalPaths } from "@/data.d";
+import { ILandingSide, LocalPaths } from "@/data.d";
 import { LangType } from "@/i18n/request";
 import { getTranslations } from "@/helpers/langUtils";
 
@@ -15,10 +15,7 @@ import Logo from "@/assets/vector/LogoSmall.svg";
 import GlowingSign from "@/assets/vector/GlowingSignGraphic.svg";
 import DigitalDesign from "@/assets/vector/DigitalDesignGraphic.svg";
 
-import {
-  ICustomImage,
-  SanityImage,
-} from "@/components/reuse/SanityImage/SanityImage";
+import { SanityImage } from "@/components/reuse/SanityImage/SanityImage";
 import { useWindowResize } from "@/helpers/useWindowResize";
 
 export interface LandingProps {
@@ -30,11 +27,10 @@ export interface LandingProps {
 const LandingSide: React.FC<{
   side: ILandingSide;
   isLeft?: boolean;
-  cta: ICta;
   color: ColorType;
-  image: ICustomImage;
-  onHover: (isHovered: boolean) => void; // Add hover callback
-}> = ({ side, isLeft = false, cta, color, image, onHover }) => {
+  // onHover: (isHovered: boolean) => void; // Add hover callback
+}> = ({ side, isLeft = false, color }) => {
+  const { backgroundImage, tags, title, desc, cta } = side;
   const { isMobile, isMobileOrTablet } = useWindowResize();
   return (
     <FlexDiv
@@ -50,11 +46,11 @@ const LandingSide: React.FC<{
         bottom: [8, 8, 0, 0],
         top: [7, 8, 0, 0],
       }}
-      onMouseEnter={() => onHover(true)} // Trigger hover
-      onMouseLeave={() => onHover(false)} // Clear hover
+      // onMouseEnter={() => onHover(true)} // Trigger hover
+      // onMouseLeave={() => onHover(false)} // Clear hover
     >
       <SanityImage
-        {...image}
+        {...backgroundImage}
         figureclassname={styles.backgroundImage}
         quality={100}
         sizes={["30vw", "30vw", "60vw", "60vw"]}
@@ -74,70 +70,87 @@ const LandingSide: React.FC<{
           textAlign={isLeft ? "right" : "left"}
           className={styles.title}
         >
-          {side.title}
+          {title}
         </Heading>
         <PortableTextContent
-          value={side.desc}
-          level="small"
+          value={desc}
+          level="regular"
           textAlign={isLeft ? "right" : "left"}
           color={color}
           className={styles.desc}
           // paddingBottomArray={[3, 3, 3, 4]}
         />
-        <Button variant="primary" path={cta.path}>
-          {cta.text}
-        </Button>
-        {!isMobile && <Tags tags={side.tags} color={color} />}
+        {cta && (
+          <Button variant="primary" path={cta.path}>
+            {cta.text}
+          </Button>
+        )}
+        {!isMobile && <Tags tags={tags} color={color} />}
       </FlexDiv>
       {isLeft ? (
         <GlowingSign className={styles.graphic} />
       ) : (
         <DigitalDesign className={styles.graphic} />
       )}
+      {/* {exampleImages.length > 0 && (
+        <FlexDiv
+          className={styles.exampleImages}
+          padding={{ horizontal: [7, 8, 8, 10], vertical: [0, 4, 5, 6] }}
+          gapArray={[0, 2, 2, 3]}
+        >
+          {exampleImages.map((image, i) => (
+            <SanityImage
+              {...image}
+              figureclassname={styles.floatingImage}
+              quality={100}
+              sizes={[120, 160, 160, 200]}
+              key={i}
+            />
+          ))}
+        </FlexDiv>
+      )} */}
     </FlexDiv>
   );
 };
 
 export const Landing: React.FC<LandingProps> = ({ left, right, locale }) => {
   const translations = getTranslations(locale);
-  const [hoverState, setHoverState] = useState<"left" | "right" | null>(null); // Track hover
-  const { isMobileOrTablet } = useWindowResize();
-  useEffect(() => {
-    if (isMobileOrTablet) setHoverState(null); // Clear hover on mobile
-  }, [isMobileOrTablet]);
+
   return (
     <FlexDiv
       className={cn(styles.landingContainer, {
-        [styles.leftHover]: hoverState === "left",
-        [styles.rightHover]: hoverState === "right",
+        // [styles.leftHover]: hoverState === "left",
+        // [styles.rightHover]: hoverState === "right",
       })}
       flex={{ direction: "column", y: "center" }}
       width100
     >
       <LandingSide
-        side={left}
-        image={left.backgroundImage}
+        side={{
+          ...left,
+          cta: {
+            text: translations.buttons.buildSign,
+            path: `/${locale}${LocalPaths.SIGNS}`,
+          },
+        }}
         isLeft
-        cta={{
-          text: translations.buttons.buildSign,
-          path: `/${locale}${LocalPaths.SIGNS}`,
-        }}
         color="black"
-        onHover={(isHovered) => {
-          if (!isMobileOrTablet) setHoverState(isHovered ? "left" : null);
-        }}
+        // onHover={(isHovered) => {
+        //   if (!isMobileOrTablet) setHoverState(isHovered ? "left" : null);
+        // }}
       />
       <LandingSide
-        side={right}
-        image={right.backgroundImage}
-        cta={{
-          text: translations.buttons.design,
-          path: `/${locale}${LocalPaths.DIGITAL}`,
+        side={{
+          ...right,
+          cta: {
+            text: translations.buttons.design,
+            path: `/${locale}${LocalPaths.DIGITAL}`,
+          },
         }}
         color="white"
-        onHover={(isHovered) => {
-          if (!isMobileOrTablet) setHoverState(isHovered ? "right" : null);
-        }}
+        // onHover={(isHovered) => {
+        //   if (!isMobileOrTablet) setHoverState(isHovered ? "right" : null);
+        // }}
       />
       <Logo className={styles.logo} />
     </FlexDiv>

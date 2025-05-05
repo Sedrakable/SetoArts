@@ -36,7 +36,6 @@ export interface IHeroV2 {
   backgroundImage: ICustomImage;
   cta1?: ICta;
   cta2?: ICta;
-  quote: IQuote;
 }
 
 export type ITheme = "light" | "dark" | "yellow" | "dash" | "wood";
@@ -44,7 +43,8 @@ export type ITheme = "light" | "dark" | "yellow" | "dash" | "wood";
 export interface IHero {
   backgroundImage: ICustomImage;
   foregroundImage: ICustomImage;
-  subTitle?: string;
+  title: string;
+  desc: any;
   cta1: ICta;
   cta2?: ICta;
   message?: string;
@@ -55,7 +55,9 @@ export interface ILandingSide {
   title: string;
   desc: any;
   backgroundImage: ICustomImage;
+  exampleImages: ICustomImage[];
   tags: string[];
+  cta: ICta;
 }
 
 export interface IQuote {
@@ -106,6 +108,7 @@ export interface ITestimonial {
   review: any;
   titleFR?: string;
   reviewFR: any;
+  link?: string; // Optional link for the review
 }
 
 export interface IProcessStep {

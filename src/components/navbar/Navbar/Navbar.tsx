@@ -61,7 +61,7 @@ export const Navbar: React.FC<INavBar> = ({
       <nav
         className={cn(styles.navbarWrapper, styles[theme], {
           [styles.scrolled]: scrolled,
-          [styles.hideLogo]: hideLogo,
+          // [styles.hideLogo]: hideLogo,
         })}
         ref={navRef}
       >

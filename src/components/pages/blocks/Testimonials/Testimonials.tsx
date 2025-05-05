@@ -14,8 +14,11 @@ import { DotButton, useDotButton } from "../Carousel/DotButton";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n/request";
+import { Button } from "@/components/reuse/Button/Button";
+import { getTranslations } from "@/helpers/langUtils";
 
-const Testimonial: React.FC<ITestimonial> = ({
+const Testimonial: React.FC<ITestimonial & { theme: ITheme }> = ({
+  theme,
   beforeImage,
   afterImage,
   name,
@@ -25,8 +28,11 @@ const Testimonial: React.FC<ITestimonial> = ({
   company,
   titleFR,
   reviewFR,
+  link,
 }) => {
   const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
+  console.log("link", link);
   return (
     <FlexDiv
       flex={{ direction: "column", y: "flex-start" }}
@@ -38,7 +44,7 @@ const Testimonial: React.FC<ITestimonial> = ({
           <SanityImage
             {...beforeImage}
             figureclassname={styles.beforeImage}
-            quality={20}
+            quality={80}
             sizes={[100, 200, 120, 120]}
           />
         )}
@@ -53,7 +59,7 @@ const Testimonial: React.FC<ITestimonial> = ({
       <FlexDiv
         gapArray={[4]}
         className={styles.bottom}
-        flex={{ direction: "column" }}
+        flex={{ direction: "column", x: "flex-start" }}
         width100
       >
         <FlexDiv
@@ -69,14 +75,18 @@ const Testimonial: React.FC<ITestimonial> = ({
               sizes={[80, 80, 80, 100]}
             />
           )}
-
           <FlexDiv flex={{ direction: "column", x: "flex-start" }}>
-            <Paragraph level="big" color="black" textAlign="left" weight={600}>
+            <Paragraph
+              level="big"
+              color={theme === "light" ? "black" : "white"}
+              textAlign="left"
+              weight={600}
+            >
               {name.toUpperCase()}
             </Paragraph>
             <Paragraph
               level="regular"
-              color="black"
+              color={theme === "light" ? "black" : "white"}
               textAlign="left"
               weight={600}
             >
@@ -85,7 +95,7 @@ const Testimonial: React.FC<ITestimonial> = ({
             {title && (
               <Paragraph
                 level="small"
-                color="black"
+                color={theme === "light" ? "black" : "white"}
                 textAlign="left"
                 weight={400}
               >
@@ -100,8 +110,19 @@ const Testimonial: React.FC<ITestimonial> = ({
             value={locale === "fr" && reviewFR ? reviewFR : review}
             textAlign="justify"
             className={styles.desc}
+            color={theme === "light" ? "black" : "white"}
+            differentColorForStrongText
           />
         </FlexDiv>
+        {link && (
+          <Button
+            variant={theme === "light" ? "white" : "black"}
+            outline
+            href={link}
+          >
+            {translations.buttons.viewCaseStudy}
+          </Button>
+        )}
       </FlexDiv>
     </FlexDiv>
   );
@@ -114,7 +135,7 @@ export interface TestimonialsProps {
 
 export const Testimonials: React.FC<TestimonialsProps> = ({
   testimonials,
-  theme = "dark",
+  theme = "light",
 }) => {
   const { isMobileOrTablet } = useWindowResize();
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -136,7 +157,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
             <div className={styles.emblaContainer}>
               {testimonials?.map((testimonial, key) => (
                 <div className={styles.emblaSlide} key={key}>
-                  <Testimonial {...testimonial} />
+                  <Testimonial {...testimonial} theme={theme} />
                 </div>
               ))}
             </div>
@@ -154,19 +175,19 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
           </div>
         </div>
       ) : (
-        <Block theme="light" className={styles.block}>
+        <Block theme={theme} className={styles.block}>
           <FlexDiv
             gapArray={[6, 7, 7, 8]}
             flex={{ y: "flex-start" }}
             width100
-            padding={{ top: [6, 8, 7, 8] }}
+            padding={{ top: [6, 8, 8, 9] }}
             className={cn(styles.testimonials, styles[theme])}
             as="ul"
           >
             {testimonials?.map((testimonial: ITestimonial, key) => {
               return (
                 <AnimatedWrapper from="inside" key={key} as="li">
-                  <Testimonial {...testimonial} />
+                  <Testimonial {...testimonial} theme={theme} />
                 </AnimatedWrapper>
               );
             })}
