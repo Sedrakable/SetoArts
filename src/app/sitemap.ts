@@ -6,7 +6,7 @@ import { ICustomImage } from "@/components/reuse/SanityImage/SanityImage";
 import { SanityDocument } from "@sanity/client";
 import { urlFor } from "./api/client";
 
-const BASE_URL = process.env.BASE_NAME || "https://setoxarts.com";
+const BASE_URL = process.env.BASE_NAME || "https://www.setoxarts.com";
 
 const staticUrls: Record<string, string[]> = {
   base: [LocalPaths.HOME, LocalPaths.SIGNS, LocalPaths.CONTACT],
@@ -42,27 +42,6 @@ const changeFrequencyMap: Record<
   [LocalPaths.ABOUT]: "weekly",
 };
 
-// const staticUrls: Record<string, string[]> = {
-//   base: [LocalPaths.HOME, LocalPaths.SIGNS, LocalPaths.CONTACT],
-//   service: [
-//     LocalPaths.DIGITAL,
-//     `${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`,
-//     `${LocalPaths.DIGITAL}${LocalPaths.WEB}`,
-//   ],
-//   work: [
-//     LocalPaths.ABOUT,
-//     `${LocalPaths.ABOUT}${LocalTargets.SIGNSSIGNWORK}`,
-//     `${LocalPaths.ABOUT}${LocalTargets.BRANDINGWORK}`,
-//     `${LocalPaths.ABOUT}${LocalTargets.WEBWORK}`,
-//     `${LocalPaths.ABOUT}${LocalTargets.CARDSWORK}`,
-//   ],
-//   legal: [
-//     `${LocalPaths.LEGAL}${LocalPaths.TERMS}`,
-//     `${LocalPaths.LEGAL}${LocalPaths.POLICIES}`,
-//   ],
-// };
-
-// Generate static entries for portfolio routes
 const generateStaticEntries: MetadataRoute.Sitemap = allUrls.map((baseUrl) => {
   const enUrl = `${BASE_URL}/en${baseUrl}`;
   const frUrl = `${BASE_URL}/fr${baseUrl}`;
