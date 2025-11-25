@@ -50,3 +50,12 @@
   border: 2px solid var(--error);
   box-shadow: inset -16px 0px 0 var(--error);
 }
+
+.honeyPot {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}

@@ -12,3 +12,12 @@
     font-weight: 900 !important;
   }
 }
+
+.honeyPot {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}

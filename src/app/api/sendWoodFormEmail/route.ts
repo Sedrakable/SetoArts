@@ -1,6 +1,7 @@
 // app/api/sendWoodFormEmail/route.ts
 import {
   EncodedFileType,
+  looksLikeBot,
   WoodFormData,
 } from "@/components/reuse/Form/formTypes";
 import { LangType } from "@/i18n/request";
@@ -91,6 +92,10 @@ export async function POST(request: Request) {
       formData,
       locale,
     }: { formData: WoodFormData; locale: LangType } = await request.json();
+    if (looksLikeBot(formData)) {
+      // pretend all good, but discard
+      return NextResponse.json({ ok: true });
+    }
     const attachments = prepareAttachments(formData.uploads);
 
     const transporter = getTransporter();

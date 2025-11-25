@@ -9,6 +9,7 @@ import {
   ContactFormData,
   EncodedFileType,
   FormErrorData,
+  looksLikeBot,
 } from "@/components/reuse/Form/formTypes";
 import {
   FormSteps,
@@ -42,6 +43,7 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
     width: 36, // Default for wood-sign
     height: 36, // Default for wood-sign
     uploads: [],
+    company: "", // honeypot field
   });
 
   const [errors, setErrors] = useState<FormErrorData>({});
@@ -126,6 +128,20 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
 
     if (!validateForm()) return;
 
+    // // BOT CHECK (test mode)
+    // if (looksLikeBot(formData)) {
+    //   console.log("❌ BLOCKED (spam-ish submission)", formData);
+    //   return;
+    // } else {
+    //   console.log("✔️ PASSED (human-ish submission)", formData);
+    //   return; // <-- keep this while testing so no email is sent
+    // }
+
+    if (looksLikeBot(formData)) {
+      console.error("❌ BLOCKED (spam-ish submission)");
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -179,6 +195,14 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
   };
 
   const Steps: ReactNode[] = [
+    <Input
+      label="Company"
+      type="text"
+      value={formData.company || ""}
+      onChange={handleInputChange("company")}
+      placeholder=""
+      honeyPot
+    />,
     <MultiColumn>
       <Input
         label={translations.form.general.firstName}

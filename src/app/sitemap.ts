@@ -81,31 +81,38 @@ async function getWoodWorkData() {
 const generateDynamicEntries = async (): Promise<MetadataRoute.Sitemap> => {
   const workData: SitemapWorkQueryType[] = await getWoodWorkData();
 
-  const productEntries: MetadataRoute.Sitemap = workData.map(
-    (work: SitemapWorkQueryType) => {
-      const enUrl = `${BASE_URL}/en${LocalPaths.ABOUT}${work.slug.current}`;
-      const frUrl = `${BASE_URL}/fr${LocalPaths.ABOUT}${work.slug.current}`;
-      return {
-        url: enUrl,
-        lastModified:
-          work._updatedAt && !isNaN(new Date(work._updatedAt).getTime())
-            ? new Date(work._updatedAt).toISOString()
-            : new Date().toISOString(),
-        changeFrequency: "weekly",
-        priority: 0.7,
-        images:
-          work.images
-            ?.filter((image) => image.image) // Ensure image exists
-            .map((image) => urlFor(image.image).url()) || [],
-        alternates: {
-          languages: {
-            en: enUrl,
-            fr: frUrl,
-          },
+  const validWork = workData.filter((work) => work.slug && work.slug.current);
+
+  const productEntries: MetadataRoute.Sitemap = validWork.map((work) => {
+    const slug = work.slug.current.startsWith("/")
+      ? work.slug.current
+      : `/${work.slug.current}`;
+
+    const basePath = `${LocalPaths.ABOUT}${slug}`;
+
+    const enUrl = `${BASE_URL}/en${basePath}`;
+    const frUrl = `${BASE_URL}/fr${basePath}`;
+
+    return {
+      url: enUrl,
+      lastModified:
+        work._updatedAt && !isNaN(new Date(work._updatedAt).getTime())
+          ? new Date(work._updatedAt).toISOString()
+          : new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+      images:
+        work.images
+          ?.filter((image) => image?.image)
+          .map((image) => urlFor(image.image).url()) || [],
+      alternates: {
+        languages: {
+          en: enUrl,
+          fr: frUrl,
         },
-      };
-    }
-  );
+      },
+    };
+  });
 
   return productEntries;
 };

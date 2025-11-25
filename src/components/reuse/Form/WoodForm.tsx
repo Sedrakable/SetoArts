@@ -9,6 +9,7 @@ import {
   WoodFormData,
   EncodedFileType,
   FormErrorData,
+  looksLikeBot,
 } from "@/components/reuse/Form/formTypes";
 import {
   FormSteps,
@@ -40,6 +41,7 @@ export const WoodForm: FC<WoodFormProps> = ({ title, subTitle }) => {
     width: 36,
     height: 36,
     uploads: [],
+    company: "", // honeypot field
   });
 
   const [errors, setErrors] = useState<FormErrorData>({});
@@ -106,6 +108,11 @@ export const WoodForm: FC<WoodFormProps> = ({ title, subTitle }) => {
 
     if (!validateForm()) return;
 
+    if (looksLikeBot(formData)) {
+      console.error("❌ BLOCKED (spam-ish submission)");
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -135,16 +142,36 @@ export const WoodForm: FC<WoodFormProps> = ({ title, subTitle }) => {
 
   const validateForm = (): boolean => {
     const newErrors: FormErrorData = {};
-    (Object.keys(formData) as Array<keyof WoodFormData>).forEach((key) => {
+    const requiredFields: (keyof WoodFormData)[] = [
+      "firstName",
+      "lastName",
+      "email",
+      "details",
+      "budgetMin",
+      "budgetMax",
+      "width",
+      "height",
+    ];
+
+    requiredFields.forEach((key) => {
       if (!formData[key]) {
         newErrors[key] = true;
       }
     });
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const Steps: ReactNode[] = [
+    <Input
+      label="Company"
+      type="text"
+      value={formData.company || ""}
+      onChange={handleInputChange("company")}
+      placeholder=""
+      honeyPot
+    />,
     <MultiColumn>
       <Input
         label={translations.form.general.firstName}

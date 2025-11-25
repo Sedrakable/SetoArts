@@ -2,6 +2,7 @@
 import {
   EncodedFileType,
   DigitalFormData,
+  looksLikeBot,
 } from "@/components/reuse/Form/formTypes";
 import { LangType } from "@/i18n/request";
 import fs from "fs";
@@ -100,6 +101,10 @@ export async function POST(request: Request) {
       locale: LangType;
       url: string;
     } = await request.json();
+    if (looksLikeBot(formData)) {
+      // pretend all good, but discard
+      return NextResponse.json({ ok: true });
+    }
     const attachments = prepareAttachments(formData.uploads);
 
     const transporter = getTransporter();

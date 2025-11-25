@@ -9,6 +9,7 @@ export interface BaseInputProps {
   onChange: (value: string | number) => void;
   placeholder?: string;
   value: string | number;
+  honeyPot?: boolean;
 }
 
 interface InputProps extends InputWrapperProps, BaseInputProps {
@@ -23,9 +24,15 @@ export const Input: React.FC<InputProps> = ({
   placeholder,
   required = false,
   isInvalid = false,
+  honeyPot = false,
 }) => {
   return (
-    <InputWrapper label={label} required={required} isInvalid={isInvalid}>
+    <InputWrapper
+      label={label}
+      required={required}
+      isInvalid={isInvalid}
+      honeyPot={honeyPot}
+    >
       <input
         type={type}
         value={value}
@@ -34,6 +41,7 @@ export const Input: React.FC<InputProps> = ({
         placeholder={placeholder}
         className={cn(styles.input, outfit.className, {
           [styles.invalid]: isInvalid,
+          [styles.honeyPot]: honeyPot,
         })} // Apply font and invalid styles
       />
     </InputWrapper>
