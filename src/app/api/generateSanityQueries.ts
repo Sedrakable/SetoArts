@@ -46,20 +46,32 @@ export const digitalPageQuery = (locale: LangType): string => {
       }`;
 };
 
-export const woodPageQuery = (locale: LangType): string => {
-  return `*[_type == 'woodPage' && lang == '${locale}'][0] {
+export const homePageQuery = (locale: LangType): string => {
+  return `*[_type == 'homePage' && lang == '${locale}'][0] {
         meta,
         hero,
-        featureBlock->{
-          features[]->,
+        questionsBlock-> {
+        ...},
+        servicesBlock-> {
+        ...,
+        services[]->,
         },
-        questions[]->,
-        solutionBlock->,
-        testimonials[]->,
-        processBlock->,
-        collapsible->,
       }`;
 };
+// export const homePageQuery = (locale: LangType): string => {
+//   return `*[_type == 'woodPage' && lang == '${locale}'][0] {
+//         meta,
+//         hero,
+//         featureBlock->{
+//           features[]->,
+//         },
+//         questions[]->,
+//         solutionBlock->,
+//         testimonials[]->,
+//         processBlock->,
+//         collapsible->,
+//       }`;
+// };
 
 export const carouselQuery = `
   *[_type == "work" && workType == "wood"] {

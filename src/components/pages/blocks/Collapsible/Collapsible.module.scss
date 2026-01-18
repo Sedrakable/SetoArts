@@ -12,7 +12,7 @@
 }
 
 .question {
-  border-bottom: 1px solid var(--grey);
+  border-bottom: 1px solid var(--light-grey);
 
   &:has(.minus) {
     background: var(--grad);

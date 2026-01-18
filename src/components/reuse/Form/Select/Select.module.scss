@@ -68,13 +68,13 @@
     .tab {
       cursor: pointer;
       &:hover {
-        background: var(--grey);
+        background: var(--light-grey);
       }
       &.selected {
         background: var(--grad); // Visual cue for selected option
       }
       &.highlighted {
-        background: var(--grey); // Distinct from selected
+        background: var(--light-grey); // Distinct from selected
       }
       p {
         text-wrap: nowrap;

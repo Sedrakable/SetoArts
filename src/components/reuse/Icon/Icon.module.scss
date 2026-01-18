@@ -10,8 +10,11 @@ $icon-sizes: (
 );
 $colors: (
   "white": var(--white),
+  "off-white": var(--off-white),
   "black": var(--black),
   "yellow": var(--yellow),
+  "light-grey": var(--light-grey),
+  "dark-grey": var(--dark-grey),
 );
 
 @each $rotation in $rotations {

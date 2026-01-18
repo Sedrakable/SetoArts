@@ -58,19 +58,16 @@ interface Form {
 
 interface Nav {
   home: string;
-  wood: string;
-  digital: string;
-  branding: string;
-  web: string;
+  services: string;
+  signs: string;
+  decor: string;
+  work: string;
   about: string;
 }
 
 interface Work {
-  wood: string;
-  branding: string;
-  web: string;
-  cards: string;
-  gallery: string;
+  signs: string;
+  decor: string;
 }
 
 export interface Translations {

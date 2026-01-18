@@ -1,9 +1,11 @@
 import React from "react";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
+
 import { Paragraph, ParagraphProps } from "./Paragraph";
+import { FancyText } from "../FancyText/FancyText";
 
 interface PortableTextContentProps extends Omit<ParagraphProps, "children"> {
-  value: any;
+  value: FancyText;
   differentColorForStrongText?: boolean;
 }
 

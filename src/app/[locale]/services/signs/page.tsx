@@ -12,14 +12,11 @@ import {
 } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n/request";
-import { homePageQuery } from "@/app/api/generateSanityQueries";
+import { woodPageQuery } from "@/app/api/generateSanityQueries";
 
 import { ICustomImage } from "@/components/reuse/SanityImage/SanityImage";
 import { Features } from "@/components/pages/blocks/Features/Features";
-import {
-  QuestionsBlock,
-  QuestionsBlockProps,
-} from "@/components/pages/blocks/QuestionsBlock/QuestionsBlock";
+import { Questions } from "@/components/pages/blocks/QuestionsBlock/QuestionsBlock";
 import {
   SolutionBlock,
   SolutionBlockProps,
@@ -39,27 +36,22 @@ import { ProcessAndForm } from "@/components/pages/blocks/ProcessAndForm/Process
 import { Carousel } from "@/components/pages/blocks/Carousel/Carousel";
 import { setMetadata } from "@/components/SEO";
 import { Metadata } from "next";
-import {
-  ServicesBlock,
-  ServicesBlockProps,
-} from "@/components/pages/blocks/ServicesBlock/ServicesBlock";
 
-export interface HomePageProps {
+export interface WoodPageProps {
   meta: ISeo;
   hero: IHero;
-  questionsBlock: QuestionsBlockProps;
-  servicesBlock: ServicesBlockProps;
-  // featureBlock: { features: IFeature[] };
-  // solutionBlock: SolutionBlockProps;
-  // processBlock: { processes: IProcessStep[] };
-  // testimonials: ITestimonial[];
-  // collapsible: ICollapsible;
+  featureBlock: { features: IFeature[] };
+  questions: IQuestion[];
+  solutionBlock: SolutionBlockProps;
+  processBlock: { processes: IProcessStep[] };
+  testimonials: ITestimonial[];
+  collapsible: ICollapsible;
 }
 
-const getHomePageData = async (locale: LangType) => {
-  const homeQuery = homePageQuery(locale);
+const getWoodPageData = async (locale: LangType) => {
+  const woodQuery = woodPageQuery(locale);
 
-  const data: HomePageProps = await fetchPage(homeQuery);
+  const data: WoodPageProps = await fetchPage(woodQuery);
 
   return data;
 };
@@ -72,7 +64,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const path = LocalPaths.SIGNS;
   const crawl = true;
-  const data: HomePageProps = await getHomePageData(locale);
+  const data: WoodPageProps = await getWoodPageData(locale);
   if (!data?.meta) return null;
   const { metaTitle, metaDesc } = data.meta;
 
@@ -85,7 +77,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function HomePage({
+export default async function SignsPage({
   params,
 }: {
   params: Promise<{ locale: LangType }>;
@@ -93,7 +85,7 @@ export default async function HomePage({
   // const translations = getTranslations(locale);
   const { locale } = await params;
   const translations = getTranslations(locale);
-  const data = await getHomePageData(locale);
+  const data = await getWoodPageData(locale);
   const carouselImages: ICustomImage[] = await getCarouselImages();
   const form: ServiceType = "wood";
   const formData: FormTitleProps = await getFormData(form, locale);
@@ -110,11 +102,12 @@ export default async function HomePage({
               scrollTarget: LocalTargets.SIGNSFORM,
             }}
           />
-          {/* {carouselImages && <Carousel images={carouselImages} />} */}
-          {data.questionsBlock && <QuestionsBlock {...data.questionsBlock} />}
-          {data.servicesBlock && <ServicesBlock {...data.servicesBlock} />}
+          {carouselImages && <Carousel images={carouselImages} />}
+          {data.questions && (
+            <Questions questions={data.questions} theme="light" />
+          )}
 
-          {/* {data.solutionBlock && (
+          {data.solutionBlock && (
             <SolutionBlock {...data.solutionBlock} theme="wood" />
           )}
           {data.testimonials && (
@@ -124,6 +117,7 @@ export default async function HomePage({
             <ProcessAndForm
               processes={data.processBlock.processes}
               {...formData}
+              form={form}
               video={{
                 firstIndex: 0,
                 lastIndex: 400,
@@ -135,7 +129,7 @@ export default async function HomePage({
           {data.featureBlock && (
             <Features features={data.featureBlock.features} />
           )}
-          {data.collapsible && <Collapsible {...data.collapsible} />} */}
+          {data.collapsible && <Collapsible {...data.collapsible} />}
         </>
       )}
     </NavWrapperServer>

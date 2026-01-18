@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.scss";
-import TabButton from "../TabButton/TabButton";
+import { TabButton } from "../TabButton/TabButton";
 import { useWindowResize } from "../../../helpers/useWindowResize";
 import { IconButton } from "../../reuse/IconButton/IconButton";
 import cn from "classnames";

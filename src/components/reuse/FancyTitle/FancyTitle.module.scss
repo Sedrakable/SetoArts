@@ -1,0 +1,20 @@
+@use "@/styles/mixins.scss" as *;
+
+.title {
+  position: relative;
+  box-sizing: content-box;
+  width: 100%;
+  .heading {
+    z-index: 1;
+  }
+}
+
+.line {
+  @include vari(height, 0px, 0px, 3px, 4px);
+  @include vari(width, 200px, 200px, 200px, 200px);
+  // @include vari(bottom, 0px, 0px, 22px, 24px);
+  // position: absolute;
+  path {
+    fill: var(--yellow);
+  }
+}

@@ -4,14 +4,13 @@ import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
 import { aboutPageQuery } from "@/app/api/generateSanityQueries";
-import { About } from "@/components/pages/blocks/About/About";
 import { WorkBlock } from "@/components/pages/blocks/WorkBlock/WorkBlock";
 import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
 import { WorkTypeNav } from "@/components/pages/blocks/WorkBlock/WorkTypeNav";
 
 export interface AboutPageProps {
   meta: ISeo;
-  about: IAbout;
+  work: IAbout;
   workBlocks: IWorkBlock[];
 }
 
@@ -28,7 +27,7 @@ export async function generateMetadata({
   params: Promise<{ locale: LangType }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const path = LocalPaths.ABOUT;
+  const path = LocalPaths.WORK;
   const crawl = true;
   const aboutPageData = await getAboutPageData(locale);
   const { metaTitle, metaDesc } = aboutPageData.meta;
@@ -42,7 +41,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function AboutPage({
+export default async function WorkPage({
   params,
 }: {
   params: Promise<{ locale: LangType }>;
@@ -55,7 +54,7 @@ export default async function AboutPage({
     <NavWrapperServer locale={locale} theme="light">
       {data && (
         <>
-          {data.about && <About {...data.about} />}
+          {/* {data.work && <About {...data.work} />} */}
           <WorkTypeNav />
           {data.workBlocks?.map((workBlock: IWorkBlock, key) => {
             return (

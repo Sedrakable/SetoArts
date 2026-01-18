@@ -15,7 +15,7 @@ export const Socials: React.FC<ISocials> = ({ links }) => {
               iconProps={{
                 icon: link.text as IconType,
                 size: "regular",
-                color: "yellow",
+                color: "dark-grey",
               }}
               background="white"
               target="_blank"

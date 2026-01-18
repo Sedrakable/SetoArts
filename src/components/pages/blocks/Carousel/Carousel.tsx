@@ -101,7 +101,7 @@ export const Carousel: FC<ICarouselProps> = ({ images }) => {
       >
         <Button
           variant="primary"
-          path={`/${locale}${LocalPaths.ABOUT}${LocalTargets.WORK}`}
+          path={`/${locale}${LocalPaths.WORK}${LocalTargets.WORK}`}
           target="_blank"
         >
           {translate.buttons.viewMyWork}

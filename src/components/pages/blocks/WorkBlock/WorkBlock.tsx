@@ -54,14 +54,10 @@ const Work: React.FC<IWork & { columnCount: number }> = ({
 
   const inferAction = (): "link" | "modal" | "none" => {
     switch (workType) {
-      case "wood":
+      case "signs":
         return "modal";
-      case "branding":
-      case "website":
-      case "cards":
-        return "link";
-      case "gallery":
-        return "none";
+      case "decor":
+        return "modal";
       default:
         return "none";
     }
@@ -118,7 +114,7 @@ const Work: React.FC<IWork & { columnCount: number }> = ({
   } else if (action === "modal" && locale && slug && images) {
     return (
       <Link
-        href={`/${locale}${LocalPaths.ABOUT}/${slug.current}`}
+        href={`/${locale}${LocalPaths.WORK}/${slug.current}`}
         className={styles.link}
         aria-label={title}
       >

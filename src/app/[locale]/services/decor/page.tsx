@@ -16,7 +16,7 @@ import { woodPageQuery } from "@/app/api/generateSanityQueries";
 
 import { ICustomImage } from "@/components/reuse/SanityImage/SanityImage";
 import { Features } from "@/components/pages/blocks/Features/Features";
-import { Questions } from "@/components/pages/blocks/Questions/Questions";
+import { Questions } from "@/components/pages/blocks/QuestionsBlock/QuestionsBlock";
 import {
   SolutionBlock,
   SolutionBlockProps,
@@ -77,7 +77,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function SignsPage({
+export default async function DecorPage({
   params,
 }: {
   params: Promise<{ locale: LangType }>;
@@ -117,7 +117,6 @@ export default async function SignsPage({
             <ProcessAndForm
               processes={data.processBlock.processes}
               {...formData}
-              form={form}
               video={{
                 firstIndex: 0,
                 lastIndex: 400,

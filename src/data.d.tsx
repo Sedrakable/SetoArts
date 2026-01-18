@@ -1,4 +1,5 @@
 import { ICustomImage } from "./components/reuse/SanityImage/SanityImage";
+import { FancyText } from "./components/reuse/Text/FancyText/FancyText";
 
 export type ServiceType = "wood" | "digital";
 export type DigitalServiceType = "branding" | "website";
@@ -25,30 +26,14 @@ export interface ISlug {
   _type: string;
 }
 
-export interface IFancyText {
-  value: any; // Will store the PortableText content
-}
-
-export interface IHeroV2 {
-  title: string;
-  subTitle?: string;
-  desc: any;
-  backgroundImage: ICustomImage;
-  cta1?: ICta;
-  cta2?: ICta;
-}
-
 export type ITheme = "light" | "dark" | "yellow" | "dash" | "wood";
 
 export interface IHero {
   backgroundImage: ICustomImage;
-  foregroundImage: ICustomImage;
-  title: string;
-  desc: any;
+  subTitle: FancyText;
+  title: FancyText;
+  desc: FancyText;
   cta1: ICta;
-  cta2?: ICta;
-  message?: string;
-  theme?: ITheme;
 }
 
 export interface ILandingSide {
@@ -63,18 +48,6 @@ export interface ILandingSide {
 export interface IQuote {
   leftText: string;
   rightText: string;
-}
-
-export interface IServices {
-  services: IService[];
-}
-
-export interface IService {
-  title: string;
-  titleFR?: string;
-  svgName: string;
-  path?: string;
-  featureBlock: IFeatureBlock;
 }
 
 export interface IFeatureBlock {
@@ -93,9 +66,7 @@ export interface IFeature {
 
 export interface IQuestion {
   title: string;
-  extraNote?: string;
-  desc: any;
-  theme?: ITheme;
+  desc: FancyText;
 }
 
 export interface ITestimonial {
@@ -155,7 +126,7 @@ export interface IArticle {
   content: IBlock[];
 }
 
-export type workType = "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
+export type workType = "signs" | "decor"; // From Sanity
 
 export interface IWorkBlock {
   title: string;
@@ -170,7 +141,7 @@ export interface IWork {
   descFR?: string;
   thumbnailImage: ICustomImage; // Sanity image asset
   slug?: ISlug; // Optional for internal links
-  workType: "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
+  workType: workType; // From Sanity
   link?: string; // External URL (e.g., Behance, Kickstarter)
   images?: ICustomImage[]; // For modal slider (Wood Signs)
 }
@@ -233,12 +204,12 @@ export interface INotFound {
 
 export enum LocalPaths {
   HOME = "/",
+  SERVICES = "/services",
   SIGNS = "/signs",
-  DIGITAL = "/digital",
-  ABOUT = "/about-work",
+  DECOR = "/decor",
+  WORK = "/work",
+  ABOUT = "/about",
   CONTACT = "/contact",
-  BRANDING = "/branding",
-  WEB = "/website",
   LEGAL = "/legal",
   TERMS = "/terms-and-conditions",
   POLICIES = "/privacy-policy",
@@ -246,15 +217,9 @@ export enum LocalPaths {
 
 export enum LocalTargets {
   SIGNSFORM = "#wood-form",
-  DIGITALFORM = "#digital-form",
   WORK = "#work-block",
-  SIGNSSIGNWORK = "#wood-work-block",
-  BRANDINGWORK = "#branding-work-block",
-  WEBWORK = "#website-work-block",
-  CARDSWORK = "#cards-work-block",
-  GALLERYWORK = "#gallery-work-block",
+  SIGNSWORK = "#signs-work-block",
+  DECORWORK = "#signs-work-block",
   SERVICESBLOCK = "#services-block",
-  BRANDINGFAQ = "#branding-faq",
-  WEBFAQ = "#web-faq",
   SIGNSFAQ = "#wood-faq",
 }

@@ -69,30 +69,15 @@ export const WorkTypeNav: React.FC<WorkTypeNavProps> = ({
 
   const items: WorkTypeItemProps[] = [
     {
-      title: trans.work.wood,
+      title: trans.work.signs,
       svgName: "wood-magnetic-lid",
-      targetId: LocalTargets.SIGNSSIGNWORK,
+      targetId: LocalTargets.SIGNSWORK,
     },
     {
-      title: trans.work.branding,
-      svgName: "branding-mockups",
-      targetId: LocalTargets.BRANDINGWORK,
+      title: trans.work.decor,
+      svgName: "wood-magnetic-lid",
+      targetId: LocalTargets.DECORWORK,
     },
-    {
-      title: trans.work.web,
-      svgName: "web-ui-ux",
-      targetId: LocalTargets.WEBWORK,
-    },
-    {
-      title: trans.work.cards,
-      svgName: "cards",
-      targetId: LocalTargets.CARDSWORK,
-    },
-    // {
-    //   title: trans.work.gallery,
-    //   svgName: "branding-moodboard",
-    //   targetId: LocalTargets.GALLERYWORK,
-    // },
   ];
 
   return (

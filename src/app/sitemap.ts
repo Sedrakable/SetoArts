@@ -15,7 +15,7 @@ const staticUrls: Record<string, string[]> = {
     `${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`,
     `${LocalPaths.DIGITAL}${LocalPaths.WEB}`,
   ],
-  work: [LocalPaths.ABOUT],
+  work: [LocalPaths.WORK],
 };
 const allUrls: string[] = Object.values(staticUrls).flat();
 
@@ -26,7 +26,7 @@ const priorityMap: Record<string, number> = {
   [LocalPaths.DIGITAL]: 0.9,
   [`${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`]: 1.0,
   [`${LocalPaths.DIGITAL}${LocalPaths.WEB}`]: 1.0,
-  [LocalPaths.ABOUT]: 0.8,
+  [LocalPaths.WORK]: 0.8,
 };
 
 const changeFrequencyMap: Record<
@@ -39,7 +39,7 @@ const changeFrequencyMap: Record<
   [LocalPaths.DIGITAL]: "monthly",
   [`${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`]: "monthly",
   [`${LocalPaths.DIGITAL}${LocalPaths.WEB}`]: "monthly",
-  [LocalPaths.ABOUT]: "weekly",
+  [LocalPaths.WORK]: "weekly",
 };
 
 const generateStaticEntries: MetadataRoute.Sitemap = allUrls.map((baseUrl) => {
@@ -88,7 +88,7 @@ const generateDynamicEntries = async (): Promise<MetadataRoute.Sitemap> => {
       ? work.slug.current
       : `/${work.slug.current}`;
 
-    const basePath = `${LocalPaths.ABOUT}${slug}`;
+    const basePath = `${LocalPaths.WORK}${slug}`;
 
     const enUrl = `${BASE_URL}/en${basePath}`;
     const frUrl = `${BASE_URL}/fr${basePath}`;

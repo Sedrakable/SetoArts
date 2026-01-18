@@ -52,9 +52,8 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
   const serviceOptions: OptionType[] = [
-    { value: "wood-sign", label: translations.nav.wood },
-    { value: "branding", label: translations.nav.branding },
-    { value: "website", label: translations.nav.web },
+    { value: "wood-sign", label: translations.nav.signs },
+    { value: "decor", label: translations.nav.decor },
   ];
 
   const handleInputChange = (field: keyof ContactFormData) => (
@@ -295,11 +294,7 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
   ];
 
   return (
-    <FlexDiv
-      width100
-      id={LocalTargets.DIGITALFORM}
-      className={styles.container}
-    >
+    <FlexDiv width100 id={LocalTargets.SIGNSFORM} className={styles.container}>
       {submit === translations.form.general.emailSent ? (
         <FormSubmitMessage locale={locale} translations={translations} />
       ) : (
