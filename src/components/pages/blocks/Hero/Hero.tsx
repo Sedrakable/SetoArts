@@ -46,7 +46,7 @@ export const Hero: React.FC<IHero> = ({
           {...backgroundImage}
           priority={true}
           quality={90}
-          sizes={["50vw", "30vw", "30vw", "30vw"]}
+          sizes={["50vw", "50vw", "50vw", "50vw"]}
         />
         {/* <SanityImage
           figureclassname={styles.foregroundImage}

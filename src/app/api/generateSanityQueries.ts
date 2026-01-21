@@ -51,11 +51,19 @@ export const homePageQuery = (locale: LangType): string => {
         meta,
         hero,
         questionsBlock-> {
-        ...},
-        servicesBlock-> {
-        ...,
-        services[]->,
+          ...
         },
+        servicesBlock-> {
+          ...,
+          services[]->,
+        },
+        testimonialsBlock-> {
+          ...,
+          testimonials[]->,
+        },
+        processBlock->,
+        aboutBlock->,
+        collapsible->,
       }`;
 };
 // export const homePageQuery = (locale: LangType): string => {
@@ -91,17 +99,17 @@ export const servicePageQuery = (locale: LangType, slug: string): string => {
   }`;
 };
 
-export const aboutPageQuery = (locale: LangType): string => {
-  return `*[_type == 'aboutPage' && lang == '${locale}'][0] {
-    meta,
-    about->,
-    values->,
-    workBlocks[]->{
-    ...,
-    works[]->,
-    },
-  }`;
-};
+// export const aboutPageQuery = (locale: LangType): string => {
+//   return `*[_type == 'aboutPage' && lang == '${locale}'][0] {
+//     meta,
+//     about->,
+//     values->,
+//     workBlocks[]->{
+//     ...,
+//     works[]->,
+//     },
+//   }`;
+// };
 
 export const workPageQuery = (slug: string): string => {
   return `*[_type == 'work' && slug.current == '${slug}'][0]{

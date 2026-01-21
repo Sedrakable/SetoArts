@@ -1,31 +1,55 @@
 @use "@/styles/mixins.scss" as *;
 
 .services {
-  @include vari(--columns, 1, 2, 3, 3);
+  @include vari(--columns, 1, 2, 2, 2);
   display: grid !important;
   grid-template-columns: repeat(var(--columns), 1fr);
   align-items: stretch !important;
   row-gap: var(--pad-9) !important;
 }
 
-.container {
-  .assetWrapper {
-    aspect-ratio: 1;
-
+.serviceContainer {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 5/4;
+  border-radius: 8px;
+  box-shadow: var(--light-grey-shadow);
+  overflow: hidden;
+  transition: var(--transition-time-backoff);
+  cursor: pointer;
+  * {
+    z-index: 2;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      33deg,
+      hsl(from var(--black) h s l / 0.2) 0%,
+      hsl(from var(--yellow) h s l / 0.1) 100%
+    );
+    opacity: 1;
+    transition: opacity var(--transition-time-backoff);
+    z-index: 1;
+  }
+  .image {
+    position: absolute !important;
+    inset: 0;
     width: 100%;
-    max-width: 90%;
-    svg {
-      height: 100%;
-      width: 100%;
+    z-index: 0;
+    transition: transform var(--transition-time-backoff);
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0;
+      transition: opacity var(--transition-time);
     }
-  }
-  .title {
-    @include vari(font-size, 48px, 42px, 52px, 56px);
-    // font-size: 56px;
-  }
-  .bottom {
-    @media (min-width: $laptop) {
-      flex-direction: row !important;
+    .image {
+      transform: scale(1.05);
+      transition: transform var(--transition-time);
     }
   }
 }

@@ -1,0 +1,28 @@
+@use "@/styles/mixins.scss" as *;
+
+.wrapper {
+  border-radius: 8px;
+  box-shadow: var(--black-shadow);
+  position: relative;
+  // background: var(--white);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--yellow);
+    width: 50%;
+    height: 4px;
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--yellow);
+    width: 4px;
+    height: 40px;
+    z-index: 1;
+  }
+}

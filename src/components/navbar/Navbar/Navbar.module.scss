@@ -43,28 +43,30 @@
   //   }
   // }
   &.light {
+    background: hsl(from var(--white) h s l / 1);
     &.scrolled {
-      background: var(--white, #fff);
+      background: hsl(from var(--white) h s l / 0.7);
+      backdrop-filter: blur(10px);
       box-shadow: var(--drop-shadow);
     }
   }
-  &.dark {
-    .logo {
-      svg {
-        path:nth-child(2) {
-          fill: var(--white, #fff);
-        }
-      }
-    }
+  // &.dark {
+  //   .logo {
+  //     svg {
+  //       path:nth-child(2) {
+  //         fill: var(--white, #fff);
+  //       }
+  //     }
+  //   }
 
-    &.scrolled {
-      background: var(--black, #fff);
-      box-shadow: var(--drop-shadow);
-      p {
-        color: var(--white) !important;
-      }
-    }
-  }
+  //   &.scrolled {
+  //     background: var(--black, #fff);
+  //     box-shadow: var(--drop-shadow);
+  //     p {
+  //       color: var(--white) !important;
+  //     }
+  //   }
+  // }
 }
 
 .burger {

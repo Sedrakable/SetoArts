@@ -35,7 +35,7 @@ export const AnimatedWrapper = forwardRef(
       as,
       ...props
     }: AnimatedWrapperProps<T> & Omit<MotionProps, "as">,
-    ref: React.Ref<RefType<T>>
+    ref: React.Ref<RefType<T>>,
   ) => {
     const { isMobile } = useWindowResize();
     const Component = as
@@ -46,7 +46,7 @@ export const AnimatedWrapper = forwardRef(
     const inViewRef = React.useRef<Element | null>(null);
     const isInView = useInView(inViewRef, {
       once: true, // Animation triggers once
-      amount: 0.1, // Trigger when 10% of element is visible
+      amount: 0.5, // Trigger when 10% of element is visible
     });
 
     // Define animation variants based on `from` prop
@@ -89,7 +89,7 @@ export const AnimatedWrapper = forwardRef(
           (ref as React.MutableRefObject<any>).current = node;
         }
       },
-      [ref]
+      [ref],
     );
 
     return (
@@ -105,7 +105,7 @@ export const AnimatedWrapper = forwardRef(
         {children}
       </Component>
     );
-  }
+  },
 );
 
 AnimatedWrapper.displayName = "AnimatedWrapper";

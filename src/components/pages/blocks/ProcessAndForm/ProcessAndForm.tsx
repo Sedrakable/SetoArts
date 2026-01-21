@@ -5,6 +5,10 @@ import FlexDiv from "@/components/reuse/FlexDiv";
 import styles from "./ProcessAndForm.module.scss";
 import cn from "classnames";
 
+import { LangType } from "@/i18n/request";
+import { useLocale } from "next-intl";
+import { getTranslations } from "@/helpers/langUtils";
+
 import { IFrameVideo, IProcessStep } from "@/data.d";
 import { Block } from "../../containers/Block";
 import { WoodForm } from "../../../reuse/Form/WoodForm";
@@ -27,6 +31,8 @@ export const ProcessAndForm: FC<ProcessAndFormProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { isMobileOrTablet } = useWindowResize();
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -42,7 +48,11 @@ export const ProcessAndForm: FC<ProcessAndFormProps> = ({
   );
 
   return (
-    <Block theme="light">
+    <Block
+      theme="light"
+      className={styles.processBlock}
+      fancyTitle={{ title: translations.titles.process }}
+    >
       <FlexDiv
         gapArray={[0, 0, 8, 9]}
         width100

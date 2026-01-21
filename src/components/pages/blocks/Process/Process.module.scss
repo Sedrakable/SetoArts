@@ -3,6 +3,7 @@
 // Define responsive design variables
 
 // Process steps container
+
 .process {
   position: relative;
   flex: 3;
@@ -19,13 +20,7 @@
 .slide {
   @include vari(--circle-size, 72px, 72px, 72px, 128px);
   @include vari(--circle-border-width, 4px, 4px, 4px, 6px);
-  @include vari(
-    --container-height,
-    66vh,
-    66vh,
-    calc(100vh - 160px),
-    calc(100vh - 200px)
-  );
+  @include vari(--container-height, 66vh, 66vh, 66vh, 66vh);
   // $padding-top: 128px;
   position: relative;
   z-index: 1;

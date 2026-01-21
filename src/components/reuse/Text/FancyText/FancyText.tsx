@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, HeadingProps } from "../Heading/Heading";
+import { fingerPaint, Heading, HeadingProps } from "../Heading/Heading";
 
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import type { PortableTextBlock } from "@portabletext/types";
@@ -24,6 +24,41 @@ function getStrongColorForCursive(color?: string) {
   }
 }
 
+const splitX = (text: string) => text.split(/(\s[xX]\s)/g);
+
+const transformXNodes = (node: React.ReactNode): React.ReactNode => {
+  if (typeof node === "string") {
+    const parts = splitX(node);
+    if (parts.length === 1) return node;
+
+    return parts.map((part, i) =>
+      /\s[xX]\s/.test(part) ? (
+        <span
+          key={i}
+          className={fingerPaint.className}
+          style={{ color: "var(--dark-grey)" }}
+        >
+          {part}
+        </span>
+      ) : (
+        <React.Fragment key={i}>{part}</React.Fragment>
+      ),
+    );
+  }
+
+  if (Array.isArray(node)) return node.map(transformXNodes);
+
+  if (React.isValidElement(node)) {
+    // recurse into any element children (keeps <strong>, etc.)
+    return React.cloneElement(node, {
+      ...node.props,
+      children: transformXNodes(node.props.children),
+    });
+  }
+
+  return node;
+};
+
 export const FancyText: React.FC<FancyTextProps> = ({ value, ...props }) => {
   const { font, color, weight } = props;
 
@@ -46,9 +81,12 @@ export const FancyText: React.FC<FancyTextProps> = ({ value, ...props }) => {
   const customComponents: PortableTextComponents = {
     block: {
       normal: ({ children }) => (
-        <Heading {...props}>{children as string | JSX.Element}</Heading>
+        <Heading {...props}>
+          {isOutfit ? transformXNodes(children) : children}
+        </Heading>
       ),
     },
+
     marks: {
       strong: ({ children }) => (
         <strong

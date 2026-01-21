@@ -8,9 +8,10 @@ import Line from "@/assets/vector/Line.svg";
 
 export interface FancyTitleProps {
   subTitle?: string;
-  title: FancyText;
+  title: FancyText | string;
   line?: boolean;
 }
+
 export const FancyTitle: React.FC<PropsWithChildren<FancyTitleProps>> = ({
   subTitle,
   title,
@@ -35,16 +36,30 @@ export const FancyTitle: React.FC<PropsWithChildren<FancyTitleProps>> = ({
           {subTitle}
         </Heading>
       )}
-      <FancyText
-        font="Outfit"
-        level="3"
-        as="h2"
-        color="black"
-        textAlign="center"
-        weight={400}
-        paddingBottomArray={[0, 2, 2, 3]}
-        value={title}
-      />
+      {typeof title === "string" ? (
+        <Heading
+          font="Outfit"
+          level="2"
+          as="h2"
+          color="black"
+          textAlign="center"
+          weight={600}
+          paddingBottomArray={[0, 2, 2, 3]}
+        >
+          {title}
+        </Heading>
+      ) : (
+        <FancyText
+          font="Outfit"
+          level="2"
+          as="h2"
+          color="black"
+          textAlign="center"
+          weight={400}
+          paddingBottomArray={[0, 2, 2, 3]}
+          value={title}
+        />
+      )}
       {line && <Line className={styles.line} />}
     </FlexDiv>
   );

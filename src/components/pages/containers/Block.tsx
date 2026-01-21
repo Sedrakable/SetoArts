@@ -58,7 +58,7 @@ export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
         id={id}
       >
         {fancyTitle && (
-          <AnimatedWrapper from="left">
+          <AnimatedWrapper from="left" className={styles.fancyTitle}>
             <FancyTitle {...fancyTitle} />
           </AnimatedWrapper>
         )}

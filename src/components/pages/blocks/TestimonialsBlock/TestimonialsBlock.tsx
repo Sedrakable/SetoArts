@@ -1,11 +1,13 @@
 "use client";
 import React from "react";
-import styles from "./Testimonials.module.scss";
+import styles from "./TestimonialsBlock.module.scss";
 import cn from "classnames";
 import { Block } from "@/components/pages/containers/Block";
 import FlexDiv from "@/components/reuse/FlexDiv";
-import { SanityImage } from "@/components/reuse/SanityImage/SanityImage";
-import { ITestimonial, ITheme } from "@/data.d";
+import {
+  ICustomImage,
+  SanityImage,
+} from "@/components/reuse/SanityImage/SanityImage";
 import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { PortableTextContent } from "@/components/reuse/Text/Paragraph/PortableTextContent";
 import { useWindowResize } from "@/helpers/useWindowResize";
@@ -14,11 +16,21 @@ import { DotButton, useDotButton } from "../Carousel/DotButton";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n/request";
-import { Button } from "@/components/reuse/Button/Button";
-import { getTranslations } from "@/helpers/langUtils";
+import { FancyTitleProps } from "@/components/reuse/FancyTitle/FancyTitle";
 
-const Testimonial: React.FC<ITestimonial & { theme: ITheme }> = ({
-  theme,
+export interface TestimonialkProps {
+  beforeImage?: ICustomImage;
+  afterImage: ICustomImage;
+  name: string;
+  company: string;
+  profileImage?: ICustomImage;
+  title?: string;
+  review: any;
+  titleFR?: string;
+  reviewFR: any;
+}
+
+const Testimonial: React.FC<TestimonialkProps> = ({
   beforeImage,
   afterImage,
   name,
@@ -28,11 +40,8 @@ const Testimonial: React.FC<ITestimonial & { theme: ITheme }> = ({
   company,
   titleFR,
   reviewFR,
-  link,
 }) => {
   const locale = useLocale() as LangType;
-  const translations = getTranslations(locale);
-  console.log("link", link);
   return (
     <FlexDiv
       flex={{ direction: "column", y: "flex-start" }}
@@ -78,7 +87,7 @@ const Testimonial: React.FC<ITestimonial & { theme: ITheme }> = ({
           <FlexDiv flex={{ direction: "column", x: "flex-start" }}>
             <Paragraph
               level="big"
-              color={theme === "light" ? "black" : "white"}
+              color={"black"}
               textAlign="left"
               weight={600}
             >
@@ -86,7 +95,7 @@ const Testimonial: React.FC<ITestimonial & { theme: ITheme }> = ({
             </Paragraph>
             <Paragraph
               level="regular"
-              color={theme === "light" ? "black" : "white"}
+              color={"black"}
               textAlign="left"
               weight={600}
             >
@@ -95,7 +104,7 @@ const Testimonial: React.FC<ITestimonial & { theme: ITheme }> = ({
             {title && (
               <Paragraph
                 level="small"
-                color={theme === "light" ? "black" : "white"}
+                color={"black"}
                 textAlign="left"
                 weight={400}
               >
@@ -110,32 +119,23 @@ const Testimonial: React.FC<ITestimonial & { theme: ITheme }> = ({
             value={locale === "fr" && reviewFR ? reviewFR : review}
             textAlign="justify"
             className={styles.desc}
-            color={theme === "light" ? "black" : "white"}
+            color={"black"}
             differentColorForStrongText
           />
         </FlexDiv>
-        {link && (
-          <Button
-            variant={theme === "light" ? "white" : "black"}
-            outline
-            href={link}
-          >
-            {translations.buttons.viewCaseStudy}
-          </Button>
-        )}
       </FlexDiv>
     </FlexDiv>
   );
 };
 
-export interface TestimonialsProps {
-  theme: ITheme;
-  testimonials: ITestimonial[];
+export interface TestimonialsBlockProps {
+  fancyTitle: FancyTitleProps;
+  testimonials: TestimonialkProps[];
 }
 
-export const Testimonials: React.FC<TestimonialsProps> = ({
+export const TestimonialsBlock: React.FC<TestimonialsBlockProps> = ({
+  fancyTitle,
   testimonials,
-  theme = "light",
 }) => {
   const { isMobileOrTablet } = useWindowResize();
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -144,20 +144,18 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
     containScroll: "trimSnaps", // Ensure snapping works cleanly
   });
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
-    emblaApi
+    emblaApi,
   );
 
   return (
     <>
       {isMobileOrTablet ? (
-        <div
-          className={cn(styles.testimonials, styles[theme], styles.carousel)}
-        >
+        <div className={cn(styles.testimonials, styles.carousel)}>
           <div className={styles.emblaViewport} ref={emblaRef}>
             <div className={styles.emblaContainer}>
               {testimonials?.map((testimonial, key) => (
                 <div className={styles.emblaSlide} key={key}>
-                  <Testimonial {...testimonial} theme={theme} />
+                  <Testimonial {...testimonial} />
                 </div>
               ))}
             </div>
@@ -175,19 +173,19 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
           </div>
         </div>
       ) : (
-        <Block theme={theme} className={styles.block}>
+        <Block fancyTitle={fancyTitle} theme="light" className={styles.block}>
           <FlexDiv
             gapArray={[6, 7, 7, 8]}
             flex={{ y: "flex-start" }}
             width100
             padding={{ top: [6, 8, 8, 9] }}
-            className={cn(styles.testimonials, styles[theme])}
+            className={cn(styles.testimonials)}
             as="ul"
           >
-            {testimonials?.map((testimonial: ITestimonial, key) => {
+            {testimonials?.map((testimonial: TestimonialkProps, key) => {
               return (
                 <AnimatedWrapper from="inside" key={key} as="li">
-                  <Testimonial {...testimonial} theme={theme} />
+                  <Testimonial {...testimonial} />
                 </AnimatedWrapper>
               );
             })}

@@ -10,35 +10,36 @@ import { PortableTextContent } from "@/components/reuse/Text/Paragraph/PortableT
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 import { FancyTitleProps } from "@/components/reuse/FancyTitle/FancyTitle";
 import { FancyText } from "@/components/reuse/Text/FancyText/FancyText";
+import { FancyDivWrapper } from "../../containers/FancyDivWrapper/FancyDivWrapper";
 
 const Question: React.FC<IQuestion> = ({ title, desc }) => {
   return (
-    <FlexDiv
-      flex={{ direction: "column", y: "flex-start" }}
-      width100
-      gapArray={[3]}
-      padding={{ all: [5], bottom: [6], top: [4] }}
-      className={cn(styles.question)}
-    >
-      <Heading
-        font="Outfit"
-        level="4"
-        as="h3"
-        color="black"
-        weight={500}
-        textAlign="left"
-        upperCase={false}
+    <FancyDivWrapper>
+      <FlexDiv
+        flex={{ direction: "column", y: "flex-start" }}
+        width100
+        gapArray={[3]}
       >
-        {title}
-      </Heading>
+        <Heading
+          font="Outfit"
+          level="4"
+          as="h3"
+          color="black"
+          weight={500}
+          textAlign="left"
+          upperCase={false}
+        >
+          {title}
+        </Heading>
 
-      <PortableTextContent
-        level="regular"
-        value={desc}
-        className={styles.desc}
-        differentColorForStrongText={false}
-      />
-    </FlexDiv>
+        <PortableTextContent
+          level="regular"
+          value={desc}
+          className={styles.desc}
+          differentColorForStrongText={false}
+        />
+      </FlexDiv>
+    </FancyDivWrapper>
   );
 };
 

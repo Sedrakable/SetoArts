@@ -21,7 +21,7 @@ import {
   SolutionBlock,
   SolutionBlockProps,
 } from "@/components/pages/blocks/SolutionBlock/SolutionBlock";
-import { Testimonials } from "@/components/pages/blocks/Testimonials/Testimonials";
+import { Testimonials } from "@/components/pages/blocks/Testimonials/TestimonialsBlock";
 
 import { FormTitleProps } from "@/components/reuse/Form/Form";
 import { getFormData } from "@/components/reuse/Form/getFormData";

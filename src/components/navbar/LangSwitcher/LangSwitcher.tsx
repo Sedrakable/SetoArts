@@ -21,7 +21,7 @@ export const LangSwitcher: React.FC<{ onClick?: Function }> = ({ onClick }) => {
         // are used in combination with a given `pathname`. Since the two will
         // always match for the current route, we can skip runtime checks.
         { pathname, params },
-        { locale: newLang }
+        { locale: newLang },
       );
     });
     onClick && onClick();
@@ -29,7 +29,7 @@ export const LangSwitcher: React.FC<{ onClick?: Function }> = ({ onClick }) => {
 
   return (
     <FlexDiv gapArray={[3]} className={styles.langWrapper} onClick={langClick}>
-      <Heading as="span" level="5" font="Outfit" color="dark-grey" weight={400}>
+      <Heading as="span" level="5" font="Outfit" color="yellow" weight={400}>
         {locale === "en" ? "FR" : "EN"}
       </Heading>
       {/* <Paragraph level="big" color="yellow">

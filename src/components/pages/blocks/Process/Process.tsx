@@ -3,13 +3,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./Process.module.scss";
 import cn from "classnames";
-import FlexDiv from "@/components/reuse/FlexDiv";
-import { LangType } from "@/i18n/request";
-import { useLocale } from "next-intl";
-import { getTranslations } from "@/helpers/langUtils";
-import { Block } from "@/components/pages/containers/Block";
+
 import { IFrameVideo, IProcessStep } from "@/data.d";
-import { ProcessStep } from "./ProcessStep";
+
 import {
   MotionValue,
   useMotionValueEvent,
@@ -26,50 +22,46 @@ export interface ProcessProps {
 /**
  * Process - Main component for displaying process steps with either video/3D or static images
  */
-export const Process: React.FC<ProcessProps> = ({
-  processSteps,
-  side = "left",
-  video,
-}) => {
-  const locale = useLocale() as LangType;
-  const translations = getTranslations(locale);
-  const containerRef = useRef<HTMLDivElement>(null);
+// export const Process: React.FC<ProcessProps> = ({
+//   processSteps,
+//   side = "left",
+//   video,
+// }) => {
+//   const locale = useLocale() as LangType;
+//   const translations = getTranslations(locale);
+//   const containerRef = useRef<HTMLDivElement>(null);
+//   console.log("translations.titles.process", translations.titles.process);
+//   return (
+//     <Block
+//       fancyTitle={{ title: translations.titles.process }}
+//       theme="dark"
+//       ref={containerRef}
+//     >
+//       <FlexDiv
+//         gapArray={[0, 0, 5, 7]}
+//         width100
+//         className={styles.wrapper}
+//         flex={{
+//           direction: side === "left" ? "row" : "row-reverse",
+//           y: "flex-start",
+//         }}
+//       >
+//         <div
+//           className={cn(styles.process, {
+//             [styles.right]: side === "right",
+//           })}
+//         >
+//           {processSteps?.map((processStep: IProcessStep, key) => (
+//             <ProcessStep {...processStep} number={key} key={key} />
+//           ))}
+//         </div>
 
-  return (
-    <Block
-      title={{
-        children: translations.titles.process,
-        font: "Cursive",
-        color: "yellow",
-      }}
-      theme="light"
-      ref={containerRef}
-    >
-      <FlexDiv
-        gapArray={[0, 0, 5, 7]}
-        width100
-        className={styles.wrapper}
-        flex={{
-          direction: side === "left" ? "row" : "row-reverse",
-          y: "flex-start",
-        }}
-      >
-        <div
-          className={cn(styles.process, {
-            [styles.right]: side === "right",
-          })}
-        >
-          {processSteps?.map((processStep: IProcessStep, key) => (
-            <ProcessStep {...processStep} number={key} key={key} />
-          ))}
-        </div>
-
-        {/* YouTube video iframe */}
-        <ProcessVideo {...video} />
-      </FlexDiv>
-    </Block>
-  );
-};
+//         {/* YouTube video iframe */}
+//         <ProcessVideo {...video} />
+//       </FlexDiv>
+//     </Block>
+//   );
+// };
 
 export interface ProcessVideoProps extends IFrameVideo {
   containerYProgress: MotionValue<number>;
@@ -92,7 +84,7 @@ export const ProcessVideo: React.FC<ProcessVideoProps> = ({
         paths.push(`/videos/${folder}/final.png`);
       } else {
         paths.push(
-          `/videos/${folder}/${i.toString().padStart(4, "0")}.${format}`
+          `/videos/${folder}/${i.toString().padStart(4, "0")}.${format}`,
         );
       }
     }
@@ -119,7 +111,7 @@ export const ProcessVideo: React.FC<ProcessVideoProps> = ({
     smoothFrame,
     [0, 1],
     [firstIndex, lastIndex],
-    { clamp: true }
+    { clamp: true },
   );
 
   // Update visibleIndex with smoother transition

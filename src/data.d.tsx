@@ -26,7 +26,7 @@ export interface ISlug {
   _type: string;
 }
 
-export type ITheme = "light" | "dark" | "yellow" | "dash" | "wood";
+export type ITheme = "light" | "dark" | "dash" | "wood" | "off-white";
 
 export interface IHero {
   backgroundImage: ICustomImage;
@@ -69,19 +69,6 @@ export interface IQuestion {
   desc: FancyText;
 }
 
-export interface ITestimonial {
-  beforeImage?: ICustomImage;
-  afterImage: ICustomImage;
-  name: string;
-  company: string;
-  profileImage?: ICustomImage;
-  title?: string;
-  review: any;
-  titleFR?: string;
-  reviewFR: any;
-  link?: string; // Optional link for the review
-}
-
 export interface IProcessStep {
   title: string;
   desc: any;
@@ -103,13 +90,6 @@ export interface IValues {
 export interface IValue {
   title: string;
   desc: string;
-}
-
-export interface IAbout {
-  profileImage: ICustomImage;
-  title: string;
-  subTitle: string;
-  desc: any;
 }
 
 export interface IBlog {

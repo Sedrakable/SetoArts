@@ -1,9 +1,6 @@
 import {
   ISeo,
   IHero,
-  IFeature,
-  IQuestion,
-  ITestimonial,
   ICollapsible,
   IProcessStep,
   LocalPaths,
@@ -15,16 +12,10 @@ import { LangType } from "@/i18n/request";
 import { homePageQuery } from "@/app/api/generateSanityQueries";
 
 import { ICustomImage } from "@/components/reuse/SanityImage/SanityImage";
-import { Features } from "@/components/pages/blocks/Features/Features";
 import {
   QuestionsBlock,
   QuestionsBlockProps,
 } from "@/components/pages/blocks/QuestionsBlock/QuestionsBlock";
-import {
-  SolutionBlock,
-  SolutionBlockProps,
-} from "@/components/pages/blocks/SolutionBlock/SolutionBlock";
-import { Testimonials } from "@/components/pages/blocks/Testimonials/Testimonials";
 
 import { FormTitleProps } from "@/components/reuse/Form/Form";
 import { getFormData } from "@/components/reuse/Form/getFormData";
@@ -43,17 +34,26 @@ import {
   ServicesBlock,
   ServicesBlockProps,
 } from "@/components/pages/blocks/ServicesBlock/ServicesBlock";
+import {
+  TestimonialsBlock,
+  TestimonialsBlockProps,
+} from "@/components/pages/blocks/TestimonialsBlock/TestimonialsBlock";
+import {
+  AboutBlock,
+  AboutBlockProps,
+} from "@/components/pages/blocks/AboutBlock/AboutBlock";
 
 export interface HomePageProps {
   meta: ISeo;
   hero: IHero;
   questionsBlock: QuestionsBlockProps;
   servicesBlock: ServicesBlockProps;
+  aboutBlock: AboutBlockProps;
   // featureBlock: { features: IFeature[] };
   // solutionBlock: SolutionBlockProps;
-  // processBlock: { processes: IProcessStep[] };
-  // testimonials: ITestimonial[];
-  // collapsible: ICollapsible;
+  processBlock: { processes: IProcessStep[] };
+  testimonialsBlock: TestimonialsBlockProps;
+  collapsible: ICollapsible;
 }
 
 const getHomePageData = async (locale: LangType) => {
@@ -110,15 +110,15 @@ export default async function HomePage({
               scrollTarget: LocalTargets.SIGNSFORM,
             }}
           />
-          {/* {carouselImages && <Carousel images={carouselImages} />} */}
+          {carouselImages && <Carousel images={carouselImages} />}
           {data.questionsBlock && <QuestionsBlock {...data.questionsBlock} />}
           {data.servicesBlock && <ServicesBlock {...data.servicesBlock} />}
-
-          {/* {data.solutionBlock && (
+          {/* 
+          {data.solutionBlock && (
             <SolutionBlock {...data.solutionBlock} theme="wood" />
-          )}
-          {data.testimonials && (
-            <Testimonials testimonials={data.testimonials} theme="light" />
+          )} */}
+          {data.testimonialsBlock && (
+            <TestimonialsBlock {...data.testimonialsBlock} />
           )}
           {data.processBlock && (
             <ProcessAndForm
@@ -132,10 +132,13 @@ export default async function HomePage({
               }}
             />
           )}
-          {data.featureBlock && (
+          {/* {data.featureBlock && (
             <Features features={data.featureBlock.features} />
+          )} */}
+          {data && (
+            <>{data.aboutBlock && <AboutBlock {...data.aboutBlock} />}</>
           )}
-          {data.collapsible && <Collapsible {...data.collapsible} />} */}
+          {data.collapsible && <Collapsible {...data.collapsible} />}
         </>
       )}
     </NavWrapperServer>

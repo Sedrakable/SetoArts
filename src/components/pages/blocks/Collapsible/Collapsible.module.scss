@@ -10,23 +10,22 @@
 .questionToggle:hover .plus {
   transform: rotate(90deg);
 }
+.questionWrapper {
+  .question {
+    border-bottom: 1.5px solid rgba(#000, 0.1);
+  }
 
-.question {
-  border-bottom: 1px solid var(--light-grey);
-
-  &:has(.minus) {
-    background: var(--grad);
-    border-radius: var(--border-radius);
+  &:last-child .question {
     border-bottom: unset;
   }
 
-  /* Unset border-bottom for the previous question if the next one is open */
-  &:has(+ .question .minus) {
+  // current open item
+  &:has(.minus) .question {
     border-bottom: unset;
   }
 
-  /* Remove border-bottom for the last item */
-  &:last-child {
+  // previous item when next one is open
+  &:has(+ .questionWrapper .minus) .question {
     border-bottom: unset;
   }
 }
