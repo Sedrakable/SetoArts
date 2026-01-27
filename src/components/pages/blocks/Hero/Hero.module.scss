@@ -118,12 +118,12 @@
 
 .version1 {
   @include vari(--max-height, 100%, 640px, 640px, 900px);
-  @include vari(--ratio, 1, 3/5, 13/15, 13/15);
+  @include vari(--ratio, 1, d(3, 5), d(13, 15), d(13, 15));
 }
 .version2 {
   @include vari(--max-height, 100%, 520px, 520px, 640px);
-  @include vari(--ratio, 1, 7/10, 4/3, 4/3);
-  // @include vari(--ratio, 5/4);;
+  @include vari(--ratio, 1, d(7, 10), d(4, 3), d(4, 3));
+  // @include vari(--ratio, d(5, 4));;
 }
 .ctas {
   @include vari(--direction, column, row);

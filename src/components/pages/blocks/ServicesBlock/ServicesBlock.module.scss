@@ -20,7 +20,7 @@
     .image {
       position: relative !important;
       width: 100% !important;
-      aspect-ratio: 4/3;
+      aspect-ratio: d(4, 3);
       border-radius: var(--border-radius);
       box-shadow: var(--drop-shadow);
       overflow: hidden;

@@ -6,7 +6,6 @@ import Image from "next/image";
 
 import { ICta } from "../../../../data.d";
 import FlexDiv from "../../../reuse/FlexDiv";
-import bigStroke from "/public/photos/BigStroke.webp";
 import { Button } from "../../../reuse/Button/Button";
 import {
   ICustomImage,
@@ -146,7 +145,7 @@ export const Hero: React.FC<HeroProps> = ({
 
       {version === 1 && (
         <Image
-          src={bigStroke.src}
+          src={"/photos/BigStroke.webp"}
           alt="stroke"
           width={2400}
           height={200}

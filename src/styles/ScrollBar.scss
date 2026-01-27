@@ -1,4 +1,4 @@
-@import "./mixins.scss";
+@use "@/styles/mixins.scss" as *;
 
 @mixin vars() {
   --scrollbar-width: 6px;

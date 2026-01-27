@@ -14,7 +14,7 @@ import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 import { LogoLink, isDropDown } from "../Navbar/Navbar";
 
 import { LangType } from "@/i18n/request";
-import { usePathname, useRouter } from "@/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { Socials } from "@/components/reuse/Socials/Socials";
 

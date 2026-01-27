@@ -1,6 +1,13 @@
+@use "sass:math";
+
 $tablet: 640px;
 $laptop: 1200px;
 $desktop: 1680px;
+
+// Shorter alias
+@function d($a, $b) {
+  @return math.div($a, $b);
+}
 
 @mixin vari(
   $property,

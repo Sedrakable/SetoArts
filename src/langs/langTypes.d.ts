@@ -1,3 +1,4 @@
+// src/langs/langTypes.d.ts
 interface Titles {
   services: string;
   whatYouGet: string;

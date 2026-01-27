@@ -1,6 +1,6 @@
 import styles from "./LangSwitcher.module.scss";
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "@/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import { useTransition } from "react";
 import { useParams } from "next/navigation";
 import FlexDiv from "@/components/reuse/FlexDiv";

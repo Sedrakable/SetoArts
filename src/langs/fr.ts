@@ -1,3 +1,4 @@
+// src/langs/fr.ts
 import { Translations } from "./langTypes";
 
 export const frTranslations: Translations = {

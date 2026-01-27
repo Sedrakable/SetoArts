@@ -8,7 +8,6 @@ import "@/styles/ScrollBar.scss";
 import "@/styles/index.scss";
 import { NextIntlClientProvider } from "next-intl";
 import { LangType } from "@/i18n/request";
-import bigStroke from "/public/photos/BigStroke.webp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +29,7 @@ export default async function LocaleLayout({
       <html lang={locale}>
         <NextIntlClientProvider locale={locale}>
           <head>
-            <link rel="preload" href={bigStroke.src} as="image" />
+            <link rel="preload" href="/photos/BigStroke.webp" as="image" />
             <meta name="theme-color" content="#fec301" />
 
             <noscript>

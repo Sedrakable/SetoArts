@@ -1,19 +1,27 @@
 import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack(config) {
-    // Grab the existing rule that handles SVG imports
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
-    );
+    // Add babel-loader + svgr for SVG files
     config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: fileLoaderRule.issuer,
-      use: ["@svgr/webpack"],
+      test: /\.svg$/,
+      use: [
+        {
+          loader: "babel-loader",
+          options: {
+            presets: [["@babel/preset-react", { runtime: "automatic" }]],
+          },
+        },
+        {
+          loader: "@svgr/webpack",
+          options: {
+            babel: false,
+          },
+        },
+      ],
     });
-
-    fileLoaderRule.exclude = /\.svg$/i;
 
     return config;
   },
@@ -21,7 +29,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["cdn.sanity.io"],
     remotePatterns: [
       {
         protocol: "https",
@@ -30,12 +37,6 @@ const nextConfig = {
     ],
     deviceSizes: [640, 1200, 1680],
   },
-  // images: {
-  //
-  //
-  // },
-  // output: "export",  // <=== enables static exports
-  // distDir: "dist",  // <=== change the build directory
 };
-// export default withNextIntl(nextConfig);
+
 export default withNextIntl(nextConfig);

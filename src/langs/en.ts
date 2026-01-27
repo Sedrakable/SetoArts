@@ -1,3 +1,4 @@
+// src/langs/en.ts
 import { Translations } from "./langTypes";
 
 export const enTranslations: Translations = {

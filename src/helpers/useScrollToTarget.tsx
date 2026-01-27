@@ -1,6 +1,6 @@
 // helpers/useScrollToTarget.ts
 "use client";
-import { usePathname, useRouter } from "@/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { LocalTargets } from "@/data.d";
 import { useEffect } from "react";
 
