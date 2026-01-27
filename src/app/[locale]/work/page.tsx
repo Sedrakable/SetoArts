@@ -9,7 +9,6 @@ import {
   WorkBlockProps,
 } from "@/components/pages/blocks/WorkBlock/WorkBlock";
 import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
-import { WorkTypeNav } from "@/components/pages/blocks/WorkBlock/WorkTypeNav";
 import { Hero, HeroProps } from "@/components/pages/blocks/Hero/Hero";
 
 export interface WorkPageProps {

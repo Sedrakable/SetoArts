@@ -89,7 +89,7 @@ const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
 const LegalAndFaq: React.FC<{
   legals: { title: string; path: string }[];
   faqs?: IFooterFAQLinks[];
-}> = ({ legals, faqs }) => {
+}> = ({ legals }) => {
   const locale = useLocale() as LangType;
   return (
     <FlexDiv className={styles.legal} gapArray={[5]} wrap>

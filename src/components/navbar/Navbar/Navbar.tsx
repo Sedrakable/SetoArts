@@ -23,7 +23,7 @@ const Sidebar = dynamic(
   () => import("../Sidebar/Sidebar").then((module) => module.Sidebar),
   {
     ssr: false,
-  }
+  },
 );
 
 export const isDropDown = (link: INavLink | ICta): link is INavLink => {
@@ -34,7 +34,6 @@ export const Navbar: React.FC<INavBar> = ({
   links,
   navButton,
   theme = "light",
-  hideLogo = false,
   socials,
 }) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
@@ -141,7 +140,7 @@ export const dropDown = (
   navLink: INavLink,
   locale: LangType,
   theme: ITheme = "light",
-  key?: number
+  key?: number,
 ) => (
   <TabButton
     key={key}
