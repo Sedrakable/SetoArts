@@ -28,13 +28,7 @@ export interface ISlug {
 
 export type ITheme = "light" | "dark" | "dash" | "wood" | "off-white";
 
-export interface IHero {
-  backgroundImage: ICustomImage;
-  subTitle: FancyText;
-  title: FancyText;
-  desc: FancyText;
-  cta1: ICta;
-}
+
 
 export interface ILandingSide {
   title: string;
@@ -59,7 +53,7 @@ export interface IFeature {
   customImage?: ICustomImage; // Optional image field
   svgName?: string; // Optional SVG name
   title: string;
-  desc: string;
+  desc: FancyText;
   titleFR: string; // Optional French title
   descFR: string; // Optional French description
 }
@@ -107,13 +101,6 @@ export interface IArticle {
 }
 
 export type workType = "signs" | "decor"; // From Sanity
-
-export interface IWorkBlock {
-  title: string;
-  titleFR?: string;
-  works: IWork[];
-  id: LocalTargets; // For anchor scrolling
-}
 
 export interface IWork {
   title?: string; // Optional for gallery

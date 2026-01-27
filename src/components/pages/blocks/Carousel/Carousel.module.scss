@@ -1,5 +1,9 @@
 @use "@/styles/mixins.scss" as *;
 
+.carouselWrapper {
+  z-index: 4;
+  // background-color: var(--off-white);
+}
 .embla {
   // overflow: hidden;
   padding: var(--pad-6) 0;
@@ -23,7 +27,7 @@
   height: 100% !important;
   aspect-ratio: 1;
   border-radius: var(--border-radius-small);
-  box-shadow: var(--light-shadow);
+  box-shadow: var(--drop-shadow);
 
   // pointer-events: auto;
   transition: 1.2s ease;

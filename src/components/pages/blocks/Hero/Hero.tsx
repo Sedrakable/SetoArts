@@ -4,32 +4,50 @@ import styles from "./Hero.module.scss";
 import cn from "classnames";
 import Image from "next/image";
 
-import { IHero } from "../../../../data.d";
+import { ICta } from "../../../../data.d";
 import FlexDiv from "../../../reuse/FlexDiv";
 import bigStroke from "/public/photos/BigStroke.webp";
 import { Button } from "../../../reuse/Button/Button";
-import { SanityImage } from "../../../reuse/SanityImage/SanityImage";
+import {
+  ICustomImage,
+  SanityImage,
+} from "../../../reuse/SanityImage/SanityImage";
 import { useWindowResize } from "../../../../helpers/useWindowResize";
 
 import { PortableTextContent } from "../../../reuse/Text/Paragraph/PortableTextContent";
 import { useParallaxScroll } from "@/helpers/useParallaxScroll";
 
 import { FancyText } from "@/components/reuse/Text/FancyText/FancyText";
+import { SpacingArrayType } from "@/helpers/SpacingGenerator";
 
-export const Hero: React.FC<IHero> = ({
+export interface HeroProps {
+  backgroundImage: ICustomImage;
+  subTitle: FancyText;
+  title: FancyText;
+  desc: FancyText;
+  cta1: ICta;
+  version?: 1 | 2;
+}
+
+export const Hero: React.FC<HeroProps> = ({
   backgroundImage,
   subTitle,
   title,
   desc,
   cta1,
+  version = 1,
 }) => {
   const { isMobile, isMobileOrTablet } = useWindowResize();
   const heroRef = useRef<HTMLDivElement>(null);
   const scrollProgress = useParallaxScroll(heroRef);
-
+  const paddings: { top: SpacingArrayType; bottom: SpacingArrayType } =
+    version === 1
+      ? { top: [9, 10, 11, 13], bottom: [8, 9, 10, 12] }
+      : { top: [9, 10, 9, 11], bottom: [6, 7, 9, 10] };
   return (
     <FlexDiv
-      className={cn(styles.hero)}
+      className={cn(styles.hero, styles[`version${version}`])}
+      padding={paddings}
       flex={{ direction: "column-reverse", x: "flex-start", y: "flex-start" }}
       as={"header"}
       width100
@@ -126,14 +144,15 @@ export const Hero: React.FC<IHero> = ({
         </FlexDiv>
       </FlexDiv>
 
-      <Image
-        src={bigStroke.src}
-        alt="stroke"
-        width={2400}
-        height={200}
-        className={styles.stroke}
-      />
-      {/* {!isMobile && graphic[theme]} */}
+      {version === 1 && (
+        <Image
+          src={bigStroke.src}
+          alt="stroke"
+          width={2400}
+          height={200}
+          className={styles.stroke}
+        />
+      )}
     </FlexDiv>
   );
 };

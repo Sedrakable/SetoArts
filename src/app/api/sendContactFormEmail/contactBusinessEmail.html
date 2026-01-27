@@ -1,10 +1,9 @@
-<!-- app/api/sendDigitalFormEmail/digitalBusinessEmail.html -->
 <!DOCTYPE html>
 <html lang="${locale}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🚀 New Digital Project Inquiry</title>
+    <title>💬 New Contact Inquiry</title>
   </head>
   <body
     style="
@@ -14,6 +13,7 @@
       font-family: 'Outfit', Arial, sans-serif;
     "
   >
+    <!-- Main Table Structure -->
     <table
       width="100%"
       border="0"
@@ -23,6 +23,7 @@
     >
       <tr>
         <td align="center">
+          <!-- Container -->
           <table
             width="100%"
             border="0"
@@ -30,6 +31,7 @@
             cellpadding="0"
             style="max-width: 650px"
           >
+            <!-- Header Section -->
             <tr>
               <td
                 align="center"
@@ -53,6 +55,8 @@
                 </h1>
               </td>
             </tr>
+
+            <!-- Content Section -->
             <tr>
               <td
                 style="
@@ -61,6 +65,7 @@
                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 "
               >
+                <!-- Title -->
                 <h2
                   style="
                     color: #0f0f0f;
@@ -73,8 +78,10 @@
                     padding-bottom: 10px;
                   "
                 >
-                  🚀 New Digital Project Inquiry
+                  💬 New Contact Inquiry
                 </h2>
+
+                <!-- Client Information -->
                 <div
                   style="
                     margin-bottom: 30px;
@@ -94,10 +101,9 @@
                     Email: <strong>${formData.email}</strong>
                   </p>
                   <p style="margin: 0">Locale: <strong>${locale}</strong></p>
-                  <p style="margin: 0">
-                    Service: <strong>${formData.service}</strong>
-                  </p>
                 </div>
+
+                <!-- Project Details -->
                 <div
                   style="
                     margin-bottom: 30px;
@@ -113,6 +119,10 @@
                     Details: <strong>${formData.details}</strong>
                   </p>
                   <p style="margin: 0">
+                    Dimensions:
+                    <strong>${formData.width}" × ${formData.height}"</strong>
+                  </p>
+                  <p style="margin: 0">
                     Budget Range:
                     <strong
                       >$${formData.budgetMin} – $${formData.budgetMax}</strong
@@ -121,6 +131,8 @@
                 </div>
               </td>
             </tr>
+
+            <!-- Footer Branding -->
             <tr>
               <td
                 align="center"

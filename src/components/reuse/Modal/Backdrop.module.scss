@@ -2,17 +2,17 @@
 
 .backdrop {
   @include absoluteFill;
-  @include flex(center, flex-start);
+  @include flex(center, center);
 
   opacity: 1;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(8px);
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   width: 100%;
   height: 100vh;
-  z-index: 10;
-  overflow-y: scroll;
-  padding: var(--pad-9) 0;
+  z-index: 20;
+  // overflow-y: scroll;
+  padding: var(--pad-7) 0;
   box-sizing: border-box;
-  cursor: pointer;
+  // cursor: pointer;
 }

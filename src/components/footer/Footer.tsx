@@ -27,7 +27,7 @@ const linkComp = (
   locale: LangType,
   cta: ICta,
   key: number,
-  linkPath?: string
+  linkPath?: string,
 ) => {
   return (
     <li key={key}>
@@ -79,7 +79,7 @@ const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
       padding={{ bottom: [0, 0, 2] }}
     >
       <LogoHori />
-      <Paragraph level="small" color="grey" textAlign="center">
+      <Paragraph level="small" color="light-grey" textAlign="center">
         {trademark}
       </Paragraph>
     </FlexDiv>
@@ -100,25 +100,25 @@ const LegalAndFaq: React.FC<{
             key={key}
             aria-label={cta?.title}
           >
-            <Paragraph level="small" color="grey" clickable>
+            <Paragraph level="small" color="light-grey" clickable>
               {cta?.title}
             </Paragraph>
           </Link>
         );
       })}
-      {faqs?.map((faq, key) => {
+      {/* {faqs?.map((faq, key) => {
         return (
           <Link
             href={`/${locale}${LocalPaths.CONTACT}${faq.id}`}
             key={key}
             aria-label={faq?.title}
           >
-            <Paragraph level="small" color="grey" clickable>
+            <Paragraph level="small" color="light-grey" clickable>
               {faq?.title}
             </Paragraph>
           </Link>
         );
-      })}
+      })} */}
     </FlexDiv>
   );
 };

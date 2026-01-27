@@ -11,12 +11,12 @@ import { getTranslations } from "@/helpers/langUtils";
 
 import { IFrameVideo, IProcessStep } from "@/data.d";
 import { Block } from "../../containers/Block";
-import { WoodForm } from "../../../reuse/Form/WoodForm";
 import { ProcessVideo } from "@/components/pages/blocks/Process/Process";
 import { useScroll } from "framer-motion";
 import { ProcessStep } from "@/components/pages/blocks/Process/ProcessStep";
 import { useWindowResize } from "@/helpers/useWindowResize";
 import { FormTitleProps } from "@/components/reuse/Form/Form";
+import { ContactForm } from "@/components/reuse/Form/ContactForm";
 
 interface ProcessAndFormProps extends FormTitleProps {
   processes: IProcessStep[];
@@ -69,10 +69,12 @@ export const ProcessAndForm: FC<ProcessAndFormProps> = ({
           flex={{ direction: "column" }}
         >
           {process}
-          {!isMobileOrTablet && <WoodForm title={title} subTitle={subTitle} />}
+          {!isMobileOrTablet && (
+            <ContactForm title={title} subTitle={subTitle} />
+          )}
         </FlexDiv>
       </FlexDiv>
-      {isMobileOrTablet && <WoodForm title={title} subTitle={subTitle} />}
+      {isMobileOrTablet && <ContactForm title={title} subTitle={subTitle} />}
     </Block>
   );
 };

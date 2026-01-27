@@ -4,7 +4,7 @@ import { Translations } from "@/langs/langTypes";
 
 export const navContactButtonData = (
   locale: LangType,
-  trans: Translations
+  trans: Translations,
 ): ICta => {
   return {
     path: `/${locale}${LocalPaths.CONTACT}`,
@@ -46,7 +46,7 @@ export const navContactButtonData = (
 
 export const chooseNavButtonData = (
   locale: LangType,
-  trans: Translations
+  trans: Translations,
   // path: LocalPaths
 ): ICta => {
   // const NavButtonDataObject = {
@@ -64,22 +64,22 @@ export const chooseNavButtonData = (
 export const navLinkData = (trans: Translations): (INavLink | ICta)[] => {
   return [
     { text: trans.nav.home, path: LocalPaths.HOME } as ICta,
-    {
-      title: trans.nav.services,
-      path: LocalPaths.SERVICES,
-      ctaArray: [
-        {
-          text: trans.nav.signs,
-          path: LocalPaths.SIGNS,
-        } as ICta,
-        {
-          text: trans.nav.decor,
-          path: LocalPaths.DECOR,
-        } as ICta,
-      ],
-    } as INavLink,
+    // {
+    //   title: trans.nav.services,
+    //   path: LocalPaths.SERVICES,
+    //   ctaArray: [
+    //     {
+    //       text: trans.nav.signs,
+    //       path: LocalPaths.SIGNS,
+    //     } as ICta,
+    //     {
+    //       text: trans.nav.decor,
+    //       path: LocalPaths.DECOR,
+    //     } as ICta,
+    //   ],
+    // } as INavLink,
 
     { text: trans.nav.work, path: LocalPaths.WORK } as ICta,
-    { text: trans.nav.about, path: LocalPaths.ABOUT } as ICta,
+    // { text: trans.nav.about, path: LocalPaths.ABOUT } as ICta,
   ];
 };

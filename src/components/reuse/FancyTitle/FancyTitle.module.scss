@@ -10,8 +10,8 @@
 }
 
 .line {
-  @include vari(height, 0px, 0px, 3px, 4px);
-  @include vari(width, 200px, 200px, 240px, 320px);
+  @include vari(height, 3px, 3px, 3px, 4px);
+  @include vari(width, 160px, 200px, 240px, 320px);
   // @include vari(bottom, 0px, 0px, 22px, 24px);
   // position: absolute;
   path {

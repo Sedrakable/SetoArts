@@ -1,18 +1,19 @@
 import { LangType } from "@/i18n/request";
-import AboutPage from "../page";
+import WorkPage from "../page";
 
-export default function ModalLayout({
+export default async function ModalLayout({
   children,
-
-  locale,
+  params,
 }: {
   children: React.ReactNode;
-  locale: LangType;
+  params: Promise<{ locale: LangType }>;
 }) {
+  const { locale } = await params;
+
   return (
-    <div>
-      <AboutPage params={Promise.resolve({ locale })} />
+    <>
+      <WorkPage params={Promise.resolve({ locale })} />
       {children}
-    </div>
+    </>
   );
 }

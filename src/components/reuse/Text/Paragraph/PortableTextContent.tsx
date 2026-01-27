@@ -34,18 +34,26 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
   );
   const myComponents: PortableTextComponents = {
     block: {
-      normal: ({ children }) => (
-        <Paragraph
-          level={level}
-          weight={weight}
-          color={color}
-          textAlign={textAlign}
-          paddingBottomArray={paddingBottomArray}
-          className={className}
-        >
-          {children}
-        </Paragraph>
-      ),
+      normal: ({ children }) => {
+        const isEmpty =
+          Array.isArray(children) &&
+          children.every((c) => typeof c === "string" && c.trim() === "");
+
+        if (isEmpty) return <div style={{ height: "1em" }} />; // or 16px
+
+        return (
+          <Paragraph
+            level={level}
+            weight={weight}
+            color={color}
+            textAlign={textAlign}
+            paddingBottomArray={paddingBottomArray}
+            className={className}
+          >
+            {children}
+          </Paragraph>
+        );
+      },
       blockquote: ({ children }) => (
         <Paragraph
           level={level}

@@ -1,7 +1,10 @@
 @use "@/styles/mixins.scss" as *;
 
 .workModal {
-  @include vari(width, 50vh, 50vh, 50vh, 50vh);
+  @include vari(width, 100%, 100%, 50vh, 60vh);
+  //  @media (min-width: $laptop) {
+  //   margin-bottom: var(--pad-4);
+  // }
 }
 .title {
   width: 100%;
@@ -11,6 +14,11 @@
 .desc {
   width: 100%;
   flex: 1;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: var(--pad-3);
 }
 
 .content {

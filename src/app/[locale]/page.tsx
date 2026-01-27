@@ -1,6 +1,5 @@
 import {
   ISeo,
-  IHero,
   ICollapsible,
   IProcessStep,
   LocalPaths,
@@ -24,7 +23,7 @@ import { Collapsible } from "@/components/pages/blocks/Collapsible/Collapsible";
 import { getTranslations } from "@/helpers/langUtils";
 import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
 import { getCarouselImages } from "@/components/pages/blocks/Carousel/getCarouselData";
-import { Hero } from "@/components/pages/blocks/Hero/Hero";
+import { Hero, HeroProps } from "@/components/pages/blocks/Hero/Hero";
 
 import { ProcessAndForm } from "@/components/pages/blocks/ProcessAndForm/ProcessAndForm";
 import { Carousel } from "@/components/pages/blocks/Carousel/Carousel";
@@ -45,7 +44,7 @@ import {
 
 export interface HomePageProps {
   meta: ISeo;
-  hero: IHero;
+  hero: HeroProps;
   questionsBlock: QuestionsBlockProps;
   servicesBlock: ServicesBlockProps;
   aboutBlock: AboutBlockProps;
@@ -110,7 +109,6 @@ export default async function HomePage({
               scrollTarget: LocalTargets.SIGNSFORM,
             }}
           />
-          {carouselImages && <Carousel images={carouselImages} />}
           {data.questionsBlock && <QuestionsBlock {...data.questionsBlock} />}
           {data.servicesBlock && <ServicesBlock {...data.servicesBlock} />}
           {/* 
@@ -120,6 +118,8 @@ export default async function HomePage({
           {data.testimonialsBlock && (
             <TestimonialsBlock {...data.testimonialsBlock} />
           )}
+          {carouselImages && <Carousel images={carouselImages} />}
+
           {data.processBlock && (
             <ProcessAndForm
               processes={data.processBlock.processes}

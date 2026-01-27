@@ -46,7 +46,7 @@ export const AnimatedWrapper = forwardRef(
     const inViewRef = React.useRef<Element | null>(null);
     const isInView = useInView(inViewRef, {
       once: true, // Animation triggers once
-      amount: 0.5, // Trigger when 10% of element is visible
+      amount: 0.2, // Trigger when 10% of element is visible
     });
 
     // Define animation variants based on `from` prop

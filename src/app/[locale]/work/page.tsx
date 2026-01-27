@@ -1,23 +1,27 @@
-import { IAbout, IWorkBlock, ISeo, LocalPaths, LocalTargets } from "@/data.d";
+import { ISeo, LocalPaths, LocalTargets } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
-import { aboutPageQuery } from "@/app/api/generateSanityQueries";
-import { WorkBlock } from "@/components/pages/blocks/WorkBlock/WorkBlock";
+import { worksPageQuery } from "@/app/api/generateSanityQueries";
+import {
+  WorkBlock,
+  WorkBlockProps,
+} from "@/components/pages/blocks/WorkBlock/WorkBlock";
 import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
 import { WorkTypeNav } from "@/components/pages/blocks/WorkBlock/WorkTypeNav";
+import { Hero, HeroProps } from "@/components/pages/blocks/Hero/Hero";
 
-export interface AboutPageProps {
+export interface WorkPageProps {
   meta: ISeo;
-  work: IAbout;
-  workBlocks: IWorkBlock[];
+  hero: HeroProps;
+  workBlocks: WorkBlockProps[];
 }
 
-const getAboutPageData = async (locale: LangType) => {
-  const aboutQuery = aboutPageQuery(locale);
+const getWorkPageData = async (locale: LangType) => {
+  const worksQuery = worksPageQuery(locale);
 
-  const aboutPageData: AboutPageProps = await fetchPage(aboutQuery);
+  const aboutPageData: WorkPageProps = await fetchPage(worksQuery);
   return aboutPageData;
 };
 
@@ -29,7 +33,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const path = LocalPaths.WORK;
   const crawl = true;
-  const aboutPageData = await getAboutPageData(locale);
+  const aboutPageData = await getWorkPageData(locale);
   const { metaTitle, metaDesc } = aboutPageData.meta;
 
   return setMetadata({
@@ -47,23 +51,23 @@ export default async function WorkPage({
   params: Promise<{ locale: LangType }>;
 }) {
   const { locale } = await params;
-  const data = await getAboutPageData(locale);
+  const data = await getWorkPageData(locale);
   // const workImages = getAllWorkImages(aboutPageData?.work?.works as IWork[]);
 
   return (
     <NavWrapperServer locale={locale} theme="light">
       {data && (
         <>
-          {/* {data.work && <About {...data.work} />} */}
-          <WorkTypeNav />
-          {data.workBlocks?.map((workBlock: IWorkBlock, key) => {
+          <Hero {...data.hero} version={2} />
+          {/* <WorkTypeNav /> */}
+          {data.workBlocks?.map((workBlock: WorkBlockProps, key) => {
             return (
               <WorkBlock
                 {...workBlock}
                 id={
                   `#${workBlock.works[0].workType}-work-block` as LocalTargets
                 }
-                theme={key % 2 === 1 ? "light" : "dash"}
+                theme={key % 2 === 0 ? "light" : "off-white"}
                 key={key}
               />
             );

@@ -12,7 +12,9 @@ export const Backdrop: React.FC<BackdropProps> = ({ children, onClick }) => {
   return (
     <motion.div
       className={styles.backdrop}
-      onClick={onClick}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClick(); // only click outside modal
+      }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

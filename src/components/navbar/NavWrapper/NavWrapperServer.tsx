@@ -1,9 +1,6 @@
-import {
-  coollapsibleFaqQuery,
-  footerPageQuery,
-} from "@/app/api/generateSanityQueries";
+import { footerPageQuery } from "@/app/api/generateSanityQueries";
 import { fetchPage } from "@/app/api/fetchPage";
-import { IFooter, IFooterFAQLinks, ITheme } from "@/data.d";
+import { IFooter, ITheme } from "@/data.d";
 import { LangType } from "@/i18n/request";
 import NavWrapperClient from "./NavWrapperClient";
 
@@ -21,13 +18,11 @@ export default async function NavWrapperServer({
 }: NavWrapperProps) {
   const footerQuery = footerPageQuery(locale);
   const footerData: IFooter = await fetchPage(footerQuery);
-  const footerFaqQuery = coollapsibleFaqQuery(locale);
-  const footerFaqData: IFooterFAQLinks[] = await fetchPage(footerFaqQuery);
 
   return (
     <NavWrapperClient
       locale={locale}
-      footerData={{ ...footerData, faqs: footerFaqData }}
+      footerData={{ ...footerData }}
       theme={theme}
       hideLogo={hideLogo}
     >

@@ -35,13 +35,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ links, socials }) => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add("modal-open");
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.classList.remove("modal-open");
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.classList.remove("modal-open");
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -49,7 +49,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ links, socials }) => {
   const renderTabWrapper = (
     child: React.ReactNode,
     key?: number,
-    path?: string
+    path?: string,
   ) => {
     const wrapperOnClick = () => {
       setIsOpen(false);
@@ -76,7 +76,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ links, socials }) => {
     path: string,
     text: string,
     key: number,
-    isSubTab = false
+    isSubTab = false,
   ) => {
     return renderTabWrapper(
       <Paragraph
@@ -87,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ links, socials }) => {
         {text}
       </Paragraph>,
       key,
-      path
+      path,
     );
   };
 
@@ -124,10 +124,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ links, socials }) => {
             <React.Fragment key={key}>
               {renderLink(link.path!, link.title, key)}
               {link.ctaArray?.map((cta, key) =>
-                renderLink(`${link.path}${cta.path}`, cta.text, key, true)
+                renderLink(`${link.path}${cta.path}`, cta.text, key, true),
               )}
             </React.Fragment>
-          )
+          ),
         )}
 
         {/* Cleanup: Reordered LangSwitcher and Button for logical flow */}
@@ -135,12 +135,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ links, socials }) => {
           <FlexDiv flex={{ x: "space-between" }} gapArray={[4]} width100>
             <LangSwitcher onClick={() => setIsOpen(false)} />
             <Socials {...socials} />
-          </FlexDiv>
+          </FlexDiv>,
         )}
         {renderTabWrapper(
           <Button variant="primary" path={`/${locale}${LocalPaths.CONTACT}`}>
             {translations.buttons.workWithMe}
-          </Button>
+          </Button>,
         )}
       </FlexDiv>
     </div>

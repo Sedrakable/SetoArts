@@ -2,9 +2,9 @@
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
+import cn from "classnames";
 
 import styles from "./ThumbCarousel.module.scss";
-import cn from "classnames";
 import {
   ICustomImage,
   SanityImage,
@@ -22,6 +22,8 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     containScroll: "keepSnaps",
     dragFree: true,
+    axis: "x",
+    align: "start", // Add this
   });
 
   const onThumbClick = useCallback(
@@ -29,19 +31,18 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
       if (!emblaMainApi || !emblaThumbsApi) return;
       emblaMainApi.scrollTo(index);
     },
-    [emblaMainApi, emblaThumbsApi]
+    [emblaMainApi, emblaThumbsApi],
   );
 
   const onSelect = useCallback(() => {
     if (!emblaMainApi || !emblaThumbsApi) return;
     setSelectedIndex(emblaMainApi.selectedScrollSnap());
     emblaThumbsApi.scrollTo(emblaMainApi.selectedScrollSnap());
-  }, [emblaMainApi, emblaThumbsApi, setSelectedIndex]);
+  }, [emblaMainApi, emblaThumbsApi]);
 
   useEffect(() => {
     if (!emblaMainApi) return;
     onSelect();
-
     emblaMainApi.on("select", onSelect).on("reInit", onSelect);
   }, [emblaMainApi, onSelect]);
 
@@ -51,14 +52,14 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
       className={styles.embla}
       gapArray={[3, 3, 3, 4]}
     >
+      {/* Main Carousel */}
       <div className={styles.viewport} ref={emblaMainRef}>
         <div className={styles.container}>
           {images.map((image, index) => (
             <div className={styles.slide} key={index}>
               <SanityImage
-                image={image?.image}
-                alt={image?.alt}
-                figureclassname={cn(styles.image)}
+                {...image}
+                figureclassname={styles.slideImage}
                 quality={90}
                 sizes={["80vw", "75vw", "30vw", "30vw"]}
               />
@@ -66,20 +67,20 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
           ))}
         </div>
       </div>
-      <FlexDiv
-        className={styles.thumbs}
-        ref={emblaThumbsRef}
-        gapArray={[3, 3, 3, 4]}
-      >
-        {images.map((image, index) => (
-          <Thumb
-            key={index}
-            onClick={() => onThumbClick(index)}
-            selected={index === selectedIndex}
-            image={image}
-          />
-        ))}
-      </FlexDiv>
+
+      {/* Thumbnails */}
+      <div className={styles.thumbsViewport} ref={emblaThumbsRef}>
+        <FlexDiv className={styles.thumbsContainer} gapArray={[3, 3, 3, 4]}>
+          {images.map((image, index) => (
+            <Thumb
+              key={index}
+              onClick={() => onThumbClick(index)}
+              selected={index === selectedIndex}
+              image={image}
+            />
+          ))}
+        </FlexDiv>
+      </div>
     </FlexDiv>
   );
 };
@@ -90,19 +91,20 @@ interface ThumbProps {
   onClick: () => void;
 }
 
-export const Thumb: React.FC<ThumbProps> = ({ selected, image, onClick }) => {
+const Thumb: FC<ThumbProps> = ({ selected, image, onClick }) => {
   return (
-    <div
+    <button
+      type="button"
       className={cn(styles.thumb, selected && styles.selected)}
       onClick={onClick}
+      aria-label={`View ${image.alt}`}
     >
       <SanityImage
-        image={image?.image}
-        alt={image?.alt}
-        figureclassname={cn(styles.image)}
+        {...image}
+        figureclassname={styles.thumbImage}
         quality={30}
         sizes={[80, 120, 100, 100]}
       />
-    </div>
+    </button>
   );
 };

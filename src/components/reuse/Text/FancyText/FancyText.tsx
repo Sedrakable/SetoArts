@@ -82,7 +82,7 @@ export const FancyText: React.FC<FancyTextProps> = ({ value, ...props }) => {
     block: {
       normal: ({ children }) => (
         <Heading {...props}>
-          {isOutfit ? transformXNodes(children) : children}
+          {isOutfit ? <>{transformXNodes(children)}</> : <>{children}</>}
         </Heading>
       ),
     },

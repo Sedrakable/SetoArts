@@ -18,7 +18,7 @@ export const WorkModalContent: React.FC<IWork> = (props) => {
   return (
     <FlexDiv
       flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-      gapArray={[3, 3, 3, 4]}
+      gapArray={[2, 2, 3, 3]}
       className={styles.workModal}
       aria-label={title}
     >
@@ -33,9 +33,8 @@ export const WorkModalContent: React.FC<IWork> = (props) => {
             as="h4"
             level="3"
             color="black"
-            weight={700}
+            weight={600}
             className={styles.title}
-            paddingBottomArray={[2, 2, 2, 3]}
           >
             {title}
           </Heading>
@@ -44,7 +43,6 @@ export const WorkModalContent: React.FC<IWork> = (props) => {
           level="small" // Use the appropriate level for your design
           color="black"
           weight={400}
-          paddingBottomArray={[3, 4, 4, 5]}
           className={styles.desc}
         >
           {locale === "en" ? descEN : descFR}

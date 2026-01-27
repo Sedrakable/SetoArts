@@ -49,7 +49,7 @@
     position: absolute;
     .alert {
       background: var(--white);
-      box-shadow: var(--light-shadow);
+      box-shadow: var(--drop-shadow);
       z-index: 0;
     }
     &::before,
@@ -62,7 +62,7 @@
       background: var(--white);
     }
     &::before {
-      box-shadow: var(--light-shadow);
+      box-shadow: var(--drop-shadow);
       z-index: -1;
     }
     &::after {

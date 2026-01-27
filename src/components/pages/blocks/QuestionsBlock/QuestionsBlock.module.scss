@@ -14,7 +14,7 @@
   align-items: stretch !important;
   .question {
     border-radius: 8px;
-    box-shadow: var(--light-grey-shadow);
+    box-shadow: var(--drop-shadow);
     position: relative;
     &::before {
       content: "";
