@@ -5,20 +5,22 @@ import FlexDiv from "@/components/reuse/FlexDiv";
 import styles from "./ProcessAndForm.module.scss";
 import cn from "classnames";
 
-import { IFrameVideo, IProcessStep, ServiceType } from "@/data.d";
+import { LangType } from "@/i18n/request";
+import { useLocale } from "next-intl";
+import { getTranslations } from "@/helpers/langUtils";
+
+import { IFrameVideo, IProcessStep } from "@/data.d";
 import { Block } from "../../containers/Block";
-import { WoodForm } from "../../../reuse/Form/WoodForm";
 import { ProcessVideo } from "@/components/pages/blocks/Process/Process";
 import { useScroll } from "framer-motion";
 import { ProcessStep } from "@/components/pages/blocks/Process/ProcessStep";
 import { useWindowResize } from "@/helpers/useWindowResize";
-import { DigitalForm } from "../../../reuse/Form/DigitalForm";
 import { FormTitleProps } from "@/components/reuse/Form/Form";
+import { ContactForm } from "@/components/reuse/Form/ContactForm";
 
 interface ProcessAndFormProps extends FormTitleProps {
   processes: IProcessStep[];
   video: IFrameVideo;
-  form: ServiceType;
 }
 
 export const ProcessAndForm: FC<ProcessAndFormProps> = ({
@@ -26,10 +28,11 @@ export const ProcessAndForm: FC<ProcessAndFormProps> = ({
   title,
   subTitle,
   video,
-  form,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { isMobileOrTablet } = useWindowResize();
+  const locale = useLocale() as LangType;
+  const translations = getTranslations(locale);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -44,12 +47,12 @@ export const ProcessAndForm: FC<ProcessAndFormProps> = ({
     </ul>
   );
 
-  const forms: { [key in ServiceType]: React.ReactNode } = {
-    wood: <WoodForm title={title} subTitle={subTitle} />,
-    digital: <DigitalForm title={title} subTitle={subTitle} />,
-  };
   return (
-    <Block theme="light">
+    <Block
+      theme="light"
+      className={styles.processBlock}
+      fancyTitle={{ title: translations.titles.process }}
+    >
       <FlexDiv
         gapArray={[0, 0, 8, 9]}
         width100
@@ -66,10 +69,12 @@ export const ProcessAndForm: FC<ProcessAndFormProps> = ({
           flex={{ direction: "column" }}
         >
           {process}
-          {!isMobileOrTablet && forms[form]}
+          {!isMobileOrTablet && (
+            <ContactForm title={title} subTitle={subTitle} />
+          )}
         </FlexDiv>
       </FlexDiv>
-      {isMobileOrTablet && forms[form]}
+      {isMobileOrTablet && <ContactForm title={title} subTitle={subTitle} />}
     </Block>
   );
 };

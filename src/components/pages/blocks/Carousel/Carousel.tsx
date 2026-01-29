@@ -72,6 +72,7 @@ export const Carousel: FC<ICarouselProps> = ({ images }) => {
       width100
       padding={{ top: [2, 3, 5, 6], bottom: [7, 7, 7, 8] }}
       customStyle={{ zIndex: 4 }}
+      className={styles.carouselWrapper}
     >
       <div className={styles.embla} ref={emblaRef}>
         <div className={styles.embla__container}>
@@ -87,7 +88,7 @@ export const Carousel: FC<ICarouselProps> = ({ images }) => {
                     sizes={["90vw", 280, 340, 400]}
                   />
                 </div>
-              )
+              ),
           )}
         </div>
       </div>
@@ -101,7 +102,7 @@ export const Carousel: FC<ICarouselProps> = ({ images }) => {
       >
         <Button
           variant="primary"
-          path={`/${locale}${LocalPaths.ABOUT}${LocalTargets.WORK}`}
+          path={`/${locale}${LocalPaths.PROJECTS}${LocalTargets.PROJECTS}`}
           target="_blank"
         >
           {translate.buttons.viewMyWork}

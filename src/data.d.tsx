@@ -1,4 +1,5 @@
 import { ICustomImage } from "./components/reuse/SanityImage/SanityImage";
+import { FancyText } from "./components/reuse/Text/FancyText/FancyText";
 
 export type ServiceType = "wood" | "digital";
 export type DigitalServiceType = "branding" | "website";
@@ -25,31 +26,7 @@ export interface ISlug {
   _type: string;
 }
 
-export interface IFancyText {
-  value: any; // Will store the PortableText content
-}
-
-export interface IHeroV2 {
-  title: string;
-  subTitle?: string;
-  desc: any;
-  backgroundImage: ICustomImage;
-  cta1?: ICta;
-  cta2?: ICta;
-}
-
-export type ITheme = "light" | "dark" | "yellow" | "dash" | "wood";
-
-export interface IHero {
-  backgroundImage: ICustomImage;
-  foregroundImage: ICustomImage;
-  title: string;
-  desc: any;
-  cta1: ICta;
-  cta2?: ICta;
-  message?: string;
-  theme?: ITheme;
-}
+export type ITheme = "light" | "dark" | "dash" | "wood" | "off-white";
 
 export interface ILandingSide {
   title: string;
@@ -65,50 +42,9 @@ export interface IQuote {
   rightText: string;
 }
 
-export interface IServices {
-  services: IService[];
-}
-
-export interface IService {
-  title: string;
-  titleFR?: string;
-  svgName: string;
-  path?: string;
-  featureBlock: IFeatureBlock;
-}
-
-export interface IFeatureBlock {
-  features: IFeature[];
-  featureStrings?: string[]; // For the feature block Custom Work in the service page
-}
-
-export interface IFeature {
-  customImage?: ICustomImage; // Optional image field
-  svgName?: string; // Optional SVG name
-  title: string;
-  desc: string;
-  titleFR: string; // Optional French title
-  descFR: string; // Optional French description
-}
-
 export interface IQuestion {
   title: string;
-  extraNote?: string;
-  desc: any;
-  theme?: ITheme;
-}
-
-export interface ITestimonial {
-  beforeImage?: ICustomImage;
-  afterImage: ICustomImage;
-  name: string;
-  company: string;
-  profileImage?: ICustomImage;
-  title?: string;
-  review: any;
-  titleFR?: string;
-  reviewFR: any;
-  link?: string; // Optional link for the review
+  desc: FancyText;
 }
 
 export interface IProcessStep {
@@ -134,13 +70,6 @@ export interface IValue {
   desc: string;
 }
 
-export interface IAbout {
-  profileImage: ICustomImage;
-  title: string;
-  subTitle: string;
-  desc: any;
-}
-
 export interface IBlog {
   articles: IArticle[];
 }
@@ -155,14 +84,7 @@ export interface IArticle {
   content: IBlock[];
 }
 
-export type workType = "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
-
-export interface IWorkBlock {
-  title: string;
-  titleFR?: string;
-  works: IWork[];
-  id: LocalTargets; // For anchor scrolling
-}
+export type workType = "signs" | "decor"; // From Sanity
 
 export interface IWork {
   title?: string; // Optional for gallery
@@ -170,7 +92,7 @@ export interface IWork {
   descFR?: string;
   thumbnailImage: ICustomImage; // Sanity image asset
   slug?: ISlug; // Optional for internal links
-  workType: "wood" | "branding" | "website" | "cards" | "gallery"; // From Sanity
+  workType: workType; // From Sanity
   link?: string; // External URL (e.g., Behance, Kickstarter)
   images?: ICustomImage[]; // For modal slider (Wood Signs)
 }
@@ -233,28 +155,22 @@ export interface INotFound {
 
 export enum LocalPaths {
   HOME = "/",
-  SIGNS = "/signs",
-  DIGITAL = "/digital",
-  ABOUT = "/about-work",
+  // SERVICES = "/services",
+  // SIGNS = "/signs",
+  // DECOR = "/decor",
+  PROJECTS = "/projects",
+  // ABOUT = "/about",
   CONTACT = "/contact",
-  BRANDING = "/branding",
-  WEB = "/website",
   LEGAL = "/legal",
   TERMS = "/terms-and-conditions",
   POLICIES = "/privacy-policy",
 }
 
 export enum LocalTargets {
-  SIGNSFORM = "#wood-form",
-  DIGITALFORM = "#digital-form",
-  WORK = "#work-block",
-  SIGNSSIGNWORK = "#wood-work-block",
-  BRANDINGWORK = "#branding-work-block",
-  WEBWORK = "#website-work-block",
-  CARDSWORK = "#cards-work-block",
-  GALLERYWORK = "#gallery-work-block",
+  CONTACTFORM = "#contact-form",
+  PROJECTS = "#work-block",
+  // SIGNSPROJECTS = "#signs-work-block",
+  // DECORPROJECTS = "#signs-work-block",
   SERVICESBLOCK = "#services-block",
-  BRANDINGFAQ = "#branding-faq",
-  WEBFAQ = "#web-faq",
   SIGNSFAQ = "#wood-faq",
 }

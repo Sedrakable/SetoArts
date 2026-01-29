@@ -1,115 +1,154 @@
+// WorkBlock.module.scss
 @use "@/styles/mixins.scss" as *;
 
 .workBlock {
-  --main-color: var(--white);
   align-items: flex-start !important;
-  .wrapper {
-    .card {
-      --transition: 200ms;
-      --dark-shadow: 0 0 8px rgb(0, 0, 0, 0.15);
-      --light-shadow: 0 -4px 10px rgba(255, 255, 255, 0.5);
-      @include vari(height, auto, auto, 300px, 400px);
-      @include vari(aspect-ratio, 4/3, 4/3, unset);
-      position: relative;
-      overflow: visible;
-      overflow-x: clip;
-      border-radius: var(--border-radius);
-
-      &:after {
-        position: absolute;
-        content: "";
-        bottom: 0;
-        height: 8px;
-        width: 100%;
-        left: 0;
-        transform: translateY(100%);
-        background-color: var(--main-color);
-        z-index: 2;
-      }
-
-      .image {
-        min-height: 100% !important;
-        border-radius: var(--border-radius-small);
-
-        img {
-          transition: var(--transition);
-        }
-        &:after {
-          transition: var(--transition);
-          position: absolute;
-          content: "";
-          inset: 0;
-          z-index: 1;
-          background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.4) 0%,
-            transparent 35%
-          );
-          mix-blend-mode: luminosity;
-          box-shadow: inset var(--dark-shadow);
-          opacity: 1;
-        }
-      }
-
-      .title {
-        position: absolute !important;
-        left: 0.2em;
-        bottom: -0.15em;
-        transition: calc(var(--transition) * 2);
-        z-index: 1;
-        max-width: 85%;
-        text-shadow: var(--dark-shadow);
-        color: var(--main-color) !important;
-      }
-
-      &:hover {
-        .image {
-          img {
-            transform: scale(1.1);
-          }
-          &:after {
-            opacity: 0;
-          }
-        }
-        .title {
-          transform: translateX(-120%);
-        }
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-    }
-  }
-
-  &.dash {
-    --main-color: var(--white);
-
-    .wrapper {
-      border: 4px solid var(--black) !important;
-      box-shadow: var(--black-shadow);
-      background: var(--white);
-      @include vari(
-        --padding,
-        var(--pad-4),
-        var(--pad-4),
-        var(--pad-4),
-        var(--pad-4)
-      );
-      padding: var(--padding) !important;
-    }
-  }
 }
 
-.link {
-  display: block;
+.cardButton {
+  all: unset;
+  width: 100%;
   cursor: pointer;
+  display: block;
 
   .card {
-    cursor: pointer;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--light-grey-shadow);
+
+    &:hover {
+      .cardImage img {
+        transform: scale(1.05);
+      }
+      .cardImage::after {
+        opacity: 1;
+      }
+      .title {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .cardImage {
+      position: absolute !important;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform var(--transition-time-backoff);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity var(--transition-time-backoff);
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.55) 0%,
+          transparent 55%
+        );
+        z-index: 1;
+        pointer-events: none;
+      }
+    }
+    .title {
+      position: absolute;
+      left: var(--pad-4);
+      bottom: var(--pad-4);
+      z-index: 2;
+      max-width: 85%;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity var(--transition-time-backoff),
+        transform var(--transition-time-backoff);
+    }
   }
 }
 
-.desc {
-  border-left: 4px solid var(--black);
-  padding: 0 var(--pad-4);
+// .modalContent {
+//   width: fit-content;
+//   .modalDesc {
+//     // height: 64px;
+//     width: 100% !important;
+//     max-width: 640px; // Add this - matches your modalImages height
+//     overflow-wrap: break-word; // Add this to handle long words
+//     display: -webkit-box;
+//     -webkit-line-clamp: 3;
+//     -webkit-box-orient: vertical;
+//     margin-bottom: var(--pad-3);
+//   }
+//   .modalImages {
+//     width: fit-content;
+//     height: 700px !important;
 
-  box-sizing: border-box;
-}
+//     .mainFigure {
+//       position: relative;
+//       width: auto !important;
+//       height: 100% !important;
+//       aspect-ratio: 1;
+//       overflow: hidden;
+//       border-radius: var(--border-radius-small);
+
+//       img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//       }
+//     }
+
+//     .thumbRow {
+//       overflow-y: auto;
+//       overflow-x: clip;
+
+//       /* Hide scrollbar for Chrome, Safari and Opera */
+//       &::-webkit-scrollbar {
+//         display: none;
+//       }
+
+//       /* Hide scrollbar for IE, Edge and Firefox */
+//       -ms-overflow-style: none; /* IE and Edge */
+//       scrollbar-width: none; /* Firefox */
+//       // padding-bottom: var(--pad-2);
+//       .thumbButton {
+//         all: unset;
+//         cursor: pointer;
+//         flex: 0 0 auto;
+//         border-radius: var(--border-radius-small);
+//         outline: 2px solid transparent;
+//         height: fit-content;
+//         .thumbFigure {
+//           position: relative;
+//           width: 96px !important; // tweak
+//           height: 100% !important;
+//           aspect-ratio: 1;
+//           overflow: hidden;
+//           border-radius: var(--border-radius-small);
+//           filter: grayscale(1);
+//           opacity: 0.55;
+//           transition: filter var(--transition-time-backoff),
+//             opacity var(--transition-time-backoff);
+
+//           img {
+//             width: 100%;
+//             height: 100%;
+//             object-fit: cover;
+//           }
+//         }
+//       }
+
+//       .activeThumb .thumbFigure {
+//         filter: grayscale(0);
+//         opacity: 1;
+//         // box-shadow: var(--black-shadow);
+//       }
+//     }
+//   }
+// }

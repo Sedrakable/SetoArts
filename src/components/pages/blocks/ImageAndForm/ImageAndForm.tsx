@@ -7,10 +7,12 @@ import cn from "classnames";
 
 import { Block } from "../../containers/Block";
 import Image from "next/image";
-import { ContactForm } from "../../../reuse/Form/ContactForm";
-import { DigitalFormProps } from "../../../reuse/Form/DigitalForm";
+import {
+  ContactForm,
+  ContactFormProps,
+} from "@/components/reuse/Form/ContactForm";
 
-export const ImageAndForm: FC<DigitalFormProps> = ({ title, subTitle }) => {
+export const ImageAndForm: FC<ContactFormProps> = ({ title, subTitle }) => {
   return (
     <Block theme="light">
       <FlexDiv

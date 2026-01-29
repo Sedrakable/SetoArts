@@ -1,12 +1,15 @@
+// src/app/robots.ts
 import { MetadataRoute } from "next";
+
+const BASE_URL = process.env.BASE_NAME ?? "https://www.setoxarts.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: ["/fr", "/en", "/sitemap.xml", "/robots.txt"],
+      allow: "/",
       disallow: ["/en/legal/", "/fr/legal/"],
     },
-    sitemap: `${process.env.BASE_NAME || "https://setoxarts.com"}/sitemap.xml`,
+    sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }

@@ -1,137 +1,69 @@
+// WorkBlock.tsx
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./WorkBlock.module.scss";
 import cn from "classnames";
+import { useRouter, usePathname } from "next/navigation";
+
 import FlexDiv from "../../../reuse/FlexDiv";
-import { Heading, HeadingLevelType } from "../../../reuse/Text/Heading/Heading";
-import { Block } from "../../containers/Block";
-import { SanityImage, SizesType } from "../../../reuse/SanityImage/SanityImage";
-import { useScrollToTarget } from "@/helpers/useScrollToTarget";
-import {
-  ITheme,
-  IWork,
-  IWorkBlock,
-  LocalPaths,
-  LocalTargets,
-} from "../../../../data.d";
-import Link from "next/link";
 import GridDiv from "@/components/reuse/GridDiv";
-import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
+import { Block } from "../../containers/Block";
+import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
+
+import { Heading } from "../../../reuse/Text/Heading/Heading";
+import { SanityImage, SizesType } from "../../../reuse/SanityImage/SanityImage";
+
 import { useLocale } from "next-intl";
 import { LangType } from "@/i18n/request";
-import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
-// import { ImageSlider } from "@/components/reuse/ImageSlider";
+import { FancyTitleProps } from "@/components/reuse/FancyTitle/FancyTitle";
+import { ITheme, IWork, LocalTargets } from "../../../../data.d";
 
-// Define image widths for each column count at each breakpoint
-const imageWidthsByColumns: Record<number, SizesType> = {
-  1: ["100%", "100%", "100%", "100vw"], // Full-width
-  2: ["50%", "50%", "50%", "50%"],
-  3: ["35%", "35%", "35%", "35%"],
-  4: ["27.5%", "27.5%", "27.5%", "27.5%"],
-  5: ["20%", "20%", "20%", "20%"],
-};
+const CARD_SIZES: SizesType = ["90vw", "50vw", "33vw", "33vw"];
 
-const headingLevelByColumns: Record<number, HeadingLevelType> = {
-  1: "2", // Full-width
-  2: "3",
-  3: "4",
-  4: "4",
-  5: "5",
-};
-
-const Work: React.FC<IWork & { columnCount: number }> = ({
-  title,
-  descEN,
-  descFR,
-  thumbnailImage,
-  link,
-  images,
-  workType,
-  columnCount,
-  slug,
+const WorkCard: React.FC<{ work: IWork; onOpen: (w: IWork) => void }> = ({
+  work,
+  onOpen,
 }) => {
-  const locale = useLocale() as LangType;
-
-  const inferAction = (): "link" | "modal" | "none" => {
-    switch (workType) {
-      case "wood":
-        return "modal";
-      case "branding":
-      case "website":
-      case "cards":
-        return "link";
-      case "gallery":
-        return "none";
-      default:
-        return "none";
-    }
-  };
-
-  const action = inferAction();
-  const content = (
-    <FlexDiv
-      width100
-      gapArray={[4, 4, 4, 5]}
-      flex={{ x: "flex-start", direction: "column" }}
-      className={styles.wrapper}
+  return (
+    <button
+      type="button"
+      className={styles.cardButton}
+      onClick={() => onOpen(work)}
+      aria-label={work.title || "Open work"}
     >
-      <FlexDiv width100 className={styles.card}>
+      <FlexDiv width100 className={styles.card} flex={{ direction: "column" }}>
         <SanityImage
-          {...thumbnailImage}
+          {...work.thumbnailImage}
           quality={100}
-          sizes={imageWidthsByColumns[columnCount]}
-          figureclassname={styles.image} // Note: Kept your prop name as-is
+          sizes={CARD_SIZES}
+          figureclassname={styles.cardImage}
         />
-        {title && (
+
+        {work.title && (
           <Heading
             font="Outfit"
-            level={headingLevelByColumns[columnCount]}
+            level="4"
             as="h3"
             color="white"
-            textAlign="start"
+            weight={500}
             className={styles.title}
-            weight={700}
           >
-            {title}
+            {work.title}
           </Heading>
         )}
       </FlexDiv>
-
-      <Paragraph level="regular" color="black" className={styles.desc}>
-        {locale === "fr" && descFR ? descFR : descEN}
-      </Paragraph>
-    </FlexDiv>
+    </button>
   );
-
-  if (action === "link" && link) {
-    return (
-      <Link
-        href={link}
-        className={styles.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={title}
-      >
-        {content}
-      </Link>
-    );
-  } else if (action === "modal" && locale && slug && images) {
-    return (
-      <Link
-        href={`/${locale}${LocalPaths.ABOUT}/${slug.current}`}
-        className={styles.link}
-        aria-label={title}
-      >
-        {content}
-      </Link>
-    );
-  }
-  return content;
 };
 
-interface WorkBlockProps extends IWorkBlock {
+export interface WorkBlockProps {
+  title: FancyTitleProps;
+  titleFR?: FancyTitleProps;
+  works: IWork[];
+  id: LocalTargets;
   theme: ITheme;
 }
+
 export const WorkBlock: React.FC<WorkBlockProps> = ({
   works,
   title,
@@ -140,46 +72,36 @@ export const WorkBlock: React.FC<WorkBlockProps> = ({
   theme,
 }) => {
   const locale = useLocale() as LangType;
-  const [columnCount, setColumnCount] = useState(1);
-  const { scrollToTarget } = useScrollToTarget();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  useEffect(() => {
-    if (window.location.hash === `#${id}`) {
-      scrollToTarget(id as LocalTargets);
+  const handleOpenWork = (work: IWork) => {
+    if (work.slug?.current) {
+      router.push(`${pathname}/${work.slug.current}`);
     }
-  }, [id, scrollToTarget]);
+  };
 
   return (
-    <Block
-      title={{
-        font: "Outfit",
-        children: locale === "fr" && titleFR ? titleFR : title,
-        color: "black",
-        weight: 900,
-      }}
-      theme={theme}
-      id={id}
-    >
-      <AnimatedWrapper from={theme === "light" ? "right" : "left"}>
-        <GridDiv
-          gapArray={[4, 4, 5, 5]}
-          rowGapArray={[6, 6, 5, 5]}
-          columns={[
-            [1, 1],
-            [1, 2],
-            [3, 3],
-            [3, 3],
-          ]}
-          className={cn(styles.workBlock, styles[theme])}
-          width100
-          fill
-          onColumnCountChange={(count) => setColumnCount(count)} // Capture column count
-        >
-          {works.map((work, key) => (
-            <Work {...work} columnCount={columnCount} key={key} />
-          ))}
-        </GridDiv>
-      </AnimatedWrapper>
+    <Block fancyTitle={locale === "en" ? title : titleFR} theme={theme} id={id}>
+      <GridDiv
+        gapArray={[2, 2, 3, 3]}
+        rowGapArray={[2, 2, 3, 3]}
+        columns={[
+          [1, 1],
+          [1, 2],
+          [3, 3],
+          [3, 3],
+        ]}
+        className={cn(styles.workBlock)}
+        width100
+        fill
+      >
+        {works.map((work, key) => (
+          <AnimatedWrapper from="left" key={key}>
+            <WorkCard work={work} onOpen={handleOpenWork} />
+          </AnimatedWrapper>
+        ))}
+      </GridDiv>
     </Block>
   );
 };

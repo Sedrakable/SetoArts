@@ -58,7 +58,7 @@
   }
   &:disabled {
     cursor: not-allowed;
-    background: var(--grey) !important;
+    background: var(--light-grey) !important;
   }
 
   &.onlyIcon {
@@ -217,15 +217,15 @@
   @include vars;
 
   & {
-    -webkit-mask: url("../../../assets/vector/ButtonStroke.svg");
-    mask: url("../../../assets/vector/ButtonStroke.svg");
+    -webkit-mask: url("/vectors/ButtonStroke.svg");
+    mask: url("/vectors/ButtonStroke.svg");
     position: relative;
   }
   .fancy {
     &:first-child {
       @include button(
         var(--yellow),
-        "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+        "/photos/urban-sprite.png",
         3000%,
         100%,
         none,
@@ -251,7 +251,7 @@
       & {
         @include button(
           var(--black),
-          "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+          "/photos/urban-sprite.png",
           3000%,
           100%,
           none,

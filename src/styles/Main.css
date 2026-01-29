@@ -6,10 +6,6 @@ body {
   background: var(--white);
 }
 
-.modal-open {
-  overflow: hidden;
-}
-
 html,
 body,
 #root {

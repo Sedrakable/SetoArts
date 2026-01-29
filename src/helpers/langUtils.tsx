@@ -1,3 +1,4 @@
+// src/helpers/langUtils.tsx
 import { LangType } from "@/i18n/request";
 import { enTranslations } from "@/langs/en";
 import { frTranslations } from "@/langs/fr";

@@ -24,7 +24,6 @@ import { UploadButton } from "@/components/reuse/Form/UploadButton/UploadButton"
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { LangType } from "@/i18n/request";
 import { LocalTargets } from "@/data.d";
-import { OptionType, Select } from "@/components/reuse/Form/Select/Select";
 
 export interface ContactFormProps extends FormTitleProps {}
 
@@ -36,10 +35,9 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
     firstName: "",
     lastName: "",
     email: "",
-    service: "wood-sign", // Default to wood-sign
     details: "",
-    budgetMin: 1000,
-    budgetMax: 3000,
+    budgetMin: 1500,
+    budgetMax: 5000,
     width: 36, // Default for wood-sign
     height: 36, // Default for wood-sign
     uploads: [],
@@ -51,28 +49,11 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
   const [loading, setLoading] = useState(false); // New loading state
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
-  const serviceOptions: OptionType[] = [
-    { value: "wood-sign", label: translations.nav.wood },
-    { value: "branding", label: translations.nav.branding },
-    { value: "website", label: translations.nav.web },
-  ];
-
   const handleInputChange = (field: keyof ContactFormData) => (
-    value: string
+    value: string,
   ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     setErrors((prev) => ({ ...prev, [field]: value === "" }));
-  };
-
-  const handleServiceChange = (selected: string) => {
-    const typedSelected = selected as ContactFormData["service"];
-    setFormData((prev) => ({
-      ...prev,
-      service: typedSelected,
-      width: typedSelected === "wood-sign" ? prev.width || 36 : undefined,
-      height: typedSelected === "wood-sign" ? prev.height || 36 : undefined,
-    }));
-    setErrors((prev) => ({ ...prev, service: false }));
   };
 
   const handleBudgetChange = (values: number[]) => {
@@ -106,7 +87,7 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
             };
             reader.onerror = reject;
             reader.readAsDataURL(file);
-          }
+          },
         );
       });
 
@@ -175,14 +156,10 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
       "firstName",
       "lastName",
       "email",
-      "service",
       "details",
       "budgetMin",
       "budgetMax",
     ];
-    if (formData.service === "wood-sign") {
-      requiredFields.push("width", "height");
-    }
 
     requiredFields.forEach((key) => {
       if (!formData[key]) {
@@ -233,14 +210,6 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
       isInvalid={errors.email}
       placeholder={translations.form.general.emailPlaceholder}
     />,
-    <Select
-      label={translations.form.general.service}
-      options={serviceOptions}
-      onChange={handleServiceChange}
-      defaultValue={formData.service}
-      isInvalid={errors.service}
-      required
-    />,
     <TextArea
       label={translations.form.general.details}
       value={formData.details}
@@ -259,32 +228,29 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
       unit={translations.form.wood.currency}
       isInvalid={errors.budgetMin || errors.budgetMax}
     />,
-    ...(formData.service === "wood-sign"
-      ? [
-          <FlexDiv gapArray={[6, 6, 6, 7]} width100 wrap>
-            <Slider
-              label={translations.form.wood.width}
-              max={48}
-              min={12}
-              values={formData.width || 36}
-              onChange={(val) => handleWidthChange(val as number)}
-              unit={translations.form.wood.unit}
-              step={1}
-              isInvalid={errors.width}
-            />
-            <Slider
-              label={translations.form.wood.height}
-              max={48}
-              min={12}
-              values={formData.height || 36}
-              onChange={(val) => handleHeightChange(val as number)}
-              unit={translations.form.wood.unit}
-              step={1}
-              isInvalid={errors.height}
-            />
-          </FlexDiv>,
-        ]
-      : []),
+
+    <FlexDiv gapArray={[6, 6, 6, 7]} width100 wrap>
+      <Slider
+        label={translations.form.wood.width}
+        max={72}
+        min={24}
+        values={formData.width || 36}
+        onChange={(val) => handleWidthChange(val as number)}
+        unit={translations.form.wood.unit}
+        step={1}
+        isInvalid={errors.width}
+      />
+      <Slider
+        label={translations.form.wood.height}
+        max={48}
+        min={12}
+        values={formData.height || 36}
+        onChange={(val) => handleHeightChange(val as number)}
+        unit={translations.form.wood.unit}
+        step={1}
+        isInvalid={errors.height}
+      />
+    </FlexDiv>,
     <UploadButton
       onFilesSelect={handleFileUpload}
       accept="image/*"
@@ -297,7 +263,7 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
   return (
     <FlexDiv
       width100
-      id={LocalTargets.DIGITALFORM}
+      id={LocalTargets.CONTACTFORM}
       className={styles.container}
     >
       {submit === translations.form.general.emailSent ? (

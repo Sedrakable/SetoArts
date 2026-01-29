@@ -1,3 +1,4 @@
+// src/langs/langTypes.d.ts
 interface Titles {
   services: string;
   whatYouGet: string;
@@ -58,19 +59,16 @@ interface Form {
 
 interface Nav {
   home: string;
-  wood: string;
-  digital: string;
-  branding: string;
-  web: string;
+  services: string;
+  // signs: string;
+  // decor: string;
+  projects: string;
   about: string;
 }
 
 interface Work {
-  wood: string;
-  branding: string;
-  web: string;
-  cards: string;
-  gallery: string;
+  signs: string;
+  decor: string;
 }
 
 export interface Translations {
@@ -78,5 +76,5 @@ export interface Translations {
   titles: Titles;
   form: Form;
   nav: Nav;
-  work: Work;
+  projects: Work;
 }

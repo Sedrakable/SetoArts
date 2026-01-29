@@ -33,7 +33,7 @@ export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
             level="2"
             as="span"
             color="yellow"
-            weight={900}
+            weight={600}
           >
             {(number + 1).toString()}
           </Heading>
@@ -51,7 +51,7 @@ export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
             level="3"
             as="h3"
             color="black"
-            weight={900}
+            weight={600}
             className={styles.title}
           >
             {locale === "fr" && titleFR ? titleFR : title}
@@ -65,7 +65,7 @@ export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
         </FlexDiv>
       </FlexDiv>
     );
-  }
+  },
 );
 
 // Set a display name for the component for better debugging in React DevTools

@@ -1,4 +1,4 @@
-import { ICollapsible, IHeroV2, ISeo, LocalPaths } from "@/data.d";
+import { ICollapsible, ISeo, LocalPaths } from "@/data.d";
 import { fetchPage } from "@/app/api/fetchPage";
 import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
@@ -10,12 +10,13 @@ import { FormTitleProps } from "@/components/reuse/Form/Form";
 import { getFormData } from "@/components/reuse/Form/getFormData";
 import { ImageAndForm } from "@/components/pages/blocks/ImageAndForm/ImageAndForm";
 import { Collapsible } from "@/components/pages/blocks/Collapsible/Collapsible";
-import { HeroV2 } from "@/components/pages/blocks/Hero/Hero";
+import { Hero, HeroProps } from "@/components/pages/blocks/Hero/Hero";
+// import { HeroV2 } from "@/components/pages/blocks/Hero/Hero";
 
 export interface ContactPageProps {
   meta: ISeo;
-  hero: IHeroV2;
-  collapsibles: ICollapsible[];
+  hero: HeroProps;
+  collapsible: ICollapsible;
 }
 
 const getContactPageData = async (locale: LangType) => {
@@ -55,11 +56,9 @@ export default async function Contact(props: {
 
   return (
     <NavWrapperServer locale={locale} theme="light">
-      {data.hero && <HeroV2 {...data.hero} />}
+      {data.hero && <Hero {...data.hero} version={2} />}
       {formData && <ImageAndForm {...formData} />}
-      {data.collapsibles?.map((collapsible: ICollapsible, key) => {
-        return <Collapsible {...collapsible} key={key} />;
-      })}
+      {data.collapsible && <Collapsible {...data.collapsible} />}
     </NavWrapperServer>
   );
 }

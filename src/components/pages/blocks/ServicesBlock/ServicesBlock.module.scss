@@ -1,0 +1,45 @@
+@use "@/styles/mixins.scss" as *;
+
+.serviceRow {
+  width: 100%;
+
+  &.reversed {
+    @media (min-width: $tablet) {
+      .imageContainer {
+        order: 2;
+      }
+      .content {
+        order: 1;
+      }
+    }
+  }
+
+  .imageContainer {
+    width: 100%;
+
+    .image {
+      position: relative !important;
+      width: 100% !important;
+      aspect-ratio: d(4, 3);
+      border-radius: var(--border-radius);
+      box-shadow: var(--drop-shadow);
+      overflow: hidden;
+
+      img {
+        transition: transform var(--transition-time-backoff);
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+
+    .desc {
+      width: 100%;
+    }
+  }
+}

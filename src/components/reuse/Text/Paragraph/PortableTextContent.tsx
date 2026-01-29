@@ -1,9 +1,11 @@
 import React from "react";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
+
 import { Paragraph, ParagraphProps } from "./Paragraph";
+import { FancyText } from "../FancyText/FancyText";
 
 interface PortableTextContentProps extends Omit<ParagraphProps, "children"> {
-  value: any;
+  value: FancyText;
   differentColorForStrongText?: boolean;
 }
 
@@ -18,7 +20,7 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
   paddingBottomArray,
 }) => {
   const contastColor =
-    differentColorForStrongText && color === "white" ? `var(--yellow)` : color;
+    differentColorForStrongText && color === "white" ? `var(--white)` : color;
   const quote = (
     <strong
       style={{
@@ -32,18 +34,26 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
   );
   const myComponents: PortableTextComponents = {
     block: {
-      normal: ({ children }) => (
-        <Paragraph
-          level={level}
-          weight={weight}
-          color={color}
-          textAlign={textAlign}
-          paddingBottomArray={paddingBottomArray}
-          className={className}
-        >
-          {children}
-        </Paragraph>
-      ),
+      normal: ({ children }) => {
+        const isEmpty =
+          Array.isArray(children) &&
+          children.every((c) => typeof c === "string" && c.trim() === "");
+
+        if (isEmpty) return <div style={{ height: "1em" }} />; // or 16px
+
+        return (
+          <Paragraph
+            level={level}
+            weight={weight}
+            color={color}
+            textAlign={textAlign}
+            paddingBottomArray={paddingBottomArray}
+            className={className}
+          >
+            {children}
+          </Paragraph>
+        );
+      },
       blockquote: ({ children }) => (
         <Paragraph
           level={level}

@@ -11,6 +11,8 @@ import FlexDiv from "../../reuse/FlexDiv";
 import { Icon } from "../../reuse/Icon/Icon";
 import { Paragraph } from "../../reuse/Text/Paragraph/Paragraph";
 import { DropDown } from "../Dropdown/DropDown";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n/request";
 
 export interface TabButtonProps {
   children: string;
@@ -30,20 +32,31 @@ export const TabButton: FC<TabButtonProps> = ({
   theme = "light",
 }) => {
   const pathname = usePathname();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Cleanup: Renamed for clarity
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Cleanup: Consolidated dropdown toggle logic
-  const toggleDropdown = () => dropdown && setIsDropdownOpen(!isDropdownOpen);
+  const normalize = (p: string) => p.replace(/\/$/, "");
+  const normalizedPath = normalize(path);
+  const normalizedPathname = normalize(pathname);
 
-  // Cleanup: Simplified event handlers
-  const handleMouseEnter = () => dropdown && setIsDropdownOpen(true);
-  const handleMouseLeave = () => dropdown && setIsDropdownOpen(false);
+  const locale = `/${useLocale() as LangType}`;
+
+  const isActive =
+    normalizedPath === locale // Check if we're on the home page for current locale
+      ? normalizedPathname === locale
+      : normalizedPathname === normalizedPath ||
+        normalizedPathname.startsWith(normalizedPath + "/");
+
+  const hasDropdown = !!dropdown?.length;
+
+  const openDropdown = () => hasDropdown && setIsDropdownOpen(true);
+  const closeDropdown = () => hasDropdown && setIsDropdownOpen(false);
+  const toggleDropdown = () => hasDropdown && setIsDropdownOpen((v) => !v);
+
   const handleClick = () => {
-    toggleDropdown();
+    if (hasDropdown) toggleDropdown();
     onClick?.();
   };
 
-  // Cleanup: Extracted TabContent for reusability
   const TabContent = () => (
     <FlexDiv
       padding={{ bottom: [1], top: [1] }}
@@ -53,37 +66,47 @@ export const TabButton: FC<TabButtonProps> = ({
       <Paragraph level="regular" color={theme === "light" ? "black" : "white"}>
         {children}
       </Paragraph>
-      {dropdown && <Icon icon="arrow" size="extra-small" rotate={90} />}
+      {hasDropdown && <Icon icon="arrow" size="extra-small" rotate={90} />}
     </FlexDiv>
   );
 
   return (
     <FlexDiv
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onClick={handleClick}
+      onMouseEnter={openDropdown}
+      onMouseLeave={closeDropdown}
       flex={{ direction: "column", x: "flex-start" }}
       className={cn(styles.tabButton, className)}
       height100
     >
-      <Link href={path} aria-label={children}>
-        <TabContent />
-      </Link>
-
-      {/* Cleanup: Simplified condition for line display */}
-      {pathname.includes(path) && !isDropdownOpen && (
-        <Line className={styles.line} />
+      {/* If dropdown exists: NOT a link. Only toggles dropdown */}
+      {hasDropdown ? (
+        <button
+          type="button"
+          className={styles.tabButtonTrigger} // create this class (or reuse)
+          aria-label={children}
+          aria-haspopup="menu"
+          aria-expanded={isDropdownOpen}
+          onClick={handleClick}
+        >
+          <TabContent />
+        </button>
+      ) : (
+        <Link href={path} aria-label={children} onClick={onClick}>
+          <TabContent />
+        </Link>
       )}
 
-      {isDropdownOpen && dropdown && (
-        <DropDown
-          dropdown={dropdown}
-          parentPath={path}
-          isOpen={isDropdownOpen}
-        />
+      {isActive && <Line className={styles.line} />}
+
+      {isDropdownOpen && hasDropdown && (
+        <div onClick={(e) => e.stopPropagation()}>
+          <DropDown
+            dropdown={dropdown!}
+            parentPath={path}
+            isOpen={isDropdownOpen}
+          />
+        </div>
       )}
     </FlexDiv>
   );
 };
-
-export default TabButton;

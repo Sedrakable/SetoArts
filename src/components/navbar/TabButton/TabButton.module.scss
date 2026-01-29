@@ -3,17 +3,21 @@
 .tabButton {
   @include flexColumn(flex-start);
   position: relative;
-  cursor: pointer;
-  // Cleanup: Simplified hover styles by removing nested selectors
+
   &:hover .textWrapper p {
     transition: color 100ms;
     color: var(--yellow) !important;
   }
 }
 
+/* THIS is the missing piece */
+.tabButtonTrigger {
+  cursor: default;
+}
+
 .line {
-  @include vari(height, 0px, 0px, 4px, 6px);
-  @include vari(bottom, 0px, 0px, 20px, 22px);
+  @include vari(height, 0px, 0px, 3px, 4px);
+  @include vari(bottom, 0px, 0px, 22px, 24px);
   position: absolute;
   width: 100%; // Cleanup: Removed redundant max-width since width is sufficient
   path {

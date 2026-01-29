@@ -5,24 +5,25 @@
   --laptop: 1200px;
   --desktop: 1680px;
 
-  --transition-time-backoff: 100ms;
-  --transition-time: 200ms;
+  --transition-time-backoff: 150ms;
+  --transition-time: 300ms;
 
   --border-radius: 8px;
   --border-radius-large: calc(var(--border-radius) * 2);
   --border-radius-small: calc(var(--border-radius) / 2);
 
   --white: #ffffff;
-  --black: #0f0f0f;
-  --grey: #bcbcbc;
+  --off-white: #f4f1ea;
+  --black: #0c0b08;
+  --light-grey: #a7a49f;
+  --dark-grey: #595853;
   --yellow: #fec301;
   --grad: linear-gradient(90deg, #feb201 0%, #fecb01 100%);
   --error: #ca3207;
 
   --text-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 1);
-  --grey-shadow: 2px 2px 0px 0px var(--grey);
-  --black-shadow: 4px 4px 0px 0px var(--black);
-  --drop-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+  --drop-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  --black-shadow: 3px 3px 0px 0px var(--black);
 
   --pad-0: 0px;
   --pad-1: 2px;
@@ -39,29 +40,22 @@
   --pad-12: 256px;
   --pad-13: 320px;
 
-  --heading-outfit-h1: 160px;
-  --heading-outfit-h2: 96px;
-  --heading-outfit-h3: 64px;
-  --heading-outfit-h4: 40px;
-  --heading-outfit-h5: 32px;
+  --heading-outfit-h1: 96px;
+  --heading-outfit-h2: 64px;
+  --heading-outfit-h3: 42px;
+  --heading-outfit-h4: 32px;
+  --heading-outfit-h5: 22px;
 
-  --heading-outfit-h1-line: 1em;
-  --heading-outfit-h2-line: 1em;
-  --heading-outfit-h3-line: 1em;
-  --heading-outfit-h4-line: 1em;
-  --heading-outfit-h5-line: 1em;
+  --heading-outfit-line: 1em;
 
-  --heading-finger-paint-h1: 160px;
-  --heading-finger-paint-h2: 96px;
-  --heading-finger-paint-h3: 64px;
-  --heading-finger-paint-h4: 40px;
-  --heading-finger-paint-h5: 32px;
+  --heading-finger-paint-h1: 96px;
+  --heading-finger-paint-h2: 64px;
+  --heading-finger-paint-h3: 42px;
+  --heading-finger-paint-h4: 32px;
+  --heading-finger-paint-h5: 22px;
+  --heading-finger-paint-h6: 16px;
 
-  --heading-finger-paint-h1-line: 1.2em;
-  --heading-finger-paint-h2-line: 1.2em;
-  --heading-finger-paint-h3-line: 1.2em;
-  --heading-finger-paint-h4-line: 1.2em;
-  --heading-finger-paint-h5-line: 1.2em;
+  --heading-finger-paint-line: 1.2em;
 
   --paragraph-big: 32px;
   --paragraph-regular: 22px;

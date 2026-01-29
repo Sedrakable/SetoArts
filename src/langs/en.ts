@@ -1,3 +1,4 @@
+// src/langs/en.ts
 import { Translations } from "./langTypes";
 
 export const enTranslations: Translations = {
@@ -16,7 +17,7 @@ export const enTranslations: Translations = {
   buttons: {
     workWithMe: "Work With Me",
     view: "View",
-    contact: "Let’s Chat",
+    contact: "Let’s Talk",
     send: "Send",
     getQuote: "Get Your Quote",
     buildSign: "Build Your Sign",
@@ -52,22 +53,19 @@ export const enTranslations: Translations = {
       height: "Height",
       width: "Width",
       budget: "Budget",
-      unit: "Inches",
+      unit: "in.",
     },
   },
   nav: {
     home: "Home",
-    about: "About + Work",
-    branding: "Branding",
-    web: "Website",
-    digital: "Design Services",
-    wood: "Custom Signs",
+    services: "Services",
+    // signs: "Signs",
+    // decor: "Decor",
+    projects: "Projects",
+    about: "About",
   },
-  work: {
-    wood: "Signs",
-    branding: "Branding",
-    web: "Web Design",
-    cards: "Cards",
-    gallery: "Gallery",
+  projects: {
+    signs: "Signs",
+    decor: "Decor",
   },
 };

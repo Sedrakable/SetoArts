@@ -24,7 +24,7 @@ export const WorkSlider: React.FC<{ works: IWork[] }> = ({ works }) => {
           desc: locale === "fr" ? work.descFR : work.descEN,
           primaryCta: {
             text: translations.buttons.viewMyWork,
-            path: `/${locale}${LocalPaths.ABOUT}`,
+            path: `/${locale}${LocalPaths.PROJECTS}`,
           },
           seconadryCta: {
             text: translations.buttons.view,
@@ -32,7 +32,7 @@ export const WorkSlider: React.FC<{ works: IWork[] }> = ({ works }) => {
           },
         },
       };
-    }
+    },
   );
   return (
     <FlexDiv

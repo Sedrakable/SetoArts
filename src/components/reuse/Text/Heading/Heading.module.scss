@@ -2,11 +2,11 @@
 
 @mixin sizing($font, $size) {
   font-size: var(--heading#{$font}-h#{$size});
-  line-height: var(--heading#{$font}-h#{$size}-line);
 }
 
 @mixin level($font, $desk, $lap, $tab, $mob) {
   & {
+    line-height: var(--heading#{$font}-line);
     @include sizing($font, $mob);
   }
   @media (min-width: $tablet) {
@@ -42,7 +42,7 @@
   &.level5 {
     @include vari(--shadow-size, 2px 2px, 2px 2px);
 
-    @include level($var, 5, 5, 5, 5);
+    @include level($var, 5, 5, 5, 6);
   }
 }
 .heading {
@@ -57,7 +57,6 @@
 
 .outfit {
   font-family: var(--font-outfit);
-  font-weight: 900;
   @include leveling(-outfit);
 
   &.white {
@@ -70,21 +69,25 @@
   font-family: var(--font-finger-paint);
   @include leveling(-finger-paint);
 
-  &.yellow {
-    text-shadow: var(--shadow-size) 0px hsl(from var(--black) h s l / 0.6);
-  }
+  // &.yellow {
+  //   text-shadow: var(--shadow-size) 0px hsl(from var(--black) h s l / 0.6);
+  // }
 }
 
 .cursiveX {
   font-family: var(--font-finger-paint);
   font-weight: 700 !important;
-  color: var(--grey) !important;
+  color: var(--light-grey) !important;
   // Add any additional styling for the "x" if needed
 }
 
-.svgText {
-  // Ensure SVG inherits parent font size and line height
-  font-size: inherit;
-  line-height: inherit;
-  paint-order: stroke fill;
+// .svgText {
+//   // Ensure SVG inherits parent font size and line height
+//   font-size: inherit;
+//   line-height: inherit;
+//   paint-order: stroke fill;
+// }
+
+.upperCase {
+  text-transform: uppercase;
 }

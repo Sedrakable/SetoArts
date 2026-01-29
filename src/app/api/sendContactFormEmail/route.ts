@@ -1,9 +1,8 @@
 // app/api/sendContactFormEmail/route.ts
 import {
   EncodedFileType,
-  ContactFormData,
-  FormServiceType,
   looksLikeBot,
+  ContactFormData,
 } from "@/components/reuse/Form/formTypes";
 import { LangType } from "@/i18n/request";
 import fs from "fs";
@@ -20,19 +19,14 @@ const prepareAttachments = (attachments: EncodedFileType[]) => {
   }));
 };
 
-const loadTemplate = (
-  service: ContactFormData["service"],
-  filename: string
-) => {
-  const basePath =
-    service === "wood-sign" ? "sendWoodFormEmail" : "sendDigitalFormEmail";
+const loadTemplate = (filename: string) => {
   const templatePath = path.join(
     process.cwd(),
     "src",
     "app",
     "api",
-    basePath,
-    filename
+    "sendContactFormEmail",
+    filename,
   );
   try {
     return fs.readFileSync(templatePath, "utf8");
@@ -44,38 +38,23 @@ const loadTemplate = (
 
 const generateClientEmailTemplate = (
   formData: ContactFormData,
-  locale: LangType
+  locale: LangType,
 ): string => {
-  const serviceKey: FormServiceType =
-    formData.service === "wood-sign" ? "wood-sign" : formData.service;
-  const t = emailTranslations[locale][serviceKey];
-  const templateFile =
-    formData.service === "wood-sign"
-      ? "woodClientEmail.html"
-      : "digitalClientEmail.html";
-  let html = loadTemplate(formData.service, templateFile);
+  const t = emailTranslations[locale];
+  let html = loadTemplate("contactClientEmail.html");
 
   html = html
     .replaceAll("${locale}", locale)
     .replaceAll("${t.title}", t.title)
     .replaceAll(
       "${t.greeting(formData.firstName)}",
-      t.greeting(formData.firstName)
+      t.greeting(formData.firstName),
     )
     .replaceAll(
       "${t.thankYouMessage(formData.firstName)}",
-      t.thankYouMessage(formData.firstName)
+      t.thankYouMessage(formData.firstName),
     )
-    .replaceAll(
-      formData.service === "wood-sign"
-        ? "${t.signDetails}"
-        : "${t.projectDetails}",
-      formData.service === "wood-sign" ? t.signDetails : t.projectDetails
-    )
-    .replaceAll(
-      formData.service === "wood-sign" ? "${t.dimensions}" : "${t.budget}",
-      formData.service === "wood-sign" ? t.dimensions : t.budget
-    )
+    .replaceAll("${t.dimensions}", t.dimensions)
     .replaceAll("${t.budget}", t.budget)
     .replaceAll("${t.additionalInfo}", t.additionalInfo)
     .replaceAll("${t.regards}", t.regards)
@@ -84,36 +63,42 @@ const generateClientEmailTemplate = (
     .replaceAll("${formData.budgetMin}", formData.budgetMin.toString())
     .replaceAll("${formData.budgetMax}", formData.budgetMax.toString());
 
-  if (formData.service === "wood-sign") {
+  // Add dimensions if they exist
+  if (formData.width && formData.height) {
     html = html
-      .replaceAll("${formData.width}", formData.width?.toString() || "")
-      .replaceAll("${formData.height}", formData.height?.toString() || "");
+      .replaceAll("${formData.width}", formData.width.toString())
+      .replaceAll("${formData.height}", formData.height.toString());
+  } else {
+    // Remove dimension placeholders if not provided
+    html = html
+      .replaceAll("${formData.width}", "N/A")
+      .replaceAll("${formData.height}", "N/A");
   }
 
   return html;
 };
 
 const businessEmailTemplate = (formData: ContactFormData, locale: LangType) => {
-  const templateFile =
-    formData.service === "wood-sign"
-      ? "woodBusinessEmail.html"
-      : "digitalBusinessEmail.html";
-  let html = loadTemplate(formData.service, templateFile);
+  let html = loadTemplate("contactBusinessEmail.html");
 
   html = html
     .replaceAll("${locale}", locale.toUpperCase())
     .replaceAll("${formData.firstName}", formData.firstName)
     .replaceAll("${formData.lastName}", formData.lastName)
     .replaceAll("${formData.email}", formData.email)
-    .replaceAll("${formData.service}", formData.service)
     .replaceAll("${formData.details}", formData.details)
     .replaceAll("${formData.budgetMin}", formData.budgetMin.toString())
     .replaceAll("${formData.budgetMax}", formData.budgetMax.toString());
 
-  if (formData.service === "wood-sign") {
+  // Add dimensions if they exist
+  if (formData.width && formData.height) {
     html = html
-      .replaceAll("${formData.width}", formData.width?.toString() || "")
-      .replaceAll("${formData.height}", formData.height?.toString() || "");
+      .replaceAll("${formData.width}", formData.width.toString())
+      .replaceAll("${formData.height}", formData.height.toString());
+  } else {
+    html = html
+      .replaceAll("${formData.width}", "N/A")
+      .replaceAll("${formData.height}", "N/A");
   }
 
   return html;
@@ -125,12 +110,14 @@ export async function POST(request: Request) {
       formData,
       locale,
     }: { formData: ContactFormData; locale: LangType } = await request.json();
+
     if (looksLikeBot(formData)) {
       // pretend all good, but discard
       return NextResponse.json({ ok: true });
     }
 
     const attachments = prepareAttachments(formData.uploads);
+
     const transporter = getTransporter();
 
     const clientEmail = generateClientEmailTemplate(formData, locale);
@@ -139,7 +126,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
       to: formData.email,
-      subject: emailTranslations[locale][formData.service].subject,
+      subject: emailTranslations[locale].subject,
       html: clientEmail,
       attachments,
     });
@@ -147,11 +134,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
       to: process.env.EMAIL_BUSINESS,
-      subject: `${formData.service === "wood-sign" ? "💡" : "🚀"} New ${
-        formData.service
-      } Inquiry - ${formData.firstName} ${
-        formData.lastName
-      } [${locale.toUpperCase()}]`,
+      subject: `💬 New Contact Inquiry - ${formData.firstName} ${formData.lastName}`,
       html: businessEmail,
       attachments,
     });
@@ -161,7 +144,7 @@ export async function POST(request: Request) {
     console.error("Server error:", error);
     return NextResponse.json(
       { error: "Failed to send emails", details: (error as Error).message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

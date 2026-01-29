@@ -10,14 +10,6 @@ export interface EncodedFileType {
   type: string;
   data: string;
 }
-export interface WoodFormData extends BaseFormData {
-  details: string;
-  width: number;
-  height: number;
-  budgetMin: number;
-  budgetMax: number;
-  uploads: EncodedFileType[];
-}
 
 export interface DigitalFormData extends BaseFormData {
   details: string;
@@ -26,11 +18,9 @@ export interface DigitalFormData extends BaseFormData {
   uploads: EncodedFileType[];
 }
 
-export type FormServiceType = "wood-sign" | "branding" | "website";
-
 export interface ContactFormData extends BaseFormData {
   details: string;
-  service: FormServiceType; // Dropdown options
+  // service: FormServiceType; // Dropdown options
   budgetMin: number;
   budgetMax: number;
   width?: number; // Optional, only for wood-sign
@@ -46,7 +36,7 @@ export interface StepProps {
   number: number | undefined;
 }
 
-export const looksLikeBot = (formData: AnyFormData): boolean => {
+export const looksLikeBot = (formData: ContactFormData): boolean => {
   const honeypotFilled =
     typeof formData.company === "string" && formData.company.trim().length > 0;
 
@@ -69,10 +59,7 @@ export const looksLikeBot = (formData: AnyFormData): boolean => {
     (formData as any).width === 36 &&
     (formData as any).height === 36;
 
-  const isWoodService =
-    "service" in formData && formData.service === "wood-sign";
-
-  const isWoodish = hasDimensions || isWoodService;
+  const isWoodish = hasDimensions;
 
   const suspiciousPattern = isWoodish
     ? isDefaultBudget && isDefaultWoodSize
@@ -81,4 +68,4 @@ export const looksLikeBot = (formData: AnyFormData): boolean => {
   return suspiciousPattern && noUploads && shortDetails;
 };
 
-export type AnyFormData = ContactFormData | DigitalFormData | WoodFormData;
+// export type AnyFormData = ContactFormData;

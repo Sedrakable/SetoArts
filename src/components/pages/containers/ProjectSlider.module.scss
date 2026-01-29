@@ -80,7 +80,7 @@
         height: var(--dot-height);
         aspect-ratio: 1;
         border-radius: 50%;
-        background-color: var(--grey);
+        background-color: var(--light-grey);
         border: none;
         cursor: pointer;
 
@@ -93,14 +93,16 @@
         height: calc(var(--dot-height) / 4);
         background-color: var(--black); /* Grey background */
         border-radius: calc(var(--dot-height) / 4);
-        outline: 2px solid var(--grey);
+        outline: 2px solid var(--light-grey);
         outline-offset: -1px;
         overflow: hidden;
       }
 
       .emblaProgressBar {
         height: 100%;
-        background-color: var(--grey); /* Yellow or your preferred color */
+        background-color: var(
+          --light-grey
+        ); /* Yellow or your preferred color */
         transform: scaleX(0); /* Starts at 0 width */
         transform-origin: left;
         transition: transform 0.1s linear; /* Optional: Smooths the animation */

@@ -2,12 +2,16 @@ import React, { PropsWithChildren, forwardRef } from "react";
 import styles from "./Block.module.scss";
 
 import cn from "classnames";
-import { Heading, HeadingProps } from "@/components/reuse/Text/Heading/Heading";
 import { ITheme } from "@/data.d";
 import FlexDiv from "@/components/reuse/FlexDiv";
+import {
+  FancyTitle,
+  FancyTitleProps,
+} from "@/components/reuse/FancyTitle/FancyTitle";
+import { AnimatedWrapper } from "./AnimatedWrapper/AnimatedWrapper";
 
 interface BlockProps {
-  title?: Omit<HeadingProps, "level" | "as">;
+  fancyTitle?: FancyTitleProps;
   theme: ITheme;
   shadow?: boolean;
   contentSize?: "small" | "default";
@@ -19,7 +23,7 @@ interface BlockProps {
 export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
   (
     {
-      title,
+      fancyTitle,
       theme = "dark",
       shadow = false,
       children,
@@ -27,12 +31,12 @@ export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
       id,
       className,
     },
-    ref
+    ref,
   ) => {
     return (
       <FlexDiv
         ref={ref}
-        flex={{ direction: "column" }}
+        flex={{ direction: "column", y: "flex-start", x: "center" }}
         className={cn(
           styles.block,
           styles[theme],
@@ -40,11 +44,11 @@ export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
           {
             [styles.shadow]: shadow,
           },
-          className
+          className,
         )}
         gapArray={[7, 7, 7, 8]}
         padding={{
-          top: title ? [7, 5, 5, 6] : [7, 7, 7, 8],
+          top: fancyTitle ? [7, 5, 5, 6] : [7, 7, 7, 8],
           bottom: theme === "wood" ? [0] : [8, 9, 9, 10],
           horizontal:
             contentSize === "default" ? [6, 8, 9, 10] : [6, 9, 10, 12],
@@ -53,10 +57,10 @@ export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
         as="article"
         id={id}
       >
-        {title && (
-          <Heading {...title} as="h2" level="2" textAlign="center">
-            {title.children}
-          </Heading>
+        {fancyTitle && (
+          <AnimatedWrapper from="left" className={styles.fancyTitle}>
+            <FancyTitle {...fancyTitle} />
+          </AnimatedWrapper>
         )}
 
         <FlexDiv
@@ -68,7 +72,7 @@ export const Block = forwardRef<HTMLDivElement, PropsWithChildren<BlockProps>>(
         </FlexDiv>
       </FlexDiv>
     );
-  }
+  },
 );
 
 Block.displayName = "Block"; // Required for debugging with forwardRef
