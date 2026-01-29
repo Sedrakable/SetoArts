@@ -60,9 +60,9 @@ interface Form {
 interface Nav {
   home: string;
   services: string;
-  signs: string;
-  decor: string;
-  work: string;
+  // signs: string;
+  // decor: string;
+  projects: string;
   about: string;
 }
 
@@ -76,5 +76,5 @@ export interface Translations {
   titles: Titles;
   form: Form;
   nav: Nav;
-  work: Work;
+  projects: Work;
 }

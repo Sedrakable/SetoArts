@@ -17,7 +17,7 @@ export const enTranslations: Translations = {
   buttons: {
     workWithMe: "Work With Me",
     view: "View",
-    contact: "Let’s Chat",
+    contact: "Let’s Talk",
     send: "Send",
     getQuote: "Get Your Quote",
     buildSign: "Build Your Sign",
@@ -53,18 +53,18 @@ export const enTranslations: Translations = {
       height: "Height",
       width: "Width",
       budget: "Budget",
-      unit: "Inches",
+      unit: "in.",
     },
   },
   nav: {
     home: "Home",
     services: "Services",
-    signs: "Signs",
-    decor: "Decor",
-    work: "Work",
+    // signs: "Signs",
+    // decor: "Decor",
+    projects: "Projects",
     about: "About",
   },
-  work: {
+  projects: {
     signs: "Signs",
     decor: "Decor",
   },

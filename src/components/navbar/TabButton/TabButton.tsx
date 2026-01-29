@@ -11,6 +11,8 @@ import FlexDiv from "../../reuse/FlexDiv";
 import { Icon } from "../../reuse/Icon/Icon";
 import { Paragraph } from "../../reuse/Text/Paragraph/Paragraph";
 import { DropDown } from "../Dropdown/DropDown";
+import { useLocale } from "next-intl";
+import { LangType } from "@/i18n/request";
 
 export interface TabButtonProps {
   children: string;
@@ -36,9 +38,11 @@ export const TabButton: FC<TabButtonProps> = ({
   const normalizedPath = normalize(path);
   const normalizedPathname = normalize(pathname);
 
+  const locale = `/${useLocale() as LangType}`;
+
   const isActive =
-    normalizedPath === "/en"
-      ? normalizedPathname === "/en"
+    normalizedPath === locale // Check if we're on the home page for current locale
+      ? normalizedPathname === locale
       : normalizedPathname === normalizedPath ||
         normalizedPathname.startsWith(normalizedPath + "/");
 

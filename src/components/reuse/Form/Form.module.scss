@@ -17,8 +17,8 @@
 }
 .form {
   @include flexColumn(flex-start, flex-start);
+  @include vari(gap, var(--pad-3), var(--pad-5), var(--pad-5), var(--pad-6));
 
-  gap: var(--pad-6);
   width: 100%;
 
   .submitWrapper {

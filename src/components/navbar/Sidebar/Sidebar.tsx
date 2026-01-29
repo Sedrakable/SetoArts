@@ -139,7 +139,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ links, socials }) => {
         )}
         {renderTabWrapper(
           <Button variant="primary" path={`/${locale}${LocalPaths.CONTACT}`}>
-            {translations.buttons.workWithMe}
+            {translations.buttons.contact}
           </Button>,
         )}
       </FlexDiv>

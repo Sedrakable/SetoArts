@@ -9,24 +9,15 @@ import { urlFor } from "./api/client";
 const BASE_URL = process.env.BASE_NAME || "https://www.setoxarts.com";
 
 const staticUrls: Record<string, string[]> = {
-  base: [LocalPaths.HOME, LocalPaths.SIGNS, LocalPaths.CONTACT],
-  service: [
-    LocalPaths.DIGITAL,
-    `${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`,
-    `${LocalPaths.DIGITAL}${LocalPaths.WEB}`,
-  ],
-  work: [LocalPaths.WORK],
+  base: [LocalPaths.HOME, LocalPaths.CONTACT],
+  projects: [LocalPaths.PROJECTS],
 };
 const allUrls: string[] = Object.values(staticUrls).flat();
 
 const priorityMap: Record<string, number> = {
-  [LocalPaths.HOME]: 0.9,
-  [LocalPaths.SIGNS]: 1.0,
-  [LocalPaths.CONTACT]: 0.9,
-  [LocalPaths.DIGITAL]: 0.9,
-  [`${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`]: 1.0,
-  [`${LocalPaths.DIGITAL}${LocalPaths.WEB}`]: 1.0,
-  [LocalPaths.WORK]: 0.8,
+  [LocalPaths.HOME]: 1,
+  [LocalPaths.PROJECTS]: 0.9,
+  [LocalPaths.CONTACT]: 0.8,
 };
 
 const changeFrequencyMap: Record<
@@ -34,12 +25,8 @@ const changeFrequencyMap: Record<
   MetadataRoute.Sitemap[number]["changeFrequency"]
 > = {
   [LocalPaths.HOME]: "monthly",
-  [LocalPaths.SIGNS]: "monthly",
   [LocalPaths.CONTACT]: "monthly",
-  [LocalPaths.DIGITAL]: "monthly",
-  [`${LocalPaths.DIGITAL}${LocalPaths.BRANDING}`]: "monthly",
-  [`${LocalPaths.DIGITAL}${LocalPaths.WEB}`]: "monthly",
-  [LocalPaths.WORK]: "weekly",
+  [LocalPaths.PROJECTS]: "weekly",
 };
 
 const generateStaticEntries: MetadataRoute.Sitemap = allUrls.map((baseUrl) => {
@@ -88,7 +75,7 @@ const generateDynamicEntries = async (): Promise<MetadataRoute.Sitemap> => {
       ? work.slug.current
       : `/${work.slug.current}`;
 
-    const basePath = `${LocalPaths.WORK}${slug}`;
+    const basePath = `${LocalPaths.PROJECTS}${slug}`;
 
     const enUrl = `${BASE_URL}/en${basePath}`;
     const frUrl = `${BASE_URL}/fr${basePath}`;

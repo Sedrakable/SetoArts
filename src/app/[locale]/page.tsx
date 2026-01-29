@@ -41,17 +41,21 @@ import {
   AboutBlock,
   AboutBlockProps,
 } from "@/components/pages/blocks/AboutBlock/AboutBlock";
+import {
+  FeaturesBlock,
+  FeaturesBlockProps,
+} from "@/components/pages/blocks/FeaturesBlock/FeaturesBlock";
 
 export interface HomePageProps {
   meta: ISeo;
   hero: HeroProps;
   questionsBlock: QuestionsBlockProps;
   servicesBlock: ServicesBlockProps;
-  aboutBlock: AboutBlockProps;
-  // featureBlock: { features: IFeature[] };
-  // solutionBlock: SolutionBlockProps;
-  processBlock: { processes: IProcessStep[] };
+  featuresBlock: FeaturesBlockProps;
   testimonialsBlock: TestimonialsBlockProps;
+  processBlock: { processes: IProcessStep[] };
+  aboutBlock: AboutBlockProps;
+  // solutionBlock: SolutionBlockProps;
   collapsible: ICollapsible;
 }
 
@@ -69,7 +73,7 @@ export async function generateMetadata({
   params: Promise<{ locale: LangType }>;
 }): Promise<Metadata | null> {
   const { locale } = await params;
-  const path = LocalPaths.SIGNS;
+  const path = LocalPaths.HOME;
   const crawl = true;
   const data: HomePageProps = await getHomePageData(locale);
   if (!data?.meta) return null;
@@ -103,23 +107,19 @@ export default async function HomePage({
         <>
           <Hero
             {...data.hero}
-            cta1={{
+            cta={{
               text: translations.buttons.buildSign,
-              path: `/${locale}${LocalPaths.SIGNS}`,
-              scrollTarget: LocalTargets.SIGNSFORM,
+              path: `/${locale}${LocalPaths.HOME}`,
+              scrollTarget: LocalTargets.CONTACTFORM,
             }}
           />
           {data.questionsBlock && <QuestionsBlock {...data.questionsBlock} />}
           {data.servicesBlock && <ServicesBlock {...data.servicesBlock} />}
-          {/* 
-          {data.solutionBlock && (
-            <SolutionBlock {...data.solutionBlock} theme="wood" />
-          )} */}
+          {data.featuresBlock && <FeaturesBlock {...data.featuresBlock} />}
           {data.testimonialsBlock && (
             <TestimonialsBlock {...data.testimonialsBlock} />
           )}
           {carouselImages && <Carousel images={carouselImages} />}
-
           {data.processBlock && (
             <ProcessAndForm
               processes={data.processBlock.processes}
@@ -132,12 +132,7 @@ export default async function HomePage({
               }}
             />
           )}
-          {/* {data.featureBlock && (
-            <Features features={data.featureBlock.features} />
-          )} */}
-          {data && (
-            <>{data.aboutBlock && <AboutBlock {...data.aboutBlock} />}</>
-          )}
+          {data.aboutBlock && <AboutBlock {...data.aboutBlock} />}
           {data.collapsible && <Collapsible {...data.collapsible} />}
         </>
       )}

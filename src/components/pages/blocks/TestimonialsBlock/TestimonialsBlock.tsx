@@ -173,7 +173,11 @@ export const TestimonialsBlock: React.FC<TestimonialsBlockProps> = ({
           </div>
         </div>
       ) : (
-        <Block fancyTitle={fancyTitle} theme="light" className={styles.block}>
+        <Block
+          fancyTitle={fancyTitle}
+          theme="off-white"
+          className={styles.block}
+        >
           <FlexDiv
             gapArray={[6, 7, 7, 8]}
             flex={{ y: "flex-start" }}

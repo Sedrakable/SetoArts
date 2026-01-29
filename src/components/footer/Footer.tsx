@@ -89,7 +89,7 @@ const Logo: React.FC<{ trademark: string }> = ({ trademark }) => {
 const LegalAndFaq: React.FC<{
   legals: { title: string; path: string }[];
   faqs?: IFooterFAQLinks[];
-}> = ({ legals }) => {
+}> = ({ legals, faqs }) => {
   const locale = useLocale() as LangType;
   return (
     <FlexDiv className={styles.legal} gapArray={[5]} wrap>
@@ -106,7 +106,7 @@ const LegalAndFaq: React.FC<{
           </Link>
         );
       })}
-      {/* {faqs?.map((faq, key) => {
+      {faqs?.map((faq, key) => {
         return (
           <Link
             href={`/${locale}${LocalPaths.CONTACT}${faq.id}`}
@@ -118,7 +118,7 @@ const LegalAndFaq: React.FC<{
             </Paragraph>
           </Link>
         );
-      })} */}
+      })}
     </FlexDiv>
   );
 };

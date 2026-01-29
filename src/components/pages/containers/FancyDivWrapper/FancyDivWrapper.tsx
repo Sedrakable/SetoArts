@@ -16,7 +16,7 @@ export const FancyDivWrapper = forwardRef<
   return (
     <FlexDiv
       ref={ref}
-      flex={{ y: "center", x: "center" }}
+      flex={{ y: "flex-start", x: "center" }}
       width100
       padding={{ all: [5], bottom: [6], top: [4] }}
       className={cn(styles.wrapper, className)}

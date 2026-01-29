@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import styles from "./Hero.module.scss";
 import cn from "classnames";
 import Image from "next/image";
@@ -14,7 +14,6 @@ import {
 import { useWindowResize } from "../../../../helpers/useWindowResize";
 
 import { PortableTextContent } from "../../../reuse/Text/Paragraph/PortableTextContent";
-import { useParallaxScroll } from "@/helpers/useParallaxScroll";
 
 import { FancyText } from "@/components/reuse/Text/FancyText/FancyText";
 import { SpacingArrayType } from "@/helpers/SpacingGenerator";
@@ -24,7 +23,7 @@ export interface HeroProps {
   subTitle: FancyText;
   title: FancyText;
   desc: FancyText;
-  cta1: ICta;
+  cta: ICta;
   version?: 1 | 2;
 }
 
@@ -33,16 +32,16 @@ export const Hero: React.FC<HeroProps> = ({
   subTitle,
   title,
   desc,
-  cta1,
+  cta,
   version = 1,
 }) => {
-  const { isMobile, isMobileOrTablet } = useWindowResize();
-  const heroRef = useRef<HTMLDivElement>(null);
-  const scrollProgress = useParallaxScroll(heroRef);
+  const { isMobileOrTablet } = useWindowResize();
+  // const heroRef = useRef<HTMLDivElement>(null);
+  // const scrollProgress = useParallaxScroll(heroRef);
   const paddings: { top: SpacingArrayType; bottom: SpacingArrayType } =
     version === 1
-      ? { top: [9, 10, 11, 13], bottom: [8, 9, 10, 12] }
-      : { top: [9, 10, 9, 11], bottom: [6, 7, 9, 10] };
+      ? { top: [4, 7, 10, 12], bottom: [8, 9, 11, 12] }
+      : { top: [4, 7, 9, 11], bottom: [6, 7, 9, 10] };
   return (
     <FlexDiv
       className={cn(styles.hero, styles[`version${version}`])}
@@ -50,12 +49,12 @@ export const Hero: React.FC<HeroProps> = ({
       flex={{ direction: "column-reverse", x: "flex-start", y: "flex-start" }}
       as={"header"}
       width100
-      ref={heroRef}
-      customStyle={
-        {
-          "--scroll-progress": scrollProgress,
-        } as React.CSSProperties
-      }
+      // ref={heroRef}
+      // customStyle={
+      //   {
+      //     "--scroll-progress": scrollProgress,
+      //   } as React.CSSProperties
+      // }
     >
       <div className={styles.backgroundContainer}>
         <SanityImage
@@ -63,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({
           {...backgroundImage}
           priority={true}
           quality={90}
-          sizes={["50vw", "50vw", "50vw", "50vw"]}
+          sizes={["100vw", "100vw", "50vw", "50vw"]}
         />
         {/* <SanityImage
           figureclassname={styles.foregroundImage}
@@ -75,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({
       <FlexDiv
         padding={{
           left: [6, 7, 8, 10],
-          right: [6, 0],
+          right: [6, 7],
         }}
         gapArray={[5, 4, 6, 7]}
         flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
@@ -84,11 +83,11 @@ export const Hero: React.FC<HeroProps> = ({
         className={styles.content}
       >
         <FlexDiv
-          padding={{ left: [0, 5, 6, 8] }}
+          padding={{ left: [0, 0, 6, 8] }}
           flex={{
             direction: "column",
             y: "flex-start",
-            x: isMobile ? "center" : "flex-start",
+            x: isMobileOrTablet ? "center" : "flex-start",
           }}
           gapArray={[3, 2]}
           className={styles.titles}
@@ -99,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({
             font="Cursive"
             as="h3"
             color="light-grey"
-            textAlign={isMobile ? "center" : "left"}
+            textAlign={isMobileOrTablet ? "center" : "left"}
             value={subTitle}
           />
           <FancyText
@@ -108,7 +107,7 @@ export const Hero: React.FC<HeroProps> = ({
             as="h4"
             color="black"
             className={styles.title}
-            textAlign={isMobile ? "center" : "left"}
+            textAlign={isMobileOrTablet ? "center" : "left"}
             weight={500}
             paddingBottomArray={[0, 2, 2, 3]}
             value={title}
@@ -120,25 +119,18 @@ export const Hero: React.FC<HeroProps> = ({
               differentColorForStrongText={false}
               level="regular"
               className={styles.desc}
-              textAlign={isMobile ? "center" : "left"}
-              paddingBottomArray={[5, 4, 4, 5]}
+              textAlign={isMobileOrTablet ? "center" : "left"}
+              paddingBottomArray={[3, 4, 4, 5]}
             />
           )}
-          {cta1 && (
-            <FlexDiv
-              gapArray={[2, 3, 3, 4]}
-              flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-              className={styles.ctas}
-              width100
+          {cta && (
+            <Button
+              variant={isMobileOrTablet ? "primary" : "fancy"}
+              path={cta.path}
+              scrollTarget={cta.scrollTarget}
             >
-              <Button
-                variant={isMobile ? "primary" : "fancy"}
-                path={cta1.path}
-                scrollTarget={cta1.scrollTarget}
-              >
-                {cta1.text}
-              </Button>
-            </FlexDiv>
+              {cta.text}
+            </Button>
           )}
         </FlexDiv>
       </FlexDiv>

@@ -30,7 +30,7 @@ export async function generateMetadata({
   params: Promise<{ locale: LangType }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const path = LocalPaths.WORK;
+  const path = LocalPaths.PROJECTS;
   const crawl = true;
   const aboutPageData = await getWorkPageData(locale);
   const { metaTitle, metaDesc } = aboutPageData.meta;

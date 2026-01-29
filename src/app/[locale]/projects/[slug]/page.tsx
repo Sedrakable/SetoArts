@@ -39,7 +39,7 @@ export async function generateMetadata({
   params: Promise<{ locale: LangType; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const path = `${LocalPaths.WORK}/${slug}`;
+  const path = `${LocalPaths.PROJECTS}/${slug}`;
   const workPageData = await getWorkPageData(slug);
 
   return setMetadata({
@@ -61,7 +61,7 @@ export default async function WorkModal({
   const allWorks = await getAllWorks(locale); // Pass locale here
 
   if (!workPageData) {
-    redirect(`/${locale}${LocalPaths.WORK}`);
+    redirect(`/${locale}${LocalPaths.PROJECTS}`);
   }
 
   return (

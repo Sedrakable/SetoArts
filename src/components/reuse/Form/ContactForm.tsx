@@ -261,7 +261,11 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
   ];
 
   return (
-    <FlexDiv width100 id={LocalTargets.SIGNSFORM} className={styles.container}>
+    <FlexDiv
+      width100
+      id={LocalTargets.CONTACTFORM}
+      className={styles.container}
+    >
       {submit === translations.form.general.emailSent ? (
         <FormSubmitMessage locale={locale} translations={translations} />
       ) : (

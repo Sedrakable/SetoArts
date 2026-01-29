@@ -1,0 +1,90 @@
+@use "@/styles/mixins.scss" as *;
+
+.block {
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--drop-shadow);
+  aspect-ratio: d(4, 5);
+  cursor: pointer;
+
+  // Default values (will be overridden by JS)
+  --content-height: 388px;
+  --title-height: 72px;
+  transition: box-shadow var(--transition-time) ease;
+
+  .image {
+    position: absolute !important;
+    inset: 0;
+    z-index: 0;
+    filter: brightness(1) !important;
+    transform: scale(1);
+    transition: filter var(--transition-time) ease,
+      transform var(--transition-time) ease;
+
+    // Bottom gradient (default state)
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      transition: opacity var(--transition-time) ease;
+    }
+
+    // Top gradient (hover state)
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      transition: opacity var(--transition-time) ease;
+      z-index: 1;
+    }
+  }
+
+  .desc {
+    opacity: 0;
+    transition: opacity var(--transition-time) ease;
+  }
+
+  .content {
+    z-index: 2; // Increased to be above both gradients
+    transform: translateY(calc(var(--content-height) - var(--title-height)));
+    transition: transform var(--transition-time) ease;
+  }
+
+  &:hover {
+    box-shadow: none;
+    .content {
+      transform: translateY(0);
+    }
+    .desc {
+      opacity: 1;
+    }
+    .image {
+      filter: brightness(0.5) grayscale(0.5) !important;
+      transform: scale(1.1);
+      &:after {
+        opacity: 0; // Fade out bottom gradient
+      }
+
+      &:before {
+        opacity: 1; // Fade in top gradient
+      }
+    }
+  }
+}

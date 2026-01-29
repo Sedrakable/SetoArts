@@ -28,8 +28,6 @@ export interface ISlug {
 
 export type ITheme = "light" | "dark" | "dash" | "wood" | "off-white";
 
-
-
 export interface ILandingSide {
   title: string;
   desc: any;
@@ -42,20 +40,6 @@ export interface ILandingSide {
 export interface IQuote {
   leftText: string;
   rightText: string;
-}
-
-export interface IFeatureBlock {
-  features: IFeature[];
-  featureStrings?: string[]; // For the feature block Custom Work in the service page
-}
-
-export interface IFeature {
-  customImage?: ICustomImage; // Optional image field
-  svgName?: string; // Optional SVG name
-  title: string;
-  desc: FancyText;
-  titleFR: string; // Optional French title
-  descFR: string; // Optional French description
 }
 
 export interface IQuestion {
@@ -171,11 +155,11 @@ export interface INotFound {
 
 export enum LocalPaths {
   HOME = "/",
-  SERVICES = "/services",
-  SIGNS = "/signs",
-  DECOR = "/decor",
-  WORK = "/work",
-  ABOUT = "/about",
+  // SERVICES = "/services",
+  // SIGNS = "/signs",
+  // DECOR = "/decor",
+  PROJECTS = "/projects",
+  // ABOUT = "/about",
   CONTACT = "/contact",
   LEGAL = "/legal",
   TERMS = "/terms-and-conditions",
@@ -183,10 +167,10 @@ export enum LocalPaths {
 }
 
 export enum LocalTargets {
-  SIGNSFORM = "#wood-form",
-  WORK = "#work-block",
-  SIGNSWORK = "#signs-work-block",
-  DECORWORK = "#signs-work-block",
+  CONTACTFORM = "#contact-form",
+  PROJECTS = "#work-block",
+  // SIGNSPROJECTS = "#signs-work-block",
+  // DECORPROJECTS = "#signs-work-block",
   SERVICESBLOCK = "#services-block",
   SIGNSFAQ = "#wood-faq",
 }

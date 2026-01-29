@@ -1,6 +1,6 @@
 import FlexDiv from "@/components/reuse/FlexDiv";
 
-export default function AboutWorkLayout({
+export default function ProjectsLayout({
   children,
 }: {
   children: React.ReactNode;

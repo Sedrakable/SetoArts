@@ -17,7 +17,7 @@ export const frTranslations: Translations = {
   buttons: {
     workWithMe: "Bossons ensemble",
     view: "Voir",
-    contact: "On jase ?",
+    contact: "Contactez-moi",
     send: "Envoyer",
     getQuote: "Obtenez votre devis",
     buildSign: "Crée ton enseigne",
@@ -54,18 +54,17 @@ export const frTranslations: Translations = {
       height: "Hauteur",
       width: "Largeur",
       budget: "Budget",
-      unit: "Pouces",
+      unit: "po.",
     },
   },
   nav: {
     home: "Accueil",
     services: "Services",
-    decor: "Décor",
-    signs: "Enseignes",
-    work: "Travail",
+
+    projects: "Projets",
     about: "À propos",
   },
-  work: {
+  projects: {
     signs: "Enseignes",
     decor: "Décor",
   },

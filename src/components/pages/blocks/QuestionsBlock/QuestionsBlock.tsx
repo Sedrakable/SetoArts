@@ -68,7 +68,7 @@ export const QuestionsBlock: React.FC<QuestionsBlockProps> = ({
             textAlign="center"
             weight={300}
             paddingBottomArray={[0, 2, 2, 3]}
-            value={fancyTitle.title}
+            value={fancyTitle.title as FancyText}
           />
         </AnimatedWrapper>
         <FlexDiv

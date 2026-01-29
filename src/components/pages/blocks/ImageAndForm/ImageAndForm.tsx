@@ -14,7 +14,7 @@ import {
 
 export const ImageAndForm: FC<ContactFormProps> = ({ title, subTitle }) => {
   return (
-    <Block theme="off-white">
+    <Block theme="light">
       <FlexDiv
         gapArray={[7, 8, 8, 9]}
         className={cn(styles.container)}

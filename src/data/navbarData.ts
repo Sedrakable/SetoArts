@@ -79,7 +79,7 @@ export const navLinkData = (trans: Translations): (INavLink | ICta)[] => {
     //   ],
     // } as INavLink,
 
-    { text: trans.nav.work, path: LocalPaths.WORK } as ICta,
+    { text: trans.nav.projects, path: LocalPaths.PROJECTS } as ICta,
     // { text: trans.nav.about, path: LocalPaths.ABOUT } as ICta,
   ];
 };
