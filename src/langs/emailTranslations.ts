@@ -12,6 +12,11 @@ interface EmailTranslation {
   additionalInfo: string;
   regards: string;
   team: string;
+  tradeSubject: string;
+  tradeTitle: string;
+  tradeGreeting: (firstName: string) => string;
+  tradeThankYouMessage: string;
+  tradeDetails: string;
 }
 
 export const emailTranslations: Record<LangType, EmailTranslation> = {
@@ -25,8 +30,14 @@ export const emailTranslations: Record<LangType, EmailTranslation> = {
     dimensions: "Size:",
     budget: "Your Budget Range:",
     additionalInfo: "Extra Details:",
-    regards: "Catch you soon,",
+    regards: "Talk to you soon,",
     team: "Seto – Seto x Arts",
+    tradeSubject: "Trade Program Inquiry Confirmation",
+    tradeTitle: "Trade Program Inquiry",
+    tradeGreeting: (firstName: string) => `Hello ${firstName},`,
+    tradeThankYouMessage:
+      "Thank you for your interest in our trade program! We've received your inquiry and will review it shortly. A member of our team will reach out to you within 1-2 business days to discuss partnership opportunities.",
+    tradeDetails: "Your Inquiry",
   },
   fr: {
     subject:
@@ -41,5 +52,11 @@ export const emailTranslations: Record<LangType, EmailTranslation> = {
     additionalInfo: "Détails supplémentaires :",
     regards: "À bientôt,",
     team: "Seto – Seto x Arts",
+    tradeSubject: "Confirmation de demande du programme partenaire",
+    tradeTitle: "Demande du programme partenaire",
+    tradeGreeting: (firstName: string) => `Bonjour ${firstName},`,
+    tradeThankYouMessage:
+      "Merci  pour votre intérêt pour notre programme partenaire ! Nous avons reçu votre demande et l'examinerons sous peu. Un membre de notre équipe vous contactera dans 1 à 2 jours ouvrables pour discuter des opportunités de partenariat.",
+    tradeDetails: "Votre demande",
   },
 };

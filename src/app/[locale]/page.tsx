@@ -45,6 +45,10 @@ import {
   FeaturesBlock,
   FeaturesBlockProps,
 } from "@/components/pages/blocks/FeaturesBlock/FeaturesBlock";
+import {
+  TradeBlock,
+  TradeBlockProps,
+} from "@/components/pages/blocks/TradeBlock/TradeBlock";
 
 export interface HomePageProps {
   meta: ISeo;
@@ -55,6 +59,7 @@ export interface HomePageProps {
   testimonialsBlock: TestimonialsBlockProps;
   processBlock: { processes: IProcessStep[] };
   aboutBlock: AboutBlockProps;
+  tradeBlock: TradeBlockProps;
   // solutionBlock: SolutionBlockProps;
   collapsible: ICollapsible;
 }
@@ -107,15 +112,21 @@ export default async function HomePage({
         <>
           <Hero
             {...data.hero}
-            cta={{
+            cta1={{
               text: translations.buttons.buildSign,
               path: `/${locale}${LocalPaths.HOME}`,
               scrollTarget: LocalTargets.CONTACTFORM,
+            }}
+            cta2={{
+              text: translations.buttons.viewTradeProgram,
+              path: `/${locale}${LocalPaths.HOME}`,
+              scrollTarget: LocalTargets.TRADEBLOCK,
             }}
           />
           {data.questionsBlock && <QuestionsBlock {...data.questionsBlock} />}
           {data.servicesBlock && <ServicesBlock {...data.servicesBlock} />}
           {data.featuresBlock && <FeaturesBlock {...data.featuresBlock} />}
+          {data.tradeBlock && <TradeBlock {...data.tradeBlock} />}
           {data.testimonialsBlock && (
             <TestimonialsBlock {...data.testimonialsBlock} />
           )}

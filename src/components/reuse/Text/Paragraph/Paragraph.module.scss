@@ -23,8 +23,13 @@
 
 .small {
   // @include level(1, 1, 1, 2);
-  font-size: var(--paragraph-small);
-  line-height: var(--paragraph-small-line);
+  font-size: var(--paragraph-extra-small);
+  line-height: var(--paragraph-extra-small);
+
+  @media (min-width: $desktop) {
+    font-size: var(--paragraph-small);
+    line-height: var(--paragraph-small-line);
+  }
 }
 
 .regular {

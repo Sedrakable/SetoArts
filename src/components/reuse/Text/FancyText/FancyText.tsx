@@ -64,12 +64,17 @@ export const FancyText: React.FC<FancyTextProps> = ({ value, ...props }) => {
 
   const isOutfit = font === "Outfit";
   const isCursive = font === "Cursive";
+  const isWhite = color === "white";
 
   const strongStyle: React.CSSProperties = {};
 
   if (isOutfit) {
     const base = typeof weight === "number" ? weight : 400;
-    strongStyle.fontWeight = clamp(base + 200, 300, 900);
+    if (isWhite) {
+      strongStyle.fontWeight = clamp(base + 300, 300, 900);
+    } else {
+      strongStyle.fontWeight = clamp(base + 200, 300, 900);
+    }
   }
 
   if (isCursive) {

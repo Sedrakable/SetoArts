@@ -1,5 +1,4 @@
 import { ICustomImage } from "./components/reuse/SanityImage/SanityImage";
-import { FancyText } from "./components/reuse/Text/FancyText/FancyText";
 
 export type ServiceType = "wood" | "digital";
 export type DigitalServiceType = "branding" | "website";
@@ -40,11 +39,6 @@ export interface ILandingSide {
 export interface IQuote {
   leftText: string;
   rightText: string;
-}
-
-export interface IQuestion {
-  title: string;
-  desc: FancyText;
 }
 
 export interface IProcessStep {
@@ -169,6 +163,7 @@ export enum LocalPaths {
 export enum LocalTargets {
   CONTACTFORM = "#contact-form",
   PROJECTS = "#work-block",
+  TRADEBLOCK = "#trade-block",
   // SIGNSPROJECTS = "#signs-work-block",
   // DECORPROJECTS = "#signs-work-block",
   SERVICESBLOCK = "#services-block",

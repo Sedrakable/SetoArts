@@ -6,7 +6,7 @@ import { useWindowResize } from "../../../helpers/useWindowResize";
 import { IconButton } from "../../reuse/IconButton/IconButton";
 import cn from "classnames";
 import FlexDiv from "../../reuse/FlexDiv";
-import Logo from "@/assets/vector/LogoSmall.svg";
+import Logo from "@/assets/vector/Logos/LogoSmall.svg";
 import { Button } from "../../reuse/Button/Button";
 import { ICta, INavBar, INavLink, ITheme } from "../../../data.d";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";

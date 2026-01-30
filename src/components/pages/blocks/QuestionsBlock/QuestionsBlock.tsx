@@ -5,21 +5,31 @@ import cn from "classnames";
 import { Block } from "@/components/pages/containers/Block";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Heading } from "@/components/reuse/Text/Heading/Heading";
-import { IQuestion } from "@/data.d";
 import { PortableTextContent } from "@/components/reuse/Text/Paragraph/PortableTextContent";
 import { AnimatedWrapper } from "../../containers/AnimatedWrapper/AnimatedWrapper";
 import { FancyTitleProps } from "@/components/reuse/FancyTitle/FancyTitle";
-import { FancyText } from "@/components/reuse/Text/FancyText/FancyText";
 import { FancyDivWrapper } from "../../containers/FancyDivWrapper/FancyDivWrapper";
+import { Icon } from "@/components/reuse/Icon/Icon";
+import { FancyText } from "@/components/reuse/Text/FancyText/FancyText";
 
-const Question: React.FC<IQuestion> = ({ title, desc }) => {
+export interface QuestionProps {
+  title: string;
+  desc: FancyText;
+  icon: string;
+}
+
+const Question: React.FC<QuestionProps> = ({ title, desc, icon }) => {
   return (
-    <FancyDivWrapper>
+    <FancyDivWrapper fancyCorners={false}>
       <FlexDiv
-        flex={{ direction: "column", y: "flex-start" }}
+        flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
         width100
         gapArray={[3]}
+        padding={{ top: [2, 3, 3, 4] }}
       >
+        {icon && (
+          <Icon icon={icon} size="big" className={styles.icon} color="error" />
+        )}
         <Heading
           font="Outfit"
           level="4"
@@ -28,6 +38,7 @@ const Question: React.FC<IQuestion> = ({ title, desc }) => {
           weight={500}
           textAlign="left"
           upperCase={false}
+          className={styles.title}
         >
           {title}
         </Heading>
@@ -45,7 +56,7 @@ const Question: React.FC<IQuestion> = ({ title, desc }) => {
 
 export interface QuestionsBlockProps {
   fancyTitle: FancyTitleProps;
-  questions: IQuestion[];
+  questions: QuestionProps[];
 }
 
 export const QuestionsBlock: React.FC<QuestionsBlockProps> = ({
@@ -53,39 +64,21 @@ export const QuestionsBlock: React.FC<QuestionsBlockProps> = ({
   questions,
 }) => {
   return (
-    <Block theme="light">
+    <Block theme="light" fancyTitle={{ title: fancyTitle.title, line: false }}>
       <FlexDiv
         gapArray={[5, 6, 6, 7]}
-        flex={{ direction: "column", x: "center", y: "center" }}
+        flex={{ y: "flex-start" }}
         width100
+        className={cn(styles.questions)}
+        as="ul"
       >
-        <AnimatedWrapper from="left">
-          <FancyText
-            font="Outfit"
-            level="2"
-            as="h2"
-            color="black"
-            textAlign="center"
-            weight={300}
-            paddingBottomArray={[0, 2, 2, 3]}
-            value={fancyTitle.title as FancyText}
-          />
-        </AnimatedWrapper>
-        <FlexDiv
-          gapArray={[5, 6, 6, 7]}
-          flex={{ y: "flex-start" }}
-          width100
-          className={cn(styles.questions)}
-          as="ul"
-        >
-          {questions?.map((question: IQuestion, key) => {
-            return (
-              <AnimatedWrapper from="inside" key={key} as="li">
-                <Question {...question} />
-              </AnimatedWrapper>
-            );
-          })}
-        </FlexDiv>
+        {questions?.map((question: QuestionProps, key) => {
+          return (
+            <AnimatedWrapper from="inside" key={key} as="li">
+              <Question {...question} />
+            </AnimatedWrapper>
+          );
+        })}
       </FlexDiv>
     </Block>
   );

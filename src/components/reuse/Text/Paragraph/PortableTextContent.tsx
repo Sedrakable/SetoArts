@@ -3,6 +3,8 @@ import { PortableText, PortableTextComponents } from "@portabletext/react";
 
 import { Paragraph, ParagraphProps } from "./Paragraph";
 import { FancyText } from "../FancyText/FancyText";
+import FlexDiv from "../../FlexDiv";
+import { SpacingArrayType } from "@/helpers/SpacingGenerator";
 
 interface PortableTextContentProps extends Omit<ParagraphProps, "children"> {
   value: FancyText;
@@ -19,6 +21,7 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
   className,
   paddingBottomArray,
 }) => {
+  const paddingBetweenParagraphs: SpacingArrayType = [3, 3, 3, 3];
   const contastColor =
     differentColorForStrongText && color === "white" ? `var(--white)` : color;
   const quote = (
@@ -47,7 +50,7 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
             weight={weight}
             color={color}
             textAlign={textAlign}
-            paddingBottomArray={paddingBottomArray}
+            paddingBottomArray={paddingBetweenParagraphs}
             className={className}
           >
             {children}
@@ -60,7 +63,7 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
           weight={weight}
           color={color}
           textAlign={textAlign}
-          paddingBottomArray={paddingBottomArray}
+          paddingBottomArray={paddingBetweenParagraphs}
           className={className}
         >
           {quote}
@@ -101,7 +104,7 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
           level={level}
           weight={weight}
           color={color}
-          paddingBottomArray={paddingBottomArray}
+          paddingBottomArray={paddingBetweenParagraphs}
         >
           {children}
         </Paragraph>
@@ -112,7 +115,7 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
           level={level}
           weight={weight}
           color={color}
-          paddingBottomArray={paddingBottomArray}
+          paddingBottomArray={paddingBetweenParagraphs}
         >
           {children}
         </Paragraph>
@@ -120,5 +123,13 @@ export const PortableTextContent: React.FC<PortableTextContentProps> = ({
     },
   };
 
-  return <PortableText value={value} components={myComponents} />;
+  return (
+    <FlexDiv
+      padding={{ bottom: paddingBottomArray }}
+      flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
+      customStyle={{ maxWidth: "fit-content" }}
+    >
+      <PortableText value={value} components={myComponents} />
+    </FlexDiv>
+  );
 };

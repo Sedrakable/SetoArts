@@ -1,77 +1,80 @@
 @use "@/styles/mixins.scss" as *;
 
 .embla {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: var(--pad-3);
+
+  justify-content: center;
   width: 100%;
-
-  .viewport {
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    width: 100%;
-    aspect-ratio: 1;
-
-    .container {
-      display: flex;
-      touch-action: pan-y pinch-zoom;
-      gap: var(--pad-4);
-
-      .slide {
-        transform: translate3d(0, 0, 0);
-        flex: 0 0 100%;
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        aspect-ratio: 1;
-
-        .slideImage {
-          width: 100% !important;
-          height: 100% !important;
-          box-shadow: var(--drop-shadow);
-        }
-      }
-    }
+  height: 100%;
+  @media (min-width: $laptop) {
+    height: 100%;
   }
+}
 
-  // Thumbnails
-  .thumbsViewport {
-    overflow: hidden;
-    width: 100%;
-
-    .thumbsContainer {
-      display: flex;
-      flex-direction: row;
-      // justify-content: flex-start;
-      touch-action: pan-x pinch-zoom;
-      margin-left: 0 !important; // Add this
-      padding-left: 0 !important; // Add this
-    }
+.viewport {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  aspect-ratio: 1;
+  width: 100% !important;
+  height: auto !important;
+  @media (min-width: $laptop) {
+    width: auto !important;
+    height: 100% !important;
   }
+}
 
-  .thumb {
-    all: unset;
-    @include vari(--thumb-height, 64px, 96px, 72px, 96px);
-    height: var(--thumb-height);
-    aspect-ratio: 1;
-    cursor: pointer;
-    flex: 0 0 auto;
+.container {
+  display: flex;
+  gap: var(--pad-4);
+  height: 100%;
+}
 
-    .thumbImage {
-      height: 100% !important;
-      width: 100% !important;
-      border-radius: var(--border-radius-small);
-      transition: all var(--transition-time-backoff);
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
 
-      img {
-        filter: grayscale(1);
-        opacity: 0.55;
-      }
-    }
+.slideImage {
+  width: 100% !important;
+  height: 100% !important;
+  box-shadow: var(--drop-shadow);
+}
 
-    &.selected .thumbImage {
-      box-shadow: var(--drop-shadow);
+.thumbsViewport {
+  overflow: hidden;
+}
 
-      img {
-        filter: grayscale(0);
-        opacity: 1;
-      }
-    }
+.thumbsContainer {
+  display: flex;
+  gap: var(--pad-3);
+}
+
+.thumb {
+  all: unset;
+  cursor: pointer;
+  aspect-ratio: 1;
+  @include vari(--thumb-height, 48px, 64px, 72px, 96px);
+  height: var(--thumb-height);
+}
+
+.thumbImage {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: var(--border-radius-small);
+  transition: opacity var(--transition-time-backoff);
+
+  img {
+    filter: grayscale(1);
+    opacity: 0.55;
   }
+}
+
+.selected .thumbImage img {
+  filter: grayscale(0);
+  opacity: 1;
 }

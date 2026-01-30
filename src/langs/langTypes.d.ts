@@ -13,15 +13,15 @@ interface Titles {
 }
 
 interface Buttons {
+  submit: string;
   workWithMe: string;
   contact: string;
   send: string;
   getQuote: string;
   buildSign: string;
-  buildBrand: string;
-  design: string;
   view: string;
   viewInstagram: string;
+  viewTradeProgram: string;
   viewMyWork: string;
   viewService: string;
   viewCaseStudy: string;

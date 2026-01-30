@@ -136,7 +136,7 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
 
           <Icon
             icon="upload"
-            size="big"
+            size="regular"
             color="black"
             className={styles.icon}
           />

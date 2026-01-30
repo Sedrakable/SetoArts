@@ -1,9 +1,16 @@
+// Backdrop.module.scss
 @use "@/styles/mixins.scss" as *;
 
 .backdrop {
   @include absoluteFill;
   @include flex(center, center);
-
+  @include vari(
+    --vertical-pad,
+    var(--pad-9),
+    var(--pad-7),
+    var(--pad-7),
+    var(--pad-7)
+  );
   opacity: 1;
   backdrop-filter: blur(8px);
   background-color: rgba(0, 0, 0, 0.6);
@@ -12,7 +19,7 @@
   height: 100vh;
   z-index: 20;
   // overflow-y: scroll;
-  padding: var(--pad-7) 0;
+  padding: var(--vertical-pad) 0;
   box-sizing: border-box;
   // cursor: pointer;
 }

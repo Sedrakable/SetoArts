@@ -1,0 +1,74 @@
+@use "@/styles/mixins.scss" as *;
+
+.tradeBlock {
+  --block-color: var(--yellow);
+  position: relative;
+  border-radius: var(--border-radius);
+  box-shadow: var(--drop-shadow);
+  background: var(--block-color);
+  overflow: hidden;
+
+  .content {
+    * {
+      z-index: 1;
+    }
+    .backgroundImage {
+      position: absolute !important;
+      z-index: 0;
+
+      img {
+        opacity: 1;
+        filter: grayscale(0.5) brightness(0.9);
+      }
+    }
+  }
+
+  // Mobile & Tablet: Vertical layout
+  @media (max-width: #{$laptop - 1px}) {
+    &.mobile {
+      .content {
+        .backgroundImage {
+          inset: auto 0 0 0 !important; // Top of container
+          @include vari(--image-height, 60%, 60%);
+          height: var(--image-height) !important;
+          width: 100% !important;
+
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+              to top,
+              cc(--block-color, 0) 0%,
+              cc(--block-color, 1) 100%
+            );
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // Laptop & Desktop: Horizontal layout
+  @media (min-width: $laptop) {
+    .content {
+      .backgroundImage {
+        inset: 0 0 0 auto !important; // Right side
+        @include vari(--image-width, 100%, 65%);
+        width: var(--image-width) !important;
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to left,
+            cc(--block-color, 0) 0%,
+            cc(--block-color, 1) 100%
+          );
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
