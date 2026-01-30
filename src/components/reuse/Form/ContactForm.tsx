@@ -2,6 +2,7 @@
 import React, { useState, FC, ReactNode } from "react";
 
 import styles from "@/components/reuse/Form/Form.module.scss";
+import cn from "classnames";
 import { Input, TextArea } from "@/components/reuse/Form/Input/Input";
 import { getTranslations } from "@/helpers/langUtils";
 import { useLocale } from "next-intl";
@@ -25,9 +26,15 @@ import FlexDiv from "@/components/reuse/FlexDiv";
 import { LangType } from "@/i18n/request";
 import { LocalTargets } from "@/data.d";
 
-export interface ContactFormProps extends FormTitleProps {}
+export interface ContactFormProps extends FormTitleProps {
+  backgroundBlur?: boolean;
+}
 
-export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
+export const ContactForm: FC<ContactFormProps> = ({
+  title,
+  subTitle,
+  backgroundBlur = true,
+}) => {
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
 
@@ -167,6 +174,11 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
       }
     });
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (formData.email && !emailRegex.test(formData.email)) {
+      newErrors.email = true;
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -264,7 +276,9 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
     <FlexDiv
       width100
       id={LocalTargets.CONTACTFORM}
-      className={styles.container}
+      className={cn(styles.container, {
+        [styles.backgroundBlur]: backgroundBlur,
+      })}
     >
       {submit === translations.form.general.emailSent ? (
         <FormSubmitMessage locale={locale} translations={translations} />
@@ -273,7 +287,7 @@ export const ContactForm: FC<ContactFormProps> = ({ title, subTitle }) => {
           <FormTitles title={title} subTitle={subTitle} alignText="left" />
           <FormSteps steps={Steps} />
           <FormSubmitButton
-            title={translations.buttons.buildBrand}
+            title={translations.buttons.submit}
             isValid={!Object.values(errors).some(Boolean)}
             translations={translations}
             submitText={submit}

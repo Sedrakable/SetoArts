@@ -37,6 +37,7 @@ export const homePageQuery = (locale: LangType): string => {
           ...,
           features[]->,
         },
+        tradeBlock->,
         testimonialsBlock-> {
           ...,
           testimonials[]->,

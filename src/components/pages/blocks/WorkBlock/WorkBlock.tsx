@@ -94,7 +94,7 @@ export const WorkBlock: React.FC<WorkBlockProps> = ({
         ]}
         className={cn(styles.workBlock)}
         width100
-        fill
+        // fill
       >
         {works.map((work, key) => (
           <AnimatedWrapper from="left" key={key}>

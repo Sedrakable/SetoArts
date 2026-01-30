@@ -1,3 +1,4 @@
+// src/components/pages/blocks/Carousel/ThumbCarousel.tsx
 "use client";
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
@@ -47,12 +48,7 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
   }, [emblaMainApi, onSelect]);
 
   return (
-    <FlexDiv
-      flex={{ direction: "column", x: "center" }}
-      className={styles.embla}
-      gapArray={[3, 3, 3, 4]}
-    >
-      {/* Main Carousel */}
+    <div className={styles.embla}>
       <div className={styles.viewport} ref={emblaMainRef}>
         <div className={styles.container}>
           {images.map((image, index) => (
@@ -68,7 +64,6 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
         </div>
       </div>
 
-      {/* Thumbnails */}
       <div className={styles.thumbsViewport} ref={emblaThumbsRef}>
         <FlexDiv className={styles.thumbsContainer} gapArray={[3, 3, 3, 4]}>
           {images.map((image, index) => (
@@ -81,7 +76,7 @@ export const ThumbCarousel: FC<ThumbCarouselProps> = ({ images, options }) => {
           ))}
         </FlexDiv>
       </div>
-    </FlexDiv>
+    </div>
   );
 };
 

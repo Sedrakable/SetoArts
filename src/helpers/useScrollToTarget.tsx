@@ -13,7 +13,7 @@ export const useScrollToTarget = () => {
     if (path || path === pathname || !path) {
       const element = document.getElementById(scrollTarget);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
         const fullUrl = `${window.location.pathname}${scrollTarget}`;
         window.history.replaceState(null, "", fullUrl);
         return true;

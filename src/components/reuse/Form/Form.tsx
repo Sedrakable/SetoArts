@@ -90,7 +90,7 @@ export const Step: FC<PropsWithChildren<StepProps>> = ({
 
 export const MultiColumn: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <FlexDiv gapArray={[3, 3, 3, 4]} width100 wrap>
+    <FlexDiv gapArray={[3, 4, 3, 4]} width100 wrap>
       {children}
     </FlexDiv>
   );
@@ -129,7 +129,7 @@ export const FormSteps: FC<{
 }> = ({ steps, stepNumbers = false }) => {
   return (
     <FlexDiv
-      gapArray={[5]}
+      gapArray={[4, 4, 4, 5]}
       width100
       flex={{ direction: "column", x: "stretch", y: "flex-start" }}
     >
@@ -149,10 +149,10 @@ export const FormSubmitMessage: FC<{
   return (
     <FlexDiv flex={{ direction: "column" }} gapArray={[3, 3, 3, 4]}>
       <Heading
-        font="Cursive"
+        font="Outfit"
         as="h3"
         level="2"
-        color="yellow"
+        color="black"
         weight={500}
         textAlign="center"
       >

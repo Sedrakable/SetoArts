@@ -3,11 +3,16 @@ import styles from "./Icon.module.scss";
 import cn from "classnames";
 import { ColorType } from "../Text/Heading/Heading";
 
-import Burger from "@/assets/vector/Burger.svg";
-import Close from "@/assets/vector/X.svg";
-import Arrow from "@/assets/vector/Arrow.svg";
-import Bulb from "@/assets/vector/Bulb.svg";
-import Upload from "@/assets/vector/Upload.svg";
+import Burger from "@/assets/vector/Icons/burger.svg";
+import Close from "@/assets/vector/Icons/close.svg";
+import Arrow from "@/assets/vector/Icons/arrow.svg";
+import Bulb from "@/assets/vector/Icons/bulb.svg";
+import Upload from "@/assets/vector/Icons/upload.svg";
+
+import EyeClosed from "@/assets/vector/Icons/eye-closed.svg";
+import QuestionCircle from "@/assets/vector/Icons/question-circle.svg";
+import ShieldWarning from "@/assets/vector/Icons/shield-warning.svg";
+import Ghost from "@/assets/vector/Icons/ghost.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
@@ -34,6 +39,10 @@ const icons: {
   arrow: <Arrow />,
   bulb: <Bulb />,
   upload: <Upload />,
+  eyeClosed: <EyeClosed />,
+  questionCircle: <QuestionCircle />,
+  shieldWarning: <ShieldWarning />,
+  ghost: <Ghost />,
 };
 
 export const IconTypeArray = Object.keys(icons) as Array<keyof typeof icons>;
@@ -57,7 +66,7 @@ export interface IconProps {
 }
 
 const isIconDefinition = (
-  icon: IconDefinition | ReactNode
+  icon: IconDefinition | ReactNode,
 ): icon is IconDefinition => {
   return (icon as IconDefinition).iconName !== undefined;
 };

@@ -9,6 +9,10 @@ $desktop: 1680px;
   @return math.div($a, $b);
 }
 
+@function cc($a, $b) {
+  @return hsl(from var($a) h s l / $b);
+}
+
 @mixin vari(
   $property,
   $mobile,

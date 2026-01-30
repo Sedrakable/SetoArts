@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import styles from "./TabButton.module.scss";
-import Line from "@/assets/vector/Line.svg";
+import Line from "public/vectors/Line.svg";
 import { ICta, ITheme } from "../../../data.d";
 import FlexDiv from "../../reuse/FlexDiv";
 import { Icon } from "../../reuse/Icon/Icon";

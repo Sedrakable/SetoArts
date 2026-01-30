@@ -61,5 +61,9 @@
   }
   .fancyTitle {
     z-index: 4;
+
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 }

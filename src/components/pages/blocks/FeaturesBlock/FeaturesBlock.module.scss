@@ -4,6 +4,27 @@
   z-index: 2;
 }
 
+@mixin hoverState() {
+  box-shadow: none;
+  .content {
+    transform: translateY(0);
+  }
+  .desc {
+    opacity: 1;
+  }
+  .image {
+    filter: brightness(0.8) grayscale(0.5) !important;
+    transform: scale(1);
+    &:after {
+      opacity: 0;
+    }
+
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
 .container {
   position: relative;
   border-radius: 8px;
@@ -12,10 +33,7 @@
   aspect-ratio: d(4, 5);
   cursor: pointer;
 
-  // Default values (will be overridden by JS)
-  --content-height: 388px;
-  --title-height: 72px;
-  transition: box-shadow var(--transition-time) ease;
+  --desc-height: 0px; // Will be set by JS
 
   .image {
     position: absolute !important;
@@ -23,8 +41,6 @@
     z-index: 0;
     filter: brightness(1) !important;
     transform: scale(1);
-    transition: filter var(--transition-time) ease,
-      transform var(--transition-time) ease;
 
     // Bottom gradient (default state)
     &:after {
@@ -37,7 +53,6 @@
         rgba(0, 0, 0, 0) 60%,
         rgba(0, 0, 0, 0.6) 100%
       );
-      transition: opacity var(--transition-time) ease;
     }
 
     // Top gradient (hover state)
@@ -48,42 +63,59 @@
       opacity: 0;
       background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0) 60%,
-        rgba(0, 0, 0, 0.6) 100%
+        rgba(0, 0, 0, 0) 20%,
+        rgba(0, 0, 0, 0.8) 100%
       );
-      transition: opacity var(--transition-time) ease;
       z-index: 1;
     }
   }
 
+  .title {
+    @include vari(min-height, 0, 0, 100px, 100px);
+  }
+
   .desc {
     opacity: 0;
-    transition: opacity var(--transition-time) ease;
   }
 
   .content {
-    z-index: 2; // Increased to be above both gradients
-    transform: translateY(calc(var(--content-height) - var(--title-height)));
-    transition: transform var(--transition-time) ease;
+    @include vari(--content-height, 0, 0, 220px, 300px);
+    z-index: 2;
+    transform: translateY(var(--content-height));
   }
 
-  &:hover {
-    box-shadow: none;
-    .content {
-      transform: translateY(0);
-    }
-    .desc {
-      opacity: 1;
-    }
-    .image {
-      filter: brightness(0.5) grayscale(0.5) !important;
-      transform: scale(1.1);
-      &:after {
-        opacity: 0; // Fade out bottom gradient
-      }
+  // Mobile & Tablet: Always show hover state, no transitions
+  @media (max-width: #{$laptop - 1px}) {
+    @include hoverState();
+  }
 
+  // Laptop & Desktop: Enable transitions and hover behavior
+  @media (min-width: $laptop) {
+    transition: box-shadow var(--transition-time) ease;
+
+    .image {
+      transition: filter var(--transition-time) ease,
+        transform var(--transition-time) ease;
+
+      &:after,
       &:before {
-        opacity: 1; // Fade in top gradient
+        transition: opacity var(--transition-time) ease;
+      }
+    }
+
+    .desc {
+      transition: opacity var(--transition-time) ease;
+    }
+
+    .content {
+      transition: transform var(--transition-time) ease;
+    }
+
+    &:hover {
+      @include hoverState();
+
+      .image {
+        transform: scale(1.1); // Only scale on hover for desktop
       }
     }
   }

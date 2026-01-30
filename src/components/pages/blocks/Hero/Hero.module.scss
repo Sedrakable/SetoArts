@@ -65,9 +65,9 @@
   }
 
   .content {
+    @include vari(--min-height, fit-content, fit-content, 450px, 450px);
     z-index: 3;
     height: 100%;
-    min-height: 450px;
 
     .titles {
       @include vari(--titles-width, 100%, 100%, 50%, 50%);

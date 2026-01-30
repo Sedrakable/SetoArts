@@ -4,7 +4,7 @@ import styles from "./Footer.module.scss";
 import { Paragraph } from "../reuse/Text/Paragraph/Paragraph";
 
 import FlexDiv from "../reuse/FlexDiv";
-import LogoHori from "@/assets/vector/LogoHorizontal.svg";
+import LogoHori from "@/assets/vector/Logos/LogoHorizontal.svg";
 import { useWindowResize } from "../../helpers/useWindowResize";
 import {
   ICta,

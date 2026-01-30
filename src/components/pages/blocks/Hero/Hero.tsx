@@ -23,7 +23,8 @@ export interface HeroProps {
   subTitle: FancyText;
   title: FancyText;
   desc: FancyText;
-  cta: ICta;
+  cta1?: ICta;
+  cta2?: ICta;
   version?: 1 | 2;
 }
 
@@ -32,15 +33,16 @@ export const Hero: React.FC<HeroProps> = ({
   subTitle,
   title,
   desc,
-  cta,
+  cta1,
+  cta2,
   version = 1,
 }) => {
-  const { isMobileOrTablet } = useWindowResize();
+  const { isMobileOrTablet, isMobile } = useWindowResize();
   // const heroRef = useRef<HTMLDivElement>(null);
   // const scrollProgress = useParallaxScroll(heroRef);
   const paddings: { top: SpacingArrayType; bottom: SpacingArrayType } =
     version === 1
-      ? { top: [4, 7, 10, 12], bottom: [8, 9, 11, 12] }
+      ? { top: [4, 7, 10, 11], bottom: [8, 9, 11, 12] }
       : { top: [4, 7, 9, 11], bottom: [6, 7, 9, 10] };
   return (
     <FlexDiv
@@ -120,17 +122,35 @@ export const Hero: React.FC<HeroProps> = ({
               level="regular"
               className={styles.desc}
               textAlign={isMobileOrTablet ? "center" : "left"}
-              paddingBottomArray={[3, 4, 4, 5]}
+              paddingBottomArray={[0, 0, 0, 3]}
             />
           )}
-          {cta && (
-            <Button
-              variant={isMobileOrTablet ? "primary" : "fancy"}
-              path={cta.path}
-              scrollTarget={cta.scrollTarget}
+          {cta1 && (
+            <FlexDiv
+              gapArray={[3, 3, 4, 4]}
+              width100={isMobile}
+              flex={{ direction: isMobile ? "column" : "row" }}
             >
-              {cta.text}
-            </Button>
+              {cta1 && (
+                <Button
+                  variant={isMobileOrTablet ? "primary" : "fancy"}
+                  path={cta1.path}
+                  scrollTarget={cta1.scrollTarget}
+                >
+                  {cta1.text}
+                </Button>
+              )}
+              {cta2 && (
+                <Button
+                  variant="white"
+                  outline
+                  path={cta2.path}
+                  scrollTarget={cta2.scrollTarget}
+                >
+                  {cta2.text}
+                </Button>
+              )}
+            </FlexDiv>
           )}
         </FlexDiv>
       </FlexDiv>

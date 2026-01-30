@@ -39,6 +39,7 @@
     "@babel/preset-react": "^7.28.5",
     "@svgr/plugin-prettier": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "^22.7.9",
     "@types/nodemailer": "^6.4.17",
     "@types/react": "^19.1.0",
@@ -52,12 +53,16 @@
     "eslint-config-next": "^16.1.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-unused-imports": "^4.1.4"
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6"
   },
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "svgo:optimize": "svgo -f ./src/assets/vector --config=svgo.config.mjs",

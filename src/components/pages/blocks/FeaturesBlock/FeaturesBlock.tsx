@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./FeaturesBlock.module.scss";
 import cn from "classnames";
 import { Block } from "@/components/pages/containers/Block";
@@ -22,52 +22,11 @@ export interface FeatureProps {
 }
 
 const Feature: React.FC<FeatureProps> = ({ title, image, desc }) => {
-  const contentRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isMeasured, setIsMeasured] = useState(false);
-
-  useEffect(() => {
-    const measureHeights = () => {
-      if (contentRef.current && containerRef.current) {
-        const contentHeight = contentRef.current.scrollHeight;
-        const titleHeight = contentRef.current.children[0]?.clientHeight || 0;
-
-        if (contentHeight > 0 && titleHeight > 0) {
-          containerRef.current.style.setProperty(
-            "--content-height",
-            `${contentHeight}px`,
-          );
-          containerRef.current.style.setProperty(
-            "--title-height",
-            `${titleHeight}px`,
-          );
-          setIsMeasured(true);
-        }
-      }
-    };
-
-    // Initial measurement with delay
-    const timer1 = setTimeout(measureHeights, 100);
-
-    // Backup measurement in case fonts are still loading
-    const timer2 = setTimeout(measureHeights, 500);
-
-    // Measure on window load (after all resources)
-    window.addEventListener("load", measureHeights);
-
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      window.removeEventListener("load", measureHeights);
-    };
-  }, [title, desc]);
-
   return (
     <FlexDiv
-      ref={containerRef}
       flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
       width100
-      className={cn(styles.container, { [styles.measured]: isMeasured })}
+      className={cn(styles.container)}
       padding={{ all: [5], bottom: [4], top: [4] }}
       gapArray={[5, 4, 4, 5]}
     >
@@ -79,27 +38,33 @@ const Feature: React.FC<FeatureProps> = ({ title, image, desc }) => {
       />
 
       <FlexDiv
-        ref={contentRef}
         flex={{ direction: "column", y: "flex-start", x: "flex-start" }}
         width100
         className={styles.content}
         height100
         gapArray={[0]}
       >
-        <Heading
-          font="Outfit"
-          level="4"
-          as="h3"
-          color="white"
-          weight={600}
-          upperCase={false}
-          paddingBottomArray={[2, 2, 3, 3]}
+        <FlexDiv
+          className={styles.title}
+          flex={{ y: "flex-end", x: "flex-start" }}
+          padding={{ bottom: [2, 2, 3, 3] }}
         >
-          {title}
-        </Heading>
+          <Heading
+            font="Outfit"
+            level="4"
+            as="h3"
+            color="white"
+            weight={600}
+            upperCase={false}
+            // paddingBottomArray={[2, 2, 3, 3]}
+          >
+            {title}
+          </Heading>
+        </FlexDiv>
+
         <PortableTextContent
           value={desc}
-          level="regular"
+          level="small"
           color="white"
           className={styles.desc}
         />

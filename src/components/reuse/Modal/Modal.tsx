@@ -132,10 +132,12 @@ export const Modal: React.FC<ModalProps> = ({
           className={cn(styles.modalContainer)}
           padding={{
             horizontal: [3, 4, 4, 5],
-            vertical: [4, 4, 4, 5],
+            vertical: [3, 4, 4, 5],
             top: [3, 3, 3, 4],
           }}
-          flex={{ x: "flex-start", y: "flex-start" }}
+          flex={{ x: "center", y: "center" }}
+          width100
+          height100
         >
           {children}
         </FlexDiv>

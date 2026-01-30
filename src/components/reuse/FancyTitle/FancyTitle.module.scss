@@ -4,6 +4,8 @@
   position: relative;
   box-sizing: content-box;
   width: 100%;
+  max-width: var(--screen-width-small);
+
   .heading {
     z-index: 1;
   }

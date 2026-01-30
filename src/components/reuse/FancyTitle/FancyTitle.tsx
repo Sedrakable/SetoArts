@@ -4,7 +4,7 @@ import styles from "./FancyTitle.module.scss";
 import FlexDiv from "../FlexDiv";
 import { Heading } from "../Text/Heading/Heading";
 import { FancyText } from "../Text/FancyText/FancyText";
-import Line from "@/assets/vector/Line.svg";
+import Line from "public/vectors/Line.svg";
 
 export interface FancyTitleProps {
   subTitle?: string;

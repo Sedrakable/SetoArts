@@ -6,6 +6,8 @@
   > * {
     z-index: 1;
   }
+}
+.backgroundBlur {
   &::before {
     content: "";
     position: absolute;
@@ -17,7 +19,7 @@
 }
 .form {
   @include flexColumn(flex-start, flex-start);
-  @include vari(gap, var(--pad-3), var(--pad-5), var(--pad-5), var(--pad-6));
+  @include vari(gap, var(--pad-5), var(--pad-5), var(--pad-5), var(--pad-6));
 
   width: 100%;
 

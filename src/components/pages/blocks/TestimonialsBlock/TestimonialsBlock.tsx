@@ -173,16 +173,12 @@ export const TestimonialsBlock: React.FC<TestimonialsBlockProps> = ({
           </div>
         </div>
       ) : (
-        <Block
-          fancyTitle={fancyTitle}
-          theme="off-white"
-          className={styles.block}
-        >
+        <Block fancyTitle={fancyTitle} theme="light" className={styles.block}>
           <FlexDiv
             gapArray={[6, 7, 7, 8]}
             flex={{ y: "flex-start" }}
             width100
-            padding={{ top: [6, 8, 8, 9] }}
+            padding={{ top: [2, 3, 3, 4] }}
             className={cn(styles.testimonials)}
             as="ul"
           >
