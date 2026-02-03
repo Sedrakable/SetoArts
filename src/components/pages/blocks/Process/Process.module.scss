@@ -101,7 +101,7 @@
   --ratio: 9 / 16;
   @include flex;
 
-  @include vari(--video-width, 65vw, 65vw, 500px, 640px);
+  @include vari(--video-width, 65vw, 400px, 500px, 640px);
   @include vari(margin-top, 0, 0, -300px, -400px);
   @include vari(
     margin-bottom,
@@ -115,8 +115,6 @@
   width: var(--video-width);
   aspect-ratio: var(--ratio);
 
-  // transform: translateY(-50%);
-  // transform: translateY(var(--y-offset));
   @include vari(z-index, 0, 0, 2, 2);
   @include vari(--trad-stop, 140px, 280px, 120px, 180px);
   background: linear-gradient(
@@ -124,6 +122,7 @@
     transparent 0%,
     var(--white) var(--trad-stop)
   );
+
   .frame {
     position: absolute !important;
     top: 0 !important;
@@ -145,7 +144,7 @@
   }
 
   &.wood {
-    @include vari(top, 200px, -200px, -160px, -200px);
+    @include vari(top, 200px, -100px, -160px, -200px);
   }
 }
 

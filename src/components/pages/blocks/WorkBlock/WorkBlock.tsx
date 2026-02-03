@@ -88,7 +88,7 @@ export const WorkBlock: React.FC<WorkBlockProps> = ({
         rowGapArray={[2, 2, 3, 3]}
         columns={[
           [1, 1],
-          [1, 2],
+          [2, 2],
           [3, 3],
           [3, 3],
         ]}
