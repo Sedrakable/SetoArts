@@ -33,7 +33,7 @@ export const setMetadata = ({
       type: "website",
       title: metaTitle || "Seto X Arts",
       description: metaDesc || "Explore creative work by Seto X Arts.",
-      locale,
+      locale: locale === "fr" ? "fr_CA" : "en_CA",
       images: [
         { url: metaImage, width: 1200, height: 630, alt: "Seto X Arts" },
       ],
@@ -50,8 +50,9 @@ export const setMetadata = ({
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `https://www.setoxarts.com/en${path}`,
-        fr: `https://www.setoxarts.com/fr${path}`,
+        "en-CA": `https://www.setoxarts.com/en${path}`,
+        "fr-CA": `https://www.setoxarts.com/fr${path}`,
+        "x-default": `https://www.setoxarts.com${path}`,
       },
     },
   };

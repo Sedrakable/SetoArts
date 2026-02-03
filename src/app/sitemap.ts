@@ -29,28 +29,65 @@ const changeFrequencyMap: Record<
   [LocalPaths.PROJECTS]: "weekly",
 };
 
-const generateStaticEntries: MetadataRoute.Sitemap = allUrls.map((baseUrl) => {
-  const enUrl = `${BASE_URL}/en${baseUrl}`;
-  const frUrl = `${BASE_URL}/fr${baseUrl}`;
+function makeLocalizedEntries(args: {
+  basePath: string; // e.g. "/projects/slug" or "/contact"
+  lastModified: string;
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  priority: number;
+  images?: string[];
+}): MetadataRoute.Sitemap {
+  const { basePath, lastModified, changeFrequency, priority, images } = args;
 
-  return {
-    url: enUrl,
-    lastModified: new Date().toISOString(),
-    changeFrequency: changeFrequencyMap[baseUrl] || "monthly",
-    priority: priorityMap[baseUrl] || 0.9,
-    alternates: {
-      languages: {
-        en: enUrl,
-        fr: frUrl,
-      },
+  const enUrl = `${BASE_URL}/en${basePath}`;
+  const frUrl = `${BASE_URL}/fr${basePath}`;
+  const xDefaultUrl = `${BASE_URL}${basePath}`; // root path (redirects based on user)
+
+  const alternates = {
+    languages: {
+      "en-CA": enUrl,
+      "fr-CA": frUrl,
+      "x-default": xDefaultUrl,
     },
+  } as const;
+
+  const common = {
+    lastModified,
+    changeFrequency,
+    priority,
+    alternates,
   };
-});
+
+  const enEntry: MetadataRoute.Sitemap[number] = {
+    url: enUrl,
+    ...common,
+    ...(images?.length ? { images } : {}),
+  };
+
+  const frEntry: MetadataRoute.Sitemap[number] = {
+    url: frUrl,
+    ...common,
+    ...(images?.length ? { images } : {}),
+  };
+
+  return [enEntry, frEntry];
+}
+
+const generateStaticEntries: MetadataRoute.Sitemap = allUrls.flatMap(
+  (basePath) => {
+    const lastModified = new Date().toISOString();
+    return makeLocalizedEntries({
+      basePath,
+      lastModified,
+      changeFrequency: changeFrequencyMap[basePath] || "monthly",
+      priority: priorityMap[basePath] || 0.9,
+    });
+  },
+);
 
 export interface SitemapWorkQueryType extends SanityDocument {
-  slug: ISlug; // Optional for internal links
-  workType: "wood"; // From Sanity// External URL (e.g., Behance, Kickstarter)
-  images: ICustomImage[]; // For modal slider (Wood Signs)
+  slug: ISlug;
+  workType: "wood";
+  images: ICustomImage[];
 }
 
 async function getWoodWorkData() {
@@ -64,47 +101,37 @@ async function getWoodWorkData() {
   }
 }
 
-//NED english and French
 const generateDynamicEntries = async (): Promise<MetadataRoute.Sitemap> => {
   const workData: SitemapWorkQueryType[] = await getWoodWorkData();
-
   const validWork = workData.filter((work) => work.slug && work.slug.current);
 
-  const productEntries: MetadataRoute.Sitemap = validWork.map((work) => {
+  return validWork.flatMap((work) => {
     const slug = work.slug.current.startsWith("/")
       ? work.slug.current
       : `/${work.slug.current}`;
 
     const basePath = `${LocalPaths.PROJECTS}${slug}`;
 
-    const enUrl = `${BASE_URL}/en${basePath}`;
-    const frUrl = `${BASE_URL}/fr${basePath}`;
+    const lastModified =
+      work._updatedAt && !isNaN(new Date(work._updatedAt).getTime())
+        ? new Date(work._updatedAt).toISOString()
+        : new Date().toISOString();
 
-    return {
-      url: enUrl,
-      lastModified:
-        work._updatedAt && !isNaN(new Date(work._updatedAt).getTime())
-          ? new Date(work._updatedAt).toISOString()
-          : new Date().toISOString(),
+    const images =
+      work.images
+        ?.filter((img) => img?.image)
+        .map((img) => urlFor(img.image).url()) || [];
+
+    return makeLocalizedEntries({
+      basePath,
+      lastModified,
       changeFrequency: "weekly",
       priority: 0.7,
-      images:
-        work.images
-          ?.filter((image) => image?.image)
-          .map((image) => urlFor(image.image).url()) || [],
-      alternates: {
-        languages: {
-          en: enUrl,
-          fr: frUrl,
-        },
-      },
-    };
+      images,
+    });
   });
-
-  return productEntries;
 };
 
-// Adapt the output to match the Next.js expected structure
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dynamicEntries = await generateDynamicEntries();
   return [...generateStaticEntries, ...dynamicEntries];

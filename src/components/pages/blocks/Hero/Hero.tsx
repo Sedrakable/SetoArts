@@ -38,12 +38,12 @@ export const Hero: React.FC<HeroProps> = ({
   version = 1,
 }) => {
   const { isMobileOrTablet, isMobile } = useWindowResize();
-  // const heroRef = useRef<HTMLDivElement>(null);
-  // const scrollProgress = useParallaxScroll(heroRef);
+
   const paddings: { top: SpacingArrayType; bottom: SpacingArrayType } =
     version === 1
       ? { top: [4, 7, 10, 11], bottom: [8, 9, 11, 12] }
       : { top: [4, 7, 9, 11], bottom: [6, 7, 9, 10] };
+
   return (
     <FlexDiv
       className={cn(styles.hero, styles[`version${version}`])}
@@ -51,12 +51,6 @@ export const Hero: React.FC<HeroProps> = ({
       flex={{ direction: "column-reverse", x: "flex-start", y: "flex-start" }}
       as={"header"}
       width100
-      // ref={heroRef}
-      // customStyle={
-      //   {
-      //     "--scroll-progress": scrollProgress,
-      //   } as React.CSSProperties
-      // }
     >
       <div className={styles.backgroundContainer}>
         <SanityImage
@@ -66,13 +60,8 @@ export const Hero: React.FC<HeroProps> = ({
           quality={90}
           sizes={["100vw", "100vw", "50vw", "50vw"]}
         />
-        {/* <SanityImage
-          figureclassname={styles.foregroundImage}
-          {...foregroundImage}
-          priority={true}
-          sizes={["70vw", "60vw", "60vw", "70vw"]}
-        /> */}
       </div>
+
       <FlexDiv
         padding={{
           left: [6, 7, 8, 10],

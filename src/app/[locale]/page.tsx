@@ -1,3 +1,4 @@
+// src/app/[locale]/page.tsx
 import {
   ISeo,
   ICollapsible,
