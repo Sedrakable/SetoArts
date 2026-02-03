@@ -95,7 +95,7 @@ export const Hero: React.FC<HeroProps> = ({
           <FancyText
             font="Outfit"
             level={"2"}
-            as="h4"
+            as="h1"
             color="black"
             className={styles.title}
             textAlign={isMobileOrTablet ? "center" : "left"}

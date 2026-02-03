@@ -57,7 +57,7 @@ export const TradeBlock: React.FC<TradeBlockProps> = ({
           {subTitle && (
             <Heading
               font="Cursive"
-              as="h4"
+              as="h2"
               level="5"
               textAlign="start"
               color="dark-grey"
@@ -71,7 +71,7 @@ export const TradeBlock: React.FC<TradeBlockProps> = ({
           <FancyText
             font="Outfit"
             level="2"
-            as="h2"
+            as="h3"
             color="white"
             textAlign="start"
             weight={300}
