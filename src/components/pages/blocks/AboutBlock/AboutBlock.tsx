@@ -52,7 +52,7 @@ export const AboutBlock: React.FC<AboutBlockProps> = ({
         >
           <Heading
             font="Cursive"
-            as="h2"
+            as="h3"
             level="4"
             color="light-grey"
             weight={900}
@@ -63,7 +63,7 @@ export const AboutBlock: React.FC<AboutBlockProps> = ({
           <FancyText
             value={title}
             font="Outfit"
-            as="h2"
+            as="h4"
             level="2"
             color="black"
             // upperCase={false}

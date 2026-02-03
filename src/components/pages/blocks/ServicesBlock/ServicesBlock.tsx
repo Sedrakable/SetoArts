@@ -54,7 +54,7 @@ const Service: React.FC<ServiceProps & { index: number }> = ({
         <Heading
           font="Outfit"
           level="1"
-          as="h3"
+          as="h2"
           color="black"
           weight={500}
           paddingBottomArray={[2, 2, 3, 3]}

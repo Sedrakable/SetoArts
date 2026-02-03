@@ -49,7 +49,7 @@ export const ProcessStep = React.forwardRef<HTMLDivElement, ProcessStepProps>(
           <Heading
             font="Outfit"
             level="3"
-            as="h3"
+            as="h4"
             color="black"
             weight={600}
             className={styles.title}

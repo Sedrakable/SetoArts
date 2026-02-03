@@ -26,7 +26,7 @@ export const FancyTitle: React.FC<PropsWithChildren<FancyTitleProps>> = ({
       {subTitle && (
         <Heading
           font="Cursive"
-          as="h4"
+          as="h3"
           level="4"
           textAlign="center"
           color="light-grey"
