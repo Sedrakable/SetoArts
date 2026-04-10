@@ -1,15 +1,16 @@
-// app/api/sendContactFormEmail/route.ts
+// /src/app/api/sendContactFormEmail/route.ts
+
 import {
   EncodedFileType,
   looksLikeBot,
   ContactFormData,
 } from "@/components/reuse/Form/formTypes";
 import { LangType } from "@/i18n/request";
-import fs from "fs";
-import path from "path";
 import { NextResponse } from "next/server";
 import { emailTranslations } from "@/langs/emailTranslations";
 import { getTransporter } from "@/helpers/getTransporter";
+// IMPORT YOUR TEMPLATES HERE
+import { businessTemplate, clientTemplate } from "./templates";
 
 const prepareAttachments = (attachments: EncodedFileType[]) => {
   return attachments.map((attach) => ({
@@ -19,33 +20,18 @@ const prepareAttachments = (attachments: EncodedFileType[]) => {
   }));
 };
 
-const loadTemplate = (filename: string) => {
-  const templatePath = path.join(
-    process.cwd(),
-    "src",
-    "app",
-    "api",
-    "sendContactFormEmail",
-    filename,
-  );
-  try {
-    return fs.readFileSync(templatePath, "utf8");
-  } catch (error) {
-    console.error(`Error loading template ${filename}:`, error);
-    throw new Error(`Failed to load email template: ${filename}`);
-  }
-};
-
 const generateClientEmailTemplate = (
   formData: ContactFormData,
   locale: LangType,
 ): string => {
   const t = emailTranslations[locale];
-  let html = loadTemplate("contactClientEmail.html");
+  // USE THE IMPORTED STRING DIRECTLY
+  let html = clientTemplate;
 
   html = html
     .replaceAll("${locale}", locale)
     .replaceAll("${t.title}", t.title)
+    .replaceAll("${t.signDetails}", t.signDetails) // Added this for you
     .replaceAll(
       "${t.greeting(formData.firstName)}",
       t.greeting(formData.firstName),
@@ -56,20 +42,17 @@ const generateClientEmailTemplate = (
     )
     .replaceAll("${t.dimensions}", t.dimensions)
     .replaceAll("${t.budget}", t.budget)
-    .replaceAll("${t.additionalInfo}", t.additionalInfo)
     .replaceAll("${t.regards}", t.regards)
     .replaceAll("${t.team}", t.team)
     .replaceAll("${formData.details}", formData.details)
     .replaceAll("${formData.budgetMin}", formData.budgetMin.toString())
     .replaceAll("${formData.budgetMax}", formData.budgetMax.toString());
 
-  // Add dimensions if they exist
   if (formData.width && formData.height) {
     html = html
       .replaceAll("${formData.width}", formData.width.toString())
       .replaceAll("${formData.height}", formData.height.toString());
   } else {
-    // Remove dimension placeholders if not provided
     html = html
       .replaceAll("${formData.width}", "N/A")
       .replaceAll("${formData.height}", "N/A");
@@ -79,7 +62,8 @@ const generateClientEmailTemplate = (
 };
 
 const businessEmailTemplate = (formData: ContactFormData, locale: LangType) => {
-  let html = loadTemplate("contactBusinessEmail.html");
+  // USE THE IMPORTED STRING DIRECTLY
+  let html = businessTemplate;
 
   html = html
     .replaceAll("${locale}", locale.toUpperCase())
@@ -90,7 +74,6 @@ const businessEmailTemplate = (formData: ContactFormData, locale: LangType) => {
     .replaceAll("${formData.budgetMin}", formData.budgetMin.toString())
     .replaceAll("${formData.budgetMax}", formData.budgetMax.toString());
 
-  // Add dimensions if they exist
   if (formData.width && formData.height) {
     html = html
       .replaceAll("${formData.width}", formData.width.toString())
@@ -111,13 +94,9 @@ export async function POST(request: Request) {
       locale,
     }: { formData: ContactFormData; locale: LangType } = await request.json();
 
-    if (looksLikeBot(formData)) {
-      // pretend all good, but discard
-      return NextResponse.json({ ok: true });
-    }
+    if (looksLikeBot(formData)) return NextResponse.json({ ok: true });
 
     const attachments = prepareAttachments(formData.uploads);
-
     const transporter = getTransporter();
 
     const clientEmail = generateClientEmailTemplate(formData, locale);
