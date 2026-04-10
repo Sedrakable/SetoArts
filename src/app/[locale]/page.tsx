@@ -127,7 +127,7 @@ export default async function HomePage({
           {data.questionsBlock && <QuestionsBlock {...data.questionsBlock} />}
           {data.servicesBlock && <ServicesBlock {...data.servicesBlock} />}
           {data.featuresBlock && <FeaturesBlock {...data.featuresBlock} />}
-          {data.tradeBlock && <TradeBlock {...data.tradeBlock} />}
+
           {data.testimonialsBlock && (
             <TestimonialsBlock {...data.testimonialsBlock} />
           )}
@@ -145,6 +145,7 @@ export default async function HomePage({
             />
           )}
           {data.aboutBlock && <AboutBlock {...data.aboutBlock} />}
+          {data.tradeBlock && <TradeBlock {...data.tradeBlock} />}
           {data.collapsible && <Collapsible {...data.collapsible} />}
         </>
       )}
