@@ -1,24 +1,19 @@
-import { ContactFormData } from "@/components/reuse/Form/formTypes";
+import { TradeFormData } from "@/components/reuse/Form/formTypes";
 import { LangType } from "@/i18n/request";
 import { emailTranslations } from "@/langs/emailTranslations";
 
-export const getClientContactTemplate = (
-  formData: ContactFormData,
+export const getTradeClientTemplate = (
+  formData: TradeFormData,
   locale: LangType,
 ) => {
   const t = emailTranslations[locale];
-  const dimensions =
-    formData.width && formData.height
-      ? `${formData.width}" × ${formData.height}"`
-      : "N/A";
-
   return `
 <!DOCTYPE html>
 <html lang="${locale}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${t.title}</title>
+    <title>${t.tradeTitle}</title>
   </head>
   <body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: 'Outfit', Arial, sans-serif;">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f5f5f5; padding: 20px">
@@ -32,49 +27,27 @@ export const getClientContactTemplate = (
             </tr>
             <tr>
               <td style="background-color: #ffffff; padding: 40px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <h2 style="color: #0f0f0f; font-weight: 700; text-transform: uppercase; margin: 0 0 25px 0; font-size: 24px; border-bottom: 2px solid #feb201; padding-bottom: 10px;">${
-                  t.title
-                }</h2>
+                <h2 style="color: #0f0f0f; font-weight: 700; text-transform: uppercase; margin-top: 0; margin-bottom: 25px; font-size: 24px; border-bottom: 2px solid #feb201; padding-bottom: 10px;">
+                  ${t.tradeTitle}
+                </h2>
                 <div style="margin-bottom: 30px; color: #333333; font-size: 16px; line-height: 1.6;">
-                  <p style="margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">${t.greeting(
-                    formData.firstName,
-                  )}</p>
-                  <p style="margin: 0">${t.thankYouMessage(
-                    formData.firstName,
-                  )}</p>
+                  <p style="margin-top: 0; margin-bottom: 15px; font-size: 18px; font-weight: 600;">
+                    ${t.tradeGreeting(formData.firstName)}
+                  </p>
+                  <p style="margin-top: 0; margin-bottom: 0">${
+                    t.tradeThankYouMessage
+                  }</p>
                 </div>
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px">
                   <tr>
                     <td style="padding-bottom: 25px">
                       <div style="border-left: 4px solid #feb201; padding-left: 15px;">
                         <h3 style="margin: 0 0 10px 0; color: #333333; font-size: 18px; font-weight: 700;">${
-                          t.signDetails
+                          t.tradeDetails
                         }</h3>
-                        <p style="margin: 0; color: #555555; font-size: 16px;">${
+                        <p style="margin: 0; color: #555555; font-size: 16px; line-height: 1.5;">${
                           formData.details
                         }</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding-bottom: 25px">
-                      <div style="border-left: 4px solid #feb201; padding-left: 15px;">
-                        <h3 style="margin: 0 0 10px 0; color: #333333; font-size: 18px; font-weight: 700;">${
-                          t.dimensions
-                        }</h3>
-                        <p style="margin: 0; color: #555555; font-size: 16px;">${dimensions}</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding-bottom: 25px">
-                      <div style="border-left: 4px solid #feb201; padding-left: 15px;">
-                        <h3 style="margin: 0 0 10px 0; color: #333333; font-size: 18px; font-weight: 700;">${
-                          t.budget
-                        }</h3>
-                        <p style="margin: 0; color: #555555; font-size: 16px;">$${
-                          formData.budgetMin
-                        } – $${formData.budgetMax}</p>
                       </div>
                     </td>
                   </tr>
@@ -102,14 +75,10 @@ export const getClientContactTemplate = (
 </html>`;
 };
 
-export const getBusinessContactTemplate = (
-  formData: ContactFormData,
+export const getTradeBusinessTemplate = (
+  formData: TradeFormData,
   locale: LangType,
 ) => {
-  const dimensions =
-    formData.width && formData.height
-      ? `${formData.width}" × ${formData.height}"`
-      : "N/A";
   return `
 <!DOCTYPE html>
 <html lang="${locale}">
@@ -125,9 +94,11 @@ export const getBusinessContactTemplate = (
             </tr>
             <tr>
               <td style="background-color: #ffffff; padding: 40px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <h2 style="color: #0f0f0f; font-weight: 700; text-transform: uppercase; margin: 0 0 25px 0; font-size: 24px; border-bottom: 2px solid #feb201; padding-bottom: 10px;">💬 New Contact Inquiry</h2>
-                <div style="margin-bottom: 30px; color: #333333; font-size: 16px; line-height: 1.6;">
-                  <h3 style="color: #333333; font-size: 18px; font-weight: 700">Client Info:</h3>
+                <h2 style="color: #0f0f0f; font-weight: 700; text-transform: uppercase; margin: 0 0 25px 0; font-size: 24px; border-bottom: 2px solid #feb201; padding-bottom: 10px;">
+                  🤝 New Trade Inquiry
+                </h2>
+                <div style="color: #333333; font-size: 16px; line-height: 1.6;">
+                  <h3 style="font-size: 18px; font-weight: 700">Client Info:</h3>
                   <p style="margin: 0">Name: <strong>${formData.firstName} ${
     formData.lastName
   }</strong></p>
@@ -135,16 +106,8 @@ export const getBusinessContactTemplate = (
                     formData.email
                   }</strong></p>
                   <p style="margin: 0">Locale: <strong>${locale.toUpperCase()}</strong></p>
-                </div>
-                <div style="color: #333333; font-size: 16px; line-height: 1.6;">
-                  <h3 style="color: #333333; font-size: 18px; font-weight: 700">Project Details:</h3>
-                  <p style="margin: 0">Details: <strong>${
-                    formData.details
-                  }</strong></p>
-                  <p style="margin: 0">Dimensions: <strong>${dimensions}</strong></p>
-                  <p style="margin: 0">Budget Range: <strong>$${
-                    formData.budgetMin
-                  } – $${formData.budgetMax}</strong></p>
+                  <h3 style="font-size: 18px; font-weight: 700; margin-top: 20px;">Details:</h3>
+                  <p style="margin: 0"><strong>${formData.details}</strong></p>
                 </div>
               </td>
             </tr>
