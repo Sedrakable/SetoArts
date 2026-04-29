@@ -1,3 +1,4 @@
+// SetoArts - /src/app/api/sendContactFormEmail/templates.ts
 import { ContactFormData } from "@/components/reuse/Form/formTypes";
 import { LangType } from "@/i18n/request";
 import { emailTranslations } from "@/langs/emailTranslations";

@@ -1,4 +1,4 @@
-// __tests__/formBotDetection.test.ts
+// SetoArts - __tests__/formBotDetection.test.ts
 import { looksLikeBot } from "@/components/reuse/Form/formTypes";
 import type {
   ContactFormData,

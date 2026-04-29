@@ -1,3 +1,4 @@
+// SetoArts - /src/app/api/sendTradeFormEmail/route.ts
 import { looksLikeBot, TradeFormData } from "@/components/reuse/Form/formTypes";
 import { LangType } from "@/i18n/request";
 import { NextResponse } from "next/server";
