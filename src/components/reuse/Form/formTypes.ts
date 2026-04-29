@@ -1,3 +1,4 @@
+// SetoArts - /src/components/reuse/Form/formTypes.ts
 export interface BaseFormData {
   firstName: string;
   lastName: string;
