@@ -77,8 +77,10 @@
     background: var(--off-white);
     border: 2px solid var(--black);
     overflow: hidden;
-    img {
+    .previewImage {
+      height: 100%;
       object-fit: cover;
+      width: 100%;
     }
   }
 

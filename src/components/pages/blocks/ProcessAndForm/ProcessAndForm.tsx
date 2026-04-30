@@ -29,7 +29,7 @@ export const ProcessAndForm: FC<ProcessAndFormProps> = ({
   subTitle,
   video,
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null!);
   const { isMobileOrTablet } = useWindowResize();
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);

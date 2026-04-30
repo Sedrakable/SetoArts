@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 export function getTransporter(): nodemailer.Transporter {
-  const isDev = process.env.NODE_ENV === "development";
+  // const isDev = process.env.NODE_ENV === "development";
   // console.log("isDev", process.env.MAILTRAP_USER);
   //   const transporter = nodemailer.createTransport(
   //     isDev

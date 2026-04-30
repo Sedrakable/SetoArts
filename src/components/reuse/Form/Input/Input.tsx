@@ -27,6 +27,8 @@ export const Input: React.FC<InputProps> = ({
   honeyPot = false,
   fit = "grow",
 }) => {
+  const inputId = honeyPot ? "seto-confirmation-field" : label;
+
   return (
     <InputWrapper
       label={label}
@@ -38,8 +40,9 @@ export const Input: React.FC<InputProps> = ({
       <input
         type={type}
         value={value}
-        id={label}
-        autoComplete={honeyPot ? "off" : undefined}
+        id={inputId}
+        name={inputId}
+        autoComplete={honeyPot ? "new-password" : undefined}
         aria-hidden={honeyPot || undefined}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}

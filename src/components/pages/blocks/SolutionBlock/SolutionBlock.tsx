@@ -38,7 +38,13 @@ export const SolutionBlock: React.FC<SolutionBlockProps> = ({
           width100
           padding={{ bottom: [4, 6, 6, 8] }}
         >
-          <FancyText value={fancyText} as="h3" level="3" textAlign="center" />
+          <FancyText
+            value={fancyText}
+            font="Outfit"
+            as="h3"
+            level="3"
+            textAlign="center"
+          />
           <Icon icon={"arrow"} size="big" rotate={90} />
         </FlexDiv>
       </AnimatedWrapper>

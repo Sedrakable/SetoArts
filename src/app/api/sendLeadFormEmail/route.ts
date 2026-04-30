@@ -1,4 +1,4 @@
-import { after, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { LangType } from "@/i18n/request";
 import { LeadFormData } from "@/components/leadForm/leadFormTypes";
 import { getTranslations } from "@/helpers/langUtils";
@@ -40,13 +40,7 @@ export async function POST(request: Request) {
       );
     }
 
-    after(async () => {
-      try {
-        await sendLeadEmails(formData, locale);
-      } catch (error) {
-        console.error("Lead email background send failed:", error);
-      }
-    });
+    await sendLeadEmails(formData, locale);
 
     return NextResponse.json({
       message: translations.errors.submittedSuccessfully,
@@ -56,7 +50,6 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error: getTranslations("en").leadForm.errors.failedToSubmitLead,
-        details: (error as Error).message,
       },
       { status: 500 },
     );

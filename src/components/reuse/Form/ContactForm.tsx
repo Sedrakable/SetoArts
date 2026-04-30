@@ -9,10 +9,11 @@ import { getTranslations } from "@/helpers/langUtils";
 import { useLocale } from "next-intl";
 import {
   ContactFormData,
-  EncodedFileType,
   FormErrorData,
+  getBotDetectionReason,
   looksLikeBot,
 } from "@/components/reuse/Form/formTypes";
+import { encodeFilesForEmail } from "@/components/reuse/Form/fileEncoding";
 import {
   FormSteps,
   FormSubmitButton,
@@ -81,25 +82,7 @@ export const ContactForm: FC<ContactFormProps> = ({
   };
   const handleFileUpload = (files: File[]) => {
     if (files.length > 0) {
-      const filePromises: Promise<EncodedFileType>[] = files.map((file) => {
-        return new Promise<{ name: string; type: string; data: string }>(
-          (resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = (event) => {
-              const fileData = (event.target?.result as string)?.split(",")[1];
-              resolve({
-                name: file.name,
-                type: file.type,
-                data: fileData,
-              });
-            };
-            reader.onerror = reject;
-            reader.readAsDataURL(file);
-          },
-        );
-      });
-
-      Promise.all(filePromises).then((encodedFiles) => {
+      encodeFilesForEmail(files).then((encodedFiles) => {
         setFormData((prev: ContactFormData) => ({
           ...prev,
           uploads: encodedFiles,
@@ -127,7 +110,10 @@ export const ContactForm: FC<ContactFormProps> = ({
     // }
 
     if (looksLikeBot(formData)) {
-      console.error("❌ BLOCKED (spam-ish submission)");
+      console.error(
+        "Blocked spam-ish submission:",
+        getBotDetectionReason(formData),
+      );
       return;
     }
 
@@ -186,7 +172,7 @@ export const ContactForm: FC<ContactFormProps> = ({
 
   const Steps: ReactNode[] = [
     <Input
-      label="Company"
+      label="Leave this field empty"
       type="text"
       value={formData.company || ""}
       onChange={handleInputChange("company")}

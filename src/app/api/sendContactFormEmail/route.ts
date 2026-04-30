@@ -7,7 +7,7 @@ import {
 import { getTransporter } from "@/helpers/getTransporter";
 import { LangType } from "@/i18n/request";
 import { emailTranslations } from "@/langs/emailTranslations";
-import { after, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import {
   getBusinessContactTemplate,
   getClientContactTemplate,
@@ -30,40 +30,34 @@ export async function POST(request: Request) {
 
     if (looksLikeBot(formData)) return NextResponse.json({ ok: true });
 
-    after(async () => {
-      try {
-        const attachments = prepareAttachments(formData.uploads);
-        const transporter = getTransporter();
+    const attachments = prepareAttachments(formData.uploads);
+    const transporter = getTransporter();
 
-        const clientHtml = getClientContactTemplate(formData, locale);
-        const businessHtml = getBusinessContactTemplate(formData, locale);
+    const clientHtml = getClientContactTemplate(formData, locale);
+    const businessHtml = getBusinessContactTemplate(formData, locale);
 
-        await Promise.all([
-          transporter.sendMail({
-            from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
-            to: formData.email,
-            subject: emailTranslations[locale].subject,
-            html: clientHtml,
-            attachments,
-          }),
-          transporter.sendMail({
-            from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
-            to: process.env.EMAIL_BUSINESS,
-            subject: `New Contact Inquiry - ${formData.firstName} ${formData.lastName}`,
-            html: businessHtml,
-            attachments,
-          }),
-        ]);
-      } catch (error) {
-        console.error("Contact email background send failed:", error);
-      }
-    });
+    await Promise.all([
+      transporter.sendMail({
+        from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
+        to: formData.email,
+        subject: emailTranslations[locale].subject,
+        html: clientHtml,
+        attachments,
+      }),
+      transporter.sendMail({
+        from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
+        to: process.env.EMAIL_BUSINESS,
+        subject: `New Contact Inquiry - ${formData.firstName} ${formData.lastName}`,
+        html: businessHtml,
+        attachments,
+      }),
+    ]);
 
-    return NextResponse.json({ message: "Emails queued successfully" });
+    return NextResponse.json({ message: "Emails sent successfully" });
   } catch (error) {
     console.error("Server error:", error);
     return NextResponse.json(
-      { error: "Failed to send emails", details: (error as Error).message },
+      { error: "Failed to send emails" },
       { status: 500 },
     );
   }

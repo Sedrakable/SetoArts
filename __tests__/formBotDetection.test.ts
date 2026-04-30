@@ -1,5 +1,8 @@
 // SetoArts - __tests__/formBotDetection.test.ts
-import { looksLikeBot } from "@/components/reuse/Form/formTypes";
+import {
+  getBotDetectionReason,
+  looksLikeBot,
+} from "@/components/reuse/Form/formTypes";
 import type {
   ContactFormData,
   TradeFormData,
@@ -27,6 +30,7 @@ describe("Bot Detection Tests", () => {
         ],
       };
       expect(looksLikeBot(formData)).toBe(true);
+      expect(getBotDetectionReason(formData)).toBe("honeypot");
     });
 
     test("all default values + no uploads + short details", () => {
@@ -139,6 +143,29 @@ describe("Bot Detection Tests", () => {
         ],
       };
       expect(looksLikeBot(formData)).toBe(false);
+      expect(getBotDetectionReason(formData)).toBeNull();
+    });
+
+    test("short test details still pass when budget, size, and uploads are human", () => {
+      const formData: ContactFormData = {
+        firstName: "Test",
+        lastName: "User",
+        email: "test@example.com",
+        details: "Test Test TESTTTTTTTTTTTTTTT",
+        budgetMin: 2400,
+        budgetMax: 5000,
+        width: 52,
+        height: 30,
+        uploads: [
+          { name: "one.jpg", type: "image/jpeg", data: "base64data" },
+          { name: "two.jpg", type: "image/jpeg", data: "base64data" },
+          { name: "three.jpg", type: "image/jpeg", data: "base64data" },
+        ],
+        company: "",
+      };
+
+      expect(looksLikeBot(formData)).toBe(false);
+      expect(getBotDetectionReason(formData)).toBeNull();
     });
   });
 

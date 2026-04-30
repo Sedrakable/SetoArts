@@ -1,6 +1,6 @@
 // src/components/reuse/Modal/Backdrop.tsx
 import React, { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 
 import styles from "./Backdrop.module.scss";
 
@@ -9,9 +9,15 @@ interface BackdropProps {
   onClick: () => void;
 }
 
+const MotionDiv = motion.div as React.ComponentType<
+  React.HTMLAttributes<HTMLDivElement> &
+    MotionProps &
+    React.RefAttributes<HTMLDivElement>
+>;
+
 export const Backdrop: React.FC<BackdropProps> = ({ children, onClick }) => {
   return (
-    <motion.div
+    <MotionDiv
       className={styles.backdrop}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClick(); // only click outside modal
@@ -21,6 +27,6 @@ export const Backdrop: React.FC<BackdropProps> = ({ children, onClick }) => {
       exit={{ opacity: 0 }}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   );
 };

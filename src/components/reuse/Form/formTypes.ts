@@ -42,14 +42,20 @@ const isContactFormData = (
   );
 };
 
-export const looksLikeBot = (
+export type BotDetectionReason =
+  | "honeypot"
+  | "contact-default-short-empty"
+  | "trade-details-too-short"
+  | null;
+
+export const getBotDetectionReason = (
   formData: ContactFormData | TradeFormData,
-): boolean => {
+): BotDetectionReason => {
   // 1. HONEYPOT CHECK - Instant reject if filled
   const honeypotFilled =
     typeof formData.company === "string" && formData.company.trim().length > 0;
 
-  if (honeypotFilled) return true;
+  if (honeypotFilled) return "honeypot";
 
   // 2. CONTACT FORM SPECIFIC CHECKS
   if (isContactFormData(formData)) {
@@ -72,7 +78,9 @@ export const looksLikeBot = (
       : isDefaultBudget;
 
     // Bot = ALL suspicious patterns + short details + no uploads
-    return suspiciousPattern && noUploads && shortDetails;
+    return suspiciousPattern && noUploads && shortDetails
+      ? "contact-default-short-empty"
+      : null;
   }
 
   // 3. TRADE FORM SPECIFIC CHECKS
@@ -81,5 +89,11 @@ export const looksLikeBot = (
   const emptyOrTooShort =
     !formData.details || formData.details.trim().length < 10;
 
-  return emptyOrTooShort;
+  return emptyOrTooShort ? "trade-details-too-short" : null;
+};
+
+export const looksLikeBot = (
+  formData: ContactFormData | TradeFormData,
+): boolean => {
+  return getBotDetectionReason(formData) !== null;
 };

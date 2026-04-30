@@ -6,7 +6,6 @@ import { getTranslations } from "@/helpers/langUtils";
 
 import { Icon } from "../../Icon/Icon";
 import FlexDiv from "../../FlexDiv";
-import Image from "next/image";
 import { LangType } from "@/i18n/request";
 import { IconButton } from "../../IconButton/IconButton";
 
@@ -200,13 +199,10 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
               />
               {previewUrls[index] &&
               uploadedFiles[index]?.type.startsWith("image/") ? (
-                <Image
+                <img
                   src={previewUrls[index]}
                   alt={`preview-${index}`}
-                  fill
-                  objectFit="cover"
-                  priority
-                  quality={5}
+                  className={styles.previewImage}
                 />
               ) : (
                 <FlexDiv

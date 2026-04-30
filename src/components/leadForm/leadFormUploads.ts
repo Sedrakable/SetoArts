@@ -1,4 +1,5 @@
 import { LeadUpload } from "./leadFormTypes";
+import { encodeFilesForEmail } from "@/components/reuse/Form/fileEncoding";
 
 export type UploadedLeadFiles = Record<LeadUpload["field"], File[]>;
 
@@ -34,18 +35,7 @@ export const encodeLeadFiles = async (
 ): Promise<LeadUpload[]> => {
   if (!files.length) return [];
 
-  return Promise.all(
-    files.map(
-      (file) =>
-        new Promise<LeadUpload>((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            const data = (event.target?.result as string)?.split(",")[1] || "";
-            resolve({ field, name: file.name, type: file.type, data });
-          };
-          reader.onerror = reject;
-          reader.readAsDataURL(file);
-        }),
-    ),
-  );
+  const encodedFiles = await encodeFilesForEmail(files);
+
+  return encodedFiles.map((file) => ({ ...file, field }));
 };
