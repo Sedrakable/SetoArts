@@ -1,3 +1,4 @@
+// src/data.d.tsx
 import { ICustomImage } from "./components/reuse/SanityImage/SanityImage";
 
 export type ServiceType = "wood" | "digital";

@@ -1,0 +1,102 @@
+@use "@/styles/mixins.scss" as *;
+
+.leadBlock {
+  min-height: 100svh;
+}
+
+.container {
+  max-width: 920px;
+  min-height: calc(100svh - var(--pad-10));
+}
+
+.progress {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(12, 11, 8, 0.12);
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--black);
+  transition: width var(--transition-time);
+}
+
+.form {
+  flex: 1;
+  min-height: 100%;
+}
+
+.copy,
+.microcopy,
+.note {
+  max-width: 680px;
+  overflow: visible;
+}
+
+.error {
+  overflow: visible;
+}
+
+.fields {
+  width: 100%;
+}
+
+.summary {
+  display: grid;
+  gap: var(--pad-3);
+}
+
+.summaryItem {
+  padding: var(--pad-3) 0;
+  border-bottom: 1px solid rgba(12, 11, 8, 0.16);
+}
+
+.summaryLabel {
+  text-transform: uppercase;
+}
+
+.summaryValue {
+  overflow: visible;
+}
+
+.summaryEditButton {
+  // flex: 0 0 auto;
+  // width: 36px;
+  // height: 36px;
+  // border: 2px solid var(--black);
+  // border-radius: 50%;
+  // background: var(--white);
+  // box-shadow: 1px 1px 0 var(--black);
+  // transition: var(--transition-time-backoff);
+
+  &:hover {
+    scale: 1.1;
+    svg {
+      fill: var(--black) !important;
+    }
+  }
+}
+
+.calendly {
+  width: 100%;
+  min-height: 680px;
+  border: 2px solid rgba(12, 11, 8, 0.14);
+  border-radius: var(--border-radius);
+  background: var(--white);
+}
+
+.message {
+  padding: var(--pad-4);
+  border-radius: var(--border-radius);
+  background: var(--white);
+  box-shadow: var(--black-shadow);
+}
+
+.buttons {
+  // flex-direction: column-reverse !important;
+  @media (min-width: $tablet) {
+    flex-direction: row !important;
+  }
+}

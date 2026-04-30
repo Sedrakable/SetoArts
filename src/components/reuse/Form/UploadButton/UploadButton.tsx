@@ -7,8 +7,8 @@ import { getTranslations } from "@/helpers/langUtils";
 import { Icon } from "../../Icon/Icon";
 import FlexDiv from "../../FlexDiv";
 import Image from "next/image";
-import { Button } from "../../Button/Button";
 import { LangType } from "@/i18n/request";
+import { IconButton } from "../../IconButton/IconButton";
 
 interface UploadButtonProps {
   onFilesSelect: (files: File[]) => void;
@@ -17,6 +17,8 @@ interface UploadButtonProps {
   maxFiles?: number;
   isInvalid?: boolean;
   required?: boolean;
+  buttonText?: string;
+  multiple?: boolean;
 }
 
 export const UploadButton: React.FC<UploadButtonProps> = ({
@@ -26,24 +28,27 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
   maxFiles = 3,
   isInvalid = false,
   required = true,
+  buttonText,
+  multiple = true,
 }) => {
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const previewUrlsRef = useRef<string[]>([]);
   const [dragActive, setDragActive] = useState(false);
   const [previewUrls, setPreviewUrls] = useState<string[]>([]);
+  const canAddMore = uploadedFiles.length < maxFiles;
 
   useEffect(() => {
-    // Clear existing preview URLs
-    previewUrls.forEach((url) => URL.revokeObjectURL(url));
+    previewUrlsRef.current.forEach((url) => URL.revokeObjectURL(url));
 
-    // Create new preview URLs for all uploaded files
     const urls = uploadedFiles.map((file) => URL.createObjectURL(file));
+    previewUrlsRef.current = urls;
     setPreviewUrls(urls);
 
-    // Cleanup function
     return () => {
       urls.forEach((url) => URL.revokeObjectURL(url));
+      previewUrlsRef.current = [];
     };
   }, [uploadedFiles]);
 
@@ -60,10 +65,12 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
 
       if (totalFiles.length > maxFiles) {
         alert(`Maximum ${maxFiles} files allowed`);
+        event.target.value = "";
         return;
       }
 
       onFilesSelect(totalFiles);
+      event.target.value = "";
     }
   };
 
@@ -130,7 +137,7 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
             type="file"
             onChange={handleChange}
             accept={accept}
-            multiple
+            multiple={multiple}
             style={{ display: "none" }}
           />
 
@@ -144,7 +151,10 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
           <Paragraph level="big" color="black" weight={600} textAlign="center">
             {uploadedFiles.length > 0
               ? "remove uploaded file"
-              : translations.form.general.upload}
+              : buttonText || translations.form.general.upload}
+          </Paragraph>
+          <Paragraph level="small" color="black" textAlign="center">
+            Up to {maxFiles} files
           </Paragraph>
           {required && (
             <Paragraph
@@ -160,6 +170,15 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
       )}
       {uploadedFiles.length > 0 && (
         <FlexDiv wrap gapArray={[4]} flex={{ x: "flex-start" }} width100>
+          <input
+            id="file-upload-more"
+            ref={fileInputRef}
+            type="file"
+            onChange={handleChange}
+            accept={accept}
+            multiple={multiple}
+            style={{ display: "none" }}
+          />
           {uploadedFiles.map((_, index) => (
             <FlexDiv
               key={index}
@@ -167,18 +186,20 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
               className={styles.imageWrapper}
               style={{ position: "relative" }}
             >
-              <FlexDiv
-                padding={{ all: [2] }}
-                className={styles.closeButtonWrapper}
-              >
-                <Button
-                  variant="black"
-                  small
-                  onClick={() => removeFile(index)}
-                  iconProps={{ icon: "close", side: "right", size: "small" }}
-                />
-              </FlexDiv>
-              {previewUrls[index] && (
+              <IconButton
+                aria-label={`Remove ${uploadedFiles[index]?.name || "file"}`}
+                background="white"
+                className={styles.removeButton}
+                iconProps={{
+                  icon: "close",
+                  size: "extra-small",
+                  color: "black",
+                }}
+                onClick={() => removeFile(index)}
+                type="button"
+              />
+              {previewUrls[index] &&
+              uploadedFiles[index]?.type.startsWith("image/") ? (
                 <Image
                   src={previewUrls[index]}
                   alt={`preview-${index}`}
@@ -187,9 +208,44 @@ export const UploadButton: React.FC<UploadButtonProps> = ({
                   priority
                   quality={5}
                 />
+              ) : (
+                <FlexDiv
+                  height100
+                  width100
+                  padding={{ all: [3] }}
+                  flex={{ direction: "column" }}
+                  className={styles.filePreview}
+                >
+                  <Icon icon="upload" size="small" color="black" />
+                  <Paragraph level="small" color="black" textAlign="center">
+                    {uploadedFiles[index]?.name}
+                  </Paragraph>
+                </FlexDiv>
               )}
             </FlexDiv>
           ))}
+          {canAddMore && (
+            <FlexDiv
+              className={styles.addMore}
+              flex={{ direction: "column" }}
+              gapArray={[2]}
+              onClick={handleClick}
+              padding={{ all: [4] }}
+            >
+              <IconButton
+                aria-label="Upload more files"
+                background="white"
+                iconProps={{ icon: "plus", size: "regular", color: "black" }}
+                type="button"
+              />
+              <Paragraph level="small" color="black" textAlign="center">
+                Add more
+              </Paragraph>
+              <Paragraph level="small" color="dark-grey" textAlign="center">
+                {uploadedFiles.length}/{maxFiles}
+              </Paragraph>
+            </FlexDiv>
+          )}
         </FlexDiv>
       )}
     </FlexDiv>

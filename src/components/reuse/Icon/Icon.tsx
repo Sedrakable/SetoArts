@@ -8,6 +8,8 @@ import Close from "@/assets/vector/Icons/close.svg";
 import Arrow from "@/assets/vector/Icons/arrow.svg";
 import Bulb from "@/assets/vector/Icons/bulb.svg";
 import Upload from "@/assets/vector/Icons/upload.svg";
+import Plus from "@/assets/vector/Icons/plus.svg";
+import Pen from "@/assets/vector/Icons/pen.svg";
 
 import EyeClosed from "@/assets/vector/Icons/eye-closed.svg";
 import QuestionCircle from "@/assets/vector/Icons/question-circle.svg";
@@ -39,6 +41,8 @@ const icons: {
   arrow: <Arrow />,
   bulb: <Bulb />,
   upload: <Upload />,
+  plus: <Plus />,
+  pen: <Pen />,
   eyeClosed: <EyeClosed />,
   questionCircle: <QuestionCircle />,
   shieldWarning: <ShieldWarning />,

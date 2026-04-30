@@ -1,5 +1,6 @@
+// src/components/reuse/Text/Paragraph/Paragraph.tsx
 "use client";
-import React, { CSSProperties, ReactNode } from "react";
+import React, { CSSProperties, JSX, ReactNode } from "react";
 import styles from "./Paragraph.module.scss";
 import cn from "classnames";
 import {
@@ -19,6 +20,7 @@ export interface ParagraphProps {
   capitalise?: boolean;
   clickable?: boolean;
   className?: string;
+  fit?: "grow" | "shrink";
 }
 
 export const Paragraph: React.FC<ParagraphProps> = ({
@@ -32,6 +34,7 @@ export const Paragraph: React.FC<ParagraphProps> = ({
   capitalise,
   clickable,
   className,
+  fit = "grow",
 }) => {
   const { spacingNum } = useSpacingGenerator(paddingBottomArray);
 
@@ -61,8 +64,10 @@ export const Paragraph: React.FC<ParagraphProps> = ({
         styles[level],
         {
           [styles.clickable]: clickable,
+          [styles.grow]: fit === "grow",
+          [styles.shrink]: fit === "shrink",
         },
-        className
+        className,
       )}
       style={{
         textTransform: capitalise ? "capitalize" : "none",

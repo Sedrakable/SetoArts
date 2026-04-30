@@ -18,6 +18,11 @@
   @include vars;
   position: relative;
 
+  &.shrink {
+    width: fit-content;
+    min-width: 140px;
+  }
+
   &.disabled {
     opacity: 0.5;
     .select {
