@@ -4,12 +4,12 @@
 .textarea {
   @include vari(
     font-size,
-    var(--paragraph-regular),
-    var(--paragraph-regular),
     var(--paragraph-small),
+    var(--paragraph-small),
+    var(--paragraph-regular),
     var(--paragraph-regular)
   );
-  @include vari(height, 60px, 60px, 48px, 60px);
+  @include vari(height, 48px, 56px);
   & {
     position: relative;
     padding: 0 var(--pad-4);
@@ -41,6 +41,7 @@
   }
 }
 .textarea {
+  max-width: 100%;
   @include vari(min-height, 200px, 150px, 150px, 200px);
   @include vari(max-height, 400px, 300px, 350px, 400px);
   & {

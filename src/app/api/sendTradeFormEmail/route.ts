@@ -1,10 +1,10 @@
 // SetoArts - /src/app/api/sendTradeFormEmail/route.ts
 import { looksLikeBot, TradeFormData } from "@/components/reuse/Form/formTypes";
-import { LangType } from "@/i18n/request";
-import { NextResponse } from "next/server";
-import { emailTranslations } from "@/langs/emailTranslations";
 import { getTransporter } from "@/helpers/getTransporter";
-import { getTradeClientTemplate, getTradeBusinessTemplate } from "./templates";
+import { LangType } from "@/i18n/request";
+import { emailTranslations } from "@/langs/emailTranslations";
+import { NextResponse } from "next/server";
+import { getTradeBusinessTemplate, getTradeClientTemplate } from "./templates";
 
 export async function POST(request: Request) {
   try {
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       transporter.sendMail({
         from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
         to: process.env.EMAIL_BUSINESS,
-        subject: `🤝 New Trade Program Inquiry - ${formData.firstName} ${formData.lastName}`,
+        subject: `New Trade Program Inquiry - ${formData.firstName} ${formData.lastName}`,
         html: businessHtml,
       }),
     ]);
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Server error:", error);
     return NextResponse.json(
-      { error: "Failed to send emails", details: (error as Error).message },
+      { error: "Failed to send emails" },
       { status: 500 },
     );
   }

@@ -1,19 +1,19 @@
 @use "@/styles/mixins.scss" as *;
 @mixin vars() {
   --icon-height: 32px;
-  --image-size: 120px;
+  --image-size: 104px;
 
   @media (min-width: $tablet) {
-    --icon-height: 48px;
-    --image-size: 160px;
+    --icon-height: 40px;
+    --image-size: 136px;
   }
 
   @media (min-width: $laptop) {
   }
 
   @media (min-width: $desktop) {
-    --icon-height: 64px;
-    --image-size: 200px;
+    --icon-height: 48px;
+    --image-size: 160px;
   }
 }
 
@@ -30,6 +30,10 @@
 
     .icon {
       height: var(--icon-height);
+    }
+
+    p {
+      overflow: visible;
     }
 
     &:hover,
@@ -49,20 +53,60 @@
       border-radius: var(--border-radius);
     }
   }
-  .closeButtonWrapper {
+  .removeButton {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: var(--pad-2);
+    right: var(--pad-2);
+
     z-index: 2;
+
+    svg {
+      width: 18px !important;
+      height: 18px !important;
+    }
+
+    &:hover {
+      scale: 1.05;
+    }
   }
   .imageWrapper {
     position: relative;
     aspect-ratio: 1;
     height: var(--image-size) !important;
     border-radius: var(--border-radius);
+    background: var(--off-white);
+    border: 2px solid var(--black);
     overflow: hidden;
-    img {
+    .previewImage {
+      height: 100%;
       object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .addMore {
+    aspect-ratio: 1;
+    height: var(--image-size) !important;
+    border-radius: var(--border-radius);
+    border: 2px dashed var(--black);
+    background: cc(--white, 0.4);
+    cursor: pointer;
+    transition: var(--transition-time-backoff);
+
+    &:hover {
+      border-color: var(--yellow);
+      background: var(--white);
+      box-shadow: var(--black-shadow);
+    }
+
+    p {
+      overflow: visible;
+    }
+  }
+
+  .filePreview {
+    p {
+      overflow-wrap: anywhere;
     }
   }
 

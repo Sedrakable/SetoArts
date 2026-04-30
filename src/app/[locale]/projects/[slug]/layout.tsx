@@ -6,7 +6,7 @@ export default async function ModalLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: LangType }>;
+  params: Promise<{ locale: LangType; slug: string }>;
 }) {
   const { locale } = await params;
 

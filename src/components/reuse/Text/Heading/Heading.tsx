@@ -1,5 +1,5 @@
 "use client";
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, JSX } from "react";
 import styles from "./Heading.module.scss";
 import cn from "classnames";
 import {

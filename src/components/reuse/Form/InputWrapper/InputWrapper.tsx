@@ -11,6 +11,7 @@ export interface InputWrapperProps {
   required?: boolean; // Optional prop to make input required
   isInvalid?: boolean; // To visually mark invalid fields
   honeyPot?: boolean; // To hide honeypot fields
+  fit?: "grow" | "shrink";
 }
 
 export const InputWrapper: React.FC<PropsWithChildren<InputWrapperProps>> = ({
@@ -19,11 +20,13 @@ export const InputWrapper: React.FC<PropsWithChildren<InputWrapperProps>> = ({
   required = false,
   isInvalid = false,
   honeyPot = false,
+  fit = "grow",
 }) => {
   return (
     <FlexDiv
       className={cn(styles.inputContainer, {
         [styles.honeyPot]: honeyPot,
+        [styles.shrink]: fit === "shrink",
       })}
       flex={{ direction: "column" }}
       gapArray={[2]}

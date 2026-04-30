@@ -69,24 +69,21 @@ export const WorkTypeNav: React.FC<WorkTypeNavProps> = ({
 
   const items: WorkTypeItemProps[] = [
     {
-      title: trans.work.signs,
+      title: trans.projects.signs,
       svgName: "wood-magnetic-lid",
-      targetId: LocalTargets.SIGNSPROJECTS,
+      targetId: LocalTargets.PROJECTS,
     },
     {
-      title: trans.work.decor,
+      title: trans.projects.decor,
       svgName: "wood-magnetic-lid",
-      targetId: LocalTargets.DECORPROJECTS,
+      targetId: LocalTargets.PROJECTS,
     },
   ];
 
   return (
     <Block
-      title={{
-        children: trans.titles.explore,
-        font: "Outfit",
-        color: "black",
-        weight: 900,
+      fancyTitle={{
+        title: trans.titles.explore,
       }}
       theme={theme}
       className={styles.block}

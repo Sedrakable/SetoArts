@@ -9,7 +9,7 @@ import { Block } from "../containers/Block";
 export const LegalPageComp: React.FC<ILegalPage> = ({ title, data }) => {
   return (
     <Block
-      title={{ font: "Cursive", children: title, color: "yellow" }}
+      fancyTitle={{ title }}
       theme="light"
       className={styles.block}
     >

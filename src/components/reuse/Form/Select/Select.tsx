@@ -24,6 +24,7 @@ export interface SelectProps {
   defaultValue?: string;
   required?: boolean;
   isInvalid?: boolean;
+  fit?: "grow" | "shrink";
 }
 
 export const Select: React.FC<SelectProps> = ({
@@ -35,13 +36,14 @@ export const Select: React.FC<SelectProps> = ({
   required = false,
   isInvalid = false,
   defaultValue = "",
+  fit = "grow",
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<string>(defaultValue);
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
   const selectRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
-  const searchTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [searchString, setSearchString] = useState("");
   const locale = useLocale() as LangType;
   const translations = getTranslations(locale);
@@ -158,9 +160,12 @@ export const Select: React.FC<SelectProps> = ({
   return (
     <FlexDiv
       flex={{ direction: "column", x: "flex-start", y: "flex-start" }}
-      className={cn(styles.container, { [styles.disabled]: disabled })}
+      className={cn(styles.container, {
+        [styles.disabled]: disabled,
+        [styles.shrink]: fit === "shrink",
+      })}
       ref={selectRef}
-      width100
+      width100={fit === "grow"}
       gapArray={[2]}
       onKeyDown={handleKeyDown}
       tabIndex={0}

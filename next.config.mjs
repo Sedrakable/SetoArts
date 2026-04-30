@@ -1,8 +1,13 @@
 import createNextIntlPlugin from "next-intl/plugin";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 const withNextIntl = createNextIntlPlugin();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  outputFileTracingRoot: __dirname,
   webpack(config) {
     // Add babel-loader + svgr for SVG files
     config.module.rules.push({
@@ -24,9 +29,6 @@ const nextConfig = {
     });
 
     return config;
-  },
-  typescript: {
-    ignoreBuildErrors: true,
   },
   images: {
     remotePatterns: [

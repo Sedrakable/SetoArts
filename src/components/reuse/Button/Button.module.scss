@@ -99,6 +99,7 @@
 
   &.black,
   &.white,
+  &.transparent,
   &.primary {
     min-height: var(--button-height);
     height: var(--button-height);
@@ -165,9 +166,8 @@
     }
   }
 
-  &.white {
-    background: var(--white);
-
+  &.white,
+  &.transparent {
     outline: 2px solid transparent;
     outline-offset: -2px;
 
@@ -190,6 +190,7 @@
         fill: var(--white) !important;
       }
     }
+
     &.outline {
       outline-color: var(--black);
       &:hover {
@@ -197,7 +198,12 @@
       }
     }
   }
-
+  &.white {
+    background: var(--white);
+  }
+  &.transparent {
+    background: transparent;
+  }
   &.small {
     min-width: auto !important;
     min-height: var(--button-height-small) !important;

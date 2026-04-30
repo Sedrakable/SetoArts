@@ -25,20 +25,28 @@ export const Input: React.FC<InputProps> = ({
   required = false,
   isInvalid = false,
   honeyPot = false,
+  fit = "grow",
 }) => {
+  const inputId = honeyPot ? "seto-confirmation-field" : label;
+
   return (
     <InputWrapper
       label={label}
       required={required}
       isInvalid={isInvalid}
       honeyPot={honeyPot}
+      fit={fit}
     >
       <input
         type={type}
         value={value}
-        id={label}
+        id={inputId}
+        name={inputId}
+        autoComplete={honeyPot ? "new-password" : undefined}
+        aria-hidden={honeyPot || undefined}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
+        tabIndex={honeyPot ? -1 : undefined}
         className={cn(styles.input, outfit.className, {
           [styles.invalid]: isInvalid,
           [styles.honeyPot]: honeyPot,
@@ -61,6 +69,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
   placeholder,
   required = false,
   isInvalid = false,
+  fit = "grow",
 }) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null); // Explicitly define the ref type
 
@@ -78,7 +87,12 @@ export const TextArea: React.FC<TextAreaProps> = ({
   }, [value]);
 
   return (
-    <InputWrapper label={label} required={required} isInvalid={isInvalid}>
+    <InputWrapper
+      label={label}
+      required={required}
+      isInvalid={isInvalid}
+      fit={fit}
+    >
       <textarea
         id={label}
         ref={textareaRef}

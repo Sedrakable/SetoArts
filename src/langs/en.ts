@@ -68,4 +68,265 @@ export const enTranslations: Translations = {
     signs: "Signs",
     decor: "Decor",
   },
+  leadForm: {
+    brand: "Seto X Arts",
+    progressLabel: "Lead form progress",
+    progress: (current, total) => `Step ${current} of ${total}`,
+    actions: {
+      back: "Back",
+      continue: "Continue",
+      submit: "Submit Project Request",
+      submitting: "Submitting...",
+      returnHome: "Return to Home",
+      edit: "Edit",
+    },
+    errors: {
+      chooseOne: "Choose one option.",
+      addShortGoal: "Add a short goal.",
+      addBusinessType: "Add the business type.",
+      addWidthHeight: "Add width and height.",
+      chooseRoughSize: "Choose a rough size.",
+      addProjectNote: "Add a short project note.",
+      addFirstName: "Add your first name.",
+      addValidEmail: "Add a valid email.",
+      addPhone: "Add your phone number.",
+      chooseContactPreference: "Choose a contact preference.",
+      submitFailed: "Lead submission failed",
+      genericSubmit: "Something went wrong. Please try again.",
+      missingRequiredLeadFields: "Missing required lead fields",
+      failedToSubmitLead: "Failed to submit lead",
+      submittedSuccessfully: "Lead submitted successfully",
+    },
+    steps: {
+      goal: {
+        label: "Goal",
+        question: "What's the main goal for your sign?",
+        options: [
+          { value: "premium-space", label: "Make my space look more premium" },
+          {
+            value: "street-visibility",
+            label: "Stand out from the street / increase walk-ins",
+          },
+          {
+            value: "brand-presence",
+            label: "Create a stronger brand presence",
+          },
+          {
+            value: "content-background",
+            label: "Improve my background for social media / content",
+          },
+          { value: "other", label: "Other" },
+        ],
+        otherLabel: "Tell me briefly what your goal is.",
+      },
+      businessType: {
+        label: "Business type",
+        question: "What type of business is this for?",
+        options: [
+          { value: "beauty-salon-nails", label: "Beauty / Salon / Nails" },
+          { value: "restaurant-cafe", label: "Restaurant / Cafe" },
+          { value: "gym-fitness", label: "Gym / Fitness" },
+          { value: "auto-garage", label: "Auto / Garage" },
+          { value: "clinic-wellness", label: "Clinic / Wellness" },
+          { value: "office-reception", label: "Office / Reception" },
+          {
+            value: "tattoo-creative-studio",
+            label: "Tattoo / Creative Studio",
+          },
+          { value: "other", label: "Other" },
+        ],
+        otherLabel: "What type of business is it?",
+        businessNameLabel: "Business name",
+      },
+      location: {
+        label: "Location",
+        question: "Where will the sign be installed?",
+        options: [
+          { value: "interior", label: "Interior" },
+          { value: "exterior", label: "Exterior" },
+          { value: "not-sure", label: "Not sure yet" },
+        ],
+        microcopy: {
+          interior:
+            "Interior signs usually allow for a cleaner finish, more detail, and stronger visual impact.",
+          exterior:
+            "Exterior signs may need extra planning for weather, mounting, materials, and visibility.",
+          "not-sure":
+            "No problem. We can figure out the best option based on your space.",
+        },
+      },
+      size: {
+        label: "Size",
+        question: "Do you know the approximate size you want?",
+        options: [
+          { value: "known-size", label: "Yes, I know the size" },
+          { value: "rough-size", label: "I have a rough idea" },
+          { value: "need-help", label: "I need help choosing" },
+        ],
+        roughOptions: [
+          { value: "small", label: "Small: around 18-24 inches" },
+          { value: "medium", label: "Medium: around 30-36 inches" },
+          { value: "large", label: "Large: around 4-6 feet" },
+          { value: "not-sure", label: "Not sure" },
+        ],
+        microcopy: "A rough size is enough for now.",
+        widthLabel: "Width",
+        heightLabel: "Height",
+        unitLabel: "Unit",
+        unitOptions: [
+          { value: "inches", label: "inches" },
+          { value: "cm", label: "cm" },
+        ],
+      },
+      projectInfo: {
+        label: "Project info",
+        question: "Tell me briefly what you have in mind.",
+        fieldLabel: "Project details",
+        placeholder:
+          "Example: I want a custom LED sign for my reception wall. I want it to look clean, premium, and match my logo.",
+      },
+      timeline: {
+        label: "Timeline",
+        question: "When would you ideally like this completed?",
+        options: [
+          { value: "asap", label: "As soon as possible" },
+          { value: "2-4-weeks", label: "Within 2-4 weeks" },
+          { value: "1-2-months", label: "Within 1-2 months" },
+          { value: "no-rush", label: "No rush" },
+          { value: "not-sure", label: "Not sure yet" },
+        ],
+      },
+      budget: {
+        label: "Budget",
+        question: "What budget range are you considering?",
+        options: [
+          { value: "under-750", label: "Under $750" },
+          { value: "750-1500", label: "$750-$1,500" },
+          { value: "1500-2500", label: "$1,500-$2,500" },
+          { value: "2500-4000", label: "$2,500-$4,000" },
+          { value: "4000-plus", label: "$4,000+" },
+          { value: "not-sure", label: "Not sure yet" },
+        ],
+        microcopy: "A rough range is enough for now.",
+      },
+      files: {
+        label: "Files",
+        question: "Do you have your logo or space photos ready?",
+        options: [
+          { value: "upload-now", label: "Yes, I can upload them now" },
+          { value: "not-right-now", label: "Not right now" },
+          { value: "no-logo-yet", label: "I don't have a logo yet" },
+        ],
+        microcopy:
+          "Photos help me understand the space, scale, wall colour, and lighting.",
+        uploadButton: "Upload logo, space photos, or inspiration",
+        uploadNote:
+          "You can upload up to 8 files total: logo files, photos of the space, or inspiration images. SVG, AI, PDF, PNG, JPG, JPEG, and HEIC are accepted.",
+        noLogoNote:
+          "No problem. We can discuss the design direction during the call.",
+      },
+      contact: {
+        label: "Contact",
+        question: "Where should I send your project confirmation?",
+        companyLabel: "Company",
+        firstNameLabel: "First name",
+        lastNameLabel: "Last name",
+        emailLabel: "Email",
+        phoneLabel: "Phone number",
+        preferenceQuestion: "Best way to contact you?",
+        contactOptions: [
+          { value: "phone-call", label: "Phone call" },
+          { value: "text-message", label: "Text message" },
+          { value: "email", label: "Email" },
+          { value: "no-preference", label: "No preference" },
+        ],
+      },
+      review: {
+        label: "Review",
+        question: "Ready to send your project request?",
+        title: "Ready to send your project request?",
+        copy:
+          "I'll review your details and follow up with the next step. If everything looks good, we'll go over the project together and confirm the best direction.",
+        notProvided: "Not provided",
+        editLabel: (label) => `Edit ${label}`,
+        summaryLabels: {
+          goal: "Goal",
+          businessType: "Business type",
+          location: "Interior / Exterior",
+          size: "Size",
+          timeline: "Timeline",
+          budget: "Budget",
+          contactInfo: "Contact info",
+          uploadedFiles: "Uploaded files",
+        },
+        fileCount: (count) => `${count} file${count === 1 ? "" : "s"}`,
+        noFiles: "None",
+      },
+    },
+    thankYou: {
+      brand: "Seto X Arts",
+      bookedTitle: "Your project call is booked.",
+      bookedCopy:
+        "I'll review your project details before the call so we can make the conversation useful and straight to the point.",
+      bookedNote:
+        "If you haven't uploaded your logo or space photos yet, you can send them before the call to help me understand the project better.",
+      completeTitle: "Thanks, your request is complete.",
+      completeCopy: "I'll review your project details and contact you directly.",
+      receivedTitle: "Thanks, your project request was received.",
+      receivedCopy:
+        "I've received your details and sent you an email confirmation.",
+      nextStepCopy:
+        "The best next step is to book a quick project call so we can go over your space, logo, size, budget, and timeline properly.",
+      callMeMessage:
+        "No problem. I'll review your project details and contact you directly.",
+      bookCallTitle: "Book a Project Call",
+      callMeInstead: "I can't book right now, call me instead.",
+    },
+    metadata: {
+      formTitle: "Custom LED Wood Sign Project Request | Seto X Arts",
+      formDescription:
+        "Start a custom LED wood sign project request with Seto X Arts.",
+      thankYouTitle: "Project Request Received | Seto X Arts",
+      thankYouDescription:
+        "Book a project call for your custom LED wood sign.",
+      callBookedTitle: "Project Call Booked | Seto X Arts",
+      callBookedDescription: "Your Seto X Arts project call is booked.",
+      completeTitle: "Project Request Complete | Seto X Arts",
+      completeDescription: "Your Seto X Arts project request is complete.",
+    },
+    email: {
+      copyright: "© 2026 Seto X Arts. All Rights Reserved.",
+      businessTitle: "New LED Sign Lead",
+      businessHeading: "New LED Sign Lead",
+      clientInfoHeading: "Client Info:",
+      clientTitle: "Your Seto X Arts Project Request",
+      clientHeading: "Project Request Received",
+      clientThanks: (firstName) => `Thanks, ${firstName}.`,
+      clientIntro:
+        "Your custom LED wood sign project request was received. I'll review your details and follow up with the next step.",
+      regards: "Regards,",
+      teamName: "Seto X Arts",
+      clientSubject: "Your Seto X Arts project request was received",
+      businessSubject: (name) => `New LED Sign Lead - ${name}`,
+      labels: {
+        name: "Name",
+        email: "Email",
+        phone: "Phone",
+        preferredContact: "Preferred contact",
+        locale: "Locale",
+        mainGoal: "Main goal",
+        businessType: "Business type",
+        businessName: "Business name",
+        installLocation: "Install location",
+        approximateSize: "Approximate size",
+        projectInfo: "Project info",
+        timeline: "Timeline",
+        budget: "Budget",
+        uploadedFiles: "Uploaded files",
+      },
+      noFilesUploaded: "No files uploaded",
+      filesAttached: (count) =>
+        `${count} file${count === 1 ? "" : "s"} attached`,
+    },
+  },
 };

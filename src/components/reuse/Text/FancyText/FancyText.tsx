@@ -48,7 +48,7 @@ const transformXNodes = (node: React.ReactNode): React.ReactNode => {
 
   if (Array.isArray(node)) return node.map(transformXNodes);
 
-  if (React.isValidElement(node)) {
+  if (React.isValidElement<{ children?: React.ReactNode }>(node)) {
     // recurse into any element children (keeps <strong>, etc.)
     return React.cloneElement(node, {
       ...node.props,

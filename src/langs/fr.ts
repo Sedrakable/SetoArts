@@ -48,7 +48,6 @@ export const frTranslations: Translations = {
       referanceImage: "Image de référence",
       upload: "Télécharger des images",
     },
-
     wood: {
       currency: "$ CAD",
       height: "Hauteur",
@@ -60,12 +59,272 @@ export const frTranslations: Translations = {
   nav: {
     home: "Accueil",
     services: "Services",
-
     projects: "Projets",
     about: "À propos",
   },
   projects: {
     signs: "Enseignes",
     decor: "Décor",
+  },
+  leadForm: {
+    brand: "Seto X Arts",
+    progressLabel: "Progression du formulaire",
+    progress: (current, total) => `Étape ${current} sur ${total}`,
+    actions: {
+      back: "Retour",
+      continue: "Continuer",
+      submit: "Envoyer la demande",
+      submitting: "Envoi...",
+      returnHome: "Retour à l'accueil",
+      edit: "Modifier",
+    },
+    errors: {
+      chooseOne: "Choisis une option.",
+      addShortGoal: "Ajoute un court objectif.",
+      addBusinessType: "Ajoute le type d'entreprise.",
+      addWidthHeight: "Ajoute la largeur et la hauteur.",
+      chooseRoughSize: "Choisis une taille approximative.",
+      addProjectNote: "Ajoute une courte note sur le projet.",
+      addFirstName: "Ajoute ton prénom.",
+      addValidEmail: "Ajoute une adresse courriel valide.",
+      addPhone: "Ajoute ton numéro de téléphone.",
+      chooseContactPreference: "Choisis une préférence de contact.",
+      submitFailed: "L'envoi de la demande a échoué",
+      genericSubmit: "Une erreur est survenue. Réessaie.",
+      missingRequiredLeadFields: "Champs requis manquants",
+      failedToSubmitLead: "Impossible d'envoyer la demande",
+      submittedSuccessfully: "Demande envoyée avec succès",
+    },
+    steps: {
+      goal: {
+        label: "Objectif",
+        question: "Quel est l'objectif principal de ton enseigne?",
+        options: [
+          { value: "premium-space", label: "Rendre mon espace plus haut de gamme" },
+          {
+            value: "street-visibility",
+            label: "Me démarquer de la rue / augmenter les visites",
+          },
+          {
+            value: "brand-presence",
+            label: "Créer une présence de marque plus forte",
+          },
+          {
+            value: "content-background",
+            label: "Améliorer mon arrière-plan pour les réseaux sociaux",
+          },
+          { value: "other", label: "Autre" },
+        ],
+        otherLabel: "Dis-moi brièvement quel est ton objectif.",
+      },
+      businessType: {
+        label: "Type d'entreprise",
+        question: "Pour quel type d'entreprise est-ce?",
+        options: [
+          { value: "beauty-salon-nails", label: "Beauté / Salon / Ongles" },
+          { value: "restaurant-cafe", label: "Restaurant / Café" },
+          { value: "gym-fitness", label: "Gym / Fitness" },
+          { value: "auto-garage", label: "Auto / Garage" },
+          { value: "clinic-wellness", label: "Clinique / Bien-être" },
+          { value: "office-reception", label: "Bureau / Réception" },
+          {
+            value: "tattoo-creative-studio",
+            label: "Tatouage / Studio créatif",
+          },
+          { value: "other", label: "Autre" },
+        ],
+        otherLabel: "Quel type d'entreprise est-ce?",
+        businessNameLabel: "Nom de l'entreprise",
+      },
+      location: {
+        label: "Emplacement",
+        question: "Où l'enseigne sera-t-elle installée?",
+        options: [
+          { value: "interior", label: "Intérieur" },
+          { value: "exterior", label: "Extérieur" },
+          { value: "not-sure", label: "Pas encore certain" },
+        ],
+        microcopy: {
+          interior:
+            "Les enseignes intérieures permettent souvent une finition plus propre, plus de détails et un impact visuel plus fort.",
+          exterior:
+            "Les enseignes extérieures peuvent demander plus de planification pour la météo, la fixation, les matériaux et la visibilité.",
+          "not-sure":
+            "Aucun problème. On peut trouver la meilleure option selon ton espace.",
+        },
+      },
+      size: {
+        label: "Taille",
+        question: "Connais-tu la taille approximative souhaitée?",
+        options: [
+          { value: "known-size", label: "Oui, je connais la taille" },
+          { value: "rough-size", label: "J'ai une idée approximative" },
+          { value: "need-help", label: "J'ai besoin d'aide pour choisir" },
+        ],
+        roughOptions: [
+          { value: "small", label: "Petit : environ 18 à 24 pouces" },
+          { value: "medium", label: "Moyen : environ 30 à 36 pouces" },
+          { value: "large", label: "Grand : environ 4 à 6 pieds" },
+          { value: "not-sure", label: "Pas certain" },
+        ],
+        microcopy: "Une taille approximative suffit pour le moment.",
+        widthLabel: "Largeur",
+        heightLabel: "Hauteur",
+        unitLabel: "Unité",
+        unitOptions: [
+          { value: "inches", label: "pouces" },
+          { value: "cm", label: "cm" },
+        ],
+      },
+      projectInfo: {
+        label: "Infos du projet",
+        question: "Dis-moi brièvement ce que tu as en tête.",
+        fieldLabel: "Détails du projet",
+        placeholder:
+          "Exemple : Je veux une enseigne DEL personnalisée pour mon mur de réception. Je veux un look propre, premium et assorti à mon logo.",
+      },
+      timeline: {
+        label: "Échéancier",
+        question: "Idéalement, quand aimerais-tu que ce soit terminé?",
+        options: [
+          { value: "asap", label: "Le plus vite possible" },
+          { value: "2-4-weeks", label: "Dans 2 à 4 semaines" },
+          { value: "1-2-months", label: "Dans 1 à 2 mois" },
+          { value: "no-rush", label: "Pas pressé" },
+          { value: "not-sure", label: "Pas encore certain" },
+        ],
+      },
+      budget: {
+        label: "Budget",
+        question: "Quelle fourchette de budget envisages-tu?",
+        options: [
+          { value: "under-750", label: "Moins de 750 $" },
+          { value: "750-1500", label: "750 $ à 1 500 $" },
+          { value: "1500-2500", label: "1 500 $ à 2 500 $" },
+          { value: "2500-4000", label: "2 500 $ à 4 000 $" },
+          { value: "4000-plus", label: "4 000 $ et plus" },
+          { value: "not-sure", label: "Pas encore certain" },
+        ],
+        microcopy: "Une fourchette approximative suffit pour le moment.",
+      },
+      files: {
+        label: "Fichiers",
+        question: "As-tu ton logo ou des photos de ton espace?",
+        options: [
+          { value: "upload-now", label: "Oui, je peux les téléverser maintenant" },
+          { value: "not-right-now", label: "Pas maintenant" },
+          { value: "no-logo-yet", label: "Je n'ai pas encore de logo" },
+        ],
+        microcopy:
+          "Les photos m'aident à comprendre l'espace, l'échelle, la couleur du mur et l'éclairage.",
+        uploadButton: "Téléverser logo, photos de l'espace ou inspirations",
+        uploadNote:
+          "Tu peux téléverser jusqu'à 8 fichiers au total : logo, photos de l'espace ou images d'inspiration. SVG, AI, PDF, PNG, JPG, JPEG et HEIC sont acceptés.",
+        noLogoNote:
+          "Aucun problème. On pourra discuter de la direction visuelle pendant l'appel.",
+      },
+      contact: {
+        label: "Contact",
+        question: "Où dois-je envoyer ta confirmation de projet?",
+        companyLabel: "Entreprise",
+        firstNameLabel: "Prénom",
+        lastNameLabel: "Nom",
+        emailLabel: "Courriel",
+        phoneLabel: "Numéro de téléphone",
+        preferenceQuestion: "Meilleure façon de te contacter?",
+        contactOptions: [
+          { value: "phone-call", label: "Appel téléphonique" },
+          { value: "text-message", label: "Message texte" },
+          { value: "email", label: "Courriel" },
+          { value: "no-preference", label: "Aucune préférence" },
+        ],
+      },
+      review: {
+        label: "Révision",
+        question: "Prêt à envoyer ta demande de projet?",
+        title: "Prêt à envoyer ta demande de projet?",
+        copy:
+          "Je vais réviser tes détails et te revenir avec la prochaine étape. Si tout semble bon, on passera le projet ensemble et on confirmera la meilleure direction.",
+        notProvided: "Non fourni",
+        editLabel: (label) => `Modifier ${label}`,
+        summaryLabels: {
+          goal: "Objectif",
+          businessType: "Type d'entreprise",
+          location: "Intérieur / Extérieur",
+          size: "Taille",
+          timeline: "Échéancier",
+          budget: "Budget",
+          contactInfo: "Infos de contact",
+          uploadedFiles: "Fichiers téléversés",
+        },
+        fileCount: (count) => `${count} fichier${count === 1 ? "" : "s"}`,
+        noFiles: "Aucun",
+      },
+    },
+    thankYou: {
+      brand: "Seto X Arts",
+      bookedTitle: "Ton appel de projet est réservé.",
+      bookedCopy:
+        "Je vais réviser les détails de ton projet avant l'appel pour que la conversation soit utile et directe.",
+      bookedNote:
+        "Si tu n'as pas encore téléversé ton logo ou des photos de ton espace, tu peux les envoyer avant l'appel pour m'aider à mieux comprendre le projet.",
+      completeTitle: "Merci, ta demande est complétée.",
+      completeCopy: "Je vais réviser ton projet et te contacter directement.",
+      receivedTitle: "Merci, ta demande de projet a été reçue.",
+      receivedCopy:
+        "J'ai reçu tes détails et je t'ai envoyé une confirmation par courriel.",
+      nextStepCopy:
+        "La meilleure prochaine étape est de réserver un court appel de projet pour passer ton espace, ton logo, la taille, le budget et l'échéancier correctement.",
+      callMeMessage:
+        "Aucun problème. Je vais réviser ton projet et te contacter directement.",
+      bookCallTitle: "Réserver un appel de projet",
+      callMeInstead: "Je ne peux pas réserver maintenant, appelle-moi plutôt.",
+    },
+    metadata: {
+      formTitle: "Demande de projet d'enseigne DEL sur bois | Seto X Arts",
+      formDescription:
+        "Commence une demande de projet pour une enseigne DEL personnalisée avec Seto X Arts.",
+      thankYouTitle: "Demande de projet reçue | Seto X Arts",
+      thankYouDescription:
+        "Réserve un appel de projet pour ton enseigne DEL personnalisée.",
+      callBookedTitle: "Appel de projet réservé | Seto X Arts",
+      callBookedDescription: "Ton appel de projet Seto X Arts est réservé.",
+      completeTitle: "Demande de projet complétée | Seto X Arts",
+      completeDescription: "Ta demande de projet Seto X Arts est complétée.",
+    },
+    email: {
+      copyright: "© 2026 Seto X Arts. Tous droits réservés.",
+      businessTitle: "Nouvelle demande d'enseigne DEL",
+      businessHeading: "Nouvelle demande d'enseigne DEL",
+      clientInfoHeading: "Infos client :",
+      clientTitle: "Ta demande de projet Seto X Arts",
+      clientHeading: "Demande de projet reçue",
+      clientThanks: (firstName) => `Merci, ${firstName}.`,
+      clientIntro:
+        "Ta demande de projet d'enseigne DEL personnalisée en bois a été reçue. Je vais réviser tes détails et te revenir avec la prochaine étape.",
+      regards: "À bientôt,",
+      teamName: "Seto X Arts",
+      clientSubject: "Ta demande de projet Seto X Arts a été reçue",
+      businessSubject: (name) => `Nouvelle demande DEL - ${name}`,
+      labels: {
+        name: "Nom",
+        email: "Courriel",
+        phone: "Téléphone",
+        preferredContact: "Contact préféré",
+        locale: "Langue",
+        mainGoal: "Objectif principal",
+        businessType: "Type d'entreprise",
+        businessName: "Nom de l'entreprise",
+        installLocation: "Emplacement d'installation",
+        approximateSize: "Taille approximative",
+        projectInfo: "Infos du projet",
+        timeline: "Échéancier",
+        budget: "Budget",
+        uploadedFiles: "Fichiers téléversés",
+      },
+      noFilesUploaded: "Aucun fichier téléversé",
+      filesAttached: (count) =>
+        `${count} fichier${count === 1 ? "" : "s"} joint${count === 1 ? "" : "s"}`,
+    },
   },
 };

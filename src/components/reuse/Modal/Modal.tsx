@@ -41,6 +41,12 @@ const dropIn: Variants = {
   },
 };
 
+const MotionDiv = motion.div as React.ComponentType<
+  React.HTMLAttributes<HTMLDivElement> &
+    import("framer-motion").MotionProps &
+    React.RefAttributes<HTMLDivElement>
+>;
+
 export const Modal: React.FC<ModalProps> = ({
   children,
   onClose,
@@ -119,7 +125,7 @@ export const Modal: React.FC<ModalProps> = ({
         />
       )}
 
-      <motion.div
+      <MotionDiv
         onClick={(e) => e.stopPropagation()}
         className={cn(styles.modal)}
         variants={dropIn}
@@ -155,7 +161,7 @@ export const Modal: React.FC<ModalProps> = ({
             onClick={close}
           />
         </FlexDiv>
-      </motion.div>
+      </MotionDiv>
 
       {/* Next Arrow */}
       {hasNext && (

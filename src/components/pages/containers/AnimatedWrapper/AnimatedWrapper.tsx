@@ -15,8 +15,8 @@ export interface AnimatedWrapperProps<T extends ElementType = "div"> {
 }
 
 // Type helper for the ref based on the element type
-type RefType<T extends ElementType> = T extends keyof JSX.IntrinsicElements
-  ? JSX.IntrinsicElements[T] extends React.DetailedHTMLProps<
+type RefType<T extends ElementType> = T extends keyof React.JSX.IntrinsicElements
+  ? React.JSX.IntrinsicElements[T] extends React.DetailedHTMLProps<
       React.HTMLAttributes<infer R>,
       any
     >
@@ -43,7 +43,7 @@ export const AnimatedWrapper = forwardRef(
       : motion.div;
 
     // Use a more generic ref type
-    const inViewRef = React.useRef<Element | null>(null);
+    const inViewRef = React.useRef<Element>(null!);
     const isInView = useInView(inViewRef, {
       once: true, // Animation triggers once
       amount: 0.2, // Trigger when 10% of element is visible

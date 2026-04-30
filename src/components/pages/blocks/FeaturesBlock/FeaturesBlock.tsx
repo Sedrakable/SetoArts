@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import styles from "./FeaturesBlock.module.scss";
 import cn from "classnames";
 import { Block } from "@/components/pages/containers/Block";

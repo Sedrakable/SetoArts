@@ -20,7 +20,7 @@ interface ButtonIconProps extends IconProps {
 }
 
 export interface ButtonProps {
-  variant: "fancy" | "primary" | "black" | "white";
+  variant: "fancy" | "primary" | "black" | "white" | "transparent";
   outline?: boolean;
   small?: boolean;
   fit?: "grow" | "shrink";
@@ -55,7 +55,7 @@ export const Button: FC<PropsWithChildren<
   const { scrollToTarget: scrollToTargetFn } = useScrollToTarget();
 
   const handleClick = (
-    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
   ) => {
     if (disabled) return;
 

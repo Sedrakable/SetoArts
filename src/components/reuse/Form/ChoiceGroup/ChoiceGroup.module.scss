@@ -1,0 +1,40 @@
+@use "@/styles/mixins.scss" as *;
+
+.group {
+  width: 100%;
+}
+
+.choice {
+  @include vari(min-height, 48px, 56px);
+
+  width: 100%;
+  padding: 12px var(--pad-4);
+  border: 2px solid var(--black);
+  border-radius: var(--border-radius-small);
+  background: cc(--white, 0.3);
+  box-shadow: var(--black-shadow), inset -16px 0 0 var(--yellow);
+
+  cursor: pointer;
+  transition: var(--transition-time-backoff);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--yellow);
+    box-shadow: unset;
+    outline: none;
+  }
+
+  p {
+    overflow: visible;
+  }
+}
+
+.selected {
+  background: var(--grad);
+  box-shadow: var(--black-shadow);
+}
+
+.invalid {
+  border-color: var(--error);
+  box-shadow: inset -16px 0 0 var(--error);
+}

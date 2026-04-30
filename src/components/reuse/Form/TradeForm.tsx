@@ -10,6 +10,7 @@ import { useLocale } from "next-intl";
 import {
   TradeFormData,
   FormErrorData,
+  getBotDetectionReason,
   looksLikeBot,
 } from "@/components/reuse/Form/formTypes";
 import {
@@ -61,7 +62,10 @@ export const TradeForm: FC<TradeFormProps> = ({ backgroundBlur = false }) => {
     // }
 
     if (looksLikeBot(formData)) {
-      console.error("❌ BLOCKED (spam-ish submission)");
+      console.error(
+        "Blocked spam-ish submission:",
+        getBotDetectionReason(formData),
+      );
       return;
     }
 
@@ -118,7 +122,7 @@ export const TradeForm: FC<TradeFormProps> = ({ backgroundBlur = false }) => {
 
   const Steps: ReactNode[] = [
     <Input
-      label="Company"
+      label="Leave this field empty"
       type="text"
       value={formData.company || ""}
       onChange={handleInputChange("company")}

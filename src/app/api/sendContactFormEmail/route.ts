@@ -4,13 +4,13 @@ import {
   looksLikeBot,
   ContactFormData,
 } from "@/components/reuse/Form/formTypes";
-import { LangType } from "@/i18n/request";
-import { NextResponse } from "next/server";
-import { emailTranslations } from "@/langs/emailTranslations";
 import { getTransporter } from "@/helpers/getTransporter";
+import { LangType } from "@/i18n/request";
+import { emailTranslations } from "@/langs/emailTranslations";
+import { NextResponse } from "next/server";
 import {
-  getClientContactTemplate,
   getBusinessContactTemplate,
+  getClientContactTemplate,
 } from "./templates";
 
 const prepareAttachments = (attachments: EncodedFileType[]) => {
@@ -47,7 +47,7 @@ export async function POST(request: Request) {
       transporter.sendMail({
         from: `"Seto X Arts" <${process.env.EMAIL_BUSINESS}>`,
         to: process.env.EMAIL_BUSINESS,
-        subject: `💬 New Contact Inquiry - ${formData.firstName} ${formData.lastName}`,
+        subject: `New Contact Inquiry - ${formData.firstName} ${formData.lastName}`,
         html: businessHtml,
         attachments,
       }),
@@ -57,7 +57,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Server error:", error);
     return NextResponse.json(
-      { error: "Failed to send emails", details: (error as Error).message },
+      { error: "Failed to send emails" },
       { status: 500 },
     );
   }
