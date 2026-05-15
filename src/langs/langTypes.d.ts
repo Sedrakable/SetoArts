@@ -88,6 +88,7 @@ interface LeadFormTranslations {
   actions: {
     back: string;
     continue: string;
+    saveAndReturnToReview: string;
     submit: string;
     submitting: string;
     returnHome: string;

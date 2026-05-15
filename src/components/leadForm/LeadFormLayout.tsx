@@ -15,6 +15,7 @@ interface LeadFormLayoutProps {
   children: React.ReactNode;
   error: string;
   isReview: boolean;
+  isReturningToReview: boolean;
   isSubmitting: boolean;
   onBack: () => void;
   onSubmit: (event: FormEvent) => void;
@@ -31,6 +32,7 @@ export const LeadFormLayout = ({
   children,
   error,
   isReview,
+  isReturningToReview,
   isSubmitting,
   onBack,
   onSubmit,
@@ -141,7 +143,9 @@ export const LeadFormLayout = ({
                   ? isSubmitting
                     ? translations.actions.submitting
                     : translations.actions.submit
-                  : translations.actions.continue}
+                  : isReturningToReview
+                    ? translations.actions.saveAndReturnToReview
+                    : translations.actions.continue}
               </Button>
             )}
           </FlexDiv>

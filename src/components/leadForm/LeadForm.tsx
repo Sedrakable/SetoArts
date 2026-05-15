@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FormEvent, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { LangType } from "@/i18n/request";
 import { getTranslations } from "@/helpers/langUtils";
 import { LeadFormFields } from "./LeadFormFields";
@@ -38,6 +38,7 @@ interface LeadFormProps {
 
 export const LeadForm = ({ locale, step }: LeadFormProps) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const translations = getTranslations(locale).leadForm;
   const [formData, setFormData] = useState<LeadFormData>(initialLeadFormData);
   const [uploadedFiles, setUploadedFiles] = useState<UploadedLeadFiles>(
@@ -49,6 +50,8 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
 
   const stepIndex = getStepIndex(step);
   const isReview = step === "review";
+  const isReturningToReview =
+    !isReview && searchParams.get("returnTo") === "review";
   const progress = ((stepIndex + 1) / leadFormSteps.length) * 100;
   const stepCopy = getStepCopy(step, translations);
   const showPrimaryAction = shouldShowPrimaryAction(step, formData);
@@ -79,7 +82,7 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
     value: LeadFormData[Key],
   ) => {
     const nextFormData = { ...formData, [key]: value };
-    const nextStep = leadFormSteps[stepIndex + 1];
+    const nextStep = isReturningToReview ? "review" : leadFormSteps[stepIndex + 1];
 
     setFormData(nextFormData);
     setError("");
@@ -89,6 +92,10 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
 
   const goToStep = (targetStep: LeadFormStep) => {
     router.push(getStepPath(locale, targetStep));
+  };
+
+  const goToEditStep = (targetStep: LeadFormStep) => {
+    router.push(`${getStepPath(locale, targetStep)}?returnTo=review`);
   };
 
   const handleBack = () => {
@@ -106,7 +113,7 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
       return;
     }
 
-    const nextStep = leadFormSteps[stepIndex + 1];
+    const nextStep = isReturningToReview ? "review" : leadFormSteps[stepIndex + 1];
     if (nextStep) goToStep(nextStep);
   };
 
@@ -165,6 +172,7 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
       locale={locale}
       error={error}
       isReview={isReview}
+      isReturningToReview={isReturningToReview}
       isSubmitting={isSubmitting}
       onBack={handleBack}
       onSubmit={isReview ? handleSubmit : handleContinue}
@@ -179,7 +187,7 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
         formData={formData}
         onAutoAdvance={updateFieldAndAdvance}
         onChange={updateField}
-        onEditStep={goToStep}
+        onEditStep={goToEditStep}
         onUploadChange={handleUploadChange}
         step={step}
         translations={translations}

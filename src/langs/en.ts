@@ -75,6 +75,7 @@ export const enTranslations: Translations = {
     actions: {
       back: "Back",
       continue: "Continue",
+      saveAndReturnToReview: "Save & return to review",
       submit: "Submit Project Request",
       submitting: "Submitting...",
       returnHome: "Return to Home",
