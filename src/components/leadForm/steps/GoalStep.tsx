@@ -4,14 +4,17 @@ import { LeadChoiceGroup } from "./LeadStepHelpers";
 
 export const GoalStep = ({
   formData,
+  onAutoAdvance,
   onChange,
   translations,
 }: LeadStepProps) => (
   <>
     <LeadChoiceGroup
       field="goal"
+      onAutoAdvance={onAutoAdvance}
       onChange={onChange}
       options={translations.steps.goal.options}
+      shouldAutoAdvance={(value) => value !== "other"}
       value={formData.goal}
     />
     {formData.goal === "other" && (

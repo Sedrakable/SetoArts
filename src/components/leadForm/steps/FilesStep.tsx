@@ -7,6 +7,7 @@ import styles from "../LeadForm.module.scss";
 
 export const FilesStep = ({
   formData,
+  onAutoAdvance,
   onChange,
   translations,
   onUploadChange,
@@ -15,8 +16,10 @@ export const FilesStep = ({
   <>
     <LeadChoiceGroup
       field="filesReady"
+      onAutoAdvance={onAutoAdvance}
       onChange={onChange}
       options={translations.steps.files.options}
+      shouldAutoAdvance={(value) => value !== "upload-now"}
       value={formData.filesReady}
     />
     <Paragraph className={styles.microcopy} color="dark-grey" level="regular">

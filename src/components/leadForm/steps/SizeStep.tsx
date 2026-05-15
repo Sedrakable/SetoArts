@@ -9,14 +9,17 @@ import styles from "../LeadForm.module.scss";
 
 export const SizeStep = ({
   formData,
+  onAutoAdvance,
   onChange,
   translations,
 }: LeadStepProps) => (
   <>
     <LeadChoiceGroup
       field="sizeKnowledge"
+      onAutoAdvance={onAutoAdvance}
       onChange={onChange}
       options={translations.steps.size.options}
+      shouldAutoAdvance={(value) => value === "need-help"}
       value={formData.sizeKnowledge}
     />
     <Paragraph className={styles.microcopy} color="dark-grey" level="regular">
@@ -50,8 +53,10 @@ export const SizeStep = ({
     {formData.sizeKnowledge === "rough-size" && (
       <LeadChoiceGroup
         field="roughSize"
+        onAutoAdvance={onAutoAdvance}
         onChange={onChange}
         options={translations.steps.size.roughOptions}
+        shouldAutoAdvance={() => true}
         value={formData.roughSize}
       />
     )}
