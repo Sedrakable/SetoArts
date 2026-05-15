@@ -73,6 +73,7 @@ export const frTranslations: Translations = {
     actions: {
       back: "Retour",
       continue: "Continuer",
+      saveAndReturnToReview: "Enregistrer et revenir à la révision",
       submit: "Envoyer la demande",
       submitting: "Envoi...",
       returnHome: "Retour à l'accueil",
