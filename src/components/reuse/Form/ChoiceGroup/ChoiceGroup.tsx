@@ -4,14 +4,17 @@ import styles from "./ChoiceGroup.module.scss";
 import { outfit } from "../../Text/Heading/Heading";
 import FlexDiv from "../../FlexDiv";
 import { Paragraph } from "../../Text/Paragraph/Paragraph";
+import { Icon } from "../../Icon/Icon";
 
 export type ChoiceGroupOption = string | { value: string; label: string };
+export type ChoiceGroupMode = "advance" | "select";
 
 interface ChoiceGroupProps {
   options: readonly ChoiceGroupOption[];
   value: string;
   onChange: (value: string) => void;
   isInvalid?: boolean;
+  getOptionMode?: (value: string) => ChoiceGroupMode;
 }
 
 export const ChoiceGroup: React.FC<ChoiceGroupProps> = ({
@@ -19,6 +22,7 @@ export const ChoiceGroup: React.FC<ChoiceGroupProps> = ({
   value,
   onChange,
   isInvalid = false,
+  getOptionMode = () => "select",
 }) => {
   return (
     <FlexDiv
@@ -38,6 +42,7 @@ export const ChoiceGroup: React.FC<ChoiceGroupProps> = ({
             className={cn(styles.choice, outfit.className, {
               [styles.selected]: value === choice.value,
               [styles.invalid]: isInvalid,
+              [styles.advanceChoice]: getOptionMode(choice.value) === "advance",
             })}
             key={choice.value}
             onClick={() => onChange(choice.value)}
@@ -51,6 +56,21 @@ export const ChoiceGroup: React.FC<ChoiceGroupProps> = ({
             >
               {choice.label}
             </Paragraph>
+            <span
+              className={cn(styles.indicator, {
+                [styles.advanceIndicator]:
+                  getOptionMode(choice.value) === "advance",
+                [styles.selectIndicator]:
+                  getOptionMode(choice.value) === "select",
+                [styles.selectIndicatorActive]:
+                  getOptionMode(choice.value) === "select" &&
+                  value === choice.value,
+              })}
+            >
+              {getOptionMode(choice.value) === "advance" && (
+                <Icon icon="arrow" size="extra-small" color="black" />
+              )}
+            </span>
           </button>
         );
       })}

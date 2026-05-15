@@ -18,6 +18,10 @@ interface LeadFormFieldsProps {
     key: Key,
     value: LeadFormData[Key],
   ) => void;
+  onAutoAdvance: <Key extends keyof LeadFormData>(
+    key: Key,
+    value: LeadFormData[Key],
+  ) => void;
   onUploadChange: (field: LeadUpload["field"], files: File[]) => void;
   onEditStep: (step: LeadFormStep) => void;
   step: LeadFormStep;
@@ -27,6 +31,7 @@ interface LeadFormFieldsProps {
 
 export const LeadFormFields = ({
   formData,
+  onAutoAdvance,
   onChange,
   onEditStep,
   onUploadChange,
@@ -34,7 +39,7 @@ export const LeadFormFields = ({
   translations,
   uploadedFiles,
 }: LeadFormFieldsProps) => {
-  const props = { formData, onChange, translations };
+  const props = { formData, onAutoAdvance, onChange, translations };
 
   switch (step) {
     case "goal":

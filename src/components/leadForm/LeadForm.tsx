@@ -51,6 +51,7 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
   const isReview = step === "review";
   const progress = ((stepIndex + 1) / leadFormSteps.length) * 100;
   const stepCopy = getStepCopy(step, translations);
+  const showPrimaryAction = shouldShowPrimaryAction(step, formData);
 
   useEffect(() => {
     setUploadedFiles(readCachedUploadedLeadFiles());
@@ -71,6 +72,19 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
   ) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
     setError("");
+  };
+
+  const updateFieldAndAdvance = <Key extends keyof LeadFormData>(
+    key: Key,
+    value: LeadFormData[Key],
+  ) => {
+    const nextFormData = { ...formData, [key]: value };
+    const nextStep = leadFormSteps[stepIndex + 1];
+
+    setFormData(nextFormData);
+    setError("");
+    writeStoredLeadFormData(nextFormData);
+    if (nextStep) goToStep(nextStep);
   };
 
   const goToStep = (targetStep: LeadFormStep) => {
@@ -156,12 +170,14 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
       onSubmit={isReview ? handleSubmit : handleContinue}
       progress={progress}
       question={stepCopy.question}
+      showPrimaryAction={showPrimaryAction}
       stepIndex={stepIndex}
       stepLabel={stepCopy.label}
       translations={translations}
     >
       <LeadFormFields
         formData={formData}
+        onAutoAdvance={updateFieldAndAdvance}
         onChange={updateField}
         onEditStep={goToStep}
         onUploadChange={handleUploadChange}
@@ -171,6 +187,28 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
       />
     </LeadFormLayout>
   );
+};
+
+const shouldShowPrimaryAction = (
+  step: LeadFormStep,
+  formData: LeadFormData,
+) => {
+  if (step === "review") return true;
+
+  switch (step) {
+    case "goal":
+      return formData.goal === "other";
+    case "business-type":
+    case "project-info":
+    case "contact":
+      return true;
+    case "size":
+      return formData.sizeKnowledge === "known-size";
+    case "files":
+      return formData.filesReady === "upload-now";
+    default:
+      return false;
+  }
 };
 
 const getStepCopy = (

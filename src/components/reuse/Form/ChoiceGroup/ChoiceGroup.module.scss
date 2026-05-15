@@ -7,12 +7,17 @@
 .choice {
   @include vari(min-height, 48px, 56px);
 
+  align-items: center;
+  display: flex;
+  gap: var(--pad-3);
+  justify-content: space-between;
   width: 100%;
   padding: 12px var(--pad-4);
   border: 2px solid var(--black);
   border-radius: var(--border-radius-small);
   background: cc(--white, 0.3);
-  box-shadow: var(--black-shadow), inset -16px 0 0 var(--yellow);
+
+  // box-shadow: var(--black-shadow), inset -16px 0 0 var(--yellow);
 
   cursor: pointer;
   transition: var(--transition-time-backoff);
@@ -25,6 +30,7 @@
   }
 
   p {
+    flex: 1;
     overflow: visible;
   }
 }
@@ -37,4 +43,36 @@
 .invalid {
   border-color: var(--error);
   box-shadow: inset -16px 0 0 var(--error);
+}
+
+.indicator {
+  align-items: center;
+  aspect-ratio: 1;
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  display: inline-flex;
+  flex: 0 0 24px;
+  height: 24px;
+  justify-content: center;
+  transition: var(--transition-time-backoff);
+}
+
+.advanceIndicator {
+  background: var(--yellow);
+}
+
+.selectIndicator {
+  background: cc(--white, 0.45);
+}
+
+.selectIndicatorActive {
+  background: var(--black);
+  box-shadow: inset 0 0 0 5px var(--white);
+}
+
+.advanceChoice:hover,
+.advanceChoice:focus-visible {
+  .advanceIndicator {
+    transform: translateX(4px);
+  }
 }

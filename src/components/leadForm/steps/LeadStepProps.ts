@@ -10,6 +10,10 @@ export interface LeadStepProps {
     key: Key,
     value: LeadFormData[Key],
   ) => void;
+  onAutoAdvance: <Key extends keyof LeadFormData>(
+    key: Key,
+    value: LeadFormData[Key],
+  ) => void;
   translations: LeadFormTranslationCopy;
 }
 

@@ -20,6 +20,7 @@ interface LeadFormLayoutProps {
   onSubmit: (event: FormEvent) => void;
   progress: number;
   question: string;
+  showPrimaryAction: boolean;
   stepIndex: number;
   stepLabel: string;
   translations: LeadFormTranslationCopy;
@@ -35,6 +36,7 @@ export const LeadFormLayout = ({
   onSubmit,
   progress,
   question,
+  showPrimaryAction,
   stepIndex,
   stepLabel,
   translations,
@@ -133,13 +135,15 @@ export const LeadFormLayout = ({
             >
               {translations.actions.back}
             </Button>
-            <Button disabled={isSubmitting} type="submit" variant="black">
-              {isReview
-                ? isSubmitting
-                  ? translations.actions.submitting
-                  : translations.actions.submit
-                : translations.actions.continue}
-            </Button>
+            {showPrimaryAction && (
+              <Button disabled={isSubmitting} type="submit" variant="black">
+                {isReview
+                  ? isSubmitting
+                    ? translations.actions.submitting
+                    : translations.actions.submit
+                  : translations.actions.continue}
+              </Button>
+            )}
           </FlexDiv>
         </FlexDiv>
       </FlexDiv>
