@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { LeadForm } from "@/components/leadForm/LeadForm";
+import { MetaPixelEvent } from "@/components/MetaPixelEvent";
 import { getTranslations } from "@/helpers/langUtils";
 import {
   isLeadFormStep,
@@ -39,5 +40,10 @@ export default async function CustomSignStepPage({
   if (step === "index") redirect(`/${locale}/custom-sign/goal`);
   if (!isLeadFormStep(step)) notFound();
 
-  return <LeadForm locale={locale} step={step as LeadFormStep} />;
+  return (
+    <>
+      {step === "goal" && <MetaPixelEvent eventName="ViewContent" />}
+      <LeadForm locale={locale} step={step as LeadFormStep} />
+    </>
+  );
 }

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { LeadFormThankYou } from "@/components/leadForm/LeadFormThankYou";
+import { MetaPixelEvent } from "@/components/MetaPixelEvent";
 import { LangType } from "@/i18n/request";
 import { getTranslations } from "@/helpers/langUtils";
 
@@ -23,5 +24,10 @@ export default async function LeadCallBookedPage({
   params: Promise<{ locale: LangType }>;
 }) {
   const { locale } = await params;
-  return <LeadFormThankYou locale={locale} variant="booked" />;
+  return (
+    <>
+      <MetaPixelEvent eventName="Schedule" />
+      <LeadFormThankYou locale={locale} variant="booked" />
+    </>
+  );
 }
