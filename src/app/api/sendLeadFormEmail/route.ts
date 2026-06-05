@@ -3,6 +3,7 @@ import { LangType } from "@/i18n/request";
 import { LeadFormData } from "@/components/leadForm/leadFormTypes";
 import { getTranslations } from "@/helpers/langUtils";
 import { sendLeadEmails } from "./leadEmailDelivery";
+import { saveLeadToNotion } from "./saveLeadToNotion";
 
 const looksLikeLeadBot = (formData: LeadFormData) => {
   return Boolean(formData.company?.trim());
@@ -41,6 +42,10 @@ export async function POST(request: Request) {
     }
 
     await sendLeadEmails(formData, locale);
+
+    saveLeadToNotion(formData, locale).catch((err) =>
+      console.error("Notion save failed:", err),
+    );
 
     return NextResponse.json({
       message: translations.errors.submittedSuccessfully,
