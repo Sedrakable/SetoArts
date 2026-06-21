@@ -8,6 +8,8 @@ import "@/styles/ScrollBar.scss";
 import "@/styles/index.scss";
 import { NextIntlClientProvider } from "next-intl";
 import { LangType } from "@/i18n/request";
+import { JsonLd } from "@/components/JsonLd/JsonLd";
+import { localBusinessSchema, webSiteSchema } from "@/components/JsonLd/schemas";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +33,9 @@ export default async function LocaleLayout({
           <head>
             <link rel="preload" href="/photos/BigStroke.webp" as="image" />
             <meta name="theme-color" content="#fec301" />
+            <JsonLd
+              data={[localBusinessSchema(locale), webSiteSchema(locale)]}
+            />
             <Script id="meta-pixel" strategy="afterInteractive">
               {`
                 !function(f,b,e,v,n,t,s)

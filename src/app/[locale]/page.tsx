@@ -30,6 +30,8 @@ import { ProcessAndForm } from "@/components/pages/blocks/ProcessAndForm/Process
 import { Carousel } from "@/components/pages/blocks/Carousel/Carousel";
 import { setMetadata } from "@/components/SEO";
 import { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd/JsonLd";
+import { faqPageSchema, serviceSchema } from "@/components/JsonLd/schemas";
 import {
   ServicesBlock,
   ServicesBlockProps,
@@ -107,8 +109,17 @@ export default async function HomePage({
   const form: ServiceType = "wood";
   const formData: FormTitleProps = await getFormData(form, locale);
 
+  const faqSchema = faqPageSchema(data?.collapsible?.questions);
+
   return (
     <NavWrapperServer locale={locale} theme="light" hideLogo={true}>
+      <JsonLd
+        data={
+          faqSchema
+            ? [serviceSchema(locale), faqSchema]
+            : [serviceSchema(locale)]
+        }
+      />
       {data && (
         <>
           <Hero

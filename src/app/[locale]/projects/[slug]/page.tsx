@@ -10,6 +10,8 @@ import { redirect } from "next/navigation";
 import { LangType } from "@/i18n/request";
 import { Metadata } from "next";
 import { setMetadata } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd/JsonLd";
+import { breadcrumbSchema } from "@/components/JsonLd/schemas";
 
 export interface WorkProps extends IWork {
   meta: ISeo;
@@ -64,9 +66,19 @@ export default async function WorkModal({
     redirect(`/${locale}${LocalPaths.PROJECTS}`);
   }
 
+  const breadcrumb = breadcrumbSchema(locale, [
+    { name: "Home", path: LocalPaths.HOME },
+    { name: "Projects", path: LocalPaths.PROJECTS },
+    {
+      name: workPageData.title || workPageData.meta?.metaTitle || slug,
+      path: `${LocalPaths.PROJECTS}/${slug}`,
+    },
+  ]);
+
   return (
     workPageData && (
       <Modal currentSlug={slug} allWorks={allWorks}>
+        <JsonLd data={breadcrumb} />
         <WorkModalContent {...workPageData} />
       </Modal>
     )
