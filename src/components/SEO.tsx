@@ -17,7 +17,12 @@ export const setMetadata = ({
   crawl = true,
 }: SEOProps): Metadata => {
   const baseUrl = process.env.BASE_NAME;
-  const canonicalUrl = `${baseUrl}/${locale}${path}`;
+  // The home path is "/", which would produce ".../en/" (trailing slash).
+  // Pages are served without a trailing slash, so the homepage's canonical must
+  // self-reference as ".../en" — otherwise Google treats /en as a non-canonical
+  // "alternate" of /en/ (which redirects), and may not index it directly.
+  const normalizedPath = path === "/" ? "" : path;
+  const canonicalUrl = `${baseUrl}/${locale}${normalizedPath}`;
   return {
     title: metaTitle || "Seto X Arts",
     description: metaDesc || "Explore creative work by Seto X Arts.",
@@ -50,9 +55,9 @@ export const setMetadata = ({
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        "en-CA": `https://www.setoxarts.com/en${path}`,
-        "fr-CA": `https://www.setoxarts.com/fr${path}`,
-        "x-default": `https://www.setoxarts.com${path}`,
+        "en-CA": `https://www.setoxarts.com/en${normalizedPath}`,
+        "fr-CA": `https://www.setoxarts.com/fr${normalizedPath}`,
+        "x-default": `https://www.setoxarts.com${normalizedPath || "/"}`,
       },
     },
   };

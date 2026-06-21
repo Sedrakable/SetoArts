@@ -1,21 +1,9 @@
-import { notFoundPageQuery } from "@/app/api/generateSanityQueries";
-import { fetchPage } from "@/app/api/fetchPage";
-import { NotFoundComp } from "@/components/pages/NotFound";
-import { INotFound } from "@/data.d";
-import { LangType } from "@/i18n/request";
-import NavWrapperServer from "@/components/navbar/NavWrapper/NavWrapperServer";
+import { notFound } from "next/navigation";
 
-export default async function NotFound({
-  params,
-}: {
-  params: Promise<{ locale: LangType }>;
-}) {
-  const { locale } = await params;
-  const notFoundQuery = notFoundPageQuery("en");
-  const notFoundPageData: INotFound = await fetchPage(notFoundQuery);
-  return (
-    <NavWrapperServer locale={locale} theme="light">
-      <NotFoundComp data={notFoundPageData} locale={"en"} />
-    </NavWrapperServer>
-  );
+// Any unmatched path under a locale (e.g. dead URLs from the old site
+// structure) lands here. Calling notFound() renders the locale-level
+// not-found.tsx UI WITH a real HTTP 404 status — instead of a "200 OK"
+// soft-404, which Google never drops and keeps re-crawling.
+export default function CatchAllNotFound() {
+  notFound();
 }
