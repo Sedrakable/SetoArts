@@ -201,12 +201,11 @@ export const enTranslations: Translations = {
         label: "Budget",
         question: "What budget range are you considering?",
         options: [
-          { value: "under-750", label: "Under $750" },
-          { value: "750-1500", label: "$750-$1,500" },
+          { value: "under-800", label: "Under $800" },
+          { value: "750-1500", label: "$800-$1,500" },
           { value: "1500-2500", label: "$1,500-$2,500" },
           { value: "2500-4000", label: "$2,500-$4,000" },
           { value: "4000-plus", label: "$4,000+" },
-          { value: "not-sure", label: "Not sure yet" },
         ],
         microcopy: "A rough range is enough for now.",
       },
@@ -282,6 +281,16 @@ export const enTranslations: Translations = {
         "No problem. I'll review your project details and contact you directly.",
       bookCallTitle: "Book a Project Call",
       callMeInstead: "I can't book right now, call me instead.",
+    },
+    semiCustom: {
+      eyebrow: "Same craft, smaller door",
+      title: "Let's start with a semi-custom sign.",
+      copy:
+        "Under $800, the best fit is a semi-custom LED sign — you pick from a few ready designs and make it yours with your own colours, logo, and text.",
+      note:
+        "The lighting is a little simpler (outer and inner glow, not around every letter), and sizes run 8–24 in., usually round. Same wood, same hands — just a smaller, faster door into the studio.",
+      cta: "Browse semi-custom signs on Etsy",
+      back: "Pick another range",
     },
     metadata: {
       formTitle: "Custom LED Wood Sign Project Request | Seto X Arts",

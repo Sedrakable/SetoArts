@@ -4,6 +4,7 @@ import React, { FormEvent, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { LangType } from "@/i18n/request";
 import { getTranslations } from "@/helpers/langUtils";
+import { BudgetGateModal } from "./BudgetGateModal";
 import { LeadFormFields } from "./LeadFormFields";
 import { LeadFormLayout } from "./LeadFormLayout";
 import {
@@ -47,6 +48,7 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showBudgetGate, setShowBudgetGate] = useState(false);
 
   const stepIndex = getStepIndex(step);
   const isReview = step === "review";
@@ -82,11 +84,20 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
     value: LeadFormData[Key],
   ) => {
     const nextFormData = { ...formData, [key]: value };
-    const nextStep = isReturningToReview ? "review" : leadFormSteps[stepIndex + 1];
 
     setFormData(nextFormData);
     setError("");
     writeStoredLeadFormData(nextFormData);
+
+    // Under-$800 budgets open the semi-custom gate instead of continuing the
+    // full lead form. Same brand, smaller door — and they stay on the pricing
+    // step so they can pick another range if they want.
+    if (key === "budget" && value === "under-800") {
+      setShowBudgetGate(true);
+      return;
+    }
+
+    const nextStep = isReturningToReview ? "review" : leadFormSteps[stepIndex + 1];
     if (nextStep) goToStep(nextStep);
   };
 
@@ -192,6 +203,11 @@ export const LeadForm = ({ locale, step }: LeadFormProps) => {
         step={step}
         translations={translations}
         uploadedFiles={uploadedFiles}
+      />
+      <BudgetGateModal
+        open={showBudgetGate}
+        onClose={() => setShowBudgetGate(false)}
+        translations={translations}
       />
     </LeadFormLayout>
   );

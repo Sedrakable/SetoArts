@@ -1,0 +1,44 @@
+@use "@/styles/mixins.scss" as *;
+
+.card {
+  position: relative;
+  box-sizing: border-box;
+  // Always keep a gutter to the screen edge on small viewports.
+  width: calc(100% - var(--pad-4) * 2);
+  max-width: 440px;
+  max-height: calc(100svh - var(--pad-6) * 2);
+  overflow-y: auto;
+  padding: var(--pad-6) var(--pad-5);
+  border-radius: var(--border-radius-large);
+  background: var(--off-white, var(--white));
+  box-shadow: var(--black-shadow);
+  cursor: auto;
+
+  @media (min-width: $tablet) {
+    width: 100%;
+    max-width: 460px;
+    max-height: calc(100svh - var(--pad-7) * 2);
+    padding: var(--pad-7) var(--pad-6) var(--pad-6);
+  }
+}
+
+// Reserve room on the first line so the heading never runs under the close button.
+.header {
+  padding-right: var(--pad-6);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--pad-4);
+  right: var(--pad-4);
+  z-index: 2;
+
+  @media (min-width: $tablet) {
+    top: var(--pad-5);
+    right: var(--pad-5);
+  }
+}
+
+.actions {
+  margin-top: var(--pad-2);
+}

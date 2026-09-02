@@ -194,6 +194,14 @@ interface LeadFormTranslations {
     bookCallTitle: string;
     callMeInstead: string;
   };
+  semiCustom: {
+    eyebrow: string;
+    title: string;
+    copy: string;
+    note: string;
+    cta: string;
+    back: string;
+  };
   metadata: {
     formTitle: string;
     formDescription: string;
