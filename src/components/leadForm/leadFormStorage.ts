@@ -36,8 +36,11 @@ const legacyValueMap: Partial<Record<keyof LeadFormData, Record<string, string>>
     "$2,500-$4,000": "2500-4000",
     "$4,000+": "4000-plus",
     "$750-$1,500": "750-1500",
-    "Not sure yet": "not-sure",
-    "Under $750": "under-750",
+    "$800-$1,500": "750-1500",
+    "Under $750": "under-800",
+    "Under $800": "under-800",
+    "under-750": "under-800",
+    "not-sure": "under-800",
   },
   businessType: {
     "Auto / Garage": "auto-garage",

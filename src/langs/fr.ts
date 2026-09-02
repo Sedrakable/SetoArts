@@ -199,12 +199,11 @@ export const frTranslations: Translations = {
         label: "Budget",
         question: "Quelle fourchette de budget envisages-tu?",
         options: [
-          { value: "under-750", label: "Moins de 750 $" },
-          { value: "750-1500", label: "750 $ à 1 500 $" },
+          { value: "under-800", label: "Moins de 800 $" },
+          { value: "750-1500", label: "800 $ à 1 500 $" },
           { value: "1500-2500", label: "1 500 $ à 2 500 $" },
           { value: "2500-4000", label: "2 500 $ à 4 000 $" },
           { value: "4000-plus", label: "4 000 $ et plus" },
-          { value: "not-sure", label: "Pas encore certain" },
         ],
         microcopy: "Une fourchette approximative suffit pour le moment.",
       },
@@ -280,6 +279,16 @@ export const frTranslations: Translations = {
         "Aucun problème. Je vais réviser ton projet et te contacter directement.",
       bookCallTitle: "Réserver un appel de projet",
       callMeInstead: "Je ne peux pas réserver maintenant, appelle-moi plutôt.",
+    },
+    semiCustom: {
+      eyebrow: "Même métier, plus petite porte",
+      title: "Commençons par une enseigne semi-personnalisée.",
+      copy:
+        "Sous 800 $, le meilleur choix est une enseigne DEL semi-personnalisée — tu choisis parmi quelques designs prêts et tu la rends tienne avec tes couleurs, ton logo et ton texte.",
+      note:
+        "L'éclairage est un peu plus simple (lueur extérieure et intérieure, pas autour de chaque lettre) et les formats vont de 8 à 24 po, généralement ronds. Même bois, mêmes mains — juste une porte plus petite et plus rapide vers l'atelier.",
+      cta: "Voir les enseignes semi-personnalisées sur Etsy",
+      back: "Choisir une autre fourchette",
     },
     metadata: {
       formTitle: "Demande de projet d'enseigne DEL sur bois | Seto X Arts",

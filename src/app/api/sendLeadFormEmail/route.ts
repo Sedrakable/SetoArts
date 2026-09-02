@@ -43,9 +43,15 @@ export async function POST(request: Request) {
 
     await sendLeadEmails(formData, locale);
 
-    saveLeadToNotion(formData, locale).catch((err) =>
-      console.error("Notion save failed:", err),
-    );
+    // Awaited (not fire-and-forget) so it actually runs to completion on
+    // serverless, where pending background work is killed once the response
+    // returns. Wrapped so a Notion failure is logged but never blocks the
+    // lead — the emails above are the source of truth.
+    try {
+      await saveLeadToNotion(formData, locale);
+    } catch (err) {
+      console.error("Notion save failed:", err);
+    }
 
     return NextResponse.json({
       message: translations.errors.submittedSuccessfully,
