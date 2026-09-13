@@ -8,7 +8,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/en/legal/", "/fr/legal/"],
+      // /intake/* are private, unlisted client questionnaires. They also carry
+      // a noindex meta tag; this keeps compliant crawlers out entirely.
+      disallow: ["/en/legal/", "/fr/legal/", "/intake/"],
     },
     sitemap: `${BASE_URL}/sitemap.xml`,
   };
