@@ -3,7 +3,12 @@
 // builder is its own project. If branding ever becomes a product line, move it
 // then. Content is transcribed verbatim from the branding intake build plan.
 
-export type IntakeQuestionType = "short" | "long" | "choice" | "multi" | "scales";
+export type IntakeQuestionType =
+  | "short"
+  | "long"
+  | "choice"
+  | "multi"
+  | "scales";
 
 export interface IntakeScalePair {
   left: string;
@@ -61,31 +66,33 @@ export const CLIENTS: Record<string, IntakeClient> = {
             id: "whatyoudo",
             type: "long",
             label: "What do you do, and for who?",
-            help: "Take as much room as you need. Plain words beat a polished pitch.",
+            help:
+              "Take as much room as you need. Plain words beat a polished pitch.",
           },
           {
             id: "services",
             type: "long",
             label: "What are your services?",
-            help: "List them out. If one matters more than the rest, say so. If two or three are equally important, say that too.",
+            help:
+              "List them out. If one matters more than the rest, say so. If two or three are equally important, say that too.",
           },
-          {
-            id: "placements",
-            type: "multi",
-            other: true,
-            label: "Where does the logo need to live?",
-            help: "Pick everything you can think of. Missing one now means redrawing it later.",
-            options: [
-              "Shirts",
-              "Vehicle",
-              "Business cards",
-              "Signage",
-              "Website",
-              "Social media",
-              "Uniforms",
-              "Print and flyers",
-            ],
-          },
+          // {
+          //   id: "placements",
+          //   type: "multi",
+          //   other: true,
+          //   label: "Where does the logo need to live?",
+          //   help: "Pick everything you can think of. Missing one now means redrawing it later.",
+          //   options: [
+          //     "Shirts",
+          //     "Vehicle",
+          //     "Business cards",
+          //     "Signage",
+          //     "Website",
+          //     "Social media",
+          //     "Uniforms",
+          //     "Print and flyers",
+          //   ],
+          // },
         ],
       },
       {
@@ -110,7 +117,12 @@ export const CLIENTS: Record<string, IntakeClient> = {
             id: "custGender",
             type: "choice",
             label: "Mostly women, mostly men, or an even split?",
-            options: ["Mostly women", "Mostly men", "Even split", "Not sure yet"],
+            options: [
+              "Mostly women",
+              "Mostly men",
+              "Even split",
+              "Not sure yet",
+            ],
           },
           {
             id: "custRelation",
@@ -140,23 +152,27 @@ export const CLIENTS: Record<string, IntakeClient> = {
             id: "custWork",
             type: "short",
             label: "What do they do for work?",
-            help: "Rough is fine. Teachers, nurses, office jobs, whatever you picture.",
+            help:
+              "Rough is fine. Teachers, nurses, office jobs, whatever you picture.",
           },
           {
             id: "custWhere",
             type: "short",
             label: "Where do they live?",
-            help: "Neighborhoods, cities, or just how far you're willing to travel.",
+            help:
+              "Neighborhoods, cities, or just how far you're willing to travel.",
           },
           {
             id: "moment",
             type: "long",
-            label: "What is going on in their life the week they decide to call?",
+            label:
+              "What is going on in their life the week they decide to call?",
           },
           {
             id: "trust",
             type: "long",
-            label: "What do they need to hear before they trust you with their parent?",
+            label:
+              "What do they need to hear before they trust you with their parent?",
           },
           {
             id: "custKids",
@@ -220,20 +236,22 @@ export const CLIENTS: Record<string, IntakeClient> = {
             id: "hates",
             type: "long",
             label: "What you hate",
-            help: "Styles, symbols, colors, anything. Be specific. This question saves more time than any other one here.",
+            help:
+              "Styles, symbols, colors, anything. Be specific. This question saves more time than any other one here.",
           },
           {
             id: "colors",
             type: "long",
             label: "Colors you want, and colors that are off the table",
           },
-          {
-            id: "photos",
-            type: "choice",
-            label: "Will any client or caregiver let you photograph them?",
-            help: "If not, I build the brand on illustration and type instead. Either works, I just need to know now rather than in week three.",
-            options: ["Yes", "No", "Not sure yet"],
-          },
+          // {
+          //   id: "photos",
+          //   type: "choice",
+          //   label: "Will any client or caregiver let you photograph them?",
+          //   help:
+          //     "If not, I build the brand on illustration and type instead. Either works, I just need to know now rather than in week three.",
+          //   options: ["Yes", "No", "Not sure yet"],
+          // },
         ],
       },
     ],
