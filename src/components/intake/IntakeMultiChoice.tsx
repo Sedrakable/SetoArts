@@ -1,9 +1,11 @@
 import React from "react";
 import cn from "classnames";
-import styles from "./Intake.module.scss";
+// Reuse the ChoiceGroup styles verbatim so multi-select rows are visually
+// identical to the single-select choice rows already used across the form.
+import styles from "@/components/reuse/Form/ChoiceGroup/ChoiceGroup.module.scss";
+import { outfit } from "@/components/reuse/Text/Heading/Heading";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
-import { outfit } from "@/components/reuse/Text/Heading/Heading";
 
 interface IntakeMultiChoiceProps {
   options: readonly string[];
@@ -12,9 +14,9 @@ interface IntakeMultiChoiceProps {
   isInvalid?: boolean;
 }
 
-// Checkbox group styled to match ChoiceGroup's single-select rows. Uses real
-// <input type="checkbox"> elements (visually hidden, keyboard-reachable) so the
-// control stays accessible while looking like the rest of the form.
+// Same markup and classes as ChoiceGroup, but each row is an independent
+// checkbox so several can be selected. The selected state reuses ChoiceGroup's
+// filled indicator — no custom checkmark glyph.
 export const IntakeMultiChoice: React.FC<IntakeMultiChoiceProps> = ({
   options,
   values,
@@ -22,7 +24,7 @@ export const IntakeMultiChoice: React.FC<IntakeMultiChoiceProps> = ({
   isInvalid = false,
 }) => (
   <FlexDiv
-    className={styles.multi}
+    className={styles.group}
     flex={{ direction: "column", x: "stretch", y: "flex-start" }}
     gapArray={[3]}
     width100
@@ -31,41 +33,26 @@ export const IntakeMultiChoice: React.FC<IntakeMultiChoiceProps> = ({
       const checked = values.includes(option);
 
       return (
-        <label
+        <button
           key={option}
-          className={cn(styles.optionRow, {
-            [styles.optionSelected]: checked,
-            [styles.optionInvalid]: isInvalid,
+          type="button"
+          role="checkbox"
+          aria-checked={checked}
+          onClick={() => onToggle(option)}
+          className={cn(styles.choice, outfit.className, {
+            [styles.selected]: checked,
+            [styles.invalid]: isInvalid,
           })}
         >
-          <input
-            type="checkbox"
-            className={styles.nativeCheckbox}
-            checked={checked}
-            onChange={() => onToggle(option)}
-          />
-          <Paragraph
-            level="regular"
-            textAlign="left"
-            color="black"
-            weight={400}
-            className={outfit.className}
-          >
+          <Paragraph level="regular" textAlign="left" color="black" weight={400}>
             {option}
           </Paragraph>
           <span
-            aria-hidden="true"
-            className={cn(styles.checkIndicator, {
-              [styles.checkIndicatorActive]: checked,
+            className={cn(styles.indicator, styles.selectIndicator, {
+              [styles.selectIndicatorActive]: checked,
             })}
-          >
-            {checked && (
-              <Paragraph level="small" color="white" weight={600}>
-                ✓
-              </Paragraph>
-            )}
-          </span>
-        </label>
+          />
+        </button>
       );
     })}
   </FlexDiv>

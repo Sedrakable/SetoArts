@@ -1,10 +1,13 @@
 import React from "react";
 import cn from "classnames";
 import styles from "./Intake.module.scss";
+// Reuse the site's input styling verbatim rather than restyling text fields.
+import inputStyles from "@/components/reuse/Form/Input/Input.module.scss";
 import FlexDiv from "@/components/reuse/FlexDiv";
 import { Paragraph } from "@/components/reuse/Text/Paragraph/Paragraph";
 import { outfit } from "@/components/reuse/Text/Heading/Heading";
 import { ChoiceGroup } from "@/components/reuse/Form/ChoiceGroup/ChoiceGroup";
+import { Input } from "@/components/reuse/Form/Input/Input";
 import { IntakeQuestion, isQuestionRequired } from "@/lib/intake/questions";
 import { IntakeAnswer } from "@/lib/intake/answers";
 import { IntakeMultiChoice } from "./IntakeMultiChoice";
@@ -33,17 +36,10 @@ export const IntakeQuestionField: React.FC<IntakeQuestionFieldProps> = ({
       gapArray={[2]}
       width100
     >
-      <Paragraph
-        level="regular"
-        color={isInvalid ? "error" : "black"}
-        weight={600}
-      >
-        {question.label}
-        {!required && (
-          <Paragraph as="span" level="small" color="dark-grey" weight={400}>
-            {"  ·  optional"}
-          </Paragraph>
-        )}
+      {/* Label + help, matching InputWrapper's label styling (incl. the * mark). */}
+      <Paragraph level="regular" color={isInvalid ? "error" : "black"}>
+        {question.label}{" "}
+        {required && <span className={styles.required}>*</span>}
       </Paragraph>
 
       {question.help && (
@@ -79,8 +75,8 @@ const Control: React.FC<IntakeQuestionFieldProps> = ({
       return (
         <input
           type="text"
-          className={cn(styles.textInput, outfit.className, {
-            [styles.textInvalid]: isInvalid,
+          className={cn(inputStyles.input, outfit.className, {
+            [inputStyles.invalid]: isInvalid,
           })}
           value={answer.text ?? ""}
           onChange={(event) => onChange({ ...answer, text: event.target.value })}
@@ -90,8 +86,8 @@ const Control: React.FC<IntakeQuestionFieldProps> = ({
     case "long":
       return (
         <textarea
-          className={cn(styles.textArea, outfit.className, {
-            [styles.textInvalid]: isInvalid,
+          className={cn(inputStyles.textarea, outfit.className, {
+            [inputStyles.invalid]: isInvalid,
           })}
           value={answer.text ?? ""}
           onChange={(event) => onChange({ ...answer, text: event.target.value })}
@@ -107,9 +103,7 @@ const Control: React.FC<IntakeQuestionFieldProps> = ({
             onChange={(value) => onChange({ ...answer, choice: value })}
             isInvalid={isInvalid}
           />
-          {question.other && (
-            <OtherField answer={answer} onChange={onChange} />
-          )}
+          {question.other && <OtherField answer={answer} onChange={onChange} />}
         </>
       );
 
@@ -128,9 +122,7 @@ const Control: React.FC<IntakeQuestionFieldProps> = ({
             }}
             isInvalid={isInvalid}
           />
-          {question.other && (
-            <OtherField answer={answer} onChange={onChange} />
-          )}
+          {question.other && <OtherField answer={answer} onChange={onChange} />}
         </>
       );
 
@@ -155,16 +147,18 @@ const Control: React.FC<IntakeQuestionFieldProps> = ({
   }
 };
 
+// Reuses the shared Input component so the "something else" field is styled and
+// spaced exactly like every other text field on the site.
 const OtherField: React.FC<{
   answer: IntakeAnswer;
   onChange: (next: IntakeAnswer) => void;
 }> = ({ answer, onChange }) => (
-  <input
-    type="text"
-    placeholder="Something else"
-    aria-label="Something else"
-    className={cn(styles.textInput, styles.otherField, outfit.className)}
-    value={answer.other ?? ""}
-    onChange={(event) => onChange({ ...answer, other: event.target.value })}
-  />
+  <FlexDiv className={styles.otherField} width100>
+    <Input
+      label="Something else"
+      type="text"
+      value={answer.other ?? ""}
+      onChange={(value) => onChange({ ...answer, other: value.toString() })}
+    />
+  </FlexDiv>
 );
